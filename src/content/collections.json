@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "saas-landing-page",
+    "name": "Build a SaaS landing page",
+    "tagline": "Everything for a marketing page that ships this week.",
+    "description": "A hero that moves, components you can restyle, an icon set that stays consistent at small sizes, and a background that carries the whole page. Enough to go from blank file to something worth showing.",
+    "resourceIds": ["grainient", "shadcn", "orbkit", "lucide"],
+    "featured": true
+  },
+  {
+    "slug": "first-portfolio-free",
+    "name": "Free resources for a first portfolio",
+    "tagline": "Nothing here asks for a card.",
+    "description": "Everything in this collection has a genuinely usable free tier. Enough to put a portfolio together without a budget, and without a trial clock running in the background.",
+    "resourceIds": ["shadcn", "lucide", "orbkit", "built"],
+    "featured": true
+  },
+  {
+    "slug": "motion-and-depth",
+    "name": "Motion and depth",
+    "tagline": "For when flat has stopped being interesting.",
+    "description": "Shaders, animated components and grainy gradients — the pieces that give an interface a sense of material without reaching for a 3D pipeline.",
+    "resourceIds": ["orbkit", "reactbits", "grainient"],
+    "featured": true
+  },
+  {
+    "slug": "design-system-starters",
+    "name": "Design system starters",
+    "tagline": "The bones, not the paint.",
+    "description": "Component libraries and icon sets chosen for consistency and ownership: things you can adopt, restyle and keep, rather than dependencies you inherit and fight.",
+    "resourceIds": ["shadcn", "lucide", "ui8"],
+    "featured": false
+  }
+]

@@ -1,0 +1,2 @@
+# Static prerendered pages are served first; everything else boots the SPA.
+/*  /index.html  200

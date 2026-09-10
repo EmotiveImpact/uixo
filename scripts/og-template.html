@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+      body {
+        background: #000;
+        color: #eeeef0;
+        font-family: Inter, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 78px 84px;
+      }
+      .brand {
+        font-size: 30px;
+        letter-spacing: 11px;
+        font-weight: 500;
+      }
+      h1 {
+        font-size: 82px;
+        line-height: 1.12;
+        letter-spacing: -2.6px;
+        font-weight: 500;
+        max-width: 15ch;
+      }
+      h1 span {
+        color: #7a7a86;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 19px;
+        color: #8a8a94;
+        border-top: 1px solid #1a1a1e;
+        padding-top: 26px;
+      }
+      .dots {
+        display: flex;
+        gap: 9px;
+      }
+      .dot {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="brand">UIXO</div>
+    <h1>Good tools.<br /><span>Great interfaces.</span></h1>
+    <div class="foot">
+      <span>A hand-curated directory of UI resources</span>
+      <div class="dots">
+        <div class="dot" style="background: #e8734a"></div>
+        <div class="dot" style="background: #7a6bd8"></div>
+        <div class="dot" style="background: #4ab8a0"></div>
+      </div>
+    </div>
+  </body>
+</html>
