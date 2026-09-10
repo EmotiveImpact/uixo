@@ -5,8 +5,6 @@ dist/
 .env.*
 !.env.example
 *.log
-# Earlier prototypes and local design exploration
-/mocks/
-/assets/
-/app.js
-/style.css
+# Archived prototype: source is tracked, heavy screenshots/assets are not
+/legacy/mocks/
+/legacy/assets/
