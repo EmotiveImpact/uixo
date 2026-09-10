@@ -40,7 +40,7 @@ export function App() {
   const { route, navigate } = useRoute();
   const { lists, toggleSaved, toggleIn, create, remove } = useLists();
   const { light, toggle: toggleTheme } = useTheme();
-  const { user, isCurator, isMock, signIn, signOut } = useAuth();
+  const { user, isCurator, isMock, signIn, signOut, available: authAvailable } = useAuth();
 
   const [openSection, setOpenSection] = useState<string | null>(route.category);
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -160,6 +160,7 @@ export function App() {
     return (
       <>
         <LandingPage
+          authAvailable={authAvailable}
           signedIn={Boolean(user)}
           hrefs={{
             browse: routeToHref(EMPTY_ROUTE),
@@ -237,6 +238,7 @@ export function App() {
           onCollections={route.collectionsIndex || Boolean(activeCollection)}
           account={
             <AccountMenu
+              available={authAvailable}
               user={user}
               onSignIn={() => setModal('signin')}
               onDashboard={() => navigate({ ...EMPTY_ROUTE, dashboard: true })}
@@ -280,7 +282,10 @@ export function App() {
           />
         )}
 
+        {route.dashboard && !authAvailable && <NotFound onReset={reset} />}
+
         {route.dashboard &&
+          authAvailable &&
           (user ? (
             <Dashboard
               user={user}

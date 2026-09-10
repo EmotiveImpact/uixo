@@ -84,13 +84,20 @@ export const mockAuth: AuthProvider = {
 export const auth: AuthProvider = mockAuth;
 
 /**
- * The mock issues a session to any address with no verification of any kind. Shipping it
- * would be an open door, so fail loudly at startup rather than quietly in production.
- * Set VITE_ALLOW_MOCK_AUTH=true to preview a production build locally.
+ * Whether the app should offer accounts at all.
+ *
+ * The mock provider issues a session to any address and verifies nothing, so it must never
+ * be reachable in production. Rather than break the site, the directory simply stops
+ * offering sign-in: browsing, search, collections and local lists all work without an
+ * account, so there is nothing to degrade. Set VITE_ALLOW_MOCK_AUTH=true to exercise the
+ * signed-in experience against a production build locally.
  */
-if (import.meta.env.PROD && auth.isMock && import.meta.env.VITE_ALLOW_MOCK_AUTH !== 'true') {
-  throw new Error(
-    'Refusing to start: src/lib/auth.ts still exports the mock provider, which authenticates ' +
-      'nobody. Implement AuthProvider against the real backend before deploying.',
+export const authAvailable =
+  !auth.isMock || !import.meta.env.PROD || import.meta.env.VITE_ALLOW_MOCK_AUTH === 'true';
+
+if (!authAvailable) {
+  console.warn(
+    'UIXO: accounts are hidden because src/lib/auth.ts still exports the mock provider. ' +
+      'Implement AuthProvider against the real backend to enable sign-in.',
   );
 }

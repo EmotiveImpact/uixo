@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { auth } from '../lib/auth';
+import { auth, authAvailable } from '../lib/auth';
 import type { Session } from '../lib/auth';
 
 export function useAuth() {
@@ -14,9 +14,11 @@ export function useAuth() {
   const signOut = useCallback(() => auth.signOut(), []);
 
   return {
-    session,
-    user: session?.user ?? null,
-    isCurator: session?.user.role === 'curator',
+    /** False when accounts are not on offer, e.g. production with the mock provider. */
+    available: authAvailable,
+    session: authAvailable ? session : null,
+    user: authAvailable ? (session?.user ?? null) : null,
+    isCurator: authAvailable && session?.user.role === 'curator',
     isMock: auth.isMock,
     signIn,
     signOut,

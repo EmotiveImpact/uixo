@@ -3,6 +3,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "trailingSlash": false,
+  "cleanUrls": true,
   "rewrites": [
     {
       "source": "/((?!assets/|.*\\.[a-zA-Z0-9]+$).*)",

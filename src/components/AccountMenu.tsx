@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import type { User } from '../lib/auth';
 
 type AccountMenuProps = {
+  /** When false, accounts are not on offer and nothing is rendered. */
+  available: boolean;
   user: User | null;
   onSignIn: () => void;
   onDashboard: () => void;
@@ -19,6 +21,7 @@ function initials(name: string): string {
 }
 
 export function AccountMenu({
+  available,
   user,
   onSignIn,
   onDashboard,
@@ -43,6 +46,8 @@ export function AccountMenu({
       document.removeEventListener('keydown', onKey);
     };
   }, [open]);
+
+  if (!available) return null;
 
   if (!user) {
     return (

@@ -8,6 +8,7 @@ import { editorPick } from '../data';
 import type { Resource } from '../types';
 
 type LandingPageProps = {
+  authAvailable: boolean;
   signedIn: boolean;
   hrefs: {
     browse: string;
@@ -74,6 +75,7 @@ function FeatureCard({
  * made the earlier single-surface layouts feel wrong.
  */
 export function LandingPage({
+  authAvailable,
   signedIn,
   hrefs,
   onBrowse,
@@ -110,7 +112,11 @@ export function LandingPage({
             <button onClick={onAbout}>About</button>
           </span>
           <span className="landing-nav-right">
-            {signedIn ? (
+            {!authAvailable ? (
+              <a className="solid" href={hrefs.browse} onClick={internal(onBrowse)}>
+                Browse the directory
+              </a>
+            ) : signedIn ? (
               <a className="solid" href={hrefs.browse} onClick={internal(onBrowse)}>
                 Open the directory
               </a>
