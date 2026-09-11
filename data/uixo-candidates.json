@@ -1,0 +1,2898 @@
+{
+  "updated": "2026-09-11",
+  "updated_note": "Retagged from inspiration-list.json into canonical UIXO categories. No PR/push.",
+  "counts_by_category": {
+    "Inspiration": 58,
+    "Components": 17,
+    "UI libraries": 17,
+    "Fonts": 6,
+    "Templates": 6,
+    "Backgrounds": 4,
+    "Icons": 3,
+    "Marketplace": 3,
+    "Illustrations": 1
+  },
+  "totals": {
+    "candidates": 115,
+    "needs_review": 45,
+    "skipped_dupes_existing_site": 5,
+    "skipped_other": 25,
+    "harvest_total": 145
+  },
+  "skipped_dupes": [
+    {
+      "title": "React Bits",
+      "url": "https://reactbits.dev",
+      "reason": "duplicate of existing site entry"
+    },
+    {
+      "title": "ui.shadcn.com",
+      "url": "https://ui.shadcn.com",
+      "reason": "duplicate of existing site entry"
+    },
+    {
+      "title": "The complete React library for crafting memorable UI",
+      "url": "https://pro.reactbits.dev/changelog",
+      "reason": "duplicate of existing site entry"
+    },
+    {
+      "title": "github.com",
+      "url": "https://github.com/shadcn-ui/ui",
+      "reason": "duplicate of existing site entry"
+    },
+    {
+      "title": "Unlimited Gradients, Animated Gradients and AI-Generated Backgrounds",
+      "url": "https://grainient.supply",
+      "reason": "duplicate of existing site entry"
+    }
+  ],
+  "skipped_other": [
+    {
+      "title": "Design Engineering (floguo)",
+      "url": "https://floguo.com/notes/design-engineering",
+      "reason": "essay / notes, not a product resource"
+    },
+    {
+      "title": "UI Skills",
+      "url": "https://ui-skills.com",
+      "reason": "AI agent skills packs, not UI asset category"
+    },
+    {
+      "title": "SVG Guide",
+      "url": "https://svg.guide",
+      "reason": "educational guide"
+    },
+    {
+      "title": "Rams.ai",
+      "url": "https://rams.ai",
+      "reason": "design principles site, not asset/product"
+    },
+    {
+      "title": "Reelfolio",
+      "url": "https://reelfolio.io",
+      "reason": "showreel tool, not UI design resource"
+    },
+    {
+      "title": "Motion-Primitives Glow Effect",
+      "url": "https://motion-primitives.com/docs/glow-effect",
+      "reason": "subpage of motion-primitives"
+    },
+    {
+      "title": "WandPress (GitHub)",
+      "url": "https://github.com/jonbuster/wandpress",
+      "reason": "github source of wandpress"
+    },
+    {
+      "title": "unsplash.com",
+      "url": "https://unsplash.com",
+      "reason": "stock photography, not UI category"
+    },
+    {
+      "title": "pexels.com",
+      "url": "https://pexels.com",
+      "reason": "stock photography, not UI category"
+    },
+    {
+      "title": "pixabay.com",
+      "url": "https://pixabay.com",
+      "reason": "stock photography, not UI category"
+    },
+    {
+      "title": "DesignMD \u2014 Generate DESIGN.md Files with AI",
+      "url": "https://designmd.me",
+      "reason": "DESIGN.md generator tool"
+    },
+    {
+      "title": "OpenDesign \u2014 Best Open Source Claude Design Alternative",
+      "url": "https://open-design.ai",
+      "reason": "vibe design workspace tool"
+    },
+    {
+      "title": "designmd.supply",
+      "url": "https://designmd.supply",
+      "reason": "DESIGN.md generator"
+    },
+    {
+      "title": "design-md.hyperbrowser.ai",
+      "url": "https://design-md.hyperbrowser.ai",
+      "reason": "DESIGN.md generator"
+    },
+    {
+      "title": "sokosumi.com",
+      "url": "https://sokosumi.com/tools/design-md",
+      "reason": "DESIGN.md generator"
+    },
+    {
+      "title": "designmd.ai",
+      "url": "https://designmd.ai",
+      "reason": "DESIGN.md generator"
+    },
+    {
+      "title": "weekend.company",
+      "url": "https://weekend.company/get-design-md",
+      "reason": "DESIGN.md generator"
+    },
+    {
+      "title": "getmd.design",
+      "url": "https://getmd.design",
+      "reason": "DESIGN.md generator"
+    },
+    {
+      "title": "getdesign.md",
+      "url": "https://getdesign.md",
+      "reason": "DESIGN.md generator"
+    },
+    {
+      "title": "GitHub - heygen-com/hyperframes: Write HTML. Render video. Built for agents.",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "reason": "HTML\u2192video tool, not UI design resource"
+    },
+    {
+      "title": "github.com",
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "reason": "AI image node UI, out of lane"
+    },
+    {
+      "title": "github.com",
+      "url": "https://github.com/fluxerapp/fluxer",
+      "reason": "unclear non-UI github project"
+    },
+    {
+      "title": "quillbot.com",
+      "url": "https://quillbot.com",
+      "reason": "writing tool, not UI"
+    },
+    {
+      "title": "privacyguides.org",
+      "url": "https://privacyguides.org",
+      "reason": "privacy guides, not UI"
+    },
+    {
+      "title": "Impeccable",
+      "url": "https://impeccable.style",
+      "reason": "AI agent design vocabulary tool"
+    }
+  ],
+  "items": [
+    {
+      "id": "navbar-gallery",
+      "name": "Navbar Gallery",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Navigation",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "navbar.gallery",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://navbar.gallery",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Manixh02",
+      "why": "Curated navbar / navigation design inspiration",
+      "addedOrder": 1
+    },
+    {
+      "id": "supahero",
+      "name": "Supahero",
+      "category": "Inspiration",
+      "subcategory": "Landing pages",
+      "tags": [
+        "Hero",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Supahero",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://supahero.io",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Manixh02",
+      "why": "Handpicked website hero section library",
+      "addedOrder": 2
+    },
+    {
+      "id": "cta-gallery",
+      "name": "CTA Gallery",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "CTA",
+        "Buttons",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "cta.gallery",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://cta.gallery",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Manixh02 / Red",
+      "why": "Curated CTA / button design inspiration",
+      "addedOrder": 3
+    },
+    {
+      "id": "footer-design",
+      "name": "Footer Design",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Footer",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "footer.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://footer.design",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Manixh02",
+      "why": "Curated website footer gallery",
+      "addedOrder": 4
+    },
+    {
+      "id": "404s",
+      "name": "404s",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "404",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "404s.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://404s.design",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Manixh02",
+      "why": "Curated creative 404 / error page designs",
+      "addedOrder": 5
+    },
+    {
+      "id": "interface-craft",
+      "name": "Interface Craft",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Craft",
+        "Interface"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Interface Craft",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://interfacecraft.dev",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "ImranUxi",
+      "why": "Working library for designing with uncommon care",
+      "addedOrder": 6
+    },
+    {
+      "id": "userinterface-wiki",
+      "name": "userinterface.wiki",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Patterns",
+        "Motion",
+        "Typography"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "userinterface.wiki",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://userinterface.wiki",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "ImranUxi",
+      "why": "Living manual: UI patterns, motion, typography",
+      "addedOrder": 7
+    },
+    {
+      "id": "devouring-details",
+      "name": "Devouring Details",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Details",
+        "Craft"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Devouring Details",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://devouringdetails.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "ImranUxi",
+      "why": "Interface details most people miss",
+      "addedOrder": 8
+    },
+    {
+      "id": "motion-primitives",
+      "name": "Motion-Primitives",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "React",
+        "Motion",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "ibelick",
+      "formats": [
+        "React"
+      ],
+      "url": "https://motion-primitives.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Csaba / Red",
+      "why": "Open-source animated UI kit (React/Next/Tailwind)",
+      "addedOrder": 9
+    },
+    {
+      "id": "aceternity",
+      "name": "Aceternity UI",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "React",
+        "Tailwind",
+        "Templates"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Aceternity",
+      "formats": [
+        "React"
+      ],
+      "url": "https://ui.aceternity.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "askwhykartik",
+      "why": "React/Tailwind animated components, blocks, templates",
+      "addedOrder": 10
+    },
+    {
+      "id": "magic-ui",
+      "name": "Magic UI",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "React",
+        "Motion",
+        "Landing"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Magic UI",
+      "formats": [
+        "React"
+      ],
+      "url": "https://magicui.design",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "askwhykartik",
+      "why": "Motion-first UI components & landing templates",
+      "addedOrder": 11
+    },
+    {
+      "id": "hover-dev",
+      "name": "Hover.dev",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "React",
+        "Interactions"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Hover",
+      "formats": [
+        "React"
+      ],
+      "url": "https://hover.dev",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "askwhykartik",
+      "why": "Animated UI components & interaction templates",
+      "addedOrder": 12
+    },
+    {
+      "id": "60fps",
+      "name": "60fps",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Animation",
+        "Micro-interactions"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "60fps",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://60fps.design",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "UiSavior",
+      "why": "UI/UX animation & interaction details from top apps",
+      "addedOrder": 13
+    },
+    {
+      "id": "if-design-patterns",
+      "name": "IF Design Patterns",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Patterns",
+        "Responsible AI"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Projects by IF",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://catalogue.projectsbyif.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "UiSavior",
+      "why": "Trustworthy service / responsible AI design patterns",
+      "addedOrder": 14
+    },
+    {
+      "id": "abtest-design",
+      "name": "abtest.design",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "A/B tests",
+        "UX research"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "abtest.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://abtest.design",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "UiSavior",
+      "why": "Curated A/B test results from best-in-class apps",
+      "addedOrder": 15
+    },
+    {
+      "id": "design-spells",
+      "name": "Design Spells",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Micro-interactions",
+        "Delight"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Design Spells",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://designspells.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "UiSavior",
+      "why": "Micro-interactions, easter eggs, delightful web details",
+      "addedOrder": 16
+    },
+    {
+      "id": "uxsnaps",
+      "name": "UXSnaps",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "UI breakdowns",
+        "Apps"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "UXSnaps",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://uxsnaps.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "UiSavior",
+      "why": "UI/UX breakdowns from top apps",
+      "addedOrder": 17
+    },
+    {
+      "id": "ui-playbook",
+      "name": "UI Playbook",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "UI components",
+        "Reference"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "UI Playbook",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://uiplaybook.dev",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "UiSavior",
+      "why": "Documented collection of UI components",
+      "addedOrder": 18
+    },
+    {
+      "id": "wandpress",
+      "name": "WandPress",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "shadcn",
+        "Admin",
+        "WordPress-style"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "jonbuster",
+      "formats": [
+        "React"
+      ],
+      "url": "https://wandpress.netlify.app",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "chadcombinator",
+      "why": "React/shadcn-style WordPress-admin component library",
+      "addedOrder": 19
+    },
+    {
+      "id": "ripplix",
+      "name": "Ripplix",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Animation",
+        "Micro-interactions"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Ripplix",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://ripplix.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "ripplix_",
+      "why": "Curated UI animation / micro-interaction library",
+      "addedOrder": 20
+    },
+    {
+      "id": "spectrum-ui",
+      "name": "Spectrum UI",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "React",
+        "shadcn",
+        "Motion"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Spectrum UI",
+      "formats": [
+        "React"
+      ],
+      "url": "https://ui.spectrumhq.in",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "pengsonal",
+      "why": "Open-source, animation-ready React components and blocks built with Next.js, Tailwind CSS, Motion, TypeScript, and shadcn/ui for SaaS and\u2026",
+      "addedOrder": 21
+    },
+    {
+      "id": "21st-dev",
+      "name": "21st.dev",
+      "category": "Marketplace",
+      "subcategory": "UI kits",
+      "tags": [
+        "React",
+        "Tailwind",
+        "shadcn",
+        "Components"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "21st",
+      "formats": [
+        "React"
+      ],
+      "url": "https://21st.dev",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "pengsonal",
+      "why": "12,000+ hand-crafted React and Tailwind CSS components, templates, and shadcn themes by real design engineers. Preview live, install with\u2026",
+      "addedOrder": 22
+    },
+    {
+      "id": "shadcnblocks",
+      "name": "Shadcnblocks",
+      "category": "Marketplace",
+      "subcategory": "UI kits",
+      "tags": [
+        "shadcn",
+        "Blocks",
+        "Premium"
+      ],
+      "access": [
+        "Paid"
+      ],
+      "creator": "Shadcnblocks",
+      "formats": [
+        "React"
+      ],
+      "url": "https://shadcnblocks.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "pengsonal",
+      "why": "Discover hundreds of extra shadcn/ui blocks and Shadcn UI components. Shadcnblocks is a premium component library built with Shadcn UI, R\u2026",
+      "addedOrder": 23
+    },
+    {
+      "id": "8bitcn",
+      "name": "8bitcn/ui",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "shadcn",
+        "Retro",
+        "8-bit"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "8bitcn",
+      "formats": [
+        "React"
+      ],
+      "url": "https://8bitcn.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "pengsonal",
+      "why": "A retro UI library of 8-bit styled shadcn/ui components, blocks, and game-ready interfaces for modern React apps.",
+      "addedOrder": 24
+    },
+    {
+      "id": "evilcharts",
+      "name": "EvilCharts",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "Charts",
+        "React"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "EvilCharts",
+      "formats": [
+        "React"
+      ],
+      "url": "https://evilcharts.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "pengsonal",
+      "why": "UI/design resource from @pengsonal list post",
+      "addedOrder": 25
+    },
+    {
+      "id": "coss-ui",
+      "name": "coss UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "coss",
+      "formats": [
+        "React"
+      ],
+      "url": "https://coss.com/ui",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "pengsonal",
+      "why": "UI/design resource from @pengsonal list post",
+      "addedOrder": 26
+    },
+    {
+      "id": "rareui",
+      "name": "Rare UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Rare UI",
+      "formats": [
+        "React"
+      ],
+      "url": "https://rareui.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "pengsonal",
+      "why": "UI/design resource from @pengsonal list post",
+      "addedOrder": 27
+    },
+    {
+      "id": "beui",
+      "name": "beui",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React",
+        "UI"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "beui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://beui.dev",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "pengsonal",
+      "why": "UI/design resource from @pengsonal list post",
+      "addedOrder": 28
+    },
+    {
+      "id": "easyui",
+      "name": "Easy UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Easy UI",
+      "formats": [
+        "React"
+      ],
+      "url": "https://easyui.site",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "pengsonal",
+      "why": "UI/design resource from @pengsonal list post",
+      "addedOrder": 29
+    },
+    {
+      "id": "reui",
+      "name": "ReUI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "ReUI",
+      "formats": [
+        "React"
+      ],
+      "url": "https://reui.io",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "pengsonal",
+      "why": "UI/design resource from @pengsonal list post",
+      "addedOrder": 30
+    },
+    {
+      "id": "coolors",
+      "name": "Coolors",
+      "category": "Backgrounds",
+      "subcategory": "Gradients",
+      "tags": [
+        "Colors",
+        "Palettes"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Coolors",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://coolors.co",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "RobinFiCoin",
+      "why": "UI/design resource from @RobinFiCoin list post",
+      "addedOrder": 31
+    },
+    {
+      "id": "fontjoy",
+      "name": "Fontjoy",
+      "category": "Fonts",
+      "subcategory": "Sans serif",
+      "tags": [
+        "Pairing",
+        "AI"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Fontjoy",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://fontjoy.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "RobinFiCoin",
+      "why": "UI/design resource from @RobinFiCoin list post",
+      "addedOrder": 32
+    },
+    {
+      "id": "whatthefont",
+      "name": "WhatTheFont",
+      "category": "Fonts",
+      "subcategory": "Display",
+      "tags": [
+        "Identification",
+        "Tool"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "MyFonts",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://myfonts.com/WhatTheFont",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "RobinFiCoin",
+      "why": "UI/design resource from @RobinFiCoin list post",
+      "addedOrder": 33
+    },
+    {
+      "id": "favicon-io",
+      "name": "favicon.io",
+      "category": "Icons",
+      "subcategory": "Outline",
+      "tags": [
+        "Favicon",
+        "Generator"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "favicon.io",
+      "formats": [
+        "SVG",
+        "PNG"
+      ],
+      "url": "https://favicon.io",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "RobinFiCoin",
+      "why": "UI/design resource from @RobinFiCoin list post",
+      "addedOrder": 34
+    },
+    {
+      "id": "undraw",
+      "name": "unDraw",
+      "category": "Illustrations",
+      "subcategory": "Vector",
+      "tags": [
+        "SVG",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "unDraw",
+      "formats": [
+        "SVG"
+      ],
+      "url": "https://undraw.co",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "RobinFiCoin",
+      "why": "UI/design resource from @RobinFiCoin list post",
+      "addedOrder": 35
+    },
+    {
+      "id": "made-design",
+      "name": "made.design",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Design"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "made.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://made.design",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "soltwagner",
+      "why": "UI/design resource from @soltwagner list post",
+      "addedOrder": 36
+    },
+    {
+      "id": "kibo-ui",
+      "name": "Kibo UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "shadcn",
+        "Accessible",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Kibo UI",
+      "formats": [
+        "React"
+      ],
+      "url": "https://kibo-ui.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "DevItaliya22",
+      "why": "Kibo UI is a custom registry of composable, accessible and open source components designed for use with shadcn/ui.",
+      "addedOrder": 37
+    },
+    {
+      "id": "tailark",
+      "name": "Tailark",
+      "category": "Templates",
+      "subcategory": "Coded",
+      "tags": [
+        "shadcn",
+        "Marketing",
+        "Blocks"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Tailark",
+      "formats": [
+        "React"
+      ],
+      "url": "https://tailark.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "DevItaliya22",
+      "why": "Tailark is a Shadcn UI registry of marketing blocks, pages, and illustrations for building beautiful marketing websites.",
+      "addedOrder": 38
+    },
+    {
+      "id": "dice-ui",
+      "name": "Dice UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "shadcn",
+        "Accessible",
+        "Tailwind"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Dice UI",
+      "formats": [
+        "React"
+      ],
+      "url": "https://diceui.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "DevItaliya22",
+      "why": "Accessible shadcn/ui components built with React, TypeScript, and Tailwind CSS. Copy-paste ready, and customizable.",
+      "addedOrder": 39
+    },
+    {
+      "id": "badtz-ui",
+      "name": "BadtzUI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React",
+        "Animations",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "BadtzUI",
+      "formats": [
+        "React"
+      ],
+      "url": "https://badtz-ui.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "DevItaliya22",
+      "why": "An open-source React UI library with production-ready animations. Weekly updates. Built with React, Tailwind, TypeScript & JavaScript.",
+      "addedOrder": 40
+    },
+    {
+      "id": "bento-grids",
+      "name": "Bento Grids",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Bento",
+        "Layouts"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Bento Grids",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://bentogrids.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "konig0000",
+      "why": "UI/design resource from @konig0000 list post",
+      "addedOrder": 41
+    },
+    {
+      "id": "rebrand-gallery",
+      "name": "rebrand.gallery",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Rebrand",
+        "Brand"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "rebrand.gallery",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://rebrand.gallery",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "konig0000",
+      "why": "UI/design resource from @konig0000 list post",
+      "addedOrder": 42
+    },
+    {
+      "id": "gridddy",
+      "name": "Gridddy",
+      "category": "Templates",
+      "subcategory": "Framer",
+      "tags": [
+        "Grids",
+        "Framer"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Gridddy",
+      "formats": [
+        "Framer"
+      ],
+      "url": "https://gridddy.framer.website",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "konig0000",
+      "why": "UI/design resource from @konig0000 list post",
+      "addedOrder": 43
+    },
+    {
+      "id": "landing-love",
+      "name": "landing.love",
+      "category": "Inspiration",
+      "subcategory": "Landing pages",
+      "tags": [
+        "Landing pages"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "landing.love",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://landing.love",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "konig0000",
+      "why": "UI/design resource from @konig0000 list post",
+      "addedOrder": 44
+    },
+    {
+      "id": "refero-styles",
+      "name": "Refero Styles",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Styles",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Refero",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://styles.refero.design",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "konig0000",
+      "why": "UI/design resource from @konig0000 list post",
+      "addedOrder": 45
+    },
+    {
+      "id": "recent-design",
+      "name": "recent.design",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Recent",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "recent.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://recent.design",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "konig0000",
+      "why": "UI/design resource from @konig0000 list post",
+      "addedOrder": 46
+    },
+    {
+      "id": "curated-design",
+      "name": "curated.design",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Curated",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "curated.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://curated.design",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "konig0000",
+      "why": "UI/design resource from @konig0000 list post",
+      "addedOrder": 47
+    },
+    {
+      "id": "vantaui",
+      "name": "Vanta UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Vanta UI",
+      "formats": [
+        "React"
+      ],
+      "url": "https://vantaui.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "konig0000",
+      "why": "UI/design resource from @konig0000 list post",
+      "addedOrder": 48
+    },
+    {
+      "id": "design-on-x",
+      "name": "Design On X",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "X",
+        "Gallery",
+        "Motion"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Northlight",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://design-on-x.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "letcontactabhi",
+      "why": "A multilingual design inspiration gallery collecting standout interface, brand, motion, and product work from creators on X.",
+      "addedOrder": 49
+    },
+    {
+      "id": "internet-designs",
+      "name": "Internet Designs",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Web design",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Internet Designs",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://internetdesigns.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "letcontactabhi",
+      "why": "UI/design resource from @letcontactabhi list post",
+      "addedOrder": 50
+    },
+    {
+      "id": "collect-ui",
+      "name": "CollectUI",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "UI",
+        "Daily"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "CollectUI",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://collectui.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "letcontactabhi",
+      "why": "Discover amazing UI designs, portfolios, and inspiration curated by design magicians",
+      "addedOrder": 51
+    },
+    {
+      "id": "page-flows",
+      "name": "Page Flows",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "User flows",
+        "Apps"
+      ],
+      "access": [
+        "Paid"
+      ],
+      "creator": "Page Flows",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://pageflows.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "letcontactabhi",
+      "why": "Explore 100,000+ recorded user flows, app screens, and UI patterns from Airbnb, Uber, Netflix & more. Save hours on UX research with Page\u2026",
+      "addedOrder": 52
+    },
+    {
+      "id": "refero",
+      "name": "Refero",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "UI",
+        "iOS",
+        "Web"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Refero",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://refero.design",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "letcontactabhi",
+      "why": "The largest collection of UI/UX references and design inspiration for web and iOS. Explore tens of thousands of screenshots with advanced\u2026",
+      "addedOrder": 53
+    },
+    {
+      "id": "mobbin",
+      "name": "Mobbin",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Mobile",
+        "Web",
+        "Screens"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Mobbin",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://mobbin.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "letcontactabhi",
+      "why": "Save hours of UI & UX research with our library of 400,000+ fully searchable mobile & web app screenshots.",
+      "addedOrder": 54
+    },
+    {
+      "id": "screenlane",
+      "name": "Screenlane",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Screens",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Screenlane",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://screenlane.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "letcontactabhi",
+      "why": "UI/design resource from @letcontactabhi list post",
+      "addedOrder": 55
+    },
+    {
+      "id": "aura-build",
+      "name": "Aura",
+      "category": "Templates",
+      "subcategory": "Coded",
+      "tags": [
+        "AI",
+        "Builder"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Aura",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://aura.build",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "ah4alt",
+      "why": "UI/design resource from @ah4alt list post",
+      "addedOrder": 56
+    },
+    {
+      "id": "neuform",
+      "name": "Neuform",
+      "category": "Templates",
+      "subcategory": "Coded",
+      "tags": [
+        "AI",
+        "Design"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Neuform",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://neuform.ai",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "ah4alt",
+      "why": "UI/design resource from @ah4alt list post",
+      "addedOrder": 57
+    },
+    {
+      "id": "microinteractions-ui",
+      "name": "MicroInteractions UI",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "React",
+        "Framer Motion",
+        "Shadcn"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "MicroInteractions UI",
+      "formats": [
+        "React"
+      ],
+      "url": "https://microinteractionsui.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "daveomeizaozi",
+      "why": "A collection of ready-to-use animated UI components built with React, Tailwind CSS, Shadcn, and Framer Motion.",
+      "addedOrder": 58
+    },
+    {
+      "id": "annnimate",
+      "name": "Annnimate",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "Animation"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Annnimate",
+      "formats": [
+        "React"
+      ],
+      "url": "https://annnimate.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "daveomeizaozi",
+      "why": "UI/design resource from @daveomeizaozi list post",
+      "addedOrder": 59
+    },
+    {
+      "id": "saasframe",
+      "name": "SaaSFrame",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "SaaS",
+        "UX"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "SaaSFrame",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://saasframe.io",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Mohd__Shahid_07",
+      "why": "Create websites, product interfaces and email sequences for your SaaS faster than ever with our library of 5,000+ real-world UX & UI desi\u2026",
+      "addedOrder": 60
+    },
+    {
+      "id": "godly",
+      "name": "Godly",
+      "category": "Inspiration",
+      "subcategory": "Landing pages",
+      "tags": [
+        "Websites",
+        "Awwwards-style"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Godly",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://godly.website",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Mohd__Shahid_07",
+      "why": "UI/design resource from @Mohd__Shahid_07 list post",
+      "addedOrder": 61
+    },
+    {
+      "id": "css-design-awards",
+      "name": "CSS Design Awards",
+      "category": "Inspiration",
+      "subcategory": "Landing pages",
+      "tags": [
+        "Awards",
+        "CSS"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "CSS Design Awards",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://cssdesignawards.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Mohd__Shahid_07",
+      "why": "UI/design resource from @Mohd__Shahid_07 list post",
+      "addedOrder": 62
+    },
+    {
+      "id": "minimal-gallery",
+      "name": "Minimal Gallery",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Minimal",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Minimal Gallery",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://minimal.gallery",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Mohd__Shahid_07",
+      "why": "UI/design resource from @Mohd__Shahid_07 list post",
+      "addedOrder": 63
+    },
+    {
+      "id": "hoverstates",
+      "name": "Hover States",
+      "category": "Inspiration",
+      "subcategory": "Landing pages",
+      "tags": [
+        "Websites",
+        "Archive"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Hover States",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://hoverstat.es",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Mohd__Shahid_07",
+      "why": "UI/design resource from @Mohd__Shahid_07 list post",
+      "addedOrder": 64
+    },
+    {
+      "id": "ui-movement",
+      "name": "UI Movement",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Animation",
+        "UI"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "UI Movement",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://uimovement.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Mohd__Shahid_07",
+      "why": "UI/design resource from @Mohd__Shahid_07 list post",
+      "addedOrder": 65
+    },
+    {
+      "id": "fonts-in-use",
+      "name": "Fonts In Use",
+      "category": "Fonts",
+      "subcategory": "Display",
+      "tags": [
+        "In use",
+        "Inspiration"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Fonts In Use",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://fontsinuse.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Mohd__Shahid_07",
+      "why": "UI/design resource from @Mohd__Shahid_07 list post",
+      "addedOrder": 66
+    },
+    {
+      "id": "unsection",
+      "name": "Unsection",
+      "category": "Inspiration",
+      "subcategory": "Landing pages",
+      "tags": [
+        "Sections",
+        "Hero",
+        "CTA"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Unsection",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://unsection.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "ahmad_Uxflow",
+      "why": "Browse 4,000+ curated website sections from top brands. Filter by hero, feature, pricing, testimonial designs. New sections added weekly.\u2026",
+      "addedOrder": 67
+    },
+    {
+      "id": "mesh3d-gallery",
+      "name": "mesh3d.gallery",
+      "category": "Backgrounds",
+      "subcategory": "Shaders",
+      "tags": [
+        "3D",
+        "Mesh",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "mesh3d.gallery",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://mesh3d.gallery",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "pengsonal",
+      "why": "UI/design resource from @pengsonal list post",
+      "addedOrder": 68
+    },
+    {
+      "id": "animata",
+      "name": "Animata",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "React",
+        "Animations",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Animata",
+      "formats": [
+        "React"
+      ],
+      "url": "https://animata.design",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "DevItaliya22",
+      "why": "Ship stunning UI faster with Ship stunning UI faster with ready-made React components.. Browse hundreds of copy-paste React animations bu\u2026",
+      "addedOrder": 69
+    },
+    {
+      "id": "fancy-components",
+      "name": "Fancy Components",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "React",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Fancy Components",
+      "formats": [
+        "React"
+      ],
+      "url": "https://fancycomponents.dev",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "DevItaliya22",
+      "why": "Ready to use, fancy React components to make the web fun again. Free & Open Source.",
+      "addedOrder": 70
+    },
+    {
+      "id": "shader-gradient",
+      "name": "Shader Gradient",
+      "category": "Backgrounds",
+      "subcategory": "Gradients",
+      "tags": [
+        "Shaders",
+        "Gradients",
+        "Framer",
+        "Figma",
+        "React"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Shader Gradient",
+      "formats": [
+        "React",
+        "Figma",
+        "Framer"
+      ],
+      "url": "https://shadergradient.co",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "DevItaliya22",
+      "why": "Create beautiful moving gradients on Framer, Figma and React",
+      "addedOrder": 71
+    },
+    {
+      "id": "webinspoo",
+      "name": "WebInspoo",
+      "category": "Inspiration",
+      "subcategory": "Landing pages",
+      "tags": [
+        "SaaS",
+        "Landing pages"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "WebInspoo",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://webinspoo.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "taher_max_",
+      "why": "Browse 1,200+ curated SaaS websites and filter by category, font, color palette, tech stack, and page type. Updated daily.",
+      "addedOrder": 72
+    },
+    {
+      "id": "logoinspo",
+      "name": "Logoinspo",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Logos",
+        "Brand"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Logoinspo",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://logoinspo.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "taher_max_",
+      "why": "Explore 1,200+ hand-picked real and fictional logos searchable by style, industry, and color \u2014 each credited to its designer.",
+      "addedOrder": 73
+    },
+    {
+      "id": "asoinspo",
+      "name": "Asoinspo",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "ASO",
+        "App Store",
+        "Screenshots"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Asoinspo",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://asoinspo.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "taher_max_",
+      "why": "Discover the latest iOS App Store screenshot examples, onboarding ideas, and paywall inspiration.",
+      "addedOrder": 74
+    },
+    {
+      "id": "uiinspoo",
+      "name": "Uiinspoo",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "UI",
+        "Daily"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Uiinspoo",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://uiinspoo.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "taher_max_",
+      "why": "Discover daily UI design inspiration from the world's best product designers. Browse mobile apps, dashboards, landing pages, and motion U\u2026",
+      "addedOrder": 75
+    },
+    {
+      "id": "design-engineer-tools",
+      "name": "Design Engineer Tools",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Tools",
+        "Design engineering"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "James Warner",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://designengineer.tools",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "mredu000",
+      "why": "A list of useful tools for web-focused design engineers; curated by James Warner.",
+      "addedOrder": 76
+    },
+    {
+      "id": "indie-app-tools",
+      "name": "Indie App Tools",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Tools",
+        "Indie"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Indie App Tools",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://indieapp.tools",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "mredu000",
+      "why": "A curated directory of tools for indie app developers - design, marketing, analytics, AI coding, subscriptions, and more.",
+      "addedOrder": 77
+    },
+    {
+      "id": "typeui",
+      "name": "TypeUI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Typography",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "TypeUI",
+      "formats": [
+        "React"
+      ],
+      "url": "https://typeui.sh",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "ImranUxi",
+      "why": "UI/design resource from @ImranUxi list post",
+      "addedOrder": 78
+    },
+    {
+      "id": "htmlrev-ui-libraries",
+      "name": "HTMLrev UI Libraries",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "UI libraries",
+        "Directory"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "HTMLrev",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://htmlrev.com/ui-libraries.html",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "webdevluc",
+      "why": "Free UI component libraries for websites and web apps",
+      "addedOrder": 79
+    },
+    {
+      "id": "kombai-gallery",
+      "name": "Kombai Gallery",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Web UI",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Kombai",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://kombai.com/gallery/web",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Milo_Milady",
+      "why": "Explore an ever-growing library of web and mobile UI designs. Pick one to remix with Kombai, or take it to your coding agent.",
+      "addedOrder": 80
+    },
+    {
+      "id": "saaspo",
+      "name": "Saaspo",
+      "category": "Inspiration",
+      "subcategory": "Landing pages",
+      "tags": [
+        "SaaS",
+        "Websites"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Saaspo",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://saaspo.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Milo_Milady",
+      "why": "A curated collection of the best SaaS websites on the web.",
+      "addedOrder": 81
+    },
+    {
+      "id": "inspora",
+      "name": "Inspora",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Inspiration"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Inspora",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://inspora.design",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "Milo_Milady",
+      "why": "UI/design resource from @Milo_Milady list post",
+      "addedOrder": 82
+    },
+    {
+      "id": "uiux-showcase",
+      "name": "UIUX Showcase",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "UI",
+        "UX"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "UIUX Showcase",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://uiuxshowcase.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "Milo_Milady",
+      "why": "UI/design resource from @Milo_Milady list post",
+      "addedOrder": 83
+    },
+    {
+      "id": "uiverse",
+      "name": "UIverse",
+      "category": "UI libraries",
+      "subcategory": "CSS",
+      "tags": [
+        "CSS",
+        "HTML",
+        "Community"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "UIverse",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://uiverse.io",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Milo_Milady",
+      "why": "UI/design resource from @Milo_Milady list post",
+      "addedOrder": 84
+    },
+    {
+      "id": "best-designs-on-x",
+      "name": "Best Designs on X",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "X",
+        "Design"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Best Designs on X",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://bestdesignsonx.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "Milo_Milady",
+      "why": "UI/design resource from @Milo_Milady list post",
+      "addedOrder": 85
+    },
+    {
+      "id": "appllama",
+      "name": "Appllama",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "iOS",
+        "Apps",
+        "Paywalls"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Appllama",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://appllama.io",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "theansarh",
+      "why": "Find what to build and study why it wins \u2014 the onboarding, paywalls and live videos behind the App Store\u2019s top-earning iOS apps.",
+      "addedOrder": 86
+    },
+    {
+      "id": "shaders",
+      "name": "Shaders",
+      "category": "Backgrounds",
+      "subcategory": "Shaders",
+      "tags": [
+        "WebGPU",
+        "React",
+        "Vue"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Shaders",
+      "formats": [
+        "React"
+      ],
+      "url": "https://shaders.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "theansarh",
+      "why": "Component library for creative WebGPU effects in modern frontend frameworks. Compose interactive visuals for Vue, React, Svelte, Solid & JS.",
+      "addedOrder": 87
+    },
+    {
+      "id": "paper-design",
+      "name": "Paper",
+      "category": "Templates",
+      "subcategory": "Coded",
+      "tags": [
+        "Design tool",
+        "Vector"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Paper",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://paper.design",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "theansarh",
+      "why": "UI/design resource from @theansarh list post",
+      "addedOrder": 88
+    },
+    {
+      "id": "onlook",
+      "name": "Onlook",
+      "category": "Templates",
+      "subcategory": "Coded",
+      "tags": [
+        "Visual editor",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Onlook",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://onlook.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "theansarh",
+      "why": "UI/design resource from @theansarh list post",
+      "addedOrder": 89
+    },
+    {
+      "id": "godly-design",
+      "name": "Godly Design",
+      "category": "Inspiration",
+      "subcategory": "Landing pages",
+      "tags": [
+        "Websites"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Godly",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://godly.design",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "walebuilds_",
+      "why": "UI/design resource from @walebuilds_ list post",
+      "addedOrder": 90
+    },
+    {
+      "id": "ogimage-gallery",
+      "name": "ogimage.gallery",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "OG images",
+        "Social"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "ogimage.gallery",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://ogimage.gallery",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "walebuilds_",
+      "why": "UI/design resource from @walebuilds_ list post",
+      "addedOrder": 91
+    },
+    {
+      "id": "fontshare",
+      "name": "Fontshare",
+      "category": "Fonts",
+      "subcategory": "Sans serif",
+      "tags": [
+        "Free fonts"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Indian Type Foundry",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://fontshare.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "walebuilds_",
+      "why": "UI/design resource from @walebuilds_ list post",
+      "addedOrder": 92
+    },
+    {
+      "id": "component-gallery",
+      "name": "component.gallery",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Components",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "component.gallery",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://component.gallery",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "walebuilds_",
+      "why": "UI/design resource from @walebuilds_ list post",
+      "addedOrder": 93
+    },
+    {
+      "id": "design-systems-repo",
+      "name": "Design Systems Repo",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Design systems"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Design Systems Repo",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://designsystemsrepo.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "walebuilds_",
+      "why": "UI/design resource from @walebuilds_ list post",
+      "addedOrder": 94
+    },
+    {
+      "id": "apple-hig",
+      "name": "Apple HIG",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "HIG",
+        "Apple",
+        "Guidelines"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Apple",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://developer.apple.com/design/human-interface-guidelines",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "walebuilds_",
+      "why": "UI/design resource from @walebuilds_ list post",
+      "addedOrder": 95
+    },
+    {
+      "id": "dark-design",
+      "name": "dark.design",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Dark mode"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "dark.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://dark.design",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "walebuilds_",
+      "why": "UI/design resource from @walebuilds_ list post",
+      "addedOrder": 96
+    },
+    {
+      "id": "fontpair",
+      "name": "Font Pair",
+      "category": "Fonts",
+      "subcategory": "Sans serif",
+      "tags": [
+        "Pairing",
+        "Google Fonts"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Font Pair",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://fontpair.co",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "mr_nirajkumar07",
+      "why": "UI/design resource from @mr_nirajkumar07 list post",
+      "addedOrder": 97
+    },
+    {
+      "id": "dafont",
+      "name": "DaFont",
+      "category": "Fonts",
+      "subcategory": "Display",
+      "tags": [
+        "Free fonts",
+        "Display"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "DaFont",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://dafont.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "mr_nirajkumar07",
+      "why": "UI/design resource from @mr_nirajkumar07 list post",
+      "addedOrder": 98
+    },
+    {
+      "id": "flaticon",
+      "name": "Flaticon",
+      "category": "Icons",
+      "subcategory": "Solid",
+      "tags": [
+        "Icons",
+        "SVG"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Flaticon",
+      "formats": [
+        "SVG",
+        "PNG"
+      ],
+      "url": "https://flaticon.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "mr_nirajkumar07",
+      "why": "UI/design resource from @mr_nirajkumar07 list post",
+      "addedOrder": 99
+    },
+    {
+      "id": "freepik",
+      "name": "Freepik",
+      "category": "Marketplace",
+      "subcategory": "Design assets",
+      "tags": [
+        "Assets",
+        "Illustrations",
+        "Templates"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Freepik",
+      "formats": [
+        "SVG",
+        "PNG",
+        "Figma"
+      ],
+      "url": "https://freepik.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "mr_nirajkumar07",
+      "why": "UI/design resource from @mr_nirajkumar07 list post",
+      "addedOrder": 100
+    },
+    {
+      "id": "icons8",
+      "name": "Icons8",
+      "category": "Icons",
+      "subcategory": "Outline",
+      "tags": [
+        "Icons",
+        "Illustrations"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Icons8",
+      "formats": [
+        "SVG",
+        "PNG"
+      ],
+      "url": "https://icons8.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "mr_nirajkumar07",
+      "why": "UI/design resource from @mr_nirajkumar07 list post",
+      "addedOrder": 101
+    },
+    {
+      "id": "oil-motion",
+      "name": "github.com",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "Motion",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "oil-oil",
+      "formats": [
+        "React"
+      ],
+      "url": "https://github.com/oil-oil/oil-motion",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "calbuldelis69",
+      "why": "UI/design resource from @calbuldelis69 list post",
+      "addedOrder": 102
+    },
+    {
+      "id": "animmasterlib",
+      "name": "AnimMasterLib",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "Animation",
+        "Library"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "AnimMasterLib",
+      "formats": [
+        "React"
+      ],
+      "url": "https://animmasterlib.dev",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "calbuldelis69",
+      "why": "UI/design resource from @calbuldelis69 list post",
+      "addedOrder": 103
+    },
+    {
+      "id": "design-bookmark",
+      "name": "Design Bookmark",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Bookmarks",
+        "Tools"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Design Bookmark",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://designbookmark.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "calbuldelis69",
+      "why": "UI/design resource from @calbuldelis69 list post",
+      "addedOrder": 104
+    },
+    {
+      "id": "motion",
+      "name": "Motion",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "React",
+        "JavaScript",
+        "Vue"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Motion",
+      "formats": [
+        "React"
+      ],
+      "url": "https://motion.dev",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "askwhykartik",
+      "why": "Motion (prev Framer Motion) is a fast, production-grade animation library for React, JavaScript and Vue. Build smooth UI animations at a \u2026",
+      "addedOrder": 105
+    },
+    {
+      "id": "animejs",
+      "name": "Anime.js",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "JavaScript",
+        "Animation"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Anime.js",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://animejs.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "askwhykartik",
+      "why": "A fast, multipurpose and lightweight JavaScript animation library",
+      "addedOrder": 106
+    },
+    {
+      "id": "rn-motion",
+      "name": "React Native Motion",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "React Native",
+        "Expo"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "RN Motion",
+      "formats": [
+        "React"
+      ],
+      "url": "https://rnmotion.dev",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "eddieeee0716",
+      "why": "Beautiful animations for React Native and Expo.",
+      "addedOrder": 107
+    },
+    {
+      "id": "reactix",
+      "name": "Reactix",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React Native",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Reactix",
+      "formats": [
+        "React"
+      ],
+      "url": "https://reacticx.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "eddieeee0716",
+      "why": "Awesome React Native UI components free and open source",
+      "addedOrder": 108
+    },
+    {
+      "id": "heroui-native",
+      "name": "HeroUI Native",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React Native",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "HeroUI",
+      "formats": [
+        "React"
+      ],
+      "url": "https://heroui.com/en/docs/native/getting-started",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "eddieeee0716",
+      "why": "Open-source UI component library",
+      "addedOrder": 109
+    },
+    {
+      "id": "native-bloom",
+      "name": "Native Bloom",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React Native",
+        "Catalog"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Native Bloom",
+      "formats": [
+        "React"
+      ],
+      "url": "https://nativebloom.dev",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "eddieeee0716",
+      "why": "React Native UI Catalog",
+      "addedOrder": 110
+    },
+    {
+      "id": "make-it-animated",
+      "name": "Make It Animated",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "React Native",
+        "Animations"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Make It Animated",
+      "formats": [
+        "React"
+      ],
+      "url": "https://makeitanimated.dev",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "eddieeee0716",
+      "why": "React Native Animations",
+      "addedOrder": 111
+    },
+    {
+      "id": "motionary",
+      "name": "Motionary",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "React Native",
+        "Premium"
+      ],
+      "access": [
+        "Paid"
+      ],
+      "creator": "Motionary",
+      "formats": [
+        "React"
+      ],
+      "url": "https://motionary.dev",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "eddieeee0716",
+      "why": "Premium React Native Animations & Interactions",
+      "addedOrder": 112
+    },
+    {
+      "id": "boardui",
+      "name": "BoardUI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Dashboard",
+        "Design system"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "BoardUI",
+      "formats": [
+        "React"
+      ],
+      "url": "https://boardui.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "taher_max_",
+      "why": "React Design System for Dashboards",
+      "addedOrder": 113
+    },
+    {
+      "id": "cosmos",
+      "name": "Cosmos",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Moodboard",
+        "Visual discovery"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Cosmos",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://cosmos.so",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "theframerdude",
+      "why": "AI-powered moodboarding and visual discovery for creatives",
+      "addedOrder": 114
+    },
+    {
+      "id": "maxibestof",
+      "name": "MaxiBestOf",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Websites",
+        "Fonts"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "MaxiBestOf",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://maxibestof.one",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "bertwitt",
+      "why": "Best website design & fonts inspiration feed",
+      "addedOrder": 115
+    }
+  ]
+}
