@@ -27,7 +27,12 @@ describe('httpUrl', () => {
   });
 
   it('rejects other schemes, which is the point of checking at all', () => {
-    for (const bad of ['javascript:alert(1)', 'data:text/html,x', 'file:///etc/passwd', 'ftp://a.dev']) {
+    for (const bad of [
+      'javascript:alert(1)',
+      'data:text/html,x',
+      'file:///etc/passwd',
+      'ftp://a.dev',
+    ]) {
       expect(httpUrl(bad)).toBeNull();
     }
   });
