@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { db, isConfigured } from './_lib/db';
-import { json, methodNotAllowed, requireCurator, text } from './_lib/http';
+import { db, isConfigured } from './_lib/db.js';
+import { json, methodNotAllowed, requireCurator, text } from './_lib/http.js';
 
 /**
  * A visitor reporting a dead or changed link is the cheapest maintenance signal a

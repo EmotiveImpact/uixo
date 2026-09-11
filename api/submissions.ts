@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { db, isConfigured } from './_lib/db';
-import { httpUrl, json, methodNotAllowed, requireCurator, text } from './_lib/http';
+import { db, isConfigured } from './_lib/db.js';
+import { httpUrl, json, methodNotAllowed, requireCurator, text } from './_lib/http.js';
 
 const STATUSES = new Set(['pending', 'approved', 'declined']);
 
