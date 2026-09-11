@@ -46,6 +46,14 @@ request returned `INVALID_HOSTNAME` until the forwarding headers were stripped.
 **Lesson:** testing in one browser is testing in one browser. The whole class of bug was
 invisible in Chrome.
 
+**And a second bug the fix created:** proxying repaired email and password everywhere and
+broke Google entirely. Neon Auth's shared Google app returns users to Neon's own domain, so
+that session cookie is created there — and the proxy forwards only this site's cookies, so
+it can never see it. Before the proxy, Google worked in Chrome and nowhere else; after it,
+nowhere at all. The button was removed rather than left completing a whole OAuth round trip
+and leaving the user signed out. It can return when Neon Auth can be served from our own
+subdomain.
+
 ---
 
 ## The dashboard read from the browser while the API wrote to the database
