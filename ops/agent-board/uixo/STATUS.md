@@ -4,7 +4,7 @@
 |---|---|
 | Site | https://uixo-brown.vercel.app |
 | Repo | https://github.com/EmotiveImpact/uixo |
-| Owner work now | Login + logged-in dashboard |
+| Owner work now | Working the review queue at /review |
 | Scout work now | Retag done; hunt more; PR when batch + assets ready |
 | Deploy rule | PR → preview → Red merges only |
 | Last retag | 2026-09-11 ~02:00 Europe/London |
@@ -37,4 +37,24 @@ Components · UI libraries · Templates · Icons · Backgrounds · Illustrations
 ## Staging paths (X UI Scout box)
 - Raw harvest: `.../ledger/inspiration-list.json`
 - Retagged candidates: `.../ledger/uixo-candidates.json` (+ `.md`)
-- Next: screenshot assets → `public/assets/{id}.png`, then PR to `src/data.ts` (do not push until Red says)
+- Next: screenshot assets → `public/assets/{id}.png`, then PR (do not push until Red says)
+
+## Path correction (2026-09-11 01:25)
+
+Listings are **no longer in `src/data.ts`** — they are in `src/content/resources.json`,
+and `access: [...]` maps to a single `pricing` tier (`Free` / `Freemium` / `Paid`).
+**Scout output needs no change**: the mapping lives in `src/lib/candidates.ts`.
+
+Approved candidates reach the repo via:
+
+```sh
+npm run candidates:apply -- <approved.json> --dry-run
+npm run candidates:apply -- <approved.json> --branch
+```
+
+---
+Signed: Claude
+Id: claude-opus-5 (session uilist-e7)
+Role: Build and maintain the UIXO codebase for Red
+When: 2026-09-11 01:25 Europe/London
+Function: status
