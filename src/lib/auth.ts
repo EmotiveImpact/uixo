@@ -22,6 +22,8 @@ export type AuthProvider = {
   signIn(email: string, password: string): Promise<AuthResult>;
   signUp(email: string, password: string, name: string): Promise<AuthResult>;
   signOut(): Promise<void>;
+  /** A bearer token for UIXO's own API, or null when signed out. */
+  apiToken(): Promise<string | null>;
   readonly isMock: boolean;
 };
 
@@ -106,6 +108,18 @@ export const neonAuth: AuthProvider = {
 
   async signOut() {
     await call('/sign-out', {});
+  },
+
+  /**
+   * A short-lived signed token for calling UIXO's own API.
+   *
+   * The session cookie is scoped to the auth service's domain, so the browser will never
+   * send it to /api. This is the thing that does travel: the API verifies its signature
+   * against the service's published keys.
+   */
+  async apiToken() {
+    const data = await call<{ token?: string }>('/token').catch(() => null);
+    return data?.token ?? null;
   },
 };
 

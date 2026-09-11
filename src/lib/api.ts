@@ -1,15 +1,6 @@
-import { readStored, writeStored, CURATOR_TOKEN_KEY } from './storage';
+import { auth } from './auth';
 
 export type ApiResult<T> = { ok: true; data: T } | { ok: false; error: string; status: number };
-
-/** The curator token lives in sessionStorage, so closing the tab signs you out. */
-export function curatorToken(): string | null {
-  return readStored<string | null>(CURATOR_TOKEN_KEY, null, sessionStorage);
-}
-
-export function setCuratorToken(token: string | null): void {
-  writeStored(CURATOR_TOKEN_KEY, token, sessionStorage);
-}
 
 async function request<T>(
   path: string,
@@ -19,7 +10,9 @@ async function request<T>(
   const headers = new Headers(init.headers);
   if (init.body) headers.set('content-type', 'application/json');
 
-  const token = withToken ? curatorToken() : null;
+  // Fetched per request: these expire in minutes, so caching one would mostly mean
+  // presenting a stale one.
+  const token = withToken ? await auth.apiToken() : null;
   if (token) headers.set('authorization', `Bearer ${token}`);
 
   let response: Response;
