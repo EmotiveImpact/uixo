@@ -1,6 +1,6 @@
 {
   "updated": "2026-09-11",
-  "updated_note": "PRIORITY FIX full-dump harvest: resource-first, note_tweet expanded, ALL list-post destinations as candidates for check-off. +19 new (rescued prior aggressive skips where present).",
+  "updated_note": "PRIORITY FIX full-dump harvest: resource-first, note_tweet expanded, ALL list-post destinations as candidates for check-off. +19 new (rescued prior aggressive skips where present). | thumbs: captured=141 blocked=14",
   "counts_by_category": {
     "Inspiration": 75,
     "Components": 20,
@@ -102,13 +102,20 @@
       "name": "Navbar Gallery",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Navigation", "Gallery"],
-      "access": ["Free"],
+      "tags": [
+        "Navigation",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "navbar.gallery",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://navbar.gallery",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Manixh02",
       "why": "Curated navbar / navigation design inspiration",
       "addedOrder": 1
@@ -118,13 +125,20 @@
       "name": "Supahero",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": ["Hero", "Gallery"],
-      "access": ["Free"],
+      "tags": [
+        "Hero",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Supahero",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://supahero.io",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Manixh02",
       "why": "Handpicked website hero section library",
       "addedOrder": 2
@@ -134,13 +148,21 @@
       "name": "CTA Gallery",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["CTA", "Buttons", "Gallery"],
-      "access": ["Free"],
+      "tags": [
+        "CTA",
+        "Buttons",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "cta.gallery",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://cta.gallery",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Manixh02 / Red",
       "why": "Curated CTA / button design inspiration",
       "addedOrder": 3
@@ -150,13 +172,20 @@
       "name": "Footer Design",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Footer", "Gallery"],
-      "access": ["Free"],
+      "tags": [
+        "Footer",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "footer.design",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://footer.design",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Manixh02",
       "why": "Curated website footer gallery",
       "addedOrder": 4
@@ -166,13 +195,20 @@
       "name": "404s",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["404", "Gallery"],
-      "access": ["Free"],
+      "tags": [
+        "404",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "404s.design",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://404s.design",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Manixh02",
       "why": "Curated creative 404 / error page designs",
       "addedOrder": 5
@@ -182,13 +218,20 @@
       "name": "Interface Craft",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Craft", "Interface"],
-      "access": ["Free"],
+      "tags": [
+        "Craft",
+        "Interface"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Interface Craft",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://interfacecraft.dev",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "ImranUxi",
       "why": "Working library for designing with uncommon care",
       "addedOrder": 6
@@ -198,13 +241,21 @@
       "name": "userinterface.wiki",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Patterns", "Motion", "Typography"],
-      "access": ["Free"],
+      "tags": [
+        "Patterns",
+        "Motion",
+        "Typography"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "userinterface.wiki",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://userinterface.wiki",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "ImranUxi",
       "why": "Living manual: UI patterns, motion, typography",
       "addedOrder": 7
@@ -214,13 +265,21 @@
       "name": "Devouring Details",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Details", "Craft"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Details",
+        "Craft"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Devouring Details",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://devouringdetails.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "ImranUxi",
       "why": "Interface details most people miss",
       "addedOrder": 8
@@ -230,13 +289,21 @@
       "name": "Motion-Primitives",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["React", "Motion", "Open source"],
-      "access": ["Free"],
+      "tags": [
+        "React",
+        "Motion",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "ibelick",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://motion-primitives.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Csaba / Red",
       "why": "Open-source animated UI kit (React/Next/Tailwind)",
       "addedOrder": 9
@@ -246,13 +313,22 @@
       "name": "Aceternity UI",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["React", "Tailwind", "Templates"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "React",
+        "Tailwind",
+        "Templates"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Aceternity",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://ui.aceternity.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "askwhykartik",
       "why": "React/Tailwind animated components, blocks, templates",
       "addedOrder": 10
@@ -262,13 +338,22 @@
       "name": "Magic UI",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["React", "Motion", "Landing"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "React",
+        "Motion",
+        "Landing"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Magic UI",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://magicui.design",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "askwhykartik",
       "why": "Motion-first UI components & landing templates",
       "addedOrder": 11
@@ -278,13 +363,21 @@
       "name": "Hover.dev",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["React", "Interactions"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "React",
+        "Interactions"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Hover",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://hover.dev",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "askwhykartik",
       "why": "Animated UI components & interaction templates",
       "addedOrder": 12
@@ -294,13 +387,21 @@
       "name": "60fps",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Animation", "Micro-interactions"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Animation",
+        "Micro-interactions"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "60fps",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://60fps.design",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "UiSavior",
       "why": "UI/UX animation & interaction details from top apps",
       "addedOrder": 13
@@ -310,13 +411,20 @@
       "name": "IF Design Patterns",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Patterns", "Responsible AI"],
-      "access": ["Free"],
+      "tags": [
+        "Patterns",
+        "Responsible AI"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Projects by IF",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://catalogue.projectsbyif.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "UiSavior",
       "why": "Trustworthy service / responsible AI design patterns",
       "addedOrder": 14
@@ -326,13 +434,21 @@
       "name": "abtest.design",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["A/B tests", "UX research"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "A/B tests",
+        "UX research"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "abtest.design",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://abtest.design",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "UiSavior",
       "why": "Curated A/B test results from best-in-class apps",
       "addedOrder": 15
@@ -342,13 +458,20 @@
       "name": "Design Spells",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Micro-interactions", "Delight"],
-      "access": ["Free"],
+      "tags": [
+        "Micro-interactions",
+        "Delight"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Design Spells",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://designspells.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "UiSavior",
       "why": "Micro-interactions, easter eggs, delightful web details",
       "addedOrder": 16
@@ -358,13 +481,21 @@
       "name": "UXSnaps",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["UI breakdowns", "Apps"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "UI breakdowns",
+        "Apps"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "UXSnaps",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://uxsnaps.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "UiSavior",
       "why": "UI/UX breakdowns from top apps",
       "addedOrder": 17
@@ -374,13 +505,20 @@
       "name": "UI Playbook",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["UI components", "Reference"],
-      "access": ["Free"],
+      "tags": [
+        "UI components",
+        "Reference"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "UI Playbook",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://uiplaybook.dev",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "UiSavior",
       "why": "Documented collection of UI components",
       "addedOrder": 18
@@ -390,13 +528,21 @@
       "name": "WandPress",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["shadcn", "Admin", "WordPress-style"],
-      "access": ["Free"],
+      "tags": [
+        "shadcn",
+        "Admin",
+        "WordPress-style"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "jonbuster",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://wandpress.netlify.app",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "chadcombinator",
       "why": "React/shadcn-style WordPress-admin component library",
       "addedOrder": 19
@@ -406,13 +552,21 @@
       "name": "Ripplix",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Animation", "Micro-interactions"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Animation",
+        "Micro-interactions"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Ripplix",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://ripplix.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "ripplix_",
       "why": "Curated UI animation / micro-interaction library",
       "addedOrder": 20
@@ -422,13 +576,21 @@
       "name": "Spectrum UI",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["React", "shadcn", "Motion"],
-      "access": ["Free"],
+      "tags": [
+        "React",
+        "shadcn",
+        "Motion"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Spectrum UI",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://ui.spectrumhq.in",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "pengsonal",
       "why": "Open-source, animation-ready React components and blocks built with Next.js, Tailwind CSS, Motion, TypeScript, and shadcn/ui for SaaS and…",
       "addedOrder": 21
@@ -438,13 +600,23 @@
       "name": "21st.dev",
       "category": "Marketplace",
       "subcategory": "UI kits",
-      "tags": ["React", "Tailwind", "shadcn", "Components"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "React",
+        "Tailwind",
+        "shadcn",
+        "Components"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "21st",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://21st.dev",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "pengsonal",
       "why": "12,000+ hand-crafted React and Tailwind CSS components, templates, and shadcn themes by real design engineers. Preview live, install with…",
       "addedOrder": 22
@@ -454,13 +626,21 @@
       "name": "Shadcnblocks",
       "category": "Marketplace",
       "subcategory": "UI kits",
-      "tags": ["shadcn", "Blocks", "Premium"],
-      "access": ["Paid"],
+      "tags": [
+        "shadcn",
+        "Blocks",
+        "Premium"
+      ],
+      "access": [
+        "Paid"
+      ],
       "creator": "Shadcnblocks",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://shadcnblocks.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "pengsonal",
       "why": "Discover hundreds of extra shadcn/ui blocks and Shadcn UI components. Shadcnblocks is a premium component library built with Shadcn UI, R…",
       "addedOrder": 23
@@ -470,13 +650,21 @@
       "name": "8bitcn/ui",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["shadcn", "Retro", "8-bit"],
-      "access": ["Free"],
+      "tags": [
+        "shadcn",
+        "Retro",
+        "8-bit"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "8bitcn",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://8bitcn.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "pengsonal",
       "why": "A retro UI library of 8-bit styled shadcn/ui components, blocks, and game-ready interfaces for modern React apps.",
       "addedOrder": 24
@@ -486,13 +674,21 @@
       "name": "EvilCharts",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["Charts", "React"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Charts",
+        "React"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "EvilCharts",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://evilcharts.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "pengsonal",
       "why": "UI/design resource from @pengsonal list post",
       "addedOrder": 25
@@ -502,13 +698,21 @@
       "name": "coss UI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["React", "UI"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "React",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "coss",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://coss.com/ui",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "pengsonal",
       "why": "UI/design resource from @pengsonal list post",
       "addedOrder": 26
@@ -518,13 +722,21 @@
       "name": "Rare UI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["React", "UI"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "React",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Rare UI",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://rareui.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "pengsonal",
       "why": "UI/design resource from @pengsonal list post",
       "addedOrder": 27
@@ -534,13 +746,20 @@
       "name": "beui",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["React", "UI"],
-      "access": ["Free"],
+      "tags": [
+        "React",
+        "UI"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "beui",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://beui.dev",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "pengsonal",
       "why": "UI/design resource from @pengsonal list post",
       "addedOrder": 28
@@ -550,13 +769,21 @@
       "name": "Easy UI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["React", "UI"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "React",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Easy UI",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://easyui.site",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "pengsonal",
       "why": "UI/design resource from @pengsonal list post",
       "addedOrder": 29
@@ -566,13 +793,21 @@
       "name": "ReUI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["React", "UI"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "React",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "ReUI",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://reui.io",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "pengsonal",
       "why": "UI/design resource from @pengsonal list post",
       "addedOrder": 30
@@ -582,13 +817,21 @@
       "name": "Coolors",
       "category": "Backgrounds",
       "subcategory": "Gradients",
-      "tags": ["Colors", "Palettes"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Colors",
+        "Palettes"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Coolors",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://coolors.co",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "RobinFiCoin",
       "why": "UI/design resource from @RobinFiCoin list post",
       "addedOrder": 31
@@ -598,13 +841,20 @@
       "name": "Fontjoy",
       "category": "Fonts",
       "subcategory": "Sans serif",
-      "tags": ["Pairing", "AI"],
-      "access": ["Free"],
+      "tags": [
+        "Pairing",
+        "AI"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Fontjoy",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://fontjoy.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "RobinFiCoin",
       "why": "UI/design resource from @RobinFiCoin list post",
       "addedOrder": 32
@@ -614,13 +864,21 @@
       "name": "WhatTheFont",
       "category": "Fonts",
       "subcategory": "Display",
-      "tags": ["Identification", "Tool"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Identification",
+        "Tool"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "MyFonts",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://myfonts.com/WhatTheFont",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "RobinFiCoin",
       "why": "UI/design resource from @RobinFiCoin list post",
       "addedOrder": 33
@@ -630,13 +888,21 @@
       "name": "favicon.io",
       "category": "Icons",
       "subcategory": "Outline",
-      "tags": ["Favicon", "Generator"],
-      "access": ["Free"],
+      "tags": [
+        "Favicon",
+        "Generator"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "favicon.io",
-      "formats": ["SVG", "PNG"],
+      "formats": [
+        "SVG",
+        "PNG"
+      ],
       "url": "https://favicon.io",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "RobinFiCoin",
       "why": "UI/design resource from @RobinFiCoin list post",
       "addedOrder": 34
@@ -646,13 +912,20 @@
       "name": "unDraw",
       "category": "Illustrations",
       "subcategory": "Vector",
-      "tags": ["SVG", "Open source"],
-      "access": ["Free"],
+      "tags": [
+        "SVG",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "unDraw",
-      "formats": ["SVG"],
+      "formats": [
+        "SVG"
+      ],
       "url": "https://undraw.co",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "RobinFiCoin",
       "why": "UI/design resource from @RobinFiCoin list post",
       "addedOrder": 35
@@ -662,13 +935,20 @@
       "name": "made.design",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Design"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Design"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "made.design",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://made.design",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "soltwagner",
       "why": "UI/design resource from @soltwagner list post",
       "addedOrder": 36
@@ -678,13 +958,21 @@
       "name": "Kibo UI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["shadcn", "Accessible", "Open source"],
-      "access": ["Free"],
+      "tags": [
+        "shadcn",
+        "Accessible",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Kibo UI",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://kibo-ui.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "DevItaliya22",
       "why": "Kibo UI is a custom registry of composable, accessible and open source components designed for use with shadcn/ui.",
       "addedOrder": 37
@@ -694,13 +982,22 @@
       "name": "Tailark",
       "category": "Templates",
       "subcategory": "Coded",
-      "tags": ["shadcn", "Marketing", "Blocks"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "shadcn",
+        "Marketing",
+        "Blocks"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Tailark",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://tailark.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "DevItaliya22",
       "why": "Tailark is a Shadcn UI registry of marketing blocks, pages, and illustrations for building beautiful marketing websites.",
       "addedOrder": 38
@@ -710,13 +1007,21 @@
       "name": "Dice UI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["shadcn", "Accessible", "Tailwind"],
-      "access": ["Free"],
+      "tags": [
+        "shadcn",
+        "Accessible",
+        "Tailwind"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Dice UI",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://diceui.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "DevItaliya22",
       "why": "Accessible shadcn/ui components built with React, TypeScript, and Tailwind CSS. Copy-paste ready, and customizable.",
       "addedOrder": 39
@@ -726,13 +1031,21 @@
       "name": "BadtzUI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["React", "Animations", "Open source"],
-      "access": ["Free"],
+      "tags": [
+        "React",
+        "Animations",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "BadtzUI",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://badtz-ui.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "DevItaliya22",
       "why": "An open-source React UI library with production-ready animations. Weekly updates. Built with React, Tailwind, TypeScript & JavaScript.",
       "addedOrder": 40
@@ -742,13 +1055,20 @@
       "name": "Bento Grids",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Bento", "Layouts"],
-      "access": ["Free"],
+      "tags": [
+        "Bento",
+        "Layouts"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Bento Grids",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://bentogrids.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "konig0000",
       "why": "UI/design resource from @konig0000 list post",
       "addedOrder": 41
@@ -758,13 +1078,20 @@
       "name": "rebrand.gallery",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Rebrand", "Brand"],
-      "access": ["Free"],
+      "tags": [
+        "Rebrand",
+        "Brand"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "rebrand.gallery",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://rebrand.gallery",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "konig0000",
       "why": "UI/design resource from @konig0000 list post",
       "addedOrder": 42
@@ -774,13 +1101,21 @@
       "name": "Gridddy",
       "category": "Templates",
       "subcategory": "Framer",
-      "tags": ["Grids", "Framer"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Grids",
+        "Framer"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Gridddy",
-      "formats": ["Framer"],
+      "formats": [
+        "Framer"
+      ],
       "url": "https://gridddy.framer.website",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "konig0000",
       "why": "UI/design resource from @konig0000 list post",
       "addedOrder": 43
@@ -790,13 +1125,19 @@
       "name": "landing.love",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": ["Landing pages"],
-      "access": ["Free"],
+      "tags": [
+        "Landing pages"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "landing.love",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://landing.love",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "konig0000",
       "why": "UI/design resource from @konig0000 list post",
       "addedOrder": 44
@@ -806,13 +1147,21 @@
       "name": "Refero Styles",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Styles", "UI"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Styles",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Refero",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://styles.refero.design",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "konig0000",
       "why": "UI/design resource from @konig0000 list post",
       "addedOrder": 45
@@ -822,13 +1171,20 @@
       "name": "recent.design",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Recent", "Gallery"],
-      "access": ["Free"],
+      "tags": [
+        "Recent",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "recent.design",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://recent.design",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "konig0000",
       "why": "UI/design resource from @konig0000 list post",
       "addedOrder": 46
@@ -838,13 +1194,20 @@
       "name": "curated.design",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Curated", "Gallery"],
-      "access": ["Free"],
+      "tags": [
+        "Curated",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "curated.design",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://curated.design",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "konig0000",
       "why": "UI/design resource from @konig0000 list post",
       "addedOrder": 47
@@ -854,13 +1217,21 @@
       "name": "Vanta UI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["React", "UI"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "React",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Vanta UI",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://vantaui.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "konig0000",
       "why": "UI/design resource from @konig0000 list post",
       "addedOrder": 48
@@ -870,13 +1241,21 @@
       "name": "Design On X",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["X", "Gallery", "Motion"],
-      "access": ["Free"],
+      "tags": [
+        "X",
+        "Gallery",
+        "Motion"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Northlight",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://design-on-x.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "letcontactabhi",
       "why": "A multilingual design inspiration gallery collecting standout interface, brand, motion, and product work from creators on X.",
       "addedOrder": 49
@@ -886,61 +1265,94 @@
       "name": "Internet Designs",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Web design", "Gallery"],
-      "access": ["Free"],
+      "tags": [
+        "Web design",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Internet Designs",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://internetdesigns.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "blocked",
       "source": "letcontactabhi",
       "why": "UI/design resource from @letcontactabhi list post",
-      "addedOrder": 50
+      "addedOrder": 50,
+      "image_error": "bot-wall:captcha"
     },
     {
       "id": "collect-ui",
       "name": "CollectUI",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["UI", "Daily"],
-      "access": ["Free"],
+      "tags": [
+        "UI",
+        "Daily"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "CollectUI",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://collectui.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "blocked",
       "source": "letcontactabhi",
       "why": "Discover amazing UI designs, portfolios, and inspiration curated by design magicians",
-      "addedOrder": 51
+      "addedOrder": 51,
+      "image_error": "bot-wall:captcha"
     },
     {
       "id": "page-flows",
       "name": "Page Flows",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["User flows", "Apps"],
-      "access": ["Paid"],
+      "tags": [
+        "User flows",
+        "Apps"
+      ],
+      "access": [
+        "Paid"
+      ],
       "creator": "Page Flows",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://pageflows.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "blocked",
       "source": "letcontactabhi",
       "why": "Explore 100,000+ recorded user flows, app screens, and UI patterns from Airbnb, Uber, Netflix & more. Save hours on UX research with Page…",
-      "addedOrder": 52
+      "addedOrder": 52,
+      "image_error": "bot-wall:captcha"
     },
     {
       "id": "refero",
       "name": "Refero",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["UI", "iOS", "Web"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "UI",
+        "iOS",
+        "Web"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Refero",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://refero.design",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "letcontactabhi",
       "why": "The largest collection of UI/UX references and design inspiration for web and iOS. Explore tens of thousands of screenshots with advanced…",
       "addedOrder": 53
@@ -950,13 +1362,22 @@
       "name": "Mobbin",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Mobile", "Web", "Screens"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Mobile",
+        "Web",
+        "Screens"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Mobbin",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://mobbin.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "letcontactabhi",
       "why": "Save hours of UI & UX research with our library of 400,000+ fully searchable mobile & web app screenshots.",
       "addedOrder": 54
@@ -966,29 +1387,46 @@
       "name": "Screenlane",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Screens", "UI"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Screens",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Screenlane",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://screenlane.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "blocked",
       "source": "letcontactabhi",
       "why": "UI/design resource from @letcontactabhi list post",
-      "addedOrder": 55
+      "addedOrder": 55,
+      "image_error": "bot-wall:captcha"
     },
     {
       "id": "aura-build",
       "name": "Aura",
       "category": "Templates",
       "subcategory": "Coded",
-      "tags": ["AI", "Builder"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "AI",
+        "Builder"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Aura",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://aura.build",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "ah4alt",
       "why": "UI/design resource from @ah4alt list post",
       "addedOrder": 56
@@ -998,13 +1436,21 @@
       "name": "Neuform",
       "category": "Templates",
       "subcategory": "Coded",
-      "tags": ["AI", "Design"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "AI",
+        "Design"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Neuform",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://neuform.ai",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "ah4alt",
       "why": "UI/design resource from @ah4alt list post",
       "addedOrder": 57
@@ -1014,13 +1460,22 @@
       "name": "MicroInteractions UI",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["React", "Framer Motion", "Shadcn"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "React",
+        "Framer Motion",
+        "Shadcn"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "MicroInteractions UI",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://microinteractionsui.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "daveomeizaozi",
       "why": "A collection of ready-to-use animated UI components built with React, Tailwind CSS, Shadcn, and Framer Motion.",
       "addedOrder": 58
@@ -1030,13 +1485,20 @@
       "name": "Annnimate",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["Animation"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Animation"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Annnimate",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://annnimate.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "daveomeizaozi",
       "why": "UI/design resource from @daveomeizaozi list post",
       "addedOrder": 59
@@ -1046,13 +1508,21 @@
       "name": "SaaSFrame",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["SaaS", "UX"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "SaaS",
+        "UX"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "SaaSFrame",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://saasframe.io",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Mohd__Shahid_07",
       "why": "Create websites, product interfaces and email sequences for your SaaS faster than ever with our library of 5,000+ real-world UX & UI desi…",
       "addedOrder": 60
@@ -1062,13 +1532,20 @@
       "name": "Godly",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": ["Websites", "Awwwards-style"],
-      "access": ["Free"],
+      "tags": [
+        "Websites",
+        "Awwwards-style"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Godly",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://godly.website",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Mohd__Shahid_07",
       "why": "UI/design resource from @Mohd__Shahid_07 list post",
       "addedOrder": 61
@@ -1078,13 +1555,20 @@
       "name": "CSS Design Awards",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": ["Awards", "CSS"],
-      "access": ["Free"],
+      "tags": [
+        "Awards",
+        "CSS"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "CSS Design Awards",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://cssdesignawards.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Mohd__Shahid_07",
       "why": "UI/design resource from @Mohd__Shahid_07 list post",
       "addedOrder": 62
@@ -1094,13 +1578,20 @@
       "name": "Minimal Gallery",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Minimal", "Gallery"],
-      "access": ["Free"],
+      "tags": [
+        "Minimal",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Minimal Gallery",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://minimal.gallery",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Mohd__Shahid_07",
       "why": "UI/design resource from @Mohd__Shahid_07 list post",
       "addedOrder": 63
@@ -1110,13 +1601,20 @@
       "name": "Hover States",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": ["Websites", "Archive"],
-      "access": ["Free"],
+      "tags": [
+        "Websites",
+        "Archive"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Hover States",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://hoverstat.es",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Mohd__Shahid_07",
       "why": "UI/design resource from @Mohd__Shahid_07 list post",
       "addedOrder": 64
@@ -1126,29 +1624,44 @@
       "name": "UI Movement",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Animation", "UI"],
-      "access": ["Free"],
+      "tags": [
+        "Animation",
+        "UI"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "UI Movement",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://uimovement.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "blocked",
       "source": "Mohd__Shahid_07",
       "why": "UI/design resource from @Mohd__Shahid_07 list post",
-      "addedOrder": 65
+      "addedOrder": 65,
+      "image_error": "bot-wall:captcha"
     },
     {
       "id": "fonts-in-use",
       "name": "Fonts In Use",
       "category": "Fonts",
       "subcategory": "Display",
-      "tags": ["In use", "Inspiration"],
-      "access": ["Free"],
+      "tags": [
+        "In use",
+        "Inspiration"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Fonts In Use",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://fontsinuse.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Mohd__Shahid_07",
       "why": "UI/design resource from @Mohd__Shahid_07 list post",
       "addedOrder": 66
@@ -1158,13 +1671,22 @@
       "name": "Unsection",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": ["Sections", "Hero", "CTA"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Sections",
+        "Hero",
+        "CTA"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Unsection",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://unsection.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "ahmad_Uxflow",
       "why": "Browse 4,000+ curated website sections from top brands. Filter by hero, feature, pricing, testimonial designs. New sections added weekly.…",
       "addedOrder": 67
@@ -1174,13 +1696,21 @@
       "name": "mesh3d.gallery",
       "category": "Backgrounds",
       "subcategory": "Shaders",
-      "tags": ["3D", "Mesh", "Gallery"],
-      "access": ["Free"],
+      "tags": [
+        "3D",
+        "Mesh",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "mesh3d.gallery",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://mesh3d.gallery",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "pengsonal",
       "why": "UI/design resource from @pengsonal list post",
       "addedOrder": 68
@@ -1190,13 +1720,21 @@
       "name": "Animata",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["React", "Animations", "Open source"],
-      "access": ["Free"],
+      "tags": [
+        "React",
+        "Animations",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Animata",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://animata.design",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "DevItaliya22",
       "why": "Ship stunning UI faster with Ship stunning UI faster with ready-made React components.. Browse hundreds of copy-paste React animations bu…",
       "addedOrder": 69
@@ -1206,13 +1744,20 @@
       "name": "Fancy Components",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["React", "Open source"],
-      "access": ["Free"],
+      "tags": [
+        "React",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Fancy Components",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://fancycomponents.dev",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "DevItaliya22",
       "why": "Ready to use, fancy React components to make the web fun again. Free & Open Source.",
       "addedOrder": 70
@@ -1222,13 +1767,25 @@
       "name": "Shader Gradient",
       "category": "Backgrounds",
       "subcategory": "Gradients",
-      "tags": ["Shaders", "Gradients", "Framer", "Figma", "React"],
-      "access": ["Free"],
+      "tags": [
+        "Shaders",
+        "Gradients",
+        "Framer",
+        "Figma",
+        "React"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Shader Gradient",
-      "formats": ["React", "Figma", "Framer"],
+      "formats": [
+        "React",
+        "Figma",
+        "Framer"
+      ],
       "url": "https://shadergradient.co",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "DevItaliya22",
       "why": "Create beautiful moving gradients on Framer, Figma and React",
       "addedOrder": 71
@@ -1238,45 +1795,69 @@
       "name": "WebInspoo",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": ["SaaS", "Landing pages"],
-      "access": ["Free"],
+      "tags": [
+        "SaaS",
+        "Landing pages"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "WebInspoo",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://webinspoo.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "blocked",
       "source": "taher_max_",
       "why": "Browse 1,200+ curated SaaS websites and filter by category, font, color palette, tech stack, and page type. Updated daily.",
-      "addedOrder": 72
+      "addedOrder": 72,
+      "image_error": "page.goto: net::ERR_CONNECTION_CLOSED at https://webinspoo.com/\nCall log:\n  - navigating to \"https://webinspoo.com/\", waiting until \"domcontentloaded\"\n"
     },
     {
       "id": "logoinspo",
       "name": "Logoinspo",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Logos", "Brand"],
-      "access": ["Free"],
+      "tags": [
+        "Logos",
+        "Brand"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Logoinspo",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://logoinspo.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "blocked",
       "source": "taher_max_",
       "why": "Explore 1,200+ hand-picked real and fictional logos searchable by style, industry, and color — each credited to its designer.",
-      "addedOrder": 73
+      "addedOrder": 73,
+      "image_error": "page.goto: net::ERR_CONNECTION_CLOSED at https://logoinspo.com/\nCall log:\n  - navigating to \"https://logoinspo.com/\", waiting until \"domcontentloaded\"\n"
     },
     {
       "id": "asoinspo",
       "name": "Asoinspo",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["ASO", "App Store", "Screenshots"],
-      "access": ["Free"],
+      "tags": [
+        "ASO",
+        "App Store",
+        "Screenshots"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Asoinspo",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://asoinspo.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "taher_max_",
       "why": "Discover the latest iOS App Store screenshot examples, onboarding ideas, and paywall inspiration.",
       "addedOrder": 74
@@ -1286,29 +1867,44 @@
       "name": "Uiinspoo",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["UI", "Daily"],
-      "access": ["Free"],
+      "tags": [
+        "UI",
+        "Daily"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Uiinspoo",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://uiinspoo.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "blocked",
       "source": "taher_max_",
       "why": "Discover daily UI design inspiration from the world's best product designers. Browse mobile apps, dashboards, landing pages, and motion U…",
-      "addedOrder": 75
+      "addedOrder": 75,
+      "image_error": "page.goto: net::ERR_CONNECTION_CLOSED at https://uiinspoo.com/\nCall log:\n  - navigating to \"https://uiinspoo.com/\", waiting until \"domcontentloaded\"\n"
     },
     {
       "id": "design-engineer-tools",
       "name": "Design Engineer Tools",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Tools", "Design engineering"],
-      "access": ["Free"],
+      "tags": [
+        "Tools",
+        "Design engineering"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "James Warner",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://designengineer.tools",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "mredu000",
       "why": "A list of useful tools for web-focused design engineers; curated by James Warner.",
       "addedOrder": 76
@@ -1318,13 +1914,20 @@
       "name": "Indie App Tools",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Tools", "Indie"],
-      "access": ["Free"],
+      "tags": [
+        "Tools",
+        "Indie"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Indie App Tools",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://indieapp.tools",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "mredu000",
       "why": "A curated directory of tools for indie app developers - design, marketing, analytics, AI coding, subscriptions, and more.",
       "addedOrder": 77
@@ -1334,13 +1937,21 @@
       "name": "TypeUI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["Typography", "UI"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Typography",
+        "UI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "TypeUI",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://typeui.sh",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "ImranUxi",
       "why": "UI/design resource from @ImranUxi list post",
       "addedOrder": 78
@@ -1350,29 +1961,44 @@
       "name": "HTMLrev UI Libraries",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["UI libraries", "Directory"],
-      "access": ["Free"],
+      "tags": [
+        "UI libraries",
+        "Directory"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "HTMLrev",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://htmlrev.com/ui-libraries.html",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "blocked",
       "source": "webdevluc",
       "why": "Free UI component libraries for websites and web apps",
-      "addedOrder": 79
+      "addedOrder": 79,
+      "image_error": "bot-wall:captcha"
     },
     {
       "id": "kombai-gallery",
       "name": "Kombai Gallery",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Web UI", "Gallery"],
-      "access": ["Free"],
+      "tags": [
+        "Web UI",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Kombai",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://kombai.com/gallery/web",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Milo_Milady",
       "why": "Explore an ever-growing library of web and mobile UI designs. Pick one to remix with Kombai, or take it to your coding agent.",
       "addedOrder": 80
@@ -1382,13 +2008,20 @@
       "name": "Saaspo",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": ["SaaS", "Websites"],
-      "access": ["Free"],
+      "tags": [
+        "SaaS",
+        "Websites"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Saaspo",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://saaspo.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Milo_Milady",
       "why": "A curated collection of the best SaaS websites on the web.",
       "addedOrder": 81
@@ -1398,13 +2031,19 @@
       "name": "Inspora",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Inspiration"],
-      "access": ["Free"],
+      "tags": [
+        "Inspiration"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Inspora",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://inspora.design",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Milo_Milady",
       "why": "UI/design resource from @Milo_Milady list post",
       "addedOrder": 82
@@ -1414,29 +2053,45 @@
       "name": "UIUX Showcase",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["UI", "UX"],
-      "access": ["Free"],
+      "tags": [
+        "UI",
+        "UX"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "UIUX Showcase",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://uiuxshowcase.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "blocked",
       "source": "Milo_Milady",
       "why": "UI/design resource from @Milo_Milady list post",
-      "addedOrder": 83
+      "addedOrder": 83,
+      "image_error": "page.goto: net::ERR_CONNECTION_CLOSED at https://uiuxshowcase.com/\nCall log:\n  - navigating to \"https://uiuxshowcase.com/\", waiting until \"domcontentloaded\"\n"
     },
     {
       "id": "uiverse",
       "name": "UIverse",
       "category": "UI libraries",
       "subcategory": "CSS",
-      "tags": ["CSS", "HTML", "Community"],
-      "access": ["Free"],
+      "tags": [
+        "CSS",
+        "HTML",
+        "Community"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "UIverse",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://uiverse.io",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Milo_Milady",
       "why": "UI/design resource from @Milo_Milady list post",
       "addedOrder": 84
@@ -1446,13 +2101,20 @@
       "name": "Best Designs on X",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["X", "Design"],
-      "access": ["Free"],
+      "tags": [
+        "X",
+        "Design"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Best Designs on X",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://bestdesignsonx.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "Milo_Milady",
       "why": "UI/design resource from @Milo_Milady list post",
       "addedOrder": 85
@@ -1462,13 +2124,22 @@
       "name": "Appllama",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["iOS", "Apps", "Paywalls"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "iOS",
+        "Apps",
+        "Paywalls"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Appllama",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://appllama.io",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "theansarh",
       "why": "Find what to build and study why it wins — the onboarding, paywalls and live videos behind the App Store’s top-earning iOS apps.",
       "addedOrder": 86
@@ -1478,13 +2149,22 @@
       "name": "Shaders",
       "category": "Backgrounds",
       "subcategory": "Shaders",
-      "tags": ["WebGPU", "React", "Vue"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "WebGPU",
+        "React",
+        "Vue"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Shaders",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://shaders.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "theansarh",
       "why": "Component library for creative WebGPU effects in modern frontend frameworks. Compose interactive visuals for Vue, React, Svelte, Solid & JS.",
       "addedOrder": 87
@@ -1494,13 +2174,21 @@
       "name": "Paper",
       "category": "Templates",
       "subcategory": "Coded",
-      "tags": ["Design tool", "Vector"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Design tool",
+        "Vector"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Paper",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://paper.design",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "theansarh",
       "why": "UI/design resource from @theansarh list post",
       "addedOrder": 88
@@ -1510,13 +2198,20 @@
       "name": "Onlook",
       "category": "Templates",
       "subcategory": "Coded",
-      "tags": ["Visual editor", "Open source"],
-      "access": ["Free"],
+      "tags": [
+        "Visual editor",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Onlook",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://onlook.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "theansarh",
       "why": "UI/design resource from @theansarh list post",
       "addedOrder": 89
@@ -1526,13 +2221,19 @@
       "name": "Godly Design",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": ["Websites"],
-      "access": ["Free"],
+      "tags": [
+        "Websites"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Godly",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://godly.design",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "walebuilds_",
       "why": "UI/design resource from @walebuilds_ list post",
       "addedOrder": 90
@@ -1542,13 +2243,20 @@
       "name": "ogimage.gallery",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["OG images", "Social"],
-      "access": ["Free"],
+      "tags": [
+        "OG images",
+        "Social"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "ogimage.gallery",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://ogimage.gallery",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "walebuilds_",
       "why": "UI/design resource from @walebuilds_ list post",
       "addedOrder": 91
@@ -1558,13 +2266,19 @@
       "name": "Fontshare",
       "category": "Fonts",
       "subcategory": "Sans serif",
-      "tags": ["Free fonts"],
-      "access": ["Free"],
+      "tags": [
+        "Free fonts"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Indian Type Foundry",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://fontshare.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "walebuilds_",
       "why": "UI/design resource from @walebuilds_ list post",
       "addedOrder": 92
@@ -1574,13 +2288,20 @@
       "name": "component.gallery",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Components", "Gallery"],
-      "access": ["Free"],
+      "tags": [
+        "Components",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "component.gallery",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://component.gallery",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "walebuilds_",
       "why": "UI/design resource from @walebuilds_ list post",
       "addedOrder": 93
@@ -1590,13 +2311,19 @@
       "name": "Design Systems Repo",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Design systems"],
-      "access": ["Free"],
+      "tags": [
+        "Design systems"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Design Systems Repo",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://designsystemsrepo.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "walebuilds_",
       "why": "UI/design resource from @walebuilds_ list post",
       "addedOrder": 94
@@ -1606,13 +2333,21 @@
       "name": "Apple HIG",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["HIG", "Apple", "Guidelines"],
-      "access": ["Free"],
+      "tags": [
+        "HIG",
+        "Apple",
+        "Guidelines"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Apple",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://developer.apple.com/design/human-interface-guidelines",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "walebuilds_",
       "why": "UI/design resource from @walebuilds_ list post",
       "addedOrder": 95
@@ -1622,13 +2357,19 @@
       "name": "dark.design",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Dark mode"],
-      "access": ["Free"],
+      "tags": [
+        "Dark mode"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "dark.design",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://dark.design",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "walebuilds_",
       "why": "UI/design resource from @walebuilds_ list post",
       "addedOrder": 96
@@ -1638,13 +2379,20 @@
       "name": "Font Pair",
       "category": "Fonts",
       "subcategory": "Sans serif",
-      "tags": ["Pairing", "Google Fonts"],
-      "access": ["Free"],
+      "tags": [
+        "Pairing",
+        "Google Fonts"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Font Pair",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://fontpair.co",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "mr_nirajkumar07",
       "why": "UI/design resource from @mr_nirajkumar07 list post",
       "addedOrder": 97
@@ -1654,13 +2402,20 @@
       "name": "DaFont",
       "category": "Fonts",
       "subcategory": "Display",
-      "tags": ["Free fonts", "Display"],
-      "access": ["Free"],
+      "tags": [
+        "Free fonts",
+        "Display"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "DaFont",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://dafont.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "mr_nirajkumar07",
       "why": "UI/design resource from @mr_nirajkumar07 list post",
       "addedOrder": 98
@@ -1670,13 +2425,22 @@
       "name": "Flaticon",
       "category": "Icons",
       "subcategory": "Solid",
-      "tags": ["Icons", "SVG"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Icons",
+        "SVG"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Flaticon",
-      "formats": ["SVG", "PNG"],
+      "formats": [
+        "SVG",
+        "PNG"
+      ],
       "url": "https://flaticon.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "mr_nirajkumar07",
       "why": "UI/design resource from @mr_nirajkumar07 list post",
       "addedOrder": 99
@@ -1686,13 +2450,24 @@
       "name": "Freepik",
       "category": "Marketplace",
       "subcategory": "Design assets",
-      "tags": ["Assets", "Illustrations", "Templates"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Assets",
+        "Illustrations",
+        "Templates"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Freepik",
-      "formats": ["SVG", "PNG", "Figma"],
+      "formats": [
+        "SVG",
+        "PNG",
+        "Figma"
+      ],
       "url": "https://freepik.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "mr_nirajkumar07",
       "why": "UI/design resource from @mr_nirajkumar07 list post",
       "addedOrder": 100
@@ -1702,13 +2477,22 @@
       "name": "Icons8",
       "category": "Icons",
       "subcategory": "Outline",
-      "tags": ["Icons", "Illustrations"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Icons",
+        "Illustrations"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Icons8",
-      "formats": ["SVG", "PNG"],
+      "formats": [
+        "SVG",
+        "PNG"
+      ],
       "url": "https://icons8.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "mr_nirajkumar07",
       "why": "UI/design resource from @mr_nirajkumar07 list post",
       "addedOrder": 101
@@ -1718,13 +2502,20 @@
       "name": "github.com",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["Motion", "Open source"],
-      "access": ["Free"],
+      "tags": [
+        "Motion",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "oil-oil",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://github.com/oil-oil/oil-motion",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "calbuldelis69",
       "why": "UI/design resource from @calbuldelis69 list post",
       "addedOrder": 102
@@ -1734,13 +2525,21 @@
       "name": "AnimMasterLib",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["Animation", "Library"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Animation",
+        "Library"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "AnimMasterLib",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://animmasterlib.dev",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "calbuldelis69",
       "why": "UI/design resource from @calbuldelis69 list post",
       "addedOrder": 103
@@ -1750,13 +2549,20 @@
       "name": "Design Bookmark",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Bookmarks", "Tools"],
-      "access": ["Free"],
+      "tags": [
+        "Bookmarks",
+        "Tools"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Design Bookmark",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://designbookmark.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "calbuldelis69",
       "why": "UI/design resource from @calbuldelis69 list post",
       "addedOrder": 104
@@ -1766,13 +2572,22 @@
       "name": "Motion",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["React", "JavaScript", "Vue"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "React",
+        "JavaScript",
+        "Vue"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Motion",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://motion.dev",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "askwhykartik",
       "why": "Motion (prev Framer Motion) is a fast, production-grade animation library for React, JavaScript and Vue. Build smooth UI animations at a …",
       "addedOrder": 105
@@ -1782,13 +2597,20 @@
       "name": "Anime.js",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["JavaScript", "Animation"],
-      "access": ["Free"],
+      "tags": [
+        "JavaScript",
+        "Animation"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Anime.js",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://animejs.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "askwhykartik",
       "why": "A fast, multipurpose and lightweight JavaScript animation library",
       "addedOrder": 106
@@ -1798,13 +2620,21 @@
       "name": "React Native Motion",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["React Native", "Expo"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "React Native",
+        "Expo"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "RN Motion",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://rnmotion.dev",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "eddieeee0716",
       "why": "Beautiful animations for React Native and Expo.",
       "addedOrder": 107
@@ -1814,13 +2644,20 @@
       "name": "Reactix",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["React Native", "Open source"],
-      "access": ["Free"],
+      "tags": [
+        "React Native",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "Reactix",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://reacticx.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "eddieeee0716",
       "why": "Awesome React Native UI components free and open source",
       "addedOrder": 108
@@ -1830,13 +2667,20 @@
       "name": "HeroUI Native",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["React Native", "Open source"],
-      "access": ["Free"],
+      "tags": [
+        "React Native",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "HeroUI",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://heroui.com/en/docs/native/getting-started",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "eddieeee0716",
       "why": "Open-source UI component library",
       "addedOrder": 109
@@ -1846,13 +2690,21 @@
       "name": "Native Bloom",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["React Native", "Catalog"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "React Native",
+        "Catalog"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Native Bloom",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://nativebloom.dev",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "eddieeee0716",
       "why": "React Native UI Catalog",
       "addedOrder": 110
@@ -1862,13 +2714,21 @@
       "name": "Make It Animated",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["React Native", "Animations"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "React Native",
+        "Animations"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Make It Animated",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://makeitanimated.dev",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "eddieeee0716",
       "why": "React Native Animations",
       "addedOrder": 111
@@ -1878,13 +2738,20 @@
       "name": "Motionary",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": ["React Native", "Premium"],
-      "access": ["Paid"],
+      "tags": [
+        "React Native",
+        "Premium"
+      ],
+      "access": [
+        "Paid"
+      ],
       "creator": "Motionary",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://motionary.dev",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "eddieeee0716",
       "why": "Premium React Native Animations & Interactions",
       "addedOrder": 112
@@ -1894,13 +2761,21 @@
       "name": "BoardUI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": ["Dashboard", "Design system"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Dashboard",
+        "Design system"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "BoardUI",
-      "formats": ["React"],
+      "formats": [
+        "React"
+      ],
       "url": "https://boardui.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "taher_max_",
       "why": "React Design System for Dashboards",
       "addedOrder": 113
@@ -1910,13 +2785,21 @@
       "name": "Cosmos",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Moodboard", "Visual discovery"],
-      "access": ["Free", "Paid"],
+      "tags": [
+        "Moodboard",
+        "Visual discovery"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
       "creator": "Cosmos",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://cosmos.so",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "theframerdude",
       "why": "AI-powered moodboarding and visual discovery for creatives",
       "addedOrder": 114
@@ -1926,13 +2809,20 @@
       "name": "MaxiBestOf",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": ["Websites", "Fonts"],
-      "access": ["Free"],
+      "tags": [
+        "Websites",
+        "Fonts"
+      ],
+      "access": [
+        "Free"
+      ],
       "creator": "MaxiBestOf",
-      "formats": ["Web"],
+      "formats": [
+        "Web"
+      ],
       "url": "https://maxibestof.one",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "bertwitt",
       "why": "Best website design & fonts inspiration feed",
       "addedOrder": 115
@@ -1955,7 +2845,7 @@
       ],
       "url": "https://awwwards.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
       "why": "Website awards recognizing top design and development talent",
       "addedOrder": 116
@@ -1980,7 +2870,7 @@
       ],
       "url": "https://backgrounds.supply",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
       "why": "Handcrafted and AI-generated backgrounds, wallpapers, gradients",
       "addedOrder": 117
@@ -2003,10 +2893,11 @@
       ],
       "url": "https://behance.net",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "blocked",
       "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
       "why": "Creative portfolio network for UI/UX and visual design",
-      "addedOrder": 118
+      "addedOrder": 118,
+      "image_error": "http-403"
     },
     {
       "id": "contentcore",
@@ -2028,7 +2919,7 @@
       ],
       "url": "https://contentcore.xyz",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
       "why": "3D, motion and mockup content creation for app marketing",
       "addedOrder": 119
@@ -2052,7 +2943,7 @@
       ],
       "url": "https://dribbble.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
       "why": "Design community shots and UI inspiration",
       "addedOrder": 120
@@ -2075,7 +2966,7 @@
       ],
       "url": "https://fwa.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/walebuilds_/status/2096943140531732648 (@walebuilds_)",
       "why": "Favourite Website Awards — cutting-edge web design showcase",
       "addedOrder": 121
@@ -2098,10 +2989,11 @@
       ],
       "url": "https://land-book.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "blocked",
       "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
       "why": "Website design inspiration gallery for landing pages",
-      "addedOrder": 122
+      "addedOrder": 122,
+      "image_error": "http-403"
     },
     {
       "id": "lapa-ninja",
@@ -2121,7 +3013,7 @@
       ],
       "url": "https://lapa.ninja",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
       "why": "Curated landing page design inspiration",
       "addedOrder": 123
@@ -2144,7 +3036,7 @@
       ],
       "url": "https://lummi.ai",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
       "why": "AI-generated images for creative projects",
       "addedOrder": 124
@@ -2167,7 +3059,7 @@
       ],
       "url": "https://m3.material.io",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/walebuilds_/status/2096943140531732648 (@walebuilds_)",
       "why": "Material Design 3 guidelines and design system",
       "addedOrder": 125
@@ -2191,7 +3083,7 @@
       ],
       "url": "https://screensdesign.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
       "why": "App design inspiration / screenshots gallery",
       "addedOrder": 126
@@ -2214,7 +3106,7 @@
       ],
       "url": "https://siteinspire.com",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
       "why": "Web design inspiration directory",
       "addedOrder": 127
@@ -2237,7 +3129,7 @@
       ],
       "url": "https://tranmautritam.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/ah4alt/status/2097932926596063369 (@ah4alt)",
       "why": "Design engineer portfolio / craft inspiration",
       "addedOrder": 128
@@ -2261,7 +3153,7 @@
       ],
       "url": "https://tympanus.net/codrops",
       "needs_review": false,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/walebuilds_/status/2096943140531732648 (@walebuilds_)",
       "why": "Creative frontend experiments and interaction inspiration (Codrops)",
       "addedOrder": 129
@@ -2284,7 +3176,7 @@
       ],
       "url": "https://typescale.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/walebuilds_/status/2096943140531732648 (@walebuilds_)",
       "why": "Typography scale calculator / type system tool",
       "addedOrder": 130
@@ -2310,7 +3202,7 @@
       "url": "https://supaste.com",
       "why": "Local-first clipboard and screenshot history for Mac (full rkant7 set per Red)",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
       "addedOrder": 131
     },
@@ -2335,7 +3227,7 @@
       "url": "https://vehla.app",
       "why": "AI command center for macOS (full rkant7 set per Red)",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
       "addedOrder": 132
     },
@@ -2360,7 +3252,7 @@
       "url": "https://dock.cool",
       "why": "Second Mac dock with live widgets (full rkant7 set per Red)",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
       "addedOrder": 133
     },
@@ -2384,7 +3276,7 @@
       "url": "https://screen.movie",
       "why": "Screen recording and editing (full rkant7 set per Red)",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
       "addedOrder": 134
     },
@@ -2407,7 +3299,7 @@
       "url": "https://macapp.supply",
       "why": "Discover Mac apps directory (full rkant7 set per Red)",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
       "addedOrder": 135
     },
@@ -2426,7 +3318,7 @@
       ],
       "url": "https://cuedesign.space",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/Alok619308/status/2098077798133055726",
       "why": "Awwwards-tier UI components",
       "addedOrder": 136,
@@ -2451,7 +3343,7 @@
       ],
       "url": "https://design-md.hyperbrowser.ai",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/ah4alt/status/2097932926596063369",
       "why": "From @ah4alt list post",
       "addedOrder": 137,
@@ -2476,7 +3368,7 @@
       ],
       "url": "https://designmd.ai",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/ah4alt/status/2097932926596063369",
       "why": "From @ah4alt list post",
       "addedOrder": 138,
@@ -2501,7 +3393,7 @@
       ],
       "url": "https://designmd.me",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/ah4alt/status/2097932926596063369",
       "why": "Paste a URL. Get a complete DESIGN.md file in seconds. Extract design tokens, typography & component styles — ready for AI coding agents.",
       "addedOrder": 139,
@@ -2526,7 +3418,7 @@
       ],
       "url": "https://www.designmd.supply",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/ah4alt/status/2097932926596063369",
       "why": "A minimal supply of generated DESIGN.md for any domain.",
       "addedOrder": 140,
@@ -2551,7 +3443,7 @@
       ],
       "url": "https://heroui.com/en/docs/native",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/eddieeee0716/status/2097323594917490786",
       "why": "From @eddieeee0716 list post",
       "addedOrder": 141,
@@ -2576,7 +3468,7 @@
       ],
       "url": "https://kage.design",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/codestirring/status/2098202200275075439",
       "why": "Design inspiration ready to build",
       "addedOrder": 142,
@@ -2601,7 +3493,7 @@
       ],
       "url": "https://mantine.dev",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/gaurav_syn/status/2098107043534262740",
       "why": "React components library",
       "addedOrder": 143,
@@ -2626,7 +3518,7 @@
       ],
       "url": "https://nextjsshop.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "blocked",
       "source": "https://x.com/taher_max_/status/2096952107614277702",
       "why": "Discover premium Next.js templates and components built with Tailwind CSS. Ideal for freelancers, developers, and small businesses seeking modern web solutions.",
       "addedOrder": 144,
@@ -2634,7 +3526,8 @@
         "source_user": "taher_max_",
         "post_id": "2096952107614277702",
         "full_dump": true
-      }
+      },
+      "image_error": "page.goto: net::ERR_CONNECTION_CLOSED at https://nextjsshop.com/\nCall log:\n  - navigating to \"https://nextjsshop.com/\", waiting until \"domcontentloaded\"\n"
     },
     {
       "id": "opendesign",
@@ -2652,7 +3545,7 @@
       ],
       "url": "https://open-design.ai",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/ah4alt/status/2097932926596063369",
       "why": "Open-source vibe design workspace & Claude Design alternative — build prototypes, landing pages, dashboards, slides & HTML video with your own coding agent.",
       "addedOrder": 145,
@@ -2677,7 +3570,7 @@
       ],
       "url": "https://pinterest.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "blocked",
       "source": "https://x.com/walebuilds_/status/2096943140531732648",
       "why": "From @walebuilds_ list post",
       "addedOrder": 146,
@@ -2685,7 +3578,8 @@
         "source_user": "walebuilds_",
         "post_id": "2096943140531732648",
         "full_dump": true
-      }
+      },
+      "image_error": "bot-wall:captcha"
     },
     {
       "id": "react-bits",
@@ -2703,7 +3597,7 @@
       ],
       "url": "https://reactbits.dev",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/askwhykartik/status/2097955540525834240",
       "why": "An open source collection of high quality, animated, interactive & fully customizable React components for building stunning, memorable user interfaces.",
       "addedOrder": 147,
@@ -2728,7 +3622,7 @@
       ],
       "url": "https://rn-neo.gs-rumana.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/gs_rumana/status/2098206999788015957",
       "why": "Neubrutalist UI for React Native",
       "addedOrder": 148,
@@ -2754,7 +3648,7 @@
       ],
       "url": "https://www.shadcnblocks.com/template/echo",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/shadcnblocks/status/2097788815775609308",
       "why": "A personal portfolio template built on shadcn/ui and Tailwind. Available in both Next.js and Astro editions, perfect for creating a stunning personal portfolio website.",
       "addedOrder": 149,
@@ -2779,7 +3673,7 @@
       ],
       "url": "https://simply-buttons.vercel.app",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/bitanpaul933/status/2098101696132251729",
       "why": "Interactive button specimens",
       "addedOrder": 150,
@@ -2805,7 +3699,7 @@
       ],
       "url": "https://skillsagentes.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/ah4alt/status/2097932926596063369",
       "why": "From @ah4alt list post",
       "addedOrder": 151,
@@ -2830,7 +3724,7 @@
       ],
       "url": "https://sokosumi.com/tools/design-md",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/ah4alt/status/2097932926596063369",
       "why": "From @ah4alt list post",
       "addedOrder": 152,
@@ -2855,7 +3749,7 @@
       ],
       "url": "https://ui.shadcn.com",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/walebuilds_/status/2096943140531732648",
       "why": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.",
       "addedOrder": 153,
@@ -2880,7 +3774,7 @@
       ],
       "url": "https://weekend.company/get-design-md",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "https://x.com/ah4alt/status/2097932926596063369",
       "why": "From @ah4alt list post",
       "addedOrder": 154,
@@ -2909,7 +3803,7 @@
       ],
       "url": "https://grainient.supply",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "source": "prior harvest skipped_dupes rescued (full-dump mode)",
       "why": "Unlimited gradients, animated gradients and AI-generated backgrounds",
       "addedOrder": 155,
@@ -2919,5 +3813,11 @@
         "full_dump": true
       }
     }
-  ]
+  ],
+  "image_capture": {
+    "captured": 141,
+    "blocked": 14,
+    "pending": 0,
+    "at": "2026-09-11T01:09:44.073Z"
+  }
 }
