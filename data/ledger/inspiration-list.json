@@ -1,0 +1,876 @@
+{
+  "category": "inspiration",
+  "updated": "2026-09-11",
+  "items": [
+    {
+      "title": "Navbar Gallery",
+      "url": "https://navbar.gallery",
+      "why": "Curated navbar / navigation design inspiration",
+      "source": "Manixh02"
+    },
+    {
+      "title": "Supahero",
+      "url": "https://supahero.io",
+      "why": "Handpicked website hero section library",
+      "source": "Manixh02"
+    },
+    {
+      "title": "CTA Gallery",
+      "url": "https://cta.gallery",
+      "why": "Curated CTA / button design inspiration",
+      "source": "Manixh02 / Red"
+    },
+    {
+      "title": "Footer Design",
+      "url": "https://footer.design",
+      "why": "Curated website footer gallery",
+      "source": "Manixh02"
+    },
+    {
+      "title": "404s",
+      "url": "https://404s.design",
+      "why": "Curated creative 404 / error page designs",
+      "source": "Manixh02"
+    },
+    {
+      "title": "Interface Craft",
+      "url": "https://interfacecraft.dev",
+      "why": "Working library for designing with uncommon care",
+      "source": "ImranUxi"
+    },
+    {
+      "title": "userinterface.wiki",
+      "url": "https://userinterface.wiki",
+      "why": "Living manual: UI patterns, motion, typography",
+      "source": "ImranUxi"
+    },
+    {
+      "title": "Design Engineering (floguo)",
+      "url": "https://floguo.com/notes/design-engineering",
+      "why": "Essay / notes on design engineering craft",
+      "source": "ImranUxi"
+    },
+    {
+      "title": "UI Skills",
+      "url": "https://ui-skills.com",
+      "why": "Design skills packages for AI agents",
+      "source": "ImranUxi"
+    },
+    {
+      "title": "Devouring Details",
+      "url": "https://devouringdetails.com",
+      "why": "Interface details most people miss",
+      "source": "ImranUxi"
+    },
+    {
+      "title": "SVG Guide",
+      "url": "https://svg.guide",
+      "why": "Everything SVG, explained",
+      "source": "ImranUxi"
+    },
+    {
+      "title": "Rams.ai",
+      "url": "https://rams.ai",
+      "why": "Design principles, applied",
+      "source": "ImranUxi"
+    },
+    {
+      "title": "Reelfolio",
+      "url": "https://reelfolio.io",
+      "why": "Screenshots/clips \u2192 polished showreels; 260+ motion styles",
+      "source": "neropursue"
+    },
+    {
+      "title": "Motion-Primitives",
+      "url": "https://motion-primitives.com",
+      "why": "Open-source animated UI kit (React/Next/Tailwind)",
+      "source": "Csaba / Red"
+    },
+    {
+      "title": "Motion-Primitives Glow Effect",
+      "url": "https://motion-primitives.com/docs/glow-effect",
+      "why": "Reusable animated glow component",
+      "source": "Red"
+    },
+    {
+      "title": "Aceternity UI",
+      "url": "https://ui.aceternity.com",
+      "why": "React/Tailwind animated components, blocks, templates",
+      "source": "askwhykartik"
+    },
+    {
+      "title": "React Bits",
+      "url": "https://reactbits.dev",
+      "why": "Open-source animated interactive React components",
+      "source": "askwhykartik / davidhaz"
+    },
+    {
+      "title": "Magic UI",
+      "url": "https://magicui.design",
+      "why": "Motion-first UI components & landing templates",
+      "source": "askwhykartik"
+    },
+    {
+      "title": "Hover.dev",
+      "url": "https://hover.dev",
+      "why": "Animated UI components & interaction templates",
+      "source": "askwhykartik"
+    },
+    {
+      "title": "60fps",
+      "url": "https://60fps.design",
+      "why": "UI/UX animation & interaction details from top apps",
+      "source": "UiSavior"
+    },
+    {
+      "title": "IF Design Patterns Catalogue",
+      "url": "https://catalogue.projectsbyif.com",
+      "why": "Trustworthy service / responsible AI design patterns",
+      "source": "UiSavior"
+    },
+    {
+      "title": "abtest.design",
+      "url": "https://abtest.design",
+      "why": "Curated A/B test results from best-in-class apps",
+      "source": "UiSavior"
+    },
+    {
+      "title": "Design Spells",
+      "url": "https://designspells.com",
+      "why": "Micro-interactions, easter eggs, delightful web details",
+      "source": "UiSavior"
+    },
+    {
+      "title": "UXSnaps",
+      "url": "https://uxsnaps.com",
+      "why": "UI/UX breakdowns from top apps",
+      "source": "UiSavior"
+    },
+    {
+      "title": "UI Playbook",
+      "url": "https://uiplaybook.dev",
+      "why": "Documented collection of UI components",
+      "source": "UiSavior"
+    },
+    {
+      "title": "WandPress",
+      "url": "https://wandpress.netlify.app",
+      "why": "React/shadcn-style WordPress-admin component library",
+      "source": "chadcombinator"
+    },
+    {
+      "title": "WandPress (GitHub)",
+      "url": "https://github.com/jonbuster/wandpress",
+      "why": "Source for WandPress",
+      "source": "chadcombinator"
+    },
+    {
+      "title": "Ripplix",
+      "url": "https://ripplix.com",
+      "why": "Curated UI animation / micro-interaction library",
+      "source": "ripplix_"
+    },
+    {
+      "title": "Spectrum UI \u2014 Animated React Components & Blocks",
+      "url": "https://ui.spectrumhq.in",
+      "why": "Open-source, animation-ready React components and blocks built with Next.js, Tailwind CSS, Motion, TypeScript, and shadcn/ui for SaaS and\u2026",
+      "source": "pengsonal"
+    },
+    {
+      "title": "React Components, Templates & Themes \u2014 12,000+ Crafted UI | 21st",
+      "url": "https://21st.dev",
+      "why": "12,000+ hand-crafted React and Tailwind CSS components, templates, and shadcn themes by real design engineers. Preview live, install with\u2026",
+      "source": "pengsonal"
+    },
+    {
+      "title": "Shadcnblocks shadcn/ui blocks & components",
+      "url": "https://shadcnblocks.com",
+      "why": "Discover hundreds of extra shadcn/ui blocks and Shadcn UI components. Shadcnblocks is a premium component library built with Shadcn UI, R\u2026",
+      "source": "pengsonal"
+    },
+    {
+      "title": "Retro UI library - 8bitcn/ui",
+      "url": "https://8bitcn.com",
+      "why": "A retro UI library of 8-bit styled shadcn/ui components, blocks, and game-ready interfaces for modern React apps.",
+      "source": "pengsonal"
+    },
+    {
+      "title": "evilcharts.com",
+      "url": "https://evilcharts.com",
+      "why": "UI/design resource from @pengsonal list post",
+      "source": "pengsonal"
+    },
+    {
+      "title": "coss.com",
+      "url": "https://coss.com/ui",
+      "why": "UI/design resource from @pengsonal list post",
+      "source": "pengsonal"
+    },
+    {
+      "title": "rareui.com",
+      "url": "https://rareui.com",
+      "why": "UI/design resource from @pengsonal list post",
+      "source": "pengsonal"
+    },
+    {
+      "title": "beui.dev",
+      "url": "https://beui.dev",
+      "why": "UI/design resource from @pengsonal list post",
+      "source": "pengsonal"
+    },
+    {
+      "title": "easyui.site",
+      "url": "https://easyui.site",
+      "why": "UI/design resource from @pengsonal list post",
+      "source": "pengsonal"
+    },
+    {
+      "title": "reui.io",
+      "url": "https://reui.io",
+      "why": "UI/design resource from @pengsonal list post",
+      "source": "pengsonal"
+    },
+    {
+      "title": "coolors.co",
+      "url": "https://coolors.co",
+      "why": "UI/design resource from @RobinFiCoin list post",
+      "source": "RobinFiCoin"
+    },
+    {
+      "title": "fontjoy.com",
+      "url": "https://fontjoy.com",
+      "why": "UI/design resource from @RobinFiCoin list post",
+      "source": "RobinFiCoin"
+    },
+    {
+      "title": "myfonts.com",
+      "url": "https://myfonts.com/WhatTheFont",
+      "why": "UI/design resource from @RobinFiCoin list post",
+      "source": "RobinFiCoin"
+    },
+    {
+      "title": "favicon.io",
+      "url": "https://favicon.io",
+      "why": "UI/design resource from @RobinFiCoin list post",
+      "source": "RobinFiCoin"
+    },
+    {
+      "title": "unsplash.com",
+      "url": "https://unsplash.com",
+      "why": "UI/design resource from @RobinFiCoin list post",
+      "source": "RobinFiCoin"
+    },
+    {
+      "title": "pexels.com",
+      "url": "https://pexels.com",
+      "why": "UI/design resource from @RobinFiCoin list post",
+      "source": "RobinFiCoin"
+    },
+    {
+      "title": "pixabay.com",
+      "url": "https://pixabay.com",
+      "why": "UI/design resource from @RobinFiCoin list post",
+      "source": "RobinFiCoin"
+    },
+    {
+      "title": "undraw.co",
+      "url": "https://undraw.co",
+      "why": "UI/design resource from @RobinFiCoin list post",
+      "source": "RobinFiCoin"
+    },
+    {
+      "title": "made.design",
+      "url": "https://made.design",
+      "why": "UI/design resource from @soltwagner list post",
+      "source": "soltwagner"
+    },
+    {
+      "title": "Kibo UI",
+      "url": "https://kibo-ui.com",
+      "why": "Kibo UI is a custom registry of composable, accessible and open source components designed for use with shadcn/ui.",
+      "source": "DevItaliya22"
+    },
+    {
+      "title": "Tailark",
+      "url": "https://tailark.com",
+      "why": "Tailark is a Shadcn UI registry of marketing blocks, pages, and illustrations for building beautiful marketing websites.",
+      "source": "DevItaliya22"
+    },
+    {
+      "title": "Dice UI",
+      "url": "https://diceui.com",
+      "why": "Accessible shadcn/ui components built with React, TypeScript, and Tailwind CSS. Copy-paste ready, and customizable.",
+      "source": "DevItaliya22"
+    },
+    {
+      "title": "UI library for React developers. - BadtzUI",
+      "url": "https://badtz-ui.com",
+      "why": "An open-source React UI library with production-ready animations. Weekly updates. Built with React, Tailwind, TypeScript & JavaScript.",
+      "source": "DevItaliya22"
+    },
+    {
+      "title": "bentogrids.com",
+      "url": "https://bentogrids.com",
+      "why": "UI/design resource from @konig0000 list post",
+      "source": "konig0000"
+    },
+    {
+      "title": "rebrand.gallery",
+      "url": "https://rebrand.gallery",
+      "why": "UI/design resource from @konig0000 list post",
+      "source": "konig0000"
+    },
+    {
+      "title": "gridddy.framer.website",
+      "url": "https://gridddy.framer.website",
+      "why": "UI/design resource from @konig0000 list post",
+      "source": "konig0000"
+    },
+    {
+      "title": "landing.love",
+      "url": "https://landing.love",
+      "why": "UI/design resource from @konig0000 list post",
+      "source": "konig0000"
+    },
+    {
+      "title": "styles.refero.design",
+      "url": "https://styles.refero.design",
+      "why": "UI/design resource from @konig0000 list post",
+      "source": "konig0000"
+    },
+    {
+      "title": "recent.design",
+      "url": "https://recent.design",
+      "why": "UI/design resource from @konig0000 list post",
+      "source": "konig0000"
+    },
+    {
+      "title": "curated.design",
+      "url": "https://curated.design",
+      "why": "UI/design resource from @konig0000 list post",
+      "source": "konig0000"
+    },
+    {
+      "title": "vantaui.com",
+      "url": "https://vantaui.com",
+      "why": "UI/design resource from @konig0000 list post",
+      "source": "konig0000"
+    },
+    {
+      "title": "Northlight - Design On X Inspiration Gallery",
+      "url": "https://design-on-x.com",
+      "why": "A multilingual design inspiration gallery collecting standout interface, brand, motion, and product work from creators on X.",
+      "source": "letcontactabhi"
+    },
+    {
+      "title": "internetdesigns.com",
+      "url": "https://internetdesigns.com",
+      "why": "UI/design resource from @letcontactabhi list post",
+      "source": "letcontactabhi"
+    },
+    {
+      "title": "CollectUI - Daily Design Inspiration",
+      "url": "https://collectui.com",
+      "why": "Discover amazing UI designs, portfolios, and inspiration curated by design magicians",
+      "source": "letcontactabhi"
+    },
+    {
+      "title": "UI/UX Design Inspiration & User Flows from Top Apps \u2014 Page Flows",
+      "url": "https://pageflows.com",
+      "why": "Explore 100,000+ recorded user flows, app screens, and UI patterns from Airbnb, Uber, Netflix & more. Save hours on UX research with Page\u2026",
+      "source": "letcontactabhi"
+    },
+    {
+      "title": "Refero \u2014 UI/UX Design Inspiration for Your Next Project",
+      "url": "https://refero.design",
+      "why": "The largest collection of UI/UX references and design inspiration for web and iOS. Explore tens of thousands of screenshots with advanced\u2026",
+      "source": "letcontactabhi"
+    },
+    {
+      "title": "Mobbin \u2014 UI & UX design inspiration for mobile & web apps",
+      "url": "https://mobbin.com",
+      "why": "Save hours of UI & UX research with our library of 400,000+ fully searchable mobile & web app screenshots.",
+      "source": "letcontactabhi"
+    },
+    {
+      "title": "screenlane.com",
+      "url": "https://screenlane.com",
+      "why": "UI/design resource from @letcontactabhi list post",
+      "source": "letcontactabhi"
+    },
+    {
+      "title": "DesignMD \u2014 Generate DESIGN.md Files with AI",
+      "url": "https://designmd.me",
+      "why": "Paste a URL. Get a complete DESIGN.md file in seconds. Extract design tokens, typography & component styles \u2014 ready for AI coding agents.",
+      "source": "ah4alt"
+    },
+    {
+      "title": "OpenDesign \u2014 Best Open Source Claude Design Alternative",
+      "url": "https://open-design.ai",
+      "why": "Open-source vibe design workspace & Claude Design alternative \u2014 build prototypes, landing pages, dashboards, slides & HTML video with you\u2026",
+      "source": "ah4alt"
+    },
+    {
+      "title": "designmd.supply",
+      "url": "https://designmd.supply",
+      "why": "A minimal supply of generated DESIGN.md for any domain.",
+      "source": "ah4alt"
+    },
+    {
+      "title": "aura.build",
+      "url": "https://aura.build",
+      "why": "UI/design resource from @ah4alt list post",
+      "source": "ah4alt"
+    },
+    {
+      "title": "neuform.ai",
+      "url": "https://neuform.ai",
+      "why": "UI/design resource from @ah4alt list post",
+      "source": "ah4alt"
+    },
+    {
+      "title": "design-md.hyperbrowser.ai",
+      "url": "https://design-md.hyperbrowser.ai",
+      "why": "UI/design resource from @ah4alt list post",
+      "source": "ah4alt"
+    },
+    {
+      "title": "sokosumi.com",
+      "url": "https://sokosumi.com/tools/design-md",
+      "why": "UI/design resource from @ah4alt list post",
+      "source": "ah4alt"
+    },
+    {
+      "title": "ui.shadcn.com",
+      "url": "https://ui.shadcn.com",
+      "why": "UI/design resource from @ah4alt list post",
+      "source": "ah4alt"
+    },
+    {
+      "title": "designmd.ai",
+      "url": "https://designmd.ai",
+      "why": "UI/design resource from @ah4alt list post",
+      "source": "ah4alt"
+    },
+    {
+      "title": "weekend.company",
+      "url": "https://weekend.company/get-design-md",
+      "why": "UI/design resource from @ah4alt list post",
+      "source": "ah4alt"
+    },
+    {
+      "title": "MicroInteractions UI",
+      "url": "https://microinteractionsui.com",
+      "why": "A collection of ready-to-use animated UI components built with React, Tailwind CSS, Shadcn, and Framer Motion.",
+      "source": "daveomeizaozi"
+    },
+    {
+      "title": "annnimate.com",
+      "url": "https://annnimate.com",
+      "why": "UI/design resource from @daveomeizaozi list post",
+      "source": "daveomeizaozi"
+    },
+    {
+      "title": "SaaSFrame \u2014 UX & UI Design Examples Library for SaaS Websites and Interfaces",
+      "url": "https://saasframe.io",
+      "why": "Create websites, product interfaces and email sequences for your SaaS faster than ever with our library of 5,000+ real-world UX & UI desi\u2026",
+      "source": "Mohd__Shahid_07"
+    },
+    {
+      "title": "godly.website",
+      "url": "https://godly.website",
+      "why": "UI/design resource from @Mohd__Shahid_07 list post",
+      "source": "Mohd__Shahid_07"
+    },
+    {
+      "title": "cssdesignawards.com",
+      "url": "https://cssdesignawards.com",
+      "why": "UI/design resource from @Mohd__Shahid_07 list post",
+      "source": "Mohd__Shahid_07"
+    },
+    {
+      "title": "minimal.gallery",
+      "url": "https://minimal.gallery",
+      "why": "UI/design resource from @Mohd__Shahid_07 list post",
+      "source": "Mohd__Shahid_07"
+    },
+    {
+      "title": "hoverstat.es",
+      "url": "https://hoverstat.es",
+      "why": "UI/design resource from @Mohd__Shahid_07 list post",
+      "source": "Mohd__Shahid_07"
+    },
+    {
+      "title": "uimovement.com",
+      "url": "https://uimovement.com",
+      "why": "UI/design resource from @Mohd__Shahid_07 list post",
+      "source": "Mohd__Shahid_07"
+    },
+    {
+      "title": "fontsinuse.com",
+      "url": "https://fontsinuse.com",
+      "why": "UI/design resource from @Mohd__Shahid_07 list post",
+      "source": "Mohd__Shahid_07"
+    },
+    {
+      "title": "4,000+ Website Section Designs - Hero, CTA, Pricing & More | Unsection",
+      "url": "https://unsection.com",
+      "why": "Browse 4,000+ curated website sections from top brands. Filter by hero, feature, pricing, testimonial designs. New sections added weekly.\u2026",
+      "source": "ahmad_Uxflow"
+    },
+    {
+      "title": "mesh3d.gallery",
+      "url": "https://mesh3d.gallery",
+      "why": "UI/design resource from @pengsonal list post",
+      "source": "pengsonal"
+    },
+    {
+      "title": "Free Animated React Components | Animata",
+      "url": "https://animata.design",
+      "why": "Ship stunning UI faster with Ship stunning UI faster with ready-made React components.. Browse hundreds of copy-paste React animations bu\u2026",
+      "source": "DevItaliya22"
+    },
+    {
+      "title": "Fancy Components",
+      "url": "https://fancycomponents.dev",
+      "why": "Ready to use, fancy React components to make the web fun again. Free & Open Source.",
+      "source": "DevItaliya22"
+    },
+    {
+      "title": "Shader Gradient",
+      "url": "https://shadergradient.co",
+      "why": "Create beautiful moving gradients on Framer, Figma and React",
+      "source": "DevItaliya22"
+    },
+    {
+      "title": "SaaS Website Design Inspiration & Landing Page Examples | WebInspoo",
+      "url": "https://webinspoo.com",
+      "why": "Browse 1,200+ curated SaaS websites and filter by category, font, color palette, tech stack, and page type. Updated daily.",
+      "source": "taher_max_"
+    },
+    {
+      "title": "Logo Inspiration \u2014 1,200+ Curated Logos | Logoinspo",
+      "url": "https://logoinspo.com",
+      "why": "Explore 1,200+ hand-picked real and fictional logos searchable by style, industry, and color \u2014 each credited to its designer.",
+      "source": "taher_max_"
+    },
+    {
+      "title": "Asoinspo | App Store Screenshot Inspiration",
+      "url": "https://asoinspo.com",
+      "why": "Discover the latest iOS App Store screenshot examples, onboarding ideas, and paywall inspiration.",
+      "source": "taher_max_"
+    },
+    {
+      "title": "Uiinspoo \u2014 Daily Curated UI Design Inspiration",
+      "url": "https://uiinspoo.com",
+      "why": "Discover daily UI design inspiration from the world's best product designers. Browse mobile apps, dashboards, landing pages, and motion U\u2026",
+      "source": "taher_max_"
+    },
+    {
+      "title": "Design Engineer Tools",
+      "url": "https://designengineer.tools",
+      "why": "A list of useful tools for web-focused design engineers; curated by James Warner.",
+      "source": "mredu000"
+    },
+    {
+      "title": "Indie App Tools | Curated tools for App Building, Design, Marketing, ASO & more",
+      "url": "https://indieapp.tools",
+      "why": "A curated directory of tools for indie app developers - design, marketing, analytics, AI coding, subscriptions, and more.",
+      "source": "mredu000"
+    },
+    {
+      "title": "getmd.design",
+      "url": "https://getmd.design",
+      "why": "UI/design resource from @ImranUxi list post",
+      "source": "ImranUxi"
+    },
+    {
+      "title": "typeui.sh",
+      "url": "https://typeui.sh",
+      "why": "UI/design resource from @ImranUxi list post",
+      "source": "ImranUxi"
+    },
+    {
+      "title": "UI Component Libraries on HTMLrev",
+      "url": "https://htmlrev.com/ui-libraries.html",
+      "why": "Free UI component libraries for websites and web apps",
+      "source": "webdevluc"
+    },
+    {
+      "title": "Web UI Design Inspirations | Kombai Gallery",
+      "url": "https://kombai.com/gallery/web",
+      "why": "Explore an ever-growing library of web and mobile UI designs. Pick one to remix with Kombai, or take it to your coding agent.",
+      "source": "Milo_Milady"
+    },
+    {
+      "title": "The best SaaS Web Design Inspiration | Saaspo",
+      "url": "https://saaspo.com",
+      "why": "A curated collection of the best SaaS websites on the web.",
+      "source": "Milo_Milady"
+    },
+    {
+      "title": "inspora.design",
+      "url": "https://inspora.design",
+      "why": "UI/design resource from @Milo_Milady list post",
+      "source": "Milo_Milady"
+    },
+    {
+      "title": "uiuxshowcase.com",
+      "url": "https://uiuxshowcase.com",
+      "why": "UI/design resource from @Milo_Milady list post",
+      "source": "Milo_Milady"
+    },
+    {
+      "title": "uiverse.io",
+      "url": "https://uiverse.io",
+      "why": "UI/design resource from @Milo_Milady list post",
+      "source": "Milo_Milady"
+    },
+    {
+      "title": "bestdesignsonx.com",
+      "url": "https://bestdesignsonx.com",
+      "why": "UI/design resource from @Milo_Milady list post",
+      "source": "Milo_Milady"
+    },
+    {
+      "title": "getdesign.md",
+      "url": "https://getdesign.md",
+      "why": "UI/design resource from @Milo_Milady list post",
+      "source": "Milo_Milady"
+    },
+    {
+      "title": "The complete React library for crafting memorable UI",
+      "url": "https://pro.reactbits.dev/changelog",
+      "why": "150 animated React components, 280 page blocks, 300 app UI blocks, 15 templates and an AI Agent Kit. One-time payment, lifetime updates.",
+      "source": "davidhaz"
+    },
+    {
+      "title": "GitHub - heygen-com/hyperframes: Write HTML. Render video. Built for agents.",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "why": "Write HTML. Render video. Built for agents. Contribute to heygen-com/hyperframes development by creating an account on GitHub.",
+      "source": "0xal0ke"
+    },
+    {
+      "title": "github.com",
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "why": "UI/design resource from @0xal0ke list post",
+      "source": "0xal0ke"
+    },
+    {
+      "title": "github.com",
+      "url": "https://github.com/shadcn-ui/ui",
+      "why": "UI/design resource from @0xal0ke list post",
+      "source": "0xal0ke"
+    },
+    {
+      "title": "github.com",
+      "url": "https://github.com/fluxerapp/fluxer",
+      "why": "UI/design resource from @0xal0ke list post",
+      "source": "0xal0ke"
+    },
+    {
+      "title": "Appllama \u2014 UI & UX design inspiration from top-earning iOS apps",
+      "url": "https://appllama.io",
+      "why": "Find what to build and study why it wins \u2014 the onboarding, paywalls and live videos behind the App Store\u2019s top-earning iOS apps.",
+      "source": "theansarh"
+    },
+    {
+      "title": "Shaders \u2014 The design platform for web shaders",
+      "url": "https://shaders.com",
+      "why": "Component library for creative WebGPU effects in modern frontend frameworks. Compose interactive visuals for Vue, React, Svelte, Solid & JS.",
+      "source": "theansarh"
+    },
+    {
+      "title": "paper.design",
+      "url": "https://paper.design",
+      "why": "UI/design resource from @theansarh list post",
+      "source": "theansarh"
+    },
+    {
+      "title": "onlook.com",
+      "url": "https://onlook.com",
+      "why": "UI/design resource from @theansarh list post",
+      "source": "theansarh"
+    },
+    {
+      "title": "godly.design",
+      "url": "https://godly.design",
+      "why": "UI/design resource from @walebuilds_ list post",
+      "source": "walebuilds_"
+    },
+    {
+      "title": "ogimage.gallery",
+      "url": "https://ogimage.gallery",
+      "why": "UI/design resource from @walebuilds_ list post",
+      "source": "walebuilds_"
+    },
+    {
+      "title": "fontshare.com",
+      "url": "https://fontshare.com",
+      "why": "UI/design resource from @walebuilds_ list post",
+      "source": "walebuilds_"
+    },
+    {
+      "title": "component.gallery",
+      "url": "https://component.gallery",
+      "why": "UI/design resource from @walebuilds_ list post",
+      "source": "walebuilds_"
+    },
+    {
+      "title": "designsystemsrepo.com",
+      "url": "https://designsystemsrepo.com",
+      "why": "UI/design resource from @walebuilds_ list post",
+      "source": "walebuilds_"
+    },
+    {
+      "title": "developer.apple.com",
+      "url": "https://developer.apple.com/design/human-interface-guidelines",
+      "why": "UI/design resource from @walebuilds_ list post",
+      "source": "walebuilds_"
+    },
+    {
+      "title": "dark.design",
+      "url": "https://dark.design",
+      "why": "UI/design resource from @walebuilds_ list post",
+      "source": "walebuilds_"
+    },
+    {
+      "title": "quillbot.com",
+      "url": "https://quillbot.com",
+      "why": "UI/design resource from @mr_nirajkumar07 list post",
+      "source": "mr_nirajkumar07"
+    },
+    {
+      "title": "privacyguides.org",
+      "url": "https://privacyguides.org",
+      "why": "UI/design resource from @mr_nirajkumar07 list post",
+      "source": "mr_nirajkumar07"
+    },
+    {
+      "title": "fontpair.co",
+      "url": "https://fontpair.co",
+      "why": "UI/design resource from @mr_nirajkumar07 list post",
+      "source": "mr_nirajkumar07"
+    },
+    {
+      "title": "dafont.com",
+      "url": "https://dafont.com",
+      "why": "UI/design resource from @mr_nirajkumar07 list post",
+      "source": "mr_nirajkumar07"
+    },
+    {
+      "title": "flaticon.com",
+      "url": "https://flaticon.com",
+      "why": "UI/design resource from @mr_nirajkumar07 list post",
+      "source": "mr_nirajkumar07"
+    },
+    {
+      "title": "freepik.com",
+      "url": "https://freepik.com",
+      "why": "UI/design resource from @mr_nirajkumar07 list post",
+      "source": "mr_nirajkumar07"
+    },
+    {
+      "title": "icons8.com",
+      "url": "https://icons8.com",
+      "why": "UI/design resource from @mr_nirajkumar07 list post",
+      "source": "mr_nirajkumar07"
+    },
+    {
+      "title": "Unlimited Gradients, Animated Gradients and AI-Generated Backgrounds",
+      "url": "https://grainient.supply",
+      "why": "Grainient offers 1000+ awesome gradients, animated gradients, grainy textures, and AI-generated backgrounds. Subscribe for unlimited down\u2026",
+      "source": "UiSavior"
+    },
+    {
+      "title": "github.com",
+      "url": "https://github.com/oil-oil/oil-motion",
+      "why": "UI/design resource from @calbuldelis69 list post",
+      "source": "calbuldelis69"
+    },
+    {
+      "title": "animmasterlib.dev",
+      "url": "https://animmasterlib.dev",
+      "why": "UI/design resource from @calbuldelis69 list post",
+      "source": "calbuldelis69"
+    },
+    {
+      "title": "designbookmark.com",
+      "url": "https://designbookmark.com",
+      "why": "UI/design resource from @calbuldelis69 list post",
+      "source": "calbuldelis69"
+    },
+    {
+      "title": "Motion (prev Framer Motion): JavaScript & React animation library",
+      "url": "https://motion.dev",
+      "why": "Motion (prev Framer Motion) is a fast, production-grade animation library for React, JavaScript and Vue. Build smooth UI animations at a \u2026",
+      "source": "askwhykartik"
+    },
+    {
+      "title": "Anime.js | JavaScript Animation Engine",
+      "url": "https://animejs.com",
+      "why": "A fast, multipurpose and lightweight JavaScript animation library",
+      "source": "askwhykartik"
+    },
+    {
+      "title": "React Native Motion",
+      "url": "https://rnmotion.dev",
+      "why": "Beautiful animations for React Native and Expo.",
+      "source": "eddieeee0716"
+    },
+    {
+      "title": "Reactix",
+      "url": "https://reacticx.com",
+      "why": "Awesome React Native UI components free and open source",
+      "source": "eddieeee0716"
+    },
+    {
+      "title": "HeroUI Native",
+      "url": "https://heroui.com/en/docs/native/getting-started",
+      "why": "Open-source UI component library",
+      "source": "eddieeee0716"
+    },
+    {
+      "title": "Native Bloom",
+      "url": "https://nativebloom.dev",
+      "why": "React Native UI Catalog",
+      "source": "eddieeee0716"
+    },
+    {
+      "title": "Make It Animated",
+      "url": "https://makeitanimated.dev",
+      "why": "React Native Animations",
+      "source": "eddieeee0716"
+    },
+    {
+      "title": "Motionary",
+      "url": "https://motionary.dev",
+      "why": "Premium React Native Animations & Interactions",
+      "source": "eddieeee0716"
+    },
+    {
+      "title": "Impeccable",
+      "url": "https://impeccable.style",
+      "why": "Design vocabulary for AI agents",
+      "source": "agentickevin_"
+    },
+    {
+      "title": "BoardUI",
+      "url": "https://boardui.com",
+      "why": "React Design System for Dashboards",
+      "source": "taher_max_"
+    },
+    {
+      "title": "Cosmos",
+      "url": "https://cosmos.so",
+      "why": "AI-powered moodboarding and visual discovery for creatives",
+      "source": "theframerdude"
+    },
+    {
+      "title": "MaxiBestOf",
+      "url": "https://maxibestof.one",
+      "why": "Best website design & fonts inspiration feed",
+      "source": "bertwitt"
+    }
+  ]
+}
