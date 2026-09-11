@@ -107,9 +107,9 @@ describe('importCandidates', () => {
 describe('the real scout file', () => {
   const result = importCandidates(scoutFile);
 
-  it('imports without losing anything to duplication', () => {
-    expect(result.accepted.length).toBe(scoutFile.items.length);
-    expect(result.duplicates).toEqual([]);
+  it('accounts for every row: each one is either accepted or dropped with a reason', () => {
+    expect(result.accepted.length + result.duplicates.length).toBe(scoutFile.items.length);
+    for (const dropped of result.duplicates) expect(dropped.message).toBeTruthy();
   });
 
   /**
@@ -179,9 +179,26 @@ describe('the scout file against the real taxonomy', () => {
     expect(unmappable.map((item) => item.id)).toEqual([]);
   });
 
-  it('collides with nothing already live', () => {
+  /**
+   * The scout re-finds sites we already list, sometimes under a different id — "react-bits"
+   * for the live "reactbits". Matching on the normalised url rather than the id is what
+   * catches those, and nothing that collides may reach the queue.
+   */
+  it('lets nothing already live reach the queue, even under a different id', () => {
     const liveUrls = new Set(resources.map((entry) => normaliseUrl(entry.url)));
-    expect(items.filter((item) => liveUrls.has(normaliseUrl(item.url)))).toEqual([]);
+    const survivors = importCandidates(scoutFile).accepted;
+    expect(survivors.filter((item) => liveUrls.has(normaliseUrl(item.url)))).toEqual([]);
+  });
+
+  it('catches a re-find whose id differs from the live one', () => {
+    const collisions = items.filter((item) =>
+      resources.some((live) => normaliseUrl(live.url) === normaliseUrl(item.url)),
+    );
+    // If the scout ever stops re-finding live sites this can go, but it should not
+    // silently pass by asserting the file is clean.
+    for (const item of collisions) {
+      expect(importCandidates(scoutFile).duplicates.map((d) => d.id)).toContain(item.id);
+    }
   });
 
   it('renumbers cleanly past the live set rather than colliding with it', () => {
