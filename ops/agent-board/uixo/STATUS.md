@@ -39,7 +39,7 @@ Components · UI libraries · Templates · Icons · Backgrounds · Illustrations
 - Retagged candidates: `.../ledger/uixo-candidates.json` (+ `.md`)
 - Next: screenshot assets → `public/assets/{id}.png`, then PR (do not push until Red says)
 
-## Path correction (2026-09-11 01:25)
+## Path correction (2026-09-11 01:25) — PR https://github.com/EmotiveImpact/uixo/pull/1
 
 Listings are **no longer in `src/data.ts`** — they are in `src/content/resources.json`,
 and `access: [...]` maps to a single `pricing` tier (`Free` / `Freemium` / `Paid`).
