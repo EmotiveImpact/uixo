@@ -1,6 +1,6 @@
 {
   "updated": "2026-09-11",
-  "updated_note": "Full-dump harvest: note_tweet expanded. +53 new candidates (junk filtered). OG-fallback thumbs policy. | pending=53 blocked=9",
+  "updated_note": "Full-dump X harvest (note_tweet expanded) + thumbs. candidates=208 captured=201 og=5 blocked=2 pending=0. Remaining blocked: ['behance', 'land-book'] (no fetchable OG; Cloudflare).",
   "counts_by_category": {
     "Inspiration": 83,
     "Components": 23,
@@ -1278,11 +1278,11 @@
       ],
       "url": "https://internetdesigns.com",
       "needs_review": false,
-      "image_status": "blocked",
+      "image_status": "captured",
       "source": "letcontactabhi",
       "why": "UI/design resource from @letcontactabhi list post",
       "addedOrder": 50,
-      "image_error": "bot-wall:captcha"
+      "image_method": "screenshot"
     },
     {
       "id": "collect-ui",
@@ -1302,11 +1302,11 @@
       ],
       "url": "https://collectui.com",
       "needs_review": false,
-      "image_status": "blocked",
+      "image_status": "captured",
       "source": "letcontactabhi",
       "why": "Discover amazing UI designs, portfolios, and inspiration curated by design magicians",
       "addedOrder": 51,
-      "image_error": "bot-wall:captcha"
+      "image_method": "screenshot"
     },
     {
       "id": "page-flows",
@@ -1326,11 +1326,11 @@
       ],
       "url": "https://pageflows.com",
       "needs_review": false,
-      "image_status": "blocked",
+      "image_status": "captured",
       "source": "letcontactabhi",
       "why": "Explore 100,000+ recorded user flows, app screens, and UI patterns from Airbnb, Uber, Netflix & more. Save hours on UX research with Page\u2026",
       "addedOrder": 52,
-      "image_error": "bot-wall:captcha"
+      "image_method": "screenshot"
     },
     {
       "id": "refero",
@@ -1401,11 +1401,11 @@
       ],
       "url": "https://screenlane.com",
       "needs_review": true,
-      "image_status": "blocked",
+      "image_status": "captured",
       "source": "letcontactabhi",
       "why": "UI/design resource from @letcontactabhi list post",
       "addedOrder": 55,
-      "image_error": "bot-wall:captcha"
+      "image_method": "screenshot"
     },
     {
       "id": "aura-build",
@@ -1637,11 +1637,11 @@
       ],
       "url": "https://uimovement.com",
       "needs_review": false,
-      "image_status": "blocked",
+      "image_status": "captured",
       "source": "Mohd__Shahid_07",
       "why": "UI/design resource from @Mohd__Shahid_07 list post",
       "addedOrder": 65,
-      "image_error": "bot-wall:captcha"
+      "image_method": "screenshot"
     },
     {
       "id": "fonts-in-use",
@@ -1971,11 +1971,11 @@
       ],
       "url": "https://htmlrev.com/ui-libraries.html",
       "needs_review": false,
-      "image_status": "blocked",
+      "image_status": "captured",
       "source": "webdevluc",
       "why": "Free UI component libraries for websites and web apps",
       "addedOrder": 79,
-      "image_error": "bot-wall:captcha"
+      "image_method": "screenshot"
     },
     {
       "id": "kombai-gallery",
@@ -2893,7 +2893,7 @@
       "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
       "why": "Creative portfolio network for UI/UX and visual design",
       "addedOrder": 118,
-      "image_error": "http-403"
+      "image_error": "screenshot+og+microlink failed"
     },
     {
       "id": "contentcore",
@@ -2989,7 +2989,7 @@
       "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
       "why": "Website design inspiration gallery for landing pages",
       "addedOrder": 122,
-      "image_error": "http-403"
+      "image_error": "screenshot+og+microlink failed"
     },
     {
       "id": "lapa-ninja",
@@ -3565,7 +3565,7 @@
       ],
       "url": "https://pinterest.com",
       "needs_review": true,
-      "image_status": "blocked",
+      "image_status": "captured",
       "source": "https://x.com/walebuilds_/status/2096943140531732648",
       "why": "From @walebuilds_ list post",
       "addedOrder": 146,
@@ -3574,7 +3574,7 @@
         "post_id": "2096943140531732648",
         "full_dump": true
       },
-      "image_error": "bot-wall:captcha"
+      "image_method": "screenshot"
     },
     {
       "id": "react-bits",
@@ -3827,11 +3827,12 @@
       "source": "Manixh02",
       "why": "From @Manixh02 list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 156,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "amicro",
@@ -3852,11 +3853,12 @@
       "source": "Manixh02",
       "why": "Add beautiful, lightweight, and tree-shakeable micro-interactions and transition components to your React website with a single CLI command.",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 157,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2096175237109092642"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "appmotion",
@@ -3875,14 +3877,15 @@
       ],
       "url": "https://appmotion.design",
       "source": "rkant7",
-      "why": "From @rkant7 list post",
+      "why": "From @rkant7 list post | appmotion.design 404; thumb from appmotion.com if captured",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 158,
       "harvest_posts": [
         "https://x.com/rkant7/status/2097313383343165778",
         "https://x.com/rkant7/status/2095873864693956859"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "appshot-gallery",
@@ -3903,11 +3906,12 @@
       "source": "csaba_kissi",
       "why": "Appshot Gallery",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 159,
       "harvest_posts": [
         "https://x.com/csaba_kissi/status/2097206925264118197"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "bootstrapmade",
@@ -3926,11 +3930,12 @@
       "source": "AI_With_Stella",
       "why": "BootstrapMade",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 160,
       "harvest_posts": [
         "https://x.com/AI_With_Stella/status/2097670263362232398"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "boxicons",
@@ -3951,11 +3956,12 @@
       "source": "Manixh02",
       "why": "From @Manixh02 list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 161,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "built-by-designers",
@@ -3976,11 +3982,12 @@
       "source": "AGTPinsights",
       "why": "Built by Designers",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 162,
       "harvest_posts": [
         "https://x.com/AGTPinsights/status/2097634992469729335"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "carbondesignsystem",
@@ -4001,11 +4008,12 @@
       "source": "Manixh02",
       "why": "From @Manixh02 list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 163,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "colorlib",
@@ -4024,11 +4032,12 @@
       "source": "AI_With_Stella",
       "why": "Colorlib",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 164,
       "harvest_posts": [
         "https://x.com/AI_With_Stella/status/2097670263362232398"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "craftwork-curated",
@@ -4049,11 +4058,12 @@
       "source": "rkant7",
       "why": "Discover hundreds of carefully selected websites and design patterns originally featured on Curated.design.",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 165,
       "harvest_posts": [
         "https://x.com/rkant7/status/2095873864693956859"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "css-gg",
@@ -4074,11 +4084,12 @@
       "source": "Manixh02",
       "why": "From @Manixh02 list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 166,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "devicon",
@@ -4099,11 +4110,12 @@
       "source": "Manixh02",
       "why": "From @Manixh02 list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 167,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "dialkit",
@@ -4124,11 +4136,12 @@
       "source": "tranmautritam",
       "why": "Make the details feel right. DialKit puts live controls beside the interface you\u2019re building.",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 168,
       "harvest_posts": [
         "https://x.com/tranmautritam/status/2097973193709597033"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "feathericons",
@@ -4149,11 +4162,12 @@
       "source": "Manixh02",
       "why": "From @Manixh02 list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 170,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "floguo-notes",
@@ -4174,11 +4188,12 @@
       "source": "ImranUxi",
       "why": "Links and observations on design engineering",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 171,
       "harvest_posts": [
         "https://x.com/ImranUxi/status/2097929685565096303"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "flowbite",
@@ -4199,11 +4214,12 @@
       "source": "DevItaliya22",
       "why": "From @DevItaliya22 list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 172,
       "harvest_posts": [
         "https://x.com/DevItaliya22/status/2097210958301249942"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "google-fonts-icons",
@@ -4224,11 +4240,12 @@
       "source": "Manixh02",
       "why": "Material Symbols are our newest icons consolidating over 2,500 glyphs in a single font file with a wide range of design variants.",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 173,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "free-css",
@@ -4243,15 +4260,16 @@
       "formats": [
         "Web"
       ],
-      "url": "https://free-css.com",
+      "url": "https://www.free-css.com",
       "source": "AI_With_Stella",
       "why": "Free CSS",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 174,
       "harvest_posts": [
         "https://x.com/AI_With_Stella/status/2097670263362232398"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "getdesign",
@@ -4272,11 +4290,12 @@
       "source": "askwhykartik",
       "why": "Browse independent design system analyses from popular websites. Drop one into your project as design reference for your coding agent.",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 175,
       "harvest_posts": [
         "https://x.com/askwhykartik/status/2095761291801485316"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "getmd",
@@ -4297,11 +4316,12 @@
       "source": "ImranUxi",
       "why": "From @ImranUxi list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 176,
       "harvest_posts": [
         "https://x.com/ImranUxi/status/2097356858159935728"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "heroicons",
@@ -4322,11 +4342,12 @@
       "source": "Manixh02",
       "why": "Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 180,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "heroui",
@@ -4347,11 +4368,12 @@
       "source": "DevItaliya22",
       "why": "Beautiful, accessible React UI components built on React Aria and Tailwind CSS v4. The modern alternative to MUI, Chakra UI, and shadcn/ui for building production-ready applications.",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 181,
       "harvest_posts": [
         "https://x.com/DevItaliya22/status/2096922394988589098"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "html5up",
@@ -4370,11 +4392,12 @@
       "source": "AI_With_Stella",
       "why": "HTML5 UP",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 182,
       "harvest_posts": [
         "https://x.com/AI_With_Stella/status/2097670263362232398"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "hugeicons",
@@ -4395,12 +4418,13 @@
       "source": "rkant7",
       "why": "From @rkant7 list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 183,
       "harvest_posts": [
         "https://x.com/rkant7/status/2097313383343165778",
         "https://x.com/rkant7/status/2095873864693956859"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "iconify",
@@ -4421,11 +4445,12 @@
       "source": "Manixh02",
       "why": "From @Manixh02 list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 184,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "iconoir",
@@ -4446,11 +4471,12 @@
       "source": "Manixh02",
       "why": "Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. No premium options or email sign-up required, free for real. Icons",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 185,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "bootstrap-icons",
@@ -4471,11 +4497,12 @@
       "source": "Manixh02",
       "why": "Official open source SVG icon library for Bootstrap",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 186,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "ionic-ionicons",
@@ -4496,11 +4523,12 @@
       "source": "Manixh02",
       "why": "Ionicons is an open-sourced and MIT licensed icon pack.",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 187,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "kinetics",
@@ -4521,15 +4549,16 @@
       "source": "ImranUxi",
       "why": "Kinetics",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 189,
       "harvest_posts": [
         "https://x.com/ImranUxi/status/2096487758588219553"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "kokonut",
-      "name": "Kokonut",
+      "name": "KokonutUI",
       "category": "UI libraries",
       "subcategory": "React",
       "tags": [
@@ -4538,19 +4567,20 @@
       "access": [
         "Free"
       ],
-      "creator": "kokonut.ui",
+      "creator": "kokonutui.com",
       "formats": [
         "React"
       ],
-      "url": "https://kokonut.ui",
+      "url": "https://kokonutui.com",
       "source": "askwhykartik",
       "why": "From @askwhykartik list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 191,
       "harvest_posts": [
         "https://x.com/askwhykartik/status/2095851398424314249"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "libraries-dev",
@@ -4571,11 +4601,12 @@
       "source": "taher_max_",
       "why": "Libraries.dev",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 192,
       "harvest_posts": [
         "https://x.com/taher_max_/status/2095754869915496578"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "microkit",
@@ -4596,11 +4627,12 @@
       "source": "csaba_kissi",
       "why": "MicroKit",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 193,
       "harvest_posts": [
         "https://x.com/csaba_kissi/status/2097206925264118197"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "mobirise",
@@ -4619,11 +4651,12 @@
       "source": "AI_With_Stella",
       "why": "Mobirise",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 194,
       "harvest_posts": [
         "https://x.com/AI_With_Stella/status/2097670263362232398"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "muz",
@@ -4644,11 +4677,12 @@
       "source": "UiSavior",
       "why": "Designers' Secret Source: all the design inspiration from the world in one place. Served fresh.",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 195,
       "harvest_posts": [
         "https://x.com/UiSavior/status/2098225591296164105"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "mx-icons",
@@ -4669,11 +4703,12 @@
       "source": "Manixh02",
       "why": "From @Manixh02 list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 196,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "onepagelove",
@@ -4692,11 +4727,12 @@
       "source": "AI_With_Stella",
       "why": "One Page Love",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 198,
       "harvest_posts": [
         "https://x.com/AI_With_Stella/status/2097670263362232398"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "onepagelove-og",
@@ -4717,14 +4753,15 @@
       "source": "Manixh02",
       "why": "OG Image Gallery",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 199,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097372767423484083",
         "https://x.com/Manixh02/status/2097697837018382388",
         "https://x.com/Manixh02/status/2097685229490364530",
         "https://x.com/Manixh02/status/2097257708454019213"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "originui",
@@ -4745,11 +4782,12 @@
       "source": "DevItaliya22",
       "why": "From @DevItaliya22 list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 200,
       "harvest_posts": [
         "https://x.com/DevItaliya22/status/2097210958301249942"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "phosphoricons",
@@ -4770,11 +4808,12 @@
       "source": "Manixh02",
       "why": "A flexible icon family for interfaces, diagrams, presentations \u2014 whatever, really.",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 201,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "radix-ui-icons",
@@ -4795,11 +4834,12 @@
       "source": "Manixh02",
       "why": "From @Manixh02 list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 202,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "rams",
@@ -4818,11 +4858,12 @@
       "source": "ImranUxi",
       "why": "From @ImranUxi list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 203,
       "harvest_posts": [
         "https://x.com/ImranUxi/status/2097929685565096303"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "remixicon",
@@ -4843,11 +4884,12 @@
       "source": "Manixh02",
       "why": "Remix Icon is a set of open source neutral style system symbols elaborately crafted for designers and developers. All of the icons are free to use for both personal and commercial.",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 204,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "rive",
@@ -4868,11 +4910,12 @@
       "source": "DevItaliya22",
       "why": "Behind Spotify Wrapped, Duolingo, and products reaching 2 billion users. Design, animate, and code in one place. Ship everywhere.",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 206,
       "harvest_posts": [
         "https://x.com/DevItaliya22/status/2097210958301249942"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "simpleicons",
@@ -4893,11 +4936,12 @@
       "source": "Manixh02",
       "why": "From @Manixh02 list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 208,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "startbootstrap",
@@ -4916,11 +4960,12 @@
       "source": "AI_With_Stella",
       "why": "Start Bootstrap",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 209,
       "harvest_posts": [
         "https://x.com/AI_With_Stella/status/2097670263362232398"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "svg",
@@ -4941,11 +4986,12 @@
       "source": "ImranUxi",
       "why": "From @ImranUxi list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 210,
       "harvest_posts": [
         "https://x.com/ImranUxi/status/2097929685565096303"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "tabler-icons",
@@ -4966,11 +5012,12 @@
       "source": "Manixh02",
       "why": "Tabler Icons: 6184 free and open source SVG icons. Customizable size, color and stroke. Available for React, SolidJS, Vue, Figma and more for free!",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 211,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "templated",
@@ -4989,11 +5036,12 @@
       "source": "AI_With_Stella",
       "why": "Templated",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 212,
       "harvest_posts": [
         "https://x.com/AI_With_Stella/status/2097670263362232398"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "thealpy-ai-taste",
@@ -5014,11 +5062,12 @@
       "source": "ImranUxi",
       "why": "From @ImranUxi list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 213,
       "harvest_posts": [
         "https://x.com/ImranUxi/status/2097356858159935728"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "themefisher",
@@ -5037,11 +5086,12 @@
       "source": "AI_With_Stella",
       "why": "Themefisher",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 214,
       "harvest_posts": [
         "https://x.com/AI_With_Stella/status/2097670263362232398"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "thesvg",
@@ -5062,11 +5112,12 @@
       "source": "Manixh02",
       "why": "From @Manixh02 list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 215,
       "harvest_posts": [
         "https://x.com/Manixh02/status/2097544516354122181"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "ui-skills",
@@ -5087,11 +5138,12 @@
       "source": "ImranUxi",
       "why": "From @ImranUxi list post",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 217,
       "harvest_posts": [
         "https://x.com/ImranUxi/status/2097929685565096303"
-      ]
+      ],
+      "image_method": "screenshot"
     },
     {
       "id": "uideck",
@@ -5110,18 +5162,19 @@
       "source": "AI_With_Stella",
       "why": "UIDeck",
       "needs_review": true,
-      "image_status": "pending",
+      "image_status": "captured",
       "addedOrder": 218,
       "harvest_posts": [
         "https://x.com/AI_With_Stella/status/2097670263362232398"
-      ]
+      ],
+      "image_method": "screenshot"
     }
   ],
   "image_capture": {
-    "captured": 141,
+    "captured": 201,
     "og-captured": 5,
-    "blocked": 9,
-    "pending": 53,
-    "at": "2026-09-11T02:01:34.728849Z"
+    "blocked": 2,
+    "pending": 0,
+    "at": "2026-09-11T02:09:25.812093Z"
   }
 }
