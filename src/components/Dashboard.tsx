@@ -1,13 +1,9 @@
 import { AlertTriangle, Check, Clock, ExternalLink, Inbox, ListChecks, X } from 'lucide-react';
-import { useMemo, useState } from 'react';
-import {
-  loadReports,
-  loadSubmissions,
-  resolveReport,
-  setSubmissionStatus,
-  staleResources,
-} from '../lib/submissions';
-import type { LinkReport, Submission, SubmissionStatus } from '../lib/submissions';
+import { useEffect, useMemo, useState } from 'react';
+import { staleResources } from '../lib/submissions';
+import type { SubmissionStatus } from '../lib/submissions';
+import { api } from '../lib/api';
+import type { ServerReport, ServerSubmission } from '../lib/api';
 import { resources } from '../data';
 import type { List, User } from '../types';
 
@@ -46,21 +42,59 @@ export function Dashboard({
   onReview,
   reviewHref,
 }: DashboardProps) {
-  const [submissions, setSubmissions] = useState<Submission[]>(loadSubmissions);
-  const [reports, setReports] = useState<LinkReport[]>(loadReports);
+  const [submissions, setSubmissions] = useState<ServerSubmission[]>([]);
+  const [reports, setReports] = useState<ServerReport[]>([]);
+  const [loading, setLoading] = useState(isCurator);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
-  const mine = useMemo(
-    () => submissions.filter((entry) => !entry.submittedBy || entry.submittedBy === user.id),
-    [submissions, user.id],
-  );
+  // Only a curator may read these, so only a curator asks.
+  useEffect(() => {
+    if (!isCurator) return;
+    let live = true;
+
+    void Promise.all([api.listSubmissions(), api.listReports()]).then(([subs, reps]) => {
+      if (!live) return;
+      if (subs.ok) setSubmissions(subs.data.submissions);
+      if (reps.ok) setReports(reps.data.reports);
+      if (!subs.ok || !reps.ok) {
+        setLoadError(subs.ok ? (reps.ok ? null : reps.error) : subs.error);
+      }
+      setLoading(false);
+    });
+
+    return () => {
+      live = false;
+    };
+  }, [isCurator]);
+
+  const decide = async (id: string, status: SubmissionStatus) => {
+    const before = submissions;
+    setSubmissions((current) =>
+      current.map((entry) => (entry.id === id ? { ...entry, status } : entry)),
+    );
+    const result = await api.setSubmissionStatus(id, status);
+    // Put it back if the server disagreed, rather than showing a decision that did not stick.
+    if (!result.ok) setSubmissions(before);
+  };
+
+  const resolve = async (resourceId: string) => {
+    const before = reports;
+    setReports((current) => current.filter((entry) => entry.resource_id !== resourceId));
+    const result = await api.resolveReport(resourceId);
+    if (!result.ok) setReports(before);
+  };
+
+  // Submissions are anonymous today, so a member has nothing of their own to show yet.
+  const mine = useMemo(() => (isCurator ? submissions : []), [submissions, isCurator]);
   const pending = useMemo(
     () => submissions.filter((entry) => entry.status === 'pending'),
     [submissions],
   );
-  const openReports = useMemo(() => reports.filter((entry) => !entry.resolved), [reports]);
+  const openReports = reports;
   const stale = useMemo(() => staleResources(resources), []);
 
   const savedCount = new Set(lists.flatMap((list) => list.resourceIds)).size;
+  const greetingName = user.name.split(' ')[0];
 
   return (
     <div className="dashboard">
@@ -87,7 +121,7 @@ export function Dashboard({
 
       <section className="panel" aria-labelledby="lists-heading">
         <h2 id="lists-heading">
-          <ListChecks size={16} /> Your lists
+          <ListChecks size={16} /> {greetingName}&rsquo;s lists
         </h2>
         {lists.length === 0 ? (
           <p className="panel-empty">No lists yet.</p>
@@ -110,11 +144,19 @@ export function Dashboard({
         </p>
       </section>
 
+      {loadError && (
+        <p className="inbox-warning" role="status">
+          <AlertTriangle size={14} /> {loadError}
+        </p>
+      )}
+
       <section className="panel" aria-labelledby="submissions-heading">
         <h2 id="submissions-heading">
           <Inbox size={16} /> Your submissions
         </h2>
-        {mine.length === 0 ? (
+        {loading ? (
+          <p className="panel-empty">Loading…</p>
+        ) : mine.length === 0 ? (
           <p className="panel-empty">
             Nothing submitted yet.{' '}
             <button className="linkish" onClick={onSubmit}>
@@ -131,7 +173,7 @@ export function Dashboard({
                     <span className={`status status-${submission.status}`}>
                       {STATUS_LABEL[submission.status]}
                     </span>
-                    {formatDate(submission.submittedAt)}
+                    {formatDate(submission.submitted_at)}
                   </span>
                 </div>
                 <a
@@ -176,7 +218,9 @@ export function Dashboard({
               <Inbox size={16} /> Review queue
               {pending.length > 0 && <span className="count-pill">{pending.length}</span>}
             </h2>
-            {pending.length === 0 ? (
+            {loading ? (
+              <p className="panel-empty">Loading…</p>
+            ) : pending.length === 0 ? (
               <p className="panel-empty">Nothing waiting.</p>
             ) : (
               <ul className="panel-rows">
@@ -185,20 +229,20 @@ export function Dashboard({
                     <div className="row-main static">
                       <span>{submission.name}</span>
                       <span className="row-meta">
-                        {submission.url} · {formatDate(submission.submittedAt)}
+                        {submission.url} · {formatDate(submission.submitted_at)}
                       </span>
                     </div>
                     <button
                       className="row-action approve"
                       aria-label={`Approve ${submission.name}`}
-                      onClick={() => setSubmissions(setSubmissionStatus(submission.id, 'approved'))}
+                      onClick={() => void decide(submission.id, 'approved')}
                     >
                       <Check size={15} />
                     </button>
                     <button
                       className="row-action decline"
                       aria-label={`Decline ${submission.name}`}
-                      onClick={() => setSubmissions(setSubmissionStatus(submission.id, 'declined'))}
+                      onClick={() => void decide(submission.id, 'declined')}
                     >
                       <X size={15} />
                     </button>
@@ -222,22 +266,22 @@ export function Dashboard({
             ) : (
               <ul className="panel-rows">
                 {openReports.map((report) => {
-                  const resource = resources.find((entry) => entry.id === report.resourceId);
+                  const resource = resources.find((entry) => entry.id === report.resource_id);
                   return (
-                    <li key={report.resourceId}>
+                    <li key={report.resource_id}>
                       <button
                         className="row-main"
-                        onClick={() => onOpenResource(report.resourceId)}
+                        onClick={() => onOpenResource(report.resource_id)}
                       >
-                        <span>{resource?.name ?? report.resourceId}</span>
+                        <span>{resource?.name ?? report.name}</span>
                         <span className="row-meta">
-                          {report.reason} · {formatDate(report.reportedAt)}
+                          {report.reason} · {formatDate(report.reported_at)}
                         </span>
                       </button>
                       <button
                         className="row-action approve"
-                        aria-label={`Mark ${resource?.name ?? report.resourceId} resolved`}
-                        onClick={() => setReports(resolveReport(report.resourceId))}
+                        aria-label={`Mark ${resource?.name ?? report.name} resolved`}
+                        onClick={() => void resolve(report.resource_id)}
                       >
                         <Check size={15} />
                       </button>
