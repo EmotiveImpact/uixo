@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Thumbnail } from './Thumbnail';
 import { listsHolding } from '../lib/lists';
 import { addReport } from '../lib/submissions';
+import { api } from '../lib/api';
 import { useFocusTrap } from '../hooks/useFocusTrap';
 import type { List, Resource } from '../types';
 
@@ -60,8 +61,12 @@ export function QuickView({
   const holding = listsHolding(lists, resource.id);
 
   const report = () => {
-    addReport(resource.id, 'Reported from the quick view', null);
+    // Optimistic: the visitor has done their bit either way, and a lost report is not
+    // worth an error message to someone who was being helpful.
     setReported(true);
+    void api.report(resource.id, 'Reported from the quick view').then((result) => {
+      if (!result.ok) addReport(resource.id, 'Reported from the quick view', null);
+    });
   };
 
   return (
