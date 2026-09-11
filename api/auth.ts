@@ -48,9 +48,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const base = (process.env.NEON_AUTH_BASE_URL ?? '').replace(/\/+$/, '');
   if (!base) return res.status(503).json({ error: 'Auth is not configured.' });
 
-  const segments = Array.isArray(req.query.path) ? req.query.path : [req.query.path ?? ''];
-  const query = req.url?.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
-  const target = `${base}/${segments.join('/')}${query}`;
+  // vercel.json rewrites /api/auth/<anything> to here with the tail in `path`, because a
+  // zero-config [...catch-all] is not built for a non-Next project.
+  const raw = req.query.path;
+  const tail = (Array.isArray(raw) ? raw.join('/') : (raw ?? '')).replace(/^\/+/, '');
+  if (!tail) return res.status(404).json({ error: 'No auth route given.' });
+
+  const forwarded = new URLSearchParams();
+  for (const [key, value] of Object.entries(req.query)) {
+    if (key === 'path' || value === undefined) continue;
+    for (const item of Array.isArray(value) ? value : [value]) forwarded.append(key, item);
+  }
+  const suffix = forwarded.toString();
+  const target = `${base}/${tail}${suffix ? `?${suffix}` : ''}`;
 
   const headers = new Headers();
   for (const [key, value] of Object.entries(req.headers)) {
