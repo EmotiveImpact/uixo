@@ -42,7 +42,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   if (req.method === 'GET') {
-    if (!requireCurator(req, res)) return;
+    if (!(await requireCurator(req, res))) return;
     const status = typeof req.query.status === 'string' ? req.query.status : null;
 
     const rows =
@@ -59,7 +59,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   if (req.method === 'PATCH') {
-    if (!requireCurator(req, res)) return;
+    if (!(await requireCurator(req, res))) return;
     const id = text(req.body?.id, 64);
     const status = text(req.body?.status, 16);
 

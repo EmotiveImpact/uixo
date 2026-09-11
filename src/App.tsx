@@ -41,7 +41,7 @@ export function App() {
   const { route, navigate } = useRoute();
   const { lists, toggleSaved, toggleIn, create, remove } = useLists();
   const { light, toggle: toggleTheme } = useTheme();
-  const { user, isCurator, isMock, signIn, signOut, available: authAvailable } = useAuth();
+  const { user, isCurator, signIn, signUp, signOut, available: authAvailable } = useAuth();
 
   const [openSection, setOpenSection] = useState<string | null>(route.category);
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -184,12 +184,10 @@ export function App() {
           dialogRef={dialogRef}
           modal={modal}
           onClose={() => setModal(null)}
-          isMock={isMock}
           userId={user?.id ?? null}
-          onSignIn={async (email, name) => {
-            await signIn(email, name);
-            setModal(null);
-          }}
+          onSignIn={signIn}
+          onSignUp={signUp}
+          onAuthDone={() => setModal(null)}
         />
       </>
     );
@@ -359,12 +357,10 @@ export function App() {
         dialogRef={dialogRef}
         modal={modal}
         onClose={() => setModal(null)}
-        isMock={isMock}
         userId={user?.id ?? null}
-        onSignIn={async (email, name) => {
-          await signIn(email, name);
-          setModal(null);
-        }}
+        onSignIn={signIn}
+        onSignUp={signUp}
+        onAuthDone={() => setModal(null)}
       />
     </AnimatedSidebarProvider>
   );

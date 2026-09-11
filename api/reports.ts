@@ -32,7 +32,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   if (req.method === 'GET') {
-    if (!requireCurator(req, res)) return;
+    if (!(await requireCurator(req, res))) return;
     const rows = await sql`
       select r.id, r.resource_id, r.reason, r.reported_at, r.resolved, res.name, res.url
       from link_reports r
@@ -43,7 +43,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   if (req.method === 'PATCH') {
-    if (!requireCurator(req, res)) return;
+    if (!(await requireCurator(req, res))) return;
     const resourceId = text(req.body?.resourceId, 200);
     if (!resourceId) return json(res, 400, { error: 'A resourceId is required.' });
 

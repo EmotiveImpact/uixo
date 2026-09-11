@@ -2,25 +2,70 @@ import { useCallback, useEffect, useState } from 'react';
 import { auth, authAvailable } from '../lib/auth';
 import type { Session } from '../lib/auth';
 
+/**
+ * Three states, not two: until the session request resolves we genuinely do not know
+ * whether anyone is signed in, and rendering "signed out" in the meantime makes the UI
+ * flicker for anyone who is.
+ */
 export function useAuth() {
-  const [session, setSession] = useState<Session>(() => auth.getSession());
+  const [session, setSession] = useState<Session>(null);
+  const [settled, setSettled] = useState(!authAvailable);
 
-  useEffect(() => auth.subscribe(setSession), []);
+  const refresh = useCallback(async () => {
+    if (!authAvailable) return null;
+    return auth.getSession().catch(() => null);
+  }, []);
+
+  // Read the session once on mount. The effect subscribes to an external system — the
+  // auth service — rather than deriving state, and ignores a result that arrives after
+  // unmount.
+  useEffect(() => {
+    if (!authAvailable) return;
+    let live = true;
+    void auth
+      .getSession()
+      .catch(() => null)
+      .then((next) => {
+        if (!live) return;
+        setSession(next);
+        setSettled(true);
+      });
+    return () => {
+      live = false;
+    };
+  }, []);
 
   const signIn = useCallback(
-    (email: string, name?: string) => auth.signIn(email, name).then(() => undefined),
-    [],
+    async (email: string, password: string) => {
+      const result = await auth.signIn(email, password);
+      if (result.ok) setSession(await refresh());
+      return result;
+    },
+    [refresh],
   );
-  const signOut = useCallback(() => auth.signOut(), []);
+
+  const signUp = useCallback(
+    async (email: string, password: string, name: string) => {
+      const result = await auth.signUp(email, password, name);
+      if (result.ok) setSession(await refresh());
+      return result;
+    },
+    [refresh],
+  );
+
+  const signOut = useCallback(async () => {
+    await auth.signOut();
+    setSession(null);
+  }, []);
 
   return {
-    /** False when accounts are not on offer, e.g. production with the mock provider. */
     available: authAvailable,
-    session: authAvailable ? session : null,
-    user: authAvailable ? (session?.user ?? null) : null,
-    isCurator: authAvailable && session?.user.role === 'curator',
-    isMock: auth.isMock,
+    settled,
+    session,
+    user: session?.user ?? null,
+    isCurator: session?.user.role === 'curator',
     signIn,
+    signUp,
     signOut,
   };
 }

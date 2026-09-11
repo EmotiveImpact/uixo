@@ -11,14 +11,11 @@ export function methodNotAllowed(res: VercelResponse, allowed: string[]) {
 }
 
 /**
- * Curator endpoints are gated by a single shared secret held only on the server.
- *
- * This is deliberately modest: one operator, one secret, checked in constant time. It is
- * not a user system and should not grow into one — when several people need accounts,
- * replace it wholesale rather than bolting roles onto a password. What it does do is
- * actually gate, which the mock provider it replaces did not.
+ * Break-glass access by shared secret, for scripts and for the case where the auth service
+ * is unreachable. Compared character by character so the time taken never leaks how much
+ * of the token was right.
  */
-export function isCurator(req: VercelRequest): boolean {
+export function hasCuratorToken(req: VercelRequest): boolean {
   const expected = process.env.CURATOR_TOKEN;
   if (!expected) return false;
 
@@ -26,7 +23,6 @@ export function isCurator(req: VercelRequest): boolean {
   const supplied = header.startsWith('Bearer ') ? header.slice(7) : '';
   if (supplied.length !== expected.length) return false;
 
-  // Compare every character so the time taken does not leak the prefix length.
   let mismatch = 0;
   for (let i = 0; i < expected.length; i += 1) {
     mismatch |= supplied.charCodeAt(i) ^ expected.charCodeAt(i);
@@ -34,9 +30,38 @@ export function isCurator(req: VercelRequest): boolean {
   return mismatch === 0;
 }
 
-export function requireCurator(req: VercelRequest, res: VercelResponse): boolean {
-  if (isCurator(req)) return true;
-  json(res, 401, { error: 'Curator token required.' });
+type AuthUser = { id: string; email: string; role?: string };
+
+/**
+ * Ask Neon Auth who this request belongs to.
+ *
+ * The session is a cookie on the auth service's own origin, so the cookie header is
+ * forwarded verbatim and the answer comes from the service rather than from anything the
+ * caller asserted. A request carrying a forged cookie gets no session back.
+ */
+export async function sessionUser(req: VercelRequest): Promise<AuthUser | null> {
+  const base = (process.env.NEON_AUTH_BASE_URL ?? '').replace(/\/+$/, '');
+  const cookie = req.headers.cookie;
+  if (!base || !cookie) return null;
+
+  try {
+    const response = await fetch(`${base}/get-session`, { headers: { cookie } });
+    if (!response.ok) return null;
+    const data = (await response.json()) as { user?: AuthUser; session?: unknown } | null;
+    return data?.user && data.session ? data.user : null;
+  } catch {
+    return null;
+  }
+}
+
+/** A curator is an admin in Neon Auth, or a caller holding the break-glass token. */
+export async function requireCurator(req: VercelRequest, res: VercelResponse): Promise<boolean> {
+  if (hasCuratorToken(req)) return true;
+
+  const user = await sessionUser(req);
+  if (user && (user.role === 'admin' || user.role === 'curator')) return true;
+
+  json(res, 401, { error: 'You need a curator account to do that.' });
   return false;
 }
 

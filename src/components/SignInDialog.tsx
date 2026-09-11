@@ -1,33 +1,52 @@
 import { useState } from 'react';
+import type { AuthResult } from '../lib/auth';
 
 type SignInDialogProps = {
-  isMock: boolean;
-  onSignIn: (email: string, name?: string) => Promise<void>;
+  onSignIn: (email: string, password: string) => Promise<AuthResult>;
+  onSignUp: (email: string, password: string, name: string) => Promise<AuthResult>;
+  onDone: () => void;
 };
 
 /**
- * Sign-in surface for the mock provider. It sends whatever is typed to the configured
- * AuthProvider and stores nothing itself — when a real backend is wired up, only the
- * provider changes.
+ * Real accounts, backed by Neon Auth. The password is posted straight to the auth service
+ * over its own origin and never touches UIXO's storage or its database.
  */
-export function SignInDialog({ isMock, onSignIn }: SignInDialogProps) {
-  const [email, setEmail] = useState('');
+export function SignInDialog({ onSignIn, onSignUp, onDone }: SignInDialogProps) {
+  const [mode, setMode] = useState<'in' | 'up'>('in');
+  const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+
+  const submit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (busy) return;
+    setBusy(true);
+    setError(null);
+
+    const data = new FormData(event.currentTarget);
+    const email = String(data.get('email') ?? '').trim();
+    const password = String(data.get('password') ?? '');
+    const name = String(data.get('name') ?? '').trim();
+
+    const result =
+      mode === 'in' ? await onSignIn(email, password) : await onSignUp(email, password, name);
+
+    if (result.ok) onDone();
+    else setError(result.error);
+    setBusy(false);
+  };
 
   return (
     <>
-      <h2>Sign in to UIXO</h2>
+      <h2>{mode === 'in' ? 'Sign in to UIXO' : 'Create an account'}</h2>
       <p>Keep your lists across devices, and follow what you have submitted.</p>
 
-      <form
-        onSubmit={async (event) => {
-          event.preventDefault();
-          if (!email.trim() || busy) return;
-          setBusy(true);
-          await onSignIn(email.trim());
-          setBusy(false);
-        }}
-      >
+      <form onSubmit={submit}>
+        {mode === 'up' && (
+          <label>
+            Your name
+            <input name="name" required autoComplete="name" placeholder="Alex" />
+          </label>
+        )}
         <label>
           Email address
           <input
@@ -36,22 +55,40 @@ export function SignInDialog({ isMock, onSignIn }: SignInDialogProps) {
             required
             autoComplete="email"
             placeholder="you@example.com"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
           />
         </label>
-        <button className="primary" disabled={busy}>
-          {busy ? 'Signing in…' : 'Continue'}
-        </button>
-      </form>
+        <label>
+          Password
+          <input
+            name="password"
+            type="password"
+            required
+            minLength={8}
+            autoComplete={mode === 'in' ? 'current-password' : 'new-password'}
+            placeholder="At least 8 characters"
+          />
+        </label>
 
-      {isMock && (
+        {error && <small className="auth-error">{error}</small>}
+
+        <button className="primary" disabled={busy}>
+          {busy ? 'One moment…' : mode === 'in' ? 'Sign in' : 'Create account'}
+        </button>
+
         <small>
-          Development stand-in: no password, no verification, and the session lives only in this
-          browser. Replace the provider in <code>src/lib/auth.ts</code> before this goes live. An
-          address containing “curator” gets the moderation views.
+          {mode === 'in' ? 'No account yet? ' : 'Already have one? '}
+          <button
+            type="button"
+            className="linkish"
+            onClick={() => {
+              setMode(mode === 'in' ? 'up' : 'in');
+              setError(null);
+            }}
+          >
+            {mode === 'in' ? 'Create one' : 'Sign in'}
+          </button>
         </small>
-      )}
+      </form>
     </>
   );
 }

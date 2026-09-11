@@ -3,14 +3,16 @@ import type { RefObject } from 'react';
 import { SignInDialog } from './SignInDialog';
 import { SubmitPanel } from './SubmitPanel';
 import type { ModalName } from '../types';
+import type { AuthResult } from '../lib/auth';
 
 type AppDialogProps = {
   dialogRef: RefObject<HTMLDialogElement | null>;
   modal: ModalName | null;
   onClose: () => void;
-  isMock: boolean;
   userId: string | null;
-  onSignIn: (email: string, name?: string) => Promise<void>;
+  onSignIn: (email: string, password: string) => Promise<AuthResult>;
+  onSignUp: (email: string, password: string, name: string) => Promise<AuthResult>;
+  onAuthDone: () => void;
 };
 
 /**
@@ -28,7 +30,15 @@ function isBackdropClick(event: React.MouseEvent<HTMLDialogElement>, dialog: HTM
   );
 }
 
-export function AppDialog({ dialogRef, modal, onClose, isMock, userId, onSignIn }: AppDialogProps) {
+export function AppDialog({
+  dialogRef,
+  modal,
+  onClose,
+  userId,
+  onSignIn,
+  onSignUp,
+  onAuthDone,
+}: AppDialogProps) {
   return (
     <dialog
       ref={dialogRef}
@@ -60,7 +70,9 @@ export function AppDialog({ dialogRef, modal, onClose, isMock, userId, onSignIn 
 
       {modal === 'submit' && <SubmitPanel userId={userId} />}
 
-      {modal === 'signin' && <SignInDialog isMock={isMock} onSignIn={onSignIn} />}
+      {modal === 'signin' && (
+        <SignInDialog onSignIn={onSignIn} onSignUp={onSignUp} onDone={onAuthDone} />
+      )}
     </dialog>
   );
 }

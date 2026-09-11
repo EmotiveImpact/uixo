@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { httpUrl, isCurator, text } from './http';
+import { hasCuratorToken, httpUrl, text } from './http';
 import type { VercelRequest } from '@vercel/node';
 
 const req = (authorization?: string) =>
@@ -43,27 +43,27 @@ describe('httpUrl', () => {
   });
 });
 
-describe('isCurator', () => {
+describe('hasCuratorToken (break-glass)', () => {
   it('refuses everything when no token is configured', () => {
     delete process.env.CURATOR_TOKEN;
-    expect(isCurator(req('Bearer anything'))).toBe(false);
-    expect(isCurator(req())).toBe(false);
+    expect(hasCuratorToken(req('Bearer anything'))).toBe(false);
+    expect(hasCuratorToken(req())).toBe(false);
   });
 
   it('accepts only the exact token', () => {
     process.env.CURATOR_TOKEN = 'correct-horse-battery-staple';
-    expect(isCurator(req('Bearer correct-horse-battery-staple'))).toBe(true);
-    expect(isCurator(req('Bearer correct-horse-battery-stapl'))).toBe(false);
-    expect(isCurator(req('Bearer CORRECT-horse-battery-staple'))).toBe(false);
-    expect(isCurator(req('correct-horse-battery-staple'))).toBe(false);
-    expect(isCurator(req())).toBe(false);
+    expect(hasCuratorToken(req('Bearer correct-horse-battery-staple'))).toBe(true);
+    expect(hasCuratorToken(req('Bearer correct-horse-battery-stapl'))).toBe(false);
+    expect(hasCuratorToken(req('Bearer CORRECT-horse-battery-staple'))).toBe(false);
+    expect(hasCuratorToken(req('correct-horse-battery-staple'))).toBe(false);
+    expect(hasCuratorToken(req())).toBe(false);
     delete process.env.CURATOR_TOKEN;
   });
 
   it('does not accept a prefix of the token', () => {
     process.env.CURATOR_TOKEN = 'abcdef';
-    expect(isCurator(req('Bearer abc'))).toBe(false);
-    expect(isCurator(req('Bearer abcdefgh'))).toBe(false);
+    expect(hasCuratorToken(req('Bearer abc'))).toBe(false);
+    expect(hasCuratorToken(req('Bearer abcdefgh'))).toBe(false);
     delete process.env.CURATOR_TOKEN;
   });
 });
