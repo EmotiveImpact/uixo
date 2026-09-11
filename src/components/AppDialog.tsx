@@ -12,6 +12,7 @@ type AppDialogProps = {
   userId: string | null;
   onSignIn: (email: string, password: string) => Promise<AuthResult>;
   onSignUp: (email: string, password: string, name: string) => Promise<AuthResult>;
+  onProvider: (provider: 'google') => Promise<AuthResult>;
   onAuthDone: () => void;
 };
 
@@ -37,6 +38,7 @@ export function AppDialog({
   userId,
   onSignIn,
   onSignUp,
+  onProvider,
   onAuthDone,
 }: AppDialogProps) {
   return (
@@ -71,7 +73,12 @@ export function AppDialog({
       {modal === 'submit' && <SubmitPanel userId={userId} />}
 
       {modal === 'signin' && (
-        <SignInDialog onSignIn={onSignIn} onSignUp={onSignUp} onDone={onAuthDone} />
+        <SignInDialog
+          onSignIn={onSignIn}
+          onSignUp={onSignUp}
+          onProvider={onProvider}
+          onDone={onAuthDone}
+        />
       )}
     </dialog>
   );

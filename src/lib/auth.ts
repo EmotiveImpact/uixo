@@ -22,6 +22,8 @@ export type AuthProvider = {
   signIn(email: string, password: string): Promise<AuthResult>;
   signUp(email: string, password: string, name: string): Promise<AuthResult>;
   signOut(): Promise<void>;
+  /** Hand off to a provider's own sign-in page. Never returns — the browser navigates. */
+  signInWithProvider(provider: 'google'): Promise<AuthResult>;
   /** A bearer token for UIXO's own API, or null when signed out. */
   apiToken(): Promise<string | null>;
   readonly isMock: boolean;
@@ -103,6 +105,24 @@ export const neonAuth: AuthProvider = {
         : { ok: false, error: 'Could not reach the sign-up service.' };
     } catch (error) {
       return { ok: false, error: error instanceof Error ? error.message : 'Sign-up failed.' };
+    }
+  },
+
+  /**
+   * Social sign-in is a redirect, not a request: the service replies with a URL and the
+   * browser leaves. Anything after the navigation never runs.
+   */
+  async signInWithProvider(provider) {
+    try {
+      const data = await call<{ url?: string }>('/sign-in/social', {
+        provider,
+        callbackURL: `${window.location.origin}/browse`,
+      });
+      if (!data?.url) return { ok: false, error: 'That sign-in method is unavailable.' };
+      window.location.href = data.url;
+      return { ok: true };
+    } catch (error) {
+      return { ok: false, error: error instanceof Error ? error.message : 'Sign-in failed.' };
     }
   },
 

@@ -53,6 +53,11 @@ export function useAuth() {
     [refresh],
   );
 
+  const signInWithProvider = useCallback(
+    (provider: 'google') => auth.signInWithProvider(provider),
+    [],
+  );
+
   const signOut = useCallback(async () => {
     await auth.signOut();
     setSession(null);
@@ -66,6 +71,7 @@ export function useAuth() {
     isCurator: session?.user.role === 'curator',
     signIn,
     signUp,
+    signInWithProvider,
     signOut,
   };
 }

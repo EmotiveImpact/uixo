@@ -2208,3 +2208,40 @@ kbd {
     white-space: normal;
   }
 }
+
+/* ---- Sign-in ---- */
+.provider-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 18px;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--muted);
+  color: var(--foreground);
+  font-size: 13px;
+}
+.provider-button:disabled {
+  opacity: 0.5;
+}
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0 0;
+  font-size: 11px;
+  color: #6c6c76;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.auth-error {
+  color: #b88f8f;
+}
