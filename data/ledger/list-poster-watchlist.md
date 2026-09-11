@@ -22,17 +22,26 @@ Updated: 2026-09-11
 - @originary_joe
 - @tranmautritam
 - @webdevluc
+- @noahelhadedy
+- @neropursue
+- @csaba_kissi
+- @ah4alt
+- @eamin_ux
+- @deb_isadev
+- @Mohd__Shahid_07
 
 ## Discovery candidates
 
-- @ah4alt
 - @theansarh
 - @eddieeee0716
 - @mredu000
 - @NityamAS
 - @AI_With_Stella
-- @csaba_kissi
 - @AGTPinsights
 - @chadcombinator
-- @noahelhadedy
-- @neropursue
+- @Milo_Milady
+- @ahmad_Uxflow
+- @_itshyper__
+- @zaikhdev
+- @mr_nirajkumar07
+- @Shefali__J
