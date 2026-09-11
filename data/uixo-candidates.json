@@ -1808,11 +1808,10 @@
       ],
       "url": "https://webinspoo.com",
       "needs_review": false,
-      "image_status": "blocked",
+      "image_status": "og-captured",
       "source": "taher_max_",
       "why": "Browse 1,200+ curated SaaS websites and filter by category, font, color palette, tech stack, and page type. Updated daily.",
-      "addedOrder": 72,
-      "image_error": "page.goto: net::ERR_CONNECTION_CLOSED at https://webinspoo.com/\nCall log:\n  - navigating to \"https://webinspoo.com/\", waiting until \"domcontentloaded\"\n"
+      "addedOrder": 72
     },
     {
       "id": "logoinspo",
@@ -1832,11 +1831,10 @@
       ],
       "url": "https://logoinspo.com",
       "needs_review": false,
-      "image_status": "blocked",
+      "image_status": "og-captured",
       "source": "taher_max_",
       "why": "Explore 1,200+ hand-picked real and fictional logos searchable by style, industry, and color — each credited to its designer.",
-      "addedOrder": 73,
-      "image_error": "page.goto: net::ERR_CONNECTION_CLOSED at https://logoinspo.com/\nCall log:\n  - navigating to \"https://logoinspo.com/\", waiting until \"domcontentloaded\"\n"
+      "addedOrder": 73
     },
     {
       "id": "asoinspo",
@@ -1880,11 +1878,10 @@
       ],
       "url": "https://uiinspoo.com",
       "needs_review": false,
-      "image_status": "blocked",
+      "image_status": "og-captured",
       "source": "taher_max_",
       "why": "Discover daily UI design inspiration from the world's best product designers. Browse mobile apps, dashboards, landing pages, and motion U…",
-      "addedOrder": 75,
-      "image_error": "page.goto: net::ERR_CONNECTION_CLOSED at https://uiinspoo.com/\nCall log:\n  - navigating to \"https://uiinspoo.com/\", waiting until \"domcontentloaded\"\n"
+      "addedOrder": 75
     },
     {
       "id": "design-engineer-tools",
@@ -2066,11 +2063,10 @@
       ],
       "url": "https://uiuxshowcase.com",
       "needs_review": true,
-      "image_status": "blocked",
+      "image_status": "og-captured",
       "source": "Milo_Milady",
       "why": "UI/design resource from @Milo_Milady list post",
-      "addedOrder": 83,
-      "image_error": "page.goto: net::ERR_CONNECTION_CLOSED at https://uiuxshowcase.com/\nCall log:\n  - navigating to \"https://uiuxshowcase.com/\", waiting until \"domcontentloaded\"\n"
+      "addedOrder": 83
     },
     {
       "id": "uiverse",
@@ -3518,7 +3514,7 @@
       ],
       "url": "https://nextjsshop.com",
       "needs_review": true,
-      "image_status": "blocked",
+      "image_status": "og-captured",
       "source": "https://x.com/taher_max_/status/2096952107614277702",
       "why": "Discover premium Next.js templates and components built with Tailwind CSS. Ideal for freelancers, developers, and small businesses seeking modern web solutions.",
       "addedOrder": 144,
@@ -3526,8 +3522,7 @@
         "source_user": "taher_max_",
         "post_id": "2096952107614277702",
         "full_dump": true
-      },
-      "image_error": "page.goto: net::ERR_CONNECTION_CLOSED at https://nextjsshop.com/\nCall log:\n  - navigating to \"https://nextjsshop.com/\", waiting until \"domcontentloaded\"\n"
+      }
     },
     {
       "id": "opendesign",
@@ -3815,9 +3810,10 @@
     }
   ],
   "image_capture": {
-    "captured": 141,
-    "blocked": 14,
+    "captured": 146,
+    "blocked": 9,
     "pending": 0,
-    "at": "2026-09-11T01:09:44.073Z"
+    "og-captured": 5,
+    "at": "2026-09-11T01:24:42.394Z"
   }
 }
