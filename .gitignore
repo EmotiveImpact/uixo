@@ -9,3 +9,4 @@ dist/
 /legacy/mocks/
 /legacy/assets/
 .vercel
+.env*.local

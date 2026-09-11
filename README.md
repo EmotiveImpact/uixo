@@ -88,12 +88,34 @@ db/
 legacy/               Archived pre-Vite prototype; not built or imported
 ```
 
-Tests cover the filtering logic, collection management and URL round-tripping —
-`src/lib/*.test.ts`.
+Tests cover filtering, lists, URL round-tripping, candidate import, submissions, the route
+hook and the theme hook — `src/lib/*.test.ts`, `src/hooks/*.test.ts`, `src/components/*.test.tsx`.
+
+## The database
+
+**Neon is connected.** It was provisioned through the Vercel Marketplace, so `DATABASE_URL`
+is injected into production, preview and development automatically. Pull it locally with
+`vercel env pull .env.local` — the file is gitignored and must stay that way.
+
+```sh
+npm run db:schema   # apply db/schema.sql — safe to re-run
+npm run db:seed     # mirror src/content/*.json into the database
+```
+
+`src/content/*.json` is still the source of truth. The site reads it at build time and the
+prerender step needs it on disk, so the database currently _mirrors_ it rather than
+replacing it. `db/schema.sql` has been applied twice against both a local Postgres 17 and
+the live Neon database to confirm it is genuinely re-runnable.
+
+**Nothing in the app queries Postgres yet, and it cannot.** A browser has no route to a
+database; that needs server endpoints (Vercel Functions) sitting between the two. Until
+those exist, submissions, reports and lists stay in the visitor's browser and accounts stay
+hidden in production.
 
 ## Notes
 
 The animated sidebar uses the original Be UI component; see
 [COMPONENT-SOURCE.md](COMPONENT-SOURCE.md) for provenance. Resource thumbnails are screenshots of
 the linked websites and their branding belongs to the respective owners. Submissions and broken-link
-reports are stored in the visitor's own browser — there is no backend yet.
+reports are still stored in the visitor's own browser: the database exists but nothing
+serves it yet.
