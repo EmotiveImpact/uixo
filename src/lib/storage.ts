@@ -24,6 +24,8 @@ export const LISTS_KEY = 'uixo-lists';
 export const SUGGESTIONS_KEY = 'uixo-suggestions';
 export const REPORTS_KEY = 'uixo-link-reports';
 export const THEME_KEY = 'uixo-theme';
+export const CANDIDATES_KEY = 'uixo-candidates';
+export const REVIEWS_KEY = 'uixo-candidate-reviews';
 export const DENSITY_KEY = 'uixo-density';
 
 /** Earlier shapes of the same data, migrated on first load. */

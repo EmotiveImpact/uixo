@@ -11,6 +11,7 @@ const NAVIGATION_KEYS: (keyof RouteState)[] = [
   'collectionSlug',
   'collectionsIndex',
   'dashboard',
+  'review',
   'notFound',
   'landing',
 ];

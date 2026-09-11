@@ -10,6 +10,7 @@ import { CommandPalette } from './components/CommandPalette';
 import { Dashboard } from './components/Dashboard';
 import { LandingPage } from './components/LandingPage';
 import { NotFound } from './components/NotFound';
+import { ReviewInbox } from './components/ReviewInbox';
 import { AppSidebar } from './components/AppSidebar';
 import { DiscoveryToolbar } from './components/DiscoveryToolbar';
 import { EmptyState } from './components/EmptyState';
@@ -126,30 +127,34 @@ export function App() {
     navigate({ category: parent, sub: child, listId: null, resourceId: null });
   };
 
-  const title = route.dashboard
-    ? `Hello, ${user?.name.split(' ')[0] ?? 'there'}`
-    : route.notFound
-      ? 'Not found'
-      : route.collectionsIndex
-        ? 'Collections'
-        : activeCollection
-          ? activeCollection.name
-          : route.sub || route.category || (activeList ? activeList.name : 'All websites');
+  const title = route.review
+    ? 'Review inbox'
+    : route.dashboard
+      ? `Hello, ${user?.name.split(' ')[0] ?? 'there'}`
+      : route.notFound
+        ? 'Not found'
+        : route.collectionsIndex
+          ? 'Collections'
+          : activeCollection
+            ? activeCollection.name
+            : route.sub || route.category || (activeList ? activeList.name : 'All websites');
 
-  const subtitle = route.dashboard
-    ? 'Your lists, your submissions, and what needs attention.'
-    : route.notFound
-      ? 'We could not find that page.'
-      : route.collectionsIndex
-        ? 'Curated sets with a point of view.'
-        : activeCollection
-          ? activeCollection.tagline
-          : activeList
-            ? 'The good ones, kept close.'
-            : 'Good tools. Great interfaces.';
+  const subtitle = route.review
+    ? 'Staged candidates. Nothing reaches the site until you approve it.'
+    : route.dashboard
+      ? 'Your lists, your submissions, and what needs attention.'
+      : route.notFound
+        ? 'We could not find that page.'
+        : route.collectionsIndex
+          ? 'Curated sets with a point of view.'
+          : activeCollection
+            ? activeCollection.tagline
+            : activeList
+              ? 'The good ones, kept close.'
+              : 'Good tools. Great interfaces.';
 
   // The grid and its toolbar only make sense on browsing routes.
-  const showsGrid = !route.dashboard && !route.notFound && !route.collectionsIndex;
+  const showsGrid = !route.dashboard && !route.review && !route.notFound && !route.collectionsIndex;
 
   const hasFilters =
     Boolean(route.search || route.category) ||
@@ -282,6 +287,9 @@ export function App() {
           />
         )}
 
+        {route.review && (!authAvailable || !isCurator) && <NotFound onReset={reset} />}
+        {route.review && authAvailable && isCurator && user && <ReviewInbox user={user} />}
+
         {route.dashboard && !authAvailable && <NotFound onReset={reset} />}
 
         {route.dashboard &&
@@ -294,6 +302,8 @@ export function App() {
               onOpenList={chooseList}
               onOpenResource={(resourceId) => navigate({ ...EMPTY_ROUTE, resourceId })}
               onSubmit={() => setModal('submit')}
+              onReview={() => navigate({ ...EMPTY_ROUTE, review: true })}
+              reviewHref={routeToHref({ ...EMPTY_ROUTE, review: true })}
             />
           ) : (
             <section className="empty">

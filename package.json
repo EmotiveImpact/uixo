@@ -15,7 +15,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check:links": "node scripts/check-links.mjs",
-    "thumbnails": "node scripts/thumbnails.mjs"
+    "thumbnails": "node scripts/thumbnails.mjs",
+    "candidates:apply": "node scripts/apply-candidates.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

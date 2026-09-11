@@ -18,6 +18,8 @@ type DashboardProps = {
   onOpenList: (id: string) => void;
   onOpenResource: (id: string) => void;
   onSubmit: () => void;
+  onReview: () => void;
+  reviewHref: string;
 };
 
 function formatDate(iso: string): string {
@@ -41,6 +43,8 @@ export function Dashboard({
   onOpenList,
   onOpenResource,
   onSubmit,
+  onReview,
+  reviewHref,
 }: DashboardProps) {
   const [submissions, setSubmissions] = useState<Submission[]>(loadSubmissions);
   const [reports, setReports] = useState<LinkReport[]>(loadReports);
@@ -147,6 +151,26 @@ export function Dashboard({
 
       {isCurator && (
         <>
+          <section className="panel" aria-labelledby="candidates-heading">
+            <h2 id="candidates-heading">
+              <Inbox size={16} /> Scout candidates
+            </h2>
+            <p className="panel-empty">
+              Staged listings from the scout, waiting on a human.{' '}
+              <a
+                className="linkish"
+                href={reviewHref}
+                onClick={(event) => {
+                  if (event.metaKey || event.ctrlKey || event.shiftKey) return;
+                  event.preventDefault();
+                  onReview();
+                }}
+              >
+                Open the review inbox
+              </a>
+            </p>
+          </section>
+
           <section className="panel" aria-labelledby="queue-heading">
             <h2 id="queue-heading">
               <Inbox size={16} /> Review queue

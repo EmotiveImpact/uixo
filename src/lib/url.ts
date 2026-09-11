@@ -14,6 +14,8 @@ export type RouteState = {
   collectionsIndex: boolean;
   /** The signed-in dashboard. */
   dashboard: boolean;
+  /** The curator-only candidate review inbox. */
+  review: boolean;
   /** Set when the path matched nothing we know about. */
   notFound: boolean;
   /** The marketing surface at "/", which renders without the app shell. */
@@ -32,6 +34,7 @@ export const EMPTY_ROUTE: RouteState = {
   collectionSlug: null,
   collectionsIndex: false,
   dashboard: false,
+  review: false,
   notFound: false,
   landing: false,
   search: '',
@@ -66,6 +69,8 @@ export function routeToHref(route: RouteState): string {
     path = `/r/${route.resourceId}`;
   } else if (route.dashboard) {
     path = '/dashboard';
+  } else if (route.review) {
+    path = '/review';
   } else if (route.collectionSlug) {
     path = `/collections/${route.collectionSlug}`;
   } else if (route.collectionsIndex) {
@@ -116,6 +121,11 @@ export function parseRoute(pathname: string, searchParams: string): RouteState {
 
   if (segments[0] === 'dashboard') {
     route.dashboard = true;
+    return route;
+  }
+
+  if (segments[0] === 'review') {
+    route.review = true;
     return route;
   }
 

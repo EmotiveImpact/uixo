@@ -1998,3 +1998,213 @@ kbd {
   gap: 16px;
   flex-wrap: wrap;
 }
+
+/* ---- Review inbox ---- */
+.inbox {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.inbox-empty {
+  text-align: left;
+}
+.primary-action {
+  margin-top: 14px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 11px;
+  background: var(--foreground);
+  color: var(--background);
+  font-size: 13px;
+}
+.inbox-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.inbox-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+.inbox-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--muted);
+  color: var(--foreground);
+  font-size: 12.5px;
+}
+.inbox-actions button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.inbox-bulk .row-action {
+  width: auto;
+  padding: 0 12px;
+  gap: 6px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 12.5px;
+}
+.inbox-bulk {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: 12px;
+  background: var(--muted);
+  font-size: 12.5px;
+}
+.inbox-warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 11px 14px;
+  border-radius: 12px;
+  background: var(--muted);
+  color: #d3a06a;
+  font-size: 12.5px;
+}
+.inbox-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.inbox-item + .inbox-item {
+  border-top: 1px solid var(--border);
+}
+.inbox-item.status-approved {
+  background: color-mix(in srgb, #8fb8a6 7%, transparent);
+}
+.inbox-item.status-rejected {
+  opacity: 0.5;
+}
+.inbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 13px;
+}
+.inbox-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 4px;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+}
+.inbox-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+}
+.inbox-meta {
+  font-size: 11.5px;
+  color: var(--muted-foreground);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.flag {
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: var(--muted-foreground);
+}
+.flag-bad {
+  color: #d3a06a;
+}
+.inbox-edit {
+  padding: 4px 14px 16px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.inbox-problem {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  font-size: 12px;
+  color: #d3a06a;
+}
+.inbox-edit label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--muted-foreground);
+}
+.inbox-edit textarea,
+.inbox-edit input,
+.inbox-edit select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--muted);
+  color: var(--foreground);
+  font: inherit;
+  font-size: 12.5px;
+  resize: vertical;
+}
+.inbox-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+.inbox-edit-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+/* .row-action is a fixed 34px icon button; a labelled action needs to size to its text. */
+.inbox-approve {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 15px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--muted);
+  color: var(--foreground);
+  font-size: 12.5px;
+}
+.inbox-approve:hover {
+  color: #8fb8a6;
+}
+.inbox-audit {
+  margin-left: auto;
+  font-size: 11px;
+  color: #6c6c76;
+}
+@media (max-width: 767px) {
+  .inbox-actions {
+    margin-left: 0;
+    width: 100%;
+  }
+  .inbox-edit {
+    padding-left: 14px;
+  }
+  .inbox-meta {
+    white-space: normal;
+  }
+}
