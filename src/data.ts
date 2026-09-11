@@ -1,21 +1,65 @@
-export const resources=[
-{id:'orbkit',name:'Orbkit',category:'Components',subcategory:'Animation',tags:['Shaders','React'],access:['Free'],creator:'zzzzshawn',formats:['React'],addedOrder:1,featured:true,url:'https://orbkit.zzzzshawn.cloud/'},
-{id:'grainient',name:'Grainient',category:'Backgrounds',subcategory:'Gradients',tags:['Textures','Gradients'],access:['Free','Paid'],creator:'Basit',formats:['PNG'],addedOrder:2,featured:true,url:'https://grainient.supply/collections'},
-{id:'shadcn',name:'shadcn/ui',category:'UI libraries',subcategory:'React',tags:['React','Components'],access:['Free'],creator:'shadcn',formats:['React'],addedOrder:3,featured:true,url:'https://ui.shadcn.com/'},
-{id:'reactbits',name:'React Bits',category:'Components',subcategory:'Animation',tags:['React','Motion'],access:['Free','Paid'],creator:'David Haz',formats:['React'],addedOrder:4,featured:true,url:'https://reactbits.dev/'},
-{id:'lucide',name:'Lucide',category:'Icons',subcategory:'Outline',tags:['SVG','Open source'],access:['Free'],creator:'Lucide',formats:['SVG','React'],addedOrder:5,featured:true,url:'https://lucide.dev/'},
-{id:'built',name:'Built by Designers',category:'Inspiration',subcategory:'Directories',tags:['Websites','Tools'],access:['Free'],creator:'shedsgns & Phil Hedayatnia',formats:['Web'],addedOrder:6,featured:false,url:'https://builtbydesigners.com/'},
-{id:'ui8',name:'UI8',category:'Marketplace',subcategory:'Design assets',tags:['Templates','Coded','Framer','Webflow','Illustrations','Fonts','Mockups','UI kits'],access:['Free','Paid'],creator:'UI8',formats:['Figma','Framer','Webflow','SVG'],addedOrder:7,featured:true,url:'https://ui8.net/'}];
-export const categories=[
-{name:'Components',icon:'layers',sub:['Animation','Buttons','Navigation']},
-{name:'UI libraries',icon:'box',sub:['React','Vue','CSS']},
-{name:'Templates',icon:'panels',sub:['Coded','Framer','Webflow']},
-{name:'Icons',icon:'shapes',sub:['Outline','Solid','3D']},
-{name:'Backgrounds',icon:'image',sub:['Gradients','Textures','Shaders']},
-{name:'Illustrations',icon:'pen',sub:['Vector','3D','Hand-drawn']},
-{name:'Fonts',icon:'type',sub:['Sans serif','Serif','Display']},
-{name:'Mockups',icon:'rectangle',sub:['Devices','Branding','Packaging']},
-{name:'Inspiration',icon:'lightbulb',sub:['Directories','Landing pages','Portfolios']},
-{name:'Marketplace',icon:'store',sub:['Design assets','UI kits']}
-];
-export const formats=['React','Figma','Framer','Webflow','PNG','SVG','Web'];
+import {
+  Box,
+  Image,
+  Layers,
+  Lightbulb,
+  PanelsTopLeft,
+  PenTool,
+  RectangleVertical,
+  Shapes,
+  Store,
+  Type,
+} from 'lucide-react';
+import type { ComponentType } from 'react';
+import categoryContent from './content/categories.json';
+import collectionContent from './content/collections.json';
+import pickContent from './content/pick.json';
+import resourceContent from './content/resources.json';
+import type { Category, Collection, EditorPick, Resource } from './types';
+
+/**
+ * Content lives in JSON so it can be edited, generated or validated without touching
+ * the app — and so the prerender step can read it outside the bundle.
+ */
+export const resources = resourceContent as Resource[];
+
+/**
+ * Icons are looked up by name rather than paired by array position, so adding a
+ * category can never silently render `undefined` as a component.
+ */
+const CATEGORY_ICONS: Record<string, ComponentType<{ className?: string }>> = {
+  layers: Layers,
+  box: Box,
+  'panels-top-left': PanelsTopLeft,
+  shapes: Shapes,
+  image: Image,
+  'pen-tool': PenTool,
+  type: Type,
+  'rectangle-vertical': RectangleVertical,
+  lightbulb: Lightbulb,
+  store: Store,
+};
+
+export const categories: Category[] = (
+  categoryContent as { name: string; icon: string; sub: string[] }[]
+).map((entry) => ({
+  name: entry.name,
+  icon: CATEGORY_ICONS[entry.icon] ?? Layers,
+  sub: entry.sub,
+}));
+
+/** Derived from the data so it can never drift out of sync with the resources. */
+export const formats = [...new Set(resources.flatMap((resource) => resource.formats))].sort();
+
+/** Editorial collections — curated sets, distinct from a visitor's own lists. */
+export const collections = collectionContent as Collection[];
+
+/** The current editor's pick. Change the file, not the code. */
+export const editorPick = pickContent as EditorPick;
+
+/** CSS object-position for a listing's thumbnail, wherever it is rendered. */
+export function thumbnailPosition(id: string): string {
+  return resources.find((resource) => resource.id === id)?.framing === 'center'
+    ? 'center top'
+    : 'left top';
+}

@@ -102,17 +102,10 @@
       "name": "Navbar Gallery",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Navigation",
-        "Gallery"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Navigation", "Gallery"],
+      "access": ["Free"],
       "creator": "navbar.gallery",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://navbar.gallery",
       "needs_review": false,
       "image_status": "pending",
@@ -125,17 +118,10 @@
       "name": "Supahero",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": [
-        "Hero",
-        "Gallery"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Hero", "Gallery"],
+      "access": ["Free"],
       "creator": "Supahero",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://supahero.io",
       "needs_review": false,
       "image_status": "pending",
@@ -148,18 +134,10 @@
       "name": "CTA Gallery",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "CTA",
-        "Buttons",
-        "Gallery"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["CTA", "Buttons", "Gallery"],
+      "access": ["Free"],
       "creator": "cta.gallery",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://cta.gallery",
       "needs_review": false,
       "image_status": "pending",
@@ -172,17 +150,10 @@
       "name": "Footer Design",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Footer",
-        "Gallery"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Footer", "Gallery"],
+      "access": ["Free"],
       "creator": "footer.design",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://footer.design",
       "needs_review": false,
       "image_status": "pending",
@@ -195,17 +166,10 @@
       "name": "404s",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "404",
-        "Gallery"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["404", "Gallery"],
+      "access": ["Free"],
       "creator": "404s.design",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://404s.design",
       "needs_review": false,
       "image_status": "pending",
@@ -218,17 +182,10 @@
       "name": "Interface Craft",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Craft",
-        "Interface"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Craft", "Interface"],
+      "access": ["Free"],
       "creator": "Interface Craft",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://interfacecraft.dev",
       "needs_review": true,
       "image_status": "pending",
@@ -241,18 +198,10 @@
       "name": "userinterface.wiki",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Patterns",
-        "Motion",
-        "Typography"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Patterns", "Motion", "Typography"],
+      "access": ["Free"],
       "creator": "userinterface.wiki",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://userinterface.wiki",
       "needs_review": true,
       "image_status": "pending",
@@ -265,18 +214,10 @@
       "name": "Devouring Details",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Details",
-        "Craft"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Details", "Craft"],
+      "access": ["Free", "Paid"],
       "creator": "Devouring Details",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://devouringdetails.com",
       "needs_review": true,
       "image_status": "pending",
@@ -289,18 +230,10 @@
       "name": "Motion-Primitives",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "React",
-        "Motion",
-        "Open source"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["React", "Motion", "Open source"],
+      "access": ["Free"],
       "creator": "ibelick",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://motion-primitives.com",
       "needs_review": false,
       "image_status": "pending",
@@ -313,19 +246,10 @@
       "name": "Aceternity UI",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "React",
-        "Tailwind",
-        "Templates"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["React", "Tailwind", "Templates"],
+      "access": ["Free", "Paid"],
       "creator": "Aceternity",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://ui.aceternity.com",
       "needs_review": false,
       "image_status": "pending",
@@ -338,19 +262,10 @@
       "name": "Magic UI",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "React",
-        "Motion",
-        "Landing"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["React", "Motion", "Landing"],
+      "access": ["Free", "Paid"],
       "creator": "Magic UI",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://magicui.design",
       "needs_review": false,
       "image_status": "pending",
@@ -363,18 +278,10 @@
       "name": "Hover.dev",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "React",
-        "Interactions"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["React", "Interactions"],
+      "access": ["Free", "Paid"],
       "creator": "Hover",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://hover.dev",
       "needs_review": true,
       "image_status": "pending",
@@ -387,18 +294,10 @@
       "name": "60fps",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Animation",
-        "Micro-interactions"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Animation", "Micro-interactions"],
+      "access": ["Free", "Paid"],
       "creator": "60fps",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://60fps.design",
       "needs_review": true,
       "image_status": "pending",
@@ -411,17 +310,10 @@
       "name": "IF Design Patterns",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Patterns",
-        "Responsible AI"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Patterns", "Responsible AI"],
+      "access": ["Free"],
       "creator": "Projects by IF",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://catalogue.projectsbyif.com",
       "needs_review": false,
       "image_status": "pending",
@@ -434,18 +326,10 @@
       "name": "abtest.design",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "A/B tests",
-        "UX research"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["A/B tests", "UX research"],
+      "access": ["Free", "Paid"],
       "creator": "abtest.design",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://abtest.design",
       "needs_review": true,
       "image_status": "pending",
@@ -458,17 +342,10 @@
       "name": "Design Spells",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Micro-interactions",
-        "Delight"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Micro-interactions", "Delight"],
+      "access": ["Free"],
       "creator": "Design Spells",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://designspells.com",
       "needs_review": false,
       "image_status": "pending",
@@ -481,18 +358,10 @@
       "name": "UXSnaps",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "UI breakdowns",
-        "Apps"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["UI breakdowns", "Apps"],
+      "access": ["Free", "Paid"],
       "creator": "UXSnaps",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://uxsnaps.com",
       "needs_review": true,
       "image_status": "pending",
@@ -505,17 +374,10 @@
       "name": "UI Playbook",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "UI components",
-        "Reference"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["UI components", "Reference"],
+      "access": ["Free"],
       "creator": "UI Playbook",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://uiplaybook.dev",
       "needs_review": false,
       "image_status": "pending",
@@ -528,18 +390,10 @@
       "name": "WandPress",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "shadcn",
-        "Admin",
-        "WordPress-style"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["shadcn", "Admin", "WordPress-style"],
+      "access": ["Free"],
       "creator": "jonbuster",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://wandpress.netlify.app",
       "needs_review": false,
       "image_status": "pending",
@@ -552,18 +406,10 @@
       "name": "Ripplix",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Animation",
-        "Micro-interactions"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Animation", "Micro-interactions"],
+      "access": ["Free", "Paid"],
       "creator": "Ripplix",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://ripplix.com",
       "needs_review": true,
       "image_status": "pending",
@@ -576,18 +422,10 @@
       "name": "Spectrum UI",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "React",
-        "shadcn",
-        "Motion"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["React", "shadcn", "Motion"],
+      "access": ["Free"],
       "creator": "Spectrum UI",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://ui.spectrumhq.in",
       "needs_review": false,
       "image_status": "pending",
@@ -600,20 +438,10 @@
       "name": "21st.dev",
       "category": "Marketplace",
       "subcategory": "UI kits",
-      "tags": [
-        "React",
-        "Tailwind",
-        "shadcn",
-        "Components"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["React", "Tailwind", "shadcn", "Components"],
+      "access": ["Free", "Paid"],
       "creator": "21st",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://21st.dev",
       "needs_review": false,
       "image_status": "pending",
@@ -626,18 +454,10 @@
       "name": "Shadcnblocks",
       "category": "Marketplace",
       "subcategory": "UI kits",
-      "tags": [
-        "shadcn",
-        "Blocks",
-        "Premium"
-      ],
-      "access": [
-        "Paid"
-      ],
+      "tags": ["shadcn", "Blocks", "Premium"],
+      "access": ["Paid"],
       "creator": "Shadcnblocks",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://shadcnblocks.com",
       "needs_review": false,
       "image_status": "pending",
@@ -650,18 +470,10 @@
       "name": "8bitcn/ui",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "shadcn",
-        "Retro",
-        "8-bit"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["shadcn", "Retro", "8-bit"],
+      "access": ["Free"],
       "creator": "8bitcn",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://8bitcn.com",
       "needs_review": false,
       "image_status": "pending",
@@ -674,18 +486,10 @@
       "name": "EvilCharts",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "Charts",
-        "React"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Charts", "React"],
+      "access": ["Free", "Paid"],
       "creator": "EvilCharts",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://evilcharts.com",
       "needs_review": true,
       "image_status": "pending",
@@ -698,18 +502,10 @@
       "name": "coss UI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "React",
-        "UI"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["React", "UI"],
+      "access": ["Free", "Paid"],
       "creator": "coss",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://coss.com/ui",
       "needs_review": true,
       "image_status": "pending",
@@ -722,18 +518,10 @@
       "name": "Rare UI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "React",
-        "UI"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["React", "UI"],
+      "access": ["Free", "Paid"],
       "creator": "Rare UI",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://rareui.com",
       "needs_review": true,
       "image_status": "pending",
@@ -746,17 +534,10 @@
       "name": "beui",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "React",
-        "UI"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["React", "UI"],
+      "access": ["Free"],
       "creator": "beui",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://beui.dev",
       "needs_review": true,
       "image_status": "pending",
@@ -769,18 +550,10 @@
       "name": "Easy UI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "React",
-        "UI"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["React", "UI"],
+      "access": ["Free", "Paid"],
       "creator": "Easy UI",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://easyui.site",
       "needs_review": true,
       "image_status": "pending",
@@ -793,18 +566,10 @@
       "name": "ReUI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "React",
-        "UI"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["React", "UI"],
+      "access": ["Free", "Paid"],
       "creator": "ReUI",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://reui.io",
       "needs_review": true,
       "image_status": "pending",
@@ -817,18 +582,10 @@
       "name": "Coolors",
       "category": "Backgrounds",
       "subcategory": "Gradients",
-      "tags": [
-        "Colors",
-        "Palettes"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Colors", "Palettes"],
+      "access": ["Free", "Paid"],
       "creator": "Coolors",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://coolors.co",
       "needs_review": true,
       "image_status": "pending",
@@ -841,17 +598,10 @@
       "name": "Fontjoy",
       "category": "Fonts",
       "subcategory": "Sans serif",
-      "tags": [
-        "Pairing",
-        "AI"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Pairing", "AI"],
+      "access": ["Free"],
       "creator": "Fontjoy",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://fontjoy.com",
       "needs_review": true,
       "image_status": "pending",
@@ -864,18 +614,10 @@
       "name": "WhatTheFont",
       "category": "Fonts",
       "subcategory": "Display",
-      "tags": [
-        "Identification",
-        "Tool"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Identification", "Tool"],
+      "access": ["Free", "Paid"],
       "creator": "MyFonts",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://myfonts.com/WhatTheFont",
       "needs_review": true,
       "image_status": "pending",
@@ -888,18 +630,10 @@
       "name": "favicon.io",
       "category": "Icons",
       "subcategory": "Outline",
-      "tags": [
-        "Favicon",
-        "Generator"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Favicon", "Generator"],
+      "access": ["Free"],
       "creator": "favicon.io",
-      "formats": [
-        "SVG",
-        "PNG"
-      ],
+      "formats": ["SVG", "PNG"],
       "url": "https://favicon.io",
       "needs_review": true,
       "image_status": "pending",
@@ -912,17 +646,10 @@
       "name": "unDraw",
       "category": "Illustrations",
       "subcategory": "Vector",
-      "tags": [
-        "SVG",
-        "Open source"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["SVG", "Open source"],
+      "access": ["Free"],
       "creator": "unDraw",
-      "formats": [
-        "SVG"
-      ],
+      "formats": ["SVG"],
       "url": "https://undraw.co",
       "needs_review": false,
       "image_status": "pending",
@@ -935,17 +662,10 @@
       "name": "made.design",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Design"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Design"],
+      "access": ["Free", "Paid"],
       "creator": "made.design",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://made.design",
       "needs_review": true,
       "image_status": "pending",
@@ -958,18 +678,10 @@
       "name": "Kibo UI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "shadcn",
-        "Accessible",
-        "Open source"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["shadcn", "Accessible", "Open source"],
+      "access": ["Free"],
       "creator": "Kibo UI",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://kibo-ui.com",
       "needs_review": false,
       "image_status": "pending",
@@ -982,19 +694,10 @@
       "name": "Tailark",
       "category": "Templates",
       "subcategory": "Coded",
-      "tags": [
-        "shadcn",
-        "Marketing",
-        "Blocks"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["shadcn", "Marketing", "Blocks"],
+      "access": ["Free", "Paid"],
       "creator": "Tailark",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://tailark.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1007,18 +710,10 @@
       "name": "Dice UI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "shadcn",
-        "Accessible",
-        "Tailwind"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["shadcn", "Accessible", "Tailwind"],
+      "access": ["Free"],
       "creator": "Dice UI",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://diceui.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1031,18 +726,10 @@
       "name": "BadtzUI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "React",
-        "Animations",
-        "Open source"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["React", "Animations", "Open source"],
+      "access": ["Free"],
       "creator": "BadtzUI",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://badtz-ui.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1055,17 +742,10 @@
       "name": "Bento Grids",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Bento",
-        "Layouts"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Bento", "Layouts"],
+      "access": ["Free"],
       "creator": "Bento Grids",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://bentogrids.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1078,17 +758,10 @@
       "name": "rebrand.gallery",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Rebrand",
-        "Brand"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Rebrand", "Brand"],
+      "access": ["Free"],
       "creator": "rebrand.gallery",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://rebrand.gallery",
       "needs_review": false,
       "image_status": "pending",
@@ -1101,18 +774,10 @@
       "name": "Gridddy",
       "category": "Templates",
       "subcategory": "Framer",
-      "tags": [
-        "Grids",
-        "Framer"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Grids", "Framer"],
+      "access": ["Free", "Paid"],
       "creator": "Gridddy",
-      "formats": [
-        "Framer"
-      ],
+      "formats": ["Framer"],
       "url": "https://gridddy.framer.website",
       "needs_review": true,
       "image_status": "pending",
@@ -1125,16 +790,10 @@
       "name": "landing.love",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": [
-        "Landing pages"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Landing pages"],
+      "access": ["Free"],
       "creator": "landing.love",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://landing.love",
       "needs_review": false,
       "image_status": "pending",
@@ -1147,18 +806,10 @@
       "name": "Refero Styles",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Styles",
-        "UI"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Styles", "UI"],
+      "access": ["Free", "Paid"],
       "creator": "Refero",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://styles.refero.design",
       "needs_review": true,
       "image_status": "pending",
@@ -1171,17 +822,10 @@
       "name": "recent.design",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Recent",
-        "Gallery"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Recent", "Gallery"],
+      "access": ["Free"],
       "creator": "recent.design",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://recent.design",
       "needs_review": true,
       "image_status": "pending",
@@ -1194,17 +838,10 @@
       "name": "curated.design",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Curated",
-        "Gallery"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Curated", "Gallery"],
+      "access": ["Free"],
       "creator": "curated.design",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://curated.design",
       "needs_review": false,
       "image_status": "pending",
@@ -1217,18 +854,10 @@
       "name": "Vanta UI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "React",
-        "UI"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["React", "UI"],
+      "access": ["Free", "Paid"],
       "creator": "Vanta UI",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://vantaui.com",
       "needs_review": true,
       "image_status": "pending",
@@ -1241,18 +870,10 @@
       "name": "Design On X",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "X",
-        "Gallery",
-        "Motion"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["X", "Gallery", "Motion"],
+      "access": ["Free"],
       "creator": "Northlight",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://design-on-x.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1265,17 +886,10 @@
       "name": "Internet Designs",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Web design",
-        "Gallery"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Web design", "Gallery"],
+      "access": ["Free"],
       "creator": "Internet Designs",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://internetdesigns.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1288,17 +902,10 @@
       "name": "CollectUI",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "UI",
-        "Daily"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["UI", "Daily"],
+      "access": ["Free"],
       "creator": "CollectUI",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://collectui.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1311,17 +918,10 @@
       "name": "Page Flows",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "User flows",
-        "Apps"
-      ],
-      "access": [
-        "Paid"
-      ],
+      "tags": ["User flows", "Apps"],
+      "access": ["Paid"],
       "creator": "Page Flows",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://pageflows.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1334,19 +934,10 @@
       "name": "Refero",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "UI",
-        "iOS",
-        "Web"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["UI", "iOS", "Web"],
+      "access": ["Free", "Paid"],
       "creator": "Refero",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://refero.design",
       "needs_review": false,
       "image_status": "pending",
@@ -1359,19 +950,10 @@
       "name": "Mobbin",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Mobile",
-        "Web",
-        "Screens"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Mobile", "Web", "Screens"],
+      "access": ["Free", "Paid"],
       "creator": "Mobbin",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://mobbin.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1384,18 +966,10 @@
       "name": "Screenlane",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Screens",
-        "UI"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Screens", "UI"],
+      "access": ["Free", "Paid"],
       "creator": "Screenlane",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://screenlane.com",
       "needs_review": true,
       "image_status": "pending",
@@ -1408,18 +982,10 @@
       "name": "Aura",
       "category": "Templates",
       "subcategory": "Coded",
-      "tags": [
-        "AI",
-        "Builder"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["AI", "Builder"],
+      "access": ["Free", "Paid"],
       "creator": "Aura",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://aura.build",
       "needs_review": true,
       "image_status": "pending",
@@ -1432,18 +998,10 @@
       "name": "Neuform",
       "category": "Templates",
       "subcategory": "Coded",
-      "tags": [
-        "AI",
-        "Design"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["AI", "Design"],
+      "access": ["Free", "Paid"],
       "creator": "Neuform",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://neuform.ai",
       "needs_review": true,
       "image_status": "pending",
@@ -1456,19 +1014,10 @@
       "name": "MicroInteractions UI",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "React",
-        "Framer Motion",
-        "Shadcn"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["React", "Framer Motion", "Shadcn"],
+      "access": ["Free", "Paid"],
       "creator": "MicroInteractions UI",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://microinteractionsui.com",
       "needs_review": true,
       "image_status": "pending",
@@ -1481,17 +1030,10 @@
       "name": "Annnimate",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "Animation"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Animation"],
+      "access": ["Free", "Paid"],
       "creator": "Annnimate",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://annnimate.com",
       "needs_review": true,
       "image_status": "pending",
@@ -1504,18 +1046,10 @@
       "name": "SaaSFrame",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "SaaS",
-        "UX"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["SaaS", "UX"],
+      "access": ["Free", "Paid"],
       "creator": "SaaSFrame",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://saasframe.io",
       "needs_review": false,
       "image_status": "pending",
@@ -1528,17 +1062,10 @@
       "name": "Godly",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": [
-        "Websites",
-        "Awwwards-style"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Websites", "Awwwards-style"],
+      "access": ["Free"],
       "creator": "Godly",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://godly.website",
       "needs_review": false,
       "image_status": "pending",
@@ -1551,17 +1078,10 @@
       "name": "CSS Design Awards",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": [
-        "Awards",
-        "CSS"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Awards", "CSS"],
+      "access": ["Free"],
       "creator": "CSS Design Awards",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://cssdesignawards.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1574,17 +1094,10 @@
       "name": "Minimal Gallery",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Minimal",
-        "Gallery"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Minimal", "Gallery"],
+      "access": ["Free"],
       "creator": "Minimal Gallery",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://minimal.gallery",
       "needs_review": false,
       "image_status": "pending",
@@ -1597,17 +1110,10 @@
       "name": "Hover States",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": [
-        "Websites",
-        "Archive"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Websites", "Archive"],
+      "access": ["Free"],
       "creator": "Hover States",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://hoverstat.es",
       "needs_review": false,
       "image_status": "pending",
@@ -1620,17 +1126,10 @@
       "name": "UI Movement",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Animation",
-        "UI"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Animation", "UI"],
+      "access": ["Free"],
       "creator": "UI Movement",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://uimovement.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1643,17 +1142,10 @@
       "name": "Fonts In Use",
       "category": "Fonts",
       "subcategory": "Display",
-      "tags": [
-        "In use",
-        "Inspiration"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["In use", "Inspiration"],
+      "access": ["Free"],
       "creator": "Fonts In Use",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://fontsinuse.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1666,19 +1158,10 @@
       "name": "Unsection",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": [
-        "Sections",
-        "Hero",
-        "CTA"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Sections", "Hero", "CTA"],
+      "access": ["Free", "Paid"],
       "creator": "Unsection",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://unsection.com",
       "needs_review": true,
       "image_status": "pending",
@@ -1691,18 +1174,10 @@
       "name": "mesh3d.gallery",
       "category": "Backgrounds",
       "subcategory": "Shaders",
-      "tags": [
-        "3D",
-        "Mesh",
-        "Gallery"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["3D", "Mesh", "Gallery"],
+      "access": ["Free"],
       "creator": "mesh3d.gallery",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://mesh3d.gallery",
       "needs_review": true,
       "image_status": "pending",
@@ -1715,18 +1190,10 @@
       "name": "Animata",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "React",
-        "Animations",
-        "Open source"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["React", "Animations", "Open source"],
+      "access": ["Free"],
       "creator": "Animata",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://animata.design",
       "needs_review": false,
       "image_status": "pending",
@@ -1739,17 +1206,10 @@
       "name": "Fancy Components",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "React",
-        "Open source"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["React", "Open source"],
+      "access": ["Free"],
       "creator": "Fancy Components",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://fancycomponents.dev",
       "needs_review": false,
       "image_status": "pending",
@@ -1762,22 +1222,10 @@
       "name": "Shader Gradient",
       "category": "Backgrounds",
       "subcategory": "Gradients",
-      "tags": [
-        "Shaders",
-        "Gradients",
-        "Framer",
-        "Figma",
-        "React"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Shaders", "Gradients", "Framer", "Figma", "React"],
+      "access": ["Free"],
       "creator": "Shader Gradient",
-      "formats": [
-        "React",
-        "Figma",
-        "Framer"
-      ],
+      "formats": ["React", "Figma", "Framer"],
       "url": "https://shadergradient.co",
       "needs_review": false,
       "image_status": "pending",
@@ -1790,17 +1238,10 @@
       "name": "WebInspoo",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": [
-        "SaaS",
-        "Landing pages"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["SaaS", "Landing pages"],
+      "access": ["Free"],
       "creator": "WebInspoo",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://webinspoo.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1813,17 +1254,10 @@
       "name": "Logoinspo",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Logos",
-        "Brand"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Logos", "Brand"],
+      "access": ["Free"],
       "creator": "Logoinspo",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://logoinspo.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1836,18 +1270,10 @@
       "name": "Asoinspo",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "ASO",
-        "App Store",
-        "Screenshots"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["ASO", "App Store", "Screenshots"],
+      "access": ["Free"],
       "creator": "Asoinspo",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://asoinspo.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1860,17 +1286,10 @@
       "name": "Uiinspoo",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "UI",
-        "Daily"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["UI", "Daily"],
+      "access": ["Free"],
       "creator": "Uiinspoo",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://uiinspoo.com",
       "needs_review": false,
       "image_status": "pending",
@@ -1883,17 +1302,10 @@
       "name": "Design Engineer Tools",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Tools",
-        "Design engineering"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Tools", "Design engineering"],
+      "access": ["Free"],
       "creator": "James Warner",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://designengineer.tools",
       "needs_review": false,
       "image_status": "pending",
@@ -1906,17 +1318,10 @@
       "name": "Indie App Tools",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Tools",
-        "Indie"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Tools", "Indie"],
+      "access": ["Free"],
       "creator": "Indie App Tools",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://indieapp.tools",
       "needs_review": false,
       "image_status": "pending",
@@ -1929,18 +1334,10 @@
       "name": "TypeUI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "Typography",
-        "UI"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Typography", "UI"],
+      "access": ["Free", "Paid"],
       "creator": "TypeUI",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://typeui.sh",
       "needs_review": true,
       "image_status": "pending",
@@ -1953,17 +1350,10 @@
       "name": "HTMLrev UI Libraries",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "UI libraries",
-        "Directory"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["UI libraries", "Directory"],
+      "access": ["Free"],
       "creator": "HTMLrev",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://htmlrev.com/ui-libraries.html",
       "needs_review": false,
       "image_status": "pending",
@@ -1976,17 +1366,10 @@
       "name": "Kombai Gallery",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Web UI",
-        "Gallery"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Web UI", "Gallery"],
+      "access": ["Free"],
       "creator": "Kombai",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://kombai.com/gallery/web",
       "needs_review": false,
       "image_status": "pending",
@@ -1999,17 +1382,10 @@
       "name": "Saaspo",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": [
-        "SaaS",
-        "Websites"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["SaaS", "Websites"],
+      "access": ["Free"],
       "creator": "Saaspo",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://saaspo.com",
       "needs_review": false,
       "image_status": "pending",
@@ -2022,16 +1398,10 @@
       "name": "Inspora",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Inspiration"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Inspiration"],
+      "access": ["Free"],
       "creator": "Inspora",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://inspora.design",
       "needs_review": true,
       "image_status": "pending",
@@ -2044,17 +1414,10 @@
       "name": "UIUX Showcase",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "UI",
-        "UX"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["UI", "UX"],
+      "access": ["Free"],
       "creator": "UIUX Showcase",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://uiuxshowcase.com",
       "needs_review": true,
       "image_status": "pending",
@@ -2067,18 +1430,10 @@
       "name": "UIverse",
       "category": "UI libraries",
       "subcategory": "CSS",
-      "tags": [
-        "CSS",
-        "HTML",
-        "Community"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["CSS", "HTML", "Community"],
+      "access": ["Free"],
       "creator": "UIverse",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://uiverse.io",
       "needs_review": false,
       "image_status": "pending",
@@ -2091,17 +1446,10 @@
       "name": "Best Designs on X",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "X",
-        "Design"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["X", "Design"],
+      "access": ["Free"],
       "creator": "Best Designs on X",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://bestdesignsonx.com",
       "needs_review": false,
       "image_status": "pending",
@@ -2114,19 +1462,10 @@
       "name": "Appllama",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "iOS",
-        "Apps",
-        "Paywalls"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["iOS", "Apps", "Paywalls"],
+      "access": ["Free", "Paid"],
       "creator": "Appllama",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://appllama.io",
       "needs_review": true,
       "image_status": "pending",
@@ -2139,19 +1478,10 @@
       "name": "Shaders",
       "category": "Backgrounds",
       "subcategory": "Shaders",
-      "tags": [
-        "WebGPU",
-        "React",
-        "Vue"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["WebGPU", "React", "Vue"],
+      "access": ["Free", "Paid"],
       "creator": "Shaders",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://shaders.com",
       "needs_review": false,
       "image_status": "pending",
@@ -2164,18 +1494,10 @@
       "name": "Paper",
       "category": "Templates",
       "subcategory": "Coded",
-      "tags": [
-        "Design tool",
-        "Vector"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Design tool", "Vector"],
+      "access": ["Free", "Paid"],
       "creator": "Paper",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://paper.design",
       "needs_review": true,
       "image_status": "pending",
@@ -2188,17 +1510,10 @@
       "name": "Onlook",
       "category": "Templates",
       "subcategory": "Coded",
-      "tags": [
-        "Visual editor",
-        "Open source"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Visual editor", "Open source"],
+      "access": ["Free"],
       "creator": "Onlook",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://onlook.com",
       "needs_review": true,
       "image_status": "pending",
@@ -2211,16 +1526,10 @@
       "name": "Godly Design",
       "category": "Inspiration",
       "subcategory": "Landing pages",
-      "tags": [
-        "Websites"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Websites"],
+      "access": ["Free"],
       "creator": "Godly",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://godly.design",
       "needs_review": true,
       "image_status": "pending",
@@ -2233,17 +1542,10 @@
       "name": "ogimage.gallery",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "OG images",
-        "Social"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["OG images", "Social"],
+      "access": ["Free"],
       "creator": "ogimage.gallery",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://ogimage.gallery",
       "needs_review": false,
       "image_status": "pending",
@@ -2256,16 +1558,10 @@
       "name": "Fontshare",
       "category": "Fonts",
       "subcategory": "Sans serif",
-      "tags": [
-        "Free fonts"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Free fonts"],
+      "access": ["Free"],
       "creator": "Indian Type Foundry",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://fontshare.com",
       "needs_review": false,
       "image_status": "pending",
@@ -2278,17 +1574,10 @@
       "name": "component.gallery",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Components",
-        "Gallery"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Components", "Gallery"],
+      "access": ["Free"],
       "creator": "component.gallery",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://component.gallery",
       "needs_review": false,
       "image_status": "pending",
@@ -2301,16 +1590,10 @@
       "name": "Design Systems Repo",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Design systems"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Design systems"],
+      "access": ["Free"],
       "creator": "Design Systems Repo",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://designsystemsrepo.com",
       "needs_review": false,
       "image_status": "pending",
@@ -2323,18 +1606,10 @@
       "name": "Apple HIG",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "HIG",
-        "Apple",
-        "Guidelines"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["HIG", "Apple", "Guidelines"],
+      "access": ["Free"],
       "creator": "Apple",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://developer.apple.com/design/human-interface-guidelines",
       "needs_review": true,
       "image_status": "pending",
@@ -2347,16 +1622,10 @@
       "name": "dark.design",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Dark mode"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Dark mode"],
+      "access": ["Free"],
       "creator": "dark.design",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://dark.design",
       "needs_review": false,
       "image_status": "pending",
@@ -2369,17 +1638,10 @@
       "name": "Font Pair",
       "category": "Fonts",
       "subcategory": "Sans serif",
-      "tags": [
-        "Pairing",
-        "Google Fonts"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Pairing", "Google Fonts"],
+      "access": ["Free"],
       "creator": "Font Pair",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://fontpair.co",
       "needs_review": false,
       "image_status": "pending",
@@ -2392,17 +1654,10 @@
       "name": "DaFont",
       "category": "Fonts",
       "subcategory": "Display",
-      "tags": [
-        "Free fonts",
-        "Display"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Free fonts", "Display"],
+      "access": ["Free"],
       "creator": "DaFont",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://dafont.com",
       "needs_review": false,
       "image_status": "pending",
@@ -2415,19 +1670,10 @@
       "name": "Flaticon",
       "category": "Icons",
       "subcategory": "Solid",
-      "tags": [
-        "Icons",
-        "SVG"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Icons", "SVG"],
+      "access": ["Free", "Paid"],
       "creator": "Flaticon",
-      "formats": [
-        "SVG",
-        "PNG"
-      ],
+      "formats": ["SVG", "PNG"],
       "url": "https://flaticon.com",
       "needs_review": false,
       "image_status": "pending",
@@ -2440,21 +1686,10 @@
       "name": "Freepik",
       "category": "Marketplace",
       "subcategory": "Design assets",
-      "tags": [
-        "Assets",
-        "Illustrations",
-        "Templates"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Assets", "Illustrations", "Templates"],
+      "access": ["Free", "Paid"],
       "creator": "Freepik",
-      "formats": [
-        "SVG",
-        "PNG",
-        "Figma"
-      ],
+      "formats": ["SVG", "PNG", "Figma"],
       "url": "https://freepik.com",
       "needs_review": false,
       "image_status": "pending",
@@ -2467,19 +1702,10 @@
       "name": "Icons8",
       "category": "Icons",
       "subcategory": "Outline",
-      "tags": [
-        "Icons",
-        "Illustrations"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Icons", "Illustrations"],
+      "access": ["Free", "Paid"],
       "creator": "Icons8",
-      "formats": [
-        "SVG",
-        "PNG"
-      ],
+      "formats": ["SVG", "PNG"],
       "url": "https://icons8.com",
       "needs_review": false,
       "image_status": "pending",
@@ -2492,17 +1718,10 @@
       "name": "github.com",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "Motion",
-        "Open source"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Motion", "Open source"],
+      "access": ["Free"],
       "creator": "oil-oil",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://github.com/oil-oil/oil-motion",
       "needs_review": true,
       "image_status": "pending",
@@ -2515,18 +1734,10 @@
       "name": "AnimMasterLib",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "Animation",
-        "Library"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Animation", "Library"],
+      "access": ["Free", "Paid"],
       "creator": "AnimMasterLib",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://animmasterlib.dev",
       "needs_review": true,
       "image_status": "pending",
@@ -2539,17 +1750,10 @@
       "name": "Design Bookmark",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Bookmarks",
-        "Tools"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Bookmarks", "Tools"],
+      "access": ["Free"],
       "creator": "Design Bookmark",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://designbookmark.com",
       "needs_review": false,
       "image_status": "pending",
@@ -2562,19 +1766,10 @@
       "name": "Motion",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "React",
-        "JavaScript",
-        "Vue"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["React", "JavaScript", "Vue"],
+      "access": ["Free", "Paid"],
       "creator": "Motion",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://motion.dev",
       "needs_review": false,
       "image_status": "pending",
@@ -2587,17 +1782,10 @@
       "name": "Anime.js",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "JavaScript",
-        "Animation"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["JavaScript", "Animation"],
+      "access": ["Free"],
       "creator": "Anime.js",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://animejs.com",
       "needs_review": false,
       "image_status": "pending",
@@ -2610,18 +1798,10 @@
       "name": "React Native Motion",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "React Native",
-        "Expo"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["React Native", "Expo"],
+      "access": ["Free", "Paid"],
       "creator": "RN Motion",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://rnmotion.dev",
       "needs_review": true,
       "image_status": "pending",
@@ -2634,17 +1814,10 @@
       "name": "Reactix",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "React Native",
-        "Open source"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["React Native", "Open source"],
+      "access": ["Free"],
       "creator": "Reactix",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://reacticx.com",
       "needs_review": false,
       "image_status": "pending",
@@ -2657,17 +1830,10 @@
       "name": "HeroUI Native",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "React Native",
-        "Open source"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["React Native", "Open source"],
+      "access": ["Free"],
       "creator": "HeroUI",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://heroui.com/en/docs/native/getting-started",
       "needs_review": false,
       "image_status": "pending",
@@ -2680,18 +1846,10 @@
       "name": "Native Bloom",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "React Native",
-        "Catalog"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["React Native", "Catalog"],
+      "access": ["Free", "Paid"],
       "creator": "Native Bloom",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://nativebloom.dev",
       "needs_review": true,
       "image_status": "pending",
@@ -2704,18 +1862,10 @@
       "name": "Make It Animated",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "React Native",
-        "Animations"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["React Native", "Animations"],
+      "access": ["Free", "Paid"],
       "creator": "Make It Animated",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://makeitanimated.dev",
       "needs_review": true,
       "image_status": "pending",
@@ -2728,17 +1878,10 @@
       "name": "Motionary",
       "category": "Components",
       "subcategory": "Animation",
-      "tags": [
-        "React Native",
-        "Premium"
-      ],
-      "access": [
-        "Paid"
-      ],
+      "tags": ["React Native", "Premium"],
+      "access": ["Paid"],
       "creator": "Motionary",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://motionary.dev",
       "needs_review": true,
       "image_status": "pending",
@@ -2751,18 +1894,10 @@
       "name": "BoardUI",
       "category": "UI libraries",
       "subcategory": "React",
-      "tags": [
-        "Dashboard",
-        "Design system"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Dashboard", "Design system"],
+      "access": ["Free", "Paid"],
       "creator": "BoardUI",
-      "formats": [
-        "React"
-      ],
+      "formats": ["React"],
       "url": "https://boardui.com",
       "needs_review": true,
       "image_status": "pending",
@@ -2775,18 +1910,10 @@
       "name": "Cosmos",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Moodboard",
-        "Visual discovery"
-      ],
-      "access": [
-        "Free",
-        "Paid"
-      ],
+      "tags": ["Moodboard", "Visual discovery"],
+      "access": ["Free", "Paid"],
       "creator": "Cosmos",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://cosmos.so",
       "needs_review": false,
       "image_status": "pending",
@@ -2799,17 +1926,10 @@
       "name": "MaxiBestOf",
       "category": "Inspiration",
       "subcategory": "Directories",
-      "tags": [
-        "Websites",
-        "Fonts"
-      ],
-      "access": [
-        "Free"
-      ],
+      "tags": ["Websites", "Fonts"],
+      "access": ["Free"],
       "creator": "MaxiBestOf",
-      "formats": [
-        "Web"
-      ],
+      "formats": ["Web"],
       "url": "https://maxibestof.one",
       "needs_review": false,
       "image_status": "pending",

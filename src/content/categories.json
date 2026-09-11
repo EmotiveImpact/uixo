@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Components",
+    "icon": "layers",
+    "sub": ["Animation", "Buttons", "Navigation"]
+  },
+  {
+    "name": "UI libraries",
+    "icon": "box",
+    "sub": ["React", "Vue", "CSS"]
+  },
+  {
+    "name": "Templates",
+    "icon": "panels-top-left",
+    "sub": ["Coded", "Framer", "Webflow"]
+  },
+  {
+    "name": "Icons",
+    "icon": "shapes",
+    "sub": ["Outline", "Solid", "3D"]
+  },
+  {
+    "name": "Backgrounds",
+    "icon": "image",
+    "sub": ["Gradients", "Textures", "Shaders"]
+  },
+  {
+    "name": "Illustrations",
+    "icon": "pen-tool",
+    "sub": ["Vector", "3D", "Hand-drawn"]
+  },
+  {
+    "name": "Fonts",
+    "icon": "type",
+    "sub": ["Sans serif", "Serif", "Display"]
+  },
+  {
+    "name": "Mockups",
+    "icon": "rectangle-vertical",
+    "sub": ["Devices", "Branding", "Packaging"]
+  },
+  {
+    "name": "Inspiration",
+    "icon": "lightbulb",
+    "sub": ["Directories", "Landing pages", "Portfolios"]
+  },
+  {
+    "name": "Marketplace",
+    "icon": "store",
+    "sub": ["Design assets", "UI kits"]
+  }
+]

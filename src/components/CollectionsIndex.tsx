@@ -1,0 +1,54 @@
+import { ArrowUpRight } from 'lucide-react';
+import { collections, resources, thumbnailPosition } from '../data';
+
+type CollectionsIndexProps = {
+  onOpen: (slug: string) => void;
+  href: (slug: string) => string;
+};
+
+export function CollectionsIndex({ onOpen, href }: CollectionsIndexProps) {
+  return (
+    <section className="collection-index" aria-label="Collections">
+      {collections.map((collection) => {
+        const covers = collection.resourceIds
+          .map((id) => resources.find((resource) => resource.id === id))
+          .filter(Boolean)
+          .slice(0, 4);
+
+        return (
+          <a
+            key={collection.slug}
+            className="collection-card"
+            href={href(collection.slug)}
+            onClick={(event) => {
+              if (event.metaKey || event.ctrlKey || event.shiftKey) return;
+              event.preventDefault();
+              onOpen(collection.slug);
+            }}
+          >
+            <div className="collection-covers" aria-hidden="true">
+              {covers.map((resource) => (
+                <img
+                  key={resource!.id}
+                  src={`/assets/${resource!.id}.png`}
+                  alt=""
+                  loading="lazy"
+                  style={{ objectPosition: thumbnailPosition(resource!.id) }}
+                />
+              ))}
+            </div>
+            <h2>
+              {collection.name}
+              <ArrowUpRight size={16} />
+            </h2>
+            <p className="collection-tagline">{collection.tagline}</p>
+            <p className="collection-count">
+              {collection.resourceIds.length} website
+              {collection.resourceIds.length === 1 ? '' : 's'}
+            </p>
+          </a>
+        );
+      })}
+    </section>
+  );
+}

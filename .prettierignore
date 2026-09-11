@@ -1,0 +1,12 @@
+dist
+legacy
+package-lock.json
+src/components/motion
+src/lib/ease.ts
+src/lib/utils.ts
+public/assets
+scripts/og-template.html
+
+# Written by other agents; reformatting guarantees a conflict on their next push
+data
+ops
