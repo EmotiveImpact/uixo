@@ -1,32 +1,113 @@
 {
   "updated": "2026-09-11",
-  "updated_note": "Full-dump X harvest (note_tweet expanded) + thumbs. candidates=208 captured=201 og=5 blocked=2 pending=0. Remaining blocked: ['behance', 'land-book'] (no fetchable OG; Cloudflare).",
+  "updated_note": "Paste ingest complete. +13 new; thumbs captured=12 blocked=1. refero-styles confirmed already present.",
   "counts_by_category": {
-    "Inspiration": 83,
-    "Components": 23,
-    "UI libraries": 29,
-    "Marketplace": 5,
     "Backgrounds": 6,
+    "Components": 26,
     "Fonts": 7,
     "Icons": 23,
     "Illustrations": 2,
-    "Templates": 28,
-    "Mockups": 2
+    "Inspiration": 84,
+    "Marketplace": 10,
+    "Mockups": 2,
+    "Templates": 32,
+    "UI libraries": 29
   },
   "totals": {
-    "candidates": 208,
-    "needs_review": 130,
-    "skipped_dupes_existing_site": 0,
-    "skipped_other": 13,
-    "harvest_total": 170,
-    "new_this_run": 53,
-    "already_present": 107
+    "candidates": 221,
+    "needs_review": 143,
+    "new_this_run": 13,
+    "already_present": 17,
+    "skipped_dupes_existing_site": 1,
+    "image_captured": 213,
+    "image_og_captured": 5,
+    "image_blocked": 3
   },
   "skipped_dupes": [
     {
-      "title": "The complete React library for crafting memorable UI",
-      "url": "https://pro.reactbits.dev/changelog",
-      "reason": "duplicate of existing site entry"
+      "title": "DesignMD Supply",
+      "url": "https://www.designmd.supply",
+      "reason": "already candidate (designmd-supply)"
+    },
+    {
+      "title": "21st.dev",
+      "url": "https://21st.dev",
+      "reason": "already candidate (21st-dev)"
+    },
+    {
+      "title": "DesignMD",
+      "url": "https://designmd.me",
+      "reason": "already candidate (designmd)"
+    },
+    {
+      "title": "getdesign.md",
+      "url": "https://getdesign.md",
+      "reason": "already candidate (getdesign)"
+    },
+    {
+      "title": "KokonutUI",
+      "url": "https://kokonutui.com",
+      "reason": "already candidate (kokonut)"
+    },
+    {
+      "title": "Kinetics",
+      "url": "https://kinetics.colorion.co",
+      "reason": "already candidate (kinetics)"
+    },
+    {
+      "title": "Ui-skills",
+      "url": "https://ui-skills.com",
+      "reason": "already candidate (ui-skills)"
+    },
+    {
+      "title": "Material Design 3",
+      "url": "https://m3.material.io",
+      "reason": "already candidate (material-3)"
+    },
+    {
+      "title": "Flowbite",
+      "url": "https://flowbite.com",
+      "reason": "already candidate (flowbite)"
+    },
+    {
+      "title": "60fps",
+      "url": "https://60fps.design",
+      "reason": "already candidate (60fps)"
+    },
+    {
+      "title": "IF Design Patterns",
+      "url": "https://catalogue.projectsbyif.com",
+      "reason": "already candidate (if-design-patterns)"
+    },
+    {
+      "title": "abtest.design",
+      "url": "https://abtest.design",
+      "reason": "already candidate (abtest-design)"
+    },
+    {
+      "title": "Design Spells",
+      "url": "https://designspells.com",
+      "reason": "already candidate (design-spells)"
+    },
+    {
+      "title": "UXSnaps",
+      "url": "https://uxsnaps.com",
+      "reason": "already candidate (uxsnaps)"
+    },
+    {
+      "title": "UI Playbook",
+      "url": "https://uiplaybook.dev",
+      "reason": "already candidate (ui-playbook)"
+    },
+    {
+      "title": "Inspora",
+      "url": "https://inspora.design",
+      "reason": "already candidate (inspora)"
+    },
+    {
+      "title": "Refero Styles",
+      "url": "https://styles.refero.design",
+      "reason": "already candidate (refero-styles)"
     }
   ],
   "skipped_other": [
@@ -404,7 +485,10 @@
       "image_status": "captured",
       "source": "UiSavior",
       "why": "UI/UX animation & interaction details from top apps",
-      "addedOrder": 13
+      "addedOrder": 13,
+      "harvest_posts": [
+        "https://x.com/UiSavior/status/2097936098525692249"
+      ]
     },
     {
       "id": "if-design-patterns",
@@ -427,7 +511,10 @@
       "image_status": "captured",
       "source": "UiSavior",
       "why": "Trustworthy service / responsible AI design patterns",
-      "addedOrder": 14
+      "addedOrder": 14,
+      "harvest_posts": [
+        "https://x.com/UiSavior/status/2097936098525692249"
+      ]
     },
     {
       "id": "abtest-design",
@@ -451,7 +538,10 @@
       "image_status": "captured",
       "source": "UiSavior",
       "why": "Curated A/B test results from best-in-class apps",
-      "addedOrder": 15
+      "addedOrder": 15,
+      "harvest_posts": [
+        "https://x.com/UiSavior/status/2097936098525692249"
+      ]
     },
     {
       "id": "design-spells",
@@ -474,7 +564,10 @@
       "image_status": "captured",
       "source": "UiSavior",
       "why": "Micro-interactions, easter eggs, delightful web details",
-      "addedOrder": 16
+      "addedOrder": 16,
+      "harvest_posts": [
+        "https://x.com/UiSavior/status/2097936098525692249"
+      ]
     },
     {
       "id": "uxsnaps",
@@ -498,7 +591,10 @@
       "image_status": "captured",
       "source": "UiSavior",
       "why": "UI/UX breakdowns from top apps",
-      "addedOrder": 17
+      "addedOrder": 17,
+      "harvest_posts": [
+        "https://x.com/UiSavior/status/2097936098525692249"
+      ]
     },
     {
       "id": "ui-playbook",
@@ -521,7 +617,10 @@
       "image_status": "captured",
       "source": "UiSavior",
       "why": "Documented collection of UI components",
-      "addedOrder": 18
+      "addedOrder": 18,
+      "harvest_posts": [
+        "https://x.com/UiSavior/status/2097936098525692249"
+      ]
     },
     {
       "id": "wandpress",
@@ -592,7 +691,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "pengsonal",
-      "why": "Open-source, animation-ready React components and blocks built with Next.js, Tailwind CSS, Motion, TypeScript, and shadcn/ui for SaaS and\u2026",
+      "why": "Open-source, animation-ready React components and blocks built with Next.js, Tailwind CSS, Motion, TypeScript, and shadcn/ui for SaaS and…",
       "addedOrder": 21
     },
     {
@@ -618,8 +717,11 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "pengsonal",
-      "why": "12,000+ hand-crafted React and Tailwind CSS components, templates, and shadcn themes by real design engineers. Preview live, install with\u2026",
-      "addedOrder": 22
+      "why": "12,000+ hand-crafted React and Tailwind CSS components, templates, and shadcn themes by real design engineers. Preview live, install with…",
+      "addedOrder": 22,
+      "harvest_posts": [
+        "https://x.com/noahelhadedy/status/2098019806100312480"
+      ]
     },
     {
       "id": "shadcnblocks",
@@ -642,7 +744,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "pengsonal",
-      "why": "Discover hundreds of extra shadcn/ui blocks and Shadcn UI components. Shadcnblocks is a premium component library built with Shadcn UI, R\u2026",
+      "why": "Discover hundreds of extra shadcn/ui blocks and Shadcn UI components. Shadcnblocks is a premium component library built with Shadcn UI, R…",
       "addedOrder": 23
     },
     {
@@ -1164,7 +1266,8 @@
       "image_status": "captured",
       "source": "konig0000",
       "why": "UI/design resource from @konig0000 list post",
-      "addedOrder": 45
+      "addedOrder": 45,
+      "harvest_posts": []
     },
     {
       "id": "recent-design",
@@ -1328,7 +1431,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "letcontactabhi",
-      "why": "Explore 100,000+ recorded user flows, app screens, and UI patterns from Airbnb, Uber, Netflix & more. Save hours on UX research with Page\u2026",
+      "why": "Explore 100,000+ recorded user flows, app screens, and UI patterns from Airbnb, Uber, Netflix & more. Save hours on UX research with Page…",
       "addedOrder": 52,
       "image_method": "screenshot"
     },
@@ -1354,7 +1457,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "letcontactabhi",
-      "why": "The largest collection of UI/UX references and design inspiration for web and iOS. Explore tens of thousands of screenshots with advanced\u2026",
+      "why": "The largest collection of UI/UX references and design inspiration for web and iOS. Explore tens of thousands of screenshots with advanced…",
       "addedOrder": 53
     },
     {
@@ -1524,7 +1627,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "Mohd__Shahid_07",
-      "why": "Create websites, product interfaces and email sequences for your SaaS faster than ever with our library of 5,000+ real-world UX & UI desi\u2026",
+      "why": "Create websites, product interfaces and email sequences for your SaaS faster than ever with our library of 5,000+ real-world UX & UI desi…",
       "addedOrder": 60
     },
     {
@@ -1688,7 +1791,7 @@
       "needs_review": true,
       "image_status": "captured",
       "source": "ahmad_Uxflow",
-      "why": "Browse 4,000+ curated website sections from top brands. Filter by hero, feature, pricing, testimonial designs. New sections added weekly.\u2026",
+      "why": "Browse 4,000+ curated website sections from top brands. Filter by hero, feature, pricing, testimonial designs. New sections added weekly.…",
       "addedOrder": 67
     },
     {
@@ -1736,7 +1839,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "DevItaliya22",
-      "why": "Ship stunning UI faster with Ship stunning UI faster with ready-made React components.. Browse hundreds of copy-paste React animations bu\u2026",
+      "why": "Ship stunning UI faster with Ship stunning UI faster with ready-made React components.. Browse hundreds of copy-paste React animations bu…",
       "addedOrder": 69
     },
     {
@@ -1833,7 +1936,7 @@
       "needs_review": false,
       "image_status": "og-captured",
       "source": "taher_max_",
-      "why": "Explore 1,200+ hand-picked real and fictional logos searchable by style, industry, and color \u2014 each credited to its designer.",
+      "why": "Explore 1,200+ hand-picked real and fictional logos searchable by style, industry, and color — each credited to its designer.",
       "addedOrder": 73
     },
     {
@@ -1880,7 +1983,7 @@
       "needs_review": false,
       "image_status": "og-captured",
       "source": "taher_max_",
-      "why": "Discover daily UI design inspiration from the world's best product designers. Browse mobile apps, dashboards, landing pages, and motion U\u2026",
+      "why": "Discover daily UI design inspiration from the world's best product designers. Browse mobile apps, dashboards, landing pages, and motion U…",
       "addedOrder": 75
     },
     {
@@ -2043,7 +2146,10 @@
       "image_status": "captured",
       "source": "Milo_Milady",
       "why": "UI/design resource from @Milo_Milady list post",
-      "addedOrder": 82
+      "addedOrder": 82,
+      "harvest_posts": [
+        "https://x.com/neropursue/status/2092511038499377389"
+      ]
     },
     {
       "id": "uiux-showcase",
@@ -2137,7 +2243,7 @@
       "needs_review": true,
       "image_status": "captured",
       "source": "theansarh",
-      "why": "Find what to build and study why it wins \u2014 the onboarding, paywalls and live videos behind the App Store\u2019s top-earning iOS apps.",
+      "why": "Find what to build and study why it wins — the onboarding, paywalls and live videos behind the App Store’s top-earning iOS apps.",
       "addedOrder": 86
     },
     {
@@ -2585,7 +2691,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "askwhykartik",
-      "why": "Motion (prev Framer Motion) is a fast, production-grade animation library for React, JavaScript and Vue. Build smooth UI animations at a \u2026",
+      "why": "Motion (prev Framer Motion) is a fast, production-grade animation library for React, JavaScript and Vue. Build smooth UI animations at a …",
       "addedOrder": 105
     },
     {
@@ -2893,7 +2999,7 @@
       "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
       "why": "Creative portfolio network for UI/UX and visual design",
       "addedOrder": 118,
-      "image_error": "screenshot+og+microlink failed"
+      "image_error": "http-403 | og:no-og:{\"error\":\"Unable to generate link preview\",\"likely_type\":\"\",\"url\":\"\",\"title\":\"\",\"description\":\"\",\"image\":\"\"}"
     },
     {
       "id": "contentcore",
@@ -2964,7 +3070,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "https://x.com/walebuilds_/status/2096943140531732648 (@walebuilds_)",
-      "why": "Favourite Website Awards \u2014 cutting-edge web design showcase",
+      "why": "Favourite Website Awards — cutting-edge web design showcase",
       "addedOrder": 121
     },
     {
@@ -2989,7 +3095,7 @@
       "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
       "why": "Website design inspiration gallery for landing pages",
       "addedOrder": 122,
-      "image_error": "screenshot+og+microlink failed"
+      "image_error": "http-403 | og:no-og:{\"error\":\"Unable to generate link preview\",\"likely_type\":\"\",\"url\":\"\",\"title\":\"\",\"description\":\"\",\"image\":\"\"}"
     },
     {
       "id": "lapa-ninja",
@@ -3058,7 +3164,10 @@
       "image_status": "captured",
       "source": "https://x.com/walebuilds_/status/2096943140531732648 (@walebuilds_)",
       "why": "Material Design 3 guidelines and design system",
-      "addedOrder": 125
+      "addedOrder": 125,
+      "harvest_posts": [
+        "https://x.com/UiSavior/status/2098225660300775583"
+      ]
     },
     {
       "id": "screensdesign",
@@ -3391,13 +3500,16 @@
       "needs_review": true,
       "image_status": "captured",
       "source": "https://x.com/ah4alt/status/2097932926596063369",
-      "why": "Paste a URL. Get a complete DESIGN.md file in seconds. Extract design tokens, typography & component styles \u2014 ready for AI coding agents.",
+      "why": "Paste a URL. Get a complete DESIGN.md file in seconds. Extract design tokens, typography & component styles — ready for AI coding agents.",
       "addedOrder": 139,
       "harvest_meta": {
         "source_user": "ah4alt, crowdlinker",
         "post_id": "2097932926596063369",
         "full_dump": true
-      }
+      },
+      "harvest_posts": [
+        "https://x.com/noahelhadedy/status/2098019806100312480"
+      ]
     },
     {
       "id": "designmd-supply",
@@ -3422,7 +3534,10 @@
         "source_user": "ah4alt",
         "post_id": "2097932926596063369",
         "full_dump": true
-      }
+      },
+      "harvest_posts": [
+        "https://x.com/noahelhadedy/status/2098019806100312480"
+      ]
     },
     {
       "id": "heroui-native-2",
@@ -3542,7 +3657,7 @@
       "needs_review": true,
       "image_status": "captured",
       "source": "https://x.com/ah4alt/status/2097932926596063369",
-      "why": "Open-source vibe design workspace & Claude Design alternative \u2014 build prototypes, landing pages, dashboards, slides & HTML video with your own coding agent.",
+      "why": "Open-source vibe design workspace & Claude Design alternative — build prototypes, landing pages, dashboards, slides & HTML video with your own coding agent.",
       "addedOrder": 145,
       "harvest_meta": {
         "source_user": "ah4alt",
@@ -3752,7 +3867,10 @@
         "source_user": "ah4alt, walebuilds_",
         "post_id": "2096943140531732648",
         "full_dump": true
-      }
+      },
+      "harvest_posts": [
+        "https://x.com/noahelhadedy/status/2098019806100312480"
+      ]
     },
     {
       "id": "weekend-designmd",
@@ -4041,7 +4159,7 @@
     },
     {
       "id": "craftwork-curated",
-      "name": "Curated Website Inspiration \u2022 Craftwork",
+      "name": "Curated Website Inspiration • Craftwork",
       "category": "Inspiration",
       "subcategory": "Directories",
       "tags": [
@@ -4134,7 +4252,7 @@
       ],
       "url": "https://dialkit.dev",
       "source": "tranmautritam",
-      "why": "Make the details feel right. DialKit puts live controls beside the interface you\u2019re building.",
+      "why": "Make the details feel right. DialKit puts live controls beside the interface you’re building.",
       "needs_review": true,
       "image_status": "captured",
       "addedOrder": 168,
@@ -4217,7 +4335,8 @@
       "image_status": "captured",
       "addedOrder": 172,
       "harvest_posts": [
-        "https://x.com/DevItaliya22/status/2097210958301249942"
+        "https://x.com/DevItaliya22/status/2097210958301249942",
+        "https://x.com/UiSavior/status/2098225660300775583"
       ],
       "image_method": "screenshot"
     },
@@ -4293,7 +4412,8 @@
       "image_status": "captured",
       "addedOrder": 175,
       "harvest_posts": [
-        "https://x.com/askwhykartik/status/2095761291801485316"
+        "https://x.com/askwhykartik/status/2095761291801485316",
+        "https://x.com/noahelhadedy/status/2098019806100312480"
       ],
       "image_method": "screenshot"
     },
@@ -4552,7 +4672,8 @@
       "image_status": "captured",
       "addedOrder": 189,
       "harvest_posts": [
-        "https://x.com/ImranUxi/status/2096487758588219553"
+        "https://x.com/ImranUxi/status/2096487758588219553",
+        "https://x.com/csaba_kissi/status/2098299577569083834"
       ],
       "image_method": "screenshot"
     },
@@ -4578,7 +4699,8 @@
       "image_status": "captured",
       "addedOrder": 191,
       "harvest_posts": [
-        "https://x.com/askwhykartik/status/2095851398424314249"
+        "https://x.com/askwhykartik/status/2095851398424314249",
+        "https://x.com/csaba_kissi/status/2098299577569083834"
       ],
       "image_method": "screenshot"
     },
@@ -4806,7 +4928,7 @@
       ],
       "url": "https://phosphoricons.com",
       "source": "Manixh02",
-      "why": "A flexible icon family for interfaces, diagrams, presentations \u2014 whatever, really.",
+      "why": "A flexible icon family for interfaces, diagrams, presentations — whatever, really.",
       "needs_review": true,
       "image_status": "captured",
       "addedOrder": 201,
@@ -5168,13 +5290,512 @@
         "https://x.com/AI_With_Stella/status/2097670263362232398"
       ],
       "image_method": "screenshot"
+    },
+    {
+      "id": "getlayers",
+      "name": "GetLayers AI",
+      "category": "Templates",
+      "subcategory": "Coded",
+      "tags": [
+        "AI",
+        "Templates",
+        "WebGL"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "GetLayers",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://getlayers.ai",
+      "source": "noahelhadedy",
+      "why": "AI-native library of cinematic web templates, 3D/WebGL scenes, animated backgrounds — copyable as one prompt.",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 219,
+      "harvest_posts": [
+        "https://x.com/noahelhadedy/status/2098019806100312480"
+      ],
+      "ingest_batch": "paste-2026-09-11",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "designmd-co",
+      "name": "DesignMD.co",
+      "category": "Templates",
+      "subcategory": "Design Tokens",
+      "tags": [
+        "Design Tokens",
+        "AI"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "designmd.co",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://designmd.co",
+      "source": "noahelhadedy",
+      "why": "DESIGN.md / design-system tooling from Noah's AI design tools list.",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 220,
+      "harvest_posts": [
+        "https://x.com/noahelhadedy/status/2098019806100312480"
+      ],
+      "ingest_batch": "paste-2026-09-11",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "mapcn",
+      "name": "mapcn",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [
+        "Maps",
+        "React",
+        "shadcn",
+        "Tailwind"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "mapcn.dev",
+      "formats": [
+        "React"
+      ],
+      "url": "https://mapcn.dev",
+      "source": "csaba_kissi",
+      "why": "Customizable accessible map components on MapLibre + Tailwind, works with shadcn/ui.",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 221,
+      "harvest_posts": [
+        "https://x.com/csaba_kissi/status/2098299577569083834"
+      ],
+      "ingest_batch": "paste-2026-09-11",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "openusage",
+      "name": "OpenUsage",
+      "category": "Templates",
+      "subcategory": "Tools",
+      "tags": [
+        "AI",
+        "Developer Tools"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "openusage.ai",
+      "formats": [
+        "Web",
+        "macOS"
+      ],
+      "url": "https://openusage.ai",
+      "source": "csaba_kissi",
+      "why": "Mac menu-bar tracker for AI coding subscription limits (Cursor, Claude Code, Codex, etc.).",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 222,
+      "harvest_posts": [
+        "https://x.com/csaba_kissi/status/2098299577569083834"
+      ],
+      "ingest_batch": "paste-2026-09-11",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "bencho",
+      "name": "Bencho",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [
+        "UI",
+        "Blocks",
+        "Interactive"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "bencho.dev",
+      "formats": [
+        "Web",
+        "React"
+      ],
+      "url": "https://bencho.dev",
+      "source": "csaba_kissi",
+      "why": "UI interactive blocks — from Red paste / csaba list context.",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 223,
+      "harvest_posts": [
+        "https://x.com/csaba_kissi/status/2098299577569083834"
+      ],
+      "ingest_batch": "paste-2026-09-11",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "browser-use",
+      "name": "Browser Use",
+      "category": "Templates",
+      "subcategory": "Tools",
+      "tags": [
+        "Agents",
+        "Browser"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "browser-use.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://browser-use.com",
+      "source": "csaba_kissi",
+      "why": "Browser-use agents — expanded from @csaba_kissi note_tweet.",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 224,
+      "harvest_posts": [
+        "https://x.com/csaba_kissi/status/2098299577569083834"
+      ],
+      "ingest_batch": "paste-2026-09-11",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "wellmade",
+      "name": "Wellmade",
+      "category": "Inspiration",
+      "subcategory": "Galleries",
+      "tags": [
+        "Creative",
+        "Inspiration"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "wellmade.fyi",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://wellmade.fyi",
+      "source": "paste",
+      "why": "A home for well-made creative work — loose pack from Red paste.",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 225,
+      "harvest_posts": [],
+      "ingest_batch": "paste-2026-09-11",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "untitled-ui",
+      "name": "Untitled UI",
+      "category": "Marketplace",
+      "subcategory": "UI kits",
+      "tags": [
+        "Figma",
+        "UI Kit",
+        "React",
+        "Design System"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Untitled UI",
+      "formats": [
+        "Figma",
+        "React"
+      ],
+      "url": "https://untitledui.com",
+      "source": "UiSavior",
+      "why": "Figma UI kit and React component library — from @UiSavior Figma UI Kits list.",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 226,
+      "harvest_posts": [
+        "https://x.com/UiSavior/status/2098225660300775583"
+      ],
+      "ingest_batch": "paste-2026-09-11",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "uiprep",
+      "name": "UI Prep",
+      "category": "Marketplace",
+      "subcategory": "UI kits",
+      "tags": [
+        "Figma",
+        "UI Kit",
+        "Design System"
+      ],
+      "access": [
+        "Paid"
+      ],
+      "creator": "UI Prep",
+      "formats": [
+        "Figma"
+      ],
+      "url": "https://uiprep.com",
+      "source": "UiSavior",
+      "why": "Figma UI kits and design system training — from @UiSavior Figma UI Kits list.",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 227,
+      "harvest_posts": [
+        "https://x.com/UiSavior/status/2098225660300775583"
+      ],
+      "ingest_batch": "paste-2026-09-11",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "rayna-ui",
+      "name": "Rayna UI",
+      "category": "Marketplace",
+      "subcategory": "UI kits",
+      "tags": [
+        "Figma",
+        "UI Kit",
+        "Design System"
+      ],
+      "access": [
+        "Paid"
+      ],
+      "creator": "Rayna UI",
+      "formats": [
+        "Figma"
+      ],
+      "url": "https://raynaui.com",
+      "source": "UiSavior",
+      "why": "Fast flexible Figma design system — from @UiSavior Figma UI Kits list.",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 228,
+      "harvest_posts": [
+        "https://x.com/UiSavior/status/2098225660300775583"
+      ],
+      "ingest_batch": "paste-2026-09-11",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "wireframekits",
+      "name": "Wireframe Kits",
+      "category": "Marketplace",
+      "subcategory": "UI kits",
+      "tags": [
+        "Figma",
+        "Wireframe"
+      ],
+      "access": [
+        "Paid"
+      ],
+      "creator": "wireframekits.com",
+      "formats": [
+        "Figma"
+      ],
+      "url": "https://wireframekits.com",
+      "source": "UiSavior",
+      "why": "Wireframe kits for Figma — from @UiSavior Figma UI Kits list.",
+      "needs_review": true,
+      "image_status": "blocked",
+      "addedOrder": 229,
+      "harvest_posts": [
+        "https://x.com/UiSavior/status/2098225660300775583"
+      ],
+      "ingest_batch": "paste-2026-09-11",
+      "image_error": "net::ERR_CONNECTION_CLOSED; no OG"
+    },
+    {
+      "id": "figma-community",
+      "name": "Figma Community",
+      "category": "Marketplace",
+      "subcategory": "Directories",
+      "tags": [
+        "Figma",
+        "Community",
+        "UI Kits"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Figma",
+      "formats": [
+        "Figma"
+      ],
+      "url": "https://www.figma.com/community",
+      "source": "UiSavior",
+      "why": "Figma Community hub for UI kits & files — from @UiSavior Figma UI Kits list.",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 230,
+      "harvest_posts": [
+        "https://x.com/UiSavior/status/2098225660300775583"
+      ],
+      "ingest_batch": "paste-2026-09-11",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "libraries-dev-beam",
+      "name": "Beam (Libraries.dev)",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [
+        "Animation",
+        "React",
+        "Border",
+        "Beam"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "libraries.dev",
+      "formats": [
+        "React"
+      ],
+      "url": "https://libraries.dev/beam",
+      "source": "paste",
+      "why": "Animated border beam React component on Libraries.dev — Red paste add.",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 231,
+      "harvest_posts": [],
+      "ingest_batch": "paste-2026-09-11",
+      "image_method": "screenshot"
     }
   ],
   "image_capture": {
-    "captured": 201,
+    "captured": 213,
     "og-captured": 5,
-    "blocked": 2,
+    "blocked": 3,
     "pending": 0,
-    "at": "2026-09-11T02:09:25.812093Z"
+    "at": "2026-09-11T07:37:20.446Z"
+  },
+  "paste_ingest": {
+    "added_ids": [
+      "getlayers",
+      "designmd-co",
+      "mapcn",
+      "openusage",
+      "bencho",
+      "browser-use",
+      "wellmade",
+      "untitled-ui",
+      "uiprep",
+      "rayna-ui",
+      "wireframekits",
+      "figma-community",
+      "libraries-dev-beam"
+    ],
+    "skipped_dupes": [
+      {
+        "title": "DesignMD Supply",
+        "url": "https://www.designmd.supply",
+        "reason": "already candidate (designmd-supply)"
+      },
+      {
+        "title": "21st.dev",
+        "url": "https://21st.dev",
+        "reason": "already candidate (21st-dev)"
+      },
+      {
+        "title": "DesignMD",
+        "url": "https://designmd.me",
+        "reason": "already candidate (designmd)"
+      },
+      {
+        "title": "getdesign.md",
+        "url": "https://getdesign.md",
+        "reason": "already candidate (getdesign)"
+      },
+      {
+        "title": "KokonutUI",
+        "url": "https://kokonutui.com",
+        "reason": "already candidate (kokonut)"
+      },
+      {
+        "title": "Kinetics",
+        "url": "https://kinetics.colorion.co",
+        "reason": "already candidate (kinetics)"
+      },
+      {
+        "title": "Ui-skills",
+        "url": "https://ui-skills.com",
+        "reason": "already candidate (ui-skills)"
+      },
+      {
+        "title": "Material Design 3",
+        "url": "https://m3.material.io",
+        "reason": "already candidate (material-3)"
+      },
+      {
+        "title": "Flowbite",
+        "url": "https://flowbite.com",
+        "reason": "already candidate (flowbite)"
+      },
+      {
+        "title": "60fps",
+        "url": "https://60fps.design",
+        "reason": "already candidate (60fps)"
+      },
+      {
+        "title": "IF Design Patterns",
+        "url": "https://catalogue.projectsbyif.com",
+        "reason": "already candidate (if-design-patterns)"
+      },
+      {
+        "title": "abtest.design",
+        "url": "https://abtest.design",
+        "reason": "already candidate (abtest-design)"
+      },
+      {
+        "title": "Design Spells",
+        "url": "https://designspells.com",
+        "reason": "already candidate (design-spells)"
+      },
+      {
+        "title": "UXSnaps",
+        "url": "https://uxsnaps.com",
+        "reason": "already candidate (uxsnaps)"
+      },
+      {
+        "title": "UI Playbook",
+        "url": "https://uiplaybook.dev",
+        "reason": "already candidate (ui-playbook)"
+      },
+      {
+        "title": "Inspora",
+        "url": "https://inspora.design",
+        "reason": "already candidate (inspora)"
+      },
+      {
+        "title": "Refero Styles",
+        "url": "https://styles.refero.design",
+        "reason": "already candidate (refero-styles)"
+      }
+    ],
+    "skipped_live": [
+      {
+        "title": "shadcn",
+        "url": "https://ui.shadcn.com",
+        "reason": "live site entry (shadcn)"
+      }
+    ],
+    "source_posts": {
+      "noahelhadedy": "https://x.com/noahelhadedy/status/2098019806100312480",
+      "csaba_kissi": "https://x.com/csaba_kissi/status/2098299577569083834",
+      "UiSavior_learn": "https://x.com/UiSavior/status/2097936098525692249",
+      "UiSavior_figma_kits": "https://x.com/UiSavior/status/2098225660300775583",
+      "neropursue": "https://x.com/neropursue/status/2092511038499377389"
+    },
+    "steering": [
+      "https://styles.refero.design",
+      "https://libraries.dev/beam"
+    ]
   }
 }
