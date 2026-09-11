@@ -29,8 +29,11 @@ export type AuthProvider = {
   readonly isMock: boolean;
 };
 
-/** Neon Auth is Better Auth; these are its own route names. */
-const BASE = (import.meta.env.VITE_NEON_AUTH_URL ?? '').replace(/\/+$/, '');
+/**
+ * Auth is proxied through this site's own origin so the session cookie is first-party.
+ * Talking to Neon Auth directly made it a third-party cookie, which Safari blocks.
+ */
+const BASE = '/api/auth';
 
 /**
  * Sessions are cookies issued by Neon Auth on its own origin, so every call must send
@@ -145,9 +148,5 @@ export const neonAuth: AuthProvider = {
 
 export const auth: AuthProvider = neonAuth;
 
-/** Accounts are only on offer when the provider is real and configured. */
-export const authAvailable = !auth.isMock && Boolean(BASE);
-
-if (!authAvailable) {
-  console.warn('UIXO: accounts are hidden because VITE_NEON_AUTH_URL is not configured.');
-}
+/** Accounts are only on offer when the provider is real. */
+export const authAvailable = !auth.isMock;
