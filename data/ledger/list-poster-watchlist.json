@@ -1,5 +1,7 @@
 {
   "updated": "2026-09-11",
+  "exclusive_allowlist": false,
+  "note": "Core handles are priority; also discover and add new list-droppers. Dump all links from list posts.",
   "handles": [
     "walebuilds_",
     "rkant7",
@@ -20,5 +22,11 @@
     "tranmautritam",
     "webdevluc"
   ],
-  "rule": "dump all links from their list posts; resource-first"
+  "discovery_candidates": [
+    "ah4alt",
+    "theansarh",
+    "eddieeee0716",
+    "mredu000",
+    "NityamAS"
+  ]
 }
