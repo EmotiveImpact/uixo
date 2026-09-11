@@ -16,7 +16,7 @@ const TIMEOUT_MS = 15000;
 // Plenty of hosts reject requests with no User-Agent outright.
 const HEADERS = {
   'user-agent':
-    'Mozilla/5.0 (compatible; UIXO-linkcheck/1.0; +https://uixo.dev) AppleWebKit/537.36 Chrome/124 Safari/537.36',
+    'Mozilla/5.0 (compatible; UIXO-linkcheck/1.0; +https://uixo.io) AppleWebKit/537.36 Chrome/124 Safari/537.36',
   accept: 'text/html,application/xhtml+xml',
 };
 

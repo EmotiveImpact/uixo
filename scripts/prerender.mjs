@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
-const SITE = process.env.SITE_URL ?? 'https://uixo.dev';
+const SITE = process.env.SITE_URL ?? 'https://uixo.io';
 
 const resources = JSON.parse(readFileSync(join(root, 'src/content/resources.json'), 'utf8'));
 const categories = JSON.parse(readFileSync(join(root, 'src/content/categories.json'), 'utf8'));
