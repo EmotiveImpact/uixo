@@ -1,26 +1,26 @@
 {
   "updated": "2026-09-11",
-  "updated_note": "PRIORITY FIX full-dump harvest: resource-first, note_tweet expanded, ALL list-post destinations as candidates for check-off. +19 new (rescued prior aggressive skips where present). | thumbs: captured=141 blocked=14",
+  "updated_note": "Full-dump harvest: note_tweet expanded. +53 new candidates (junk filtered). OG-fallback thumbs policy. | pending=53 blocked=9",
   "counts_by_category": {
-    "Inspiration": 75,
-    "Components": 20,
-    "UI libraries": 22,
+    "Inspiration": 83,
+    "Components": 23,
+    "UI libraries": 29,
     "Marketplace": 5,
     "Backgrounds": 6,
     "Fonts": 7,
-    "Icons": 3,
+    "Icons": 23,
     "Illustrations": 2,
-    "Templates": 14,
-    "Mockups": 1
+    "Templates": 28,
+    "Mockups": 2
   },
   "totals": {
-    "candidates": 155,
-    "needs_review": 77,
-    "skipped_dupes_existing_site": 1,
+    "candidates": 208,
+    "needs_review": 130,
+    "skipped_dupes_existing_site": 0,
     "skipped_other": 13,
-    "harvest_total": 108,
-    "new_this_run": 20,
-    "already_present": 89
+    "harvest_total": 170,
+    "new_this_run": 53,
+    "already_present": 107
   },
   "skipped_dupes": [
     {
@@ -592,7 +592,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "pengsonal",
-      "why": "Open-source, animation-ready React components and blocks built with Next.js, Tailwind CSS, Motion, TypeScript, and shadcn/ui for SaaS and…",
+      "why": "Open-source, animation-ready React components and blocks built with Next.js, Tailwind CSS, Motion, TypeScript, and shadcn/ui for SaaS and\u2026",
       "addedOrder": 21
     },
     {
@@ -618,7 +618,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "pengsonal",
-      "why": "12,000+ hand-crafted React and Tailwind CSS components, templates, and shadcn themes by real design engineers. Preview live, install with…",
+      "why": "12,000+ hand-crafted React and Tailwind CSS components, templates, and shadcn themes by real design engineers. Preview live, install with\u2026",
       "addedOrder": 22
     },
     {
@@ -642,7 +642,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "pengsonal",
-      "why": "Discover hundreds of extra shadcn/ui blocks and Shadcn UI components. Shadcnblocks is a premium component library built with Shadcn UI, R…",
+      "why": "Discover hundreds of extra shadcn/ui blocks and Shadcn UI components. Shadcnblocks is a premium component library built with Shadcn UI, R\u2026",
       "addedOrder": 23
     },
     {
@@ -1328,7 +1328,7 @@
       "needs_review": false,
       "image_status": "blocked",
       "source": "letcontactabhi",
-      "why": "Explore 100,000+ recorded user flows, app screens, and UI patterns from Airbnb, Uber, Netflix & more. Save hours on UX research with Page…",
+      "why": "Explore 100,000+ recorded user flows, app screens, and UI patterns from Airbnb, Uber, Netflix & more. Save hours on UX research with Page\u2026",
       "addedOrder": 52,
       "image_error": "bot-wall:captcha"
     },
@@ -1354,7 +1354,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "letcontactabhi",
-      "why": "The largest collection of UI/UX references and design inspiration for web and iOS. Explore tens of thousands of screenshots with advanced…",
+      "why": "The largest collection of UI/UX references and design inspiration for web and iOS. Explore tens of thousands of screenshots with advanced\u2026",
       "addedOrder": 53
     },
     {
@@ -1524,7 +1524,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "Mohd__Shahid_07",
-      "why": "Create websites, product interfaces and email sequences for your SaaS faster than ever with our library of 5,000+ real-world UX & UI desi…",
+      "why": "Create websites, product interfaces and email sequences for your SaaS faster than ever with our library of 5,000+ real-world UX & UI desi\u2026",
       "addedOrder": 60
     },
     {
@@ -1688,7 +1688,7 @@
       "needs_review": true,
       "image_status": "captured",
       "source": "ahmad_Uxflow",
-      "why": "Browse 4,000+ curated website sections from top brands. Filter by hero, feature, pricing, testimonial designs. New sections added weekly.…",
+      "why": "Browse 4,000+ curated website sections from top brands. Filter by hero, feature, pricing, testimonial designs. New sections added weekly.\u2026",
       "addedOrder": 67
     },
     {
@@ -1736,7 +1736,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "DevItaliya22",
-      "why": "Ship stunning UI faster with Ship stunning UI faster with ready-made React components.. Browse hundreds of copy-paste React animations bu…",
+      "why": "Ship stunning UI faster with Ship stunning UI faster with ready-made React components.. Browse hundreds of copy-paste React animations bu\u2026",
       "addedOrder": 69
     },
     {
@@ -1833,7 +1833,7 @@
       "needs_review": false,
       "image_status": "og-captured",
       "source": "taher_max_",
-      "why": "Explore 1,200+ hand-picked real and fictional logos searchable by style, industry, and color — each credited to its designer.",
+      "why": "Explore 1,200+ hand-picked real and fictional logos searchable by style, industry, and color \u2014 each credited to its designer.",
       "addedOrder": 73
     },
     {
@@ -1880,7 +1880,7 @@
       "needs_review": false,
       "image_status": "og-captured",
       "source": "taher_max_",
-      "why": "Discover daily UI design inspiration from the world's best product designers. Browse mobile apps, dashboards, landing pages, and motion U…",
+      "why": "Discover daily UI design inspiration from the world's best product designers. Browse mobile apps, dashboards, landing pages, and motion U\u2026",
       "addedOrder": 75
     },
     {
@@ -2137,7 +2137,7 @@
       "needs_review": true,
       "image_status": "captured",
       "source": "theansarh",
-      "why": "Find what to build and study why it wins — the onboarding, paywalls and live videos behind the App Store’s top-earning iOS apps.",
+      "why": "Find what to build and study why it wins \u2014 the onboarding, paywalls and live videos behind the App Store\u2019s top-earning iOS apps.",
       "addedOrder": 86
     },
     {
@@ -2585,7 +2585,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "askwhykartik",
-      "why": "Motion (prev Framer Motion) is a fast, production-grade animation library for React, JavaScript and Vue. Build smooth UI animations at a …",
+      "why": "Motion (prev Framer Motion) is a fast, production-grade animation library for React, JavaScript and Vue. Build smooth UI animations at a \u2026",
       "addedOrder": 105
     },
     {
@@ -2964,7 +2964,7 @@
       "needs_review": false,
       "image_status": "captured",
       "source": "https://x.com/walebuilds_/status/2096943140531732648 (@walebuilds_)",
-      "why": "Favourite Website Awards — cutting-edge web design showcase",
+      "why": "Favourite Website Awards \u2014 cutting-edge web design showcase",
       "addedOrder": 121
     },
     {
@@ -3391,7 +3391,7 @@
       "needs_review": true,
       "image_status": "captured",
       "source": "https://x.com/ah4alt/status/2097932926596063369",
-      "why": "Paste a URL. Get a complete DESIGN.md file in seconds. Extract design tokens, typography & component styles — ready for AI coding agents.",
+      "why": "Paste a URL. Get a complete DESIGN.md file in seconds. Extract design tokens, typography & component styles \u2014 ready for AI coding agents.",
       "addedOrder": 139,
       "harvest_meta": {
         "source_user": "ah4alt, crowdlinker",
@@ -3542,7 +3542,7 @@
       "needs_review": true,
       "image_status": "captured",
       "source": "https://x.com/ah4alt/status/2097932926596063369",
-      "why": "Open-source vibe design workspace & Claude Design alternative — build prototypes, landing pages, dashboards, slides & HTML video with your own coding agent.",
+      "why": "Open-source vibe design workspace & Claude Design alternative \u2014 build prototypes, landing pages, dashboards, slides & HTML video with your own coding agent.",
       "addedOrder": 145,
       "harvest_meta": {
         "source_user": "ah4alt",
@@ -3807,13 +3807,1321 @@
         "post_id": "",
         "full_dump": true
       }
+    },
+    {
+      "id": "akveo-eva-icons",
+      "name": "Akveo",
+      "category": "Icons",
+      "subcategory": "Vector",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "akveo.github.io",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://akveo.github.io/eva-icons",
+      "source": "Manixh02",
+      "why": "From @Manixh02 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 156,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "amicro",
+      "name": "Amicro",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "Microinteractions"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "amicro.vercel.app",
+      "formats": [
+        "React"
+      ],
+      "url": "https://amicro.vercel.app",
+      "source": "Manixh02",
+      "why": "Add beautiful, lightweight, and tree-shakeable micro-interactions and transition components to your React website with a single CLI command.",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 157,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2096175237109092642"
+      ]
+    },
+    {
+      "id": "appmotion",
+      "name": "Appmotion",
+      "category": "Inspiration",
+      "subcategory": "Galleries",
+      "tags": [
+        "Motion"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "appmotion.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://appmotion.design",
+      "source": "rkant7",
+      "why": "From @rkant7 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 158,
+      "harvest_posts": [
+        "https://x.com/rkant7/status/2097313383343165778",
+        "https://x.com/rkant7/status/2095873864693956859"
+      ]
+    },
+    {
+      "id": "appshot-gallery",
+      "name": "Appshot Gallery",
+      "category": "Mockups",
+      "subcategory": "Mobile",
+      "tags": [
+        "ASO"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "appshot.gallery",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://appshot.gallery",
+      "source": "csaba_kissi",
+      "why": "Appshot Gallery",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 159,
+      "harvest_posts": [
+        "https://x.com/csaba_kissi/status/2097206925264118197"
+      ]
+    },
+    {
+      "id": "bootstrapmade",
+      "name": "BootstrapMade",
+      "category": "Templates",
+      "subcategory": "Landing pages",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "bootstrapmade.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://bootstrapmade.com",
+      "source": "AI_With_Stella",
+      "why": "BootstrapMade",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 160,
+      "harvest_posts": [
+        "https://x.com/AI_With_Stella/status/2097670263362232398"
+      ]
+    },
+    {
+      "id": "boxicons",
+      "name": "Boxicons",
+      "category": "Icons",
+      "subcategory": "Vector",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "boxicons.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://boxicons.com",
+      "source": "Manixh02",
+      "why": "From @Manixh02 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 161,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "built-by-designers",
+      "name": "Built by Designers",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Portfolios"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "builtbydesigners.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://builtbydesigners.com",
+      "source": "AGTPinsights",
+      "why": "Built by Designers",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 162,
+      "harvest_posts": [
+        "https://x.com/AGTPinsights/status/2097634992469729335"
+      ]
+    },
+    {
+      "id": "carbondesignsystem",
+      "name": "Carbondesignsystem",
+      "category": "Icons",
+      "subcategory": "Vector",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "carbondesignsystem.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://carbondesignsystem.com",
+      "source": "Manixh02",
+      "why": "From @Manixh02 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 163,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "colorlib",
+      "name": "Colorlib",
+      "category": "Templates",
+      "subcategory": "Landing pages",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "colorlib.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://colorlib.com",
+      "source": "AI_With_Stella",
+      "why": "Colorlib",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 164,
+      "harvest_posts": [
+        "https://x.com/AI_With_Stella/status/2097670263362232398"
+      ]
+    },
+    {
+      "id": "craftwork-curated",
+      "name": "Curated Website Inspiration \u2022 Craftwork",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Inspiration"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "craftwork.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://craftwork.design/curated/websites",
+      "source": "rkant7",
+      "why": "Discover hundreds of carefully selected websites and design patterns originally featured on Curated.design.",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 165,
+      "harvest_posts": [
+        "https://x.com/rkant7/status/2095873864693956859"
+      ]
+    },
+    {
+      "id": "css-gg",
+      "name": "css.gg",
+      "category": "Icons",
+      "subcategory": "CSS",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "css.gg",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://css.gg",
+      "source": "Manixh02",
+      "why": "From @Manixh02 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 166,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "devicon",
+      "name": "Devicon",
+      "category": "Icons",
+      "subcategory": "Vector",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "devicon.dev",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://devicon.dev",
+      "source": "Manixh02",
+      "why": "From @Manixh02 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 167,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "dialkit",
+      "name": "DialKit",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [
+        "Components"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "dialkit.dev",
+      "formats": [
+        "React"
+      ],
+      "url": "https://dialkit.dev",
+      "source": "tranmautritam",
+      "why": "Make the details feel right. DialKit puts live controls beside the interface you\u2019re building.",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 168,
+      "harvest_posts": [
+        "https://x.com/tranmautritam/status/2097973193709597033"
+      ]
+    },
+    {
+      "id": "feathericons",
+      "name": "Feathericons",
+      "category": "Icons",
+      "subcategory": "Outline",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "feathericons.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://feathericons.com",
+      "source": "Manixh02",
+      "why": "From @Manixh02 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 170,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "floguo-notes",
+      "name": "Design Engineering",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Uncategorized"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "floguo.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://floguo.com/notes/design-engineering",
+      "source": "ImranUxi",
+      "why": "Links and observations on design engineering",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 171,
+      "harvest_posts": [
+        "https://x.com/ImranUxi/status/2097929685565096303"
+      ]
+    },
+    {
+      "id": "flowbite",
+      "name": "Flowbite",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Components"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "flowbite.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://flowbite.com",
+      "source": "DevItaliya22",
+      "why": "From @DevItaliya22 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 172,
+      "harvest_posts": [
+        "https://x.com/DevItaliya22/status/2097210958301249942"
+      ]
+    },
+    {
+      "id": "google-fonts-icons",
+      "name": "Material Symbols and Icons",
+      "category": "Icons",
+      "subcategory": "Material",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "fonts.google.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://fonts.google.com/icons",
+      "source": "Manixh02",
+      "why": "Material Symbols are our newest icons consolidating over 2,500 glyphs in a single font file with a wide range of design variants.",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 173,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "free-css",
+      "name": "Free CSS",
+      "category": "Templates",
+      "subcategory": "Landing pages",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "free-css.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://free-css.com",
+      "source": "AI_With_Stella",
+      "why": "Free CSS",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 174,
+      "harvest_posts": [
+        "https://x.com/AI_With_Stella/status/2097670263362232398"
+      ]
+    },
+    {
+      "id": "getdesign",
+      "name": "getdesign.md",
+      "category": "Templates",
+      "subcategory": "Design Tokens",
+      "tags": [
+        "Design Tokens"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "getdesign.md",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://getdesign.md",
+      "source": "askwhykartik",
+      "why": "Browse independent design system analyses from popular websites. Drop one into your project as design reference for your coding agent.",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 175,
+      "harvest_posts": [
+        "https://x.com/askwhykartik/status/2095761291801485316"
+      ]
+    },
+    {
+      "id": "getmd",
+      "name": "getmd.design",
+      "category": "Templates",
+      "subcategory": "Design Tokens",
+      "tags": [
+        "Design Tokens"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "getmd.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://getmd.design",
+      "source": "ImranUxi",
+      "why": "From @ImranUxi list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 176,
+      "harvest_posts": [
+        "https://x.com/ImranUxi/status/2097356858159935728"
+      ]
+    },
+    {
+      "id": "heroicons",
+      "name": "Heroicons",
+      "category": "Icons",
+      "subcategory": "Outline",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "heroicons.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://heroicons.com",
+      "source": "Manixh02",
+      "why": "Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 180,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "heroui",
+      "name": "HeroUI v3 (Previously NextUI)",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Components"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "heroui.com",
+      "formats": [
+        "React"
+      ],
+      "url": "https://heroui.com",
+      "source": "DevItaliya22",
+      "why": "Beautiful, accessible React UI components built on React Aria and Tailwind CSS v4. The modern alternative to MUI, Chakra UI, and shadcn/ui for building production-ready applications.",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 181,
+      "harvest_posts": [
+        "https://x.com/DevItaliya22/status/2096922394988589098"
+      ]
+    },
+    {
+      "id": "html5up",
+      "name": "HTML5 UP",
+      "category": "Templates",
+      "subcategory": "Landing pages",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "html5up.net",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://html5up.net",
+      "source": "AI_With_Stella",
+      "why": "HTML5 UP",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 182,
+      "harvest_posts": [
+        "https://x.com/AI_With_Stella/status/2097670263362232398"
+      ]
+    },
+    {
+      "id": "hugeicons",
+      "name": "Hugeicons",
+      "category": "Icons",
+      "subcategory": "Outline",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "hugeicons.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://hugeicons.com",
+      "source": "rkant7",
+      "why": "From @rkant7 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 183,
+      "harvest_posts": [
+        "https://x.com/rkant7/status/2097313383343165778",
+        "https://x.com/rkant7/status/2095873864693956859"
+      ]
+    },
+    {
+      "id": "iconify",
+      "name": "Iconify",
+      "category": "Icons",
+      "subcategory": "Vector",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "iconify.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://iconify.design",
+      "source": "Manixh02",
+      "why": "From @Manixh02 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 184,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "iconoir",
+      "name": "Iconoir",
+      "category": "Icons",
+      "subcategory": "Outline",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "iconoir.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://iconoir.com",
+      "source": "Manixh02",
+      "why": "Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. No premium options or email sign-up required, free for real. Icons",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 185,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "bootstrap-icons",
+      "name": "Bootstrap Icons",
+      "category": "Icons",
+      "subcategory": "Outline",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "icons.getbootstrap.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://icons.getbootstrap.com",
+      "source": "Manixh02",
+      "why": "Official open source SVG icon library for Bootstrap",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 186,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "ionic-ionicons",
+      "name": "Ionicons: The premium icon pack for Ionic Framework",
+      "category": "Icons",
+      "subcategory": "Vector",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "ionic.io",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://ionic.io/ionicons",
+      "source": "Manixh02",
+      "why": "Ionicons is an open-sourced and MIT licensed icon pack.",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 187,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "kinetics",
+      "name": "Kinetics",
+      "category": "UI libraries",
+      "subcategory": "Animation",
+      "tags": [
+        "Motion"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "kinetics.colorion.co",
+      "formats": [
+        "React"
+      ],
+      "url": "https://kinetics.colorion.co",
+      "source": "ImranUxi",
+      "why": "Kinetics",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 189,
+      "harvest_posts": [
+        "https://x.com/ImranUxi/status/2096487758588219553"
+      ]
+    },
+    {
+      "id": "kokonut",
+      "name": "Kokonut",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Components"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "kokonut.ui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://kokonut.ui",
+      "source": "askwhykartik",
+      "why": "From @askwhykartik list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 191,
+      "harvest_posts": [
+        "https://x.com/askwhykartik/status/2095851398424314249"
+      ]
+    },
+    {
+      "id": "libraries-dev",
+      "name": "Libraries.dev",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Effects"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "libraries.dev",
+      "formats": [
+        "React"
+      ],
+      "url": "https://libraries.dev",
+      "source": "taher_max_",
+      "why": "Libraries.dev",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 192,
+      "harvest_posts": [
+        "https://x.com/taher_max_/status/2095754869915496578"
+      ]
+    },
+    {
+      "id": "microkit",
+      "name": "MicroKit",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "Microinteractions"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "microkit.co",
+      "formats": [
+        "React"
+      ],
+      "url": "https://microkit.co",
+      "source": "csaba_kissi",
+      "why": "MicroKit",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 193,
+      "harvest_posts": [
+        "https://x.com/csaba_kissi/status/2097206925264118197"
+      ]
+    },
+    {
+      "id": "mobirise",
+      "name": "Mobirise",
+      "category": "Templates",
+      "subcategory": "Landing pages",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "mobirise.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://mobirise.com",
+      "source": "AI_With_Stella",
+      "why": "Mobirise",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 194,
+      "harvest_posts": [
+        "https://x.com/AI_With_Stella/status/2097670263362232398"
+      ]
+    },
+    {
+      "id": "muz",
+      "name": "Muzli",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Inspiration"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "muz.li",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://muz.li",
+      "source": "UiSavior",
+      "why": "Designers' Secret Source: all the design inspiration from the world in one place. Served fresh.",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 195,
+      "harvest_posts": [
+        "https://x.com/UiSavior/status/2098225591296164105"
+      ]
+    },
+    {
+      "id": "mx-icons",
+      "name": "Mx-icons",
+      "category": "Icons",
+      "subcategory": "Vector",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "mx-icons.vercel.app",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://mx-icons.vercel.app",
+      "source": "Manixh02",
+      "why": "From @Manixh02 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 196,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "onepagelove",
+      "name": "One Page Love",
+      "category": "Templates",
+      "subcategory": "Landing pages",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "onepagelove.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://onepagelove.com",
+      "source": "AI_With_Stella",
+      "why": "One Page Love",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 198,
+      "harvest_posts": [
+        "https://x.com/AI_With_Stella/status/2097670263362232398"
+      ]
+    },
+    {
+      "id": "onepagelove-og",
+      "name": "OG Image Gallery",
+      "category": "Inspiration",
+      "subcategory": "Galleries",
+      "tags": [
+        "OG Images"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "onepagelove.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://onepagelove.com/og",
+      "source": "Manixh02",
+      "why": "OG Image Gallery",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 199,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097372767423484083",
+        "https://x.com/Manixh02/status/2097697837018382388",
+        "https://x.com/Manixh02/status/2097685229490364530",
+        "https://x.com/Manixh02/status/2097257708454019213"
+      ]
+    },
+    {
+      "id": "originui",
+      "name": "Originui",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Components"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "originui.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://originui.com",
+      "source": "DevItaliya22",
+      "why": "From @DevItaliya22 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 200,
+      "harvest_posts": [
+        "https://x.com/DevItaliya22/status/2097210958301249942"
+      ]
+    },
+    {
+      "id": "phosphoricons",
+      "name": "Phosphor Icons",
+      "category": "Icons",
+      "subcategory": "Outline",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "phosphoricons.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://phosphoricons.com",
+      "source": "Manixh02",
+      "why": "A flexible icon family for interfaces, diagrams, presentations \u2014 whatever, really.",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 201,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "radix-ui-icons",
+      "name": "Radix-ui",
+      "category": "Icons",
+      "subcategory": "Outline",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "radix-ui.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://radix-ui.com/icons",
+      "source": "Manixh02",
+      "why": "From @Manixh02 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 202,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "rams",
+      "name": "Rams",
+      "category": "Templates",
+      "subcategory": "Tools",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "rams.ai",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://rams.ai",
+      "source": "ImranUxi",
+      "why": "From @ImranUxi list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 203,
+      "harvest_posts": [
+        "https://x.com/ImranUxi/status/2097929685565096303"
+      ]
+    },
+    {
+      "id": "remixicon",
+      "name": "Remix Icon",
+      "category": "Icons",
+      "subcategory": "Outline",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "remixicon.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://remixicon.com",
+      "source": "Manixh02",
+      "why": "Remix Icon is a set of open source neutral style system symbols elaborately crafted for designers and developers. All of the icons are free to use for both personal and commercial.",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 204,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "rive",
+      "name": "Rive",
+      "category": "UI libraries",
+      "subcategory": "Animation",
+      "tags": [
+        "Animation"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "rive.app",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://rive.app",
+      "source": "DevItaliya22",
+      "why": "Behind Spotify Wrapped, Duolingo, and products reaching 2 billion users. Design, animate, and code in one place. Ship everywhere.",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 206,
+      "harvest_posts": [
+        "https://x.com/DevItaliya22/status/2097210958301249942"
+      ]
+    },
+    {
+      "id": "simpleicons",
+      "name": "Simpleicons",
+      "category": "Icons",
+      "subcategory": "Vector",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "simpleicons.org",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://simpleicons.org",
+      "source": "Manixh02",
+      "why": "From @Manixh02 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 208,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "startbootstrap",
+      "name": "Start Bootstrap",
+      "category": "Templates",
+      "subcategory": "Landing pages",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "startbootstrap.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://startbootstrap.com",
+      "source": "AI_With_Stella",
+      "why": "Start Bootstrap",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 209,
+      "harvest_posts": [
+        "https://x.com/AI_With_Stella/status/2097670263362232398"
+      ]
+    },
+    {
+      "id": "svg",
+      "name": "Svg",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Uncategorized"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "svg.guide",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://svg.guide",
+      "source": "ImranUxi",
+      "why": "From @ImranUxi list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 210,
+      "harvest_posts": [
+        "https://x.com/ImranUxi/status/2097929685565096303"
+      ]
+    },
+    {
+      "id": "tabler-icons",
+      "name": "Tabler Icons: 6150+ free vector icons for web design",
+      "category": "Icons",
+      "subcategory": "Outline",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "tabler.io",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://tabler.io/icons",
+      "source": "Manixh02",
+      "why": "Tabler Icons: 6184 free and open source SVG icons. Customizable size, color and stroke. Available for React, SolidJS, Vue, Figma and more for free!",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 211,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "templated",
+      "name": "Templated",
+      "category": "Templates",
+      "subcategory": "Landing pages",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "templated.co",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://templated.co",
+      "source": "AI_With_Stella",
+      "why": "Templated",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 212,
+      "harvest_posts": [
+        "https://x.com/AI_With_Stella/status/2097670263362232398"
+      ]
+    },
+    {
+      "id": "thealpy-ai-taste",
+      "name": "Thealpy",
+      "category": "Templates",
+      "subcategory": "Design Tokens",
+      "tags": [
+        "Design Tokens"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "thealpy.studio",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://thealpy.studio/ai-taste",
+      "source": "ImranUxi",
+      "why": "From @ImranUxi list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 213,
+      "harvest_posts": [
+        "https://x.com/ImranUxi/status/2097356858159935728"
+      ]
+    },
+    {
+      "id": "themefisher",
+      "name": "Themefisher",
+      "category": "Templates",
+      "subcategory": "Landing pages",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "themefisher.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://themefisher.com",
+      "source": "AI_With_Stella",
+      "why": "Themefisher",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 214,
+      "harvest_posts": [
+        "https://x.com/AI_With_Stella/status/2097670263362232398"
+      ]
+    },
+    {
+      "id": "thesvg",
+      "name": "Thesvg",
+      "category": "Icons",
+      "subcategory": "Vector",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "thesvg.org",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://thesvg.org",
+      "source": "Manixh02",
+      "why": "From @Manixh02 list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 215,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2097544516354122181"
+      ]
+    },
+    {
+      "id": "ui-skills",
+      "name": "Ui-skills",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Uncategorized"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "ui-skills.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://ui-skills.com",
+      "source": "ImranUxi",
+      "why": "From @ImranUxi list post",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 217,
+      "harvest_posts": [
+        "https://x.com/ImranUxi/status/2097929685565096303"
+      ]
+    },
+    {
+      "id": "uideck",
+      "name": "UIDeck",
+      "category": "Templates",
+      "subcategory": "Landing pages",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "uideck.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://uideck.com",
+      "source": "AI_With_Stella",
+      "why": "UIDeck",
+      "needs_review": true,
+      "image_status": "pending",
+      "addedOrder": 218,
+      "harvest_posts": [
+        "https://x.com/AI_With_Stella/status/2097670263362232398"
+      ]
     }
   ],
   "image_capture": {
-    "captured": 146,
-    "blocked": 9,
-    "pending": 0,
+    "captured": 141,
     "og-captured": 5,
-    "at": "2026-09-11T01:24:42.394Z"
+    "blocked": 9,
+    "pending": 53,
+    "at": "2026-09-11T02:01:34.728849Z"
   }
 }
