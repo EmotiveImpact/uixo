@@ -1,23 +1,25 @@
 {
   "updated": "2026-09-11",
-  "updated_note": "Retagged from inspiration-list.json into canonical UIXO categories. No PR/push.",
+  "updated_note": "Harvested list posts (18). Red: include ALL 9 rkant7 destinations. Merged + push EmotiveImpact/uixo main.",
   "counts_by_category": {
-    "Inspiration": 58,
+    "Inspiration": 73,
     "Components": 17,
     "UI libraries": 17,
-    "Fonts": 6,
+    "Fonts": 7,
     "Templates": 6,
-    "Backgrounds": 4,
+    "Backgrounds": 5,
+    "Marketplace": 4,
     "Icons": 3,
-    "Marketplace": 3,
-    "Illustrations": 1
+    "Illustrations": 2,
+    "Mockups": 1
   },
   "totals": {
-    "candidates": 115,
-    "needs_review": 45,
-    "skipped_dupes_existing_site": 5,
-    "skipped_other": 25,
-    "harvest_total": 145
+    "candidates": 135,
+    "needs_review": 57,
+    "skipped_dupes_existing_site": 6,
+    "skipped_other": 27,
+    "harvest_total": 241,
+    "new_this_run": 20
   },
   "skipped_dupes": [
     {
@@ -44,6 +46,11 @@
       "title": "Unlimited Gradients, Animated Gradients and AI-Generated Backgrounds",
       "url": "https://grainient.supply",
       "reason": "duplicate of existing site entry"
+    },
+    {
+      "title": "Shadcnblocks shadcn/ui blocks & components",
+      "url": "https://www.shadcnblocks.com",
+      "reason": "duplicate of existing site entry (shadcn)"
     }
   ],
   "skipped_other": [
@@ -98,12 +105,12 @@
       "reason": "stock photography, not UI category"
     },
     {
-      "title": "DesignMD \u2014 Generate DESIGN.md Files with AI",
+      "title": "DesignMD — Generate DESIGN.md Files with AI",
       "url": "https://designmd.me",
       "reason": "DESIGN.md generator tool"
     },
     {
-      "title": "OpenDesign \u2014 Best Open Source Claude Design Alternative",
+      "title": "OpenDesign — Best Open Source Claude Design Alternative",
       "url": "https://open-design.ai",
       "reason": "vibe design workspace tool"
     },
@@ -145,7 +152,7 @@
     {
       "title": "GitHub - heygen-com/hyperframes: Write HTML. Render video. Built for agents.",
       "url": "https://github.com/heygen-com/hyperframes",
-      "reason": "HTML\u2192video tool, not UI design resource"
+      "reason": "HTML→video tool, not UI design resource"
     },
     {
       "title": "github.com",
@@ -171,6 +178,16 @@
       "title": "Impeccable",
       "url": "https://impeccable.style",
       "reason": "AI agent design vocabulary tool"
+    },
+    {
+      "title": "Pinterest",
+      "url": "https://pinterest.com",
+      "reason": "generic image social, not focused UI resource"
+    },
+    {
+      "title": "skillsagentes.com",
+      "url": "https://skillsagentes.com",
+      "reason": "AI agent skills, not UI asset category"
     }
   ],
   "items": [
@@ -669,7 +686,7 @@
       "needs_review": false,
       "image_status": "pending",
       "source": "pengsonal",
-      "why": "Open-source, animation-ready React components and blocks built with Next.js, Tailwind CSS, Motion, TypeScript, and shadcn/ui for SaaS and\u2026",
+      "why": "Open-source, animation-ready React components and blocks built with Next.js, Tailwind CSS, Motion, TypeScript, and shadcn/ui for SaaS and…",
       "addedOrder": 21
     },
     {
@@ -695,7 +712,7 @@
       "needs_review": false,
       "image_status": "pending",
       "source": "pengsonal",
-      "why": "12,000+ hand-crafted React and Tailwind CSS components, templates, and shadcn themes by real design engineers. Preview live, install with\u2026",
+      "why": "12,000+ hand-crafted React and Tailwind CSS components, templates, and shadcn themes by real design engineers. Preview live, install with…",
       "addedOrder": 22
     },
     {
@@ -719,7 +736,7 @@
       "needs_review": false,
       "image_status": "pending",
       "source": "pengsonal",
-      "why": "Discover hundreds of extra shadcn/ui blocks and Shadcn UI components. Shadcnblocks is a premium component library built with Shadcn UI, R\u2026",
+      "why": "Discover hundreds of extra shadcn/ui blocks and Shadcn UI components. Shadcnblocks is a premium component library built with Shadcn UI, R…",
       "addedOrder": 23
     },
     {
@@ -1403,7 +1420,7 @@
       "needs_review": false,
       "image_status": "pending",
       "source": "letcontactabhi",
-      "why": "Explore 100,000+ recorded user flows, app screens, and UI patterns from Airbnb, Uber, Netflix & more. Save hours on UX research with Page\u2026",
+      "why": "Explore 100,000+ recorded user flows, app screens, and UI patterns from Airbnb, Uber, Netflix & more. Save hours on UX research with Page…",
       "addedOrder": 52
     },
     {
@@ -1428,7 +1445,7 @@
       "needs_review": false,
       "image_status": "pending",
       "source": "letcontactabhi",
-      "why": "The largest collection of UI/UX references and design inspiration for web and iOS. Explore tens of thousands of screenshots with advanced\u2026",
+      "why": "The largest collection of UI/UX references and design inspiration for web and iOS. Explore tens of thousands of screenshots with advanced…",
       "addedOrder": 53
     },
     {
@@ -1597,7 +1614,7 @@
       "needs_review": false,
       "image_status": "pending",
       "source": "Mohd__Shahid_07",
-      "why": "Create websites, product interfaces and email sequences for your SaaS faster than ever with our library of 5,000+ real-world UX & UI desi\u2026",
+      "why": "Create websites, product interfaces and email sequences for your SaaS faster than ever with our library of 5,000+ real-world UX & UI desi…",
       "addedOrder": 60
     },
     {
@@ -1760,7 +1777,7 @@
       "needs_review": true,
       "image_status": "pending",
       "source": "ahmad_Uxflow",
-      "why": "Browse 4,000+ curated website sections from top brands. Filter by hero, feature, pricing, testimonial designs. New sections added weekly.\u2026",
+      "why": "Browse 4,000+ curated website sections from top brands. Filter by hero, feature, pricing, testimonial designs. New sections added weekly.…",
       "addedOrder": 67
     },
     {
@@ -1808,7 +1825,7 @@
       "needs_review": false,
       "image_status": "pending",
       "source": "DevItaliya22",
-      "why": "Ship stunning UI faster with Ship stunning UI faster with ready-made React components.. Browse hundreds of copy-paste React animations bu\u2026",
+      "why": "Ship stunning UI faster with Ship stunning UI faster with ready-made React components.. Browse hundreds of copy-paste React animations bu…",
       "addedOrder": 69
     },
     {
@@ -1905,7 +1922,7 @@
       "needs_review": false,
       "image_status": "pending",
       "source": "taher_max_",
-      "why": "Explore 1,200+ hand-picked real and fictional logos searchable by style, industry, and color \u2014 each credited to its designer.",
+      "why": "Explore 1,200+ hand-picked real and fictional logos searchable by style, industry, and color — each credited to its designer.",
       "addedOrder": 73
     },
     {
@@ -1952,7 +1969,7 @@
       "needs_review": false,
       "image_status": "pending",
       "source": "taher_max_",
-      "why": "Discover daily UI design inspiration from the world's best product designers. Browse mobile apps, dashboards, landing pages, and motion U\u2026",
+      "why": "Discover daily UI design inspiration from the world's best product designers. Browse mobile apps, dashboards, landing pages, and motion U…",
       "addedOrder": 75
     },
     {
@@ -2208,7 +2225,7 @@
       "needs_review": true,
       "image_status": "pending",
       "source": "theansarh",
-      "why": "Find what to build and study why it wins \u2014 the onboarding, paywalls and live videos behind the App Store\u2019s top-earning iOS apps.",
+      "why": "Find what to build and study why it wins — the onboarding, paywalls and live videos behind the App Store’s top-earning iOS apps.",
       "addedOrder": 86
     },
     {
@@ -2656,7 +2673,7 @@
       "needs_review": false,
       "image_status": "pending",
       "source": "askwhykartik",
-      "why": "Motion (prev Framer Motion) is a fast, production-grade animation library for React, JavaScript and Vue. Build smooth UI animations at a \u2026",
+      "why": "Motion (prev Framer Motion) is a fast, production-grade animation library for React, JavaScript and Vue. Build smooth UI animations at a …",
       "addedOrder": 105
     },
     {
@@ -2893,6 +2910,480 @@
       "source": "bertwitt",
       "why": "Best website design & fonts inspiration feed",
       "addedOrder": 115
+    },
+    {
+      "id": "awwwards",
+      "name": "Awwwards",
+      "category": "Inspiration",
+      "subcategory": "Awards",
+      "tags": [
+        "Awards",
+        "Web"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Awwwards",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://awwwards.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
+      "why": "Website awards recognizing top design and development talent",
+      "addedOrder": 116
+    },
+    {
+      "id": "backgrounds-supply",
+      "name": "Backgrounds Supply",
+      "category": "Backgrounds",
+      "subcategory": "Gradients",
+      "tags": [
+        "Backgrounds",
+        "Gradients",
+        "AI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Backgrounds Supply",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://backgrounds.supply",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
+      "why": "Handcrafted and AI-generated backgrounds, wallpapers, gradients",
+      "addedOrder": 117
+    },
+    {
+      "id": "behance",
+      "name": "Behance",
+      "category": "Inspiration",
+      "subcategory": "Portfolios",
+      "tags": [
+        "Portfolio",
+        "Adobe"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Adobe",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://behance.net",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
+      "why": "Creative portfolio network for UI/UX and visual design",
+      "addedOrder": 118
+    },
+    {
+      "id": "contentcore",
+      "name": "ContentCore",
+      "category": "Mockups",
+      "subcategory": "Tools",
+      "tags": [
+        "3D",
+        "Motion",
+        "Mockups"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "ContentCore",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://contentcore.xyz",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
+      "why": "3D, motion and mockup content creation for app marketing",
+      "addedOrder": 119
+    },
+    {
+      "id": "dribbble",
+      "name": "Dribbble",
+      "category": "Inspiration",
+      "subcategory": "Galleries",
+      "tags": [
+        "Shots",
+        "Community"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Dribbble",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://dribbble.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
+      "why": "Design community shots and UI inspiration",
+      "addedOrder": 120
+    },
+    {
+      "id": "fwa",
+      "name": "FWA",
+      "category": "Inspiration",
+      "subcategory": "Awards",
+      "tags": [
+        "Awards",
+        "Web"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "FWA",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://fwa.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "https://x.com/walebuilds_/status/2096943140531732648 (@walebuilds_)",
+      "why": "Favourite Website Awards — cutting-edge web design showcase",
+      "addedOrder": 121
+    },
+    {
+      "id": "land-book",
+      "name": "Landbook",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Landing",
+        "Web"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Landbook",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://land-book.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
+      "why": "Website design inspiration gallery for landing pages",
+      "addedOrder": 122
+    },
+    {
+      "id": "lapa-ninja",
+      "name": "Lapa Ninja",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Landing",
+        "Web"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Lapa Ninja",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://lapa.ninja",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
+      "why": "Curated landing page design inspiration",
+      "addedOrder": 123
+    },
+    {
+      "id": "lummi",
+      "name": "Lummi",
+      "category": "Illustrations",
+      "subcategory": "AI",
+      "tags": [
+        "AI",
+        "Images"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Lummi",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://lummi.ai",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
+      "why": "AI-generated images for creative projects",
+      "addedOrder": 124
+    },
+    {
+      "id": "material-3",
+      "name": "Material Design 3",
+      "category": "Inspiration",
+      "subcategory": "Guidelines",
+      "tags": [
+        "Design System",
+        "Google"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Google",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://m3.material.io",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "https://x.com/walebuilds_/status/2096943140531732648 (@walebuilds_)",
+      "why": "Material Design 3 guidelines and design system",
+      "addedOrder": 125
+    },
+    {
+      "id": "screensdesign",
+      "name": "Screens Design",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "App",
+        "Screens"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Screens Design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://screensdesign.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
+      "why": "App design inspiration / screenshots gallery",
+      "addedOrder": 126
+    },
+    {
+      "id": "siteinspire",
+      "name": "SiteInspire",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Web",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "SiteInspire",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://siteinspire.com",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
+      "why": "Web design inspiration directory",
+      "addedOrder": 127
+    },
+    {
+      "id": "tranmautritam",
+      "name": "Tran Mau Tri Tam",
+      "category": "Inspiration",
+      "subcategory": "Portfolios",
+      "tags": [
+        "Portfolio",
+        "Design"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Tran Mau Tri Tam",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://tranmautritam.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/ah4alt/status/2097932926596063369 (@ah4alt)",
+      "why": "Design engineer portfolio / craft inspiration",
+      "addedOrder": 128
+    },
+    {
+      "id": "codrops",
+      "name": "Codrops",
+      "category": "Inspiration",
+      "subcategory": "Galleries",
+      "tags": [
+        "Motion",
+        "CSS",
+        "Tutorials"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Codrops",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://tympanus.net/codrops",
+      "needs_review": false,
+      "image_status": "pending",
+      "source": "https://x.com/walebuilds_/status/2096943140531732648 (@walebuilds_)",
+      "why": "Creative frontend experiments and interaction inspiration (Codrops)",
+      "addedOrder": 129
+    },
+    {
+      "id": "typescale",
+      "name": "Type Scale",
+      "category": "Fonts",
+      "subcategory": "Tools",
+      "tags": [
+        "Typography",
+        "Scale"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Type Scale",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://typescale.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/walebuilds_/status/2096943140531732648 (@walebuilds_)",
+      "why": "Typography scale calculator / type system tool",
+      "addedOrder": 130
+    },
+    {
+      "id": "supaste",
+      "name": "Supaste",
+      "category": "Inspiration",
+      "subcategory": "Tools",
+      "tags": [
+        "Clipboard",
+        "Mac",
+        "Productivity"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Supaste",
+      "formats": [
+        "Mac"
+      ],
+      "url": "https://supaste.com",
+      "why": "Local-first clipboard and screenshot history for Mac (full rkant7 set per Red)",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
+      "addedOrder": 131
+    },
+    {
+      "id": "vehla",
+      "name": "Vehla",
+      "category": "Inspiration",
+      "subcategory": "Tools",
+      "tags": [
+        "Mac",
+        "AI",
+        "Productivity"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Vehla",
+      "formats": [
+        "Mac"
+      ],
+      "url": "https://vehla.app",
+      "why": "AI command center for macOS (full rkant7 set per Red)",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
+      "addedOrder": 132
+    },
+    {
+      "id": "cooldock",
+      "name": "Cooldock",
+      "category": "Inspiration",
+      "subcategory": "Tools",
+      "tags": [
+        "Mac",
+        "Dock",
+        "Widgets"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Cooldock",
+      "formats": [
+        "Mac"
+      ],
+      "url": "https://dock.cool",
+      "why": "Second Mac dock with live widgets (full rkant7 set per Red)",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
+      "addedOrder": 133
+    },
+    {
+      "id": "screen-movie",
+      "name": "Screen.Movie",
+      "category": "Inspiration",
+      "subcategory": "Tools",
+      "tags": [
+        "Screen Recording",
+        "Video"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Screen.Movie",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://screen.movie",
+      "why": "Screen recording and editing (full rkant7 set per Red)",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
+      "addedOrder": 134
+    },
+    {
+      "id": "macapp-supply",
+      "name": "Macapp Supply",
+      "category": "Marketplace",
+      "subcategory": "Directories",
+      "tags": [
+        "Mac",
+        "Apps"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Macapp Supply",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://macapp.supply",
+      "why": "Discover Mac apps directory (full rkant7 set per Red)",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
+      "addedOrder": 135
     }
   ]
 }
