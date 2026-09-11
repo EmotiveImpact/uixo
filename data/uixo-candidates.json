@@ -1,56 +1,32 @@
 {
   "updated": "2026-09-11",
-  "updated_note": "Harvested list posts (18). Red: include ALL 9 rkant7 destinations. Merged + push EmotiveImpact/uixo main.",
+  "updated_note": "PRIORITY FIX full-dump harvest: resource-first, note_tweet expanded, ALL list-post destinations as candidates for check-off. +19 new (rescued prior aggressive skips where present).",
   "counts_by_category": {
-    "Inspiration": 73,
-    "Components": 17,
-    "UI libraries": 17,
+    "Inspiration": 75,
+    "Components": 20,
+    "UI libraries": 22,
+    "Marketplace": 5,
+    "Backgrounds": 6,
     "Fonts": 7,
-    "Templates": 6,
-    "Backgrounds": 5,
-    "Marketplace": 4,
     "Icons": 3,
     "Illustrations": 2,
+    "Templates": 14,
     "Mockups": 1
   },
   "totals": {
-    "candidates": 135,
-    "needs_review": 57,
-    "skipped_dupes_existing_site": 6,
-    "skipped_other": 27,
-    "harvest_total": 241,
-    "new_this_run": 20
+    "candidates": 155,
+    "needs_review": 77,
+    "skipped_dupes_existing_site": 1,
+    "skipped_other": 13,
+    "harvest_total": 108,
+    "new_this_run": 20,
+    "already_present": 89
   },
   "skipped_dupes": [
-    {
-      "title": "React Bits",
-      "url": "https://reactbits.dev",
-      "reason": "duplicate of existing site entry"
-    },
-    {
-      "title": "ui.shadcn.com",
-      "url": "https://ui.shadcn.com",
-      "reason": "duplicate of existing site entry"
-    },
     {
       "title": "The complete React library for crafting memorable UI",
       "url": "https://pro.reactbits.dev/changelog",
       "reason": "duplicate of existing site entry"
-    },
-    {
-      "title": "github.com",
-      "url": "https://github.com/shadcn-ui/ui",
-      "reason": "duplicate of existing site entry"
-    },
-    {
-      "title": "Unlimited Gradients, Animated Gradients and AI-Generated Backgrounds",
-      "url": "https://grainient.supply",
-      "reason": "duplicate of existing site entry"
-    },
-    {
-      "title": "Shadcnblocks shadcn/ui blocks & components",
-      "url": "https://www.shadcnblocks.com",
-      "reason": "duplicate of existing site entry (shadcn)"
     }
   ],
   "skipped_other": [
@@ -80,16 +56,6 @@
       "reason": "showreel tool, not UI design resource"
     },
     {
-      "title": "Motion-Primitives Glow Effect",
-      "url": "https://motion-primitives.com/docs/glow-effect",
-      "reason": "subpage of motion-primitives"
-    },
-    {
-      "title": "WandPress (GitHub)",
-      "url": "https://github.com/jonbuster/wandpress",
-      "reason": "github source of wandpress"
-    },
-    {
       "title": "unsplash.com",
       "url": "https://unsplash.com",
       "reason": "stock photography, not UI category"
@@ -105,41 +71,6 @@
       "reason": "stock photography, not UI category"
     },
     {
-      "title": "DesignMD — Generate DESIGN.md Files with AI",
-      "url": "https://designmd.me",
-      "reason": "DESIGN.md generator tool"
-    },
-    {
-      "title": "OpenDesign — Best Open Source Claude Design Alternative",
-      "url": "https://open-design.ai",
-      "reason": "vibe design workspace tool"
-    },
-    {
-      "title": "designmd.supply",
-      "url": "https://designmd.supply",
-      "reason": "DESIGN.md generator"
-    },
-    {
-      "title": "design-md.hyperbrowser.ai",
-      "url": "https://design-md.hyperbrowser.ai",
-      "reason": "DESIGN.md generator"
-    },
-    {
-      "title": "sokosumi.com",
-      "url": "https://sokosumi.com/tools/design-md",
-      "reason": "DESIGN.md generator"
-    },
-    {
-      "title": "designmd.ai",
-      "url": "https://designmd.ai",
-      "reason": "DESIGN.md generator"
-    },
-    {
-      "title": "weekend.company",
-      "url": "https://weekend.company/get-design-md",
-      "reason": "DESIGN.md generator"
-    },
-    {
       "title": "getmd.design",
       "url": "https://getmd.design",
       "reason": "DESIGN.md generator"
@@ -148,21 +79,6 @@
       "title": "getdesign.md",
       "url": "https://getdesign.md",
       "reason": "DESIGN.md generator"
-    },
-    {
-      "title": "GitHub - heygen-com/hyperframes: Write HTML. Render video. Built for agents.",
-      "url": "https://github.com/heygen-com/hyperframes",
-      "reason": "HTML→video tool, not UI design resource"
-    },
-    {
-      "title": "github.com",
-      "url": "https://github.com/Comfy-Org/ComfyUI",
-      "reason": "AI image node UI, out of lane"
-    },
-    {
-      "title": "github.com",
-      "url": "https://github.com/fluxerapp/fluxer",
-      "reason": "unclear non-UI github project"
     },
     {
       "title": "quillbot.com",
@@ -178,16 +94,6 @@
       "title": "Impeccable",
       "url": "https://impeccable.style",
       "reason": "AI agent design vocabulary tool"
-    },
-    {
-      "title": "Pinterest",
-      "url": "https://pinterest.com",
-      "reason": "generic image social, not focused UI resource"
-    },
-    {
-      "title": "skillsagentes.com",
-      "url": "https://skillsagentes.com",
-      "reason": "AI agent skills, not UI asset category"
     }
   ],
   "items": [
@@ -3384,6 +3290,514 @@
       "image_status": "pending",
       "source": "https://x.com/rkant7/status/2096961895429218707 (@rkant7)",
       "addedOrder": 135
+    },
+    {
+      "id": "cue-design",
+      "name": "Cue Design",
+      "category": "Components",
+      "subcategory": "Premium",
+      "tags": [],
+      "access": [
+        "Paid"
+      ],
+      "creator": "cuedesign.space",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://cuedesign.space",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/Alok619308/status/2098077798133055726",
+      "why": "Awwwards-tier UI components",
+      "addedOrder": 136,
+      "harvest_meta": {
+        "source_user": "Alok619308",
+        "post_id": "2098077798133055726",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "designmd-hyperbrowser",
+      "name": "DesignMD Hyperbrowser",
+      "category": "Templates",
+      "subcategory": "Design Tokens",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "design-md.hyperbrowser.ai",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://design-md.hyperbrowser.ai",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/ah4alt/status/2097932926596063369",
+      "why": "From @ah4alt list post",
+      "addedOrder": 137,
+      "harvest_meta": {
+        "source_user": "ah4alt",
+        "post_id": "2097932926596063369",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "designmd-ai",
+      "name": "DesignMD AI",
+      "category": "Templates",
+      "subcategory": "Design Tokens",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "designmd.ai",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://designmd.ai",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/ah4alt/status/2097932926596063369",
+      "why": "From @ah4alt list post",
+      "addedOrder": 138,
+      "harvest_meta": {
+        "source_user": "ah4alt",
+        "post_id": "2097932926596063369",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "designmd",
+      "name": "DesignMD",
+      "category": "Templates",
+      "subcategory": "Design Tokens",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "designmd.me",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://designmd.me",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/ah4alt/status/2097932926596063369",
+      "why": "Paste a URL. Get a complete DESIGN.md file in seconds. Extract design tokens, typography & component styles — ready for AI coding agents.",
+      "addedOrder": 139,
+      "harvest_meta": {
+        "source_user": "ah4alt, crowdlinker",
+        "post_id": "2097932926596063369",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "designmd-supply",
+      "name": "DesignMD Supply",
+      "category": "Templates",
+      "subcategory": "Design Tokens",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "designmd.supply",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://www.designmd.supply",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/ah4alt/status/2097932926596063369",
+      "why": "A minimal supply of generated DESIGN.md for any domain.",
+      "addedOrder": 140,
+      "harvest_meta": {
+        "source_user": "ah4alt",
+        "post_id": "2097932926596063369",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "heroui-native-2",
+      "name": "HeroUI Native",
+      "category": "UI libraries",
+      "subcategory": "React Native",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "heroui.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://heroui.com/en/docs/native",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/eddieeee0716/status/2097323594917490786",
+      "why": "From @eddieeee0716 list post",
+      "addedOrder": 141,
+      "harvest_meta": {
+        "source_user": "eddieeee0716",
+        "post_id": "2097323594917490786",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "kage-design",
+      "name": "Kage Design",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "kage.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://kage.design",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/codestirring/status/2098202200275075439",
+      "why": "Design inspiration ready to build",
+      "addedOrder": 142,
+      "harvest_meta": {
+        "source_user": "codestirring",
+        "post_id": "2098202200275075439",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "mantine",
+      "name": "Mantine",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "mantine.dev",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://mantine.dev",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/gaurav_syn/status/2098107043534262740",
+      "why": "React components library",
+      "addedOrder": 143,
+      "harvest_meta": {
+        "source_user": "gaurav_syn",
+        "post_id": "2098107043534262740",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "nextjsshop",
+      "name": "Nextjsshop",
+      "category": "Templates",
+      "subcategory": "Next.js",
+      "tags": [],
+      "access": [
+        "Paid"
+      ],
+      "creator": "nextjsshop.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://nextjsshop.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/taher_max_/status/2096952107614277702",
+      "why": "Discover premium Next.js templates and components built with Tailwind CSS. Ideal for freelancers, developers, and small businesses seeking modern web solutions.",
+      "addedOrder": 144,
+      "harvest_meta": {
+        "source_user": "taher_max_",
+        "post_id": "2096952107614277702",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "opendesign",
+      "name": "OpenDesign",
+      "category": "UI libraries",
+      "subcategory": "AI Design",
+      "tags": [],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "open-design.ai",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://open-design.ai",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/ah4alt/status/2097932926596063369",
+      "why": "Open-source vibe design workspace & Claude Design alternative — build prototypes, landing pages, dashboards, slides & HTML video with your own coding agent.",
+      "addedOrder": 145,
+      "harvest_meta": {
+        "source_user": "ah4alt",
+        "post_id": "2097932926596063369",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "pinterest",
+      "name": "Pinterest",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "pinterest.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://pinterest.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/walebuilds_/status/2096943140531732648",
+      "why": "From @walebuilds_ list post",
+      "addedOrder": 146,
+      "harvest_meta": {
+        "source_user": "walebuilds_",
+        "post_id": "2096943140531732648",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "react-bits",
+      "name": "React Bits",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "reactbits.dev",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://reactbits.dev",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/askwhykartik/status/2097955540525834240",
+      "why": "An open source collection of high quality, animated, interactive & fully customizable React components for building stunning, memorable user interfaces.",
+      "addedOrder": 147,
+      "harvest_meta": {
+        "source_user": "arihantCodes, askwhykartik",
+        "post_id": "2097955540525834240",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "rn-neo",
+      "name": "RN Neo",
+      "category": "UI libraries",
+      "subcategory": "React Native",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "rn-neo.gs-rumana.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://rn-neo.gs-rumana.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/gs_rumana/status/2098206999788015957",
+      "why": "Neubrutalist UI for React Native",
+      "addedOrder": 148,
+      "harvest_meta": {
+        "source_user": "gs_rumana",
+        "post_id": "2098206999788015957",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "echo-shadcnblocks",
+      "name": "Echo (shadcnblocks)",
+      "category": "Templates",
+      "subcategory": "Portfolio",
+      "tags": [],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "shadcnblocks.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://www.shadcnblocks.com/template/echo",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/shadcnblocks/status/2097788815775609308",
+      "why": "A personal portfolio template built on shadcn/ui and Tailwind. Available in both Next.js and Astro editions, perfect for creating a stunning personal portfolio website.",
+      "addedOrder": 149,
+      "harvest_meta": {
+        "source_user": "shadcnblocks",
+        "post_id": "2097788815775609308",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "simply-buttons",
+      "name": "Simply Buttons",
+      "category": "Components",
+      "subcategory": "Buttons",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "simply-buttons.vercel.app",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://simply-buttons.vercel.app",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/bitanpaul933/status/2098101696132251729",
+      "why": "Interactive button specimens",
+      "addedOrder": 150,
+      "harvest_meta": {
+        "source_user": "bitanpaul933",
+        "post_id": "2098101696132251729",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "skills-agentes",
+      "name": "Skills Agentes",
+      "category": "Marketplace",
+      "subcategory": "AI Skills",
+      "tags": [],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "skillsagentes.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://skillsagentes.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/ah4alt/status/2097932926596063369",
+      "why": "From @ah4alt list post",
+      "addedOrder": 151,
+      "harvest_meta": {
+        "source_user": "ah4alt",
+        "post_id": "2097932926596063369",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "sokosumi-designmd",
+      "name": "Sokosumi DesignMD",
+      "category": "Templates",
+      "subcategory": "Design Tokens",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "sokosumi.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://sokosumi.com/tools/design-md",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/ah4alt/status/2097932926596063369",
+      "why": "From @ah4alt list post",
+      "addedOrder": 152,
+      "harvest_meta": {
+        "source_user": "ah4alt",
+        "post_id": "2097932926596063369",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "shadcn-ui",
+      "name": "shadcn/ui",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "ui.shadcn.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://ui.shadcn.com",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/walebuilds_/status/2096943140531732648",
+      "why": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.",
+      "addedOrder": 153,
+      "harvest_meta": {
+        "source_user": "ah4alt, walebuilds_",
+        "post_id": "2096943140531732648",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "weekend-designmd",
+      "name": "Weekend DesignMD",
+      "category": "Templates",
+      "subcategory": "Design Tokens",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "weekend.company",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://weekend.company/get-design-md",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "https://x.com/ah4alt/status/2097932926596063369",
+      "why": "From @ah4alt list post",
+      "addedOrder": 154,
+      "harvest_meta": {
+        "source_user": "ah4alt",
+        "post_id": "2097932926596063369",
+        "full_dump": true
+      }
+    },
+    {
+      "id": "grainient",
+      "name": "Grainient",
+      "category": "Backgrounds",
+      "subcategory": "Gradients",
+      "tags": [
+        "Gradients",
+        "AI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "grainient.supply",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://grainient.supply",
+      "needs_review": true,
+      "image_status": "pending",
+      "source": "prior harvest skipped_dupes rescued (full-dump mode)",
+      "why": "Unlimited gradients, animated gradients and AI-generated backgrounds",
+      "addedOrder": 155,
+      "harvest_meta": {
+        "source_user": "rescued",
+        "post_id": "",
+        "full_dump": true
+      }
     }
   ]
 }
