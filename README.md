@@ -1,6 +1,15 @@
 # UIXO
 
-A hand-curated directory of UI resources, built with Vite, React 19, TypeScript and Tailwind CSS v4.
+A hand-curated directory of UI resources. Built with Vite, React 19, TypeScript and
+Tailwind CSS v4, on Vercel with Neon Postgres.
+
+**Live:** https://uixo-brown.vercel.app
+
+- [VISION.md](VISION.md) — what this is for and what would mean it failed
+- [CHANGELOG.md](CHANGELOG.md) — what has shipped
+- [BUGS-AND-FIXES.md](BUGS-AND-FIXES.md) — defects found and what was done about them
+- [docs/CONTENT.md](docs/CONTENT.md) — how to add a listing
+- [data/README.md](data/README.md) — the scout candidate pipeline
 
 ## Run locally
 
@@ -107,10 +116,34 @@ prerender step needs it on disk, so the database currently _mirrors_ it rather t
 replacing it. `db/schema.sql` has been applied twice against both a local Postgres 17 and
 the live Neon database to confirm it is genuinely re-runnable.
 
-**Nothing in the app queries Postgres yet, and it cannot.** A browser has no route to a
-database; that needs server endpoints (Vercel Functions) sitting between the two. Until
-those exist, submissions, reports and lists stay in the visitor's browser and accounts stay
-hidden in production.
+## Accounts and the API
+
+Sign-in is real, backed by **Neon Auth** (Better Auth under the hood) with email and
+password. Passwords go straight to the auth service on its own origin and never touch
+UIXO's storage, database or API.
+
+`api/` holds Vercel Functions:
+
+| Route              | Public                     | Curator                 |
+| ------------------ | -------------------------- | ----------------------- |
+| `/api/submissions` | `POST` — suggest a website | `GET`, `PATCH` — review |
+| `/api/reports`     | `POST` — flag a dead link  | `GET`, `PATCH` — triage |
+
+The session cookie belongs to the auth service's domain, so the browser never sends it to
+`/api`. Instead the client fetches a short-lived signed token and the API verifies it
+against the service's published keys. Curator permission is then read from the database,
+not from the token, so promoting someone takes effect immediately.
+
+**To make someone a curator**, set their role in Neon Auth:
+
+```sql
+update neon_auth."user" set role = 'admin' where email = 'them@example.com';
+```
+
+`CURATOR_TOKEN` stays as break-glass access for scripts and for when the auth service is
+unreachable. Preview deployments deliberately do not have it.
+
+Lists are still stored in the visitor's browser; syncing them is not wired up yet.
 
 ## Notes
 
