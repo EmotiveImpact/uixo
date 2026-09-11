@@ -8,7 +8,7 @@
  * Requires cwebp (`brew install webp`).
  */
 import { execFileSync } from 'node:child_process';
-import { readdirSync, mkdirSync, statSync } from 'node:fs';
+import { readdirSync, mkdirSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -44,7 +44,13 @@ for (const file of pngs) {
   }
 }
 
+// A <picture> does not fall back to its <img> when the chosen <source> 404s — it errors.
+// So the app must know which ids actually have variants rather than assuming all do.
+const ids = pngs.map((file) => basename(file, '.png')).sort();
+writeFileSync(join(root, 'src/content/thumbnails.json'), `${JSON.stringify(ids, null, 2)}\n`);
+
 const kb = (bytes) => `${Math.round(bytes / 1024)} KB`;
 console.log(
   `thumbnails: ${pngs.length} PNG (${kb(before)}) -> ${pngs.length * WIDTHS.length} WebP (${kb(after)})`,
 );
+console.log(`manifest: src/content/thumbnails.json lists ${ids.length} ids with variants`);
