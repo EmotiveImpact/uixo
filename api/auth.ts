@@ -12,13 +12,25 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
  * keeps working when third-party cookies disappear entirely.
  */
 
-const HOP_BY_HOP = new Set([
+/**
+ * Dropped on the way upstream. Beyond the usual hop-by-hop set, every x-forwarded-*
+ * header has to go: the upstream validates the hostname it is being addressed by, and
+ * Vercel's x-forwarded-host names *this* site, which it rightly does not recognise.
+ */
+const STRIP = new Set([
   'connection',
   'keep-alive',
   'transfer-encoding',
   'upgrade',
   'host',
   'content-length',
+  'x-forwarded-host',
+  'x-forwarded-proto',
+  'x-forwarded-for',
+  'x-forwarded-port',
+  'x-vercel-deployment-url',
+  'x-vercel-forwarded-for',
+  'forwarded',
 ]);
 
 export const config = { api: { bodyParser: false } };
@@ -64,7 +76,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const headers = new Headers();
   for (const [key, value] of Object.entries(req.headers)) {
-    if (HOP_BY_HOP.has(key.toLowerCase()) || value === undefined) continue;
+    if (STRIP.has(key.toLowerCase()) || value === undefined) continue;
     headers.set(key, Array.isArray(value) ? value.join(', ') : value);
   }
   // The upstream checks Origin against its trusted list; give it one it trusts.
