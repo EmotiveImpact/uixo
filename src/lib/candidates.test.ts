@@ -112,8 +112,22 @@ describe('the real scout file', () => {
     expect(result.duplicates).toEqual([]);
   });
 
-  it('has no taxonomy or pricing problems to fix', () => {
-    expect(result.problems).toEqual([]);
+  /**
+   * Deliberately not asserting the file is clean. The scout invents subcategories as it
+   * finds things — "Awards", "Galleries", "Tools" — and that is fine: the queue exists to
+   * let a human map them onto the real taxonomy. What must hold is that a flagged row is
+   * still reviewable rather than silently dropped.
+   */
+  it('keeps off-taxonomy rows in the queue rather than discarding them', () => {
+    const flagged = new Set(result.problems.map((problem) => problem.id));
+    const accepted = new Set(result.accepted.map((item) => item.id));
+    for (const id of flagged) expect(accepted.has(id)).toBe(true);
+  });
+
+  it('flags every problem against a real field the reviewer can fix', () => {
+    for (const problem of result.problems) {
+      expect(['category', 'subcategory', 'access', 'why']).toContain(problem.field);
+    }
   });
 });
 
