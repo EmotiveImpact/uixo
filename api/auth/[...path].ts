@@ -64,7 +64,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const upstream = await fetch(target, {
     method: req.method,
     headers,
-    body: await rawBody(req),
+    // Node's fetch accepts a byte array; the DOM lib's BodyInit type does not admit it.
+    body: (await rawBody(req)) as BodyInit | undefined,
     redirect: 'manual',
   });
 
