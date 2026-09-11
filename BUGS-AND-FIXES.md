@@ -23,6 +23,41 @@ cross-origin path revealed it.
 
 ---
 
+## Sign-in worked, then you were not signed in
+
+**Found:** by you, using it. I had tested only in Chrome.
+
+**Cause:** Neon Auth sets its session cookie on its own domain, making it a third-party
+cookie. Safari blocks those outright and Firefox and Chrome are closing the same door. The
+sign-in POST succeeded and the cookie was stored — and nothing was ever allowed to send it
+again, so every subsequent "who is this?" came back empty.
+
+**Fix:** `api/auth.ts` proxies Neon Auth through UIXO's own origin, so the cookie is
+first-party. `Partitioned` and `SameSite=None` are stripped on the way back: both exist to
+make a third-party cookie survive, and once it is first-party the first would key it to the
+embedding site and the second would needlessly permit it on other people's pages.
+
+**Two things it took to get there:** a zero-config `[...catch-all]` under `api/` is not
+built for a non-Next project — Vercel generated a route but no function, so auth requests
+fell through to the SPA rewrite and a static page answered POST with 405. And Vercel's
+`x-forwarded-host` names _this_ site, which the upstream rightly refuses, so every proxied
+request returned `INVALID_HOSTNAME` until the forwarding headers were stripped.
+
+**Lesson:** testing in one browser is testing in one browser. The whole class of bug was
+invisible in Chrome.
+
+---
+
+## The dashboard read from the browser while the API wrote to the database
+
+**Cause:** submissions started reaching Postgres correctly before the dashboard was moved
+off localStorage. A stranger's suggestion arrived and appeared nowhere anyone would look.
+
+**Fix:** the dashboard fetches from `/api`, and decisions roll back if the server
+disagrees rather than displaying a decision that did not stick.
+
+---
+
 ## Every new thumbnail would have rendered blank
 
 **Found:** before the scout's batch of 155 screenshots landed, by checking what a
