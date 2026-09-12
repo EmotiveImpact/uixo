@@ -1,5 +1,5 @@
-import { DEFAULT_LIST_ID } from '../types';
-import type { List } from '../types';
+import { DEFAULT_LIST_ID } from '../types.js';
+import type { List } from '../types.js';
 import {
   readStored,
   writeStored,
@@ -7,7 +7,7 @@ import {
   LISTS_OWNER_KEY,
   LEGACY_COLLECTIONS_KEY,
   LEGACY_FAVOURITES_KEY,
-} from './storage';
+} from './storage.js';
 
 export function defaultLists(): List[] {
   return [{ id: DEFAULT_LIST_ID, name: 'Favourites', resourceIds: [] }];

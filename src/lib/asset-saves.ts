@@ -1,4 +1,4 @@
-import { readStored, writeStored } from './storage';
+import { readStored, writeStored } from './storage.js';
 
 export const ASSET_SAVES_KEY = 'uixo.asset-saves.v2';
 export const ASSET_SAVES_OWNER_KEY = 'uixo.asset-saves-owner.v1';

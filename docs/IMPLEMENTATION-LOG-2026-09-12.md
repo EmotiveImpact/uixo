@@ -88,4 +88,12 @@ This log records the concrete work performed while completing the prioritised pr
 
 ### Deployment evidence
 
-To be filled after the branch commit is pushed and its protected Vercel preview is exercised.
+- Committed the first complete save package as `13246e0` (`Sync favourites safely across accounts`).
+- Pushed that commit to both `codex/integrate-pr-20` and `astra/uixo-v2-design-intelligence`.
+- Waited for Vercel deployment `dpl_87YhQLGqE5GEchbsFiDoH8cKC1Ga`; it reached Ready and updated the established Astra preview alias.
+- Verified `/browse/assets` returned HTTP 200 and `/api/registry?action=status` returned HTTP 200 with persistent Postgres storage, 67 assets and three providers.
+- The first live call to `/api/saved-assets` returned a function invocation error instead of the expected unauthenticated 401. A comparison call showed `/api/lists` had the same deployment-only failure.
+- Read the Vercel function logs and found native ESM could not resolve the extensionless shared import from `src/lib/asset-saves.js` to `src/lib/storage`.
+- Added explicit `.js` specifiers to the server-shared imports in `src/lib/asset-saves.ts` and `src/lib/lists.ts` so Vercel’s emitted ESM resolves them at runtime.
+- Reran typecheck, lint, formatting, the focused save suite and the full production build after the packaging fix; all passed.
+- Final endpoint and signed-in browser acceptance will be added after the follow-up deployment is Ready.
