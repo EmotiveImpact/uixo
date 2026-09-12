@@ -1125,3 +1125,39 @@
   min-height: 210px;
   padding: 28px 22px 40px;
 }
+
+/* Miniature interfaces have a stable canvas and scale as one image. */
+.asset-preview-viewport {
+  position: absolute;
+  inset: 20px 18px 38px;
+}
+.asset-preview-canvas {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 320px;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  transform-origin: center;
+}
+.asset-preview-canvas .asset-demo {
+  width: 280px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.asset-preview-canvas .asset-demo small {
+  font-size: 10px;
+  line-height: 1.4;
+}
+.asset-preview-canvas .asset-demo-alert b,
+.asset-preview-canvas .asset-demo-form i {
+  flex-shrink: 0;
+}
+.asset-preview-canvas .asset-demo label {
+  margin: 0;
+  font-size: inherit;
+}
+.asset-library-dialog > .asset-library-preview {
+  height: clamp(260px, 30vw, 360px);
+}

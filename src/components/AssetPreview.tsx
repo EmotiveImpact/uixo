@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import type { AssetRecord } from '../lib/asset-library';
 import { safeAssetUrl } from '../lib/asset-library';
 
@@ -168,6 +168,33 @@ function ComponentPreview({ slug }: { slug: string }) {
   );
 }
 
+/** Scale the complete illustration uniformly; never reflow its miniature UI. */
+function ComponentCanvas({ slug }: { slug: string }) {
+  const viewport = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+  useLayoutEffect(() => {
+    const element = viewport.current;
+    if (!element) return;
+    const resize = () => {
+      setScale(Math.min(element.clientWidth / 320, element.clientHeight / 200, 1.5));
+    };
+    resize();
+    const observer = new ResizeObserver(resize);
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <div ref={viewport} className="asset-preview-viewport">
+      <div
+        className="asset-preview-canvas"
+        style={{ transform: `translate(-50%, -50%) scale(${scale})` }}
+      >
+        <ComponentPreview slug={slug} />
+      </div>
+    </div>
+  );
+}
+
 export function AssetPreview({ asset }: { asset: AssetRecord }) {
   const [failedUrl, setFailedUrl] = useState('');
   const url = safeAssetUrl(asset.preview?.url);
@@ -184,7 +211,7 @@ export function AssetPreview({ asset }: { asset: AssetRecord }) {
           onError={() => setFailedUrl(url)}
         />
       ) : asset.kind === 'component' ? (
-        <ComponentPreview slug={asset.slug} />
+        <ComponentCanvas slug={asset.slug} />
       ) : (
         <div className="asset-library-no-preview">
           <span aria-hidden="true">◇</span>
