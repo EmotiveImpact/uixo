@@ -20,23 +20,21 @@ These facts describe code, not verified live operation. The source snapshot is l
 - Visitor redirects from the separate registry browser; legacy curator and MCP utility pages remain.
 - User guide, setup/deployment notes, decisions and changelog entries.
 
-## Tested in this repair
+## Tested after integration with main
 
-- 16 native client-contract tests passed with Node 22.16.0: route round-tripping, invalid input, saved-state migration, unsafe link rejection, empty versus malformed responses, API HTML/503 errors, cancellation and acquisition request semantics.
-- TypeScript syntactic transpilation of the changed TS/TSX sources produced no syntax diagnostics.
-- These are **not** full React browser tests, a complete repository typecheck, lint/format certification or an MCP interoperability test.
-
-The previous PR reports 23 native core/API/Eve-client checks and 16 offline browser checks. They were not rerun as part of this repair and must not be added to the above results to imply a full green suite.
+- All 136 existing application tests pass.
+- All 23 registry core/API/Eve-client tests pass.
+- The official MCP client integration test passes.
+- Repository typecheck, lint and production build pass on Node 22.
+- Browser acceptance and live provider/indexing calls remain separate release gates.
 
 ## Deployment evidence and blockers
 
-Vercel's GitHub status for the inspected pre-repair commit reported success. The Vercel connector returned 403 for the actual project team, preventing deployment/runtime inspection. That connector failure does not itself diagnose the site's blank assets.
-
-The terminal environment could execute local tests but could not resolve external package/repository hosts. It did not contain the installed UIXO React application dependencies. Full build, complete app browser QA and hosted acceptance remain outstanding. No production database changes or main merge were performed.
+The branch has been integrated with the latest `main` locally and the full build succeeds. Vercel currently has none of the required `UIXO_*` registry variables, so a deployment will start in read-only snapshot mode. Persistent registry migration, seeding, browser QA and hosted acceptance remain outstanding. No production registry database changes were performed.
 
 ## Remaining release work, in order
 
-1. Run the complete application checks and inspect the integrated screens on desktop/mobile. Verify the actual branch preview, API startup, migrations, seed data and function data-file access.
+1. Inspect the integrated screens on desktop/mobile. Verify the actual branch preview, API startup, migrations, seed data and function data-file access.
 2. Generate and review a materially larger real catalogue. Expand beyond components and icons to the supported resource categories; do not invent records to meet a target count.
 3. Capture useful real component previews, with appropriate source permission and isolation. Generic cards are not a substitute for visual QA.
 4. Finish shared-shell curator integration and validate sign-in, JWT claims, permissions, indexing retries/continuations and publication transitions against a persistent preview database.

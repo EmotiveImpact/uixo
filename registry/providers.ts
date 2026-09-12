@@ -3,16 +3,75 @@ import { type Asset, type Licence, type Provider, RegistryError, record, text } 
 import { FetchBudget } from './fetcher.ts';
 
 export const PROVIDERS: Provider[] = [
-  { id: 'shadcn', name: 'shadcn/ui', url: 'https://ui.shadcn.com/', repo: 'shadcn-ui/ui', adapter: 'shadcn-registry', approved: true, selectedAt: '2026-09-12T05:41:00.000Z', rationale: 'An existing UIXO-selected source. Transparent component source and a first-party installation registry; dependencies stay visible.' },
-  { id: 'lucide', name: 'Lucide', url: 'https://lucide.dev/', repo: 'lucide-icons/lucide', adapter: 'github-icons', approved: true, selectedAt: '2026-09-12T05:41:00.000Z', rationale: 'An existing UIXO-selected source. Consistent outline icons with retained ISC and inherited Feather MIT notices.' },
-  { id: 'heroicons', name: 'Heroicons', url: 'https://heroicons.com/', repo: 'tailwindlabs/heroicons', adapter: 'github-icons', approved: true, selectedAt: '2026-09-12T05:41:00.000Z', rationale: 'Selected for the implementation as an additional provider, not a change to the editorial directory. First-party SVG sources and React packages with an explicit MIT licence.' },
+  {
+    id: 'shadcn',
+    name: 'shadcn/ui',
+    url: 'https://ui.shadcn.com/',
+    repo: 'shadcn-ui/ui',
+    adapter: 'shadcn-registry',
+    approved: true,
+    selectedAt: '2026-09-12T05:41:00.000Z',
+    rationale:
+      'An existing UIXO-selected source. Transparent component source and a first-party installation registry; dependencies stay visible.',
+  },
+  {
+    id: 'lucide',
+    name: 'Lucide',
+    url: 'https://lucide.dev/',
+    repo: 'lucide-icons/lucide',
+    adapter: 'github-icons',
+    approved: true,
+    selectedAt: '2026-09-12T05:41:00.000Z',
+    rationale:
+      'An existing UIXO-selected source. Consistent outline icons with retained ISC and inherited Feather MIT notices.',
+  },
+  {
+    id: 'heroicons',
+    name: 'Heroicons',
+    url: 'https://heroicons.com/',
+    repo: 'tailwindlabs/heroicons',
+    adapter: 'github-icons',
+    approved: true,
+    selectedAt: '2026-09-12T05:41:00.000Z',
+    rationale:
+      'Selected for the implementation as an additional provider, not a change to the editorial directory. First-party SVG sources and React packages with an explicit MIT licence.',
+  },
 ];
-export function licenceFromText(provider: Provider, body: string, sourceUrl: string, now: string): Licence {
-  const restricted = /commons clause|non.commercial|all rights reserved|no redistribution/i.test(body);
-  const mit = /permission is hereby granted, free of charge/i.test(body) && /copyright notice and this permission notice/i.test(body);
-  const isc = /permission to use, copy, modify, and\/or distribute/i.test(body) && /for any\s+purpose with or without fee/i.test(body);
+export function licenceFromText(
+  provider: Provider,
+  body: string,
+  sourceUrl: string,
+  now: string,
+): Licence {
+  const restricted = /commons clause|non.commercial|all rights reserved|no redistribution/i.test(
+    body,
+  );
+  const mit =
+    /permission is hereby granted, free of charge/i.test(body) &&
+    /copyright notice and this permission notice/i.test(body);
+  const isc =
+    /permission to use, copy, modify, and\/or distribute/i.test(body) &&
+    /for any\s+purpose with or without fee/i.test(body);
   const recognised = !restricted && (mit || isc);
-  return { id: `${provider.id}-${createHash('sha256').update(body).digest('hex').slice(0, 16)}`, expression: restricted ? 'Restricted / review required' : mit && isc ? 'ISC AND MIT (inherited icons)' : mit ? 'MIT' : isc ? 'ISC' : 'Unknown', sourceUrl, text: body, commercial: recognised ? 'allowed' : 'unknown', redistribution: recognised ? 'allowed' : 'unknown', attribution: recognised, checkedAt: now, note: 'Evidence covers the named upstream source, not all third-party dependencies or trademark rights. Retain every applicable notice. Runtime and installation routes are not certified by the licence check.' };
+  return {
+    id: `${provider.id}-${createHash('sha256').update(body).digest('hex').slice(0, 16)}`,
+    expression: restricted
+      ? 'Restricted / review required'
+      : mit && isc
+        ? 'ISC AND MIT (inherited icons)'
+        : mit
+          ? 'MIT'
+          : isc
+            ? 'ISC'
+            : 'Unknown',
+    sourceUrl,
+    text: body,
+    commercial: recognised ? 'allowed' : 'unknown',
+    redistribution: recognised ? 'allowed' : 'unknown',
+    attribution: recognised,
+    checkedAt: now,
+    note: 'Evidence covers the named upstream source, not all third-party dependencies or trademark rights. Retain every applicable notice. Runtime and installation routes are not certified by the licence check.',
+  };
 }
 export function parseShadcnManifest(body: string) {
   // Extract declarative records only. Never evaluate, import or execute upstream TypeScript.
@@ -21,59 +80,254 @@ export function parseShadcnManifest(body: string) {
     if (!name) return [];
     const deps = /\n[^\S\r\n]{4}dependencies: \[([^\]]*)\]/m.exec(block)?.[1] ?? '';
     const registryDeps = /\n[^\S\r\n]{4}registryDependencies: \[([^\]]*)\]/m.exec(block)?.[1] ?? '';
-    return [{ name, dependencies: [...deps.matchAll(/"([^"]+)"/g)].map((m) => m[1]), registryDependencies: [...registryDeps.matchAll(/"([^"]+)"/g)].map((m) => m[1]) }];
+    return [
+      {
+        name,
+        dependencies: [...deps.matchAll(/"([^"]+)"/g)].map((m) => m[1]),
+        registryDependencies: [...registryDeps.matchAll(/"([^"]+)"/g)].map((m) => m[1]),
+      },
+    ];
   });
-  if (!records.length || records.length > 200) throw new RegistryError('PROVIDER_FORMAT', 'Registry layout changed. Update and review the adapter.', 502);
+  if (!records.length || records.length > 200)
+    throw new RegistryError(
+      'PROVIDER_FORMAT',
+      'Registry layout changed. Update and review the adapter.',
+      502,
+    );
   return records;
 }
-export function componentAsset(name: string, dependencies: string[], provider: Provider, licence: Licence, ref: string, now: string): Asset {
+export function componentAsset(
+  name: string,
+  dependencies: string[],
+  provider: Provider,
+  licence: Licence,
+  ref: string,
+  now: string,
+): Asset {
   const sourceUrl = `https://github.com/${provider.repo}/blob/${ref}/apps/v4/registry/new-york-v4/ui/${name}.tsx`;
   const navigation = /sidebar|menu|breadcrumb|pagination|tabs|command/.test(name);
-  return { id: `${provider.id}/${name}`, providerId: provider.id, slug: name, name: name.replace(/(^|-)(\w)/g, (_, sep: string, c: string) => `${sep ? ' ' : ''}${c.toUpperCase()}`), description: `The ${name.replace(/-/g, ' ')} component from shadcn/ui. Inspect the upstream implementation and its dependencies before adding it to your project.`, kind: 'component', tags: ['interface', 'minimal', 'light', 'dark', 'tailwind', ...(navigation ? ['navigation', 'dashboard'] : ['forms', 'layout'])], price: 'free', sourceUrl, licence, variants: [{ id: `${provider.id}/${name}/react`, framework: 'react', format: 'tsx', css: 'tailwind', dependencies, peerDependencies: {}, sourceRef: ref, acquisition: { kind: 'registry', url: `https://ui.shadcn.com/r/styles/new-york-v4/${name}.json` } }], evidence: [{ field: 'component and declared dependencies', url: `https://github.com/${provider.repo}/blob/${ref}/apps/v4/registry/new-york-v4/ui/_registry.ts`, reference: ref, observedAt: now, method: 'declared' }], verifiedAt: now, preview: { kind: 'schematic', label: 'UIXO schematic, not an upstream screenshot' }, editorialPick: false };
+  return {
+    id: `${provider.id}/${name}`,
+    providerId: provider.id,
+    slug: name,
+    name: name.replace(
+      /(^|-)(\w)/g,
+      (_, sep: string, c: string) => `${sep ? ' ' : ''}${c.toUpperCase()}`,
+    ),
+    description: `The ${name.replace(/-/g, ' ')} component from shadcn/ui. Inspect the upstream implementation and its dependencies before adding it to your project.`,
+    kind: 'component',
+    tags: [
+      'interface',
+      'minimal',
+      'light',
+      'dark',
+      'tailwind',
+      ...(navigation ? ['navigation', 'dashboard'] : ['forms', 'layout']),
+    ],
+    price: 'free',
+    sourceUrl,
+    licence,
+    variants: [
+      {
+        id: `${provider.id}/${name}/react`,
+        framework: 'react',
+        format: 'tsx',
+        css: 'tailwind',
+        dependencies,
+        peerDependencies: {},
+        sourceRef: ref,
+        acquisition: {
+          kind: 'registry',
+          url: `https://ui.shadcn.com/r/styles/new-york-v4/${name}.json`,
+        },
+      },
+    ],
+    evidence: [
+      {
+        field: 'component and declared dependencies',
+        url: `https://github.com/${provider.repo}/blob/${ref}/apps/v4/registry/new-york-v4/ui/_registry.ts`,
+        reference: ref,
+        observedAt: now,
+        method: 'declared',
+      },
+    ],
+    verifiedAt: now,
+    preview: { kind: 'schematic', label: 'UIXO schematic, not an upstream screenshot' },
+    editorialPick: false,
+  };
 }
-export function iconAsset(provider: Provider, path: string, ref: string, licence: Licence, now: string): Asset {
-  const name = path.split('/').pop()!.replace('.svg', ''), suffix = provider.id === 'heroicons' ? '24-outline' : 'outline';
-  const id = `${provider.id}/${name}`, raw = `https://raw.githubusercontent.com/${provider.repo}/${ref}/${path}`;
-  return { id, providerId: provider.id, slug: name, name: name.replace(/(^|-)(\w)/g, (_, sep: string, c: string) => `${sep ? ' ' : ''}${c.toUpperCase()}`), description: `${name.replace(/-/g, ' ')} from ${provider.name}. A scalable ${suffix} icon; retrieve its SVG or use the provider's React package.`, kind: 'icon', tags: ['outline', 'minimal', 'interface', 'icon', ...name.split('-')], price: 'free', sourceUrl: `https://github.com/${provider.repo}/blob/${ref}/${path}`, licence, variants: [{ id: `${id}/svg`, framework: 'agnostic', format: 'svg', css: null, dependencies: [], peerDependencies: {}, sourceRef: ref, acquisition: { kind: 'direct', url: raw } }, { id: `${id}/react`, framework: 'react', format: 'tsx', css: null, dependencies: [], peerDependencies: {}, sourceRef: null, acquisition: { kind: 'package', packageName: provider.id === 'lucide' ? 'lucide-react' : '@heroicons/react', url: provider.url } }], evidence: [{ field: 'upstream SVG source', url: `https://github.com/${provider.repo}/blob/${ref}/${path}`, reference: ref, observedAt: now, method: 'inspected' }], verifiedAt: now, preview: { kind: 'image', url: raw, label: `Original ${provider.name} SVG. Upstream copyright and licence apply.` }, editorialPick: false };
+export function iconAsset(
+  provider: Provider,
+  path: string,
+  ref: string,
+  licence: Licence,
+  now: string,
+): Asset {
+  const name = path.split('/').pop()!.replace('.svg', ''),
+    suffix = provider.id === 'heroicons' ? '24-outline' : 'outline';
+  const id = `${provider.id}/${name}`,
+    raw = `https://raw.githubusercontent.com/${provider.repo}/${ref}/${path}`;
+  return {
+    id,
+    providerId: provider.id,
+    slug: name,
+    name: name.replace(
+      /(^|-)(\w)/g,
+      (_, sep: string, c: string) => `${sep ? ' ' : ''}${c.toUpperCase()}`,
+    ),
+    description: `${name.replace(/-/g, ' ')} from ${provider.name}. A scalable ${suffix} icon; retrieve its SVG or use the provider's React package.`,
+    kind: 'icon',
+    tags: ['outline', 'minimal', 'interface', 'icon', ...name.split('-')],
+    price: 'free',
+    sourceUrl: `https://github.com/${provider.repo}/blob/${ref}/${path}`,
+    licence,
+    variants: [
+      {
+        id: `${id}/svg`,
+        framework: 'agnostic',
+        format: 'svg',
+        css: null,
+        dependencies: [],
+        peerDependencies: {},
+        sourceRef: ref,
+        acquisition: { kind: 'direct', url: raw },
+      },
+      {
+        id: `${id}/react`,
+        framework: 'react',
+        format: 'tsx',
+        css: null,
+        dependencies: [],
+        peerDependencies: {},
+        sourceRef: null,
+        acquisition: {
+          kind: 'package',
+          packageName: provider.id === 'lucide' ? 'lucide-react' : '@heroicons/react',
+          url: provider.url,
+        },
+      },
+    ],
+    evidence: [
+      {
+        field: 'upstream SVG source',
+        url: `https://github.com/${provider.repo}/blob/${ref}/${path}`,
+        reference: ref,
+        observedAt: now,
+        method: 'inspected',
+      },
+    ],
+    verifiedAt: now,
+    preview: {
+      kind: 'image',
+      url: raw,
+      label: `Original ${provider.name} SVG. Upstream copyright and licence apply.`,
+    },
+    editorialPick: false,
+  };
 }
-export type IndexPage = { assets: Asset[]; nextOffset: number | null; sourceRef: string; total: number; offset: number };
-export async function indexPage(providerId: string, options: { offset?: number; sourceRef?: string | null } = {}, budget = new FetchBudget()): Promise<IndexPage> {
+export type IndexPage = {
+  assets: Asset[];
+  nextOffset: number | null;
+  sourceRef: string;
+  total: number;
+  offset: number;
+};
+export async function indexPage(
+  providerId: string,
+  options: { offset?: number; sourceRef?: string | null } = {},
+  budget = new FetchBudget(),
+): Promise<IndexPage> {
   const provider = PROVIDERS.find((p) => p.id === providerId);
-  if (!provider?.approved) throw new RegistryError('PROVIDER_NOT_APPROVED', 'Choose an approved provider adapter.', 403);
+  if (!provider?.approved)
+    throw new RegistryError('PROVIDER_NOT_APPROVED', 'Choose an approved provider adapter.', 403);
   const offset = options.offset ?? 0;
-  if (!Number.isSafeInteger(offset) || offset < 0 || offset > 100000) throw new RegistryError('INVALID_INPUT', 'Invalid provider offset.');
-  const now = new Date().toISOString(), base = `https://api.github.com/repos/${provider.repo}`;
+  if (!Number.isSafeInteger(offset) || offset < 0 || offset > 100000)
+    throw new RegistryError('INVALID_INPUT', 'Invalid provider offset.');
+  const now = new Date().toISOString(),
+    base = `https://api.github.com/repos/${provider.repo}`;
   let ref = options.sourceRef;
   if (!ref) {
-    const refPayload = record(await budget.json(`${base}/git/refs/heads/${provider.id === 'heroicons' ? 'master' : 'main'}`));
+    const refPayload = record(
+      await budget.json(
+        `${base}/git/refs/heads/${provider.id === 'heroicons' ? 'master' : 'main'}`,
+      ),
+    );
     ref = text(record(refPayload.object).sha, 40);
   }
-  if (!/^[a-f0-9]{40}$/.test(ref)) throw new RegistryError('PROVIDER_FORMAT', 'Expected an immutable Git commit.', 502);
+  if (!/^[a-f0-9]{40}$/.test(ref))
+    throw new RegistryError('PROVIDER_FORMAT', 'Expected an immutable Git commit.', 502);
   const licencePath = provider.id === 'shadcn' ? 'LICENSE.md' : 'LICENSE';
-  const body = await budget.text(`https://raw.githubusercontent.com/${provider.repo}/${ref}/${licencePath}`);
-  const licence = licenceFromText(provider, body, `https://github.com/${provider.repo}/blob/${ref}/${licencePath}`, now);
+  const body = await budget.text(
+    `https://raw.githubusercontent.com/${provider.repo}/${ref}/${licencePath}`,
+  );
+  const licence = licenceFromText(
+    provider,
+    body,
+    `https://github.com/${provider.repo}/blob/${ref}/${licencePath}`,
+    now,
+  );
   let all: Asset[];
   if (provider.adapter === 'shadcn-registry') {
-    const manifest = await budget.text(`https://raw.githubusercontent.com/${provider.repo}/${ref}/apps/v4/registry/new-york-v4/ui/_registry.ts`);
+    const manifest = await budget.text(
+      `https://raw.githubusercontent.com/${provider.repo}/${ref}/apps/v4/registry/new-york-v4/ui/_registry.ts`,
+    );
     all = parseShadcnManifest(manifest).map((item) => {
       const asset = componentAsset(item.name, item.dependencies, provider, licence, ref!, now);
       asset.variants[0].registryDependencies = item.registryDependencies;
-      asset.evidence.push({ field: 'registry dependency declarations', url: asset.evidence[0].url, reference: ref!, observedAt: now, method: 'declared' });
+      asset.evidence.push({
+        field: 'registry dependency declarations',
+        url: asset.evidence[0].url,
+        reference: ref!,
+        observedAt: now,
+        method: 'declared',
+      });
       return asset;
     });
   } else {
     const tree = record(await budget.json(`${base}/git/trees/${ref}?recursive=1`));
-    if (tree.truncated === true || !Array.isArray(tree.tree)) throw new RegistryError('PROVIDER_FORMAT', 'Incomplete upstream tree; refusing a misleading index.', 502);
-    const pattern = provider.id === 'lucide' ? /^icons\/[a-z0-9-]+\.svg$/ : /^optimized\/24\/outline\/[a-z0-9-]+\.svg$/;
+    if (tree.truncated === true || !Array.isArray(tree.tree))
+      throw new RegistryError(
+        'PROVIDER_FORMAT',
+        'Incomplete upstream tree; refusing a misleading index.',
+        502,
+      );
+    const pattern =
+      provider.id === 'lucide'
+        ? /^icons\/[a-z0-9-]+\.svg$/
+        : /^optimized\/24\/outline\/[a-z0-9-]+\.svg$/;
     // Sort before slicing: stable pages retain one immutable source revision.
-    const paths = tree.tree.map(record).filter((entry) => entry.type === 'blob' && typeof entry.path === 'string' && pattern.test(entry.path)).map((entry) => String(entry.path)).sort();
-    const assets = paths.slice(offset, offset + 200).map((path) => iconAsset(provider, path, ref!, licence, now));
-    return { assets, total: paths.length, offset, nextOffset: offset + assets.length < paths.length ? offset + assets.length : null, sourceRef: ref };
+    const paths = tree.tree
+      .map(record)
+      .filter(
+        (entry) =>
+          entry.type === 'blob' && typeof entry.path === 'string' && pattern.test(entry.path),
+      )
+      .map((entry) => String(entry.path))
+      .sort();
+    const assets = paths
+      .slice(offset, offset + 200)
+      .map((path) => iconAsset(provider, path, ref!, licence, now));
+    return {
+      assets,
+      total: paths.length,
+      offset,
+      nextOffset: offset + assets.length < paths.length ? offset + assets.length : null,
+      sourceRef: ref,
+    };
   }
   all.sort((a, b) => a.id.localeCompare(b.id));
   const assets = all.slice(offset, offset + 200);
-  return { assets, total: all.length, offset, nextOffset: offset + assets.length < all.length ? offset + assets.length : null, sourceRef: ref };
+  return {
+    assets,
+    total: all.length,
+    offset,
+    nextOffset: offset + assets.length < all.length ? offset + assets.length : null,
+    sourceRef: ref,
+  };
 }
-export async function indexProvider(providerId: string, budget = new FetchBudget()): Promise<Asset[]> {
+export async function indexProvider(
+  providerId: string,
+  budget = new FetchBudget(),
+): Promise<Asset[]> {
   return (await indexPage(providerId, {}, budget)).assets;
 }

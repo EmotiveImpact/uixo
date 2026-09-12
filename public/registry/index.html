@@ -1,55 +1,199 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Find useful design assets from selected sources. Inspect their provenance, licence evidence and authorised acquisition routes." />
-  <meta name="color-scheme" content="dark light" />
-  <title>Asset library · UIXO</title>
-  <script src="/registry/integrated-entry.js"></script>
-  <link rel="stylesheet" href="/registry/styles.css" />
-  <script type="module" src="/registry/app.js"></script>
-</head>
-<body>
-  <a class="skip" href="#content">Skip to assets</a>
-  <aside class="sidebar" id="sidebar" aria-label="UIXO navigation">
-    <div class="brand-row"><a class="wordmark" href="/">UIXO</a><button class="icon-button mobile-close" aria-label="Close navigation" data-close-menu>×</button></div>
-    <p class="edition">THE ASSET LIBRARY <span>02</span></p>
-    <nav class="primary-nav" aria-label="Library">
-      <a href="/registry/" data-view="assets"><span data-icon="grid"></span>All assets <span class="nav-count" id="nav-total"></span></a>
-      <a href="/registry/?view=sources" data-view="sources"><span data-icon="layers"></span>Sources</a>
-      <a href="/registry/?view=saved" data-view="saved"><span data-icon="bookmark"></span>Saved <span class="nav-count" id="nav-saved">0</span></a>
-    </nav>
-    <div class="nav-group"><p class="nav-label">EXPLORE</p><nav aria-label="Asset types">
-      <a href="/registry/?kind=component" data-kind="component"><span data-icon="component"></span>Components</a>
-      <a href="/registry/?kind=icon" data-kind="icon"><span data-icon="shapes"></span>Icons</a>
-      <a href="/browse"><span data-icon="arrow-up-right"></span>Website directory</a>
-    </nav></div>
-    <div class="nav-group curator-only" hidden><p class="nav-label">CURATOR WORKSPACE</p><nav aria-label="Curation">
-      <a href="/registry/?view=review" data-view="review"><span data-icon="check"></span>Review queue</a>
-      <a href="/registry/?view=scout" data-view="scout"><span data-icon="radar"></span>Grok intake</a>
-      <a href="/registry/?view=jobs" data-view="jobs"><span data-icon="activity"></span>Indexing runs</a>
-    </nav></div>
-    <a class="agent-link" href="/registry/?view=connect" data-view="connect"><span data-icon="terminal"></span><span>For your AI agent<small>Connect through MCP</small></span><span>↗</span></a>
-    <div class="sidebar-foot"><div class="dot-line"><span class="status-dot"></span><span id="storage-label">Connecting to registry</span></div><p>Selected sources.<br />Original creators. Clear provenance.</p><button id="theme-toggle" class="quiet-button"><span data-icon="sun"></span><span>Light appearance</span></button></div>
-  </aside>
-  <button id="menu-backdrop" class="menu-backdrop" aria-label="Close navigation" hidden></button>
-  <div class="workspace">
-    <header class="topbar"><button class="icon-button mobile-menu" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false" id="menu-toggle"><span data-icon="menu"></span></button><div class="breadcrumb"><a href="/browse">Library</a><span>/</span><strong id="breadcrumb-current">Assets</strong></div><div class="top-actions"><span class="quiet-tag">UIXO / INDEX</span><a href="/dashboard" id="account-link">Account <span>↗</span></a></div></header>
-    <main id="content" tabindex="-1">
-      <section class="page-heading"><div><p class="eyebrow" id="page-eyebrow">GOOD SOURCES. USEFUL DETAILS.</p><h1 id="page-title">Find your next<br /><span>great detail.</span></h1><p class="lede" id="page-description">Components and icons, with the source left intact.<br />Find it, understand it, make it yours.</p></div><div class="heading-note" id="heading-note"><div class="small-mark" aria-hidden="true">↗</div><p>Less hunting.<br />More making.</p></div></section>
-      <section id="discovery" aria-label="Search and filter assets">
-        <form class="search-box" id="search-form" role="search"><span data-icon="search"></span><input id="search" name="q" type="search" maxlength="300" autocomplete="off" aria-label="Search assets" placeholder="A sidebar, an icon, a small detail…" /><kbd>/</kbd><button type="submit">Find assets <span>↗</span></button></form>
-        <div class="filters"><label><span class="sr-only">Asset type</span><select id="filter-kind"><option value="">All types</option><option value="component">Components</option><option value="icon">Icons</option><option value="font">Fonts</option><option value="template">Templates</option></select></label><label><span class="sr-only">Source</span><select id="filter-provider"><option value="">Every source</option></select></label><label><span class="sr-only">Framework</span><select id="filter-framework"><option value="">Any framework</option><option value="react">React</option><option value="agnostic">Framework agnostic</option><option value="vue">Vue</option></select></label><label><span class="sr-only">Format</span><select id="filter-format"><option value="">Any format</option><option value="tsx">TSX</option><option value="svg">SVG</option></select></label><label class="checkbox-filter"><input type="checkbox" id="filter-commercial" />Commercial-use evidence</label><button class="quiet-button" id="reset-filters">Reset</button></div>
-      </section>
-      <div class="results-bar" id="results-bar"><p id="result-count" role="status" aria-live="polite">Loading the library…</p><span id="result-method">Selected sources · Weighted keyword search</span></div>
-      <div id="view-content" aria-busy="true"></div>
-      <div id="pagination" class="pagination" hidden><button class="secondary-button" id="previous-page">← Previous</button><span id="page-number"></span><button class="secondary-button" id="next-page">Next →</button></div>
-      <footer class="page-footer"><span>Built for people who care about the details.</span><span>UIXO keeps the index. Creators keep the credit.</span></footer>
-    </main>
-  </div>
-  <dialog id="asset-dialog" class="asset-dialog" aria-labelledby="asset-title"><button class="dialog-close icon-button" aria-label="Close asset details">×</button><div id="asset-content"></div></dialog>
-  <dialog id="review-dialog" class="review-dialog" aria-labelledby="review-title"><button class="dialog-close icon-button" aria-label="Close review">×</button><h2 id="review-title">Review revision</h2><p id="review-summary"></p><label for="review-reason">Decision and evidence</label><textarea id="review-reason" rows="4" maxlength="2000" placeholder="Explain your decision. Include any checks you performed."></textarea><p class="form-error" id="review-error" role="alert"></p><div class="button-row"><button class="secondary-button" id="reject-revision">Reject</button><button class="primary-button" id="approve-revision">Approve revision</button></div></dialog>
-  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Find useful design assets from selected sources. Inspect their provenance, licence evidence and authorised acquisition routes."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <title>Asset library · UIXO</title>
+    <script src="/registry/integrated-entry.js"></script>
+    <link rel="stylesheet" href="/registry/styles.css" />
+    <script type="module" src="/registry/app.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to assets</a>
+    <aside class="sidebar" id="sidebar" aria-label="UIXO navigation">
+      <div class="brand-row">
+        <a class="wordmark" href="/">UIXO</a
+        ><button class="icon-button mobile-close" aria-label="Close navigation" data-close-menu>
+          ×
+        </button>
+      </div>
+      <p class="edition">THE ASSET LIBRARY <span>02</span></p>
+      <nav class="primary-nav" aria-label="Library">
+        <a href="/registry/" data-view="assets"
+          ><span data-icon="grid"></span>All assets <span class="nav-count" id="nav-total"></span
+        ></a>
+        <a href="/registry/?view=sources" data-view="sources"
+          ><span data-icon="layers"></span>Sources</a
+        >
+        <a href="/registry/?view=saved" data-view="saved"
+          ><span data-icon="bookmark"></span>Saved
+          <span class="nav-count" id="nav-saved">0</span></a
+        >
+      </nav>
+      <div class="nav-group">
+        <p class="nav-label">EXPLORE</p>
+        <nav aria-label="Asset types">
+          <a href="/registry/?kind=component" data-kind="component"
+            ><span data-icon="component"></span>Components</a
+          >
+          <a href="/registry/?kind=icon" data-kind="icon"><span data-icon="shapes"></span>Icons</a>
+          <a href="/browse"><span data-icon="arrow-up-right"></span>Website directory</a>
+        </nav>
+      </div>
+      <div class="nav-group curator-only" hidden>
+        <p class="nav-label">CURATOR WORKSPACE</p>
+        <nav aria-label="Curation">
+          <a href="/registry/?view=review" data-view="review"
+            ><span data-icon="check"></span>Review queue</a
+          >
+          <a href="/registry/?view=scout" data-view="scout"
+            ><span data-icon="radar"></span>Grok intake</a
+          >
+          <a href="/registry/?view=jobs" data-view="jobs"
+            ><span data-icon="activity"></span>Indexing runs</a
+          >
+        </nav>
+      </div>
+      <a class="agent-link" href="/registry/?view=connect" data-view="connect"
+        ><span data-icon="terminal"></span
+        ><span>For your AI agent<small>Connect through MCP</small></span
+        ><span>↗</span></a
+      >
+      <div class="sidebar-foot">
+        <div class="dot-line">
+          <span class="status-dot"></span><span id="storage-label">Connecting to registry</span>
+        </div>
+        <p>Selected sources.<br />Original creators. Clear provenance.</p>
+        <button id="theme-toggle" class="quiet-button">
+          <span data-icon="sun"></span><span>Light appearance</span>
+        </button>
+      </div>
+    </aside>
+    <button id="menu-backdrop" class="menu-backdrop" aria-label="Close navigation" hidden></button>
+    <div class="workspace">
+      <header class="topbar">
+        <button
+          class="icon-button mobile-menu"
+          aria-label="Open navigation"
+          aria-controls="sidebar"
+          aria-expanded="false"
+          id="menu-toggle"
+        >
+          <span data-icon="menu"></span>
+        </button>
+        <div class="breadcrumb">
+          <a href="/browse">Library</a><span>/</span><strong id="breadcrumb-current">Assets</strong>
+        </div>
+        <div class="top-actions">
+          <span class="quiet-tag">UIXO / INDEX</span
+          ><a href="/dashboard" id="account-link">Account <span>↗</span></a>
+        </div>
+      </header>
+      <main id="content" tabindex="-1">
+        <section class="page-heading">
+          <div>
+            <p class="eyebrow" id="page-eyebrow">GOOD SOURCES. USEFUL DETAILS.</p>
+            <h1 id="page-title">Find your next<br /><span>great detail.</span></h1>
+            <p class="lede" id="page-description">
+              Components and icons, with the source left intact.<br />Find it, understand it, make
+              it yours.
+            </p>
+          </div>
+          <div class="heading-note" id="heading-note">
+            <div class="small-mark" aria-hidden="true">↗</div>
+            <p>Less hunting.<br />More making.</p>
+          </div>
+        </section>
+        <section id="discovery" aria-label="Search and filter assets">
+          <form class="search-box" id="search-form" role="search">
+            <span data-icon="search"></span
+            ><input
+              id="search"
+              name="q"
+              type="search"
+              maxlength="300"
+              autocomplete="off"
+              aria-label="Search assets"
+              placeholder="A sidebar, an icon, a small detail…"
+            /><kbd>/</kbd><button type="submit">Find assets <span>↗</span></button>
+          </form>
+          <div class="filters">
+            <label
+              ><span class="sr-only">Asset type</span
+              ><select id="filter-kind">
+                <option value="">All types</option>
+                <option value="component">Components</option>
+                <option value="icon">Icons</option>
+                <option value="font">Fonts</option>
+                <option value="template">Templates</option>
+              </select></label
+            ><label
+              ><span class="sr-only">Source</span
+              ><select id="filter-provider">
+                <option value="">Every source</option>
+              </select></label
+            ><label
+              ><span class="sr-only">Framework</span
+              ><select id="filter-framework">
+                <option value="">Any framework</option>
+                <option value="react">React</option>
+                <option value="agnostic">Framework agnostic</option>
+                <option value="vue">Vue</option>
+              </select></label
+            ><label
+              ><span class="sr-only">Format</span
+              ><select id="filter-format">
+                <option value="">Any format</option>
+                <option value="tsx">TSX</option>
+                <option value="svg">SVG</option>
+              </select></label
+            ><label class="checkbox-filter"
+              ><input type="checkbox" id="filter-commercial" />Commercial-use evidence</label
+            ><button class="quiet-button" id="reset-filters">Reset</button>
+          </div>
+        </section>
+        <div class="results-bar" id="results-bar">
+          <p id="result-count" role="status" aria-live="polite">Loading the library…</p>
+          <span id="result-method">Selected sources · Weighted keyword search</span>
+        </div>
+        <div id="view-content" aria-busy="true"></div>
+        <div id="pagination" class="pagination" hidden>
+          <button class="secondary-button" id="previous-page">← Previous</button
+          ><span id="page-number"></span
+          ><button class="secondary-button" id="next-page">Next →</button>
+        </div>
+        <footer class="page-footer">
+          <span>Built for people who care about the details.</span
+          ><span>UIXO keeps the index. Creators keep the credit.</span>
+        </footer>
+      </main>
+    </div>
+    <dialog id="asset-dialog" class="asset-dialog" aria-labelledby="asset-title">
+      <button class="dialog-close icon-button" aria-label="Close asset details">×</button>
+      <div id="asset-content"></div>
+    </dialog>
+    <dialog id="review-dialog" class="review-dialog" aria-labelledby="review-title">
+      <button class="dialog-close icon-button" aria-label="Close review">×</button>
+      <h2 id="review-title">Review revision</h2>
+      <p id="review-summary"></p>
+      <label for="review-reason">Decision and evidence</label
+      ><textarea
+        id="review-reason"
+        rows="4"
+        maxlength="2000"
+        placeholder="Explain your decision. Include any checks you performed."
+      ></textarea>
+      <p class="form-error" id="review-error" role="alert"></p>
+      <div class="button-row">
+        <button class="secondary-button" id="reject-revision">Reject</button
+        ><button class="primary-button" id="approve-revision">Approve revision</button>
+      </div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  </body>
 </html>

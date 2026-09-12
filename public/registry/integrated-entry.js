@@ -8,11 +8,15 @@ function integratedUrl(search) {
 if (integratedViews.has(new URLSearchParams(location.search).get('view') || 'assets')) {
   location.replace(integratedUrl(location.search));
 }
-document.addEventListener('click', (event) => {
-  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-  const link = event.target instanceof Element ? event.target.closest('a[data-view]') : null;
-  if (!link || !integratedViews.has(link.dataset.view)) return;
-  event.preventDefault();
-  event.stopImmediatePropagation();
-  location.assign(integratedUrl(new URL(link.href).search));
-}, true);
+document.addEventListener(
+  'click',
+  (event) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const link = event.target instanceof Element ? event.target.closest('a[data-view]') : null;
+    if (!link || !integratedViews.has(link.dataset.view)) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    location.assign(integratedUrl(new URL(link.href).search));
+  },
+  true,
+);

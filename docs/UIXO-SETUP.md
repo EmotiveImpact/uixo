@@ -23,7 +23,7 @@ Start the existing Vite application in another:
 npm run dev
 ```
 
-Open `http://127.0.0.1:5173/browse/assets`. The original directory is at `http://127.0.0.1:5173/browse`.
+Open `http://127.0.0.1:3000/browse/assets`. The original directory is at `http://127.0.0.1:3000/browse`.
 
 Vite proxies `/api/registry` and `/api/mcp` to `http://127.0.0.1:4175`. It uses a fixed port and `strictPort` so the explicit local-origin allowlist cannot silently become incorrect. The registry development server accepts that exact browser origin in addition to its own origin; production origin validation is unchanged. Use `127.0.0.1`, not `localhost`, for this configuration.
 
@@ -62,18 +62,18 @@ Use the appropriate database configuration deliberately. A bounded run is not pr
 
 Keep values server-side and out of Git, browser storage, public documentation and prompts.
 
-| Variable | Purpose |
-| --- | --- |
-| `UIXO_DATABASE_URL` | Dedicated persistent registry database. Absent means hosted read-only snapshot mode. |
-| `DATABASE_URL` | Existing editorial/auth database, also used for curator-role lookup. |
-| `NEON_AUTH_BASE_URL` | Existing authentication service. |
-| `UIXO_AUTH_ISSUER`, `UIXO_AUTH_AUDIENCE` | Exact expected claims for registry curator JWT verification. |
-| `UIXO_CURATOR_TOKEN` | Scoped service credential with curator privileges. |
-| `UIXO_SCOUT_TOKEN` | Grok intake-only service credential. |
-| `UIXO_WORKER_TOKEN` | Indexing worker credential; not publication authority. |
-| `UIXO_ORIGIN` | Exact application origin used by hosted API origin checks. Configure per deployment environment. |
-| `UIXO_RATE_SALT` | Salt for registry rate-limit bucket identifiers. |
-| `UIXO_EVE_URL`, `UIXO_EVE_TOKEN` | Eve integration configuration; presence is not a successful live-session test. |
+| Variable                                 | Purpose                                                                                          |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `UIXO_DATABASE_URL`                      | Dedicated persistent registry database. Absent means hosted read-only snapshot mode.             |
+| `DATABASE_URL`                           | Existing editorial/auth database, also used for curator-role lookup.                             |
+| `NEON_AUTH_BASE_URL`                     | Existing authentication service.                                                                 |
+| `UIXO_AUTH_ISSUER`, `UIXO_AUTH_AUDIENCE` | Exact expected claims for registry curator JWT verification.                                     |
+| `UIXO_CURATOR_TOKEN`                     | Scoped service credential with curator privileges.                                               |
+| `UIXO_SCOUT_TOKEN`                       | Grok intake-only service credential.                                                             |
+| `UIXO_WORKER_TOKEN`                      | Indexing worker credential; not publication authority.                                           |
+| `UIXO_ORIGIN`                            | Exact application origin used by hosted API origin checks. Configure per deployment environment. |
+| `UIXO_RATE_SALT`                         | Salt for registry rate-limit bucket identifiers.                                                 |
+| `UIXO_EVE_URL`, `UIXO_EVE_TOKEN`         | Eve integration configuration; presence is not a successful live-session test.                   |
 
 Service tokens must meet the backend's minimum length requirement (24 characters), be independently generated, and have different values for different roles. Store them using the deployment platform's secret configuration, not in this file.
 

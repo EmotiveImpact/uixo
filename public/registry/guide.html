@@ -1,11 +1,99 @@
 <!doctype html>
-<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Using UIXO</title><link rel="stylesheet" href="/registry/guide.css"></head>
-<body><header><a class="brand" href="/browse">UIXO</a><nav><a href="/browse">Websites</a><a href="/browse/assets">Assets</a></nav></header><main><p class="eyebrow">GETTING STARTED</p><h1>One library.<br>Two ways to explore.</h1><p class="intro">The website directory finds good sources. The asset browser helps you inspect individual components and files from indexed sources.</p>
-<section><h2>Start with what you need</h2><p>Open <a href="/browse/assets">All assets</a>, search using the top bar, then filter by source, framework, format or licence evidence. Open a card to inspect its source and dependencies. Choose <strong>Get asset / install instructions</strong> to ask the registry for an authorised acquisition route.</p><p>Copying an instruction does not execute it or change your project. Review it first. Paid and account-gated files remain with their original provider.</p></section>
-<section><h2>What is in the current catalogue?</h2><p>The initial source snapshot contains 67 metadata records from shadcn/ui, Lucide and Heroicons. It is not a completed live indexing run or a catalogue of thousands of downloaded files. Fonts, templates, backgrounds and other resource types still need individual-asset indexing.</p><p><strong>Source preview not captured</strong> means no real preview is available. UIXO does not label a generic illustration as an upstream component screenshot.</p></section>
-<section><h2>Keep your favourites</h2><p>Use the bookmark on a card, then open <strong>Saved</strong>. These saves stay in this browser and retain the existing 200-asset list. They are not account-synchronised or combined with website lists.</p></section>
-<section><h2>Seeing no assets?</h2><p>Clear your filters first. A registry service error is not an empty result. Check <a href="/api/registry?action=status">registry status</a> and <a href="/api/registry?action=search&amp;limit=1">one search result</a>. They should return JSON. HTML suggests missing API routing; 503 suggests startup, database or migration trouble. A configured but unseeded database can return a genuinely empty catalogue.</p></section>
-<section><h2>Run the integrated version locally</h2><p>Check out the working branch and install dependencies:</p><pre>npm ci
-npm run registry:deps</pre><p>Run the API in one terminal:</p><pre>npm run registry:dev -- --memory</pre><p>Run the existing website in another:</p><pre>npm run dev</pre><p>Open <code>http://127.0.0.1:5173/browse/assets</code>. Starting only Vite does not start the registry API. Production accounts and persistent indexing need their own configuration.</p></section>
-<section><h2>For operators and AI agents</h2><p><a href="/registry/?view=connect">Connect through MCP</a>. The endpoint is <code>/api/mcp</code>; live client verification remains a release gate. Curator review, Grok intake and indexing runs remain in the existing operator workspace and require authorisation.</p><p>Repository documentation: <code>docs/UIXO-USER-GUIDE.md</code>, <code>docs/UIXO-SETUP.md</code>, <code>docs/STATUS.md</code> and <code>docs/DECISIONS.md</code>. The full v2 agent system is not yet complete.</p></section>
-<footer>UIXO keeps the index. Creators keep the credit.</footer></main></body></html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Using UIXO</title>
+    <link rel="stylesheet" href="/registry/guide.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/browse">UIXO</a>
+      <nav><a href="/browse">Websites</a><a href="/browse/assets">Assets</a></nav>
+    </header>
+    <main>
+      <p class="eyebrow">GETTING STARTED</p>
+      <h1>One library.<br />Two ways to explore.</h1>
+      <p class="intro">
+        The website directory finds good sources. The asset browser helps you inspect individual
+        components and files from indexed sources.
+      </p>
+      <section>
+        <h2>Start with what you need</h2>
+        <p>
+          Open <a href="/browse/assets">All assets</a>, search using the top bar, then filter by
+          source, framework, format or licence evidence. Open a card to inspect its source and
+          dependencies. Choose <strong>Get asset / install instructions</strong> to ask the registry
+          for an authorised acquisition route.
+        </p>
+        <p>
+          Copying an instruction does not execute it or change your project. Review it first. Paid
+          and account-gated files remain with their original provider.
+        </p>
+      </section>
+      <section>
+        <h2>What is in the current catalogue?</h2>
+        <p>
+          The initial source snapshot contains 67 metadata records from shadcn/ui, Lucide and
+          Heroicons. It is not a completed live indexing run or a catalogue of thousands of
+          downloaded files. Fonts, templates, backgrounds and other resource types still need
+          individual-asset indexing.
+        </p>
+        <p>
+          <strong>Source preview not captured</strong> means no real preview is available. UIXO does
+          not label a generic illustration as an upstream component screenshot.
+        </p>
+      </section>
+      <section>
+        <h2>Keep your favourites</h2>
+        <p>
+          Use the bookmark on a card, then open <strong>Saved</strong>. These saves stay in this
+          browser and retain the existing 200-asset list. They are not account-synchronised or
+          combined with website lists.
+        </p>
+      </section>
+      <section>
+        <h2>Seeing no assets?</h2>
+        <p>
+          Clear your filters first. A registry service error is not an empty result. Check
+          <a href="/api/registry?action=status">registry status</a> and
+          <a href="/api/registry?action=search&amp;limit=1">one search result</a>. They should
+          return JSON. HTML suggests missing API routing; 503 suggests startup, database or
+          migration trouble. A configured but unseeded database can return a genuinely empty
+          catalogue.
+        </p>
+      </section>
+      <section>
+        <h2>Run the integrated version locally</h2>
+        <p>Check out the working branch and install dependencies:</p>
+        <pre>
+npm ci
+npm run registry:deps</pre>
+        <p>Run the API in one terminal:</p>
+        <pre>npm run registry:dev -- --memory</pre>
+        <p>Run the existing website in another:</p>
+        <pre>npm run dev</pre>
+        <p>
+          Open <code>http://127.0.0.1:5173/browse/assets</code>. Starting only Vite does not start
+          the registry API. Production accounts and persistent indexing need their own
+          configuration.
+        </p>
+      </section>
+      <section>
+        <h2>For operators and AI agents</h2>
+        <p>
+          <a href="/registry/?view=connect">Connect through MCP</a>. The endpoint is
+          <code>/api/mcp</code>; live client verification remains a release gate. Curator review,
+          Grok intake and indexing runs remain in the existing operator workspace and require
+          authorisation.
+        </p>
+        <p>
+          Repository documentation: <code>docs/UIXO-USER-GUIDE.md</code>,
+          <code>docs/UIXO-SETUP.md</code>, <code>docs/STATUS.md</code> and
+          <code>docs/DECISIONS.md</code>. The full v2 agent system is not yet complete.
+        </p>
+      </section>
+      <footer>UIXO keeps the index. Creators keep the credit.</footer>
+    </main>
+  </body>
+</html>

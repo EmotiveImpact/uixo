@@ -10,6 +10,11 @@ const operatorAuth: AuthFn<Request> = async (request) => {
   if (!expected || expected.length < 32 || supplied.length > 512) return null;
   const digest = (value: string) => createHash('sha256').update(value).digest();
   if (!timingSafeEqual(digest(supplied), digest(expected))) return null;
-  return { principalId: 'uixo-authorised-operator', principalType: 'user', authenticator: 'uixo-service-token', attributes: {} };
+  return {
+    principalId: 'uixo-authorised-operator',
+    principalType: 'user',
+    authenticator: 'uixo-service-token',
+    attributes: {},
+  };
 };
 export default eveChannel({ auth: [operatorAuth] });

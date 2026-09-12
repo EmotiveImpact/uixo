@@ -57,7 +57,11 @@ export function TopBar({
           type="search"
           maxLength={assetSearch ? 300 : undefined}
           aria-label={assetSearch ? 'Search assets' : 'Search websites'}
-          placeholder={assetSearch ? 'Search components, icons and assets…' : 'Search by name, tag or use case…'}
+          placeholder={
+            assetSearch
+              ? 'Search components, icons and assets…'
+              : 'Search by name, tag or use case…'
+          }
         />
         <kbd>/</kbd>
       </div>

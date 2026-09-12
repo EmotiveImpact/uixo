@@ -6,8 +6,14 @@ export async function postgresDatabase(url: string): Promise<Database> {
   const sql = neon(url);
   return {
     mode: 'postgres',
-    async query(query, args = []) { return await sql.query(query, args) as Row[]; },
-    async batch(statements) { return await sql.transaction(statements.map((s) => sql.query(s.sql, s.args ?? []))) as Row[][]; },
+    async query(query, args = []) {
+      return (await sql.query(query, args)) as Row[];
+    },
+    async batch(statements) {
+      return (await sql.transaction(
+        statements.map((s) => sql.query(s.sql, s.args ?? [])),
+      )) as Row[][];
+    },
     async close() {},
   };
 }

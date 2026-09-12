@@ -158,7 +158,9 @@ export function AppSidebar({
         </AnimatedSidebarGroup>
 
         <AnimatedSidebarGroup className="border-t border-border pt-4">
-          <AnimatedSidebarGroupLabel>{onAssets ? 'Website categories' : 'Categories'}</AnimatedSidebarGroupLabel>
+          <AnimatedSidebarGroupLabel>
+            {onAssets ? 'Website categories' : 'Categories'}
+          </AnimatedSidebarGroupLabel>
           <AnimatedSidebarGroupContent>
             <AnimatedSidebarMenu>
               {categories.map((entry) => {

@@ -3,7 +3,10 @@ import { Registry } from './service.ts';
 import { seedCaptured } from './bootstrap.ts';
 let current: Promise<Registry> | undefined;
 export function getRegistry(): Promise<Registry> {
-  current ??= initialise().catch((error) => { current = undefined; throw error; });
+  current ??= initialise().catch((error) => {
+    current = undefined;
+    throw error;
+  });
   return current;
 }
 async function initialise(): Promise<Registry> {

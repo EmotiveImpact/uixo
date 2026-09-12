@@ -3,7 +3,9 @@
   "private": true,
   "version": "0.2.0",
   "type": "module",
-  "engines": { "node": ">=22.16.0" },
+  "engines": {
+    "node": ">=22.16.0"
+  },
   "description": "Isolated MCP dependencies. The core registry and local UI run without these packages.",
   "dependencies": {
     "@modelcontextprotocol/server": "2.0.0",
