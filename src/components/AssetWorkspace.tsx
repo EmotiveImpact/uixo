@@ -122,6 +122,8 @@ export function AssetWorkspace() {
         openSection={null}
         lists={lists}
         onAssets
+        onSavedAssets={query.view === 'saved'}
+        onShowSavedAssets={() => navigate({ view: 'saved' }, true)}
         assetKind={query.kind}
         onChooseAssetKind={(kind) => navigate({ kind }, true)}
         onShowAssets={() => navigate({}, true)}

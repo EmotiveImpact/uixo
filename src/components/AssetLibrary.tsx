@@ -1,11 +1,10 @@
+import { useAssetSaves } from '../hooks/useAssetSaves';
 import { useEffect, useState, type ReactNode } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark } from 'lucide-react';
 import {
-  ASSET_SAVES,
   EMPTY_ASSET_QUERY,
   assetHref,
   catalogueResult,
-  parseSavedAssets,
   registryRequest,
   safeAssetUrl,
 } from '../lib/asset-library';
@@ -27,13 +26,7 @@ export function AssetLibrary({ query, navigate, density, discovery }: Props) {
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
   const [notice, setNotice] = useState('');
-  const [saved, setSaved] = useState<string[]>(() => {
-    try {
-      return parseSavedAssets(localStorage.getItem(ASSET_SAVES));
-    } catch {
-      return [];
-    }
-  });
+  const { saved, save } = useAssetSaves();
   const { q, kind, provider, framework, format, commercial, price, offset, view } = query;
   useEffect(() => {
     const abort = new AbortController();
@@ -98,13 +91,12 @@ export function AssetLibrary({ query, navigate, density, discovery }: Props) {
       return;
     }
     const next = saved.includes(id) ? saved.filter((entry) => entry !== id) : [...saved, id];
-    setSaved(next);
-    try {
-      localStorage.setItem(ASSET_SAVES, JSON.stringify(next));
-      setNotice('Saved assets are stored in this browser, not synced to your account.');
-    } catch {
-      setNotice('Browser storage is unavailable. Your changes will last for this tab only.');
-    }
+    const persisted = save(next);
+    setNotice(
+      persisted
+        ? 'Saved assets are stored in this browser, not synced to your account.'
+        : 'Browser storage is unavailable. Your changes will last for this tab only.',
+    );
     if (view === 'saved') navigate({ offset: 0 });
   }
   const filter = (key: keyof AssetQuery, value: string | boolean) =>
