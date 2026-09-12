@@ -2264,6 +2264,41 @@ kbd {
   color: #b88f8f;
 }
 
+.save-sync-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: -4px 0 22px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: color-mix(in srgb, #b88f8f 10%, var(--background));
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.save-sync-notice p {
+  margin: 0;
+}
+.save-sync-notice strong {
+  color: var(--foreground);
+  font-weight: 500;
+}
+.save-sync-notice button {
+  flex: none;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: var(--muted);
+  color: var(--foreground);
+  font: inherit;
+}
+@media (max-width: 560px) {
+  .save-sync-notice {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 /* One navigation and discovery position across all catalogue views. */
 .topbar.unified-topbar {
   display: flex;

@@ -8,7 +8,9 @@ import { AppDialog } from './AppDialog';
 import { PageHeading } from './PageHeading';
 import { AssetUtilities } from './AssetUtilities';
 import { AssetLibrary } from './AssetLibrary';
+import { SaveSyncNotice } from './SaveSyncNotice';
 import { useAuth } from '../hooks/useAuth';
+import { useAssetSaves } from '../hooks/useAssetSaves';
 import { useLists } from '../hooks/useLists';
 import { useTheme } from '../hooks/useTheme';
 import { useDensity } from '../hooks/useDensity';
@@ -44,7 +46,14 @@ export function AssetWorkspace() {
     signOut,
     available: authAvailable,
   } = useAuth();
-  const { lists, remove } = useLists(user?.id ?? null, settled);
+  const {
+    lists,
+    remove,
+    syncStatus: listSyncStatus,
+    syncError: listSyncError,
+    retrySync: retryListSync,
+  } = useLists(user?.id ?? null, settled);
+  const assetSaves = useAssetSaves(user?.id ?? null, settled);
   useSearchHotkey(searchRef, !modal && !mobileOpen && !query.id);
   useEffect(() => {
     const read = () => setQuery(readAssetQuery(window.location.search));
@@ -124,6 +133,7 @@ export function AssetWorkspace() {
         onAssets
         onSavedAssets={query.view === 'saved'}
         onShowSavedAssets={() => navigate({ view: 'saved' }, true)}
+        savedAssetCount={assetSaves.saved.length}
         assetKind={query.kind}
         onChooseAssetKind={(kind) => navigate({ kind }, true)}
         onShowAssets={() => navigate({}, true)}
@@ -167,6 +177,18 @@ export function AssetWorkspace() {
           canClear={hasFilters}
           onClear={() => navigate({ view: query.view }, true)}
         />
+        <SaveSyncNotice
+          label="Asset favourites"
+          status={assetSaves.syncStatus}
+          error={assetSaves.syncError}
+          onRetry={assetSaves.retrySync}
+        />
+        <SaveSyncNotice
+          label="Website favourites"
+          status={listSyncStatus}
+          error={listSyncError}
+          onRetry={retryListSync}
+        />
         {utility ? (
           <AssetUtilities key={query.view} view={query.view} />
         ) : (
@@ -174,6 +196,7 @@ export function AssetWorkspace() {
             query={query}
             navigate={navigate}
             density={density}
+            assetSaves={assetSaves}
             discovery={
               <DiscoveryControls
                 assetSearch

@@ -170,17 +170,17 @@ Products: optional MARKET, specialised intelligence models (INT-7).
 
 The engineering audit is the implementation inventory. These stable IDs connect it to this roadmap:
 
-| Work ID   | Next deliverable                                           | Gate | Acceptance evidence                                                                         |
-| --------- | ---------------------------------------------------------- | ---- | ------------------------------------------------------------------------------------------- |
-| SAVE-01   | Safe website-list load/write failure handling              | R0   | Failed initial GET cannot cause a destructive snapshot PUT; pending changes survive retries |
-| SAVE-02   | Typed account-backed asset favourites and guest migration  | R0   | Cross-device add/remove, account isolation and migration tests; existing saves preserved    |
-| MEDIA-01  | Real source-pinned component rendering                     | R0   | Representative gallery/detail previews match actual components at desktop/mobile sizes      |
-| OPS-01    | CI and release isolation/auth checks                       | R0   | Ordinary PR checks, role acceptance, preview database boundary and release runbook          |
-| REG-01    | Fresh approved-provider indexing                           | R1   | Source-pinned records, staged review, retry/continuation and published search evidence      |
-| INGEST-01 | Grok issue handoff and one Eve run                         | R1   | Linked issue/candidate/job/review IDs with success and failure traces                       |
-| USE-01    | External-client MCP acquisition acceptance                 | R1   | One real asset used successfully with retained source/licence notices                       |
-| SEARCH-01 | Intent relevance evaluation and enrichment                 | R2   | Baseline query set, hard-filter tests and measured improvement                              |
-| PRO-01    | Personal mixed projects and first paid workflow validation | R2   | Tested project journey and evidence for the chosen commercial boundary                      |
+| Work ID   | Next deliverable                                                         | Gate | Acceptance evidence                                                                         |
+| --------- | ------------------------------------------------------------------------ | ---- | ------------------------------------------------------------------------------------------- |
+| SAVE-01   | **Completed:** safe website-list load/write failure handling             | R0   | Failed initial GET cannot cause a destructive snapshot PUT; pending changes survive retries |
+| SAVE-02   | **Completed:** typed account-backed asset favourites and guest migration | R0   | Cross-device add/remove, account isolation and migration tests; existing saves preserved    |
+| MEDIA-01  | Real source-pinned component rendering                                   | R0   | Representative gallery/detail previews match actual components at desktop/mobile sizes      |
+| OPS-01    | CI and release isolation/auth checks                                     | R0   | Ordinary PR checks, role acceptance, preview database boundary and release runbook          |
+| REG-01    | Fresh approved-provider indexing                                         | R1   | Source-pinned records, staged review, retry/continuation and published search evidence      |
+| INGEST-01 | Grok issue handoff and one Eve run                                       | R1   | Linked issue/candidate/job/review IDs with success and failure traces                       |
+| USE-01    | External-client MCP acquisition acceptance                               | R1   | One real asset used successfully with retained source/licence notices                       |
+| SEARCH-01 | Intent relevance evaluation and enrichment                               | R2   | Baseline query set, hard-filter tests and measured improvement                              |
+| PRO-01    | Personal mixed projects and first paid workflow validation               | R2   | Tested project journey and evidence for the chosen commercial boundary                      |
 
 ## Ownership of truth and maintenance
 
@@ -190,4 +190,4 @@ The engineering audit is the implementation inventory. These stable IDs connect 
 - Each completed work package records code/PR, tests, live acceptance where applicable and remaining limits. A checked task without evidence is not complete.
 - New ideas enter as proposals with dependencies; do not silently expand the current release or discard later scope.
 
-The next implementation package is **SAVE-01**, followed by **SAVE-02**. These are the foundations for both the current favourites experience and future personal/team workspaces.
+SAVE-01 and SAVE-02 are complete on the integration branch. The next implementation package is **MEDIA-01**, followed by **OPS-01**. Account saves are now a reliable foundation for later personal and team workspaces.

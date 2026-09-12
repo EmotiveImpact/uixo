@@ -1,4 +1,3 @@
-import { useAssetSaves } from '../hooks/useAssetSaves';
 import { Grid2X2, Heart, Layers3, PanelLeft, Plus, Shapes, Trash2, X } from 'lucide-react';
 import {
   AnimatedSidebar,
@@ -43,6 +42,7 @@ type AppSidebarProps = {
   onShowAssets?: () => void;
   onSavedAssets?: boolean;
   onShowSavedAssets?: () => void;
+  savedAssetCount?: number;
   assetKind?: string;
   onChooseAssetKind?: (kind: string) => void;
 };
@@ -66,10 +66,10 @@ export function AppSidebar({
   onShowAssets = () => window.location.assign('/browse/assets'),
   onSavedAssets = false,
   onShowSavedAssets = () => window.location.assign('/browse/assets?view=saved'),
+  savedAssetCount = 0,
   assetKind = '',
   onChooseAssetKind,
 }: AppSidebarProps) {
-  const { saved } = useAssetSaves();
   const favourites = lists.find((list) => list.id === DEFAULT_LIST_ID);
   return (
     <AnimatedSidebar ariaLabel="UIXO navigation" collapsible="icon">
@@ -175,7 +175,7 @@ export function AppSidebar({
               <AnimatedSidebarMenuItem>
                 <AnimatedSidebarMenuButton
                   icon={<Shapes className="size-4" />}
-                  badge={String(saved.length)}
+                  badge={String(savedAssetCount)}
                   isActive={onSavedAssets}
                   onSelect={onShowSavedAssets}
                   aria-label="Favourite assets"

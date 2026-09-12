@@ -18,8 +18,10 @@ import { PageHeading } from './components/PageHeading';
 import { QuickView } from './components/QuickView';
 import { ResourceGrid } from './components/ResourceGrid';
 import { SiteFooter } from './components/SiteFooter';
+import { SaveSyncNotice } from './components/SaveSyncNotice';
 import { TopBar, DiscoveryControls } from './components/TopBar';
 import { useAuth } from './hooks/useAuth';
+import { useAssetSaves } from './hooks/useAssetSaves';
 import { useDensity } from './hooks/useDensity';
 import { useLists } from './hooks/useLists';
 import { useDialog } from './hooks/useDialog';
@@ -50,7 +52,17 @@ export function App() {
     signOut,
     available: authAvailable,
   } = useAuth();
-  const { lists, toggleSaved, toggleIn, create, remove } = useLists(user?.id ?? null, settled);
+  const {
+    lists,
+    toggleSaved,
+    toggleIn,
+    create,
+    remove,
+    syncStatus: listSyncStatus,
+    syncError: listSyncError,
+    retrySync: retryListSync,
+  } = useLists(user?.id ?? null, settled);
+  const assetSaves = useAssetSaves(user?.id ?? null, settled);
 
   const [openSection, setOpenSection] = useState<string | null>(route.category);
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -229,6 +241,7 @@ export function App() {
         onChooseCategory={chooseCategory}
         onChooseSub={chooseSub}
         onSubmit={() => setModal('submit')}
+        savedAssetCount={assetSaves.saved.length}
       />
 
       <a className="skip-link" href="#main">
@@ -259,6 +272,19 @@ export function App() {
           subtitle={subtitle}
           canClear={hasFilters}
           onClear={clearFilters}
+        />
+
+        <SaveSyncNotice
+          label="Website favourites"
+          status={listSyncStatus}
+          error={listSyncError}
+          onRetry={retryListSync}
+        />
+        <SaveSyncNotice
+          label="Asset favourites"
+          status={assetSaves.syncStatus}
+          error={assetSaves.syncError}
+          onRetry={assetSaves.retrySync}
         />
 
         {activeCollection && <p className="collection-lede">{activeCollection.description}</p>}

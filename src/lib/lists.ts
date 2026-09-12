@@ -44,6 +44,14 @@ export function saveListOwner(userId: string): void {
   writeStored(LISTS_OWNER_KEY, userId);
 }
 
+export function clearListOwner(): void {
+  try {
+    localStorage.removeItem(LISTS_OWNER_KEY);
+  } catch {
+    // A blocked storage area is already handled by the local fallback.
+  }
+}
+
 export function isSavedAnywhere(lists: List[], resourceId: string): boolean {
   return lists.some((list) => list.resourceIds.includes(resourceId));
 }

@@ -60,7 +60,7 @@ export type Acquisition = {
   executed: boolean;
 };
 export const ASSET_PATH = '/browse/assets';
-export const ASSET_SAVES = 'uixo.asset-saves.v2';
+export { ASSET_SAVES_KEY as ASSET_SAVES, parseSavedAssets } from './asset-saves';
 export type AssetQuery = {
   q: string;
   kind: string;
@@ -131,25 +131,6 @@ export function safeAssetUrl(value: unknown): string | undefined {
     return url.protocol === 'https:' && !url.username && !url.password ? url.href : undefined;
   } catch {
     return undefined;
-  }
-}
-export function parseSavedAssets(value: string | null): string[] {
-  try {
-    const items: unknown = JSON.parse(value ?? '[]');
-    return Array.isArray(items)
-      ? [
-          ...new Set(
-            items.filter(
-              (id): id is string =>
-                typeof id === 'string' &&
-                /^[a-z0-9][a-z0-9._/-]{0,179}$/.test(id) &&
-                !id.includes('..'),
-            ),
-          ),
-        ].slice(0, 200)
-      : [];
-  } catch {
-    return [];
   }
 }
 export function catalogueResult(value: unknown): Catalogue {

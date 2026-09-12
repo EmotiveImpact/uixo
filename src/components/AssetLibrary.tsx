@@ -1,4 +1,3 @@
-import { useAssetSaves } from '../hooks/useAssetSaves';
 import { useEffect, useState, type ReactNode } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark } from 'lucide-react';
 import {
@@ -17,8 +16,13 @@ type Props = {
   navigate: (changes: Partial<AssetQuery>, reset?: boolean) => void;
   density: string;
   discovery?: ReactNode;
+  assetSaves: {
+    saved: string[];
+    save: (assetIds: string[]) => boolean;
+    accountBacked: boolean;
+  };
 };
-export function AssetLibrary({ query, navigate, density, discovery }: Props) {
+export function AssetLibrary({ query, navigate, density, discovery, assetSaves }: Props) {
   const [providers, setProviders] = useState<ProviderRecord[]>([]);
   const [status, setStatus] = useState<RegistryStatus | null>(null);
   const [result, setResult] = useState<Catalogue | null>(null);
@@ -26,7 +30,7 @@ export function AssetLibrary({ query, navigate, density, discovery }: Props) {
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
   const [notice, setNotice] = useState('');
-  const { saved, save } = useAssetSaves();
+  const { saved, save, accountBacked } = assetSaves;
   const { q, kind, provider, framework, format, commercial, price, offset, view } = query;
   useEffect(() => {
     const abort = new AbortController();
@@ -94,7 +98,9 @@ export function AssetLibrary({ query, navigate, density, discovery }: Props) {
     const persisted = save(next);
     setNotice(
       persisted
-        ? 'Saved assets are stored in this browser, not synced to your account.'
+        ? accountBacked
+          ? 'Saved in this browser and syncing to your account.'
+          : 'Saved in this browser. Sign in to use it on another device.'
         : 'Browser storage is unavailable. Your changes will last for this tab only.',
     );
     if (view === 'saved') navigate({ offset: 0 });

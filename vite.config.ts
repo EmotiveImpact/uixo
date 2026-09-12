@@ -93,11 +93,13 @@ function localApi(): Plugin {
         const load =
           path === '/api/lists'
             ? () => import('./api/lists')
-            : path === '/api/submissions'
-              ? () => import('./api/submissions')
-              : path === '/api/reports'
-                ? () => import('./api/reports')
-                : null;
+            : path === '/api/saved-assets'
+              ? () => import('./api/saved-assets')
+              : path === '/api/submissions'
+                ? () => import('./api/submissions')
+                : path === '/api/reports'
+                  ? () => import('./api/reports')
+                  : null;
         if (!load) return next();
         void load()
           .then((mod) => runVercelHandler(req, res, mod.default))
