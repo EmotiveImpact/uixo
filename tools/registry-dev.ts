@@ -108,7 +108,7 @@ const server = createServer(async (req, res) => {
 });
 server.listen(port, '127.0.0.1', () =>
   console.log(
-    `UIXO registry API: ${origin}/api/registry?action=status\nIntegrated UI: http://127.0.0.1:5173/browse/assets (also run npm run dev)\n${devCurator ? `Local curator workspace: ${origin}/registry/?view=review` : 'Visitor session; add --dev-curator for isolated curator testing.'}`,
+    `UIXO registry API: ${origin}/api/registry?action=status\nIntegrated UI: http://127.0.0.1:3000/browse/assets (also run npm run dev)\n${devCurator ? `Local curator workspace: ${origin}/registry/?view=review` : 'Visitor session; add --dev-curator for isolated curator testing.'}`,
   ),
 );
 process.on('SIGTERM', () =>

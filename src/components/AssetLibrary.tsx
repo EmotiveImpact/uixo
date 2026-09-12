@@ -9,6 +9,7 @@ import {
   registryRequest,
   safeAssetUrl,
 } from '../lib/asset-library';
+import { AssetPreview } from './AssetPreview';
 import type {
   Acquisition,
   AssetQuery,
@@ -29,32 +30,6 @@ const formatDate = (value: string | null) =>
         new Date(value),
       )
     : 'Not verified';
-function Preview({ asset }: { asset: AssetRecord }) {
-  const [failed, setFailed] = useState(false);
-  const url = safeAssetUrl(asset.preview?.url);
-  const original =
-    asset.preview?.kind === 'image' && url && new URL(url).hostname === 'raw.githubusercontent.com';
-  return (
-    <div className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''}`}>
-      {original && !failed ? (
-        <img
-          src={url}
-          loading="lazy"
-          alt={`${asset.name} source preview`}
-          onError={() => setFailed(true)}
-        />
-      ) : (
-        <div className="asset-library-no-preview">
-          <span aria-hidden="true">{asset.kind === 'icon' ? '◇' : '</>'}</span>
-          <strong>{asset.name}</strong>
-        </div>
-      )}
-      <small>
-        {original && !failed ? 'Original source preview' : 'Source preview not captured'}
-      </small>
-    </div>
-  );
-}
 function AssetDetail({
   id,
   close,
@@ -139,7 +114,7 @@ function AssetDetail({
             <p className="asset-library-muted">
               {nameOf(asset.providerId)} · Indexed asset, not an individual editorial pick
             </p>
-            <Preview asset={asset} />
+            <AssetPreview asset={asset} />
             <p>{asset.description}</p>
             <dl className="asset-library-facts">
               <div>
@@ -509,7 +484,7 @@ export function AssetLibrary({ query, navigate, density }: Props) {
                     }}
                     aria-label={`Inspect ${asset.name} from ${nameOf(asset.providerId)}`}
                   >
-                    <Preview asset={asset} />
+                    <AssetPreview asset={asset} />
                     <div className="asset-library-card-body">
                       <small>
                         {nameOf(asset.providerId)} · {asset.kind}
