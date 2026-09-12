@@ -188,6 +188,8 @@ This log records the concrete work performed while completing the prioritised pr
 - Formatting, ESLint and all 158 application tests passed.
 - The first complete build reached the registry HTTP suite and then failed because the filesystem sandbox denied five tests permission to bind `127.0.0.1`. This is the same environment restriction seen in the previous package, not a product assertion failure; the build is rerun with localhost permission below.
 - The permitted CI-equivalent rerun passed: formatting, ESLint, all 158 application tests, all 23 registry tests, the official MCP-client test, five source-preview integrity checks, TypeScript, the Vite production bundle and prerendering of 23 pages plus sitemap and robots metadata.
+- Pushed commit `0007316` to both integration branches. The first real pull-request workflow passed every step in 55 seconds, proving the ordinary GitHub path rather than only the local equivalent.
+- That first run warned that `actions/checkout@v4` and `actions/setup-node@v4` still target GitHub's retired Node 20 action runtime. Checked the official repositories, confirmed the current stable releases are checkout `v7.0.1` and setup-node `v7.0.0`, and updated the workflow to both `@v7` majors before final acceptance.
 
 ### Preview database isolation
 
