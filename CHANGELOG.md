@@ -2,6 +2,19 @@
 
 Newest first. Dates are Europe/London.
 
+## 2026-09-12
+
+### Asset-library layout repair (draft branch)
+
+- Reuse the existing React sidebar, desktop collapse, top bar, theme, account controls and website categories for asset discovery at `/browse/assets`.
+- Add an All assets entry to the original sidebar. Preserve the landing page, website routes and editorial content.
+- Move visitor discovery from the separate static registry interface into the shared shell; retain curator and MCP utility pages temporarily.
+- Preserve existing saved-asset storage. Add shareable filter/detail/page URLs and acquisition instructions without executing code.
+- Distinguish unavailable APIs, HTML fallback responses, missing previews and genuinely empty results instead of presenting all of them as an empty library.
+- Wire local Vite registry/MCP proxies to the local registry API, with an explicit loopback-only browser origin.
+- Add the user guide, setup guide, decisions and factual status/remaining-work documents. The initial catalogue remains 67 captured metadata records, not thousands of downloaded assets.
+- Verification for this repair: 16 native browser-client contract tests pass. Syntactic TypeScript transpilation passes. Complete React build, full browser QA and hosted acceptance remain unverified; no production migration or main merge is claimed.
+
 ## 2026-09-11
 
 ### Real accounts

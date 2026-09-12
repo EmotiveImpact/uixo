@@ -1,4 +1,4 @@
-import { Grid2X2, Heart, Layers3, PanelLeft, Plus, Trash2, X } from 'lucide-react';
+import { Grid2X2, Heart, Layers3, PanelLeft, Plus, Shapes, Trash2, X } from 'lucide-react';
 import {
   AnimatedSidebar,
   AnimatedSidebarClose,
@@ -38,6 +38,8 @@ type AppSidebarProps = {
   onChooseCategory: (name: string) => void;
   onChooseSub: (category: string, sub: string) => void;
   onSubmit: () => void;
+  onAssets?: boolean;
+  onShowAssets?: () => void;
 };
 
 export function AppSidebar({
@@ -55,6 +57,8 @@ export function AppSidebar({
   onChooseCategory,
   onChooseSub,
   onSubmit,
+  onAssets = false,
+  onShowAssets = () => window.location.assign('/browse/assets'),
 }: AppSidebarProps) {
   return (
     <AnimatedSidebar ariaLabel="UIXO navigation" collapsible="icon">
@@ -93,10 +97,19 @@ export function AppSidebar({
                 <AnimatedSidebarMenuButton
                   icon={<Grid2X2 className="size-4" />}
                   badge={String(resources.length)}
-                  isActive={!category && !listId && !onCollections}
+                  isActive={!category && !listId && !onCollections && !onAssets}
                   onSelect={onShowAll}
                 >
                   All websites
+                </AnimatedSidebarMenuButton>
+              </AnimatedSidebarMenuItem>
+              <AnimatedSidebarMenuItem>
+                <AnimatedSidebarMenuButton
+                  icon={<Shapes className="size-4" />}
+                  isActive={onAssets}
+                  onSelect={onShowAssets}
+                >
+                  All assets
                 </AnimatedSidebarMenuButton>
               </AnimatedSidebarMenuItem>
               <AnimatedSidebarMenuItem>
@@ -145,7 +158,7 @@ export function AppSidebar({
         </AnimatedSidebarGroup>
 
         <AnimatedSidebarGroup className="border-t border-border pt-4">
-          <AnimatedSidebarGroupLabel>Categories</AnimatedSidebarGroupLabel>
+          <AnimatedSidebarGroupLabel>{onAssets ? 'Website categories' : 'Categories'}</AnimatedSidebarGroupLabel>
           <AnimatedSidebarGroupContent>
             <AnimatedSidebarMenu>
               {categories.map((entry) => {

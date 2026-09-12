@@ -7,6 +7,8 @@ import { sqliteDatabase, migrate } from '../registry/database.ts';
 import { Registry } from '../registry/service.ts';
 import { seedCaptured } from '../registry/bootstrap.ts';
 import { createRegistryHandler, json } from '../registry/http.ts';
+import type { RequestLike } from '../registry/http.ts';
+import type { Principal } from '../registry/auth.ts';
 import { tokenMatches } from '../registry/policy.ts';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -16,13 +18,18 @@ if (process.env.VERCEL) throw new Error('The local development server must not r
 const db = await sqliteDatabase(process.argv.includes('--memory') ? ':memory:' : resolve(root, '.uixo/registry.sqlite'));
 await migrate(db); const registry = new Registry(db); await seedCaptured(registry);
 const session = randomBytes(32).toString('hex');
-const handle = createRegistryHandler(registry, { origin, authenticate: async (req) => devCurator && tokenMatches(req.headers.cookie?.split('; ').find((c) => c.startsWith('uixo_dev='))?.slice(9) ?? '', session) ? { id: 'local-development-curator', role: 'curator' } : null });
+const authenticate = async (req: RequestLike): Promise<Principal> => devCurator && tokenMatches(req.headers.cookie?.split('; ').find((c) => c.startsWith('uixo_dev='))?.slice(9) ?? '', session) ? { id: 'local-development-curator', role: 'curator' } : null;
+const handle = createRegistryHandler(registry, { origin, authenticate });
+// Vite proxies the integrated browser's same-origin calls. Only this explicit local
+// development origin is added; production origin validation is not relaxed.
+const browserOrigin = 'http://127.0.0.1:5173';
+const handleFromVite = createRegistryHandler(registry, { origin: browserOrigin, authenticate });
 const server = createServer(async (req, res) => {
   if (req.headers.host !== `127.0.0.1:${port}`) return json(res, 403, { error: { message: 'Invalid Host header.' } });
   const url = new URL(req.url ?? '/', origin);
-  if (url.pathname === '/api/registry') return handle(req, res);
+  if (url.pathname === '/api/registry') return (req.headers.origin === browserOrigin ? handleFromVite : handle)(req, res);
   if (url.pathname === '/api/mcp') {
-    try { const { handleMcp } = await import('../registry/mcp-http.ts'); await handleMcp(registry, req, res, origin); }
+    try { const { handleMcp } = await import('../registry/mcp-http.ts'); await handleMcp(registry, req, res, req.headers.origin === browserOrigin ? browserOrigin : origin); }
     catch { json(res, 503, { error: { message: 'MCP dependencies are not installed. Run npm run registry:deps in the repository.' } }); }
     return;
   }
@@ -40,7 +47,7 @@ const server = createServer(async (req, res) => {
       if (devCurator && path.endsWith('index.html')) res.setHeader('set-cookie', `uixo_dev=${session}; Path=/; HttpOnly; SameSite=Strict`);
       res.end(content);
     } catch { json(res, 404, { error: { message: 'Not found.' } }); }
-  } else json(res, 404, { error: { message: 'The existing editorial site is served by Vite, not this isolated registry server.' } });
+  } else json(res, 404, { error: { message: 'The editorial site and integrated asset browser are served by Vite on http://127.0.0.1:5173.' } });
 });
-server.listen(port, '127.0.0.1', () => console.log(`UIXO registry: ${origin}/registry/\n${devCurator ? 'Local-only curator session enabled.' : 'Visitor session; add --dev-curator for isolated curator testing.'}`));
+server.listen(port, '127.0.0.1', () => console.log(`UIXO registry API: ${origin}/api/registry?action=status\nIntegrated UI: http://127.0.0.1:5173/browse/assets (also run npm run dev)\n${devCurator ? `Local curator workspace: ${origin}/registry/?view=review` : 'Visitor session; add --dev-curator for isolated curator testing.'}`));
 process.on('SIGTERM', () => server.close(() => { void db.close(); }));

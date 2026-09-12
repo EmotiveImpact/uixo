@@ -10,4 +10,12 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  server: {
+    port: 5173,
+    strictPort: true,
+    proxy: {
+      '/api/registry': { target: 'http://127.0.0.1:4175', changeOrigin: true },
+      '/api/mcp': { target: 'http://127.0.0.1:4175', changeOrigin: true },
+    },
+  },
 });

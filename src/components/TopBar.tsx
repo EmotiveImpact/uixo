@@ -19,6 +19,8 @@ type TopBarProps = {
   collectionsHref: string;
   onCollections: boolean;
   account: ReactNode;
+  /** The shared shell can search individual assets without claiming they are websites. */
+  assetSearch?: boolean;
 };
 
 export function TopBar({
@@ -35,6 +37,7 @@ export function TopBar({
   collectionsHref,
   onCollections,
   account,
+  assetSearch = false,
 }: TopBarProps) {
   return (
     <header className="topbar">
@@ -52,14 +55,15 @@ export function TopBar({
           value={search}
           onChange={(event) => onSearchChange(event.target.value)}
           type="search"
-          aria-label="Search websites"
-          placeholder="Search by name, tag or use case…"
+          maxLength={assetSearch ? 300 : undefined}
+          aria-label={assetSearch ? 'Search assets' : 'Search websites'}
+          placeholder={assetSearch ? 'Search components, icons and assets…' : 'Search by name, tag or use case…'}
         />
         <kbd>/</kbd>
       </div>
 
       <div className="segments prices" role="group" aria-label="Pricing">
-        {PRICE_FILTERS.map((option) => (
+        {PRICE_FILTERS.filter((option) => !assetSearch || option !== 'Freemium').map((option) => (
           <button
             key={option}
             className={price === option ? 'selected' : ''}
