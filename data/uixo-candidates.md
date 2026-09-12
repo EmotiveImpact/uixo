@@ -1,29 +1,29 @@
 # UIXO Candidates
 
-Updated: 2026-09-11 | total: 250 | new this harvest: 4
+Updated: 2026-09-12 | total: 254 | new this harvest: 4
 
 ## Counts by category
 
-- Backgrounds: 9
+- Inspiration: 92
 - Components: 27
+- UI libraries: 30
+- Marketplace: 14
+- Backgrounds: 9
 - Fonts: 7
 - Icons: 27
 - Illustrations: 8
-- Inspiration: 89
-- Marketplace: 14
-- Mockups: 4
 - Templates: 36
-- UI libraries: 29
+- Mockups: 4
 
 ## Image status
 
-- blocked: 3
-- captured: 242
+- blocked: 2
+- captured: 247
 - og-captured: 5
 
 ## New this run
 
-- **AICSS Orbs** (`aicss-orbs`) — Components/Animation — https://www.aicss.dev/components/orbs — Red-paste-designer-list — `captured`
-- **TinyWow** (`tinywow`) — Templates/Tools — https://tinywow.com — Red-paste-designer-list — `captured`
-- **StockSnap** (`stocksnap`) — Marketplace/Stock — https://stocksnap.io — Red-paste-designer-list — `captured`
-- **Agent Avatar Lab (Plane)** (`agents-plane`) — Illustrations/Characters — https://agents.plane.so — Red-paste-designer-list — `captured`
+- **Liquid Glass Design** (`liquid-glass-design`) — Inspiration/Directories — https://liquidglassdesign.com — Red-paste-sep12 — `captured`
+- **Kobra** (`kobra`) — UI libraries/React — https://kobra.systems — Red-paste-sep12 — `captured`
+- **loadmo.re** (`loadmo`) — Inspiration/Mobile — https://loadmo.re — thedzianis list-drop @thedzianis/status/2098393545006891310 — `captured`
+- **posts.design** (`posts-design`) — Inspiration/Directories — https://posts.design — thedzianis list-drop @thedzianis/status/2098393545006891310 — `captured`

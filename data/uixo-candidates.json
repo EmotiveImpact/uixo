@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-11T15:12:00.000Z",
-  "updated_note": "Blocked thumb retry: behance=captured (screenshot); land-book=cloudflare-captcha needs Red; wireframekits=unreachable/dead. captured=243 og=5 blocked=2",
+  "updated": "2026-09-12T16:02:44.000Z",
+  "updated_note": "Red-paste Sep12 ingest: +4 new (liquid-glass-design, kobra, loadmo, posts-design); tweet @thedzianis/2098393545006891310 destinations dumped; watchlist +thedzianis discovery. captured=247 og=5 blocked=2",
   "counts_by_category": {
-    "Inspiration": 89,
+    "Inspiration": 92,
     "Components": 27,
-    "UI libraries": 29,
+    "UI libraries": 30,
     "Marketplace": 14,
     "Backgrounds": 9,
     "Fonts": 7,
@@ -14,60 +14,35 @@
     "Mockups": 4
   },
   "totals": {
-    "candidates": 250,
-    "needs_review": 172,
+    "candidates": 254,
+    "needs_review": 176,
     "new_this_run": 4,
-    "already_present": 0,
-    "skipped_dupes_existing_site": 0,
-    "image_captured": 242,
+    "already_present": 7,
+    "skipped_dupes_existing_site": 7,
+    "image_captured": 247,
     "image_og_captured": 5,
-    "image_blocked": 3
+    "image_blocked": 2
   },
   "skipped_dupes": [
     {
-      "title": "DesignMD Supply",
-      "url": "https://www.designmd.supply",
-      "reason": "already candidate (designmd-supply)"
+      "title": "Motion-Primitives",
+      "url": "https://motion-primitives.com/",
+      "reason": "already candidate (motion-primitives)"
     },
     {
-      "title": "21st.dev",
-      "url": "https://21st.dev",
-      "reason": "already candidate (21st-dev)"
+      "title": "GetLayers AI",
+      "url": "https://getlayers.ai",
+      "reason": "already candidate (getlayers)"
     },
     {
-      "title": "DesignMD",
-      "url": "https://designmd.me",
-      "reason": "already candidate (designmd)"
+      "title": "Supahero",
+      "url": "https://supahero.io",
+      "reason": "already candidate (supahero)"
     },
     {
-      "title": "getdesign.md",
-      "url": "https://getdesign.md",
-      "reason": "already candidate (getdesign)"
-    },
-    {
-      "title": "KokonutUI",
-      "url": "https://kokonutui.com",
-      "reason": "already candidate (kokonut)"
-    },
-    {
-      "title": "Kinetics",
-      "url": "https://kinetics.colorion.co",
-      "reason": "already candidate (kinetics)"
-    },
-    {
-      "title": "Ui-skills",
-      "url": "https://ui-skills.com",
-      "reason": "already candidate (ui-skills)"
-    },
-    {
-      "title": "Material Design 3",
-      "url": "https://m3.material.io",
-      "reason": "already candidate (material-3)"
-    },
-    {
-      "title": "Flowbite",
-      "url": "https://flowbite.com",
-      "reason": "already candidate (flowbite)"
+      "title": "CTA Gallery",
+      "url": "https://cta.gallery",
+      "reason": "already candidate (cta-gallery)"
     },
     {
       "title": "60fps",
@@ -75,39 +50,14 @@
       "reason": "already candidate (60fps)"
     },
     {
-      "title": "IF Design Patterns",
-      "url": "https://catalogue.projectsbyif.com",
-      "reason": "already candidate (if-design-patterns)"
+      "title": "recent.design",
+      "url": "https://recent.design",
+      "reason": "already candidate (recent-design)"
     },
     {
-      "title": "abtest.design",
-      "url": "https://abtest.design",
-      "reason": "already candidate (abtest-design)"
-    },
-    {
-      "title": "Design Spells",
-      "url": "https://designspells.com",
-      "reason": "already candidate (design-spells)"
-    },
-    {
-      "title": "UXSnaps",
-      "url": "https://uxsnaps.com",
-      "reason": "already candidate (uxsnaps)"
-    },
-    {
-      "title": "UI Playbook",
-      "url": "https://uiplaybook.dev",
-      "reason": "already candidate (ui-playbook)"
-    },
-    {
-      "title": "Inspora",
-      "url": "https://inspora.design",
-      "reason": "already candidate (inspora)"
-    },
-    {
-      "title": "Refero Styles",
-      "url": "https://styles.refero.design",
-      "reason": "already candidate (refero-styles)"
+      "title": "Navbar Gallery",
+      "url": "https://navbar.gallery",
+      "reason": "already candidate (navbar-gallery)"
     }
   ],
   "skipped_other": [
@@ -6499,6 +6449,116 @@
       "ingest_batch": "designer-list-paste-2026-09-11",
       "addedOrder": 260,
       "image_method": "screenshot"
+    },
+    {
+      "id": "liquid-glass-design",
+      "name": "Liquid Glass Design",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Glassmorphism",
+        "Liquid Glass",
+        "AI prompts",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Liquid Glass Design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://liquidglassdesign.com",
+      "why": "Curated liquid glass & glassmorphism inspiration gallery; each reference includes an AI style prompt",
+      "source": "Red-paste-sep12",
+      "needs_review": true,
+      "image_status": "captured",
+      "image_method": "screenshot",
+      "ingest_batch": "red-paste-sep12-2026-09-12",
+      "addedOrder": 261
+    },
+    {
+      "id": "kobra",
+      "name": "Kobra",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React",
+        "shadcn",
+        "Motion",
+        "OTP",
+        "Agents"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Kobra",
+      "formats": [
+        "React"
+      ],
+      "url": "https://kobra.systems",
+      "why": "shadcn-style React component registry (Input OTP, agent UI patterns, motion) via npx add @kobra/*",
+      "source": "Red-paste-sep12",
+      "needs_review": true,
+      "image_status": "captured",
+      "image_method": "screenshot",
+      "ingest_batch": "red-paste-sep12-2026-09-12",
+      "addedOrder": 262
+    },
+    {
+      "id": "loadmo",
+      "name": "loadmo.re",
+      "category": "Inspiration",
+      "subcategory": "Mobile",
+      "tags": [
+        "Mobile",
+        "Web",
+        "Gallery",
+        "Alternative"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Kim Boutin",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://loadmo.re",
+      "why": "Handpicked archive of bold/alternative mobile website design inspiration",
+      "source": "thedzianis list-drop @thedzianis/status/2098393545006891310",
+      "needs_review": true,
+      "image_status": "captured",
+      "image_method": "screenshot",
+      "ingest_batch": "red-paste-sep12-2026-09-12",
+      "addedOrder": 263
+    },
+    {
+      "id": "posts-design",
+      "name": "posts.design",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Social",
+        "Posts",
+        "OG",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "posts.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://posts.design",
+      "why": "Curated social post / brand creative inspiration (launches, headers, OG images, trends)",
+      "source": "thedzianis list-drop @thedzianis/status/2098393545006891310",
+      "needs_review": true,
+      "image_status": "captured",
+      "image_method": "screenshot",
+      "ingest_batch": "red-paste-sep12-2026-09-12",
+      "addedOrder": 264
     }
   ],
   "image_capture": {
@@ -6716,6 +6776,41 @@
       "fontpair",
       "designspiration",
       "heroicons"
+    ]
+  },
+  "paste_ingest_sep12": {
+    "date": "2026-09-12",
+    "tweet": "https://x.com/thedzianis/status/2098393545006891310",
+    "tweet_destinations": [
+      "https://getlayers.ai",
+      "https://supahero.io",
+      "https://cta.gallery",
+      "https://loadmo.re",
+      "https://60fps.design",
+      "https://recent.design",
+      "https://posts.design",
+      "https://navbar.gallery"
+    ],
+    "inputs": [
+      "https://liquidglassdesign.com/",
+      "https://x.com/thedzianis/status/2098393545006891310",
+      "https://kobra.systems",
+      "https://motion-primitives.com/"
+    ],
+    "new_ids": [
+      "liquid-glass-design",
+      "kobra",
+      "loadmo",
+      "posts-design"
+    ],
+    "already_ids": [
+      "motion-primitives",
+      "getlayers",
+      "supahero",
+      "cta-gallery",
+      "60fps",
+      "recent-design",
+      "navbar-gallery"
     ]
   }
 }

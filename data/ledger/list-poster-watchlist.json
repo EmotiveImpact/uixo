@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11",
+  "updated": "2026-09-12",
   "exclusive_allowlist": false,
   "note": "Core handles are priority; also discover and add new list-droppers. Dump all links from list posts.",
   "handles": [
@@ -42,6 +42,7 @@
     "_itshyper__",
     "zaikhdev",
     "mr_nirajkumar07",
-    "Shefali__J"
+    "Shefali__J",
+    "thedzianis"
   ]
 }
