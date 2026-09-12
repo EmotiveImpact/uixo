@@ -175,3 +175,34 @@ This log records the concrete work performed while completing the prioritised pr
 - `docs/PRODUCT-AUDIT-2026-09-12.md`
 - `docs/PRODUCT-ROADMAP.md`
 - `docs/IMPLEMENTATION-LOG-2026-09-12.md`
+
+## OPS-01 — CI and release isolation/auth checks
+
+### Ordinary CI and repository hygiene
+
+- Added `.github/workflows/ci.yml` for every pull request and pushes to `main`, `astra/**` and `codex/**`, with read-only repository permissions, per-ref cancellation and a 15-minute bound.
+- The workflow uses Node 22, caches from both lockfiles, installs the application with `npm ci`, then checks formatting, lint, all application tests and the complete production build.
+- Changed `registry:deps` from `npm install` to `npm ci` so the nested registry dependency graph is locked in local builds and GitHub Actions.
+- Added `.uixo/` to `.gitignore` after a local registry command created disposable `registry.sqlite` state in the worktree. The file was removed before commit.
+- The first worktree formatting attempt failed because this isolated checkout intentionally had no `node_modules`. A temporary symlink to the existing workspace install was used for verification and will be removed before commit.
+- Formatting, ESLint and all 158 application tests passed.
+- The first complete build reached the registry HTTP suite and then failed because the filesystem sandbox denied five tests permission to bind `127.0.0.1`. This is the same environment restriction seen in the previous package, not a product assertion failure; the build is rerun with localhost permission below.
+- The permitted CI-equivalent rerun passed: formatting, ESLint, all 158 application tests, all 23 registry tests, the official MCP-client test, five source-preview integrity checks, TypeScript, the Vite production bundle and prerendering of 23 pages plus sitemap and robots metadata.
+
+### Preview database isolation
+
+- Audited Vercel environment scope. General Neon variables were shared across Production, Preview and Development, while the existing `UIXO_*` variables were limited to the two integration preview branches. Production had no UIXO registry variables.
+- Created the permanent schema-only Neon branch `uixo-preview` (`br-calm-sound-augbhfde`) from main with automatic deletion disabled. It contains schema but no copied production rows.
+- Added branch-scoped `UIXO_DATABASE_URL` entries for `astra/uixo-v2-design-intelligence` and `codex/integrate-pr-20` in Vercel. A subsequent CLI pull showed both entries were present but empty, so they are not treated as complete or working configuration.
+- Migrated and seeded the preview registry while using the actual preview connection directly: migration completed and the captured reviewed snapshot inserted 67 assets from 67 source assets.
+- Preview Neon Auth could not provision because the schema-only branch copied the empty `neon_auth` table definitions without the Neon Auth service configuration. Neon reported that the existing schema must be removed before provisioning.
+- A first guarded cleanup attempt failed before connecting because the isolated worktree could not resolve `@neondatabase/serverless`; no database change occurred.
+- A second attempt pulled the branch environment successfully but found the branch-scoped `UIXO_DATABASE_URL` value empty; it stopped before connecting and made no database change. The temporary environment file contains secrets and is removed during cleanup.
+- The remaining infrastructure action is tightly bounded: verify every copied `neon_auth` table is empty, drop only that empty schema, enable Auth on `uixo-preview`, restore account-save foreign keys, and replace both empty branch-scoped Vercel values. Production data and production Auth stay unchanged.
+
+### Release configuration findings
+
+- Pull request 20 is still an open draft from `astra/uixo-v2-design-intelligence` to `main` with a clean merge state. Before this package it had a successful Vercel check but no ordinary application/registry CI job.
+- Scoped service-token role tests already prove curator, scout and worker allow/deny boundaries in the repository suite. Human curator JWT verification fails closed unless exact issuer, audience, Auth base URL and database values are configured.
+- Added an explicit environment-boundary guide, Auth claim rule, hosted acceptance matrix and production release/rollback runbook to `docs/UIXO-SETUP.md`.
+- No merge or production promotion has been performed. OPS-01 remains incomplete until the preview connection is corrected, Neon Auth is provisioned, a deliberate preview account completes signed-in acceptance and the new GitHub CI run is green.

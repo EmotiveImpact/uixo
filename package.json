@@ -24,7 +24,7 @@
     "db:seed": "node --env-file=.env.local scripts/seed-db.mjs",
     "db:schema": "psql \"$DATABASE_URL\" -v ON_ERROR_STOP=1 -f db/schema.sql",
     "registry:dev": "node --experimental-strip-types tools/registry-dev.ts",
-    "registry:deps": "npm install --prefix registry --ignore-scripts",
+    "registry:deps": "npm ci --prefix registry --ignore-scripts",
     "registry:test": "node --experimental-strip-types --test tests/registry/core.node.ts tests/registry/http.node.ts services/eve/lib/client.node.ts",
     "registry:test:mcp": "node --experimental-strip-types --test registry/tests/mcp.node.ts",
     "registry:verify": "node tools/verify-registry.mjs",

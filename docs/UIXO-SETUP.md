@@ -41,7 +41,7 @@ Open `http://127.0.0.1:4175/registry/?view=review` to establish the local-only H
 
 Provision/select an isolated preview or development Postgres database first. Configure `UIXO_DATABASE_URL` securely in the execution/deployment environment. It is separate from the existing editorial/auth `DATABASE_URL`.
 
-Inspect `db/migrations/002-registry.sql` and take the appropriate backup before applying it to another database. The current Vercel preview uses the additive `uixo_v2_*` tables in the connected Neon database.
+Inspect `db/migrations/002-registry.sql` and take the appropriate backup before applying it to another database. The integration previews use the additive `uixo_v2_*` tables in the permanent Neon branch `uixo-preview`; production remains on Neon's main branch. Do not point a preview deployment back at the production connection string.
 
 ```sh
 npm run registry:db -- migrate --allow-remote
@@ -78,6 +78,41 @@ Keep values server-side and out of Git, browser storage, public documentation an
 Service tokens must meet the backend's minimum length requirement (24 characters), be independently generated, and have different values for different roles. Store them using the deployment platform's secret configuration, not in this file.
 
 The original site's `CURATOR_TOKEN` is not the same variable as `UIXO_CURATOR_TOKEN`.
+
+## Environment boundaries
+
+Use separate Neon branches for preview and production. The stable Astra and Codex integration previews must all override these variables with the preview branch's values:
+
+- `UIXO_DATABASE_URL`
+- `DATABASE_URL`
+- `NEON_AUTH_BASE_URL`
+- `VITE_NEON_AUTH_URL`
+
+`UIXO_DATABASE_URL` stores registry records. `DATABASE_URL` stores account lists, asset favourites and the `neon_auth` user/role record used by curator JWT verification. Pointing only one of them at preview does not isolate the user journey.
+
+Configure preview Auth on the preview branch and allow only the stable preview aliases plus the deliberate localhost origin. Provider callback URLs must be the callback Neon shows for that branch. Keep production Auth domains and credentials out of preview.
+
+Do not guess `UIXO_AUTH_ISSUER` or `UIXO_AUTH_AUDIENCE`. Read the exact claims from the configured Neon Auth issuer or a deliberately created preview session and store those exact values as branch-scoped secrets. Until both exist, human curator JWTs fail closed; independent `UIXO_CURATOR_TOKEN`, `UIXO_SCOUT_TOKEN` and `UIXO_WORKER_TOKEN` service checks still work.
+
+The local `.uixo/` SQLite directory is ignored. It is disposable development state, never a deployment asset or source-controlled backup.
+
+## Pull-request CI
+
+`.github/workflows/ci.yml` runs for every pull request and for pushes to `main`, `astra/**` and `codex/**`. It installs the root and registry dependencies from lockfiles, checks formatting and lint, runs the application suite, then runs the complete build. The build includes registry HTTP/domain tests, the real MCP client contract, source-pinned preview integrity, TypeScript, the Vite bundle and prerendering.
+
+The separate registry bootstrap workflow remains manually dispatchable for its fixture generation task. It is not the ordinary merge gate.
+
+## Release runbook
+
+1. Keep the pull request in draft while a required gate is missing. Confirm the branch is current with `main` and inspect the final diff.
+2. Confirm the target Vercel environment points at the intended Neon branch. Never infer this from the variable name alone; query `/api/registry?action=status` and confirm persistent Postgres, writes enabled, the expected asset/provider counts and the expected deployment URL.
+3. Apply additive migrations to the intended branch, inspect the resulting schema and seed only reviewed source snapshots. Record the migration and seed result.
+4. Verify authentication on the same deployment: signed-out reads, Google/provider callback, a normal signed-in account, an allowed curator, and denied normal/scout/worker mutation attempts. Do not reuse production identities or service credentials in preview.
+5. Verify `/browse`, `/browse/assets`, collections and both saved-item destinations at desktop and narrow widths. Exercise search, filters, back/forward, detail, acquisition, save/reload, empty/error states and sidebar collapse.
+6. Run one real MCP client through tool listing, search, inspect, preview and acquisition guidance. Retain provenance and licence notices in the result.
+7. Require GitHub CI and Vercel deployment checks to pass. A green deployment alone is not release acceptance.
+8. Back up production, apply its migrations deliberately, promote the exact accepted commit and repeat the hosted smoke checks before closing the release task.
+9. If any runtime check fails, stop promotion, preserve the current production deployment and record the failing URL, response, logs and rollback decision.
 
 ## Verification commands
 

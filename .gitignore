@@ -11,3 +11,4 @@ dist/
 /public/registry/verification.json
 .vercel
 .env*.local
+.uixo/
