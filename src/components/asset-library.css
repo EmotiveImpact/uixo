@@ -892,9 +892,9 @@
   outline: none;
 }
 .asset-library-dialog > .asset-library-preview {
-  min-height: 180px;
-  max-height: 270px;
-  aspect-ratio: 3.6;
+  width: 100%;
+  height: clamp(180px, 25vw, 270px);
+  aspect-ratio: auto;
   border-radius: 0;
 }
 .asset-library-dialog > .asset-library-preview.is-icon img {
