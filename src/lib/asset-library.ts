@@ -1,3 +1,5 @@
+import { auth } from './auth';
+
 /** Browser-only registry contract. Never import the Node registry runtime into the UI. */
 export type AssetRecord = {
   id: string;
@@ -49,8 +51,10 @@ export type Catalogue = { items: AssetRecord[]; total: number; nextOffset: numbe
 export type RegistryStatus = {
   storage: string;
   readOnly: boolean;
-  stats: { assets: number; providers: number };
+  stats: { assets: number; providers: number; pending?: number; discoveries?: number };
   role: string;
+  eveConfigured?: boolean;
+  searchMode?: string;
 };
 export type Acquisition = {
   status: string;
@@ -160,14 +164,23 @@ export function catalogueResult(value: unknown): Catalogue {
 }
 export async function registryRequest<T>(
   action: string,
-  options: { query?: Record<string, string>; body?: unknown; signal?: AbortSignal } = {},
+  options: {
+    query?: Record<string, string>;
+    body?: unknown;
+    signal?: AbortSignal;
+    authenticated?: boolean;
+  } = {},
 ): Promise<T> {
   const parameters = new URLSearchParams({ action, ...options.query });
+  const token = options.authenticated ? await auth.apiToken() : null;
+  const headers = new Headers();
+  if (options.body !== undefined) headers.set('content-type', 'application/json');
+  if (token) headers.set('authorization', `Bearer ${token}`);
   const response = await fetch(`/api/registry?${parameters}`, {
     method: options.body === undefined ? 'GET' : 'POST',
     signal: options.signal,
     credentials: 'same-origin',
-    headers: options.body === undefined ? undefined : { 'content-type': 'application/json' },
+    headers,
     body: options.body === undefined ? undefined : JSON.stringify(options.body),
   });
   const isJson = response.headers.get('content-type')?.includes('application/json');

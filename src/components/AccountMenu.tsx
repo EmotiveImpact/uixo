@@ -1,4 +1,4 @@
-import { LayoutDashboard, LogOut, User as UserIcon } from 'lucide-react';
+import { LayoutDashboard, LogOut, ShieldCheck, User as UserIcon } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import type { User } from '../lib/auth';
 
@@ -10,8 +10,10 @@ type AccountMenuProps = {
   user: User | null;
   onSignIn: () => void;
   onDashboard: () => void;
+  onAdmin?: () => void;
   onSignOut: () => void;
   dashboardHref: string;
+  adminHref?: string;
 };
 
 function initials(name: string): string {
@@ -28,8 +30,10 @@ export function AccountMenu({
   user,
   onSignIn,
   onDashboard,
+  onAdmin,
   onSignOut,
   dashboardHref,
+  adminHref = '/admin',
 }: AccountMenuProps) {
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -95,6 +99,20 @@ export function AccountMenu({
           >
             <LayoutDashboard size={15} /> Dashboard
           </a>
+          {user.role === 'curator' && onAdmin && (
+            <a
+              role="menuitem"
+              href={adminHref}
+              onClick={(event) => {
+                if (event.metaKey || event.ctrlKey || event.shiftKey) return;
+                event.preventDefault();
+                setOpen(false);
+                onAdmin();
+              }}
+            >
+              <ShieldCheck size={15} /> Admin workspace
+            </a>
+          )}
           <button
             role="menuitem"
             onClick={() => {

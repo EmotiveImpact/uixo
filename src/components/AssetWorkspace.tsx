@@ -24,7 +24,7 @@ import type { ModalName, PriceFilter } from '../types';
 import './asset-library.css';
 
 const sizing = {
-  '--sidebar-width': '15.25rem',
+  '--sidebar-width': '13.75rem',
   '--sidebar-width-icon': '4.25rem',
 } as CSSProperties;
 /** Same UIXO components as App, with a separately loaded, server-backed catalogue. */
@@ -106,7 +106,7 @@ export function AssetWorkspace() {
       ? 'Indexed sources'
       : query.view === 'saved'
         ? 'Saved assets'
-        : 'Find your next great detail.');
+        : 'Assets');
   const hasFilters = Boolean(
     query.q ||
     query.kind ||
@@ -146,6 +146,8 @@ export function AssetWorkspace() {
         onChooseCategory={openCategory}
         onChooseSub={openCategory}
         onSubmit={() => setModal('submit')}
+        isCurator={isCurator}
+        onShowAdmin={() => navigateInApp('/admin')}
       />
       <a className="skip-link" href="#main">
         Skip to content
@@ -162,8 +164,10 @@ export function AssetWorkspace() {
               user={user}
               onSignIn={() => setModal('signin')}
               onDashboard={() => go({ ...EMPTY_ROUTE, dashboard: true })}
+              onAdmin={() => navigateInApp('/admin')}
               onSignOut={signOut}
               dashboardHref="/dashboard"
+              adminHref="/admin"
             />
           }
         />
@@ -223,7 +227,40 @@ export function AssetWorkspace() {
         )}
         <footer className="asset-library-footer">
           <span>UIXO keeps the index. Creators keep the credit.</span>
-          {isCurator && <a href="/browse/assets?view=review">Open curator workspace</a>}
+          <nav aria-label="Asset workspace links">
+            <a
+              href="/browse/assets?view=guide"
+              onClick={(event) => {
+                if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                event.preventDefault();
+                navigate({ view: 'guide' }, true);
+              }}
+            >
+              How to use UIXO
+            </a>
+            <a
+              href="/browse/assets?view=connect"
+              onClick={(event) => {
+                if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                event.preventDefault();
+                navigate({ view: 'connect' }, true);
+              }}
+            >
+              Connect your AI agent
+            </a>
+            {isCurator && (
+              <a
+                href="/admin"
+                onClick={(event) => {
+                  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                  event.preventDefault();
+                  navigateInApp('/admin');
+                }}
+              >
+                Admin workspace
+              </a>
+            )}
+          </nav>
         </footer>
       </AnimatedSidebarInset>
       <AppDialog

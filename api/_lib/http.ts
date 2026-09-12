@@ -53,13 +53,26 @@ export async function verifiedUserId(req: VercelRequest): Promise<string | null>
   if (!header.startsWith('Bearer ')) return null;
 
   const set = jwks();
-  const issuer = (process.env.NEON_AUTH_BASE_URL ?? '').replace(/\/(neondb\/auth)?\/*$/, '');
+  const base = process.env.NEON_AUTH_BASE_URL ?? '';
+  const configuredIssuer = process.env.UIXO_AUTH_ISSUER;
+  const configuredAudience = process.env.UIXO_AUTH_AUDIENCE;
   if (!set) return null;
 
   try {
-    const { payload } = await jwtVerify(header.slice(7), set);
-    if (issuer && payload.iss && !String(payload.iss).startsWith('https://')) return null;
-    return typeof payload.sub === 'string' ? payload.sub : null;
+    const { payload } = await jwtVerify(header.slice(7), set, {
+      ...(configuredIssuer ? { issuer: configuredIssuer } : {}),
+      ...(configuredAudience ? { audience: configuredAudience } : {}),
+      requiredClaims: ['sub', 'exp', 'iat'],
+      clockTolerance: 5,
+    });
+    if (typeof payload.sub !== 'string' || !/^[a-f0-9-]{36}$/i.test(payload.sub)) return null;
+    if (!configuredIssuer) {
+      if (typeof payload.iss !== 'string') return null;
+      const authOrigin = new URL(base).origin;
+      const tokenIssuer = new URL(payload.iss);
+      if (tokenIssuer.protocol !== 'https:' || tokenIssuer.origin !== authOrigin) return null;
+    }
+    return payload.sub;
   } catch {
     // Bad signature, expired, wrong key — all mean the same thing here.
     return null;

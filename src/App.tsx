@@ -4,6 +4,7 @@ import {
   AnimatedSidebarProvider,
 } from './components/motion/animated-sidebar';
 import { AccountMenu } from './components/AccountMenu';
+import { AdminDashboard } from './components/AdminDashboard';
 import { AppDialog } from './components/AppDialog';
 import { CollectionsIndex } from './components/CollectionsIndex';
 import { CommandPalette } from './components/CommandPalette';
@@ -150,32 +151,37 @@ export function App() {
 
   const title = route.review
     ? 'Review inbox'
-    : route.dashboard
-      ? `Hello, ${user?.name.split(' ')[0] ?? 'there'}`
-      : route.notFound
-        ? 'Not found'
-        : route.collectionsIndex
-          ? 'Collections'
-          : activeCollection
-            ? activeCollection.name
-            : route.sub || route.category || (activeList ? activeList.name : 'All websites');
+    : route.admin
+      ? 'Admin workspace'
+      : route.dashboard
+        ? `Hello, ${user?.name.split(' ')[0] ?? 'there'}`
+        : route.notFound
+          ? 'Not found'
+          : route.collectionsIndex
+            ? 'Collections'
+            : activeCollection
+              ? activeCollection.name
+              : route.sub || route.category || (activeList ? activeList.name : 'All websites');
 
   const subtitle = route.review
     ? 'Staged candidates. Nothing reaches the site until you approve it.'
-    : route.dashboard
-      ? 'Your lists, your submissions, and what needs attention.'
-      : route.notFound
-        ? 'We could not find that page.'
-        : route.collectionsIndex
-          ? 'Curated sets with a point of view.'
-          : activeCollection
-            ? activeCollection.tagline
-            : activeList
-              ? 'The good ones, kept close.'
-              : 'Good tools. Great interfaces.';
+    : route.admin
+      ? 'Catalogue health, review queues, and source operations.'
+      : route.dashboard
+        ? 'Your lists, your submissions, and what needs attention.'
+        : route.notFound
+          ? 'We could not find that page.'
+          : route.collectionsIndex
+            ? 'Curated sets with a point of view.'
+            : activeCollection
+              ? activeCollection.tagline
+              : activeList
+                ? 'The good ones, kept close.'
+                : 'Good tools. Great interfaces.';
 
   // The grid and its toolbar only make sense on browsing routes.
-  const showsGrid = !route.dashboard && !route.review && !route.notFound && !route.collectionsIndex;
+  const showsGrid =
+    !route.dashboard && !route.admin && !route.review && !route.notFound && !route.collectionsIndex;
 
   const hasFilters =
     Boolean(route.search || route.category) ||
@@ -242,6 +248,9 @@ export function App() {
         onChooseSub={chooseSub}
         onSubmit={() => setModal('submit')}
         savedAssetCount={assetSaves.saved.length}
+        isCurator={isCurator}
+        onAdmin={route.admin}
+        onShowAdmin={() => navigate({ ...EMPTY_ROUTE, admin: true })}
       />
 
       <a className="skip-link" href="#main">
@@ -261,8 +270,10 @@ export function App() {
               user={user}
               onSignIn={() => setModal('signin')}
               onDashboard={() => navigate({ ...EMPTY_ROUTE, dashboard: true })}
+              onAdmin={() => navigate({ ...EMPTY_ROUTE, admin: true })}
               onSignOut={signOut}
               dashboardHref={routeToHref({ ...EMPTY_ROUTE, dashboard: true })}
+              adminHref={routeToHref({ ...EMPTY_ROUTE, admin: true })}
             />
           }
         />
@@ -328,6 +339,15 @@ export function App() {
 
         {route.review && (!authAvailable || !isCurator) && <NotFound onReset={reset} />}
         {route.review && authAvailable && isCurator && user && <ReviewInbox user={user} />}
+
+        {route.admin && (!authAvailable || !isCurator) && <NotFound onReset={reset} />}
+        {route.admin && authAvailable && isCurator && user && (
+          <AdminDashboard
+            user={user}
+            onOpenResource={(resourceId) => navigate({ ...EMPTY_ROUTE, resourceId })}
+            onOpenWebsiteReview={() => navigate({ ...EMPTY_ROUTE, review: true })}
+          />
+        )}
 
         {route.dashboard && !authAvailable && <NotFound onReset={reset} />}
 

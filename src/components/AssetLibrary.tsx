@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark, SlidersHorizontal, X } from 'lucide-react';
 import {
   EMPTY_ASSET_QUERY,
   assetHref,
@@ -30,6 +30,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
   const [notice, setNotice] = useState('');
+  const [refineOpen, setRefineOpen] = useState(false);
   const { saved, save, accountBacked } = assetSaves;
   const { q, kind, provider, framework, format, commercial, price, offset, view } = query;
   useEffect(() => {
@@ -107,8 +108,10 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
   }
   const filter = (key: keyof AssetQuery, value: string | boolean) =>
     navigate({ [key]: value, offset: 0, id: '' });
+  const refinementCount = [kind, provider, framework, format, commercial].filter(Boolean).length;
   return (
     <section className="asset-library" aria-label="Asset library">
+      {discovery}
       <div className="asset-library-toolbar">
         <nav aria-label="Asset views">
           {(['assets', 'sources', 'saved'] as const).map((entry) => (
@@ -131,12 +134,18 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
             </a>
           ))}
         </nav>
-        <a href={assetHref({ ...EMPTY_ASSET_QUERY, view: 'connect' })}>
-          Connect your AI agent <ArrowUpRight size={14} />
-        </a>
-        <a href={assetHref({ ...EMPTY_ASSET_QUERY, view: 'guide' })}>How to use UIXO</a>
+        {view !== 'sources' && (
+          <button
+            className="asset-refine"
+            aria-expanded={refineOpen}
+            aria-controls="asset-refinements"
+            onClick={() => setRefineOpen((current) => !current)}
+          >
+            {refineOpen ? <X size={14} /> : <SlidersHorizontal size={14} />}
+            Refine{refinementCount ? ` · ${refinementCount}` : ''}
+          </button>
+        )}
       </div>
-      {discovery}
       <p className="asset-library-status">
         {status
           ? status.readOnly
@@ -170,58 +179,60 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
         </div>
       ) : (
         <>
-          <div className="asset-library-filters">
-            <label>
-              Type
-              <select value={kind} onChange={(e) => filter('kind', e.target.value)}>
-                <option value="">All asset types</option>
-                <option value="component">Components</option>
-                <option value="icon">Icons</option>
-                <option value="font">Fonts</option>
-                <option value="template">Templates</option>
-              </select>
-            </label>
-            <label>
-              Source
-              <select value={provider} onChange={(e) => filter('provider', e.target.value)}>
-                <option value="">Every source</option>
-                {providers.map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {p.name}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label>
-              Framework
-              <select value={framework} onChange={(e) => filter('framework', e.target.value)}>
-                <option value="">Any framework</option>
-                <option value="react">React</option>
-                <option value="vue">Vue</option>
-                <option value="agnostic">Framework agnostic</option>
-              </select>
-            </label>
-            <label>
-              Format
-              <select value={format} onChange={(e) => filter('format', e.target.value)}>
-                <option value="">Any format</option>
-                {['svg', 'tsx', 'jsx', 'css', 'woff2'].map((f) => (
-                  <option key={f} value={f}>
-                    {f.toUpperCase()}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label className="asset-library-checkbox">
-              <input
-                type="checkbox"
-                checked={commercial}
-                onChange={(e) => filter('commercial', e.target.checked)}
-              />{' '}
-              Commercial-use evidence
-            </label>
-            <button onClick={() => navigate({ view }, true)}>Reset filters</button>
-          </div>
+          {refineOpen && (
+            <div className="asset-library-filters" id="asset-refinements">
+              <label>
+                Type
+                <select value={kind} onChange={(e) => filter('kind', e.target.value)}>
+                  <option value="">All asset types</option>
+                  <option value="component">Components</option>
+                  <option value="icon">Icons</option>
+                  <option value="font">Fonts</option>
+                  <option value="template">Templates</option>
+                </select>
+              </label>
+              <label>
+                Source
+                <select value={provider} onChange={(e) => filter('provider', e.target.value)}>
+                  <option value="">Every source</option>
+                  {providers.map((p) => (
+                    <option key={p.id} value={p.id}>
+                      {p.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                Framework
+                <select value={framework} onChange={(e) => filter('framework', e.target.value)}>
+                  <option value="">Any framework</option>
+                  <option value="react">React</option>
+                  <option value="vue">Vue</option>
+                  <option value="agnostic">Framework agnostic</option>
+                </select>
+              </label>
+              <label>
+                Format
+                <select value={format} onChange={(e) => filter('format', e.target.value)}>
+                  <option value="">Any format</option>
+                  {['svg', 'tsx', 'jsx', 'css', 'woff2'].map((f) => (
+                    <option key={f} value={f}>
+                      {f.toUpperCase()}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className="asset-library-checkbox">
+                <input
+                  type="checkbox"
+                  checked={commercial}
+                  onChange={(e) => filter('commercial', e.target.checked)}
+                />{' '}
+                Commercial-use evidence
+              </label>
+              <button onClick={() => navigate({ view }, true)}>Reset filters</button>
+            </div>
+          )}
           <div className="asset-library-result-count" role="status" aria-live="polite">
             {loading
               ? 'Searching the registry…'

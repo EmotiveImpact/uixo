@@ -29,6 +29,21 @@ Remaining limitations: six seed websites; some subcategories are intentionally e
 
 final result: passed
 
+## Browse-first asset catalogue and admin workspace
+
+Reference: `docs/design/uixo-browse-first-target.png`. Prototype: `http://127.0.0.1:4173/browse/assets`. Compared in dark theme with the expanded desktop sidebar, the unfiltered catalogue, and an open asset detail drawer. Responsive checks covered 1280px desktop, 800px compact desktop, and 600px mobile layouts.
+
+- P0: none.
+- P1: none.
+- P2: none.
+- P3: the live asset count remains in the result row below the view controls instead of beside the page title. This keeps the count accurate after filtering and preserves the selected hierarchy.
+
+The catalogue matches the selected direction: slim black shell, favourites near the top of the sidebar, a small active marker without a filled menu slab, search before secondary controls, hidden advanced filters, three large desktop columns, proportion-preserving component previews, and a full-height right detail drawer with progressive disclosure.
+
+Browser checks passed for search focus, pricing controls, Refine open/close, source-backed asset loading, variant resolution, internal route changes, drawer open/close, and responsive grid changes. The browser console reported no warnings or errors. The protected admin workspace is covered by live-API component tests and fail-closed routing.
+
+final result: passed
+
 ## Be UI component replacement
 
 The custom vanilla sidebar was replaced with the actual Be UI React component requested by the user. All four upstream component/helper files were compared with the downloaded registry and match verbatim. Composition follows the provided example with UILIST categories. The background token is now pure black (#000000).

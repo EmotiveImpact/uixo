@@ -62,18 +62,18 @@ Use the appropriate database configuration deliberately. A bounded run is not pr
 
 Keep values server-side and out of Git, browser storage, public documentation and prompts.
 
-| Variable                                 | Purpose                                                                                          |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `UIXO_DATABASE_URL`                      | Dedicated persistent registry database. Absent means hosted read-only snapshot mode.             |
-| `DATABASE_URL`                           | Existing editorial/auth database, also used for curator-role lookup.                             |
-| `NEON_AUTH_BASE_URL`                     | Existing authentication service.                                                                 |
-| `UIXO_AUTH_ISSUER`, `UIXO_AUTH_AUDIENCE` | Exact expected claims for registry curator JWT verification.                                     |
-| `UIXO_CURATOR_TOKEN`                     | Scoped service credential with curator privileges.                                               |
-| `UIXO_SCOUT_TOKEN`                       | Grok intake-only service credential.                                                             |
-| `UIXO_WORKER_TOKEN`                      | Indexing worker credential; not publication authority.                                           |
-| `UIXO_ORIGIN`                            | Exact application origin used by hosted API origin checks. Configure per deployment environment. |
-| `UIXO_RATE_SALT`                         | Salt for registry rate-limit bucket identifiers.                                                 |
-| `UIXO_EVE_URL`, `UIXO_EVE_TOKEN`         | Eve integration configuration; presence is not a successful live-session test.                   |
+| Variable                                 | Purpose                                                                                                                                         |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `UIXO_DATABASE_URL`                      | Dedicated persistent registry database. Absent means hosted read-only snapshot mode.                                                            |
+| `DATABASE_URL`                           | Existing editorial/auth database, also used for curator-role lookup.                                                                            |
+| `NEON_AUTH_BASE_URL`                     | Existing authentication service.                                                                                                                |
+| `UIXO_AUTH_ISSUER`, `UIXO_AUTH_AUDIENCE` | Optional exact claim constraints for registry curator JWT verification. The linked Neon Auth origin and project JWKS are enforced when omitted. |
+| `UIXO_CURATOR_TOKEN`                     | Scoped service credential with curator privileges.                                                                                              |
+| `UIXO_SCOUT_TOKEN`                       | Grok intake-only service credential.                                                                                                            |
+| `UIXO_WORKER_TOKEN`                      | Indexing worker credential; not publication authority.                                                                                          |
+| `UIXO_ORIGIN`                            | Exact application origin used by hosted API origin checks. Configure per deployment environment.                                                |
+| `UIXO_RATE_SALT`                         | Salt for registry rate-limit bucket identifiers.                                                                                                |
+| `UIXO_EVE_URL`, `UIXO_EVE_TOKEN`         | Eve integration configuration; presence is not a successful live-session test.                                                                  |
 
 Service tokens must meet the backend's minimum length requirement (24 characters), be independently generated, and have different values for different roles. Store them using the deployment platform's secret configuration, not in this file.
 
@@ -92,7 +92,7 @@ Use separate Neon branches for preview and production. The stable Astra and Code
 
 Configure preview Auth on the preview branch and allow only the stable preview aliases plus the deliberate localhost origin. Provider callback URLs must be the callback Neon shows for that branch. Keep production Auth domains and credentials out of preview.
 
-Do not guess `UIXO_AUTH_ISSUER` or `UIXO_AUTH_AUDIENCE`. Read the exact claims from the configured Neon Auth issuer or a deliberately created preview session and store those exact values as branch-scoped secrets. Until both exist, human curator JWTs fail closed; independent `UIXO_CURATOR_TOKEN`, `UIXO_SCOUT_TOKEN` and `UIXO_WORKER_TOKEN` service checks still work.
+Do not guess `UIXO_AUTH_ISSUER` or `UIXO_AUTH_AUDIENCE`. When exact claims are known, store them as branch-scoped secrets for an additional constraint. Without them, human curator JWTs are still verified against the linked Neon project's exact JWKS, required expiry and issued-at claims, the Neon Auth issuer origin, and the current database role. Independent `UIXO_CURATOR_TOKEN`, `UIXO_SCOUT_TOKEN` and `UIXO_WORKER_TOKEN` service checks remain available.
 
 The local `.uixo/` SQLite directory is ignored. It is disposable development state, never a deployment asset or source-controlled backup.
 

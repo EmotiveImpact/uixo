@@ -54,6 +54,9 @@ describe('parseRoute', () => {
       route({ category: 'Icons' }),
       route({ category: 'Icons', sub: 'Outline' }),
       route({ listId: 'favourites' }),
+      route({ dashboard: true }),
+      route({ review: true }),
+      route({ admin: true }),
       route({ search: 'react bits', price: 'Freemium', format: 'React', browse: 'Recent' }),
     ];
 
@@ -62,6 +65,12 @@ describe('parseRoute', () => {
       const [path, query = ''] = href.split('?');
       expect(parseRoute(path, query)).toEqual(original);
     }
+  });
+
+  it('keeps the protected admin workspace addressable', () => {
+    expect(routeToHref(route({ admin: true }))).toBe('/admin');
+    expect(parseRoute('/admin', '')).toEqual(route({ admin: true }));
+    expect(parseRoute('/admin/anything', '').notFound).toBe(true);
   });
 
   it('puts a deep-linked resource in the context of its own category', () => {

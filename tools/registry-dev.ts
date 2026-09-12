@@ -37,7 +37,12 @@ const authenticate = async (req: RequestLike): Promise<Principal> =>
 const handle = createRegistryHandler(registry, { origin, authenticate });
 // Vite proxies the integrated browser's same-origin calls. Keep the origins limited to
 // the documented development port while accepting the hostname a browser may canonicalise.
-const browserOrigins = new Set(['http://127.0.0.1:3000', 'http://localhost:3000']);
+const browserOrigins = new Set([
+  'http://127.0.0.1:3000',
+  'http://localhost:3000',
+  'http://127.0.0.1:4173',
+  'http://localhost:4173',
+]);
 const browserHandlers = new Map(
   [...browserOrigins].map((browserOrigin) => [
     browserOrigin,

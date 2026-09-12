@@ -1221,3 +1221,312 @@
 .asset-library-dialog > .asset-library-preview {
   height: clamp(260px, 30vw, 360px);
 }
+
+/* Browse-first layout selected for UIXO's asset catalogue. */
+.asset-workspace {
+  padding: 22px 28px 28px 34px;
+}
+.asset-workspace .heading {
+  margin: 30px 0 18px;
+}
+.asset-workspace .heading h1 {
+  max-width: none;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+}
+.asset-workspace .heading p {
+  max-width: 720px;
+  margin-top: 8px;
+  font-size: 12px;
+}
+.asset-workspace .discovery-controls {
+  position: sticky;
+  z-index: 8;
+  top: 10px;
+  margin: 0 0 12px;
+  padding: 8px 0;
+  background: var(--background);
+}
+.asset-workspace .discovery-controls .search-wrap {
+  height: 48px;
+  border-radius: 11px;
+  background: #111114;
+}
+.asset-workspace .discovery-controls .prices {
+  height: 48px;
+  border-radius: 11px;
+  background: #111114;
+}
+.light .asset-workspace .discovery-controls .search-wrap,
+.light .asset-workspace .discovery-controls .prices {
+  background: var(--muted);
+}
+.asset-library-toolbar {
+  min-height: 40px;
+  padding: 0;
+  gap: 14px;
+}
+.asset-library-toolbar nav {
+  gap: 22px;
+}
+.asset-library-toolbar a {
+  padding: 9px 0;
+}
+.asset-library-toolbar a.selected {
+  box-shadow: 0 1px 0 currentColor;
+}
+.asset-library .asset-refine {
+  margin-left: auto;
+  padding: 8px 2px;
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted-foreground);
+}
+.asset-library .asset-refine:hover:not(:disabled) {
+  color: var(--foreground);
+  background: transparent;
+}
+.asset-library-filters {
+  align-items: end;
+  margin: 10px 0 22px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #0c0c0e;
+}
+.light .asset-library-filters {
+  background: var(--muted);
+}
+.asset-library-filters select,
+.asset-library-field select {
+  border: 0;
+  background: #17171a;
+}
+.light .asset-library-filters select,
+.light .asset-library-field select {
+  background: var(--card);
+}
+.asset-library-result-count {
+  margin: 20px 0 14px;
+  font-size: 11px;
+}
+.asset-library-grid {
+  gap: 30px 18px;
+}
+.asset-library-card .asset-library-preview {
+  min-height: 280px;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  background: #101012;
+}
+.light .asset-library-card .asset-library-preview {
+  background: var(--muted);
+}
+.asset-library-card-body {
+  padding: 14px 1px 0;
+}
+.asset-library-card h2 {
+  margin: 7px 30px 6px 0;
+  font-size: 14px;
+}
+.asset-library-card-body > p {
+  height: 3.1em;
+  margin: 0 0 10px;
+  line-height: 1.55;
+}
+.asset-library-tags span {
+  border: 0;
+  padding: 2px 5px;
+  background: #111114;
+}
+.light .asset-library-tags span {
+  background: var(--muted);
+}
+.asset-library .asset-library-save {
+  top: auto;
+  bottom: 67px;
+  right: 0;
+  background: transparent;
+}
+.asset-library-footer nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.asset-library-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* The asset details keep the catalogue visible and use disclosure for deeper evidence. */
+.asset-library-dialog.asset-detail-drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(440px, 100vw);
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: #09090b;
+  overflow: hidden;
+}
+.light .asset-library-dialog.asset-detail-drawer {
+  background: var(--background);
+}
+.asset-library-dialog.asset-detail-drawer::backdrop {
+  background: rgb(0 0 0 / 0.46);
+}
+.asset-detail-scroll {
+  height: 100%;
+  overflow: auto;
+}
+.asset-detail-drawer .asset-library-close {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: rgb(9 9 11 / 0.9);
+}
+.light .asset-detail-drawer .asset-library-close {
+  background: var(--background);
+}
+.asset-detail-drawer .asset-library-preview {
+  width: 100%;
+  height: 280px;
+  min-height: 280px;
+  border-radius: 0;
+  background: #f0f0ed;
+}
+.asset-detail-drawer .asset-library-preview.is-icon img {
+  width: 78px;
+  height: 78px;
+  filter: none;
+}
+.asset-detail-drawer .asset-library-detail {
+  padding: 26px 26px 42px;
+}
+.asset-detail-drawer .asset-library-detail h2 {
+  margin: 8px 0 10px;
+  font-size: 25px;
+  line-height: 1.1;
+  letter-spacing: -0.7px;
+}
+.asset-detail-description {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.asset-detail-primary-actions {
+  display: flex;
+  gap: 8px;
+  margin: 20px 0 24px;
+}
+.asset-detail-primary-actions a,
+.asset-detail-primary-actions button {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 13px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 12px;
+}
+.asset-detail-primary-actions a {
+  flex: 1;
+  background: var(--foreground);
+  color: var(--background);
+}
+.asset-drawer-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 24px;
+  margin: 0 0 24px;
+}
+.asset-drawer-facts > div {
+  display: block;
+  padding: 0;
+}
+.asset-drawer-facts dt {
+  margin-bottom: 5px;
+}
+.asset-drawer-facts dd {
+  text-align: left;
+  text-transform: capitalize;
+}
+.asset-variant-field {
+  margin-bottom: 20px;
+}
+.asset-variant-field select {
+  width: 100%;
+}
+.asset-drawer-section {
+  margin: 0;
+  padding: 16px 0;
+  border-top: 1px solid #18181b;
+  font-size: 12px;
+}
+.light .asset-drawer-section {
+  border-color: var(--border);
+}
+.asset-drawer-section summary {
+  font-size: 12px;
+  font-weight: 550;
+  list-style-position: outside;
+}
+.asset-drawer-section p {
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+.asset-command {
+  position: relative;
+}
+.asset-command pre {
+  padding-right: 48px;
+}
+.asset-command button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+.asset-drawer-notice,
+.asset-detail-message {
+  padding: 24px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  .asset-workspace {
+    padding: 18px;
+  }
+  .asset-workspace .heading {
+    margin-top: 24px;
+  }
+  .asset-workspace .discovery-controls {
+    position: static;
+  }
+  .asset-workspace .discovery-controls .prices {
+    width: 100%;
+  }
+  .asset-workspace .discovery-controls .prices button {
+    flex: 1;
+  }
+  .asset-library-toolbar nav {
+    flex: 1;
+    gap: 15px;
+  }
+}
