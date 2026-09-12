@@ -64,8 +64,8 @@ function ComponentPreview({ slug }: { slug: string }) {
   if (slug === 'button' || slug === 'button-group')
     return (
       <div className="asset-demo asset-demo-buttons">
-        <button type="button">Continue</button>
-        <button type="button">Cancel</button>
+        <span>Continue</span>
+        <span>Cancel</span>
       </div>
     );
   if (slug === 'calendar')
@@ -195,7 +195,7 @@ export function AssetPreview({ asset }: { asset: AssetRecord }) {
         {showOriginal
           ? 'Original GitHub SVG'
           : asset.kind === 'component'
-            ? 'UIXO preview · source code on GitHub'
+            ? 'Illustration · not an upstream render'
             : 'Source preview not captured'}
       </small>
     </div>

@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark, Copy, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark } from 'lucide-react';
 import {
   ASSET_SAVES,
   EMPTY_ASSET_QUERY,
@@ -9,226 +9,15 @@ import {
   registryRequest,
   safeAssetUrl,
 } from '../lib/asset-library';
+import { AssetDetail } from './AssetDetail';
 import { AssetPreview } from './AssetPreview';
-import type {
-  Acquisition,
-  AssetQuery,
-  AssetRecord,
-  Catalogue,
-  ProviderRecord,
-  RegistryStatus,
-} from '../lib/asset-library';
+import type { AssetQuery, Catalogue, ProviderRecord, RegistryStatus } from '../lib/asset-library';
 
 type Props = {
   query: AssetQuery;
   navigate: (changes: Partial<AssetQuery>, reset?: boolean) => void;
   density: string;
 };
-const formatDate = (value: string | null) =>
-  value && Number.isFinite(Date.parse(value))
-    ? new Intl.DateTimeFormat('en-GB', { dateStyle: 'medium', timeZone: 'UTC' }).format(
-        new Date(value),
-      )
-    : 'Not verified';
-function AssetDetail({
-  id,
-  close,
-  nameOf,
-}: {
-  id: string;
-  close: () => void;
-  nameOf: (id: string) => string;
-}) {
-  const ref = useRef<HTMLDialogElement>(null);
-  const [asset, setAsset] = useState<AssetRecord | null>(null);
-  const [error, setError] = useState('');
-  const [result, setResult] = useState<Acquisition | null>(null);
-  const [busy, setBusy] = useState(false);
-  const [variant, setVariant] = useState('');
-  const [notice, setNotice] = useState('');
-  useEffect(() => {
-    const dialog = ref.current;
-    dialog?.showModal();
-    return () => dialog?.close();
-  }, []);
-  useEffect(() => {
-    const abort = new AbortController();
-    void registryRequest<AssetRecord>('asset', { query: { id }, signal: abort.signal })
-      .then((value) => {
-        if (!value || value.id !== id || !Array.isArray(value.variants) || !value.licence)
-          throw new Error('Invalid asset detail response.');
-        if (!abort.signal.aborted) {
-          setAsset(value);
-          setVariant(value.variants[0]?.id ?? '');
-        }
-      })
-      .catch((e: unknown) => {
-        if (!abort.signal.aborted)
-          setError(e instanceof Error ? e.message : 'Asset details are unavailable.');
-      });
-    return () => abort.abort();
-  }, [id]);
-  async function resolve() {
-    setBusy(true);
-    setNotice('');
-    setResult(null);
-    try {
-      setResult(
-        await registryRequest<Acquisition>('resolve', { body: { id, variantId: variant } }),
-      );
-    } catch (e) {
-      setNotice(e instanceof Error ? e.message : 'Could not resolve this asset.');
-    } finally {
-      setBusy(false);
-    }
-  }
-  const selected = asset?.variants.find((v) => v.id === variant);
-  const command = result?.command
-    ? [
-        result.command.executable,
-        ...result.command.arguments.map((arg) => `'${arg.replace(/'/g, `'"'"'`)}'`),
-      ].join(' ')
-    : '';
-  return (
-    <dialog
-      ref={ref}
-      className="asset-library-dialog"
-      aria-labelledby="asset-library-detail-title"
-      onCancel={(event) => {
-        event.preventDefault();
-        close();
-      }}
-      onClick={(event) => {
-        if (event.target === event.currentTarget) close();
-      }}
-    >
-      <div className="asset-library-detail">
-        <button className="asset-library-close" onClick={close} aria-label="Close asset details">
-          <X size={20} />
-        </button>
-        <h2 id="asset-library-detail-title">{asset?.name ?? 'Asset details'}</h2>
-        {error && <p role="alert">{error}</p>}
-        {!asset && !error && <p role="status">Loading source details…</p>}
-        {asset && (
-          <>
-            <p className="asset-library-muted">
-              {nameOf(asset.providerId)} · Indexed asset, not an individual editorial pick
-            </p>
-            <AssetPreview asset={asset} />
-            <p>{asset.description}</p>
-            <dl className="asset-library-facts">
-              <div>
-                <dt>Licence</dt>
-                <dd>{asset.licence.expression}</dd>
-              </div>
-              <div>
-                <dt>Commercial use</dt>
-                <dd>{asset.licence.commercial}</dd>
-              </div>
-              <div>
-                <dt>Source check</dt>
-                <dd>{formatDate(asset.verifiedAt)}</dd>
-              </div>
-            </dl>
-            <label className="asset-library-field">
-              Format / framework
-              <select
-                value={variant}
-                onChange={(event) => {
-                  setVariant(event.target.value);
-                  setResult(null);
-                  setNotice('');
-                }}
-              >
-                {asset.variants.map((v) => (
-                  <option key={v.id} value={v.id}>
-                    {v.framework} · {v.format.toUpperCase()}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <p>
-              <strong>Dependencies: </strong>
-              {selected?.dependencies.join(', ') ||
-                'None declared. This is not a compatibility guarantee.'}
-            </p>
-            <p className="asset-library-muted">{asset.licence.note}</p>
-            <div className="asset-library-actions">
-              <button
-                className="asset-library-primary"
-                onClick={() => void resolve()}
-                disabled={busy || !variant}
-              >
-                {busy ? 'Checking acquisition…' : 'Get asset / install instructions'}
-              </button>
-              <a href={safeAssetUrl(asset.sourceUrl)} target="_blank" rel="noopener noreferrer">
-                Original source <ArrowUpRight size={15} />
-              </a>
-            </div>
-            {result && (
-              <section className="asset-library-acquisition" aria-label="Acquisition result">
-                <strong>
-                  {result.status === 'ready'
-                    ? 'Review before using'
-                    : result.status === 'blocked'
-                      ? 'Acquisition requires review'
-                      : 'Continue at the provider'}
-                </strong>
-                <p>{result.message}</p>
-                {command && (
-                  <>
-                    <pre tabIndex={0}>{command}</pre>
-                    <button
-                      onClick={() => {
-                        void (async () => {
-                          try {
-                            await navigator.clipboard.writeText(command);
-                            setNotice('Instruction copied. Nothing has been executed.');
-                          } catch {
-                            setNotice(
-                              'Select and copy the instruction above. Clipboard access was unavailable.',
-                            );
-                          }
-                        })();
-                      }}
-                    >
-                      <Copy size={14} /> Copy instruction
-                    </button>
-                  </>
-                )}
-                {safeAssetUrl(result.url) && (
-                  <a href={safeAssetUrl(result.url)} target="_blank" rel="noopener noreferrer">
-                    {result.status === 'blocked'
-                      ? 'Review original source'
-                      : 'Open authorised source'}{' '}
-                    <ArrowUpRight size={14} />
-                  </a>
-                )}
-                <p className="asset-library-muted">
-                  UIXO does not install or execute code in your project.
-                </p>
-              </section>
-            )}
-            <p role="status">{notice}</p>
-            <details>
-              <summary>Licence evidence</summary>
-              <p>
-                <a
-                  href={safeAssetUrl(asset.licence.sourceUrl)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View the source licence
-                </a>
-              </p>
-              <pre>{asset.licence.text || 'Read the complete licence at the original source.'}</pre>
-            </details>
-          </>
-        )}
-      </div>
-    </dialog>
-  );
-}
 export function AssetLibrary({ query, navigate, density }: Props) {
   const [providers, setProviders] = useState<ProviderRecord[]>([]);
   const [status, setStatus] = useState<RegistryStatus | null>(null);
@@ -343,10 +132,10 @@ export function AssetLibrary({ query, navigate, density }: Props) {
             </a>
           ))}
         </nav>
-        <a href="/registry/?view=connect">
+        <a href={assetHref({ ...EMPTY_ASSET_QUERY, view: 'connect' })}>
           Connect your AI agent <ArrowUpRight size={14} />
         </a>
-        <a href="/registry/guide.html">How to use UIXO</a>
+        <a href={assetHref({ ...EMPTY_ASSET_QUERY, view: 'guide' })}>How to use UIXO</a>
       </div>
       <p className="asset-library-status">
         {status
@@ -438,7 +227,7 @@ export function AssetLibrary({ query, navigate, density }: Props) {
               ? 'Searching the registry…'
               : error
                 ? 'Registry unavailable, not an empty result'
-                : `${result?.total ?? 0} assets found`}
+                : `${result?.total ?? 0} ${result?.total === 1 ? 'asset' : 'assets'} found`}
             <span>Keyword search · Source-level curation</span>
           </div>
           {error ? (
@@ -539,6 +328,9 @@ export function AssetLibrary({ query, navigate, density }: Props) {
           key={query.id}
           id={query.id}
           nameOf={nameOf}
+          query={query}
+          saved={saved.includes(query.id)}
+          toggleSave={() => toggleSave(query.id)}
           close={() => navigate({ id: '' })}
         />
       )}

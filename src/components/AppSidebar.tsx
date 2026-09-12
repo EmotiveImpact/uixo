@@ -40,6 +40,8 @@ type AppSidebarProps = {
   onSubmit: () => void;
   onAssets?: boolean;
   onShowAssets?: () => void;
+  assetKind?: string;
+  onChooseAssetKind?: (kind: string) => void;
 };
 
 export function AppSidebar({
@@ -59,6 +61,8 @@ export function AppSidebar({
   onSubmit,
   onAssets = false,
   onShowAssets = () => window.location.assign('/browse/assets'),
+  assetKind = '',
+  onChooseAssetKind,
 }: AppSidebarProps) {
   return (
     <AnimatedSidebar ariaLabel="UIXO navigation" collapsible="icon">
@@ -126,6 +130,26 @@ export function AppSidebar({
           </AnimatedSidebarGroupContent>
         </AnimatedSidebarGroup>
 
+        {onAssets && onChooseAssetKind && (
+          <AnimatedSidebarGroup>
+            <AnimatedSidebarGroupLabel>Asset types</AnimatedSidebarGroupLabel>
+            <AnimatedSidebarGroupContent>
+              <AnimatedSidebarMenu>
+                {['component', 'icon'].map((kind) => (
+                  <AnimatedSidebarMenuItem key={kind}>
+                    <AnimatedSidebarMenuButton
+                      icon={<Shapes className="size-4" />}
+                      isActive={assetKind === kind}
+                      onSelect={() => onChooseAssetKind(kind)}
+                    >
+                      {kind === 'icon' ? 'Icons' : 'Components'}
+                    </AnimatedSidebarMenuButton>
+                  </AnimatedSidebarMenuItem>
+                ))}
+              </AnimatedSidebarMenu>
+            </AnimatedSidebarGroupContent>
+          </AnimatedSidebarGroup>
+        )}
         <AnimatedSidebarGroup className="border-t border-border pt-4">
           <AnimatedSidebarGroupLabel>Your lists</AnimatedSidebarGroupLabel>
           <AnimatedSidebarGroupContent>

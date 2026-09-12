@@ -10,6 +10,14 @@ export type AssetRecord = {
   tags: string[];
   sourceUrl: string;
   verifiedAt: string | null;
+  editorialPick?: boolean;
+  evidence?: {
+    field: string;
+    url: string;
+    method: string;
+    observedAt: string;
+    reference: string | null;
+  }[];
   preview: { kind: string; url?: string; label: string } | null;
   licence: {
     expression: string;
@@ -25,6 +33,9 @@ export type AssetRecord = {
     format: string;
     dependencies: string[];
     css: string | null;
+    registryDependencies?: string[];
+    peerDependencies?: Record<string, string>;
+    sourceRef?: string | null;
   }[];
 };
 export type ProviderRecord = {
@@ -59,7 +70,7 @@ export type AssetQuery = {
   commercial: boolean;
   price: string;
   offset: number;
-  view: 'assets' | 'saved' | 'sources';
+  view: 'assets' | 'saved' | 'sources' | 'connect' | 'guide' | 'review' | 'scout' | 'jobs';
   id: string;
 };
 export const EMPTY_ASSET_QUERY: AssetQuery = {
@@ -88,7 +99,16 @@ export function readAssetQuery(search: string): AssetQuery {
     commercial: p.get('commercial') === 'true',
     price: valid(p.get('price'), ['free', 'paid', 'unknown']),
     offset: Number.isSafeInteger(offset) && offset >= 0 && offset <= 100000 ? offset : 0,
-    view: p.get('view') === 'sources' ? 'sources' : p.get('view') === 'saved' ? 'saved' : 'assets',
+    view: (valid(p.get('view'), [
+      'assets',
+      'saved',
+      'sources',
+      'connect',
+      'guide',
+      'review',
+      'scout',
+      'jobs',
+    ]) || 'assets') as AssetQuery['view'],
     id:
       /^[a-z0-9][a-z0-9._/-]{0,179}$/.test(p.get('id') ?? '') && !p.get('id')!.includes('..')
         ? p.get('id')!

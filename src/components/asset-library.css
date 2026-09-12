@@ -1,4 +1,5 @@
 /* Shared UIXO shell owns navigation, typography, theme and sidebar motion. */
+/* Asset discovery and utility routes share this stylesheet. */
 .asset-library-switch {
   display: flex;
   gap: 6px;
@@ -135,7 +136,7 @@
 }
 .asset-library-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 19px;
 }
 .asset-library-card {
@@ -192,7 +193,7 @@
 .light .asset-library-preview.is-icon img {
   filter: none;
 }
-.asset-library-preview small {
+.asset-library-preview > small {
   position: absolute;
   bottom: 10px;
   left: 12px;
@@ -298,14 +299,14 @@
   justify-content: center;
   gap: 8px;
 }
-.asset-demo-buttons button {
+.asset-demo-buttons > span {
   padding: 10px 16px;
   border-radius: 9px;
   color: #fff;
   background: #111;
   box-shadow: 0 8px 18px rgb(0 0 0 / 16%);
 }
-.asset-demo-buttons button + button {
+.asset-demo-buttons > span + button {
   color: #333;
   background: #fff;
 }
@@ -723,7 +724,7 @@
 }
 @media (min-width: 1550px) {
   .asset-library-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 @media (max-width: 1190px) {
@@ -755,7 +756,7 @@
     aspect-ratio: 1.15;
     padding: 15px;
   }
-  .asset-library-preview small {
+  .asset-library-preview > small {
     font-size: 8px;
   }
   .asset-library-card h2 {
@@ -795,5 +796,308 @@
 @media (prefers-reduced-motion: reduce) {
   .asset-library-card {
     transition: none;
+  }
+}
+
+/* Unified discovery and detail layout, using the original UIXO theme. */
+.asset-workspace .topbar {
+  justify-content: flex-end;
+}
+.asset-workspace .topbar .prices {
+  margin-right: auto;
+}
+.asset-workspace .heading h1 {
+  max-width: 720px;
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.06;
+  letter-spacing: -2px;
+}
+.asset-search {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--muted);
+  padding: 9px 10px 9px 22px;
+  border-radius: 14px;
+  margin: 26px 0;
+}
+.asset-search input {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  background: transparent;
+  color: var(--foreground);
+  border: 0;
+  outline: none;
+  font: inherit;
+  font-size: 14px;
+}
+.asset-search:focus-within {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+.asset-search kbd {
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.asset-search button {
+  border: 0;
+  border-radius: 9px;
+  padding: 13px 18px;
+  background: var(--foreground);
+  color: var(--background);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.asset-library-card,
+.asset-library-card:hover,
+.asset-library-preview,
+.asset-library-toolbar,
+.asset-library button,
+.asset-library select,
+.asset-library-dialog,
+.asset-library-acquisition {
+  border: 0;
+}
+.asset-library-preview::before {
+  display: none;
+}
+.asset-library-card {
+  background: transparent;
+}
+.asset-library-card-body {
+  padding: 18px 2px;
+}
+.asset-library-preview {
+  border-radius: 14px;
+  aspect-ratio: 1.5;
+}
+.asset-library button:hover:not(:disabled) {
+  background: var(--muted);
+}
+.asset-library-toolbar {
+  padding-bottom: 0;
+}
+.asset-library-status {
+  display: none;
+}
+.asset-library-filters {
+  margin-top: 24px;
+}
+.asset-library-dialog {
+  width: min(1080px, calc(100vw - 40px));
+  max-height: 92dvh;
+  outline: none;
+}
+.asset-library-dialog > .asset-library-preview {
+  min-height: 180px;
+  max-height: 270px;
+  aspect-ratio: 3.6;
+  border-radius: 0;
+}
+.asset-library-dialog > .asset-library-preview.is-icon img {
+  width: 90px;
+  height: 90px;
+}
+.asset-library-close {
+  position: absolute;
+  z-index: 3;
+  right: 16px;
+  top: 16px;
+  padding: 8px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--background);
+  color: var(--foreground);
+  cursor: pointer;
+}
+.asset-library-detail {
+  padding: 30px 36px;
+}
+.asset-detail-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.asset-detail-top h2 {
+  font-size: 36px;
+  letter-spacing: -1px;
+  margin: 8px 0;
+}
+.asset-eyebrow {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted-foreground);
+}
+.asset-detail-columns {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 36px;
+  margin-top: 24px;
+}
+.asset-detail-columns section {
+  margin-bottom: 28px;
+}
+.asset-detail-columns h3 {
+  font-size: 15px;
+  font-weight: 550;
+  margin: 0 0 18px;
+}
+.asset-detail-columns p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  overflow-wrap: anywhere;
+}
+.asset-library-facts {
+  display: block;
+  padding: 0;
+}
+.asset-library-facts > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 8px 0;
+}
+.asset-library-facts dd {
+  font-size: 11px;
+  text-align: right;
+}
+.asset-library-facts dt {
+  margin: 0;
+}
+.asset-library-acquisition {
+  padding: 4px 0;
+}
+.asset-library-acquisition a {
+  margin: 0;
+}
+.asset-detail-columns pre,
+.asset-utility pre {
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  padding: 16px;
+  background: var(--muted);
+  border-radius: 10px;
+  font-size: 11px;
+  line-height: 1.7;
+  max-height: 300px;
+}
+.asset-compat-fields {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.asset-compat-fields label,
+.asset-utility label {
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+}
+.asset-compat-fields select,
+.asset-utility textarea {
+  background: var(--muted);
+  color: var(--foreground);
+  border: 0;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 100%;
+}
+.asset-utility textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  font: 12px monospace;
+}
+.asset-utility {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.asset-utility h2 {
+  font-size: 22px;
+}
+.asset-utility button,
+.asset-library-dialog button:not(.asset-library-close) {
+  padding: 10px 14px;
+  background: var(--muted);
+  color: var(--foreground);
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.asset-utility button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.asset-utility-nav {
+  display: flex;
+  gap: 24px;
+}
+.asset-utility-nav a {
+  color: var(--muted-foreground);
+  text-decoration: none;
+}
+.asset-utility-nav a[aria-current] {
+  color: var(--foreground);
+}
+.asset-operator-row {
+  margin: 24px 0;
+  padding: 20px;
+  background: var(--muted);
+  border-radius: 12px;
+}
+.asset-evidence {
+  margin: 18px 0;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.asset-demo {
+  pointer-events: none;
+}
+.asset-library-detail button:focus-visible,
+.asset-utility button:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+@media (max-width: 960px) {
+  .asset-library-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .asset-library-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .asset-detail-columns {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .asset-library-detail {
+    padding: 24px;
+  }
+  .asset-detail-top {
+    align-items: flex-start;
+  }
+  .asset-detail-top h2 {
+    font-size: 28px;
+  }
+  .asset-search {
+    padding-left: 14px;
+    gap: 8px;
+  }
+  .asset-search button {
+    padding: 12px;
+  }
+  .asset-search kbd {
+    display: none;
+  }
+  .asset-utility-nav {
+    gap: 14px;
+    flex-wrap: wrap;
   }
 }

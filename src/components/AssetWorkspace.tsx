@@ -6,6 +6,7 @@ import { TopBar } from './TopBar';
 import { AccountMenu } from './AccountMenu';
 import { AppDialog } from './AppDialog';
 import { PageHeading } from './PageHeading';
+import { AssetUtilities } from './AssetUtilities';
 import { AssetLibrary } from './AssetLibrary';
 import { useAuth } from '../hooks/useAuth';
 import { useLists } from '../hooks/useLists';
@@ -82,12 +83,21 @@ export function AssetWorkspace() {
     window.location.assign(routeToHref(changes));
   const openCategory = (category: string, sub: string | null = null) =>
     go({ ...EMPTY_ROUTE, category, sub });
+  const utility = ['connect', 'guide', 'review', 'scout', 'jobs'].includes(query.view);
+  const titles: Record<string, string> = {
+    connect: 'Connect your AI agent',
+    guide: 'How to use UIXO',
+    review: 'Review queue',
+    scout: 'Scout intake',
+    jobs: 'Indexing runs',
+  };
   const title =
-    query.view === 'sources'
+    titles[query.view] ||
+    (query.view === 'sources'
       ? 'Indexed sources'
       : query.view === 'saved'
         ? 'Saved assets'
-        : 'All assets';
+        : 'Find your next great detail.');
   const hasFilters = Boolean(
     query.q ||
     query.kind ||
@@ -112,6 +122,8 @@ export function AssetWorkspace() {
         openSection={null}
         lists={lists}
         onAssets
+        assetKind={query.kind}
+        onChooseAssetKind={(kind) => navigate({ kind }, true)}
         onShowAssets={() => navigate({}, true)}
         onShowAll={() => go({ ...EMPTY_ROUTE })}
         homeHref="/browse"
@@ -126,9 +138,10 @@ export function AssetWorkspace() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <AnimatedSidebarInset className="site-main" id="main" tabIndex={-1}>
+      <AnimatedSidebarInset className="site-main asset-workspace" id="main" tabIndex={-1}>
         <TopBar
           assetSearch
+          searchInContent
           searchRef={searchRef}
           search={query.q}
           onSearchChange={(q) =>
@@ -170,14 +183,44 @@ export function AssetWorkspace() {
         </div>
         <PageHeading
           title={title}
-          subtitle="Good sources. Useful assets. Original creators."
+          subtitle={
+            utility
+              ? 'One library. Your workflow.'
+              : 'Components and icons, with the source left intact. Find it, understand it, make it yours.'
+          }
           canClear={hasFilters}
           onClear={() => navigate({ view: query.view }, true)}
         />
-        <AssetLibrary query={query} navigate={navigate} density={density} />
+        {!utility && (
+          <form
+            className="asset-search"
+            role="search"
+            onSubmit={(event) => {
+              event.preventDefault();
+              searchRef.current?.blur();
+            }}
+          >
+            <input
+              ref={searchRef}
+              type="search"
+              aria-label="Search assets"
+              placeholder="A sidebar, an icon, a small detail…"
+              maxLength={300}
+              value={query.q}
+              onChange={(event) => navigate({ q: event.target.value, offset: 0 })}
+            />
+            <kbd>/</kbd>
+            <button type="submit">Find assets ↗</button>
+          </form>
+        )}
+        {utility ? (
+          <AssetUtilities key={query.view} view={query.view} />
+        ) : (
+          <AssetLibrary query={query} navigate={navigate} density={density} />
+        )}
         <footer className="asset-library-footer">
           <span>UIXO keeps the index. Creators keep the credit.</span>
-          {isCurator && <a href="/registry/?view=review">Open curator workspace</a>}
+          {isCurator && <a href="/browse/assets?view=review">Open curator workspace</a>}
         </footer>
       </AnimatedSidebarInset>
       <AppDialog
