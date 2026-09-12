@@ -11,6 +11,7 @@ type DashboardProps = {
   user: User;
   isCurator: boolean;
   lists: List[];
+  savedAssetCount: number;
   onOpenList: (id: string) => void;
   onOpenResource: (id: string) => void;
   onSubmit: () => void;
@@ -36,6 +37,7 @@ export function Dashboard({
   user,
   isCurator,
   lists,
+  savedAssetCount,
   onOpenList,
   onOpenResource,
   onSubmit,
@@ -102,6 +104,10 @@ export function Dashboard({
         <div className="stat">
           <span className="stat-value">{savedCount}</span>
           <span className="stat-label">Saved websites</span>
+        </div>
+        <div className="stat">
+          <span className="stat-value">{savedAssetCount}</span>
+          <span className="stat-label">Saved assets</span>
         </div>
         <div className="stat">
           <span className="stat-value">{lists.length}</span>

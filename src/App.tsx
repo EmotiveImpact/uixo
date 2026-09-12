@@ -5,6 +5,7 @@ import {
 } from './components/motion/animated-sidebar';
 import { AccountMenu } from './components/AccountMenu';
 import { AdminDashboard } from './components/AdminDashboard';
+import { AdminSidebar } from './components/AdminSidebar';
 import { AppDialog } from './components/AppDialog';
 import { CollectionsIndex } from './components/CollectionsIndex';
 import { CommandPalette } from './components/CommandPalette';
@@ -30,6 +31,7 @@ import { useRoute } from './hooks/useRoute';
 import { useSearchHotkey } from './hooks/useSearchHotkey';
 import { useTheme } from './hooks/useTheme';
 import { filterResources } from './lib/filters';
+import { navigateInApp } from './lib/navigation';
 import { EMPTY_ROUTE, routeToHref } from './lib/url';
 import { collections, resources } from './data';
 import { ALL_FORMATS } from './types';
@@ -187,6 +189,7 @@ export function App() {
     Boolean(route.search || route.category) ||
     route.price !== 'All' ||
     route.format !== ALL_FORMATS;
+  const adminMode = route.admin && isCurator;
 
   if (route.landing) {
     return (
@@ -229,29 +232,36 @@ export function App() {
       onOpenMobileChange={setMobileOpen}
       style={SIDEBAR_SIZING}
     >
-      <AppSidebar
-        category={route.category}
-        sub={route.sub}
-        listId={route.listId}
-        openSection={openSection}
-        lists={lists}
-        onShowAll={showAll}
-        homeHref={routeToHref(EMPTY_ROUTE)}
-        onShowCollections={() => {
-          setOpenSection(null);
-          navigate({ ...EMPTY_ROUTE, collectionsIndex: true });
-        }}
-        onCollections={route.collectionsIndex || Boolean(activeCollection)}
-        onChooseList={chooseList}
-        onDeleteList={remove}
-        onChooseCategory={chooseCategory}
-        onChooseSub={chooseSub}
-        onSubmit={() => setModal('submit')}
-        savedAssetCount={assetSaves.saved.length}
-        isCurator={isCurator}
-        onAdmin={route.admin}
-        onShowAdmin={() => navigate({ ...EMPTY_ROUTE, admin: true })}
-      />
+      {adminMode ? (
+        <AdminSidebar
+          onExit={showAll}
+          onWebsiteReview={() => navigate({ ...EMPTY_ROUTE, review: true })}
+          onAssetReview={() => navigateInApp('/browse/assets?view=review')}
+          onScout={() => navigateInApp('/browse/assets?view=scout')}
+          onJobs={() => navigateInApp('/browse/assets?view=jobs')}
+        />
+      ) : (
+        <AppSidebar
+          category={route.category}
+          sub={route.sub}
+          listId={route.listId}
+          openSection={openSection}
+          lists={lists}
+          onShowAll={showAll}
+          homeHref={routeToHref(EMPTY_ROUTE)}
+          onShowCollections={() => {
+            setOpenSection(null);
+            navigate({ ...EMPTY_ROUTE, collectionsIndex: true });
+          }}
+          onCollections={route.collectionsIndex || Boolean(activeCollection)}
+          onChooseList={chooseList}
+          onDeleteList={remove}
+          onChooseCategory={chooseCategory}
+          onChooseSub={chooseSub}
+          onSubmit={() => setModal('submit')}
+          savedAssetCount={assetSaves.saved.length}
+        />
+      )}
 
       <a className="skip-link" href="#main">
         Skip to content
@@ -263,6 +273,18 @@ export function App() {
           light={light}
           onToggleTheme={toggleTheme}
           onOpenModal={setModal}
+          adminMode={adminMode}
+          adminAction={
+            isCurator
+              ? adminMode
+                ? { label: 'Exit admin', href: '/browse', onSelect: showAll }
+                : {
+                    label: 'Admin',
+                    href: routeToHref({ ...EMPTY_ROUTE, admin: true }),
+                    onSelect: () => navigate({ ...EMPTY_ROUTE, admin: true }),
+                  }
+              : undefined
+          }
           account={
             <AccountMenu
               available={authAvailable}
@@ -358,6 +380,7 @@ export function App() {
               user={user}
               isCurator={isCurator}
               lists={lists}
+              savedAssetCount={assetSaves.saved.length}
               onOpenList={chooseList}
               onOpenResource={(resourceId) => navigate({ ...EMPTY_ROUTE, resourceId })}
               onSubmit={() => setModal('submit')}

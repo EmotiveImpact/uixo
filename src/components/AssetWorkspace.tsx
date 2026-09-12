@@ -146,8 +146,6 @@ export function AssetWorkspace() {
         onChooseCategory={openCategory}
         onChooseSub={openCategory}
         onSubmit={() => setModal('submit')}
-        isCurator={isCurator}
-        onShowAdmin={() => navigateInApp('/admin')}
       />
       <a className="skip-link" href="#main">
         Skip to content
@@ -158,6 +156,11 @@ export function AssetWorkspace() {
           light={light}
           onToggleTheme={toggleTheme}
           onOpenModal={setModal}
+          adminAction={
+            isCurator
+              ? { label: 'Admin', href: '/admin', onSelect: () => navigateInApp('/admin') }
+              : undefined
+          }
           account={
             <AccountMenu
               available={authAvailable}

@@ -2351,6 +2351,38 @@ kbd {
 .catalogue-nav a:hover {
   color: var(--foreground);
 }
+.admin-mode-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  margin-right: auto;
+  color: var(--foreground);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.top-nav .admin-mode-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--foreground);
+}
+.admin-brand {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.admin-brand-mode {
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: var(--muted);
+  color: var(--muted-foreground);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
 .discovery-controls {
   display: flex;
   align-items: center;
@@ -2397,6 +2429,9 @@ kbd {
   display: grid;
   gap: 22px;
   max-width: 1180px;
+}
+.admin-scroll-target {
+  scroll-margin-top: 24px;
 }
 .admin-intro {
   display: flex;

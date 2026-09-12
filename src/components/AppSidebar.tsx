@@ -1,14 +1,4 @@
-import {
-  Grid2X2,
-  Heart,
-  Layers3,
-  PanelLeft,
-  Plus,
-  Shapes,
-  ShieldCheck,
-  Trash2,
-  X,
-} from 'lucide-react';
+import { Grid2X2, Heart, Layers3, PanelLeft, Plus, Shapes, Trash2, X } from 'lucide-react';
 import {
   AnimatedSidebar,
   AnimatedSidebarClose,
@@ -56,9 +46,6 @@ type AppSidebarProps = {
   savedAssetCount?: number;
   assetKind?: string;
   onChooseAssetKind?: (kind: string) => void;
-  isCurator?: boolean;
-  onAdmin?: boolean;
-  onShowAdmin?: () => void;
 };
 
 export function AppSidebar({
@@ -83,9 +70,6 @@ export function AppSidebar({
   savedAssetCount = 0,
   assetKind = '',
   onChooseAssetKind,
-  isCurator = false,
-  onAdmin = false,
-  onShowAdmin,
 }: AppSidebarProps) {
   const favourites = lists.find((list) => list.id === DEFAULT_LIST_ID);
   return (
@@ -199,24 +183,6 @@ export function AppSidebar({
                     </AnimatedSidebarMenuButton>
                   </AnimatedSidebarMenuItem>
                 ))}
-              </AnimatedSidebarMenu>
-            </AnimatedSidebarGroupContent>
-          </AnimatedSidebarGroup>
-        )}
-        {isCurator && onShowAdmin && (
-          <AnimatedSidebarGroup className="pt-2">
-            <AnimatedSidebarGroupLabel>Workspace</AnimatedSidebarGroupLabel>
-            <AnimatedSidebarGroupContent>
-              <AnimatedSidebarMenu>
-                <AnimatedSidebarMenuItem>
-                  <AnimatedSidebarMenuButton
-                    icon={<ShieldCheck className="size-4" />}
-                    isActive={onAdmin}
-                    onSelect={onShowAdmin}
-                  >
-                    Admin
-                  </AnimatedSidebarMenuButton>
-                </AnimatedSidebarMenuItem>
               </AnimatedSidebarMenu>
             </AnimatedSidebarGroupContent>
           </AnimatedSidebarGroup>

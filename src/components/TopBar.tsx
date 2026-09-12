@@ -1,4 +1,4 @@
-import { Moon, PanelLeft, Search, Sun } from 'lucide-react';
+import { ArrowLeft, Moon, PanelLeft, Search, ShieldCheck, Sun } from 'lucide-react';
 import type { RefObject } from 'react';
 import { AnimatedSidebarTrigger } from './motion/animated-sidebar';
 import { navigateInApp } from '../lib/navigation';
@@ -12,6 +12,12 @@ type TopBarProps = {
   onOpenModal: (modal: ModalName) => void;
   account: ReactNode;
   catalogue?: 'websites' | 'assets' | 'collections';
+  adminMode?: boolean;
+  adminAction?: {
+    label: 'Admin' | 'Exit admin';
+    href: string;
+    onSelect: () => void;
+  };
 };
 type DiscoveryControlsProps = {
   searchRef: RefObject<HTMLInputElement | null>;
@@ -31,6 +37,8 @@ export function TopBar({
   onOpenModal,
   account,
   catalogue = 'websites',
+  adminMode = false,
+  adminAction,
 }: TopBarProps) {
   return (
     <>
@@ -42,31 +50,51 @@ export function TopBar({
           <PanelLeft className="size-4" />
         </AnimatedSidebarTrigger>
 
-        <nav className="catalogue-nav" aria-label="Catalogue">
-          {(['websites', 'assets', 'collections'] as const).map((type) => {
-            const href =
-              type === 'websites'
-                ? '/browse'
-                : type === 'assets'
-                  ? '/browse/assets'
-                  : '/collections';
-            return (
-              <a
-                key={type}
-                href={href}
-                aria-current={catalogue === type ? 'page' : undefined}
-                onClick={(event) => {
-                  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-                  event.preventDefault();
-                  navigateInApp(href);
-                }}
-              >
-                {type.charAt(0).toUpperCase() + type.slice(1)}
-              </a>
-            );
-          })}
-        </nav>
+        {adminMode ? (
+          <div className="admin-mode-label">
+            <ShieldCheck size={14} /> Admin mode
+          </div>
+        ) : (
+          <nav className="catalogue-nav" aria-label="Catalogue">
+            {(['websites', 'assets', 'collections'] as const).map((type) => {
+              const href =
+                type === 'websites'
+                  ? '/browse'
+                  : type === 'assets'
+                    ? '/browse/assets'
+                    : '/collections';
+              return (
+                <a
+                  key={type}
+                  href={href}
+                  aria-current={catalogue === type ? 'page' : undefined}
+                  onClick={(event) => {
+                    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                    event.preventDefault();
+                    navigateInApp(href);
+                  }}
+                >
+                  {type.charAt(0).toUpperCase() + type.slice(1)}
+                </a>
+              );
+            })}
+          </nav>
+        )}
         <nav className="top-nav" aria-label="Main navigation">
+          {adminAction && (
+            <a
+              className="admin-mode-action"
+              href={adminAction.href}
+              onClick={(event) => {
+                if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                event.preventDefault();
+                adminAction.onSelect();
+              }}
+            >
+              {adminAction.label === 'Exit admin' && <ArrowLeft size={13} />}
+              {adminAction.label}
+            </a>
+          )}
           <button onClick={() => onOpenModal('about')}>About</button>
         </nav>
 

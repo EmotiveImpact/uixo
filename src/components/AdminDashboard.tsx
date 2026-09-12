@@ -118,7 +118,7 @@ export function AdminDashboard({ user, onOpenResource, onOpenWebsiteReview }: Pr
   };
 
   return (
-    <div className="admin-dashboard">
+    <div className="admin-dashboard" id="admin-overview">
       <header className="admin-intro">
         <div>
           <p className="admin-eyebrow">
@@ -167,7 +167,11 @@ export function AdminDashboard({ user, onOpenResource, onOpenWebsiteReview }: Pr
 
       <div className="admin-columns">
         <div className="admin-stack">
-          <section className="admin-panel" aria-labelledby="admin-submissions">
+          <section
+            className="admin-panel admin-scroll-target"
+            id="admin-submissions-panel"
+            aria-labelledby="admin-submissions"
+          >
             <div className="admin-panel-heading">
               <div>
                 <Inbox size={15} />
@@ -207,7 +211,11 @@ export function AdminDashboard({ user, onOpenResource, onOpenWebsiteReview }: Pr
             )}
           </section>
 
-          <section className="admin-panel" aria-labelledby="admin-reports">
+          <section
+            className="admin-panel admin-scroll-target"
+            id="admin-reports-panel"
+            aria-labelledby="admin-reports"
+          >
             <div className="admin-panel-heading">
               <div>
                 <AlertTriangle size={15} />
@@ -291,7 +299,11 @@ export function AdminDashboard({ user, onOpenResource, onOpenWebsiteReview }: Pr
             </button>
           </section>
 
-          <section className="admin-panel" aria-labelledby="admin-health">
+          <section
+            className="admin-panel admin-scroll-target"
+            id="admin-registry-panel"
+            aria-labelledby="admin-health"
+          >
             <div className="admin-panel-heading">
               <div>
                 <Database size={15} />

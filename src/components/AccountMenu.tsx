@@ -85,7 +85,7 @@ export function AccountMenu({
           <div className="account-identity">
             <strong>{user.name}</strong>
             <span>{user.email}</span>
-            {user.role === 'curator' && <span className="role-badge">Curator</span>}
+            {user.role === 'curator' && <span className="role-badge">Admin</span>}
           </div>
           <a
             role="menuitem"
