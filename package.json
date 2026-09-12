@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "engines": { "node": "22.x" },
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "tsc --noEmit && vite build && node scripts/prerender.mjs",
+    "build": "npm run registry:deps && npm run registry:verify && tsc --noEmit && vite build && node scripts/prerender.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "prerender": "node scripts/prerender.mjs",
     "typecheck": "tsc --noEmit",
@@ -18,7 +19,14 @@
     "thumbnails": "node scripts/thumbnails.mjs",
     "candidates:apply": "node scripts/apply-candidates.mjs",
     "db:seed": "node --env-file=.env.local scripts/seed-db.mjs",
-    "db:schema": "psql \"$DATABASE_URL\" -v ON_ERROR_STOP=1 -f db/schema.sql"
+    "db:schema": "psql \"$DATABASE_URL\" -v ON_ERROR_STOP=1 -f db/schema.sql",
+    "registry:dev": "node --experimental-strip-types tools/registry-dev.ts",
+    "registry:deps": "npm install --prefix registry --ignore-scripts",
+    "registry:test": "node --experimental-strip-types --test tests/registry/core.node.ts tests/registry/http.node.ts services/eve/lib/client.node.ts",
+    "registry:test:mcp": "node --experimental-strip-types --test registry/tests/mcp.node.ts",
+    "registry:verify": "node tools/verify-registry.mjs",
+    "registry:mcp": "node --experimental-strip-types registry/stdio.ts",
+    "registry:db": "node --experimental-strip-types tools/registry-db.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",

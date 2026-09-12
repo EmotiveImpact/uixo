@@ -1,0 +1,15 @@
+{
+  "name": "uixo-index-operator",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "engines": { "node": ">=22.16.0" },
+  "scripts": {
+    "dev": "eve dev",
+    "build": "eve build",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test lib/client.node.ts"
+  },
+  "dependencies": { "eve": "0.54.3", "zod": "^4.0.0" },
+  "devDependencies": { "typescript": "^5.7.0", "@types/node": "^22.0.0" }
+}
