@@ -1,6 +1,7 @@
 import { Moon, PanelLeft, Search, Sun } from 'lucide-react';
 import type { RefObject } from 'react';
 import { AnimatedSidebarTrigger } from './motion/animated-sidebar';
+import { navigateInApp } from '../lib/navigation';
 import { PRICE_FILTERS } from '../types';
 import type { ReactNode } from 'react';
 import type { ModalName, PriceFilter } from '../types';
@@ -42,21 +43,28 @@ export function TopBar({
         </AnimatedSidebarTrigger>
 
         <nav className="catalogue-nav" aria-label="Catalogue">
-          {(['websites', 'assets', 'collections'] as const).map((type) => (
-            <a
-              key={type}
-              href={
-                type === 'websites'
-                  ? '/browse'
-                  : type === 'assets'
-                    ? '/browse/assets'
-                    : '/collections'
-              }
-              aria-current={catalogue === type ? 'page' : undefined}
-            >
-              {type.charAt(0).toUpperCase() + type.slice(1)}
-            </a>
-          ))}
+          {(['websites', 'assets', 'collections'] as const).map((type) => {
+            const href =
+              type === 'websites'
+                ? '/browse'
+                : type === 'assets'
+                  ? '/browse/assets'
+                  : '/collections';
+            return (
+              <a
+                key={type}
+                href={href}
+                aria-current={catalogue === type ? 'page' : undefined}
+                onClick={(event) => {
+                  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                  event.preventDefault();
+                  navigateInApp(href);
+                }}
+              >
+                {type.charAt(0).toUpperCase() + type.slice(1)}
+              </a>
+            );
+          })}
         </nav>
         <nav className="top-nav" aria-label="Main navigation">
           <button onClick={() => onOpenModal('about')}>About</button>

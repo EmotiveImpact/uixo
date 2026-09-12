@@ -19,6 +19,7 @@ import {
 } from './motion/animated-sidebar';
 import { categories, collections, resources } from '../data';
 import { categoryCount, populatedSubs } from '../lib/filters';
+import { navigateInApp } from '../lib/navigation';
 import { DEFAULT_LIST_ID } from '../types';
 import type { List } from '../types';
 
@@ -63,9 +64,9 @@ export function AppSidebar({
   onChooseSub,
   onSubmit,
   onAssets = false,
-  onShowAssets = () => window.location.assign('/browse/assets'),
+  onShowAssets = () => navigateInApp('/browse/assets'),
   onSavedAssets = false,
-  onShowSavedAssets = () => window.location.assign('/browse/assets?view=saved'),
+  onShowSavedAssets = () => navigateInApp('/browse/assets?view=saved'),
   savedAssetCount = 0,
   assetKind = '',
   onChooseAssetKind,

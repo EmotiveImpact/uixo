@@ -17,6 +17,7 @@ import { useDensity } from '../hooks/useDensity';
 import { useDialog } from '../hooks/useDialog';
 import { useSearchHotkey } from '../hooks/useSearchHotkey';
 import { EMPTY_ROUTE, routeToHref } from '../lib/url';
+import { navigateInApp } from '../lib/navigation';
 import { EMPTY_ASSET_QUERY, assetHref, readAssetQuery } from '../lib/asset-library';
 import type { AssetQuery } from '../lib/asset-library';
 import type { ModalName, PriceFilter } from '../types';
@@ -88,8 +89,7 @@ export function AssetWorkspace() {
     });
     setMobileOpen(false);
   }, []);
-  const go = (changes: Parameters<typeof routeToHref>[0]) =>
-    window.location.assign(routeToHref(changes));
+  const go = (changes: Parameters<typeof routeToHref>[0]) => navigateInApp(routeToHref(changes));
   const openCategory = (category: string, sub: string | null = null) =>
     go({ ...EMPTY_ROUTE, category, sub });
   const utility = ['connect', 'guide', 'review', 'scout', 'jobs'].includes(query.view);
