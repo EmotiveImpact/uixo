@@ -684,13 +684,31 @@ kbd {
     display: none;
   }
   [data-slot='sidebar'][data-state='collapsed'] [data-slot='sidebar-header'] > div {
-    flex-direction: column;
-    gap: 10px;
+    position: relative;
+    justify-content: center;
+    gap: 0;
     padding-left: 0;
     padding-right: 0;
   }
   [data-slot='sidebar'][data-state='collapsed'] .sidebar-header-toggle {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
     margin-left: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  [data-slot='sidebar'][data-state='collapsed']:hover .sidebar-header-toggle,
+  [data-slot='sidebar'][data-state='collapsed'] .sidebar-header-toggle:focus-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  [data-slot='sidebar'][data-state='collapsed']:hover .brand,
+  [data-slot='sidebar'][data-state='collapsed']:has(.sidebar-header-toggle:focus-visible) .brand {
+    opacity: 0;
+    pointer-events: none;
   }
 }
 /* Menu hover uses text only; preserve the active selection indicator. */
