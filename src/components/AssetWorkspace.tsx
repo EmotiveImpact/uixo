@@ -159,11 +159,7 @@ export function AssetWorkspace() {
           }
           light={light}
           onToggleTheme={toggleTheme}
-          onReset={() => navigate({}, true)}
           onOpenModal={setModal}
-          onOpenCollections={() => go({ ...EMPTY_ROUTE, collectionsIndex: true })}
-          collectionsHref="/collections"
-          onCollections={false}
           account={
             <AccountMenu
               available={authAvailable}

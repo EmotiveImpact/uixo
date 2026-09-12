@@ -244,11 +244,7 @@ export function App() {
           onPriceChange={(price: PriceFilter) => navigate({ price })}
           light={light}
           onToggleTheme={toggleTheme}
-          onReset={reset}
           onOpenModal={setModal}
-          onOpenCollections={() => navigate({ ...EMPTY_ROUTE, collectionsIndex: true })}
-          collectionsHref={routeToHref({ ...EMPTY_ROUTE, collectionsIndex: true })}
-          onCollections={route.collectionsIndex || Boolean(activeCollection)}
           account={
             <AccountMenu
               available={authAvailable}

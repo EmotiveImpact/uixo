@@ -13,11 +13,7 @@ type TopBarProps = {
   onPriceChange: (price: PriceFilter) => void;
   light: boolean;
   onToggleTheme: () => void;
-  onReset: () => void;
   onOpenModal: (modal: ModalName) => void;
-  onOpenCollections: () => void;
-  collectionsHref: string;
-  onCollections: boolean;
   account: ReactNode;
   /** The shared shell can search individual assets without claiming they are websites. */
   assetSearch?: boolean;
@@ -32,11 +28,7 @@ export function TopBar({
   onPriceChange,
   light,
   onToggleTheme,
-  onReset,
   onOpenModal,
-  onOpenCollections,
-  collectionsHref,
-  onCollections,
   account,
   assetSearch = false,
   searchInContent = false,
@@ -84,20 +76,6 @@ export function TopBar({
       </div>
 
       <nav className="top-nav" aria-label="Main navigation">
-        <button className={onCollections ? '' : 'selected'} onClick={onReset}>
-          Explore
-        </button>
-        <a
-          className={onCollections ? 'selected' : ''}
-          href={collectionsHref}
-          onClick={(event) => {
-            if (event.metaKey || event.ctrlKey || event.shiftKey) return;
-            event.preventDefault();
-            onOpenCollections();
-          }}
-        >
-          Collections
-        </a>
         <button onClick={() => onOpenModal('about')}>About</button>
       </nav>
 

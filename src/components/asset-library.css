@@ -306,7 +306,7 @@
   background: #111;
   box-shadow: 0 8px 18px rgb(0 0 0 / 16%);
 }
-.asset-demo-buttons > span + button {
+.asset-demo-buttons > span + span {
   color: #333;
   background: #fff;
 }
@@ -1101,4 +1101,27 @@
     gap: 14px;
     flex-wrap: wrap;
   }
+}
+
+/* Keep previews legible as the sidebar and viewport change the content width. */
+.asset-library {
+  container-type: inline-size;
+}
+.asset-library-grid {
+  grid-template-columns: 1fr;
+}
+@container (min-width: 560px) {
+  .asset-library-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@container (min-width: 820px) {
+  .asset-library-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.asset-library-card .asset-library-preview {
+  width: 100%;
+  min-height: 210px;
+  padding: 28px 22px 40px;
 }
