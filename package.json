@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
+    "dev": "vite --host 127.0.0.1 --port 3000",
     "build": "tsc --noEmit && vite build && node scripts/prerender.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "prerender": "node scripts/prerender.mjs",
@@ -21,6 +21,7 @@
     "db:schema": "psql \"$DATABASE_URL\" -v ON_ERROR_STOP=1 -f db/schema.sql"
   },
   "dependencies": {
+    "@neondatabase/auth": "^0.5.0-beta",
     "@neondatabase/serverless": "^1.1.0",
     "clsx": "^2.1.1",
     "jose": "^6.2.12",

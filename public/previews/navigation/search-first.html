@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C — Search first</title>
+  <link rel="stylesheet" href="uixo.css" />
+  <style>
+    .bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 28px;
+    }
+    .hero { padding: 48px 40px 20px; }
+    .hero h1 { margin-bottom: 22px; }
+    .box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 48px;
+      padding: 0 16px;
+      background: var(--chip);
+      border: 1px solid var(--chip-line);
+      border-radius: 14px;
+      font-size: 13px;
+      color: var(--muted-foreground);
+    }
+    .box input {
+      flex: 1;
+      background: none;
+      border: 0;
+      outline: none;
+      color: var(--foreground);
+    }
+  </style>
+</head>
+<body>
+  <div class="back">
+    <a href="index.html">← All directions</a>
+    <span>Alternative · search is the nav. Type, or follow a suggestion.</span>
+  </div>
+  <div class="frame">
+    <header class="bar">
+      <button type="button" class="brand" data-go="home">UIXO</button>
+      <nav class="dest">
+        <button type="button" data-go="home" data-nav="home">Directory</button>
+        <button type="button" data-go="collections" data-nav="collections">Collections</button>
+        <button type="button" data-go="saved" data-nav="saved">Saved</button>
+      </nav>
+    </header>
+    <section class="hero" data-view="hero">
+      <h1>What do you need to ship?</h1>
+      <label class="box">
+        <span>→</span>
+        <input id="q" placeholder="Icons, grainy gradients, React components…" />
+        <span style="opacity:.45">⌘K</span>
+      </label>
+      <div id="suggest" class="suggest" style="margin-top:8px"></div>
+    </section>
+
+    <main class="page" data-view="home">
+      <p class="meta" id="home-meta">Or start from what we reached for this week. Search remains the way through.</p>
+      <div class="grid" id="grid"></div>
+    </main>
+  </div>
+  <script src="nav.js"></script>
+  <script>
+    const state = { view: 'home', q: '', category: null, slug: null };
+
+    function paintSuggest(q) {
+      const hits = UIXO.searchHits(q);
+      const rows = [
+        ...hits.categories.map((item) => `<button type="button" data-go="category" data-cat="${item.name}"><span>${item.name}</span><em>category · ${UIXO.categoryCount(item.name)}</em></button>`),
+        ...hits.collections.map((item) => `<button type="button" data-go="collection" data-slug="${item.slug}"><span>${item.name}</span><em>collection</em></button>`),
+        ...hits.resources.slice(0, 5).map((item) => `<button type="button" data-open="${item.id}"><span>${item.name}</span><em>${item.category}</em></button>`),
+      ];
+      document.getElementById('suggest').innerHTML = rows.join('') || '<button type="button" disabled><span>Nothing matches</span><em></em></button>';
+    }
+
+    function show(view, extra = {}) {
+      if (view) state.view = view;
+      if (extra.q !== undefined) state.q = extra.q;
+      if (extra.category !== undefined) state.category = extra.category;
+      if (extra.slug) state.slug = extra.slug;
+
+      const hero = document.querySelector('[data-view="hero"]');
+      hero.hidden = state.view === 'collection';
+      document.querySelectorAll('.dest [data-nav]').forEach((el) => {
+        const on = state.view === 'collections' || state.view === 'collection'
+          ? el.dataset.nav === 'collections'
+          : state.view === 'saved'
+            ? el.dataset.nav === 'saved'
+            : el.dataset.nav === 'home';
+        el.classList.toggle('on', on);
+      });
+
+      const title = document.getElementById('home-meta');
+      const grid = document.getElementById('grid');
+      grid.className = state.view === 'collections' ? 'sets' : state.view === 'saved' ? 'list' : 'grid';
+
+      if (state.view === 'collections') {
+        title.textContent = 'Collections stay reachable, but they are no longer a home. That is the tradeoff.';
+        grid.innerHTML = UIXO.collections.map(UIXO.setCard).join('');
+      } else if (state.view === 'collection') {
+        const set = UIXO.collectionBySlug(state.slug);
+        title.textContent = `${set.name} · ${set.resourceIds.length} websites`;
+        grid.className = 'grid';
+        grid.innerHTML = `<p><button class="ghost" data-go="collections">← Collections</button></p>${UIXO.cards(set.resourceIds.map(UIXO.byId))}`;
+      } else if (state.view === 'saved') {
+        const ids = UIXO.savedIds();
+        title.textContent = `Saved · ${ids.length}`;
+        grid.innerHTML = ids.length ? ids.map((id) => UIXO.row(UIXO.byId(id), 'Saved')).join('') : '<p class="empty">Nothing saved yet.</p>';
+      } else if (state.view === 'category') {
+        const items = UIXO.filter({ category: state.category });
+        title.textContent = `Search · ${state.category} · ${items.length} listing${items.length === 1 ? '' : 's'}. Categories are results, not a rail.`;
+        grid.innerHTML = UIXO.cards(items);
+      } else if (state.q) {
+        const items = UIXO.filter({ q: state.q });
+        title.textContent = `Search · “${state.q}” · ${items.length} listing${items.length === 1 ? '' : 's'}`;
+        grid.innerHTML = UIXO.cards(items);
+      } else {
+        title.textContent = 'Or start from what we reached for this week. Search remains the way through.';
+        grid.innerHTML = UIXO.cards(UIXO.resources.filter((item) => item.featured).slice(0, 3));
+      }
+      paintSuggest(state.q);
+    }
+
+    const box = document.getElementById('q');
+    box.addEventListener('input', () => show('home', { q: box.value, category: null }));
+    box.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') show('home', { q: box.value });
+    });
+
+    UIXO.bind({
+      onGo(name, el) {
+        if (name === 'category') {
+          box.value = el.dataset.cat;
+          show('category', { category: el.dataset.cat, q: el.dataset.cat });
+        } else if (name === 'collection') show('collection', { slug: el.dataset.slug });
+        else if (name === 'home') {
+          box.value = '';
+          show('home', { q: '', category: null });
+        } else show(name);
+      },
+      onChanged() { show(); },
+    });
+    show('home');
+  </script>
+</body>
+</html>

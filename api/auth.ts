@@ -1,109 +1,24 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { incomingToRequest, proxyNeonAuth, sendAuthResponse } from './_lib/auth-proxy.js';
+import { requestIsHttps } from './_lib/cookies.js';
 
 /**
- * Proxies Neon Auth through UIXO's own origin.
+ * Proxies Neon Auth through UIXO's own origin via the official Neon handler.
  *
  * Neon Auth sets its session cookie on its own domain, which makes it a third-party
  * cookie. Safari blocks those outright and Firefox and Chrome are closing the same door,
- * so sign-in appeared to succeed and then the session could never be read back — the POST
- * worked, the cookie was stored, and nothing was ever allowed to send it again.
+ * so sign-in appeared to succeed and then the session could never be read back.
  *
- * Forwarding through here makes the cookie first-party: same site, no blocking, and it
- * keeps working when third-party cookies disappear entirely.
+ * Forwarding through here makes the cookie first-party. The official handler also
+ * marks the request as a Neon Auth proxy so Google's challenge cookie is issued on
+ * the social POST instead of only on neon.tech.
  */
-
-/**
- * Dropped on the way upstream. Beyond the usual hop-by-hop set, every x-forwarded-*
- * header has to go: the upstream validates the hostname it is being addressed by, and
- * Vercel's x-forwarded-host names *this* site, which it rightly does not recognise.
- */
-const STRIP = new Set([
-  'connection',
-  'keep-alive',
-  'transfer-encoding',
-  'upgrade',
-  'host',
-  'content-length',
-  'x-forwarded-host',
-  'x-forwarded-proto',
-  'x-forwarded-for',
-  'x-forwarded-port',
-  'x-vercel-deployment-url',
-  'x-vercel-forwarded-for',
-  'forwarded',
-]);
 
 export const config = { api: { bodyParser: false } };
 
-async function rawBody(req: VercelRequest): Promise<Uint8Array | undefined> {
-  if (req.method === 'GET' || req.method === 'HEAD') return undefined;
-  const chunks: Buffer[] = [];
-  for await (const chunk of req) chunks.push(chunk as Buffer);
-  return new Uint8Array(chunks.length ? Buffer.concat(chunks) : Buffer.alloc(0));
-}
-
-/**
- * The upstream cookie is built for a cross-site world. Once it is first-party those
- * attributes are wrong: Partitioned would key it to the embedding site, and SameSite=None
- * needlessly permits it on other people's pages.
- */
-function firstParty(cookie: string): string {
-  return cookie
-    .split(';')
-    .map((part) => part.trim())
-    .filter((part) => !/^partitioned$/i.test(part) && !/^samesite=/i.test(part))
-    .concat('SameSite=Lax')
-    .join('; ');
-}
-
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  const base = (process.env.NEON_AUTH_BASE_URL ?? '').replace(/\/+$/, '');
-  if (!base) return res.status(503).json({ error: 'Auth is not configured.' });
-
-  // vercel.json rewrites /api/auth/<anything> to here with the tail in `path`, because a
-  // zero-config [...catch-all] is not built for a non-Next project.
   const raw = req.query.path;
   const tail = (Array.isArray(raw) ? raw.join('/') : (raw ?? '')).replace(/^\/+/, '');
-  if (!tail) return res.status(404).json({ error: 'No auth route given.' });
-
-  const forwarded = new URLSearchParams();
-  for (const [key, value] of Object.entries(req.query)) {
-    if (key === 'path' || value === undefined) continue;
-    for (const item of Array.isArray(value) ? value : [value]) forwarded.append(key, item);
-  }
-  const suffix = forwarded.toString();
-  const target = `${base}/${tail}${suffix ? `?${suffix}` : ''}`;
-
-  const headers = new Headers();
-  for (const [key, value] of Object.entries(req.headers)) {
-    if (STRIP.has(key.toLowerCase()) || value === undefined) continue;
-    headers.set(key, Array.isArray(value) ? value.join(', ') : value);
-  }
-  // The upstream checks Origin against its trusted list; give it one it trusts.
-  const self = `https://${req.headers.host}`;
-  headers.set('origin', self);
-
-  const upstream = await fetch(target, {
-    method: req.method,
-    headers,
-    // Node's fetch accepts a byte array; the DOM lib's BodyInit type does not admit it.
-    body: (await rawBody(req)) as BodyInit | undefined,
-    redirect: 'manual',
-  });
-
-  const cookies = upstream.headers.getSetCookie?.() ?? [];
-  if (cookies.length) res.setHeader('set-cookie', cookies.map(firstParty));
-
-  upstream.headers.forEach((value, key) => {
-    const lower = key.toLowerCase();
-    if (lower === 'set-cookie' || lower === 'content-encoding' || lower === 'content-length')
-      return;
-    // Same-origin now, so the upstream's CORS headers are noise at best.
-    if (lower.startsWith('access-control-')) return;
-    res.setHeader(key, value);
-  });
-
-  res.status(upstream.status);
-  const buffer = Buffer.from(await upstream.arrayBuffer());
-  res.send(buffer);
+  const request = await incomingToRequest(req);
+  await sendAuthResponse(res, await proxyNeonAuth(request, tail, requestIsHttps(req)));
 }

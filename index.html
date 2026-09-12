@@ -38,6 +38,20 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Same process, different cookie jar. Google's return has to land on the host
+      // the challenge cookie was stored on — keep everyone on localhost:3000.
+      // If a verifier is already on the URL, stay put so the exchange can use the cookie.
+      if (
+        location.hostname === '127.0.0.1' &&
+        location.port === '3000' &&
+        !new URLSearchParams(location.search).has('neon_auth_session_verifier')
+      ) {
+        location.replace(
+          'http://localhost:3000' + location.pathname + location.search + location.hash,
+        );
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

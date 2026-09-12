@@ -2,6 +2,19 @@ import { useCallback, useEffect, useState } from 'react';
 import { readRoute, routeToHref } from '../lib/url';
 import type { RouteState } from '../lib/url';
 
+/** Neon Auth puts this on the URL after Google. Do not drop it before get-session runs. */
+const AUTH_QUERY_KEYS = ['neon_auth_session_verifier'] as const;
+
+function hrefWithAuthParams(href: string): string {
+  const next = new URL(href, window.location.origin);
+  const current = new URLSearchParams(window.location.search);
+  for (const key of AUTH_QUERY_KEYS) {
+    const value = current.get(key);
+    if (value) next.searchParams.set(key, value);
+  }
+  return `${next.pathname}${next.search}`;
+}
+
 /** Route keys that represent navigation, and so deserve a history entry of their own. */
 const NAVIGATION_KEYS: (keyof RouteState)[] = [
   'category',
@@ -41,7 +54,7 @@ export function useRoute() {
         // partial update that does not name `landing` is always taken as leaving it.
         const staysOnLanding = typeof next === 'function' || 'landing' in next;
         const resolved = staysOnLanding ? merged : { ...merged, landing: false };
-        const href = routeToHref(resolved);
+        const href = hrefWithAuthParams(routeToHref(resolved));
         if (href !== window.location.pathname + window.location.search) {
           // Filter tweaks replace the entry; moving between views adds one.
           if (isNavigation(current, resolved)) window.history.pushState(null, '', href);

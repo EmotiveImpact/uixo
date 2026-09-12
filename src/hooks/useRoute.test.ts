@@ -25,6 +25,14 @@ describe('useRoute', () => {
     expect(window.location.pathname).toBe('/category/icons');
   });
 
+  it("keeps Neon Auth's Google verifier on the URL while navigating", () => {
+    go('/browse?neon_auth_session_verifier=abc');
+    const { result } = renderHook(() => useRoute());
+    act(() => result.current.navigate({ category: 'Icons' }));
+    expect(window.location.pathname).toBe('/category/icons');
+    expect(window.location.search).toContain('neon_auth_session_verifier=abc');
+  });
+
   it('adds a history entry for navigation, so back works', () => {
     go('/browse');
     const { result } = renderHook(() => useRoute());

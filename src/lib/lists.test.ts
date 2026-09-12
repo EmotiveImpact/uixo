@@ -5,8 +5,12 @@ import {
   defaultLists,
   deleteList,
   isSavedAnywhere,
+  listsEqual,
   loadLists,
+  mergeLists,
+  normalizeLists,
   removeEverywhere,
+  shouldMergeLocal,
   toggleInList,
 } from './lists';
 import { LISTS_KEY, LEGACY_FAVOURITES_KEY } from './storage';
@@ -89,5 +93,72 @@ describe('loading', () => {
   it('survives unparseable storage', () => {
     localStorage.setItem(LISTS_KEY, 'not json');
     expect(loadLists()).toHaveLength(1);
+  });
+});
+
+describe('mergeLists', () => {
+  it('unions Favourites from this browser and the account', () => {
+    const local = [{ id: DEFAULT_LIST_ID, name: 'Favourites', resourceIds: ['lucide'] }];
+    const remote = [{ id: DEFAULT_LIST_ID, name: 'Favourites', resourceIds: ['orbkit'] }];
+    expect(mergeLists(local, remote)[0].resourceIds).toEqual(['orbkit', 'lucide']);
+  });
+
+  it('keeps a named list that only exists on one side', () => {
+    const local = [
+      { id: DEFAULT_LIST_ID, name: 'Favourites', resourceIds: [] },
+      { id: 'c1', name: 'Motion', resourceIds: ['orbkit'] },
+    ];
+    const remote = [
+      { id: DEFAULT_LIST_ID, name: 'Favourites', resourceIds: ['lucide'] },
+      { id: 'c2', name: 'Portfolio', resourceIds: ['shadcn'] },
+    ];
+    const merged = mergeLists(local, remote);
+    expect(merged.map((list) => list.id)).toEqual([DEFAULT_LIST_ID, 'c2', 'c1']);
+    expect(merged.find((list) => list.id === 'c1')?.resourceIds).toEqual(['orbkit']);
+    expect(merged.find((list) => list.id === 'c2')?.resourceIds).toEqual(['shadcn']);
+  });
+
+  it('always keeps a Favourites list', () => {
+    expect(mergeLists([], [])).toEqual([
+      { id: DEFAULT_LIST_ID, name: 'Favourites', resourceIds: [] },
+    ]);
+  });
+});
+
+describe('shouldMergeLocal', () => {
+  it('merges guest saves and the same account’s cache, not another person’s', () => {
+    expect(shouldMergeLocal(null, 'user-a')).toBe(true);
+    expect(shouldMergeLocal('user-a', 'user-a')).toBe(true);
+    expect(shouldMergeLocal('user-a', 'user-b')).toBe(false);
+  });
+});
+
+describe('normalizeLists', () => {
+  it('accepts a well-formed snapshot and keeps Favourites first', () => {
+    expect(
+      normalizeLists([
+        { id: 'c1', name: ' Motion ', resourceIds: ['orbkit', 'orbkit', 'lucide'] },
+        { id: DEFAULT_LIST_ID, name: 'Favourites', resourceIds: ['shadcn'] },
+      ]),
+    ).toEqual([
+      { id: DEFAULT_LIST_ID, name: 'Favourites', resourceIds: ['shadcn'] },
+      { id: 'c1', name: 'Motion', resourceIds: ['orbkit', 'lucide'] },
+    ]);
+  });
+
+  it('rejects junk so a bad client cannot write it', () => {
+    expect(normalizeLists(null)).toBeNull();
+    expect(
+      normalizeLists([{ id: DEFAULT_LIST_ID, name: 'Favourites', resourceIds: ['bad id'] }]),
+    ).toBeNull();
+    expect(normalizeLists([{ id: '', name: 'x', resourceIds: [] }])).toBeNull();
+  });
+});
+
+describe('listsEqual', () => {
+  it('is true only when ids, names and membership match in order', () => {
+    const a = [{ id: DEFAULT_LIST_ID, name: 'Favourites', resourceIds: ['lucide'] }];
+    expect(listsEqual(a, [{ ...a[0], resourceIds: ['lucide'] }])).toBe(true);
+    expect(listsEqual(a, [{ ...a[0], resourceIds: ['orbkit'] }])).toBe(false);
   });
 });
