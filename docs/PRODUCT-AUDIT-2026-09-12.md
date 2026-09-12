@@ -1,5 +1,7 @@
 # UIXO product direction and remaining work
 
+For the full application/edition scope, intelligence capabilities and release gates, see the [master product roadmap](PRODUCT-ROADMAP.md). This audit is its engineering companion, not the complete product scope.
+
 Reviewed 12 September 2026 against the integration branch. This is a scoped code-and-conversation audit, not proof that every production journey has passed.
 
 ## Conversation coverage

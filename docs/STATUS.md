@@ -1,5 +1,7 @@
 # UIXO v2 status
 
+For product editions and delivery phases, see the [master roadmap](PRODUCT-ROADMAP.md). For the later UI and favourites repairs and current engineering priorities, see the [12 September audit](PRODUCT-AUDIT-2026-09-12.md). The integration-repair sections below retain their original verification context.
+
 ## Current outcome
 
 The entire v2 brief is **not complete**. The integration branch is ready for review, with visitor asset discovery connected to a persistent Neon registry on its protected Vercel preview. Eve, the production registry configuration and a larger live-indexed catalogue remain separate release work.
