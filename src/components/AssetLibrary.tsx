@@ -264,29 +264,33 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
             <div className={`asset-library-grid asset-density-${density}`}>
               {result.items.map((asset) => (
                 <article className="asset-library-card" key={asset.id}>
-                  <a
-                    href={assetHref({ ...query, id: asset.id })}
-                    onClick={(event) => {
-                      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-                      event.preventDefault();
-                      navigate({ id: asset.id });
-                    }}
-                    aria-label={`Inspect ${asset.name} from ${nameOf(asset.providerId)}`}
-                  >
-                    <AssetPreview asset={asset} />
-                    <div className="asset-library-card-body">
-                      <small>
-                        {nameOf(asset.providerId)} · {asset.kind}
-                      </small>
-                      <h2>{asset.name}</h2>
-                      <p>{asset.description}</p>
-                      <div className="asset-library-tags">
-                        <span>{asset.variants[0]?.framework}</span>
-                        <span>{asset.variants[0]?.format.toUpperCase()}</span>
-                        <span>{asset.licence.expression}</span>
-                      </div>
+                  <AssetPreview asset={asset} />
+                  <div className="asset-library-card-body">
+                    <small>
+                      {nameOf(asset.providerId)} · {asset.kind}
+                    </small>
+                    <h2>
+                      <a
+                        className="asset-library-card-link"
+                        href={assetHref({ ...query, id: asset.id })}
+                        onClick={(event) => {
+                          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+                            return;
+                          event.preventDefault();
+                          navigate({ id: asset.id });
+                        }}
+                        aria-label={`Inspect ${asset.name} from ${nameOf(asset.providerId)}`}
+                      >
+                        {asset.name}
+                      </a>
+                    </h2>
+                    <p>{asset.description}</p>
+                    <div className="asset-library-tags">
+                      <span>{asset.variants[0]?.framework}</span>
+                      <span>{asset.variants[0]?.format.toUpperCase()}</span>
+                      <span>{asset.licence.expression}</span>
                     </div>
-                  </a>
+                  </div>
                   <button
                     className="asset-library-save"
                     aria-label={

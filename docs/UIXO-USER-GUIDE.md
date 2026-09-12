@@ -26,11 +26,15 @@ The source snapshot at `data/registry/captured.json` contains **67 metadata reco
 
 The source snapshot does not populate fonts, templates, backgrounds, illustrations or motion libraries. The website directory may list those sources without their individual assets being indexed.
 
-Original image previews are shown when available. **Source preview not captured** is intentional, not an invented screenshot or an upstream component render. Real component preview capture remains unfinished.
+Original image previews are shown when available. Alert, Card, Input, Skeleton and Spinner use reviewed shadcn/ui source from immutable commit `2b3e6d4f8d9161fe5c19340dc383aade392012dd`. UIXO compiles those retained primitives locally and never executes source fetched at browse time. Their gallery and detail labels show the short source reference.
+
+Every other component remains explicitly labelled **Illustration · not an upstream render**. **Source preview not captured** is intentional for records with neither an original image nor a reviewed renderer. The build verifies the five retained source files and upstream MIT licence byte-for-byte, allowing only UIXO's local `cn` import-path substitution.
 
 ## Saved assets
 
-The bookmark button uses the existing `uixo.asset-saves.v2` browser-storage format. Existing saves are preserved, with a 200-asset limit. These are not account-synchronised lists and are distinct from website lists in the main sidebar. A storage error is shown rather than claiming a durable save.
+The sidebar has one **Favourites** section with separate **Websites** and **Assets** destinations and counts. Guest saves remain in the browser with a 200-asset limit. After sign-in, website lists and asset favourites sync through separate account-owned APIs. The first signed-in session safely imports guest saves; data cached for another account is never imported.
+
+Writes wait for the account's remote baseline, replay explicit add/remove operations after concurrent edits and expose **Retry sync** after a failed request. Signing out clears account-owned browser snapshots while leaving the server copy intact.
 
 ## When the library is empty
 

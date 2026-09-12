@@ -4,7 +4,7 @@ For product editions and delivery phases, see the [master roadmap](PRODUCT-ROADM
 
 ## Current outcome
 
-The entire v2 brief is **not complete**. The integration branch is ready for review, with visitor asset discovery connected to a persistent Neon registry on its protected Vercel preview. Eve, the production registry configuration and a larger live-indexed catalogue remain separate release work.
+The entire v2 brief is **not complete**. The integration branch has reliable account favourites, five source-pinned component renders and visitor asset discovery connected to a persistent Neon registry on its protected Vercel preview. CI/release isolation, Eve, the production registry configuration and a larger live-indexed catalogue remain separate release work.
 
 ## Implemented in the branch before this repair
 
@@ -21,10 +21,12 @@ These facts describe code, not verified live operation. The source snapshot is l
 - Local API proxy with narrow development-origin support.
 - Visitor redirects from the separate registry browser; legacy curator and MCP utility pages remain.
 - User guide, setup/deployment notes, decisions and changelog entries.
+- Revision-checked account persistence for website lists and asset favourites, including guest migration, conflict replay and retry UI.
+- Source-pinned shadcn/ui renders for Alert, Card, Input, Skeleton and Spinner, with immutable source integrity checks and explicit illustration fallbacks.
 
 ## Tested after integration with main
 
-- All 136 existing application tests pass.
+- All 158 application tests pass across 17 files.
 - All 23 registry core/API/Eve-client tests pass.
 - The official MCP client integration test passes.
 - Repository typecheck, lint and production build pass on Node 22.
@@ -33,6 +35,8 @@ These facts describe code, not verified live operation. The source snapshot is l
 - Scoped scout intake, curator status/queue access and worker job access pass against Neon; the disposable scout record was removed afterward.
 - The deployed MCP endpoint negotiates protocol `2025-06-18` and exposes all six UIXO tools.
 - Live provider indexing and Eve remain separate release gates.
+- Desktop and narrow-viewport browser review confirms the source-rendered Alert remains proportional in gallery and detail views with no horizontal overflow.
+- The local registry accepts both documented development origins (`127.0.0.1:3000` and `localhost:3000`), restoring acquisition details behind Vite's proxy.
 
 ## Deployment evidence and blockers
 
@@ -40,11 +44,11 @@ The `codex/integrate-pr-20` branch includes the latest `main` and deploys succes
 
 ## Remaining release work, in order
 
-1. Review and merge the integration branch, then add the corresponding production `UIXO_*` variables and promote a verified deployment.
-2. Finish shared-shell curator integration and validate signed-in JWT claims, indexing retries/continuations and publication transitions.
+1. Add ordinary PR CI, separate preview data from production and complete signed-in role/save acceptance; then review and merge the integration branch and promote a verified production deployment.
+2. Finish shared-shell curator integration and validate indexing retries/continuations and publication transitions.
 3. Connect the real Grok bot to the verified scout credential, then prove discovery → staging → indexing → review → publication.
 4. Deploy and exercise Eve with bounded credentials, model/tool limits and one real job. Schedules, maintenance and model-assisted analysis are not demonstrated by configuration alone.
 5. Generate and review a materially larger real catalogue. Expand beyond components and icons to the supported resource categories; do not invent records to meet a target count.
-6. Capture useful real component previews, with appropriate source permission and isolation. Generic cards are not a substitute for visual QA.
+6. Expand the reviewed source-pinned preview set beyond the five representative components; keep every unsupported record labelled as an illustration.
 7. Run responsive browser acceptance on mobile and complete a real-client MCP acquisition journey. Compatibility metadata is not runtime certification; install instructions are not a project-aware installer.
 8. Add semantic/visual retrieval and project-aware design/install workflows only as separately tested increments. Current search is weighted keyword search.

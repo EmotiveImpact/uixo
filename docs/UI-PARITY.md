@@ -14,7 +14,7 @@ The original integration exposed two applications with separate theme state and 
 
 ## Remaining product limitations
 
-- Website lists sync to accounts; saved asset IDs use the existing browser-local key. Cross-device asset saves require a server contract and migration.
+- Website lists and saved asset IDs sync through separate typed account snapshots. Guest saves migrate once, account ownership is isolated, and optimistic revisions reconcile cross-device edits.
 - Component illustrations are not verified upstream renders. A source-pinned component rendering pipeline remains future work.
 - Signed-in curator JWT acceptance and actual remote indexing/publication need separate live acceptance. The operator UI does not grant access.
 - Discovery is keyword matching, not semantic search. The catalogue still contains the 67 approved captured records.

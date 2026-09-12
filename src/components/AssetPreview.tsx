@@ -1,6 +1,11 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import type { AssetRecord } from '../lib/asset-library';
 import { safeAssetUrl } from '../lib/asset-library';
+import { PinnedComponentPreview } from './previews/PinnedComponentPreview';
+import {
+  pinnedComponentSource,
+  SHADCN_PREVIEW_SHORT_REF,
+} from './previews/pinned-component-sources';
 
 const FORM_CONTROLS = new Set([
   'checkbox',
@@ -169,7 +174,7 @@ function ComponentPreview({ slug }: { slug: string }) {
 }
 
 /** Scale the complete illustration uniformly; never reflow its miniature UI. */
-function ComponentCanvas({ slug }: { slug: string }) {
+function ComponentCanvas({ providerId, slug }: { providerId: string; slug: string }) {
   const viewport = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
   useLayoutEffect(() => {
@@ -187,9 +192,14 @@ function ComponentCanvas({ slug }: { slug: string }) {
     <div ref={viewport} className="asset-preview-viewport">
       <div
         className="asset-preview-canvas"
+        aria-hidden="true"
         style={{ transform: `translate(-50%, -50%) scale(${scale})` }}
       >
-        <ComponentPreview slug={slug} />
+        {pinnedComponentSource(providerId, slug) ? (
+          <PinnedComponentPreview providerId={providerId} slug={slug} />
+        ) : (
+          <ComponentPreview slug={slug} />
+        )}
       </div>
     </div>
   );
@@ -201,6 +211,8 @@ export function AssetPreview({ asset }: { asset: AssetRecord }) {
   const original =
     asset.preview?.kind === 'image' && url && new URL(url).hostname === 'raw.githubusercontent.com';
   const showOriginal = original && failedUrl !== url;
+  const pinnedSource =
+    asset.kind === 'component' ? pinnedComponentSource(asset.providerId, asset.slug) : null;
   return (
     <div className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''}`}>
       {showOriginal ? (
@@ -211,19 +223,21 @@ export function AssetPreview({ asset }: { asset: AssetRecord }) {
           onError={() => setFailedUrl(url)}
         />
       ) : asset.kind === 'component' ? (
-        <ComponentCanvas slug={asset.slug} />
+        <ComponentCanvas providerId={asset.providerId} slug={asset.slug} />
       ) : (
         <div className="asset-library-no-preview">
           <span aria-hidden="true">◇</span>
           <strong>{asset.name}</strong>
         </div>
       )}
-      <small>
+      <small title={pinnedSource ?? undefined}>
         {showOriginal
           ? 'Original GitHub SVG'
-          : asset.kind === 'component'
-            ? 'Illustration · not an upstream render'
-            : 'Source preview not captured'}
+          : pinnedSource
+            ? `Pinned source render · shadcn/ui ${SHADCN_PREVIEW_SHORT_REF}`
+            : asset.kind === 'component'
+              ? 'Illustration · not an upstream render'
+              : 'Source preview not captured'}
       </small>
     </div>
   );

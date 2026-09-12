@@ -8,6 +8,14 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-input: var(--input);
+  --color-destructive: var(--destructive);
 }
 :root {
   color-scheme: dark;
@@ -17,6 +25,14 @@
   --muted-foreground: #96969e;
   --border: #111113;
   --ring: #93939e;
+  --card: #111113;
+  --card-foreground: #eeeef0;
+  --primary: #eeeef0;
+  --primary-foreground: #111113;
+  --accent: #252529;
+  --accent-foreground: #eeeef0;
+  --input: #2b2b30;
+  --destructive: #ef4444;
   font-family: Inter, Arial, sans-serif;
   background: var(--background);
   color: var(--foreground);
@@ -29,6 +45,14 @@
   --muted-foreground: #696970;
   --border: #deded8;
   --ring: #777;
+  --card: #ffffff;
+  --card-foreground: #1c1c20;
+  --primary: #1c1c20;
+  --primary-foreground: #ffffff;
+  --accent: #e7e7e3;
+  --accent-foreground: #1c1c20;
+  --input: #d4d4ce;
+  --destructive: #dc2626;
 }
 body {
   margin: 0;

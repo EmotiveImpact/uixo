@@ -96,4 +96,82 @@ This log records the concrete work performed while completing the prioritised pr
 - Read the Vercel function logs and found native ESM could not resolve the extensionless shared import from `src/lib/asset-saves.js` to `src/lib/storage`.
 - Added explicit `.js` specifiers to the server-shared imports in `src/lib/asset-saves.ts` and `src/lib/lists.ts` so Vercel’s emitted ESM resolves them at runtime.
 - Reran typecheck, lint, formatting, the focused save suite and the full production build after the packaging fix; all passed.
-- Final endpoint and signed-in browser acceptance will be added after the follow-up deployment is Ready.
+- Committed the ESM correction as `082fde5` (`Fix Vercel ESM resolution for save APIs`) and pushed it to both integration branches.
+- Waited for corrected Vercel deployment `dpl_9miyH6wyMHM9y2krXVze3JcWwbSw`; it reached Ready at `https://uixo-2qtm3fl1g-emotiveimpact-gmailcoms-projects.vercel.app` and updated the established Astra preview alias.
+- Rechecked the protected preview through `vercel curl`: `/api/lists` and `/api/saved-assets` now return the expected unauthenticated HTTP 401 JSON; `/api/registry?action=status` returns HTTP 200 with Postgres storage, writes enabled, 67 assets and three providers; `/browse/assets` returns HTTP 200.
+- Browser acceptance confirmed the guest saved view renders three existing assets, the sidebar labels and routes Website and Asset favourites separately, and the browser console has no warnings or errors. No save was added or removed during this check.
+
+### Google sign-in correction and remaining acceptance boundary
+
+- Reproduced the Google sign-in failure and captured the exact API response: HTTP 403 `INVALID_CALLBACKURL`.
+- Inspected Neon Auth configuration and found the stable Astra Vercel preview alias was absent from Trusted Domains.
+- Added `https://uixo-git-astra-uixo-v2-7f109e-emotiveimpact-gmailcoms-projects.vercel.app` to Neon Auth Trusted Domains.
+- Retried Google sign-in and reached Google's account chooser, proving the callback-domain rejection is fixed.
+- Stopped before choosing an account. Selecting one would submit the user's identity to Google/Neon, so the signed-in cross-device browser acceptance remains pending an explicit account choice. The server state machine, role boundary and cross-device conflict behaviour are covered by tests.
+
+## MEDIA-01 — source-pinned component previews
+
+### Source acquisition and review
+
+- Confirmed all 46 captured component records were created from mutable `main` metadata and deliberately have their variant source references cleared by `registry/bootstrap.ts`.
+- Selected five representative shadcn/ui primitives for the first reviewed renderer: Alert, Card, Input, Skeleton and Spinner. They cover feedback, structured content, form and loading states without importing interactive overlay code.
+- Queried the official shadcn/ui repository and pinned commit `2b3e6d4f8d9161fe5c19340dc383aade392012dd`.
+- Two initial raw-source command attempts failed before changing the repository: unquoted query strings were treated as shell globs, then the sandbox denied GitHub network access.
+- Retried the quoted GitHub API request with the required network permission and fetched eight candidate source files for inspection.
+- Chose the five primitives above after checking every import. Alert needed the small `class-variance-authority` package; the other selected primitives use UIXO's existing React, `cn` and Lucide dependencies. Badge, Button and Separator were left as illustrations because their current upstream files add Radix runtime dependencies.
+- Fetched and retained the MIT licence from the same immutable commit.
+- The first sandboxed package-lock update waited without producing a change; the permitted retry completed and added `class-variance-authority` as a direct locked dependency.
+
+### Renderer and catalogue changes
+
+- Added the five upstream primitive files under `src/components/previews/shadcn`. Their only source change is the `cn` import path to UIXO's equivalent helper.
+- Added an immutable source map and a strict provider/slug allow-list. UIXO never fetches or executes component source while a visitor browses.
+- Added deterministic preview compositions and matching theme tokens for card, primary, accent, input and destructive colours in light and dark modes.
+- Updated `AssetPreview` to use the source renderer only for allow-listed shadcn records and to show `Pinned source render · shadcn/ui 2b3e6d4`. Every other component keeps `Illustration · not an upstream render`.
+- Changed catalogue card markup so the title link provides the full-card click target. Preview form controls are no longer descendants of a link; the independent save button remains above the link overlay.
+- Added a build-time integrity script that restores the one allowed import substitution in memory and compares SHA-256 hashes for all five sources and the retained licence. A source edit now fails `npm run previews:verify` until it is deliberately reviewed and repinned.
+- Added the preview source directory to the vendored-source formatting/lint boundary so automated formatting cannot silently rewrite upstream code.
+- One combined CSS patch initially missed the more specific save-button selector and applied no changes. The changes were split into verified patches and then applied successfully.
+
+### Tests and browser acceptance
+
+- Added tests for all five real renderer roots, the exact immutable source URL and rejection of unsupported components/providers.
+- The first focused test run exposed two test-only mistakes: the upstream Spinner root has a status role rather than a `data-slot`, and this Vitest setup does not install the DOM matcher `toBeEmptyDOMElement`. The assertions were corrected; product code was unchanged by those failures.
+- `npm run previews:verify` passes for five source files and the retained licence.
+- TypeScript, ESLint and Prettier checks pass.
+- The full application suite passes: 158 tests across 17 files.
+- The complete production build passes: 23 registry tests, the official MCP-client integration test, source-integrity verification, TypeScript compilation, the Vite bundle and prerendering of 23 pages plus sitemap and robots metadata.
+- Started the local registry and Vite services for visual review. The first registry start was blocked by the sandbox's localhost policy; the permitted retry started successfully.
+- Desktop review confirmed Alert and Card render their actual retained primitives in the three-column gallery, alongside explicit illustration labels for unsupported components.
+- Narrow-viewport review confirmed a one-column grid, proportional scaling and no document horizontal overflow. The detail dialog measured 542 CSS pixels inside a 582-pixel viewport; its preview and 320-pixel source canvas remained contained.
+- Opening Alert details exposed a pre-existing local development-origin mismatch: Vite runs on port 3000 but `registry-dev.ts` still allowed port 5173. Updated the local allow-list to accept only `127.0.0.1:3000` and `localhost:3000`, restarted the service and verified acquisition guidance loads instead of `Cross-origin requests are not allowed`.
+- No remote source code was executed and no visitor save state was changed during visual acceptance.
+
+### Files changed
+
+- `.prettierignore`
+- `eslint.config.js`
+- `package.json`
+- `package-lock.json`
+- `scripts/verify-pinned-previews.mjs`
+- `src/components/AssetLibrary.tsx`
+- `src/components/AssetPreview.tsx`
+- `src/components/asset-library.css`
+- `src/components/previews/PinnedComponentPreview.tsx`
+- `src/components/previews/PinnedComponentPreview.test.tsx`
+- `src/components/previews/pinned-component-sources.ts`
+- `src/components/previews/shadcn/alert.tsx`
+- `src/components/previews/shadcn/card.tsx`
+- `src/components/previews/shadcn/input.tsx`
+- `src/components/previews/shadcn/skeleton.tsx`
+- `src/components/previews/shadcn/spinner.tsx`
+- `src/components/previews/shadcn/LICENSE.md`
+- `src/components/previews/shadcn/README.md`
+- `src/styles.css`
+- `tools/registry-dev.ts`
+- `docs/UIXO-USER-GUIDE.md`
+- `docs/UI-PARITY.md`
+- `docs/STATUS.md`
+- `docs/PRODUCT-AUDIT-2026-09-12.md`
+- `docs/PRODUCT-ROADMAP.md`
+- `docs/IMPLEMENTATION-LOG-2026-09-12.md`

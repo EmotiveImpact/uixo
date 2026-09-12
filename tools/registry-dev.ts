@@ -35,25 +35,29 @@ const authenticate = async (req: RequestLike): Promise<Principal> =>
     ? { id: 'local-development-curator', role: 'curator' }
     : null;
 const handle = createRegistryHandler(registry, { origin, authenticate });
-// Vite proxies the integrated browser's same-origin calls. Only this explicit local
-// development origin is added; production origin validation is not relaxed.
-const browserOrigin = 'http://127.0.0.1:5173';
-const handleFromVite = createRegistryHandler(registry, { origin: browserOrigin, authenticate });
+// Vite proxies the integrated browser's same-origin calls. Keep the origins limited to
+// the documented development port while accepting the hostname a browser may canonicalise.
+const browserOrigins = new Set(['http://127.0.0.1:3000', 'http://localhost:3000']);
+const browserHandlers = new Map(
+  [...browserOrigins].map((browserOrigin) => [
+    browserOrigin,
+    createRegistryHandler(registry, { origin: browserOrigin, authenticate }),
+  ]),
+);
+const requestOrigin = (req: RequestLike) =>
+  typeof req.headers.origin === 'string' && browserOrigins.has(req.headers.origin)
+    ? req.headers.origin
+    : origin;
 const server = createServer(async (req, res) => {
   if (req.headers.host !== `127.0.0.1:${port}`)
     return json(res, 403, { error: { message: 'Invalid Host header.' } });
   const url = new URL(req.url ?? '/', origin);
   if (url.pathname === '/api/registry')
-    return (req.headers.origin === browserOrigin ? handleFromVite : handle)(req, res);
+    return (browserHandlers.get(requestOrigin(req)) ?? handle)(req, res);
   if (url.pathname === '/api/mcp') {
     try {
       const { handleMcp } = await import('../registry/mcp-http.ts');
-      await handleMcp(
-        registry,
-        req,
-        res,
-        req.headers.origin === browserOrigin ? browserOrigin : origin,
-      );
+      await handleMcp(registry, req, res, requestOrigin(req));
     } catch {
       json(res, 503, {
         error: {
