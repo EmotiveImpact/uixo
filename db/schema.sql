@@ -100,6 +100,19 @@ create table if not exists list_resources (
 create table if not exists user_lists (
   user_id     uuid primary key references users (id) on delete cascade,
   payload     jsonb not null,
+  revision    bigint not null default 0,
+  updated_at  timestamptz not null default now()
+);
+
+-- `create table if not exists` does not add columns to an existing installation.
+alter table user_lists add column if not exists revision bigint not null default 0;
+
+-- Asset ids belong to the registry namespace, not the website resource table. Keeping
+-- the typed snapshots separate prevents a provider id from being confused with an asset.
+create table if not exists user_asset_saves (
+  user_id     uuid primary key references users (id) on delete cascade,
+  asset_ids   jsonb not null default '[]'::jsonb,
+  revision    bigint not null default 0,
   updated_at  timestamptz not null default now()
 );
 

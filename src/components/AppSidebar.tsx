@@ -1,4 +1,4 @@
-import { Grid2X2, Heart, Layers3, PanelLeft, Plus, Trash2, X } from 'lucide-react';
+import { Grid2X2, Heart, Layers3, PanelLeft, Plus, Shapes, Trash2, X } from 'lucide-react';
 import {
   AnimatedSidebar,
   AnimatedSidebarClose,
@@ -38,6 +38,13 @@ type AppSidebarProps = {
   onChooseCategory: (name: string) => void;
   onChooseSub: (category: string, sub: string) => void;
   onSubmit: () => void;
+  onAssets?: boolean;
+  onShowAssets?: () => void;
+  onSavedAssets?: boolean;
+  onShowSavedAssets?: () => void;
+  savedAssetCount?: number;
+  assetKind?: string;
+  onChooseAssetKind?: (kind: string) => void;
 };
 
 export function AppSidebar({
@@ -55,7 +62,15 @@ export function AppSidebar({
   onChooseCategory,
   onChooseSub,
   onSubmit,
+  onAssets = false,
+  onShowAssets = () => window.location.assign('/browse/assets'),
+  onSavedAssets = false,
+  onShowSavedAssets = () => window.location.assign('/browse/assets?view=saved'),
+  savedAssetCount = 0,
+  assetKind = '',
+  onChooseAssetKind,
 }: AppSidebarProps) {
+  const favourites = lists.find((list) => list.id === DEFAULT_LIST_ID);
   return (
     <AnimatedSidebar ariaLabel="UIXO navigation" collapsible="icon">
       <AnimatedSidebarHeader className="p-3 pb-2">
@@ -93,10 +108,19 @@ export function AppSidebar({
                 <AnimatedSidebarMenuButton
                   icon={<Grid2X2 className="size-4" />}
                   badge={String(resources.length)}
-                  isActive={!category && !listId && !onCollections}
+                  isActive={!category && !listId && !onCollections && !onAssets}
                   onSelect={onShowAll}
                 >
                   All websites
+                </AnimatedSidebarMenuButton>
+              </AnimatedSidebarMenuItem>
+              <AnimatedSidebarMenuItem>
+                <AnimatedSidebarMenuButton
+                  icon={<Shapes className="size-4" />}
+                  isActive={onAssets}
+                  onSelect={onShowAssets}
+                >
+                  All assets
                 </AnimatedSidebarMenuButton>
               </AnimatedSidebarMenuItem>
               <AnimatedSidebarMenuItem>
@@ -113,39 +137,94 @@ export function AppSidebar({
           </AnimatedSidebarGroupContent>
         </AnimatedSidebarGroup>
 
-        <AnimatedSidebarGroup className="border-t border-border pt-4">
-          <AnimatedSidebarGroupLabel>Your lists</AnimatedSidebarGroupLabel>
+        {onAssets && onChooseAssetKind && (
+          <AnimatedSidebarGroup>
+            <AnimatedSidebarGroupLabel>Asset types</AnimatedSidebarGroupLabel>
+            <AnimatedSidebarGroupContent>
+              <AnimatedSidebarMenu>
+                {['component', 'icon'].map((kind) => (
+                  <AnimatedSidebarMenuItem key={kind}>
+                    <AnimatedSidebarMenuButton
+                      icon={<Shapes className="size-4" />}
+                      isActive={assetKind === kind}
+                      onSelect={() => onChooseAssetKind(kind)}
+                    >
+                      {kind === 'icon' ? 'Icons' : 'Components'}
+                    </AnimatedSidebarMenuButton>
+                  </AnimatedSidebarMenuItem>
+                ))}
+              </AnimatedSidebarMenu>
+            </AnimatedSidebarGroupContent>
+          </AnimatedSidebarGroup>
+        )}
+        <AnimatedSidebarGroup className="pt-4">
+          <AnimatedSidebarGroupLabel>Favourites</AnimatedSidebarGroupLabel>
           <AnimatedSidebarGroupContent>
             <AnimatedSidebarMenu>
-              {lists.map((list) => (
-                <AnimatedSidebarMenuItem key={list.id}>
-                  <div className="list-row">
-                    <AnimatedSidebarMenuButton
-                      icon={<Heart className="size-4" />}
-                      badge={String(list.resourceIds.length)}
-                      isActive={listId === list.id}
-                      onSelect={() => onChooseList(list.id)}
-                    >
-                      {list.name}
-                    </AnimatedSidebarMenuButton>
-                    {list.id !== DEFAULT_LIST_ID && (
-                      <button
-                        className="list-delete group-data-[state=collapsed]/sidebar:hidden"
-                        aria-label={`Delete list ${list.name}`}
-                        onClick={() => onDeleteList(list.id)}
-                      >
-                        <Trash2 className="size-3.5" />
-                      </button>
-                    )}
-                  </div>
-                </AnimatedSidebarMenuItem>
-              ))}
+              <AnimatedSidebarMenuItem>
+                <AnimatedSidebarMenuButton
+                  icon={<Heart className="size-4" />}
+                  badge={String(favourites?.resourceIds.length ?? 0)}
+                  isActive={!onAssets && listId === DEFAULT_LIST_ID}
+                  onSelect={() => onChooseList(DEFAULT_LIST_ID)}
+                  aria-label="Favourite websites"
+                >
+                  Websites
+                </AnimatedSidebarMenuButton>
+              </AnimatedSidebarMenuItem>
+              <AnimatedSidebarMenuItem>
+                <AnimatedSidebarMenuButton
+                  icon={<Shapes className="size-4" />}
+                  badge={String(savedAssetCount)}
+                  isActive={onSavedAssets}
+                  onSelect={onShowSavedAssets}
+                  aria-label="Favourite assets"
+                >
+                  Assets
+                </AnimatedSidebarMenuButton>
+              </AnimatedSidebarMenuItem>
             </AnimatedSidebarMenu>
           </AnimatedSidebarGroupContent>
         </AnimatedSidebarGroup>
+        {lists.some((list) => list.id !== DEFAULT_LIST_ID) && (
+          <AnimatedSidebarGroup className="border-t border-border pt-4">
+            <AnimatedSidebarGroupLabel>Your lists</AnimatedSidebarGroupLabel>
+            <AnimatedSidebarGroupContent>
+              <AnimatedSidebarMenu>
+                {lists
+                  .filter((list) => list.id !== DEFAULT_LIST_ID)
+                  .map((list) => (
+                    <AnimatedSidebarMenuItem key={list.id}>
+                      <div className="list-row">
+                        <AnimatedSidebarMenuButton
+                          icon={<Heart className="size-4" />}
+                          badge={String(list.resourceIds.length)}
+                          isActive={listId === list.id}
+                          onSelect={() => onChooseList(list.id)}
+                        >
+                          {list.name}
+                        </AnimatedSidebarMenuButton>
+                        {list.id !== DEFAULT_LIST_ID && (
+                          <button
+                            className="list-delete group-data-[state=collapsed]/sidebar:hidden"
+                            aria-label={`Delete list ${list.name}`}
+                            onClick={() => onDeleteList(list.id)}
+                          >
+                            <Trash2 className="size-3.5" />
+                          </button>
+                        )}
+                      </div>
+                    </AnimatedSidebarMenuItem>
+                  ))}
+              </AnimatedSidebarMenu>
+            </AnimatedSidebarGroupContent>
+          </AnimatedSidebarGroup>
+        )}
 
         <AnimatedSidebarGroup className="border-t border-border pt-4">
-          <AnimatedSidebarGroupLabel>Categories</AnimatedSidebarGroupLabel>
+          <AnimatedSidebarGroupLabel>
+            {onAssets ? 'Website categories' : 'Categories'}
+          </AnimatedSidebarGroupLabel>
           <AnimatedSidebarGroupContent>
             <AnimatedSidebarMenu>
               {categories.map((entry) => {

@@ -2,6 +2,10 @@ import { db } from './db.js';
 import { defaultLists, normalizeLists } from '../../src/lib/lists.js';
 import type { List } from '../../src/types.js';
 
+export type UserListSnapshot = { lists: List[]; revision: number };
+export type UserListWrite =
+  { ok: true; snapshot: UserListSnapshot } | { ok: false; snapshot: UserListSnapshot };
+
 /** Copy the Neon Auth row into public.users so lists can keep a real foreign key. */
 export async function ensureAppUser(userId: string): Promise<boolean> {
   const sql = db();
@@ -23,15 +27,22 @@ export async function ensureAppUser(userId: string): Promise<boolean> {
   return true;
 }
 
-export async function readUserLists(userId: string): Promise<List[]> {
+export async function readUserLists(userId: string): Promise<UserListSnapshot> {
   const sql = db();
   const [row] = await sql`
-    select payload from user_lists where user_id = ${userId}::uuid limit 1`;
-  if (!row) return defaultLists();
-  return normalizeLists(row.payload) ?? defaultLists();
+    select payload, revision from user_lists where user_id = ${userId}::uuid limit 1`;
+  if (!row) return { lists: defaultLists(), revision: 0 };
+  return {
+    lists: normalizeLists(row.payload) ?? defaultLists(),
+    revision: Number(row.revision) || 0,
+  };
 }
 
-export async function writeUserLists(userId: string, input: unknown): Promise<List[] | null> {
+export async function writeUserLists(
+  userId: string,
+  input: unknown,
+  expectedRevision: number,
+): Promise<UserListWrite | null> {
   const lists = normalizeLists(input);
   if (!lists) return null;
 
@@ -46,11 +57,24 @@ export async function writeUserLists(userId: string, input: unknown): Promise<Li
     resourceIds: list.resourceIds.filter((id) => allowed.has(id)),
   }));
 
-  await sql`
-    insert into user_lists (user_id, payload, updated_at)
-    values (${userId}::uuid, ${JSON.stringify(stored)}::jsonb, now())
+  const [written] = await sql`
+    insert into user_lists (user_id, payload, revision, updated_at)
+    select ${userId}::uuid, ${JSON.stringify(stored)}::jsonb, 1, now()
+    where ${expectedRevision} = 0
     on conflict (user_id) do update
-    set payload = excluded.payload, updated_at = excluded.updated_at`;
+    set payload = excluded.payload,
+        revision = user_lists.revision + 1,
+        updated_at = excluded.updated_at
+    where user_lists.revision = ${expectedRevision}
+    returning payload, revision`;
 
-  return stored;
+  if (!written) return { ok: false, snapshot: await readUserLists(userId) };
+
+  return {
+    ok: true,
+    snapshot: {
+      lists: normalizeLists(written.payload) ?? stored,
+      revision: Number(written.revision),
+    },
+  };
 }

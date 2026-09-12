@@ -8,6 +8,14 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-input: var(--input);
+  --color-destructive: var(--destructive);
 }
 :root {
   color-scheme: dark;
@@ -17,6 +25,14 @@
   --muted-foreground: #96969e;
   --border: #111113;
   --ring: #93939e;
+  --card: #111113;
+  --card-foreground: #eeeef0;
+  --primary: #eeeef0;
+  --primary-foreground: #111113;
+  --accent: #252529;
+  --accent-foreground: #eeeef0;
+  --input: #2b2b30;
+  --destructive: #ef4444;
   font-family: Inter, Arial, sans-serif;
   background: var(--background);
   color: var(--foreground);
@@ -29,6 +45,14 @@
   --muted-foreground: #696970;
   --border: #deded8;
   --ring: #777;
+  --card: #ffffff;
+  --card-foreground: #1c1c20;
+  --primary: #1c1c20;
+  --primary-foreground: #ffffff;
+  --accent: #e7e7e3;
+  --accent-foreground: #1c1c20;
+  --input: #d4d4ce;
+  --destructive: #dc2626;
 }
 body {
   margin: 0;
@@ -684,13 +708,31 @@ kbd {
     display: none;
   }
   [data-slot='sidebar'][data-state='collapsed'] [data-slot='sidebar-header'] > div {
-    flex-direction: column;
-    gap: 10px;
+    position: relative;
+    justify-content: center;
+    gap: 0;
     padding-left: 0;
     padding-right: 0;
   }
   [data-slot='sidebar'][data-state='collapsed'] .sidebar-header-toggle {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
     margin-left: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  [data-slot='sidebar'][data-state='collapsed']:hover .sidebar-header-toggle,
+  [data-slot='sidebar'][data-state='collapsed'] .sidebar-header-toggle:focus-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  [data-slot='sidebar'][data-state='collapsed']:hover .brand,
+  [data-slot='sidebar'][data-state='collapsed']:has(.sidebar-header-toggle:focus-visible) .brand {
+    opacity: 0;
+    pointer-events: none;
   }
 }
 /* Menu hover uses text only; preserve the active selection indicator. */
@@ -2244,4 +2286,108 @@ kbd {
 }
 .auth-error {
   color: #b88f8f;
+}
+
+.save-sync-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: -4px 0 22px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: color-mix(in srgb, #b88f8f 10%, var(--background));
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.save-sync-notice p {
+  margin: 0;
+}
+.save-sync-notice strong {
+  color: var(--foreground);
+  font-weight: 500;
+}
+.save-sync-notice button {
+  flex: none;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: var(--muted);
+  color: var(--foreground);
+  font: inherit;
+}
+@media (max-width: 560px) {
+  .save-sync-notice {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* One navigation and discovery position across all catalogue views. */
+.topbar.unified-topbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+.catalogue-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-right: auto;
+  min-height: 42px;
+}
+.catalogue-nav a {
+  padding: 10px 0;
+  color: var(--muted-foreground);
+  text-decoration: none;
+  font-size: 13px;
+}
+.catalogue-nav a[aria-current='page'] {
+  color: var(--foreground);
+  box-shadow: 0 1px 0 currentColor;
+}
+.catalogue-nav a:hover {
+  color: var(--foreground);
+}
+.discovery-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 18px 0 24px;
+}
+.discovery-controls .search-wrap {
+  flex: 1 1 340px;
+  min-width: 0;
+  max-width: none;
+  height: 52px;
+  border: 0;
+}
+.discovery-controls .prices {
+  flex: 0 0 auto;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .topbar.unified-topbar {
+    flex-wrap: wrap;
+  }
+  .unified-topbar .catalogue-nav {
+    order: 5;
+    flex-basis: 100%;
+    gap: 24px;
+  }
+  .unified-topbar .top-nav {
+    margin-left: auto;
+  }
+  .discovery-controls {
+    margin-top: 18px;
+  }
+  .discovery-controls .search-wrap {
+    flex-basis: 100%;
+  }
+  .discovery-controls .search-wrap input {
+    font-size: 14px;
+  }
 }

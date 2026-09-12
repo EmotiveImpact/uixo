@@ -1,7 +1,8 @@
 import { auth } from './auth';
 import type { List } from '../types';
 
-export type ApiResult<T> = { ok: true; data: T } | { ok: false; error: string; status: number };
+export type ApiResult<T> =
+  { ok: true; data: T } | { ok: false; error: string; status: number; data?: T };
 
 async function request<T>(
   path: string,
@@ -27,7 +28,7 @@ async function request<T>(
   const body = await response.json().catch(() => ({}) as Record<string, unknown>);
   if (!response.ok) {
     const error = typeof body.error === 'string' ? body.error : 'Something went wrong.';
-    return { ok: false, error, status: response.status };
+    return { ok: false, error, status: response.status, data: body as T };
   }
   return { ok: true, data: body as T };
 }
@@ -69,14 +70,27 @@ export const api = {
       true,
     ),
 
-  getLists: () => request<{ lists: List[] }>('/api/lists', {}, true),
+  getLists: () => request<{ lists: List[]; revision: number }>('/api/lists', {}, true),
 
-  putLists: (lists: List[]) =>
-    request<{ lists: List[] }>(
+  putLists: (lists: List[], revision: number) =>
+    request<{ lists: List[]; revision: number }>(
       '/api/lists',
       {
         method: 'PUT',
-        body: JSON.stringify({ lists }),
+        body: JSON.stringify({ lists, revision }),
+      },
+      true,
+    ),
+
+  getSavedAssets: () =>
+    request<{ assetIds: string[]; revision: number }>('/api/saved-assets', {}, true),
+
+  putSavedAssets: (assetIds: string[], revision: number) =>
+    request<{ assetIds: string[]; revision: number }>(
+      '/api/saved-assets',
+      {
+        method: 'PUT',
+        body: JSON.stringify({ assetIds, revision }),
       },
       true,
     ),

@@ -2,14 +2,22 @@ import { ArrowUpRight } from 'lucide-react';
 import { collections, resources, thumbnailPosition } from '../data';
 
 type CollectionsIndexProps = {
+  search?: string;
   onOpen: (slug: string) => void;
   href: (slug: string) => string;
 };
 
-export function CollectionsIndex({ onOpen, href }: CollectionsIndexProps) {
+export function CollectionsIndex({ onOpen, href, search = '' }: CollectionsIndexProps) {
+  const query = search.trim().toLowerCase();
+  const shown = collections.filter((collection) =>
+    `${collection.name} ${collection.tagline} ${collection.description}`
+      .toLowerCase()
+      .includes(query),
+  );
   return (
     <section className="collection-index" aria-label="Collections">
-      {collections.map((collection) => {
+      {shown.length === 0 && <p role="status">No collections match your search.</p>}
+      {shown.map((collection) => {
         const covers = collection.resourceIds
           .map((id) => resources.find((resource) => resource.id === id))
           .filter(Boolean)

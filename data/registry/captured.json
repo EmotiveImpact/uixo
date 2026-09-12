@@ -1,0 +1,30 @@
+{
+  "capturedAt": "2026-09-12T05:52:00.000Z",
+  "method": "Metadata captured through the authorised GitHub connector during implementation. This is a limited source snapshot, not a completed live network indexing run. The mutable source branches are explicitly retained and download routes have not been probed by this offline runtime.",
+  "sources": {
+    "shadcn": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/_registry.ts",
+    "lucide": "https://github.com/lucide-icons/lucide/tree/main/icons",
+    "heroicons": "https://github.com/tailwindlabs/heroicons/tree/master/optimized/24/outline"
+  },
+  "components": [
+    ["accordion", ["radix-ui"]], ["alert", []], ["alert-dialog", ["radix-ui"]],
+    ["aspect-ratio", ["radix-ui"]], ["avatar", ["radix-ui"]], ["badge", ["radix-ui"]],
+    ["breadcrumb", ["radix-ui"]], ["button", ["radix-ui"]], ["button-group", []],
+    ["calendar", ["react-day-picker@latest", "date-fns"]], ["card", []],
+    ["carousel", ["embla-carousel-react"]], ["chart", ["recharts@3.8.0", "lucide-react"]],
+    ["checkbox", ["radix-ui"]], ["collapsible", ["radix-ui"]], ["combobox", ["@base-ui/react"]],
+    ["command", ["cmdk"]], ["context-menu", ["radix-ui"]], ["dialog", ["radix-ui"]],
+    ["drawer", ["vaul"]], ["dropdown-menu", ["radix-ui"]], ["empty", []], ["field", []],
+    ["form", ["radix-ui", "@hookform/resolvers", "zod", "react-hook-form"]],
+    ["hover-card", ["radix-ui"]], ["input", []], ["input-group", []], ["input-otp", ["input-otp"]],
+    ["item", ["radix-ui"]], ["label", ["radix-ui"]], ["menubar", ["radix-ui"]],
+    ["navigation-menu", ["radix-ui"]], ["pagination", []], ["popover", ["radix-ui"]],
+    ["progress", ["radix-ui"]], ["radio-group", ["radix-ui"]], ["resizable", ["react-resizable-panels@^4"]],
+    ["scroll-area", ["radix-ui"]], ["select", ["radix-ui"]], ["separator", ["radix-ui"]],
+    ["sheet", ["radix-ui"]], ["sidebar", ["radix-ui", "class-variance-authority", "lucide-react"]],
+    ["skeleton", []], ["slider", ["radix-ui"]], ["sonner", ["sonner", "next-themes"]],
+    ["spinner", ["class-variance-authority"]]
+  ],
+  "lucide": ["a-arrow-down", "a-arrow-up", "a-large-small", "accessibility", "activity", "ad", "air-vent", "airplay"],
+  "heroicons": ["academic-cap", "adjustments-horizontal", "adjustments-vertical", "archive-box-arrow-down", "archive-box-x-mark", "archive-box", "arrow-down-circle", "arrow-down-left", "arrow-down-on-square-stack", "arrow-down-on-square", "arrow-down-right", "arrow-down-tray", "arrow-down"]
+}

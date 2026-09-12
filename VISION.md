@@ -1,5 +1,7 @@
 # UIXO — what it is for
 
+This document preserves the original directory philosophy. The broader registry, personal/team/platform editions and intelligence direction are captured in the [master product roadmap](docs/PRODUCT-ROADMAP.md).
+
 ## The one-line version
 
 A small directory of design and front-end resources, chosen by a person, with the reason

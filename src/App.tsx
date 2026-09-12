@@ -18,8 +18,10 @@ import { PageHeading } from './components/PageHeading';
 import { QuickView } from './components/QuickView';
 import { ResourceGrid } from './components/ResourceGrid';
 import { SiteFooter } from './components/SiteFooter';
-import { TopBar } from './components/TopBar';
+import { SaveSyncNotice } from './components/SaveSyncNotice';
+import { TopBar, DiscoveryControls } from './components/TopBar';
 import { useAuth } from './hooks/useAuth';
+import { useAssetSaves } from './hooks/useAssetSaves';
 import { useDensity } from './hooks/useDensity';
 import { useLists } from './hooks/useLists';
 import { useDialog } from './hooks/useDialog';
@@ -50,7 +52,17 @@ export function App() {
     signOut,
     available: authAvailable,
   } = useAuth();
-  const { lists, toggleSaved, toggleIn, create, remove } = useLists(user?.id ?? null, settled);
+  const {
+    lists,
+    toggleSaved,
+    toggleIn,
+    create,
+    remove,
+    syncStatus: listSyncStatus,
+    syncError: listSyncError,
+    retrySync: retryListSync,
+  } = useLists(user?.id ?? null, settled);
+  const assetSaves = useAssetSaves(user?.id ?? null, settled);
 
   const [openSection, setOpenSection] = useState<string | null>(route.category);
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -229,6 +241,7 @@ export function App() {
         onChooseCategory={chooseCategory}
         onChooseSub={chooseSub}
         onSubmit={() => setModal('submit')}
+        savedAssetCount={assetSaves.saved.length}
       />
 
       <a className="skip-link" href="#main">
@@ -237,18 +250,10 @@ export function App() {
 
       <AnimatedSidebarInset className="site-main" id="main" tabIndex={-1}>
         <TopBar
-          searchRef={searchRef}
-          search={route.search}
-          onSearchChange={(search) => navigate({ search })}
-          price={route.price}
-          onPriceChange={(price: PriceFilter) => navigate({ price })}
+          catalogue={route.collectionsIndex || activeCollection ? 'collections' : 'websites'}
           light={light}
           onToggleTheme={toggleTheme}
-          onReset={reset}
           onOpenModal={setModal}
-          onOpenCollections={() => navigate({ ...EMPTY_ROUTE, collectionsIndex: true })}
-          collectionsHref={routeToHref({ ...EMPTY_ROUTE, collectionsIndex: true })}
-          onCollections={route.collectionsIndex || Boolean(activeCollection)}
           account={
             <AccountMenu
               available={authAvailable}
@@ -269,6 +274,19 @@ export function App() {
           onClear={clearFilters}
         />
 
+        <SaveSyncNotice
+          label="Website favourites"
+          status={listSyncStatus}
+          error={listSyncError}
+          onRetry={retryListSync}
+        />
+        <SaveSyncNotice
+          label="Asset favourites"
+          status={assetSaves.syncStatus}
+          error={assetSaves.syncError}
+          onRetry={assetSaves.retrySync}
+        />
+
         {activeCollection && <p className="collection-lede">{activeCollection.description}</p>}
 
         {showsGrid && (
@@ -282,6 +300,17 @@ export function App() {
           />
         )}
 
+        <DiscoveryControls
+          catalogue={route.collectionsIndex || activeCollection ? 'collections' : 'websites'}
+          collectionIndex={route.collectionsIndex}
+          showDiscovery={showsGrid || route.collectionsIndex}
+          searchRef={searchRef}
+          search={route.search}
+          onSearchChange={(search) => navigate({ search })}
+          price={route.price}
+          onPriceChange={(price: PriceFilter) => navigate({ price })}
+        />
+
         {/* Announce result counts so filtering is not silent to a screen reader. */}
         <p className="sr-only" role="status" aria-live="polite">
           {showsGrid ? `${shown.length} website${shown.length === 1 ? '' : 's'} shown` : ''}
@@ -291,6 +320,7 @@ export function App() {
 
         {route.collectionsIndex && (
           <CollectionsIndex
+            search={route.search}
             onOpen={(collectionSlug) => navigate({ ...EMPTY_ROUTE, collectionSlug })}
             href={(slug) => routeToHref({ ...EMPTY_ROUTE, collectionSlug: slug })}
           />

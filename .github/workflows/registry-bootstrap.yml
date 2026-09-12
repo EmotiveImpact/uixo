@@ -1,0 +1,40 @@
+name: Registry bootstrap
+on:
+  push:
+    branches: [astra/uixo-v2-design-intelligence]
+    paths: [.github/workflows/registry-bootstrap.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  baseline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install baseline and verify registry SDK availability
+        run: npm install --no-save --package-lock=false @modelcontextprotocol/server@2.0.0 @modelcontextprotocol/client@2.0.0 @modelcontextprotocol/node@2.0.0 zod@4 semver@7 tsx@4 @playwright/test
+      - name: Baseline checks
+        run: |
+          npm run typecheck
+          npm test
+          npm run lint
+          npm run build
+      - name: Package isolated development inputs
+        if: always()
+        run: |
+          mkdir -p /tmp/uixo-input
+          git archive HEAD | tar -x -C /tmp/uixo-input
+          if [ -d node_modules ]; then cp -a node_modules /tmp/uixo-input/; fi
+          tar -czf /tmp/uixo-build-input.tgz -C /tmp/uixo-input .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: uixo-build-input
+          path: /tmp/uixo-build-input.tgz
+          retention-days: 1

@@ -20,13 +20,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   if (req.method === 'GET') {
-    return json(res, 200, { lists: await readUserLists(userId) });
+    return json(res, 200, await readUserLists(userId));
   }
 
   if (req.method === 'PUT') {
-    const lists = await writeUserLists(userId, req.body?.lists);
-    if (!lists) return json(res, 400, { error: 'A lists array is required.' });
-    return json(res, 200, { lists });
+    const revision = req.body?.revision;
+    if (!Number.isSafeInteger(revision) || revision < 0) {
+      return json(res, 400, { error: 'A non-negative revision is required.' });
+    }
+    const result = await writeUserLists(userId, req.body?.lists, revision);
+    if (!result) return json(res, 400, { error: 'A lists array is required.' });
+    if (!result.ok) {
+      return json(res, 409, {
+        error: 'These lists changed on another device. Refreshing the latest version.',
+        ...result.snapshot,
+      });
+    }
+    return json(res, 200, result.snapshot);
   }
 
   return methodNotAllowed(res, ['GET', 'PUT']);

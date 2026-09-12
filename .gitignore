@@ -8,5 +8,7 @@ dist/
 # Archived prototype: source is tracked, heavy screenshots/assets are not
 /legacy/mocks/
 /legacy/assets/
+/public/registry/verification.json
 .vercel
 .env*.local
+.uixo/

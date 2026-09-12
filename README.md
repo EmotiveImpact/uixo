@@ -1,5 +1,7 @@
 # UIXO
 
+Product scope and phased delivery: [Master roadmap](docs/PRODUCT-ROADMAP.md). Current gaps: [Engineering audit](docs/PRODUCT-AUDIT-2026-09-12.md).
+
 A hand-curated directory of UI resources. Built with Vite, React 19, TypeScript and
 Tailwind CSS v4, on Vercel with Neon Postgres.
 

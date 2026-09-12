@@ -93,11 +93,13 @@ function localApi(): Plugin {
         const load =
           path === '/api/lists'
             ? () => import('./api/lists')
-            : path === '/api/submissions'
-              ? () => import('./api/submissions')
-              : path === '/api/reports'
-                ? () => import('./api/reports')
-                : null;
+            : path === '/api/saved-assets'
+              ? () => import('./api/saved-assets')
+              : path === '/api/submissions'
+                ? () => import('./api/submissions')
+                : path === '/api/reports'
+                  ? () => import('./api/reports')
+                  : null;
         if (!load) return next();
         void load()
           .then((mod) => runVercelHandler(req, res, mod.default))
@@ -126,6 +128,10 @@ export default defineConfig(({ mode }) => {
       host: '127.0.0.1',
       port: 3000,
       strictPort: true,
+      proxy: {
+        '/api/registry': { target: 'http://127.0.0.1:4175', changeOrigin: true },
+        '/api/mcp': { target: 'http://127.0.0.1:4175', changeOrigin: true },
+      },
     },
   };
 });

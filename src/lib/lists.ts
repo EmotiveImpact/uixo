@@ -1,5 +1,5 @@
-import { DEFAULT_LIST_ID } from '../types';
-import type { List } from '../types';
+import { DEFAULT_LIST_ID } from '../types.js';
+import type { List } from '../types.js';
 import {
   readStored,
   writeStored,
@@ -7,7 +7,7 @@ import {
   LISTS_OWNER_KEY,
   LEGACY_COLLECTIONS_KEY,
   LEGACY_FAVOURITES_KEY,
-} from './storage';
+} from './storage.js';
 
 export function defaultLists(): List[] {
   return [{ id: DEFAULT_LIST_ID, name: 'Favourites', resourceIds: [] }];
@@ -42,6 +42,14 @@ export function loadListOwner(): string | null {
 
 export function saveListOwner(userId: string): void {
   writeStored(LISTS_OWNER_KEY, userId);
+}
+
+export function clearListOwner(): void {
+  try {
+    localStorage.removeItem(LISTS_OWNER_KEY);
+  } catch {
+    // A blocked storage area is already handled by the local fallback.
+  }
 }
 
 export function isSavedAnywhere(lists: List[], resourceId: string): boolean {

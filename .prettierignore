@@ -2,6 +2,7 @@ dist
 legacy
 package-lock.json
 src/components/motion
+src/components/previews/shadcn/*.tsx
 src/lib/ease.ts
 src/lib/utils.ts
 public/assets

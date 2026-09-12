@@ -1,0 +1,111 @@
+:root {
+  color-scheme: dark;
+  background: #080809;
+  color: #ececee;
+  font-family: Inter, Arial, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+header {
+  padding: 27px 5vw;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #202023;
+}
+a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+a:focus-visible {
+  outline: 2px solid #aaa;
+  outline-offset: 5px;
+}
+.brand {
+  letter-spacing: 5px;
+  text-decoration: none;
+  font-size: 18px;
+}
+nav {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  color: #aaa;
+}
+main {
+  max-width: 800px;
+  padding: 58px 28px;
+  margin: auto;
+}
+.eyebrow {
+  letter-spacing: 2px;
+  font-size: 11px;
+  color: #888;
+}
+h1 {
+  font-size: clamp(38px, 7vw, 60px);
+  font-weight: 500;
+  letter-spacing: -2px;
+  line-height: 1.07;
+  margin: 23px 0;
+}
+.intro {
+  font-size: 19px;
+  color: #b8b8c0;
+  line-height: 1.7;
+}
+section {
+  border-top: 1px solid #242426;
+  margin-top: 38px;
+  padding-top: 18px;
+}
+h2 {
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #a8a8b0;
+}
+strong {
+  font-weight: 550;
+  color: #e0e0e6;
+}
+pre,
+code {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+pre {
+  white-space: pre-wrap;
+  background: #151517;
+  border: 1px solid #242428;
+  border-radius: 10px;
+  padding: 18px;
+  line-height: 1.8;
+}
+footer {
+  padding: 45px 0 8px;
+  color: #777;
+  font-size: 11px;
+}
+@media (max-width: 500px) {
+  main {
+    padding: 32px 20px;
+  }
+  .intro {
+    font-size: 16px;
+  }
+  header {
+    padding: 22px 20px;
+  }
+  nav {
+    gap: 15px;
+  }
+}

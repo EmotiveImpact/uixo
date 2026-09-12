@@ -4,6 +4,14 @@
   "outputDirectory": "dist",
   "trailingSlash": false,
   "cleanUrls": true,
+  "functions": {
+    "api/registry.ts": {
+      "includeFiles": "{registry/**,db/migrations/002-registry.sql,data/registry/**}"
+    },
+    "api/mcp.ts": {
+      "includeFiles": "{registry/**,db/migrations/002-registry.sql,data/registry/**}"
+    }
+  },
   "rewrites": [
     {
       "source": "/api/auth/:path*",
