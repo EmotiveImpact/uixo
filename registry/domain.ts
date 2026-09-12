@@ -32,13 +32,19 @@ export class RegistryError extends Error {
   constructor(code: string, message: string, status = 400) { super(message); this.name = 'RegistryError'; this.code = code; this.status = status; }
 }
 export const fail = (message: string): never => { throw new RegistryError('INVALID_INPUT', message); };
+function hasDisallowedControl(value: string): boolean {
+  return [...value].some((character) => {
+    const code = character.charCodeAt(0);
+    return code < 32 && code !== 9 && code !== 10 && code !== 13;
+  });
+}
 export function record(value: unknown): Record<string, unknown> {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return fail('Expected a JSON object.');
   return value as Record<string, unknown>;
 }
 export function text(value: unknown, max = 300, optional = false): string {
   if (optional && (value === undefined || value === null || value === '')) return '';
-  if (typeof value !== 'string' || !value.trim() || value.length > max || /[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(value)) return fail(`Expected text between 1 and ${max} characters.`);
+  if (typeof value !== 'string' || !value.trim() || value.length > max || hasDisallowedControl(value)) return fail(`Expected text between 1 and ${max} characters.`);
   return value.trim();
 }
 export function identifier(value: unknown): string {

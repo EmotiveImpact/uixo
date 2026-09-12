@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { auth, authAvailable } from '../lib/auth';
-import type { Session } from '../lib/auth';
+import { auth, authAvailable, peekSession } from '../lib/auth';
+import type { Session, SocialProvider } from '../lib/auth';
 
 /**
  * Three states, not two: until the session request resolves we genuinely do not know
@@ -8,32 +8,34 @@ import type { Session } from '../lib/auth';
  * flicker for anyone who is.
  */
 export function useAuth() {
-  const [session, setSession] = useState<Session>(null);
-  const [settled, setSettled] = useState(!authAvailable);
+  const [session, setSession] = useState<Session>(peekSession);
+  const [settled, setSettled] = useState(!authAvailable || peekSession() !== null);
 
   const refresh = useCallback(async () => {
     if (!authAvailable) return null;
-    return auth.getSession().catch(() => null);
+    const next = await auth.getSession().catch(() => null);
+    setSession(next);
+    setSettled(true);
+    return next;
   }, []);
 
-  // Read the session once on mount. The effect subscribes to an external system — the
-  // auth service — rather than deriving state, and ignores a result that arrives after
-  // unmount.
+  // Read the session on mount. OAuth returns through a full navigation; Strict Mode
+  // remounts this hook and used to throw away the exchange that minted the cookie.
   useEffect(() => {
     if (!authAvailable) return;
-    let live = true;
     void auth
       .getSession()
       .catch(() => null)
       .then((next) => {
-        if (!live) return;
         setSession(next);
         setSettled(true);
       });
-    return () => {
-      live = false;
+    const onShow = (event: PageTransitionEvent) => {
+      if (event.persisted) void refresh();
     };
-  }, []);
+    window.addEventListener('pageshow', onShow);
+    return () => window.removeEventListener('pageshow', onShow);
+  }, [refresh]);
 
   const signIn = useCallback(
     async (email: string, password: string) => {
@@ -54,8 +56,12 @@ export function useAuth() {
   );
 
   const signInWithProvider = useCallback(
-    (provider: 'google') => auth.signInWithProvider(provider),
-    [],
+    async (provider: SocialProvider) => {
+      const result = await auth.signInWithProvider(provider);
+      if (result.ok) setSession(await refresh());
+      return result;
+    },
+    [refresh],
   );
 
   const signOut = useCallback(async () => {

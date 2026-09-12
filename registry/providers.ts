@@ -16,11 +16,11 @@ export function licenceFromText(provider: Provider, body: string, sourceUrl: str
 }
 export function parseShadcnManifest(body: string) {
   // Extract declarative records only. Never evaluate, import or execute upstream TypeScript.
-  const records = body.split(/(?=^  \{\s*$)/m).flatMap((block) => {
-    const name = /^    name: "([a-z0-9-]+)"/m.exec(block)?.[1];
+  const records = body.split(/(?=^[^\S\r\n]{2}\{\s*$)/m).flatMap((block) => {
+    const name = /^[^\S\r\n]{4}name: "([a-z0-9-]+)"/m.exec(block)?.[1];
     if (!name) return [];
-    const deps = /\n    dependencies: \[([^\]]*)\]/m.exec(block)?.[1] ?? '';
-    const registryDeps = /\n    registryDependencies: \[([^\]]*)\]/m.exec(block)?.[1] ?? '';
+    const deps = /\n[^\S\r\n]{4}dependencies: \[([^\]]*)\]/m.exec(block)?.[1] ?? '';
+    const registryDeps = /\n[^\S\r\n]{4}registryDependencies: \[([^\]]*)\]/m.exec(block)?.[1] ?? '';
     return [{ name, dependencies: [...deps.matchAll(/"([^"]+)"/g)].map((m) => m[1]), registryDependencies: [...registryDeps.matchAll(/"([^"]+)"/g)].map((m) => m[1]) }];
   });
   if (!records.length || records.length > 200) throw new RegistryError('PROVIDER_FORMAT', 'Registry layout changed. Update and review the adapter.', 502);

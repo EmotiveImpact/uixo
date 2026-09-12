@@ -3,7 +3,7 @@ import type { RefObject } from 'react';
 import { SignInDialog } from './SignInDialog';
 import { SubmitPanel } from './SubmitPanel';
 import type { ModalName } from '../types';
-import type { AuthResult } from '../lib/auth';
+import type { AuthResult, SocialProvider } from '../lib/auth';
 
 type AppDialogProps = {
   dialogRef: RefObject<HTMLDialogElement | null>;
@@ -12,6 +12,7 @@ type AppDialogProps = {
   userId: string | null;
   onSignIn: (email: string, password: string) => Promise<AuthResult>;
   onSignUp: (email: string, password: string, name: string) => Promise<AuthResult>;
+  onProvider: (provider: SocialProvider) => Promise<AuthResult>;
   onAuthDone: () => void;
 };
 
@@ -37,6 +38,7 @@ export function AppDialog({
   userId,
   onSignIn,
   onSignUp,
+  onProvider,
   onAuthDone,
 }: AppDialogProps) {
   return (
@@ -64,14 +66,19 @@ export function AppDialog({
             Every listing is chosen by hand and checked by hand. Featured means we reach for it, not
             that it is popular.
           </p>
-          <p>Your lists stay in this browser.</p>
+          <p>Sign in and your lists travel with the account, not this browser.</p>
         </>
       )}
 
       {modal === 'submit' && <SubmitPanel userId={userId} />}
 
       {modal === 'signin' && (
-        <SignInDialog onSignIn={onSignIn} onSignUp={onSignUp} onDone={onAuthDone} />
+        <SignInDialog
+          onSignIn={onSignIn}
+          onSignUp={onSignUp}
+          onProvider={onProvider}
+          onDone={onAuthDone}
+        />
       )}
     </dialog>
   );

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B — Three homes</title>
+  <link rel="stylesheet" href="uixo.css" />
+  <style>
+    .bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 22px;
+      border-bottom: 1px solid var(--border);
+    }
+    .bar .search { margin-left: auto; }
+    .lib { display: grid; grid-template-columns: 220px 1fr; gap: 32px; }
+    .lib nav button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: var(--muted-foreground);
+      font-size: 13px;
+    }
+    .lib nav button.on { background: var(--muted); color: var(--foreground); }
+  </style>
+</head>
+<body>
+  <div class="back">
+    <a href="index.html">← All directions</a>
+    <span>Alternative · three equal homes. More app than magazine.</span>
+  </div>
+  <div class="frame">
+    <header class="bar">
+      <button type="button" class="brand" data-go="explore">UIXO</button>
+      <nav class="segments" aria-label="Homes">
+        <button type="button" data-go="explore" data-nav="explore">Explore</button>
+        <button type="button" data-go="collections" data-nav="collections">Collections</button>
+        <button type="button" data-go="library" data-nav="library">Library</button>
+      </nav>
+      <button type="button" class="search js-search">Search the directory <kbd>/</kbd></button>
+      <button type="button" class="avatar" data-go="library">AE</button>
+    </header>
+
+    <main class="page" data-view="explore">
+      <h1 id="ex-title">Explore</h1>
+      <p class="lede" id="ex-lede">The catalog. Categories are filters here — they never become a second home.</p>
+      <div class="chips" id="chips"></div>
+      <div class="grid" id="ex-grid"></div>
+    </main>
+
+    <main class="page" data-view="collections" hidden>
+      <h1>Collections</h1>
+      <p class="lede">Editorial only. No personal lists here — those belong in Library.</p>
+      <div class="sets" id="sets"></div>
+    </main>
+
+    <main class="page" data-view="collection" hidden>
+      <button type="button" class="ghost" data-go="collections" style="margin-bottom:18px">← Collections</button>
+      <h1 id="col-title"></h1>
+      <p class="lede" id="col-lede"></p>
+      <div class="grid" id="col-grid"></div>
+    </main>
+
+    <main class="page" data-view="library" hidden>
+      <h1>Library</h1>
+      <p class="lede">The signed-in home. Lists, submissions, and account — not mixed into Explore.</p>
+      <div class="lib">
+        <nav>
+          <button type="button" class="on" data-lib="saved">Favourites</button>
+          <button type="button" data-lib="submissions">Submissions</button>
+          <button type="button" data-lib="account">Account</button>
+        </nav>
+        <div id="lib-body"></div>
+      </div>
+    </main>
+  </div>
+  <script src="nav.js"></script>
+  <script>
+    const state = { view: 'explore', category: null, slug: null, lib: 'saved' };
+
+    function chips() {
+      document.getElementById('chips').innerHTML = ['All', ...UIXO.categories.map((item) => item.name)]
+        .map((name) => `<button type="button" class="${(!state.category && name === 'All') || name === state.category ? 'on' : ''}" data-go="category" data-cat="${name}">${name}</button>`)
+        .join('');
+    }
+
+    function library() {
+      document.querySelectorAll('[data-lib]').forEach((el) => el.classList.toggle('on', el.dataset.lib === state.lib));
+      const body = document.getElementById('lib-body');
+      if (state.lib === 'submissions') {
+        body.innerHTML = '<p class="empty">No submissions from this browser. The real dashboard reads the same account.</p>';
+        return;
+      }
+      if (state.lib === 'account') {
+        body.innerHTML = '<p class="lede">Theme, sign out, and curator tools live here. Dashboard is a section of Library, not a fourth home.</p>';
+        return;
+      }
+      const ids = UIXO.savedIds();
+      body.innerHTML = ids.length
+        ? `<div class="list">${ids.map((id) => UIXO.row(UIXO.byId(id), 'Saved')).join('')}</div>`
+        : '<p class="empty">Nothing saved yet. Open a listing and save it.</p>';
+    }
+
+    function show(view, extra = {}) {
+      if (view) state.view = view;
+      if (extra.category !== undefined) state.category = extra.category === 'All' ? null : extra.category;
+      if (extra.slug) state.slug = extra.slug;
+      const screen = state.view === 'category' ? 'explore' : state.view;
+      document.querySelectorAll('[data-view]').forEach((el) => { el.hidden = el.dataset.view !== screen; });
+      const dest = screen === 'explore' ? 'explore' : screen === 'collection' ? 'collections' : 'library';
+      document.querySelectorAll('[data-nav]').forEach((el) => el.classList.toggle('on', el.dataset.nav === dest));
+      if (screen === 'explore') {
+        const items = UIXO.filter({ category: state.category });
+        document.getElementById('ex-title').textContent = state.category || 'Explore';
+        document.getElementById('ex-lede').textContent = state.category
+          ? `${items.length} in ${state.category}. Still Explore — not a new home.`
+          : 'The catalog. Categories are filters here — they never become a second home.';
+        document.getElementById('ex-grid').innerHTML = UIXO.cards(items);
+        chips();
+      }
+      if (screen === 'collections') document.getElementById('sets').innerHTML = UIXO.collections.map(UIXO.setCard).join('');
+      if (screen === 'collection') {
+        const set = UIXO.collectionBySlug(state.slug) || UIXO.collections[0];
+        document.getElementById('col-title').textContent = set.name;
+        document.getElementById('col-lede').textContent = set.description;
+        document.getElementById('col-grid').innerHTML = UIXO.cards(set.resourceIds.map(UIXO.byId));
+      }
+      if (screen === 'library') library();
+    }
+
+    document.body.addEventListener('click', (event) => {
+      const lib = event.target.closest('[data-lib]');
+      if (!lib) return;
+      state.lib = lib.dataset.lib;
+      library();
+    });
+
+    UIXO.bind({
+      onGo(name, el) {
+        if (name === 'category') show('explore', { category: el.dataset.cat });
+        else if (name === 'collection') show('collection', { slug: el.dataset.slug });
+        else show(name, name === 'explore' ? { category: null } : {});
+      },
+      onChanged() { show(); },
+    });
+    show('explore');
+  </script>
+</body>
+</html>

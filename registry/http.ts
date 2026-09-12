@@ -60,7 +60,8 @@ export function createRegistryHandler(registry: Registry, options: { origin: str
       else if (action === 'providers') result = { items: await registry.providers() };
       else if (action === 'status') {
         const stats = await registry.stats();
-        const { pending: _pending, discoveries: _discoveries, ...publicStats } = stats;
+        const { pending, discoveries, ...publicStats } = stats;
+        void pending; void discoveries;
         result = { version: '0.2.0', storage: registry.db.mode, readOnly: registry.db.mode === 'snapshot', stats: who?.role === 'curator' ? stats : publicStats, role: who?.role ?? 'visitor', eveConfigured: Boolean(process.env.UIXO_EVE_URL && process.env.UIXO_EVE_TOKEN), searchMode: 'weighted-keyword', mcpPath: '/api/mcp' };
       }
       else if (action === 'queue') result = await registry.queue(integer(url.searchParams.get('limit') ?? undefined, 48, 1, 48), integer(url.searchParams.get('offset') ?? undefined, 0, 0, 100000));

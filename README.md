@@ -118,22 +118,11 @@ the live Neon database to confirm it is genuinely re-runnable.
 
 ## Accounts and the API
 
-Sign-in is real, backed by **Neon Auth** (Better Auth under the hood) with email and
-password, proxied through this site's own origin by `api/auth.ts` so the session cookie is
-first-party. Passwords are never stored by UIXO.
-
-### Why there is no "Continue with Google"
-
-Neon Auth's shared Google app registers its **own domain** as the OAuth redirect URI, so
-Google returns the user to `neonauth…aws.neon.tech` and the session cookie is created
-there. That is a third-party cookie: Safari blocks it outright, and our proxy — which
-forwards only this site's own cookies — can never see it either. The result would be a
-button that runs the entire Google flow and leaves you signed out.
-
-Neon Auth currently has no custom-domain setting, so this cannot be fixed from here. It
-becomes possible when Neon Auth can be served from something like `auth.uixo.io`, at which
-point it is same-site and the flow works. The provider code is still in `src/lib/auth.ts`
-and only the button was removed.
+Sign-in is real, backed by **Neon Auth** (Better Auth under the hood) with email/password,
+Google, and GitHub. `api/auth.ts` proxies Neon Auth through this site's own origin so the
+session and OAuth challenge cookies are first-party. The OAuth return exchanges Neon's
+one-time verifier for that first-party session before the app reads the account. Passwords
+and provider secrets are never stored in the browser or committed to this repository.
 
 `api/` holds Vercel Functions:
 
@@ -156,7 +145,7 @@ update neon_auth."user" set role = 'admin' where email = 'them@example.com';
 `CURATOR_TOKEN` stays as break-glass access for scripts and for when the auth service is
 unreachable. Preview deployments deliberately do not have it.
 
-Lists are still stored in the visitor's browser; syncing them is not wired up yet.
+Lists sync to the account when you are signed in, and stay in this browser when you are not.
 
 ## Notes
 

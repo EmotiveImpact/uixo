@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Current — UIXO navigation</title>
+  <link rel="stylesheet" href="uixo.css" />
+  <style>
+    .frame { max-width: 1440px; }
+    .app { display: grid; grid-template-columns: 244px 1fr; min-height: calc(100vh - 52px); }
+    .side { border-right: 1px solid var(--border); padding: 16px 12px 20px; }
+    .side .brand { display: block; padding: 8px 10px 18px; text-align: left; }
+    .nav-item, .sub {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      text-align: left;
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      color: var(--muted-foreground);
+    }
+    .nav-item.on, .nav-item:hover { background: var(--muted); color: var(--foreground); }
+    .nav-item .n { margin-left: auto; color: var(--faint); font-size: 11px; }
+    .label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--faint);
+      padding: 16px 10px 6px;
+      border-top: 1px solid var(--border);
+      margin-top: 10px;
+    }
+    .sub { padding-left: 34px; font-size: 12px; }
+    .sub.on { color: var(--foreground); }
+    .note { font-size: 11px; line-height: 1.8; color: var(--note); padding: 16px 10px 0; }
+    .main { padding: 18px 28px 32px; }
+    .top { display: flex; gap: 10px; align-items: center; }
+    .top-nav { margin-left: auto; display: flex; gap: 4px; }
+    .main h1 { margin: 24px 0 6px; }
+    .subhead { color: var(--muted-foreground); font-size: 15px; margin-bottom: 22px; }
+    .tools { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
+    .marks { position: relative; }
+    .call {
+      position: absolute;
+      z-index: 5;
+      max-width: 220px;
+      padding: 10px 12px;
+      background: var(--muted);
+      border: 1px solid #2a2a2e;
+      color: var(--paid);
+      font-size: 12px;
+      line-height: 1.4;
+      border-radius: 10px;
+    }
+    .call b { display: block; margin-bottom: 3px; color: var(--foreground); }
+    .studio-extra { margin-left: 8px; }
+  </style>
+</head>
+<body class="notes-off">
+  <div class="back">
+    <a href="index.html">← All directions</a>
+    <span>Control · current chrome, now clickable</span>
+  </div>
+
+  <div class="frame marks">
+    <div class="call" style="left: 18px; top: 168px;"><b>1. Destinations mixed with taxonomy</b> All websites, Collections, lists and ten categories share one rail.</div>
+    <div class="call" style="left: 560px; top: 60px;"><b>2. Duplicate Explore / Collections</b> Same two destinations already exist in the sidebar.</div>
+    <div class="call" style="left: 390px; top: 110px;"><b>3. Price is not navigation</b> A filter sitting in identity chrome, beside About.</div>
+    <div class="call" style="right: 28px; top: 248px;"><b>4. Third toolbar</b> Sort, density and format arrive after two other chrome rows.</div>
+
+    <div class="app">
+      <aside class="side" id="side"></aside>
+      <main class="main">
+        <header class="top">
+          <button type="button" class="search js-search">Search by name, tag or use case… <kbd>/</kbd></button>
+          <div class="segments" id="price">
+            <button type="button" class="on" data-price="All">All</button>
+            <button type="button" data-price="Free">Free</button>
+            <button type="button" data-price="Freemium">Freemium</button>
+            <button type="button" data-price="Paid">Paid</button>
+          </div>
+          <nav class="dest top-nav">
+            <button type="button" data-go="explore" data-nav="explore">Explore</button>
+            <button type="button" data-go="collections" data-nav="collections">Collections</button>
+            <button type="button" data-go="about">About</button>
+          </nav>
+          <button type="button" class="ghost studio-extra" id="notes">Notes</button>
+          <div class="avatar">AE</div>
+        </header>
+        <h1 id="title">All websites</h1>
+        <p class="subhead" id="lede">Good tools. Great interfaces.</p>
+        <div class="tools" id="tools">
+          <div class="segments" id="sort">
+            <button type="button" class="on" data-sort="featured">Featured</button>
+            <button type="button" data-sort="recent">Recent</button>
+          </div>
+        </div>
+        <div class="grid" id="grid"></div>
+      </main>
+    </div>
+  </div>
+  <script src="nav.js"></script>
+  <script>
+    const state = { view: 'explore', category: null, sub: null, listId: null, slug: null, pricing: 'All', sort: 'featured' };
+
+    function renderSide() {
+      const lists = UIXO.loadLists();
+      const cats = UIXO.categories.map((entry) => {
+        const count = UIXO.categoryCount(entry.name);
+        const subs = UIXO.populatedSubs(entry.name);
+        const open = state.category === entry.name;
+        return `<button type="button" class="nav-item${open && !state.sub ? ' on' : ''}" data-go="category" data-cat="${entry.name}">${entry.name} <span class="n">${count}</span></button>
+          ${open ? subs.map((sub) => `<button type="button" class="sub${state.sub === sub ? ' on' : ''}" data-go="sub" data-cat="${entry.name}" data-sub="${sub}">${sub}</button>`).join('') : ''}`;
+      }).join('');
+      document.getElementById('side').innerHTML = `
+        <button type="button" class="brand" data-go="explore">UIXO</button>
+        <button type="button" class="nav-item${state.view === 'explore' && !state.category && !state.listId ? ' on' : ''}" data-go="explore">All websites <span class="n">${UIXO.resources.length}</span></button>
+        <button type="button" class="nav-item${state.view === 'collections' || state.view === 'collection' ? ' on' : ''}" data-go="collections">Collections <span class="n">${UIXO.collections.length}</span></button>
+        <div class="label">Your lists</div>
+        ${lists.map((list) => `<button type="button" class="nav-item${state.listId === list.id ? ' on' : ''}" data-go="list" data-list="${list.id}">${list.name} <span class="n">${list.resourceIds.length}</span></button>`).join('')}
+        <div class="label">Categories</div>
+        ${cats}
+        <div class="label"></div>
+        <button type="button" class="nav-item${state.view === 'submit' ? ' on' : ''}" data-go="submit">Submit a website</button>
+        <p class="note">Curated for the curious.<br>A little corner of the internet.</p>
+      `;
+    }
+
+    function show() {
+      document.querySelectorAll('[data-nav]').forEach((el) => {
+        el.classList.toggle('on', el.dataset.nav === (state.view === 'collection' ? 'collections' : state.view === 'explore' || state.view === 'category' || state.view === 'sub' ? 'explore' : state.view));
+      });
+      document.querySelectorAll('#price button').forEach((el) => el.classList.toggle('on', el.dataset.price === state.pricing));
+      document.querySelectorAll('#sort button').forEach((el) => el.classList.toggle('on', el.dataset.sort === state.sort));
+      const tools = document.getElementById('tools');
+      const title = document.getElementById('title');
+      const lede = document.getElementById('lede');
+      const grid = document.getElementById('grid');
+      tools.hidden = !(state.view === 'explore' || state.view === 'category' || state.view === 'sub');
+
+      if (state.view === 'collections') {
+        title.textContent = 'Collections';
+        lede.textContent = 'Editorial sets. Reached from the sidebar and again from the top bar.';
+        grid.className = 'sets';
+        grid.innerHTML = UIXO.collections.map(UIXO.setCard).join('');
+      } else if (state.view === 'collection') {
+        const set = UIXO.collectionBySlug(state.slug);
+        title.textContent = set.name;
+        lede.textContent = set.description;
+        grid.className = 'grid';
+        lede.innerHTML = `<button type="button" class="ghost" data-go="collections">← Collections</button><br>${set.description}`;
+        grid.innerHTML = UIXO.cards(set.resourceIds.map(UIXO.byId));
+      } else if (state.view === 'list') {
+        const list = UIXO.loadLists().find((item) => item.id === state.listId);
+        title.textContent = list.name;
+        lede.textContent = 'Your lists live in the same rail as the catalog.';
+        grid.className = 'grid';
+        grid.innerHTML = UIXO.cards(list.resourceIds.map(UIXO.byId), 'Nothing saved yet. Open a listing and save it.');
+      } else if (state.view === 'submit') {
+        title.textContent = 'Submit a website';
+        lede.textContent = 'This preview does not send a submission. The real app does, from the same place in the rail.';
+        grid.className = '';
+        grid.innerHTML = '';
+      } else if (state.view === 'about') {
+        title.textContent = 'About';
+        lede.textContent = 'Handpicked, not scraped. Seven websites, checked by hand.';
+        grid.className = '';
+        grid.innerHTML = '';
+      } else {
+        const items = UIXO.filter({
+          category: state.category,
+          sub: state.sub,
+          pricing: state.pricing,
+        }).sort((a, b) => (state.sort === 'featured' ? Number(b.featured) - Number(a.featured) : 0));
+        title.textContent = state.sub || state.category || 'All websites';
+        lede.textContent = state.category
+          ? `${items.length} in ${state.category}${state.sub ? ` · ${state.sub}` : ''}.`
+          : 'Good tools. Great interfaces.';
+        grid.className = 'grid';
+        grid.innerHTML = UIXO.cards(items);
+      }
+      renderSide();
+    }
+
+    document.getElementById('notes').onclick = () => {
+      document.body.classList.toggle('notes-off');
+    };
+    document.getElementById('price').addEventListener('click', (event) => {
+      const btn = event.target.closest('[data-price]');
+      if (!btn) return;
+      state.pricing = btn.dataset.price;
+      show();
+    });
+    document.getElementById('sort').addEventListener('click', (event) => {
+      const btn = event.target.closest('[data-sort]');
+      if (!btn) return;
+      state.sort = btn.dataset.sort;
+      show();
+    });
+
+    UIXO.bind({
+      onGo(name, el) {
+        state.view = name === 'category' || name === 'sub' ? 'explore' : name;
+        if (name === 'explore') {
+          state.category = null;
+          state.sub = null;
+          state.listId = null;
+          state.view = 'explore';
+        }
+        if (name === 'category') {
+          state.category = el.dataset.cat;
+          state.sub = null;
+          state.listId = null;
+          state.view = 'explore';
+        }
+        if (name === 'sub') {
+          state.category = el.dataset.cat;
+          state.sub = el.dataset.sub;
+          state.listId = null;
+          state.view = 'explore';
+        }
+        if (name === 'list') {
+          state.listId = el.dataset.list;
+          state.category = null;
+          state.sub = null;
+        }
+        if (name === 'collection') state.slug = el.dataset.slug;
+        if (name === 'collections') state.slug = null;
+        show();
+      },
+      onChanged: show,
+    });
+    show();
+  </script>
+</body>
+</html>

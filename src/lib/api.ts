@@ -1,4 +1,5 @@
 import { auth } from './auth';
+import type { List } from '../types';
 
 export type ApiResult<T> = { ok: true; data: T } | { ok: false; error: string; status: number };
 
@@ -64,6 +65,18 @@ export const api = {
       {
         method: 'PATCH',
         body: JSON.stringify({ resourceId }),
+      },
+      true,
+    ),
+
+  getLists: () => request<{ lists: List[] }>('/api/lists', {}, true),
+
+  putLists: (lists: List[]) =>
+    request<{ lists: List[] }>(
+      '/api/lists',
+      {
+        method: 'PUT',
+        body: JSON.stringify({ lists }),
       },
       true,
     ),

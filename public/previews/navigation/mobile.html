@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E — Mobile navigation</title>
+  <link rel="stylesheet" href="uixo.css" />
+  <style>
+    .stage { max-width: 1280px; margin: 0 auto; padding: 28px 28px 80px; }
+    .stage-head { max-width: 62ch; margin-bottom: 22px; }
+    .stage-head h1 { margin-bottom: 8px; }
+    .phones {
+      display: grid;
+      grid-template-columns: repeat(3, 390px);
+      justify-content: start;
+      gap: 28px 22px;
+    }
+    @media (max-width: 1280px) { .phones { grid-template-columns: repeat(2, 390px); } }
+    @media (max-width: 860px) { .phones { grid-template-columns: 1fr; justify-items: center; } }
+    .phone-wrap h2 { font-size: 15px; font-weight: 500; margin: 0 0 6px; }
+    .phone-wrap p.cap { font-size: 13px; color: var(--muted-foreground); margin: 0 0 14px; line-height: 1.45; }
+    .phone {
+      width: 390px;
+      height: 780px;
+      border: 10px solid #18181b;
+      border-radius: 40px;
+      overflow: hidden;
+      background: var(--background);
+      position: relative;
+      box-shadow: 0 18px 40px #0000006b;
+    }
+    .island { width: 110px; height: 22px; background: var(--muted); border-radius: 20px; margin: 10px auto 0; }
+    .ph-bar { display: flex; align-items: center; gap: 8px; padding: 8px 14px 10px; }
+    .icon-btn {
+      width: 42px; height: 42px; border-radius: 14px;
+      background: var(--chip); color: var(--foreground);
+      display: grid; place-items: center; flex-shrink: 0;
+    }
+    .icon-btn svg { width: 18px; height: 18px; }
+    .ph-bar .brand { font-size: 14px; letter-spacing: 4px; margin-right: auto; }
+    .ph-bar .segments { height: 36px; padding: 3px; }
+    .ph-bar .segments button { padding: 6px 8px; font-size: 11px; }
+    .ph { padding: 4px 16px 84px; overflow: auto; height: calc(100% - 82px); }
+    .phone[data-chrome="tabs"] .ph { padding-bottom: 100px; }
+    .phone h1 { font-size: 28px; letter-spacing: -0.8px; }
+    .phone .lede { font-size: 13px; margin: 6px 0 16px; }
+    .g { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 12px; }
+    .g .thumb { aspect-ratio: 1.15; }
+    .g .card h3 { font-size: 14px; margin: 8px 0 2px; }
+    .g .card p { font-size: 12px; }
+    .wide { margin-bottom: 14px; }
+    .wide .thumb { aspect-ratio: 1.7; }
+    .row-cat {
+      display: flex; align-items: center; gap: 12px; width: 100%;
+      text-align: left; padding: 12px 0; border-bottom: 1px solid var(--border);
+      color: var(--foreground); font-size: 14px;
+    }
+    .row-cat svg { width: 18px; height: 18px; color: var(--muted-foreground); flex-shrink: 0; }
+    .row-cat span { margin-left: auto; color: var(--faint); font-size: 12px; }
+    .fab {
+      position: absolute; right: 16px; bottom: 20px; z-index: 6;
+      height: 52px; min-width: 52px; padding: 0 16px; border-radius: 16px;
+      background: var(--foreground); color: var(--background);
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 500; box-shadow: 0 12px 28px #0008;
+    }
+    .phone[data-chrome="tabs"] .fab { bottom: 88px; }
+    .fab svg { width: 18px; height: 18px; }
+    .scrim { position: absolute; inset: 0; background: #0009; z-index: 8; }
+    .drawer {
+      position: absolute; top: 0; left: 0; bottom: 0; width: 78%;
+      background: var(--background); border-right: 1px solid var(--border);
+      z-index: 9; padding: 56px 16px 24px;
+    }
+    .drawer button {
+      display: flex; align-items: center; gap: 12px; width: 100%;
+      text-align: left; padding: 12px 10px; border-radius: 12px;
+      color: var(--muted-foreground); font-size: 15px;
+    }
+    .drawer button.on, .drawer button:hover { background: var(--muted); color: var(--foreground); }
+    .drawer svg { width: 18px; height: 18px; }
+    .drawer .note { margin-top: 22px; padding: 0 10px; font-size: 11px; line-height: 1.7; color: var(--note); }
+    .phone .sheet {
+      position: absolute; left: 10px; right: 10px; bottom: 10px; top: 72px;
+      background: var(--background); border: 1px solid #18181b; border-radius: 22px;
+      z-index: 9; display: flex; flex-direction: column; overflow: hidden;
+      box-shadow: 0 18px 40px #0000006b;
+    }
+    .sheet-search {
+      display: flex; align-items: center; gap: 10px;
+      margin: 14px 14px 0; height: 48px; padding: 0 14px;
+      background: var(--chip); border: 1px solid var(--chip-line);
+      border-radius: 14px; color: var(--muted-foreground);
+    }
+    .sheet-search input {
+      flex: 1; background: none; border: 0; outline: none;
+      color: var(--foreground); font-size: 15px; min-width: 0;
+    }
+    .sheet-body { padding: 8px 18px 18px; overflow: auto; }
+    .listing {
+      position: absolute; inset: 0; background: var(--background);
+      z-index: 9; overflow: auto;
+    }
+    .listing img { width: 100%; height: 240px; object-fit: cover; object-position: left top; }
+    .listing .pad { padding: 18px 18px 28px; }
+    .listing h2 { font-size: 28px; font-weight: 500; letter-spacing: -0.8px; margin: 6px 0 8px; }
+    .tabs {
+      position: absolute; left: 12px; right: 12px; bottom: 12px; height: 64px;
+      border-radius: 16px; background: var(--chip); border: 1px solid var(--border);
+      display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; z-index: 5;
+    }
+    .tabs button { font-size: 10px; color: var(--muted-foreground); display: grid; gap: 4px; justify-items: center; }
+    .tabs button.on { color: var(--foreground); }
+    .tabs svg { width: 18px; height: 18px; }
+  </style>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M20 20l-3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.75"/><rect x="14" y="3" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.75"/><rect x="3" y="14" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.75"/><rect x="14" y="14" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.75"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5zM3 12l9 5 9-5M3 16l9 5 9-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 4.6-7 9-7 9z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M5 19a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-shapes" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.75"/><rect x="13" y="5" width="6.5" height="6.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M7 14.5l4 7H3l4-7z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 8l9-5 9 5v8l-9 5-9-5V8zM3 8l9 5 9-5M12 13v8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="8.5" cy="10" r="1.4" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M21 16l-5.5-5.5L7 19" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></symbol>
+    <symbol id="i-type" viewBox="0 0 24 24"><path d="M5 6h14M12 6v13M8 19h8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9l1.5-5h13L20 9M4 9h16v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9zM9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></symbol>
+    <symbol id="i-panels" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M3 9h18M9 9v11" fill="none" stroke="currentColor" stroke-width="1.75"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 19l7-7 2 2-7 7H8v-4zM16 8l2-2 2 2-2 2-2-2z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></symbol>
+    <symbol id="i-device" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M11 18h2" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3 11c.4.4.7 1.1.8 1.8h4.4c.1-.7.4-1.4.8-1.8A6 6 0 0 0 12 3z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <main class="stage">
+    <header class="stage-head">
+      <p class="eyebrow">Direction E · phone</p>
+      <h1>Every screen is a working phone.</h1>
+      <p class="lede">Hamburger + floating search is the one to ship. Top segments and the tab bar are the earlier mobile directions, put back as live phones — not pictures. Tap any of them.</p>
+    </header>
+    <div class="phones" id="phones"></div>
+  </main>
+
+  <script src="nav.js"></script>
+  <script>
+    const ICONS = {
+      Components: 'i-layers',
+      'UI libraries': 'i-box',
+      Templates: 'i-panels',
+      Icons: 'i-shapes',
+      Backgrounds: 'i-image',
+      Illustrations: 'i-pen',
+      Fonts: 'i-type',
+      Mockups: 'i-device',
+      Inspiration: 'i-bulb',
+      Marketplace: 'i-store',
+    };
+
+    const SPECS = [
+      { title: '1 · Explore', cap: 'Menu left. Floating search. No category chips.', chrome: 'hamburger', view: 'explore' },
+      { title: '2 · Search open', cap: 'It floats out from the button. Categories are a list, not a grid.', chrome: 'hamburger', view: 'explore', panel: 'search' },
+      { title: '3 · Typing', cap: 'Ten names become one. The list is an index, not a 2×2.', chrome: 'hamburger', view: 'explore', panel: 'search', q: 'icon' },
+      { title: '4 · Menu', cap: 'Four destinations. Submit. No category tree.', chrome: 'hamburger', view: 'explore', panel: 'menu' },
+      { title: '5 · Icons from search', cap: 'You asked for Icons. The home screen never showed ten buttons.', chrome: 'hamburger', view: 'explore', category: 'Icons' },
+      { title: '6 · Collections', cap: 'Editorial home. Same menu, same search.', chrome: 'hamburger', view: 'collections' },
+      { title: '7 · A collection', cap: 'A set, then the same listings.', chrome: 'hamburger', view: 'collection', slug: 'motion-and-depth' },
+      { title: '8 · Saved', cap: 'Lists. Not mixed into Explore.', chrome: 'hamburger', view: 'saved' },
+      { title: '9 · You', cap: 'Account is a destination, not a mystery avatar.', chrome: 'hamburger', view: 'you' },
+      { title: '10 · A listing', cap: 'Quick view, full screen on a phone.', chrome: 'hamburger', view: 'explore', listing: 'lucide' },
+      { title: '11 · Top segments', cap: 'The earlier mobile chrome. Destinations in the bar. Search still floats.', chrome: 'segments', view: 'explore' },
+      { title: '12 · Tab bar', cap: 'The other earlier chrome. Real icons. Search still floats. Still no category grid.', chrome: 'tabs', view: 'explore' },
+    ];
+
+    function phoneMarkup() {
+      return `
+        <div class="island"></div>
+        <header class="ph-bar">
+          <button type="button" class="icon-btn js-menu-btn" data-open="menu" aria-label="Open menu"><svg><use href="#i-menu"/></svg></button>
+          <span class="brand">UIXO</span>
+          <nav class="segments js-seg" hidden>
+            <button type="button" data-go="explore">Explore</button>
+            <button type="button" data-go="collections">Sets</button>
+            <button type="button" data-go="saved">Saved</button>
+            <button type="button" data-go="you">You</button>
+          </nav>
+        </header>
+        <div class="ph" data-view="explore">
+          <h1 class="js-ex-title">All websites</h1>
+          <p class="lede js-ex-lede">The directory. Filter when you search — not before.</p>
+          <div class="g js-ex-grid"></div>
+        </div>
+        <div class="ph" data-view="collections" hidden>
+          <h1>Collections</h1>
+          <p class="lede">Editorial sets. Reached from where you go — not from a category grid.</p>
+          <div class="js-col-sets"></div>
+        </div>
+        <div class="ph" data-view="collection" hidden>
+          <button type="button" class="ghost" data-go="collections" style="margin-bottom:10px;display:flex;align-items:center;gap:6px"><svg width="16" height="16"><use href="#i-back"/></svg> Collections</button>
+          <h1 class="js-set-title"></h1>
+          <p class="lede js-set-lede"></p>
+          <div class="g js-set-grid"></div>
+        </div>
+        <div class="ph" data-view="saved" hidden>
+          <h1>Saved</h1>
+          <p class="lede js-saved-lede">Your lists. Sign in lives here if you are out.</p>
+          <div class="js-saved-grid"></div>
+        </div>
+        <div class="ph" data-view="you" hidden>
+          <h1>You</h1>
+          <p class="lede">Account, submissions, theme, submit.</p>
+          <p class="row-cat">Theme<span>Dark</span></p>
+          <p class="row-cat">Submissions<span>From this browser</span></p>
+          <button type="button" class="row-cat" data-go="submit"><svg><use href="#i-plus"/></svg> Submit a website<span></span></button>
+        </div>
+        <div class="ph" data-view="submit" hidden>
+          <button type="button" class="ghost" data-go="you" style="margin-bottom:10px">← You</button>
+          <h1>Submit</h1>
+          <p class="lede">This preview does not send a submission. The real app does, from the same place.</p>
+        </div>
+        <button type="button" class="fab" data-open="search" aria-label="Search"><svg><use href="#i-search"/></svg> Search</button>
+        <div class="scrim js-scrim" data-close hidden></div>
+        <aside class="drawer js-menu" data-panel="menu" hidden>
+          <button type="button" data-go="explore"><svg><use href="#i-grid"/></svg> Explore</button>
+          <button type="button" data-go="collections"><svg><use href="#i-layers"/></svg> Collections</button>
+          <button type="button" data-go="saved"><svg><use href="#i-heart"/></svg> Saved</button>
+          <button type="button" data-go="you"><svg><use href="#i-user"/></svg> You</button>
+          <button type="button" data-go="submit"><svg><use href="#i-plus"/></svg> Submit a website</button>
+          <p class="note">Destinations only. Categories are not a menu — they are a way to search.</p>
+        </aside>
+        <div class="sheet js-search" data-panel="search" hidden>
+          <div class="sheet-search">
+            <svg width="18" height="18"><use href="#i-search"/></svg>
+            <input class="js-q" placeholder="Icons, grain, React components…" />
+            <button type="button" class="ghost" data-close aria-label="Close search"><svg width="18" height="18"><use href="#i-x"/></svg></button>
+          </div>
+          <div class="sheet-body js-hits"></div>
+        </div>
+        <div class="listing js-listing" data-panel="listing" hidden>
+          <img class="js-live-img" alt="" />
+          <div class="pad">
+            <button type="button" class="ghost" data-close style="display:flex;align-items:center;gap:6px"><svg width="16" height="16"><use href="#i-back"/></svg> Back</button>
+            <p class="meta js-live-meta"></p>
+            <h2 class="js-live-name"></h2>
+            <p class="lede js-live-why"></p>
+            <div class="sheet-actions">
+              <a class="solid js-live-visit" target="_blank" rel="noreferrer">Visit website</a>
+              <button type="button" class="ghost js-live-save">Save</button>
+            </div>
+          </div>
+        </div>
+        <nav class="tabs js-tabs" hidden>
+          <button type="button" data-go="explore"><svg><use href="#i-grid"/></svg>Explore</button>
+          <button type="button" data-go="collections"><svg><use href="#i-layers"/></svg>Sets</button>
+          <button type="button" data-go="saved"><svg><use href="#i-heart"/></svg>Saved</button>
+          <button type="button" data-go="you"><svg><use href="#i-user"/></svg>You</button>
+        </nav>
+      `;
+    }
+
+    function phCard(item) {
+      return `<article class="card"><button type="button" class="thumb" data-open="listing" data-id="${item.id}"><img src="/assets/${item.id}.png" alt=""></button><h3>${item.name}</h3><p>${item.pricing}</p></article>`;
+    }
+
+    function mountPhone(root, spec) {
+      const state = {
+        chrome: spec.chrome || 'hamburger',
+        view: spec.view || 'explore',
+        category: spec.category || null,
+        slug: spec.slug || null,
+        listing: spec.listing || null,
+        q: spec.q || '',
+      };
+
+      function closePanels() {
+        root.querySelectorAll('[data-panel], .js-scrim').forEach((el) => { el.hidden = true; });
+      }
+
+      function markDest() {
+        const dest = state.view === 'collection' ? 'collections'
+          : state.view === 'submit' ? 'you'
+          : state.view === 'category' ? 'explore'
+          : state.view;
+        root.querySelectorAll('.js-menu [data-go], .js-seg [data-go], .js-tabs [data-go]').forEach((el) => {
+          el.classList.toggle('on', el.dataset.go === dest);
+        });
+      }
+
+      function applyChrome() {
+        root.dataset.chrome = state.chrome;
+        root.querySelector('.js-menu-btn').hidden = state.chrome !== 'hamburger';
+        root.querySelector('.js-seg').hidden = state.chrome !== 'segments';
+        root.querySelector('.js-tabs').hidden = state.chrome !== 'tabs';
+      }
+
+      function renderHits() {
+        const q = root.querySelector('.js-q').value.trim().toLowerCase();
+        const cats = UIXO.categories.filter((item) => !q || item.name.toLowerCase().includes(q));
+        const listings = UIXO.filter({ q }).slice(0, 6);
+        root.querySelector('.js-hits').innerHTML = `
+          <p class="sheet-label">Jump to a category</p>
+          ${cats.map((item) => `<button type="button" class="row-cat" data-go="category" data-cat="${item.name}"><svg><use href="#${ICONS[item.name]}"/></svg> ${item.name}<span>${UIXO.categoryCount(item.name)}</span></button>`).join('') || '<p class="empty">No categories match.</p>'}
+          <p class="sheet-label">A listing</p>
+          ${listings.map((item) => `<button type="button" class="row-cat" data-open="listing" data-id="${item.id}"><svg><use href="#${ICONS[item.category] || 'i-grid'}"/></svg> ${item.name}<span>${item.category}</span></button>`).join('') || '<p class="empty">No listings match.</p>'}
+        `;
+      }
+
+      function openListing(id) {
+        const item = UIXO.byId(id);
+        if (!item) return;
+        state.listing = id;
+        root.querySelector('.js-live-img').src = `/assets/${item.id}.png`;
+        root.querySelector('.js-live-name').textContent = item.name;
+        root.querySelector('.js-live-meta').textContent = `${item.category} · ${item.pricing} · ${item.formats.join(' · ')}`;
+        root.querySelector('.js-live-why').textContent = UIXO.why[item.id] || item.description;
+        root.querySelector('.js-live-visit').href = item.url;
+        root.querySelector('.js-live-save').textContent = UIXO.isSaved(item.id) ? 'Saved' : 'Save';
+        root.querySelector('.js-listing').hidden = false;
+      }
+
+      function openPanel(name) {
+        root.querySelector('.js-scrim').hidden = false;
+        root.querySelector(`[data-panel="${name}"]`).hidden = false;
+        if (name === 'search') {
+          const input = root.querySelector('.js-q');
+          input.value = state.q;
+          renderHits();
+          input.focus();
+        }
+      }
+
+      function show(view, extra = {}) {
+        if (view) state.view = view;
+        if (extra.category !== undefined) state.category = extra.category;
+        if (extra.slug) state.slug = extra.slug;
+        const screen = state.view === 'category' ? 'explore' : state.view;
+        root.querySelectorAll('[data-view]').forEach((el) => { el.hidden = el.dataset.view !== screen; });
+        closePanels();
+        markDest();
+
+        if (screen === 'explore') {
+          const items = UIXO.filter({ category: state.category });
+          root.querySelector('.js-ex-title').textContent = state.category || 'All websites';
+          root.querySelector('.js-ex-lede').textContent = state.category
+            ? 'From search — not from a chip on the home screen.'
+            : 'The directory. Filter when you search — not before.';
+          root.querySelector('.js-ex-grid').innerHTML = items.map(phCard).join('') || '<p class="empty">Nothing in this category yet.</p>';
+        }
+        if (screen === 'collections') {
+          root.querySelector('.js-col-sets').innerHTML = UIXO.collections.map((item) =>
+            `<article class="card wide"><button type="button" class="thumb" data-go="collection" data-slug="${item.slug}"><img src="/assets/${item.resourceIds[0]}.png" alt=""></button><h3>${item.name}</h3><p>${item.resourceIds.length} websites</p></article>`
+          ).join('');
+        }
+        if (screen === 'collection') {
+          const set = UIXO.collectionBySlug(state.slug) || UIXO.collections[0];
+          root.querySelector('.js-set-title').textContent = set.name;
+          root.querySelector('.js-set-lede').textContent = set.description;
+          root.querySelector('.js-set-grid').innerHTML = set.resourceIds.map(UIXO.byId).map(phCard).join('');
+        }
+        if (screen === 'saved') {
+          const ids = UIXO.savedIds();
+          root.querySelector('.js-saved-lede').textContent = ids.length ? `Favourites · ${ids.length} websites` : 'Your lists. Sign in lives here if you are out.';
+          root.querySelector('.js-saved-grid').innerHTML = ids.length
+            ? ids.map((id) => {
+                const item = UIXO.byId(id);
+                return `<article class="card wide"><button type="button" class="thumb" data-open="listing" data-id="${item.id}"><img src="/assets/${item.id}.png" alt=""></button><h3>${item.name}</h3><p>${item.category} · ${item.pricing}</p></article>`;
+              }).join('')
+            : '<p class="empty">Nothing saved yet. Open a listing and save it.</p>';
+        }
+      }
+
+      root.querySelector('.js-q').addEventListener('input', (event) => {
+        state.q = event.target.value;
+        renderHits();
+      });
+      root.querySelector('.js-live-save').addEventListener('click', () => {
+        if (!state.listing) return;
+        UIXO.toggleSave(state.listing);
+        root.querySelector('.js-live-save').textContent = UIXO.isSaved(state.listing) ? 'Saved' : 'Save';
+      });
+      root.addEventListener('click', (event) => {
+        const close = event.target.closest('[data-close]');
+        const open = event.target.closest('[data-open]');
+        const go = event.target.closest('[data-go]');
+        if (close) { closePanels(); return; }
+        if (open) {
+          if (open.dataset.open === 'menu' || open.dataset.open === 'search') openPanel(open.dataset.open);
+          if (open.dataset.open === 'listing') openListing(open.dataset.id);
+          return;
+        }
+        if (go) {
+          if (go.dataset.go === 'category') show('explore', { category: go.dataset.cat });
+          else if (go.dataset.go === 'collection') show('collection', { slug: go.dataset.slug });
+          else show(go.dataset.go, go.dataset.go === 'explore' ? { category: null } : {});
+        }
+      });
+
+      applyChrome();
+      show(state.view, { category: state.category, slug: state.slug });
+      if (spec.panel) openPanel(spec.panel);
+      if (spec.listing) openListing(spec.listing);
+    }
+
+    const host = document.getElementById('phones');
+    SPECS.forEach((spec) => {
+      const wrap = document.createElement('section');
+      wrap.className = 'phone-wrap';
+      wrap.innerHTML = `<h2>${spec.title}</h2><p class="cap">${spec.cap}</p><div class="phone">${phoneMarkup()}</div>`;
+      host.appendChild(wrap);
+      mountPhone(wrap.querySelector('.phone'), spec);
+    });
+  </script>
+</body>
+</html>

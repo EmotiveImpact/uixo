@@ -5,6 +5,8 @@ import type { User } from '../lib/auth';
 type AccountMenuProps = {
   /** When false, accounts are not on offer and nothing is rendered. */
   available: boolean;
+  /** Until the session request settles, do not flash the signed-out button. */
+  settled?: boolean;
   user: User | null;
   onSignIn: () => void;
   onDashboard: () => void;
@@ -22,6 +24,7 @@ function initials(name: string): string {
 
 export function AccountMenu({
   available,
+  settled = true,
   user,
   onSignIn,
   onDashboard,
@@ -50,6 +53,9 @@ export function AccountMenu({
   if (!available) return null;
 
   if (!user) {
+    if (!settled) {
+      return <span className="signin-button" aria-busy="true" aria-label="Checking sign-in" />;
+    }
     return (
       <button className="signin-button" onClick={onSignIn}>
         <UserIcon size={16} className="signin-icon" />

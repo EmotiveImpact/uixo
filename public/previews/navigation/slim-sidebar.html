@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>D — Slim sidebar</title>
+  <link rel="stylesheet" href="uixo.css" />
+  <style>
+    .frame { display: grid; grid-template-columns: 200px 1fr; }
+    .side { padding: 22px 14px; border-right: 1px solid var(--border); }
+    .side .brand { display: block; padding: 8px 10px 22px; text-align: left; }
+    .side button {
+      display: flex;
+      width: 100%;
+      text-align: left;
+      padding: 9px 10px;
+      border-radius: 10px;
+      color: var(--muted-foreground);
+      font-size: 13px;
+    }
+    .side button.on { background: var(--muted); color: var(--foreground); }
+    .side .foot { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .main { padding: 18px 28px 40px; }
+    .top { display: flex; gap: 10px; align-items: center; }
+    .top .search { margin-right: auto; }
+    .main h1 { margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <div class="back">
+    <a href="index.html">← All directions</a>
+    <span>Compromise · keep a rail, but only destinations. Categories become chips.</span>
+  </div>
+  <div class="frame">
+    <aside class="side">
+      <button type="button" class="brand" data-go="explore">UIXO</button>
+      <button type="button" data-go="explore" data-nav="explore">Explore</button>
+      <button type="button" data-go="collections" data-nav="collections">Collections</button>
+      <button type="button" data-go="saved" data-nav="saved">Saved</button>
+      <div class="foot">
+        <button type="button" data-go="submit">Submit a website</button>
+      </div>
+    </aside>
+    <div class="main">
+      <header class="top">
+        <button type="button" class="search js-search">Search by name, tag or use case <kbd>/</kbd></button>
+        <button type="button" class="avatar" data-go="saved">AE</button>
+      </header>
+
+      <section data-view="explore">
+        <h1 id="ex-title">All websites</h1>
+        <p class="lede" id="ex-lede">The tree is gone. Ten categories do not need a permanent column when they can be chips.</p>
+        <div class="chips" id="chips"></div>
+        <div class="grid" id="ex-grid"></div>
+      </section>
+
+      <section data-view="collections" hidden>
+        <h1>Collections</h1>
+        <p class="lede">Same destination as Direction A — just reached from a rail instead of a top link.</p>
+        <div class="sets" id="sets"></div>
+      </section>
+
+      <section data-view="collection" hidden>
+        <button type="button" class="ghost" data-go="collections" style="margin-bottom:18px">← Collections</button>
+        <h1 id="col-title"></h1>
+        <p class="lede" id="col-lede"></p>
+        <div class="grid" id="col-grid"></div>
+      </section>
+
+      <section data-view="saved" hidden>
+        <h1>Saved</h1>
+        <p class="lede">Lists leave the catalog. The rail now has three homes, not thirteen rows.</p>
+        <div class="list" id="saved-list"></div>
+      </section>
+
+      <section data-view="submit" hidden>
+        <h1>Submit a website</h1>
+        <p class="lede">Submit stays at the foot of the rail. This preview does not send anything.</p>
+      </section>
+    </div>
+  </div>
+  <script src="nav.js"></script>
+  <script>
+    const state = { view: 'explore', category: null, slug: null };
+
+    function chips() {
+      document.getElementById('chips').innerHTML = ['All', ...UIXO.categories.map((item) => item.name)]
+        .map((name) => `<button type="button" class="${(!state.category && name === 'All') || name === state.category ? 'on' : ''}" data-go="category" data-cat="${name}">${name}</button>`)
+        .join('');
+    }
+
+    function show(view, extra = {}) {
+      if (view) state.view = view;
+      if (extra.category !== undefined) state.category = extra.category === 'All' ? null : extra.category;
+      if (extra.slug) state.slug = extra.slug;
+      const screen = state.view === 'category' ? 'explore' : state.view;
+      document.querySelectorAll('[data-view]').forEach((el) => { el.hidden = el.dataset.view !== screen; });
+      const dest = screen === 'explore' ? 'explore' : screen === 'collection' ? 'collections' : screen;
+      document.querySelectorAll('[data-nav]').forEach((el) => el.classList.toggle('on', el.dataset.nav === dest));
+      if (screen === 'explore') {
+        const items = UIXO.filter({ category: state.category });
+        document.getElementById('ex-title').textContent = state.category || 'All websites';
+        document.getElementById('ex-lede').textContent = state.category
+          ? `${items.length} in ${state.category}. A chip, not a row in the rail.`
+          : 'The tree is gone. Ten categories do not need a permanent column when they can be chips.';
+        document.getElementById('ex-grid').innerHTML = UIXO.cards(items);
+        chips();
+      }
+      if (screen === 'collections') document.getElementById('sets').innerHTML = UIXO.collections.map(UIXO.setCard).join('');
+      if (screen === 'collection') {
+        const set = UIXO.collectionBySlug(state.slug) || UIXO.collections[0];
+        document.getElementById('col-title').textContent = set.name;
+        document.getElementById('col-lede').textContent = set.description;
+        document.getElementById('col-grid').innerHTML = UIXO.cards(set.resourceIds.map(UIXO.byId));
+      }
+      if (screen === 'saved') {
+        const ids = UIXO.savedIds();
+        document.getElementById('saved-list').innerHTML = ids.length
+          ? ids.map((id) => UIXO.row(UIXO.byId(id), 'Saved')).join('')
+          : '<p class="empty">Nothing saved yet. Open a listing and save it.</p>';
+      }
+    }
+
+    UIXO.bind({
+      onGo(name, el) {
+        if (name === 'category') show('explore', { category: el.dataset.cat });
+        else if (name === 'collection') show('collection', { slug: el.dataset.slug });
+        else show(name, name === 'explore' ? { category: null } : {});
+      },
+      onChanged() { show(); },
+    });
+    show('explore');
+  </script>
+</body>
+</html>

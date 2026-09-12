@@ -21,6 +21,8 @@ export function writeStored(key: string, value: unknown, store?: Storage): boole
 }
 
 export const LISTS_KEY = 'uixo-lists';
+/** Neon Auth user id that last wrote `LISTS_KEY`, or absent for a guest. */
+export const LISTS_OWNER_KEY = 'uixo-lists-owner';
 export const SUGGESTIONS_KEY = 'uixo-suggestions';
 export const REPORTS_KEY = 'uixo-link-reports';
 export const THEME_KEY = 'uixo-theme';

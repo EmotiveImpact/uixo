@@ -95,6 +95,14 @@ create table if not exists list_resources (
   primary key (list_id, resource_id)
 );
 
+-- The unit of sync is the whole snapshot the app already holds (`favourites`, `c…`).
+-- One row per account; membership is inside the JSON so we never fight uuid vs text ids.
+create table if not exists user_lists (
+  user_id     uuid primary key references users (id) on delete cascade,
+  payload     jsonb not null,
+  updated_at  timestamptz not null default now()
+);
+
 -- ---------------------------------------------------------------- moderation
 
 do $$ begin

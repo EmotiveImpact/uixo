@@ -139,9 +139,7 @@ export function Dashboard({
             ))}
           </ul>
         )}
-        <p className="panel-note">
-          Lists are stored in this browser. Signing in will sync them once the backend is connected.
-        </p>
+        <p className="panel-note">Saved on your account. They come with you on another device.</p>
       </section>
 
       {loadError && (

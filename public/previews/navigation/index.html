@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UIXO — navigation directions</title>
+  <link rel="stylesheet" href="uixo.css" />
+</head>
+<body>
+  <main class="gallery">
+    <header class="gallery-head">
+      <div>
+        <p class="eyebrow">Navigation</p>
+        <h1>See the product first.</h1>
+        <p class="lede">Seven directions, all clickable. Same type, colour and real listings. A is the one to ship; F is your current shell with price treated as a filter.</p>
+      </div>
+      <a class="solid" href="editorial.html">Open the recommendation</a>
+    </header>
+
+    <div class="tiles">
+      <a class="tile" href="editorial.html">
+        <div class="tile-screen"><iframe src="editorial.html" title="Editorial destinations" tabindex="-1" loading="eager"></iframe></div>
+        <div class="tile-meta">
+          <span class="tag rec">Recommended · A</span>
+          <h3>Editorial destinations</h3>
+          <p>No sidebar. Explore, Collections and Saved in one row. Categories are chips. Search, save, open a listing.</p>
+        </div>
+      </a>
+      <a class="tile" href="f.html">
+        <div class="tile-screen"><iframe src="f.html" title="Sidebar plus A" tabindex="-1" loading="eager"></iframe></div>
+        <div class="tile-meta">
+          <span class="tag">F</span>
+          <h3>Current + top bar</h3>
+          <p>Your sidebar, your top bar, your grid. No category chips. All / Free / Freemium / Paid sits with Featured — a filter, not a destination.</p>
+        </div>
+      </a>
+      <a class="tile" href="current.html">
+        <div class="tile-screen"><iframe src="current.html" title="Current shell" tabindex="-1" loading="lazy"></iframe></div>
+        <div class="tile-meta">
+          <span class="tag">Today</span>
+          <h3>Current shell</h3>
+          <p>Sidebar + top bar + discovery toolbar. Fully wired — including the notes toggle.</p>
+        </div>
+      </a>
+      <a class="tile" href="three-homes.html">
+        <div class="tile-screen"><iframe src="three-homes.html" title="Three homes" tabindex="-1" loading="lazy"></iframe></div>
+        <div class="tile-meta">
+          <span class="tag">B</span>
+          <h3>Three homes</h3>
+          <p>Explore / Collections / Library as equal segments. Chips, sets, and lists all work.</p>
+        </div>
+      </a>
+      <a class="tile" href="search-first.html">
+        <div class="tile-screen"><iframe src="search-first.html" title="Search first" tabindex="-1" loading="lazy"></iframe></div>
+        <div class="tile-meta">
+          <span class="tag">C</span>
+          <h3>Search first</h3>
+          <p>Search is the nav. Type and the directory answers.</p>
+        </div>
+      </a>
+      <a class="tile" href="slim-sidebar.html">
+        <div class="tile-screen"><iframe src="slim-sidebar.html" title="Slim sidebar" tabindex="-1" loading="lazy"></iframe></div>
+        <div class="tile-meta">
+          <span class="tag">D</span>
+          <h3>Slim sidebar</h3>
+          <p>Keep a rail. Only destinations. Categories become chips you can actually press.</p>
+        </div>
+      </a>
+      <a class="tile" href="mobile.html">
+        <div class="tile-screen"><iframe src="mobile.html" title="Mobile" tabindex="-1" loading="lazy"></iframe></div>
+        <div class="tile-meta">
+          <span class="tag">E</span>
+          <h3>Hamburger + floating search</h3>
+          <p>Twelve working phones. Hamburger + search, plus the earlier segments and tab bar.</p>
+        </div>
+      </a>
+    </div>
+
+    <section class="why-block" id="why">
+      <h2>Why A</h2>
+      <p class="lede">The current shell works, but it is a SaaS admin wrapped around a small editorial directory. Destinations, taxonomy and personal lists share one rail. Explore and Collections are also in the top bar. The grid starts too late.</p>
+      <div class="why-grid">
+        <article class="why-card">
+          <p class="fail">Duplicated destinations</p>
+          <h3>Explore and Collections live twice</h3>
+          <p>Sidebar and top bar both claim them. A visitor cannot tell which one is canonical.</p>
+        </article>
+        <article class="why-card">
+          <p class="fail">Three chrome layers</p>
+          <h3>Sidebar + top bar + discovery toolbar</h3>
+          <p>A seven-item catalog does not need a permanent 15rem rail and two more toolbars.</p>
+        </article>
+        <article class="why-card">
+          <p class="fail">Mixed IA</p>
+          <h3>Catalog, taxonomy and lists share one rail</h3>
+          <p>Those are destinations, filters, and account state. They should not sit in one list.</p>
+        </article>
+        <article class="why-card">
+          <p class="ok">Already right</p>
+          <h3>Landing stays a separate surface</h3>
+          <p>Keep it. Also keep URLs, the command palette, and the quick view.</p>
+        </article>
+      </div>
+      <h2>Current IA vs A</h2>
+      <div class="why-grid">
+        <pre class="ia">NOW
+Landing          /
+App chrome
+  Sidebar — All, Collections, lists, 10 categories, Submit
+  Top bar — Search, price, Explore, Collections, About
+  Discovery — Featured / Recent, density, format</pre>
+        <pre class="ia">DIRECTION A
+Landing          /          unchanged
+Chrome — one row
+  Explore · Collections · Saved
+  Search /  Submit  Account
+Explore          chips + filters with the grid
+Collections      editorial home
+Saved            lists + submissions</pre>
+      </div>
+    </section>
+  </main>
+  <script src="nav.js"></script>
+</body>
+</html>

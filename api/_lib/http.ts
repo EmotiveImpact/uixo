@@ -80,6 +80,14 @@ export async function isCuratorUser(userId: string): Promise<boolean> {
   return role === 'admin' || role === 'curator';
 }
 
+/** The signed-in member, or a 401. Used for private data such as lists. */
+export async function requireUser(req: VercelRequest, res: VercelResponse): Promise<string | null> {
+  const userId = await verifiedUserId(req);
+  if (userId) return userId;
+  json(res, 401, { error: 'You need to sign in to do that.' });
+  return null;
+}
+
 export async function requireCurator(req: VercelRequest, res: VercelResponse): Promise<boolean> {
   if (hasCuratorToken(req)) return true;
 

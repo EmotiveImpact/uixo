@@ -39,9 +39,18 @@ const SIDEBAR_SIZING = {
 
 export function App() {
   const { route, navigate } = useRoute();
-  const { lists, toggleSaved, toggleIn, create, remove } = useLists();
   const { light, toggle: toggleTheme } = useTheme();
-  const { user, isCurator, signIn, signUp, signOut, available: authAvailable } = useAuth();
+  const {
+    user,
+    isCurator,
+    settled,
+    signIn,
+    signUp,
+    signInWithProvider,
+    signOut,
+    available: authAvailable,
+  } = useAuth();
+  const { lists, toggleSaved, toggleIn, create, remove } = useLists(user?.id ?? null, settled);
 
   const [openSection, setOpenSection] = useState<string | null>(route.category);
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -187,6 +196,7 @@ export function App() {
           userId={user?.id ?? null}
           onSignIn={signIn}
           onSignUp={signUp}
+          onProvider={signInWithProvider}
           onAuthDone={() => setModal(null)}
         />
       </>
@@ -242,6 +252,7 @@ export function App() {
           account={
             <AccountMenu
               available={authAvailable}
+              settled={settled}
               user={user}
               onSignIn={() => setModal('signin')}
               onDashboard={() => navigate({ ...EMPTY_ROUTE, dashboard: true })}
@@ -360,6 +371,7 @@ export function App() {
         userId={user?.id ?? null}
         onSignIn={signIn}
         onSignUp={signUp}
+        onProvider={signInWithProvider}
         onAuthDone={() => setModal(null)}
       />
     </AnimatedSidebarProvider>
