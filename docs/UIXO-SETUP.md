@@ -2,7 +2,7 @@
 
 ## Local browser plus API
 
-Use the working branch `astra/uixo-v2-design-intelligence`. The repair does not merge it into `main`.
+Use the working branch `codex/integrate-pr-20`. It integrates the v2 work with the latest `main` but is not merged into `main` yet.
 
 Install the repository's locked dependencies using the Node 22 runtime specified in `package.json`:
 
@@ -41,7 +41,7 @@ Open `http://127.0.0.1:4175/registry/?view=review` to establish the local-only H
 
 Provision/select an isolated preview or development Postgres database first. Configure `UIXO_DATABASE_URL` securely in the execution/deployment environment. It is separate from the existing editorial/auth `DATABASE_URL`.
 
-Inspect `db/migrations/002-registry.sql` and take the appropriate backup before applying it to an existing database. No remote migration is performed by this repair.
+Inspect `db/migrations/002-registry.sql` and take the appropriate backup before applying it to another database. The current Vercel preview uses the additive `uixo_v2_*` tables in the connected Neon database.
 
 ```sh
 npm run registry:db -- migrate --allow-remote

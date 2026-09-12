@@ -18,12 +18,12 @@ A successful HTML page can coexist with a failed function, a missing migration o
 
 ## Preserve data and production safety
 
-Keep the existing `uixo.asset-saves.v2` storage contract, the server-side licence/acquisition decisions and original website routes. Do not execute generated install instructions. Do not perform a production migration, merge main, bypass Vercel protection or relax production origin checks.
+Keep the existing `uixo.asset-saves.v2` storage contract, the server-side licence/acquisition decisions and original website routes. Do not execute generated install instructions or relax production origin checks. The registry uses additive `uixo_v2_*` tables, and preview credentials are scoped to the integration branch.
 
 ## Local development integration
 
-Run Vite on explicit loopback port 5173 and the existing registry server on 4175. Proxy only registry/MCP routes. Allow that exact browser origin on the local-only registry server. Do not use a wildcard origin.
+Run Vite on explicit loopback port 3000 and the existing registry server on 4175. Proxy only registry/MCP routes. Allow that exact browser origin on the local-only registry server. Do not use a wildcard origin.
 
 ## Verification language
 
-Separate implementation, tests and deployment evidence. The repair's new native client-contract tests passed locally; missing network/package access prevents treating that as a full React build or live deployment test. Previous PR test counts remain previous reports, not newly rerun evidence.
+Separate implementation, tests and deployment evidence. Record local tests, hosted API checks, browser acceptance and remaining live-provider work independently so a successful build is never presented as proof of a complete indexing workflow.
