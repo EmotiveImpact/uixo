@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark } from 'lucide-react';
 import {
   ASSET_SAVES,
@@ -17,8 +17,9 @@ type Props = {
   query: AssetQuery;
   navigate: (changes: Partial<AssetQuery>, reset?: boolean) => void;
   density: string;
+  discovery?: ReactNode;
 };
-export function AssetLibrary({ query, navigate, density }: Props) {
+export function AssetLibrary({ query, navigate, density, discovery }: Props) {
   const [providers, setProviders] = useState<ProviderRecord[]>([]);
   const [status, setStatus] = useState<RegistryStatus | null>(null);
   const [result, setResult] = useState<Catalogue | null>(null);
@@ -137,6 +138,7 @@ export function AssetLibrary({ query, navigate, density }: Props) {
         </a>
         <a href={assetHref({ ...EMPTY_ASSET_QUERY, view: 'guide' })}>How to use UIXO</a>
       </div>
+      {discovery}
       <p className="asset-library-status">
         {status
           ? status.readOnly

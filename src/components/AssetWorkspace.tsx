@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
 import { AnimatedSidebarInset, AnimatedSidebarProvider } from './motion/animated-sidebar';
 import { AppSidebar } from './AppSidebar';
-import { TopBar } from './TopBar';
+import { TopBar, DiscoveryControls } from './TopBar';
 import { AccountMenu } from './AccountMenu';
 import { AppDialog } from './AppDialog';
 import { PageHeading } from './PageHeading';
@@ -140,24 +140,7 @@ export function AssetWorkspace() {
       </a>
       <AnimatedSidebarInset className="site-main asset-workspace" id="main" tabIndex={-1}>
         <TopBar
-          assetSearch
           catalogue="assets"
-          showDiscovery={!utility}
-          searchRef={searchRef}
-          search={query.q}
-          onSearchChange={(q) =>
-            navigate({ q, offset: 0, view: query.view === 'sources' ? 'assets' : query.view })
-          }
-          price={
-            (query.price === 'free'
-              ? 'Free'
-              : query.price === 'paid'
-                ? 'Paid'
-                : 'All') as PriceFilter
-          }
-          onPriceChange={(price) =>
-            navigate({ price: price === 'All' ? '' : price.toLowerCase(), offset: 0 })
-          }
           light={light}
           onToggleTheme={toggleTheme}
           onOpenModal={setModal}
@@ -185,7 +168,33 @@ export function AssetWorkspace() {
         {utility ? (
           <AssetUtilities key={query.view} view={query.view} />
         ) : (
-          <AssetLibrary query={query} navigate={navigate} density={density} />
+          <AssetLibrary
+            query={query}
+            navigate={navigate}
+            density={density}
+            discovery={
+              <DiscoveryControls
+                assetSearch
+                catalogue="assets"
+                showDiscovery={!utility}
+                searchRef={searchRef}
+                search={query.q}
+                onSearchChange={(q) =>
+                  navigate({ q, offset: 0, view: query.view === 'sources' ? 'assets' : query.view })
+                }
+                price={
+                  (query.price === 'free'
+                    ? 'Free'
+                    : query.price === 'paid'
+                      ? 'Paid'
+                      : 'All') as PriceFilter
+                }
+                onPriceChange={(price) =>
+                  navigate({ price: price === 'All' ? '' : price.toLowerCase(), offset: 0 })
+                }
+              />
+            }
+          />
         )}
         <footer className="asset-library-footer">
           <span>UIXO keeps the index. Creators keep the credit.</span>

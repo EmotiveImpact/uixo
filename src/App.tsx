@@ -18,7 +18,7 @@ import { PageHeading } from './components/PageHeading';
 import { QuickView } from './components/QuickView';
 import { ResourceGrid } from './components/ResourceGrid';
 import { SiteFooter } from './components/SiteFooter';
-import { TopBar } from './components/TopBar';
+import { TopBar, DiscoveryControls } from './components/TopBar';
 import { useAuth } from './hooks/useAuth';
 import { useDensity } from './hooks/useDensity';
 import { useLists } from './hooks/useLists';
@@ -238,13 +238,6 @@ export function App() {
       <AnimatedSidebarInset className="site-main" id="main" tabIndex={-1}>
         <TopBar
           catalogue={route.collectionsIndex || activeCollection ? 'collections' : 'websites'}
-          collectionIndex={route.collectionsIndex}
-          showDiscovery={showsGrid || route.collectionsIndex}
-          searchRef={searchRef}
-          search={route.search}
-          onSearchChange={(search) => navigate({ search })}
-          price={route.price}
-          onPriceChange={(price: PriceFilter) => navigate({ price })}
           light={light}
           onToggleTheme={toggleTheme}
           onOpenModal={setModal}
@@ -280,6 +273,17 @@ export function App() {
             onDensityChange={setDensity}
           />
         )}
+
+        <DiscoveryControls
+          catalogue={route.collectionsIndex || activeCollection ? 'collections' : 'websites'}
+          collectionIndex={route.collectionsIndex}
+          showDiscovery={showsGrid || route.collectionsIndex}
+          searchRef={searchRef}
+          search={route.search}
+          onSearchChange={(search) => navigate({ search })}
+          price={route.price}
+          onPriceChange={(price: PriceFilter) => navigate({ price })}
+        />
 
         {/* Announce result counts so filtering is not silent to a screen reader. */}
         <p className="sr-only" role="status" aria-live="polite">

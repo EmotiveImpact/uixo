@@ -6,16 +6,18 @@ import type { ReactNode } from 'react';
 import type { ModalName, PriceFilter } from '../types';
 
 type TopBarProps = {
+  light: boolean;
+  onToggleTheme: () => void;
+  onOpenModal: (modal: ModalName) => void;
+  account: ReactNode;
+  catalogue?: 'websites' | 'assets' | 'collections';
+};
+type DiscoveryControlsProps = {
   searchRef: RefObject<HTMLInputElement | null>;
   search: string;
   onSearchChange: (value: string) => void;
   price: PriceFilter;
   onPriceChange: (price: PriceFilter) => void;
-  light: boolean;
-  onToggleTheme: () => void;
-  onOpenModal: (modal: ModalName) => void;
-  account: ReactNode;
-  /** The shared shell can search individual assets without claiming they are websites. */
   assetSearch?: boolean;
   catalogue?: 'websites' | 'assets' | 'collections';
   collectionIndex?: boolean;
@@ -23,19 +25,11 @@ type TopBarProps = {
 };
 
 export function TopBar({
-  searchRef,
-  search,
-  onSearchChange,
-  price,
-  onPriceChange,
   light,
   onToggleTheme,
   onOpenModal,
   account,
-  assetSearch = false,
   catalogue = 'websites',
-  collectionIndex = false,
-  showDiscovery = true,
 }: TopBarProps) {
   return (
     <>
@@ -78,6 +72,23 @@ export function TopBar({
 
         {account}
       </header>
+    </>
+  );
+}
+
+export function DiscoveryControls({
+  searchRef,
+  search,
+  onSearchChange,
+  price,
+  onPriceChange,
+  assetSearch = false,
+  catalogue = 'websites',
+  collectionIndex = false,
+  showDiscovery = true,
+}: DiscoveryControlsProps) {
+  return (
+    <>
       {showDiscovery && (
         <div className="discovery-controls">
           {showDiscovery && (
