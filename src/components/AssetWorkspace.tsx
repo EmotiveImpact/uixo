@@ -15,7 +15,7 @@ import { useDensity } from '../hooks/useDensity';
 import { useDialog } from '../hooks/useDialog';
 import { useSearchHotkey } from '../hooks/useSearchHotkey';
 import { EMPTY_ROUTE, routeToHref } from '../lib/url';
-import { ASSET_PATH, EMPTY_ASSET_QUERY, assetHref, readAssetQuery } from '../lib/asset-library';
+import { EMPTY_ASSET_QUERY, assetHref, readAssetQuery } from '../lib/asset-library';
 import type { AssetQuery } from '../lib/asset-library';
 import type { ModalName, PriceFilter } from '../types';
 import './asset-library.css';
@@ -141,7 +141,8 @@ export function AssetWorkspace() {
       <AnimatedSidebarInset className="site-main asset-workspace" id="main" tabIndex={-1}>
         <TopBar
           assetSearch
-          searchInContent
+          catalogue="assets"
+          showDiscovery={!utility}
           searchRef={searchRef}
           search={query.q}
           onSearchChange={(q) =>
@@ -171,12 +172,6 @@ export function AssetWorkspace() {
             />
           }
         />
-        <div className="asset-library-switch" aria-label="Catalogue">
-          <a href="/browse">Websites</a>
-          <a href={ASSET_PATH} aria-current="page">
-            Assets
-          </a>
-        </div>
         <PageHeading
           title={title}
           subtitle={
@@ -187,28 +182,6 @@ export function AssetWorkspace() {
           canClear={hasFilters}
           onClear={() => navigate({ view: query.view }, true)}
         />
-        {!utility && (
-          <form
-            className="asset-search"
-            role="search"
-            onSubmit={(event) => {
-              event.preventDefault();
-              searchRef.current?.blur();
-            }}
-          >
-            <input
-              ref={searchRef}
-              type="search"
-              aria-label="Search assets"
-              placeholder="A sidebar, an icon, a small detail…"
-              maxLength={300}
-              value={query.q}
-              onChange={(event) => navigate({ q: event.target.value, offset: 0 })}
-            />
-            <kbd>/</kbd>
-            <button type="submit">Find assets ↗</button>
-          </form>
-        )}
         {utility ? (
           <AssetUtilities key={query.view} view={query.view} />
         ) : (

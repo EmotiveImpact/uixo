@@ -237,6 +237,9 @@ export function App() {
 
       <AnimatedSidebarInset className="site-main" id="main" tabIndex={-1}>
         <TopBar
+          catalogue={route.collectionsIndex || activeCollection ? 'collections' : 'websites'}
+          collectionIndex={route.collectionsIndex}
+          showDiscovery={showsGrid || route.collectionsIndex}
           searchRef={searchRef}
           search={route.search}
           onSearchChange={(search) => navigate({ search })}
@@ -287,6 +290,7 @@ export function App() {
 
         {route.collectionsIndex && (
           <CollectionsIndex
+            search={route.search}
             onOpen={(collectionSlug) => navigate({ ...EMPTY_ROUTE, collectionSlug })}
             href={(slug) => routeToHref({ ...EMPTY_ROUTE, collectionSlug: slug })}
           />

@@ -2263,3 +2263,72 @@ kbd {
 .auth-error {
   color: #b88f8f;
 }
+
+/* One navigation and discovery position across all catalogue views. */
+.topbar.unified-topbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+.catalogue-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-right: auto;
+  min-height: 42px;
+}
+.catalogue-nav a {
+  padding: 10px 0;
+  color: var(--muted-foreground);
+  text-decoration: none;
+  font-size: 13px;
+}
+.catalogue-nav a[aria-current='page'] {
+  color: var(--foreground);
+  box-shadow: 0 1px 0 currentColor;
+}
+.catalogue-nav a:hover {
+  color: var(--foreground);
+}
+.discovery-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.discovery-controls .search-wrap {
+  flex: 1 1 340px;
+  min-width: 0;
+  max-width: none;
+  height: 52px;
+  border: 0;
+}
+.discovery-controls .prices {
+  flex: 0 0 auto;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .topbar.unified-topbar {
+    flex-wrap: wrap;
+  }
+  .unified-topbar .catalogue-nav {
+    order: 5;
+    flex-basis: 100%;
+    gap: 24px;
+  }
+  .unified-topbar .top-nav {
+    margin-left: auto;
+  }
+  .discovery-controls {
+    margin-top: 18px;
+  }
+  .discovery-controls .search-wrap {
+    flex-basis: 100%;
+  }
+  .discovery-controls .search-wrap input {
+    font-size: 14px;
+  }
+}
