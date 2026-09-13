@@ -33,14 +33,10 @@ import { useTheme } from './hooks/useTheme';
 import { filterResources } from './lib/filters';
 import { navigateInApp } from './lib/navigation';
 import { EMPTY_ROUTE, routeToHref } from './lib/url';
+import { APP_SIDEBAR_SIZING } from './lib/layout';
 import { collections, resources } from './data';
 import { ALL_FORMATS } from './types';
 import type { BrowseOrder, ModalName, PriceFilter } from './types';
-
-const SIDEBAR_SIZING = {
-  '--sidebar-width': '15.25rem',
-  '--sidebar-width-icon': '4.25rem',
-} as React.CSSProperties;
 
 export function App() {
   const { route, navigate } = useRoute();
@@ -230,7 +226,7 @@ export function App() {
       onOpenChange={setSidebarOpen}
       openMobile={mobileOpen}
       onOpenMobileChange={setMobileOpen}
-      style={SIDEBAR_SIZING}
+      style={APP_SIDEBAR_SIZING}
     >
       {adminMode ? (
         <AdminSidebar

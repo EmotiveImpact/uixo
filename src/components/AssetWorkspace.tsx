@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { CSSProperties } from 'react';
 import { AnimatedSidebarInset, AnimatedSidebarProvider } from './motion/animated-sidebar';
 import { AppSidebar } from './AppSidebar';
 import { TopBar, DiscoveryControls } from './TopBar';
@@ -18,15 +17,12 @@ import { useDialog } from '../hooks/useDialog';
 import { useSearchHotkey } from '../hooks/useSearchHotkey';
 import { EMPTY_ROUTE, routeToHref } from '../lib/url';
 import { navigateInApp } from '../lib/navigation';
+import { APP_SIDEBAR_SIZING } from '../lib/layout';
 import { EMPTY_ASSET_QUERY, assetHref, readAssetQuery } from '../lib/asset-library';
 import type { AssetQuery } from '../lib/asset-library';
 import type { ModalName, PriceFilter } from '../types';
 import './asset-library.css';
 
-const sizing = {
-  '--sidebar-width': '13.75rem',
-  '--sidebar-width-icon': '4.25rem',
-} as CSSProperties;
 /** Same UIXO components as App, with a separately loaded, server-backed catalogue. */
 export function AssetWorkspace() {
   const [query, setQuery] = useState(() => readAssetQuery(window.location.search));
@@ -122,7 +118,7 @@ export function AssetWorkspace() {
       onOpenChange={setSidebarOpen}
       openMobile={mobileOpen}
       onOpenMobileChange={setMobileOpen}
-      style={sizing}
+      style={APP_SIDEBAR_SIZING}
     >
       <AppSidebar
         category={null}
