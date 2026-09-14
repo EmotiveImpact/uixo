@@ -23,6 +23,21 @@ type Props = {
     accountBacked: boolean;
   };
 };
+
+const ASSET_PAGE_SIZE = 24;
+
+function paginationItems(currentPage: number, totalPages: number): Array<number | 'ellipsis'> {
+  if (totalPages <= 7) return Array.from({ length: totalPages }, (_, index) => index + 1);
+  const pages = new Set([1, totalPages, currentPage - 1, currentPage, currentPage + 1]);
+  const visible = [...pages].filter((page) => page > 0 && page <= totalPages).sort((a, b) => a - b);
+  const items: Array<number | 'ellipsis'> = [];
+  visible.forEach((page, index) => {
+    if (index > 0 && page - visible[index - 1] > 1) items.push('ellipsis');
+    items.push(page);
+  });
+  return items;
+}
+
 export function AssetLibrary({ query, navigate, density, discovery, assetSaves }: Props) {
   const [providers, setProviders] = useState<ProviderRecord[]>([]);
   const [status, setStatus] = useState<RegistryStatus | null>(null);
@@ -68,7 +83,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
         commercial: String(commercial),
         price,
         offset: String(offset),
-        limit: '24',
+        limit: String(ASSET_PAGE_SIZE),
       };
       if (view === 'saved') parameters.saved = saved.join(',');
       void registryRequest<unknown>('search', { query: parameters, signal: abort.signal })
@@ -126,6 +141,19 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
   const refinementCount = [kind, category, provider, framework, format, commercial].filter(
     Boolean,
   ).length;
+  const totalPages = Math.max(1, Math.ceil((result?.total ?? 0) / ASSET_PAGE_SIZE));
+  const currentPage = Math.min(totalPages, Math.floor(offset / ASSET_PAGE_SIZE) + 1);
+  const firstResult = result?.items.length ? offset + 1 : 0;
+  const lastResult = result ? Math.min(offset + result.items.length, result.total) : 0;
+  const changePage = (page: number) => {
+    navigate({ offset: (page - 1) * ASSET_PAGE_SIZE });
+    window.requestAnimationFrame(() => {
+      document.querySelector('.asset-library-result-count')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    });
+  };
   return (
     <section className="asset-library" aria-label="Asset library">
       {discovery}
@@ -349,19 +377,55 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
           )}
           {!loading && !error && result && (offset > 0 || result.nextOffset !== null) && (
             <nav className="asset-library-pagination" aria-label="Asset pages">
-              <button
-                disabled={offset === 0}
-                onClick={() => navigate({ offset: Math.max(0, offset - 24) })}
-              >
-                <ArrowLeft size={14} /> Previous
-              </button>
-              <span>Page {Math.floor(offset / 24) + 1}</span>
-              <button
-                disabled={result.nextOffset === null}
-                onClick={() => navigate({ offset: result.nextOffset ?? 0 })}
-              >
-                Next <ArrowRight size={14} />
-              </button>
+              <div className="asset-library-pagination-summary">
+                <strong>
+                  Page {currentPage} of {totalPages}
+                </strong>
+                <span>
+                  Showing {firstResult}–{lastResult} of {result.total} assets
+                </span>
+              </div>
+              <div className="asset-library-pagination-controls">
+                <button
+                  className="asset-library-page-direction"
+                  disabled={currentPage === 1}
+                  onClick={() => changePage(currentPage - 1)}
+                  aria-label="Go to previous asset page"
+                >
+                  <ArrowLeft size={15} /> Previous
+                </button>
+                <div
+                  className="asset-library-page-numbers"
+                  role="group"
+                  aria-label="Choose an asset page"
+                >
+                  {paginationItems(currentPage, totalPages).map((item, index) =>
+                    item === 'ellipsis' ? (
+                      <span key={`ellipsis-${index}`} aria-hidden="true">
+                        …
+                      </span>
+                    ) : (
+                      <button
+                        key={item}
+                        className="asset-library-page-number"
+                        aria-label={`Go to asset page ${item}`}
+                        aria-current={item === currentPage ? 'page' : undefined}
+                        onClick={() => changePage(item)}
+                      >
+                        {item}
+                      </button>
+                    ),
+                  )}
+                </div>
+                <button
+                  className="asset-library-page-direction"
+                  disabled={currentPage === totalPages}
+                  onClick={() => changePage(currentPage + 1)}
+                  aria-label="Go to next asset page"
+                >
+                  Next <ArrowRight size={15} />
+                </button>
+              </div>
             </nav>
           )}
         </>

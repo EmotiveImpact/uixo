@@ -4,6 +4,12 @@ Newest first. Dates are Europe/London.
 
 ## 2026-09-14
 
+### Catalogue pagination and footer
+
+- Replace the small asset pager with a full-width, borderless section showing the current page, total pages, visible result range, numbered page choices, and larger Previous/Next actions.
+- Return the viewport to the result heading after changing pages and simplify the pager to two large actions on mobile.
+- Give the shared footer readable hierarchy and spacing, and pin it to the bottom of short website, asset, utility, and landing views.
+
 ### Component categories and icon packs
 
 - Expand Simply Buttons from 20 to all 108 source catalogue entries, including their original local styles, fonts, media, shaders and declared packages. This brings the component total to 262.

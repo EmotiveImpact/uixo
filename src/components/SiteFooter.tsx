@@ -7,25 +7,25 @@ type SiteFooterProps = { count: number | null; assets?: boolean; children?: Reac
 export function SiteFooter({ count, assets = false, children }: SiteFooterProps) {
   return (
     <footer className="site-footer">
-      <span className="footer-group">
+      <div className="footer-group footer-intro">
         {count !== null && (
           <span>
             {count} website{count === 1 ? '' : 's'}
           </span>
         )}
-        <span>
+        <span className="footer-statement">
           {assets ? 'UIXO keeps the index. Creators keep the credit.' : 'Handpicked, not scraped.'}
         </span>
         <span className="footer-note">
           Curated for the curious.
           <br />A little corner of the internet.
         </span>
-      </span>
+      </div>
       {children}
-      <span className="footer-group">
+      <div className="footer-group footer-meta">
         <MadeIn />
         <Copyright />
-      </span>
+      </div>
     </footer>
   );
 }

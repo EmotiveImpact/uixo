@@ -2736,8 +2736,19 @@ kbd {
 .site-footer {
   border: 0;
   color: var(--muted-foreground);
-  align-items: center;
-  padding-bottom: 18px;
+  align-items: flex-end;
+  margin-top: auto;
+  padding: 64px 0 18px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.footer-intro {
+  align-items: flex-start;
+}
+.footer-statement {
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 500;
 }
 .footer-note {
   line-height: 1.7;
@@ -2746,7 +2757,25 @@ kbd {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  font-size: 12px;
+}
+.site-footer a {
+  color: var(--muted-foreground);
+  text-decoration: none;
 }
 .site-footer a:hover {
   color: var(--foreground);
+}
+.footer-meta {
+  justify-content: flex-end;
+}
+@media (max-width: 900px) {
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .footer-meta {
+    justify-content: flex-start;
+  }
 }
