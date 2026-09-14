@@ -157,9 +157,23 @@ export function AssetWorkspace() {
         assetKind={query.kind}
         assetCategory={query.category}
         onChooseAssetCategory={(category) =>
-          navigate({ kind: 'component', category, offset: 0, id: '' })
+          navigate({
+            kind: 'component',
+            category,
+            view: query.view === 'saved' ? 'saved' : '',
+            offset: 0,
+            id: '',
+          })
         }
-        onChooseAssetKind={(kind) => navigate({ kind, category: '', offset: 0, id: '' })}
+        onChooseAssetKind={(kind) =>
+          navigate({
+            kind,
+            category: '',
+            view: query.view === 'saved' ? 'saved' : '',
+            offset: 0,
+            id: '',
+          })
+        }
         assetProviders={assetProviders}
         onShowAll={() => go({ ...EMPTY_ROUTE })}
         homeHref="/browse"
