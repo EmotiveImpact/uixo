@@ -20,7 +20,8 @@
     "check:links": "node scripts/check-links.mjs",
     "screenshots:capture": "node scripts/capture-thumbnails.mjs",
     "thumbnails": "node scripts/thumbnails.mjs",
-    "previews:verify": "node scripts/verify-pinned-previews.mjs",
+    "previews:verify": "node scripts/verify-pinned-previews.mjs && node --experimental-strip-types scripts/verify-component-previews.mjs",
+    "previews:capture": "node scripts/capture-component-previews.mjs",
     "candidates:apply": "node scripts/apply-candidates.mjs",
     "db:seed": "node --env-file=.env.local scripts/seed-db.mjs",
     "db:schema": "psql \"$DATABASE_URL\" -v ON_ERROR_STOP=1 -f db/schema.sql",
@@ -30,7 +31,8 @@
     "registry:test:mcp": "node --experimental-strip-types --test registry/tests/mcp.node.ts",
     "registry:verify": "node tools/verify-registry.mjs",
     "registry:mcp": "node --experimental-strip-types registry/stdio.ts",
-    "registry:db": "node --experimental-strip-types tools/registry-db.ts"
+    "registry:db": "node --experimental-strip-types tools/registry-db.ts",
+    "registry:sync": "node --env-file=.env.local --experimental-strip-types tools/registry-db.ts sync --allow-remote"
   },
   "dependencies": {
     "@neondatabase/auth": "^0.5.0-beta",

@@ -6,184 +6,9 @@ import {
   pinnedComponentSource,
   SHADCN_PREVIEW_SHORT_REF,
 } from './previews/pinned-component-sources';
-import { SemanticComponentPreview } from './previews/SemanticComponentPreview';
 
-const FORM_CONTROLS = new Set([
-  'checkbox',
-  'field',
-  'form',
-  'input',
-  'input-group',
-  'input-otp',
-  'label',
-  'radio-group',
-  'select',
-  'slider',
-]);
-const OVERLAYS = new Set([
-  'alert-dialog',
-  'context-menu',
-  'dialog',
-  'drawer',
-  'dropdown-menu',
-  'hover-card',
-  'popover',
-  'sheet',
-]);
-const NAVIGATION = new Set(['breadcrumb', 'menubar', 'navigation-menu', 'pagination', 'sidebar']);
-
-function ComponentPreview({ slug }: { slug: string }) {
-  if (slug === 'accordion' || slug === 'collapsible')
-    return (
-      <div className="asset-demo asset-demo-stack">
-        <span className="asset-demo-heading">Is it accessible?</span>
-        <i>⌄</i>
-        <span />
-        <span className="asset-demo-heading">Is it styled?</span>
-        <i>⌄</i>
-        <span />
-        <span className="asset-demo-heading">Is it animated?</span>
-        <i>⌄</i>
-      </div>
-    );
-  if (slug === 'alert')
-    return (
-      <div className="asset-demo asset-demo-alert">
-        <b>✓</b>
-        <span>
-          <strong>Heads up</strong>
-          <small>Your changes have been saved.</small>
-        </span>
-      </div>
-    );
-  if (slug === 'avatar' || slug === 'badge' || slug === 'item')
-    return (
-      <div className="asset-demo asset-demo-profile">
-        <span className="asset-demo-avatar">UI</span>
-        <span>
-          <strong>Olivia Martin</strong>
-          <small>Product designer</small>
-        </span>
-        <em>Active</em>
-      </div>
-    );
-  if (slug === 'button' || slug === 'button-group')
-    return (
-      <div className="asset-demo asset-demo-buttons">
-        <span>Continue</span>
-        <span>Cancel</span>
-      </div>
-    );
-  if (slug === 'calendar')
-    return (
-      <div className="asset-demo asset-demo-calendar">
-        <strong>September 2026</strong>
-        <span>Mo Tu We Th Fr Sa Su</span>
-        <span>
-          7 8 9 <b>10</b> 11 12 13
-        </span>
-      </div>
-    );
-  if (slug === 'card' || slug === 'carousel')
-    return (
-      <div className="asset-demo asset-demo-card">
-        <span />
-        <strong>Beautifully composed</strong>
-        <small>A flexible surface for product content.</small>
-      </div>
-    );
-  if (slug === 'chart' || slug === 'progress')
-    return (
-      <div className="asset-demo asset-demo-chart">
-        <span style={{ height: '34%' }} />
-        <span style={{ height: '58%' }} />
-        <span style={{ height: '45%' }} />
-        <span style={{ height: '82%' }} />
-        <span style={{ height: '68%' }} />
-      </div>
-    );
-  if (slug === 'command' || slug === 'combobox')
-    return (
-      <div className="asset-demo asset-demo-command">
-        <span>⌕ Search commands…</span>
-        <strong>
-          Open dashboard <kbd>⌘ D</kbd>
-        </strong>
-        <strong>
-          View settings <kbd>⌘ S</kbd>
-        </strong>
-      </div>
-    );
-  if (FORM_CONTROLS.has(slug))
-    return (
-      <div className="asset-demo asset-demo-form">
-        <small>Email address</small>
-        <span>name@example.com</span>
-        <label>
-          <i>✓</i> Remember me
-        </label>
-      </div>
-    );
-  if (NAVIGATION.has(slug))
-    return (
-      <div className="asset-demo asset-demo-nav">
-        <strong>UIXO</strong>
-        <span>Overview</span>
-        <span className="active">Assets</span>
-        <span>Settings</span>
-      </div>
-    );
-  if (OVERLAYS.has(slug))
-    return (
-      <div className="asset-demo asset-demo-overlay">
-        <span className="asset-demo-window">
-          <strong>Share this asset</strong>
-          <small>Anyone with the link can view it.</small>
-          <i>Copy link</i>
-        </span>
-      </div>
-    );
-  if (slug === 'spinner')
-    return (
-      <div className="asset-demo asset-demo-spinner">
-        <span />
-      </div>
-    );
-  if (slug === 'separator')
-    return (
-      <div className="asset-demo asset-demo-separator">
-        <strong>Account</strong>
-        <span />
-        <small>Profile settings</small>
-      </div>
-    );
-  if (slug === 'skeleton')
-    return (
-      <div className="asset-demo asset-demo-skeleton">
-        <i />
-        <span />
-        <span />
-      </div>
-    );
-  return (
-    <div className="asset-demo asset-demo-generic">
-      <span />
-      <span />
-      <strong>{slug.replace(/-/g, ' ')}</strong>
-    </div>
-  );
-}
-
-/** Scale the complete illustration uniformly; never reflow its miniature UI. */
-function ComponentCanvas({
-  providerId,
-  slug,
-  name,
-}: {
-  providerId: string;
-  slug: string;
-  name: string;
-}) {
+/** Keep the reviewed source render as a fallback if a committed capture fails to load. */
+function ComponentCanvas({ providerId, slug }: { providerId: string; slug: string }) {
   const viewport = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
   useLayoutEffect(() => {
@@ -204,13 +29,7 @@ function ComponentCanvas({
         aria-hidden="true"
         style={{ transform: `translate(-50%, -50%) scale(${scale})` }}
       >
-        {pinnedComponentSource(providerId, slug) ? (
-          <PinnedComponentPreview providerId={providerId} slug={slug} />
-        ) : providerId === 'magic-ui' || providerId === 'motion-primitives' ? (
-          <SemanticComponentPreview providerId={providerId} slug={slug} name={name} />
-        ) : (
-          <ComponentPreview slug={slug} />
-        )}
+        <PinnedComponentPreview providerId={providerId} slug={slug} />
       </div>
     </div>
   );
@@ -218,37 +37,43 @@ function ComponentCanvas({
 
 export function AssetPreview({ asset }: { asset: AssetRecord }) {
   const [failedUrl, setFailedUrl] = useState('');
-  const url = safeAssetUrl(asset.preview?.url);
-  const original =
-    asset.preview?.kind === 'image' && url && new URL(url).hostname === 'raw.githubusercontent.com';
-  const showOriginal = original && failedUrl !== url;
+  const remoteUrl = safeAssetUrl(asset.preview?.url);
+  const capturedUrl =
+    asset.kind === 'component' &&
+    ['shadcn', 'magic-ui', 'motion-primitives'].includes(asset.providerId)
+      ? `/assets/component-previews/${asset.providerId}/${asset.slug}.webp`
+      : undefined;
+  const imageUrl = capturedUrl ?? (asset.preview?.kind === 'image' ? remoteUrl : undefined);
+  const showImage = imageUrl && failedUrl !== imageUrl;
   const pinnedSource =
     asset.kind === 'component' ? pinnedComponentSource(asset.providerId, asset.slug) : null;
   return (
-    <div className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''}`}>
-      {showOriginal ? (
+    <div
+      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${capturedUrl ? 'is-component-capture' : ''}`}
+    >
+      {showImage ? (
         <img
-          src={url}
+          src={imageUrl}
           loading="lazy"
-          alt={`${asset.name} original source preview`}
-          onError={() => setFailedUrl(url)}
+          alt={`${asset.name} rendered preview from ${asset.providerId}`}
+          onError={() => setFailedUrl(imageUrl)}
         />
-      ) : asset.kind === 'component' ? (
-        <ComponentCanvas providerId={asset.providerId} slug={asset.slug} name={asset.name} />
+      ) : pinnedSource ? (
+        <ComponentCanvas providerId={asset.providerId} slug={asset.slug} />
       ) : (
         <div className="asset-library-no-preview">
           <span aria-hidden="true">◇</span>
-          <strong>{asset.name}</strong>
+          <strong>Official preview unavailable</strong>
         </div>
       )}
       <small title={pinnedSource ?? undefined}>
-        {showOriginal
-          ? 'Original GitHub SVG'
+        {showImage
+          ? capturedUrl
+            ? 'Official provider demo capture'
+            : 'Original GitHub SVG'
           : pinnedSource
             ? `Pinned source render · shadcn/ui ${SHADCN_PREVIEW_SHORT_REF}`
-            : asset.kind === 'component'
-              ? 'Illustration · not an upstream render'
-              : 'Source preview not captured'}
+            : 'Source preview not captured'}
       </small>
     </div>
   );

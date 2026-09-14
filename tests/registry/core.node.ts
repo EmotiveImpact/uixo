@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { sqliteDatabase, migrate } from '../../registry/database.ts';
 import { Registry } from '../../registry/service.ts';
-import { capturedAssets, seedCaptured } from '../../registry/bootstrap.ts';
+import { capturedAssets, seedCaptured, syncCaptured } from '../../registry/bootstrap.ts';
 import { parseSearch, validateAsset, canonicalUrl, parseScout } from '../../registry/domain.ts';
 import {
   resolveAsset,
@@ -32,10 +32,42 @@ test('migration and captured-source seed are repeatable; counts reflect actual r
     await migrate(db);
     const first = await seedCaptured(registry),
       second = await seedCaptured(registry);
-    assert.equal(first.inserted, 175);
+    assert.equal(first.inserted, 168);
     assert.equal(second.inserted, 0);
-    assert.equal((await registry.stats()).assets, 175);
+    assert.equal((await registry.stats()).assets, 168);
     assert.equal((await registry.providers()).length, 5);
+  } finally {
+    await db.close();
+  }
+});
+test('verified preview sync repairs existing records and unpublishes source-less exclusions', async () => {
+  const { db, registry } = await setup();
+  try {
+    await seedCaptured(registry);
+    const record = await registry.inspect('shadcn/accordion');
+    // Model an older production catalogue that never staged the new captured-preview payload.
+    await db.query('DELETE FROM uixo_v2_revisions WHERE asset_id=$1', [record.id]);
+    await db.query('UPDATE uixo_v2_assets SET payload=$1,fingerprint=$2 WHERE id=$3', [
+      JSON.stringify({
+        ...record,
+        preview: { kind: 'schematic', label: 'Fabricated legacy preview' },
+      }),
+      'legacy-fingerprint',
+      record.id,
+    ]);
+    await db.query(
+      "INSERT INTO uixo_v2_assets(id,provider_id,slug,name,kind,price,source_url,licence_id,search_text,payload,fingerprint,updated_at) SELECT 'magic-ui/grid-beams',provider_id,'grid-beams','Grid Beams',kind,price,source_url,licence_id,search_text,payload,'legacy-grid-beams',updated_at FROM uixo_v2_assets WHERE id='magic-ui/globe'",
+    );
+
+    const result = await syncCaptured(registry);
+    assert.equal(result.updated, 1);
+    assert.equal(result.removed, 1);
+    assert.equal((await registry.inspect(record.id)).preview?.kind, 'image');
+    await assert.rejects(registry.inspect('magic-ui/grid-beams'), /not found/);
+    const audit = await db.query(
+      "SELECT action FROM uixo_v2_audit WHERE target='magic-ui/grid-beams' ORDER BY created_at DESC LIMIT 1",
+    );
+    assert.equal(audit[0]?.action, 'unpublish');
   } finally {
     await db.close();
   }
@@ -112,6 +144,12 @@ test('unsafe metadata, identifiers, URLs and unsupported licence certainty are r
     assert.throws(() => validateAsset({ ...asset, sourceUrl }));
   assert.throws(() => validateAsset({ ...asset, id: '../admin' }));
   assert.throws(() => validateAsset({ ...asset, licence: { ...asset.licence, text: '' } }));
+  assert.throws(() =>
+    validateAsset({
+      ...asset,
+      preview: { kind: 'schematic', label: 'An invented substitute for the real component' },
+    }),
+  );
 });
 test('acquisition blocks unknown, restricted and stale licences; never executes', async () => {
   const asset = (await capturedAssets())[0];
@@ -303,10 +341,46 @@ test('JSON registry parser accepts declared UI components and ignores examples',
 });
 test('captured React registries retain pinned source, licence and acquisition evidence', async () => {
   const assets = await capturedAssets();
+  const components = assets.filter((asset) => asset.kind === 'component');
   const magic = assets.filter((asset) => asset.providerId === 'magic-ui');
   const motion = assets.filter((asset) => asset.providerId === 'motion-primitives');
-  assert.equal(magic.length, 75);
+  assert.equal(magic.length, 68);
   assert.equal(motion.length, 33);
+  assert.ok(
+    components.every((asset) => asset.preview?.kind === 'image' && asset.preview.url),
+    'Every published React component must have a real captured image preview',
+  );
+  assert.ok(
+    [...magic, ...motion].every(
+      (asset) =>
+        asset.preview?.kind === 'image' &&
+        asset.preview.url ===
+          `https://uixo-brown.vercel.app/assets/component-previews/${asset.id}.webp`,
+    ),
+    'React registry assets must ship an official captured preview, never a schematic',
+  );
+  assert.ok(
+    magic.every((asset) =>
+      asset.sourceUrl.includes(
+        '/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/',
+      ),
+    ),
+    'Magic UI install-registry paths must resolve to their real repository source root',
+  );
+  assert.ok(
+    !magic.some((asset) =>
+      [
+        'script-copy-btn',
+        'flip-text',
+        'scratch-to-reveal',
+        'box-reveal',
+        'iphone-15-pro',
+        'arc-timeline',
+        'grid-beams',
+      ].includes(asset.slug),
+    ),
+    'Manifest entries without source at the pinned revision must not be published',
+  );
   assert.ok([...magic, ...motion].every((asset) => asset.licence.expression === 'MIT'));
   assert.ok(
     magic.every(

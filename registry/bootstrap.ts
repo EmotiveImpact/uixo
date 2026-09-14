@@ -1,5 +1,6 @@
+import { randomUUID } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
-import type { Asset } from './domain.ts';
+import { fingerprint, type Asset, validateAsset } from './domain.ts';
 import {
   componentAsset,
   iconAsset,
@@ -54,7 +55,9 @@ export async function capturedAssets(): Promise<Asset[]> {
         new URL(`../data/registry/snapshots/${provider.id}.json`, import.meta.url),
         'utf8',
       );
-      for (const item of parseJsonRegistry(manifest))
+      for (const item of parseJsonRegistry(manifest).filter(
+        (entry) => !provider.excludedComponents?.includes(entry.name),
+      ))
         assets.push(jsonRegistryComponentAsset(item, provider, licence, ref, observedAt));
     }
   }
@@ -107,4 +110,88 @@ export async function seedCaptured(registry: Registry) {
     }
   }
   return { inserted, sourceAssets: assets.length, mode: 'captured-source-snapshot' };
+}
+
+/**
+ * Publish the current reviewed source snapshot over an existing registry catalogue.
+ * This is an explicit operator command: unlike seedCaptured it updates existing rows and
+ * removes only provider entries named in the source-backed exclusion policy.
+ */
+export async function syncCaptured(registry: Registry) {
+  for (const provider of PROVIDERS) await registry.putProvider(provider);
+
+  const assets = await capturedAssets();
+  let inserted = 0;
+  let updated = 0;
+  let unchanged = 0;
+
+  for (const asset of assets) {
+    const live = await registry.db.query('SELECT fingerprint FROM uixo_v2_assets WHERE id=$1', [
+      asset.id,
+    ]);
+    const desiredFingerprint = fingerprint(validateAsset(asset));
+    if (live[0]?.fingerprint === desiredFingerprint) {
+      await registry.stage(asset, true);
+      unchanged++;
+      continue;
+    }
+
+    const staged = await registry.stage(asset, true);
+    const revision = await registry.db.query('SELECT status FROM uixo_v2_revisions WHERE id=$1', [
+      staged.id,
+    ]);
+    if (revision[0]?.status !== 'pending') {
+      throw new Error(
+        `Cannot synchronize ${asset.id}: its desired source revision was already ${String(revision[0]?.status ?? 'lost')}.`,
+      );
+    }
+    await registry.review(
+      staged.id,
+      'approve',
+      'bootstrap-preview-sync',
+      'Synchronize verified source metadata and the official provider demo capture.',
+    );
+    if (live.length) updated++;
+    else inserted++;
+  }
+
+  let removed = 0;
+  for (const provider of PROVIDERS) {
+    for (const slug of provider.excludedComponents ?? []) {
+      const assetId = `${provider.id}/${slug}`;
+      const present = await registry.db.query(
+        'SELECT id FROM uixo_v2_assets WHERE id=$1 UNION SELECT asset_id AS id FROM uixo_v2_revisions WHERE asset_id=$1 LIMIT 1',
+        [assetId],
+      );
+      if (!present.length) continue;
+      const now = new Date().toISOString();
+      await registry.db.batch([
+        { sql: 'DELETE FROM uixo_v2_revisions WHERE asset_id=$1', args: [assetId] },
+        { sql: 'DELETE FROM uixo_v2_assets WHERE id=$1', args: [assetId] },
+        {
+          sql: 'INSERT INTO uixo_v2_audit(id,actor,action,target,detail,created_at) VALUES($1,$2,$3,$4,$5,$6)',
+          args: [
+            randomUUID(),
+            'bootstrap-preview-sync',
+            'unpublish',
+            assetId,
+            JSON.stringify({
+              reason: 'Provider manifest entry has no source file at the pinned revision.',
+            }),
+            now,
+          ],
+        },
+      ]);
+      removed++;
+    }
+  }
+
+  return {
+    inserted,
+    updated,
+    unchanged,
+    removed,
+    sourceAssets: assets.length,
+    mode: 'verified-preview-sync',
+  };
 }

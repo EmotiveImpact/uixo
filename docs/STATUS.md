@@ -4,7 +4,7 @@ For product editions and delivery phases, see the [master roadmap](PRODUCT-ROADM
 
 ## Current outcome
 
-The entire v2 brief is **not complete**. The application has reliable account favourites, five source-pinned component renders and visitor asset discovery connected to the registry. The bundled evaluation snapshot now contains 175 records from five approved providers, including commit-pinned Magic UI and Motion Primitives catalogues. Deploying the code does not seed an existing persistent registry; an operator must run the explicit seed/index workflow and review production counts.
+The entire v2 brief is **not complete**. The application has reliable account favourites, 147 official component demo captures and visitor asset discovery connected to the registry. The bundled evaluation catalogue contains 168 source-backed records from five approved providers, including commit-pinned Magic UI and Motion Primitives catalogues. Seven Magic UI manifest entries are withheld because their source files are absent at the pinned commit. Deploying the code does not seed an existing persistent registry; an operator must run the explicit seed/index workflow and review production counts.
 
 ## Implemented in the branch before this repair
 

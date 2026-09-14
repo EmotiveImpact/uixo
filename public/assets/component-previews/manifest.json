@@ -1,0 +1,1328 @@
+{
+  "capturedAt": "2026-09-14T15:05:06.450Z",
+  "captures": {
+    "magic-ui/android": {
+      "path": "/assets/component-previews/magic-ui/android.webp",
+      "sourceUrl": "https://magicui.design/docs/components/android",
+      "title": "Android | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 962,
+      "bytes": 2382
+    },
+    "motion-primitives/accordion": {
+      "path": "/assets/component-previews/motion-primitives/accordion.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/accordion",
+      "title": "Accordion - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 325,
+      "bytes": 5372
+    },
+    "magic-ui/magic-card": {
+      "path": "/assets/component-previews/magic-ui/magic-card.webp",
+      "sourceUrl": "https://magicui.design/docs/components/magic-card",
+      "title": "Magic Card | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 4928
+    },
+    "magic-ui/warp-background": {
+      "path": "/assets/component-previews/magic-ui/warp-background.webp",
+      "sourceUrl": "https://magicui.design/docs/components/warp-background",
+      "title": "Warp Background | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 16470
+    },
+    "magic-ui/line-shadow-text": {
+      "path": "/assets/component-previews/magic-ui/line-shadow-text.webp",
+      "sourceUrl": "https://magicui.design/docs/components/line-shadow-text",
+      "title": "Line Shadow Text | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 5644
+    },
+    "magic-ui/aurora-text": {
+      "path": "/assets/component-previews/magic-ui/aurora-text.webp",
+      "sourceUrl": "https://magicui.design/docs/components/aurora-text",
+      "title": "Aurora Text | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 5806
+    },
+    "magic-ui/morphing-text": {
+      "path": "/assets/component-previews/magic-ui/morphing-text.webp",
+      "sourceUrl": "https://magicui.design/docs/components/morphing-text",
+      "title": "Morphing Text | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 4290
+    },
+    "magic-ui/scroll-progress": {
+      "path": "/assets/component-previews/magic-ui/scroll-progress.webp",
+      "sourceUrl": "https://magicui.design/docs/components/scroll-progress",
+      "title": "Scroll Progress | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 4196
+    },
+    "magic-ui/lens": {
+      "path": "/assets/component-previews/magic-ui/lens.webp",
+      "sourceUrl": "https://magicui.design/docs/components/lens",
+      "title": "Lens | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 551,
+      "bytes": 18534
+    },
+    "magic-ui/pointer": {
+      "path": "/assets/component-previews/magic-ui/pointer.webp",
+      "sourceUrl": "https://magicui.design/docs/components/pointer",
+      "title": "Pointer | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 492,
+      "bytes": 9368
+    },
+    "magic-ui/smooth-cursor": {
+      "path": "/assets/component-previews/magic-ui/smooth-cursor.webp",
+      "sourceUrl": "https://magicui.design/docs/components/smooth-cursor",
+      "title": "Smooth Cursor | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 2366
+    },
+    "magic-ui/progressive-blur": {
+      "path": "/assets/component-previews/magic-ui/progressive-blur.webp",
+      "sourceUrl": "https://magicui.design/docs/components/progressive-blur",
+      "title": "Progressive Blur | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 482,
+      "bytes": 2070
+    },
+    "magic-ui/neon-gradient-card": {
+      "path": "/assets/component-previews/magic-ui/neon-gradient-card.webp",
+      "sourceUrl": "https://magicui.design/docs/components/neon-gradient-card",
+      "title": "Neon Gradient Card | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 7532
+    },
+    "magic-ui/meteors": {
+      "path": "/assets/component-previews/magic-ui/meteors.webp",
+      "sourceUrl": "https://magicui.design/docs/components/meteors",
+      "title": "Meteors | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 580,
+      "bytes": 4664
+    },
+    "magic-ui/grid-pattern": {
+      "path": "/assets/component-previews/magic-ui/grid-pattern.webp",
+      "sourceUrl": "https://magicui.design/docs/components/grid-pattern",
+      "title": "Grid Pattern | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 580,
+      "bytes": 5258
+    },
+    "magic-ui/striped-pattern": {
+      "path": "/assets/component-previews/magic-ui/striped-pattern.webp",
+      "sourceUrl": "https://magicui.design/docs/components/striped-pattern",
+      "title": "Striped Pattern | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 580,
+      "bytes": 29330
+    },
+    "magic-ui/interactive-grid-pattern": {
+      "path": "/assets/component-previews/magic-ui/interactive-grid-pattern.webp",
+      "sourceUrl": "https://magicui.design/docs/components/interactive-grid-pattern",
+      "title": "Interactive Grid Pattern | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 580,
+      "bytes": 6916
+    },
+    "magic-ui/dot-pattern": {
+      "path": "/assets/component-previews/magic-ui/dot-pattern.webp",
+      "sourceUrl": "https://magicui.design/docs/components/dot-pattern",
+      "title": "Dot Pattern | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 580,
+      "bytes": 4838
+    },
+    "magic-ui/flickering-grid": {
+      "path": "/assets/component-previews/magic-ui/flickering-grid.webp",
+      "sourceUrl": "https://magicui.design/docs/components/flickering-grid",
+      "title": "Flickering Grid | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 580,
+      "bytes": 42596
+    },
+    "magic-ui/hero-video-dialog": {
+      "path": "/assets/component-previews/magic-ui/hero-video-dialog.webp",
+      "sourceUrl": "https://magicui.design/docs/components/hero-video-dialog",
+      "title": "Hero Video Dialog | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 17576
+    },
+    "magic-ui/code-comparison": {
+      "path": "/assets/component-previews/magic-ui/code-comparison.webp",
+      "sourceUrl": "https://magicui.design/docs/components/code-comparison",
+      "title": "Code Comparison | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 819,
+      "bytes": 31534
+    },
+    "magic-ui/marquee": {
+      "path": "/assets/component-previews/magic-ui/marquee.webp",
+      "sourceUrl": "https://magicui.design/docs/components/marquee",
+      "title": "Marquee | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 10868
+    },
+    "magic-ui/glyph-matrix": {
+      "path": "/assets/component-previews/magic-ui/glyph-matrix.webp",
+      "sourceUrl": "https://magicui.design/docs/components/glyph-matrix",
+      "title": "Glyph Matrix | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 480,
+      "bytes": 22632
+    },
+    "magic-ui/globe": {
+      "path": "/assets/component-previews/magic-ui/globe.webp",
+      "sourceUrl": "https://magicui.design/docs/components/globe",
+      "title": "Globe | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 13260
+    },
+    "magic-ui/shimmer-button": {
+      "path": "/assets/component-previews/magic-ui/shimmer-button.webp",
+      "sourceUrl": "https://magicui.design/docs/components/shimmer-button",
+      "title": "Shimmer Button | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 2680
+    },
+    "magic-ui/tweet-card": {
+      "path": "/assets/component-previews/magic-ui/tweet-card.webp",
+      "sourceUrl": "https://magicui.design/docs/components/tweet-card",
+      "title": "Tweet Card | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 589,
+      "bytes": 22716
+    },
+    "magic-ui/client-tweet-card": {
+      "path": "/assets/component-previews/magic-ui/client-tweet-card.webp",
+      "sourceUrl": "https://magicui.design/docs/components/tweet-card",
+      "title": "Tweet Card | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 589,
+      "bytes": 22716
+    },
+    "magic-ui/bento-grid": {
+      "path": "/assets/component-previews/magic-ui/bento-grid.webp",
+      "sourceUrl": "https://magicui.design/docs/components/bento-grid",
+      "title": "Bento Grid | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 800,
+      "bytes": 18442
+    },
+    "magic-ui/particles": {
+      "path": "/assets/component-previews/magic-ui/particles.webp",
+      "sourceUrl": "https://magicui.design/docs/components/particles",
+      "title": "Particles | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 580,
+      "bytes": 5996
+    },
+    "magic-ui/number-ticker": {
+      "path": "/assets/component-previews/magic-ui/number-ticker.webp",
+      "sourceUrl": "https://magicui.design/docs/components/number-ticker",
+      "title": "Number Ticker | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 2194
+    },
+    "magic-ui/ripple": {
+      "path": "/assets/component-previews/magic-ui/ripple.webp",
+      "sourceUrl": "https://magicui.design/docs/components/ripple",
+      "title": "Ripple | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 580,
+      "bytes": 4344
+    },
+    "magic-ui/retro-grid": {
+      "path": "/assets/component-previews/magic-ui/retro-grid.webp",
+      "sourceUrl": "https://magicui.design/docs/components/retro-grid",
+      "title": "Retro Grid | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 580,
+      "bytes": 12696
+    },
+    "magic-ui/animated-list": {
+      "path": "/assets/component-previews/magic-ui/animated-list.webp",
+      "sourceUrl": "https://magicui.design/docs/components/animated-list",
+      "title": "Animated List | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 580,
+      "bytes": 4108
+    },
+    "magic-ui/animated-shiny-text": {
+      "path": "/assets/component-previews/magic-ui/animated-shiny-text.webp",
+      "sourceUrl": "https://magicui.design/docs/components/animated-shiny-text",
+      "title": "Animated Shiny Text | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 2308
+    },
+    "magic-ui/animated-grid-pattern": {
+      "path": "/assets/component-previews/magic-ui/animated-grid-pattern.webp",
+      "sourceUrl": "https://magicui.design/docs/components/animated-grid-pattern",
+      "title": "Animated Grid Pattern | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 580,
+      "bytes": 6230
+    },
+    "magic-ui/border-beam": {
+      "path": "/assets/component-previews/magic-ui/border-beam.webp",
+      "sourceUrl": "https://magicui.design/docs/components/border-beam",
+      "title": "Border Beam | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 6234
+    },
+    "magic-ui/animated-beam": {
+      "path": "/assets/component-previews/magic-ui/animated-beam.webp",
+      "sourceUrl": "https://magicui.design/docs/components/animated-beam",
+      "title": "Animated Beam | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 5050
+    },
+    "magic-ui/text-reveal": {
+      "path": "/assets/component-previews/magic-ui/text-reveal.webp",
+      "sourceUrl": "https://magicui.design/docs/components/text-reveal",
+      "title": "Text Reveal | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 1826,
+      "bytes": 5738
+    },
+    "magic-ui/hyper-text": {
+      "path": "/assets/component-previews/magic-ui/hyper-text.webp",
+      "sourceUrl": "https://magicui.design/docs/components/hyper-text",
+      "title": "Hyper Text | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 2422
+    },
+    "magic-ui/animated-gradient-text": {
+      "path": "/assets/component-previews/magic-ui/animated-gradient-text.webp",
+      "sourceUrl": "https://magicui.design/docs/components/animated-gradient-text",
+      "title": "Animated Gradient Text | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 2868
+    },
+    "magic-ui/orbiting-circles": {
+      "path": "/assets/component-previews/magic-ui/orbiting-circles.webp",
+      "sourceUrl": "https://magicui.design/docs/components/orbiting-circles",
+      "title": "Orbiting Circles | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 580,
+      "bytes": 6482
+    },
+    "magic-ui/dock": {
+      "path": "/assets/component-previews/magic-ui/dock.webp",
+      "sourceUrl": "https://magicui.design/docs/components/dock",
+      "title": "Dock | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 3920
+    },
+    "magic-ui/word-rotate": {
+      "path": "/assets/component-previews/magic-ui/word-rotate.webp",
+      "sourceUrl": "https://magicui.design/docs/components/word-rotate",
+      "title": "Word Rotate | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 2130
+    },
+    "magic-ui/avatar-circles": {
+      "path": "/assets/component-previews/magic-ui/avatar-circles.webp",
+      "sourceUrl": "https://magicui.design/docs/components/avatar-circles",
+      "title": "Avatar Circles | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 3738
+    },
+    "magic-ui/typing-animation": {
+      "path": "/assets/component-previews/magic-ui/typing-animation.webp",
+      "sourceUrl": "https://magicui.design/docs/components/typing-animation",
+      "title": "Typing Animation | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 1702
+    },
+    "magic-ui/sparkles-text": {
+      "path": "/assets/component-previews/magic-ui/sparkles-text.webp",
+      "sourceUrl": "https://magicui.design/docs/components/sparkles-text",
+      "title": "Sparkles Text | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 3128
+    },
+    "magic-ui/spinning-text": {
+      "path": "/assets/component-previews/magic-ui/spinning-text.webp",
+      "sourceUrl": "https://magicui.design/docs/components/spinning-text",
+      "title": "Spinning Text | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 2740
+    },
+    "magic-ui/comic-text": {
+      "path": "/assets/component-previews/magic-ui/comic-text.webp",
+      "sourceUrl": "https://magicui.design/docs/components/comic-text",
+      "title": "Comic Text | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 7996
+    },
+    "magic-ui/icon-cloud": {
+      "path": "/assets/component-previews/magic-ui/icon-cloud.webp",
+      "sourceUrl": "https://magicui.design/docs/components/icon-cloud",
+      "title": "Icon Cloud | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 480,
+      "bytes": 7546
+    },
+    "magic-ui/text-animate": {
+      "path": "/assets/component-previews/magic-ui/text-animate.webp",
+      "sourceUrl": "https://magicui.design/docs/components/text-animate",
+      "title": "Text Animate | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 2098
+    },
+    "magic-ui/scroll-based-velocity": {
+      "path": "/assets/component-previews/magic-ui/scroll-based-velocity.webp",
+      "sourceUrl": "https://magicui.design/docs/components/scroll-based-velocity",
+      "title": "Scroll Based Velocity | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 8526
+    },
+    "magic-ui/shiny-button": {
+      "path": "/assets/component-previews/magic-ui/shiny-button.webp",
+      "sourceUrl": "https://magicui.design/docs/components/shiny-button",
+      "title": "Shiny Button | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 1802
+    },
+    "magic-ui/shine-border": {
+      "path": "/assets/component-previews/magic-ui/shine-border.webp",
+      "sourceUrl": "https://magicui.design/docs/components/shine-border",
+      "title": "Shine Border | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 5806
+    },
+    "magic-ui/animated-circular-progress-bar": {
+      "path": "/assets/component-previews/magic-ui/animated-circular-progress-bar.webp",
+      "sourceUrl": "https://magicui.design/docs/components/animated-circular-progress-bar",
+      "title": "Animated Circular Progress Bar | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 2284
+    },
+    "magic-ui/confetti": {
+      "path": "/assets/component-previews/magic-ui/confetti.webp",
+      "sourceUrl": "https://magicui.design/docs/components/confetti",
+      "title": "Confetti | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 580,
+      "bytes": 5452
+    },
+    "magic-ui/cool-mode": {
+      "path": "/assets/component-previews/magic-ui/cool-mode.webp",
+      "sourceUrl": "https://magicui.design/docs/components/cool-mode",
+      "title": "Cool Mode | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 1836
+    },
+    "magic-ui/pulsating-button": {
+      "path": "/assets/component-previews/magic-ui/pulsating-button.webp",
+      "sourceUrl": "https://magicui.design/docs/components/pulsating-button",
+      "title": "Pulsating Button | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 2462
+    },
+    "magic-ui/ripple-button": {
+      "path": "/assets/component-previews/magic-ui/ripple-button.webp",
+      "sourceUrl": "https://magicui.design/docs/components/ripple-button",
+      "title": "Ripple Button | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 1732
+    },
+    "magic-ui/file-tree": {
+      "path": "/assets/component-previews/magic-ui/file-tree.webp",
+      "sourceUrl": "https://magicui.design/docs/components/file-tree",
+      "title": "File Tree | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 5994
+    },
+    "magic-ui/blur-fade": {
+      "path": "/assets/component-previews/magic-ui/blur-fade.webp",
+      "sourceUrl": "https://magicui.design/docs/components/blur-fade",
+      "title": "Blur Fade | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 757,
+      "bytes": 55536
+    },
+    "magic-ui/safari": {
+      "path": "/assets/component-previews/magic-ui/safari.webp",
+      "sourceUrl": "https://magicui.design/docs/components/safari",
+      "title": "Safari | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 454,
+      "bytes": 1760
+    },
+    "magic-ui/rainbow-button": {
+      "path": "/assets/component-previews/magic-ui/rainbow-button.webp",
+      "sourceUrl": "https://magicui.design/docs/components/rainbow-button",
+      "title": "Rainbow Button | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 2568
+    },
+    "magic-ui/interactive-hover-button": {
+      "path": "/assets/component-previews/magic-ui/interactive-hover-button.webp",
+      "sourceUrl": "https://magicui.design/docs/components/interactive-hover-button",
+      "title": "Interactive Hover Button | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 1886
+    },
+    "magic-ui/terminal": {
+      "path": "/assets/component-previews/magic-ui/terminal.webp",
+      "sourceUrl": "https://magicui.design/docs/components/terminal",
+      "title": "Terminal | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 2442
+    },
+    "magic-ui/video-text": {
+      "path": "/assets/component-previews/magic-ui/video-text.webp",
+      "sourceUrl": "https://magicui.design/docs/components/video-text",
+      "title": "Video Text | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 5868
+    },
+    "magic-ui/pixel-image": {
+      "path": "/assets/component-previews/magic-ui/pixel-image.webp",
+      "sourceUrl": "https://magicui.design/docs/components/pixel-image",
+      "title": "Pixel Image | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 464,
+      "bytes": 21288
+    },
+    "magic-ui/highlighter": {
+      "path": "/assets/component-previews/magic-ui/highlighter.webp",
+      "sourceUrl": "https://magicui.design/docs/components/highlighter",
+      "title": "Text Highlighter | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 5082
+    },
+    "magic-ui/animated-theme-toggler": {
+      "path": "/assets/component-previews/magic-ui/animated-theme-toggler.webp",
+      "sourceUrl": "https://magicui.design/docs/components/animated-theme-toggler",
+      "title": "Theme Toggler | React Components & Templates",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 678,
+      "height": 450,
+      "bytes": 1376
+    },
+    "motion-primitives/animated-background": {
+      "path": "/assets/component-previews/motion-primitives/animated-background.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/animated-background",
+      "title": "Animated background - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 1912
+    },
+    "motion-primitives/animated-group": {
+      "path": "/assets/component-previews/motion-primitives/animated-group.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/animated-group",
+      "title": "Animated Group - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 35638
+    },
+    "motion-primitives/animated-number": {
+      "path": "/assets/component-previews/motion-primitives/animated-number.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/animated-number",
+      "title": "Animated Number - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 252,
+      "bytes": 1540
+    },
+    "motion-primitives/border-trail": {
+      "path": "/assets/component-previews/motion-primitives/border-trail.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/border-trail",
+      "title": "Border Trail - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 1500
+    },
+    "motion-primitives/carousel": {
+      "path": "/assets/component-previews/motion-primitives/carousel.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/carousel",
+      "title": "Carousel - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 1562
+    },
+    "motion-primitives/cursor": {
+      "path": "/assets/component-previews/motion-primitives/cursor.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/cursor",
+      "title": "Cursor - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 402,
+      "bytes": 4302
+    },
+    "motion-primitives/dialog": {
+      "path": "/assets/component-previews/motion-primitives/dialog.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/dialog",
+      "title": "Dialog - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 2014
+    },
+    "motion-primitives/disclosure": {
+      "path": "/assets/component-previews/motion-primitives/disclosure.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/disclosure",
+      "title": "Disclosure - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 232,
+      "bytes": 1542
+    },
+    "motion-primitives/in-view": {
+      "path": "/assets/component-previews/motion-primitives/in-view.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/in-view",
+      "title": "In view - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 1500
+    },
+    "motion-primitives/infinite-slider": {
+      "path": "/assets/component-previews/motion-primitives/infinite-slider.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/infinite-slider",
+      "title": "Infinite Slider - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 6562
+    },
+    "motion-primitives/transition-panel": {
+      "path": "/assets/component-previews/motion-primitives/transition-panel.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/transition-panel",
+      "title": "Transition Panel - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 11048
+    },
+    "motion-primitives/text-effect": {
+      "path": "/assets/component-previews/motion-primitives/text-effect.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/text-effect",
+      "title": "Text Effect - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 2838
+    },
+    "motion-primitives/text-loop": {
+      "path": "/assets/component-previews/motion-primitives/text-loop.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/text-loop",
+      "title": "Text Loop - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 118,
+      "bytes": 1884
+    },
+    "motion-primitives/text-morph": {
+      "path": "/assets/component-previews/motion-primitives/text-morph.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/text-morph",
+      "title": "Text Morph - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 1892
+    },
+    "motion-primitives/text-roll": {
+      "path": "/assets/component-previews/motion-primitives/text-roll.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/text-roll",
+      "title": "Text Roll - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 3386
+    },
+    "motion-primitives/text-scramble": {
+      "path": "/assets/component-previews/motion-primitives/text-scramble.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/text-scramble",
+      "title": "Text Scramble - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 118,
+      "bytes": 1476
+    },
+    "motion-primitives/text-shimmer": {
+      "path": "/assets/component-previews/motion-primitives/text-shimmer.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/text-shimmer",
+      "title": "Text Shimmer - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 1664
+    },
+    "motion-primitives/text-shimmer-wave": {
+      "path": "/assets/component-previews/motion-primitives/text-shimmer-wave.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/text-shimmer-wave",
+      "title": "Text Shimmer Wave - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 1756
+    },
+    "motion-primitives/magnetic": {
+      "path": "/assets/component-previews/motion-primitives/magnetic.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/magnetic",
+      "title": "Magnetic - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 1508
+    },
+    "motion-primitives/morphing-dialog": {
+      "path": "/assets/component-previews/motion-primitives/morphing-dialog.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/morphing-dialog",
+      "title": "Morphing Dialog - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 4798
+    },
+    "motion-primitives/morphing-popover": {
+      "path": "/assets/component-previews/motion-primitives/morphing-popover.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/morphing-popover",
+      "title": "Morphing Popover - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 1852
+    },
+    "motion-primitives/dock": {
+      "path": "/assets/component-previews/motion-primitives/dock.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/dock",
+      "title": "Dock - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 2716
+    },
+    "motion-primitives/glow-effect": {
+      "path": "/assets/component-previews/motion-primitives/glow-effect.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/glow-effect",
+      "title": "Glow Effect - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 2016
+    },
+    "motion-primitives/image-comparison": {
+      "path": "/assets/component-previews/motion-primitives/image-comparison.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/image-comparison",
+      "title": "Image Comparison - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 573,
+      "bytes": 8778
+    },
+    "motion-primitives/toolbar-dynamic": {
+      "path": "/assets/component-previews/motion-primitives/toolbar-dynamic.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/toolbar-dynamic",
+      "title": "Toolbar Dynamic - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 1344
+    },
+    "motion-primitives/toolbar-expandable": {
+      "path": "/assets/component-previews/motion-primitives/toolbar-expandable.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/toolbar-expandable",
+      "title": "Toolbar Expandable - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 1668
+    },
+    "motion-primitives/progressive-blur": {
+      "path": "/assets/component-previews/motion-primitives/progressive-blur.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/progressive-blur",
+      "title": "Progressive blur - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 13366
+    },
+    "motion-primitives/scroll-progress": {
+      "path": "/assets/component-previews/motion-primitives/scroll-progress.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/scroll-progress",
+      "title": "Scroll Progress - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 25606
+    },
+    "motion-primitives/sliding-number": {
+      "path": "/assets/component-previews/motion-primitives/sliding-number.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/sliding-number",
+      "title": "Sliding Number - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 1648
+    },
+    "motion-primitives/spotlight": {
+      "path": "/assets/component-previews/motion-primitives/spotlight.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/spotlight",
+      "title": "Spotlight - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 1334
+    },
+    "motion-primitives/spinning-text": {
+      "path": "/assets/component-previews/motion-primitives/spinning-text.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/spinning-text",
+      "title": "Spinning Text - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 3238
+    },
+    "motion-primitives/tilt": {
+      "path": "/assets/component-previews/motion-primitives/tilt.webp",
+      "sourceUrl": "https://motion-primitives.com/docs/tilt",
+      "title": "Tilt - Motion-Primitives",
+      "capturedAt": "2026-09-14T14:47:26.157Z",
+      "width": 672,
+      "height": 352,
+      "bytes": 13096
+    },
+    "magic-ui/animated-subscribe-button": {
+      "path": "/assets/component-previews/magic-ui/animated-subscribe-button.webp",
+      "sourceUrl": "https://v3.magicui.design/docs/components/animated-subscribe-button",
+      "title": "Animated Subscribe Button | Magic UI",
+      "capturedAt": "2026-09-14T14:58:01.469Z",
+      "width": 594,
+      "height": 350,
+      "bytes": 1580
+    },
+    "shadcn/accordion": {
+      "path": "/assets/component-previews/shadcn/accordion.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/accordion",
+      "title": "Accordion - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 300,
+      "bytes": 9924
+    },
+    "shadcn/alert": {
+      "path": "/assets/component-previews/shadcn/alert.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/alert",
+      "title": "Alert - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 8548
+    },
+    "shadcn/alert-dialog": {
+      "path": "/assets/component-previews/shadcn/alert-dialog.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/alert-dialog",
+      "title": "Alert Dialog - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 224,
+      "bytes": 1648
+    },
+    "shadcn/aspect-ratio": {
+      "path": "/assets/component-previews/shadcn/aspect-ratio.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/aspect-ratio",
+      "title": "Aspect Ratio - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 1200
+    },
+    "shadcn/avatar": {
+      "path": "/assets/component-previews/shadcn/avatar.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/avatar",
+      "title": "Avatar - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 2932
+    },
+    "shadcn/badge": {
+      "path": "/assets/component-previews/shadcn/badge.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/badge",
+      "title": "Badge - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 2774
+    },
+    "shadcn/breadcrumb": {
+      "path": "/assets/component-previews/shadcn/breadcrumb.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/breadcrumb",
+      "title": "Breadcrumb - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 2374
+    },
+    "shadcn/button": {
+      "path": "/assets/component-previews/shadcn/button.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/button",
+      "title": "Button - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 1512
+    },
+    "shadcn/button-group": {
+      "path": "/assets/component-previews/shadcn/button-group.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/button-group",
+      "title": "Button Group - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 2480
+    },
+    "shadcn/calendar": {
+      "path": "/assets/component-previews/shadcn/calendar.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/calendar",
+      "title": "Calendar - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 384,
+      "bytes": 6064
+    },
+    "shadcn/card": {
+      "path": "/assets/component-previews/shadcn/card.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/card",
+      "title": "Card - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 480,
+      "bytes": 8068
+    },
+    "shadcn/carousel": {
+      "path": "/assets/component-previews/shadcn/carousel.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/carousel",
+      "title": "Carousel - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 512,
+      "bytes": 1584
+    },
+    "shadcn/chart": {
+      "path": "/assets/component-previews/shadcn/chart.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/chart",
+      "title": "Chart - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 437,
+      "bytes": 10824
+    },
+    "shadcn/checkbox": {
+      "path": "/assets/component-previews/shadcn/checkbox.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/checkbox",
+      "title": "Checkbox - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 320,
+      "bytes": 8496
+    },
+    "shadcn/collapsible": {
+      "path": "/assets/component-previews/shadcn/collapsible.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/collapsible",
+      "title": "Collapsible - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 2422
+    },
+    "shadcn/combobox": {
+      "path": "/assets/component-previews/shadcn/combobox.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/combobox",
+      "title": "Combobox - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 1826
+    },
+    "shadcn/command": {
+      "path": "/assets/component-previews/shadcn/command.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/command",
+      "title": "Command - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 392,
+      "bytes": 6338
+    },
+    "shadcn/context-menu": {
+      "path": "/assets/component-previews/shadcn/context-menu.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/context-menu",
+      "title": "Context Menu - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 2592
+    },
+    "shadcn/dialog": {
+      "path": "/assets/component-previews/shadcn/dialog.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/dialog",
+      "title": "Dialog - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 1688
+    },
+    "shadcn/drawer": {
+      "path": "/assets/component-previews/shadcn/drawer.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/drawer",
+      "title": "Drawer - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 1592
+    },
+    "shadcn/dropdown-menu": {
+      "path": "/assets/component-previews/shadcn/dropdown-menu.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/dropdown-menu",
+      "title": "Dropdown Menu - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 1296
+    },
+    "shadcn/empty": {
+      "path": "/assets/component-previews/shadcn/empty.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/empty",
+      "title": "Empty - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 384,
+      "bytes": 5948
+    },
+    "shadcn/field": {
+      "path": "/assets/component-previews/shadcn/field.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/field",
+      "title": "Field - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 850,
+      "bytes": 15190
+    },
+    "shadcn/hover-card": {
+      "path": "/assets/component-previews/shadcn/hover-card.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/hover-card",
+      "title": "Hover Card - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 320,
+      "bytes": 1572
+    },
+    "shadcn/input": {
+      "path": "/assets/component-previews/shadcn/input.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/input",
+      "title": "Input - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 3128
+    },
+    "shadcn/input-group": {
+      "path": "/assets/component-previews/shadcn/input-group.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/input-group",
+      "title": "Input Group - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 416,
+      "bytes": 2002
+    },
+    "shadcn/input-otp": {
+      "path": "/assets/component-previews/shadcn/input-otp.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/input-otp",
+      "title": "Input OTP - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 1638
+    },
+    "shadcn/item": {
+      "path": "/assets/component-previews/shadcn/item.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/item",
+      "title": "Item - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 4854
+    },
+    "shadcn/label": {
+      "path": "/assets/component-previews/shadcn/label.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/label",
+      "title": "Label - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 2360
+    },
+    "shadcn/menubar": {
+      "path": "/assets/component-previews/shadcn/menubar.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/menubar",
+      "title": "Menubar - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 2164
+    },
+    "shadcn/navigation-menu": {
+      "path": "/assets/component-previews/shadcn/navigation-menu.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/navigation-menu",
+      "title": "Navigation Menu - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 384,
+      "bytes": 3298
+    },
+    "shadcn/pagination": {
+      "path": "/assets/component-previews/shadcn/pagination.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/pagination",
+      "title": "Pagination - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 2160
+    },
+    "shadcn/popover": {
+      "path": "/assets/component-previews/shadcn/popover.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/popover",
+      "title": "Popover - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 1744
+    },
+    "shadcn/radio-group": {
+      "path": "/assets/component-previews/shadcn/radio-group.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/radio-group",
+      "title": "Radio Group - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 2618
+    },
+    "shadcn/resizable": {
+      "path": "/assets/component-previews/shadcn/resizable.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/resizable",
+      "title": "Resizable - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 320,
+      "bytes": 1926
+    },
+    "shadcn/scroll-area": {
+      "path": "/assets/component-previews/shadcn/scroll-area.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/scroll-area",
+      "title": "Scroll Area - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 384,
+      "bytes": 5834
+    },
+    "shadcn/select": {
+      "path": "/assets/component-previews/shadcn/select.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/select",
+      "title": "Select - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 1550
+    },
+    "shadcn/separator": {
+      "path": "/assets/component-previews/shadcn/separator.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/separator",
+      "title": "Separator - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 5784
+    },
+    "shadcn/sheet": {
+      "path": "/assets/component-previews/shadcn/sheet.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/sheet",
+      "title": "Sheet - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 1296
+    },
+    "shadcn/slider": {
+      "path": "/assets/component-previews/shadcn/slider.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/slider",
+      "title": "Slider - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 1082
+    },
+    "shadcn/sonner": {
+      "path": "/assets/component-previews/shadcn/sonner.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/sonner",
+      "title": "Toast - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 1648
+    },
+    "shadcn/spinner": {
+      "path": "/assets/component-previews/shadcn/spinner.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/spinner",
+      "title": "Spinner - shadcn/ui",
+      "capturedAt": "2026-09-14T15:01:29.929Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 2396
+    },
+    "shadcn/form": {
+      "path": "/assets/component-previews/shadcn/form.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/forms/react-hook-form",
+      "title": "React Hook Form - shadcn/ui",
+      "capturedAt": "2026-09-14T15:05:06.450Z",
+      "width": 638,
+      "height": 700,
+      "bytes": 11526
+    },
+    "shadcn/progress": {
+      "path": "/assets/component-previews/shadcn/progress.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/progress",
+      "title": "Progress - shadcn/ui",
+      "capturedAt": "2026-09-14T15:05:06.450Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 998
+    },
+    "shadcn/sidebar": {
+      "path": "/assets/component-previews/shadcn/sidebar.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/radix/sidebar",
+      "title": "Sidebar - shadcn/ui",
+      "capturedAt": "2026-09-14T15:05:06.450Z",
+      "width": 1600,
+      "height": 398,
+      "bytes": 9792
+    },
+    "shadcn/skeleton": {
+      "path": "/assets/component-previews/shadcn/skeleton.webp",
+      "sourceUrl": "https://ui.shadcn.com/docs/components/skeleton",
+      "title": "Skeleton - shadcn/ui",
+      "capturedAt": "2026-09-14T15:05:06.450Z",
+      "width": 638,
+      "height": 288,
+      "bytes": 980
+    }
+  }
+}

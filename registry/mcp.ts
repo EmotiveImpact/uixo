@@ -77,7 +77,7 @@ export function createRegistryMcp(registry: Registry) {
     'get_preview',
     {
       description:
-        'Return the original preview reference when available. A UIXO schematic is not an upstream screenshot. No remote files are fetched by this tool.',
+        'Return the verified upstream preview reference when available. Published component previews are captures of official provider demos. No remote files are fetched by this tool.',
       annotations,
       inputSchema: z.object({ id }),
     },

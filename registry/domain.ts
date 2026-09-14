@@ -48,7 +48,7 @@ export type Asset = {
   variants: Variant[];
   evidence: Evidence[];
   verifiedAt: string | null;
-  preview: { kind: 'image' | 'schematic'; url?: string; label: string } | null;
+  preview: { kind: 'image'; url: string; label: string } | null;
   editorialPick: boolean;
 };
 export type Provider = {
@@ -61,6 +61,10 @@ export type Provider = {
   adapter: 'github-icons' | 'shadcn-registry' | 'github-json-registry';
   registryPath?: string;
   registryBaseUrl?: string;
+  /** Repository prefix applied to install-registry file paths before linking source. */
+  sourceRoot?: string;
+  /** Manifest entries that are not backed by a file at the same pinned source revision. */
+  excludedComponents?: string[];
   css?: string;
   approved: boolean;
   rationale: string;
@@ -320,8 +324,8 @@ export function validateAsset(input: unknown): Asset {
     }),
     preview: preview
       ? {
-          kind: choice(text(preview.kind, 40), ['image', 'schematic']) as 'image' | 'schematic',
-          ...(preview.url ? { url: httpsUrl(preview.url) } : {}),
+          kind: choice(text(preview.kind, 40), ['image']) as 'image',
+          url: httpsUrl(preview.url),
           label: text(preview.label, 200),
         }
       : null,

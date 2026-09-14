@@ -83,6 +83,39 @@ screenshots were perfectly fine.
 
 ---
 
+## Imported components were shown with fabricated previews
+
+**Found:** by you, after opening the Magic UI asset grid. The imported records had different
+names and metadata, but the cards showed repeated UIXO-made illustrations instead of the
+components themselves.
+
+**Cause:** the registry importer deliberately assigned every React component a `schematic`
+preview. The UI then routed unknown slugs into a generic drawing and later into one of twelve
+invented visual families. That made the grid look varied while still misrepresenting the
+asset. The ingestion also treated install-registry paths as repository paths. For Magic UI,
+the real source root is `apps/www/`; seven manifest entries did not have their claimed source
+file at the pinned commit at all.
+
+**Fix:** UIXO now captures the rendered demo canvas from each provider's official component
+documentation and commits the result as a local WebP. The catalogue uses 147 real demo
+captures: 46 shadcn, 68 Magic UI, and 33 Motion Primitives. Magic UI source links now include
+the real repository root. The seven entries without source at the pinned revision are
+excluded instead of being given a substitute preview. The invented semantic renderer and
+its fallback illustrations were removed.
+
+**Prevention:** `npm run previews:verify` derives the expected component set from the captured
+registries and provider exclusion policy, then requires exactly one valid WebP and official
+source URL for every publishable component. Registry tests require component previews to be
+images, reject schematic placeholders, verify corrected source paths, and assert that
+unbacked manifest entries stay excluded. A missing or changed provider demo now fails the
+build; it cannot quietly become an approximation.
+
+**Rule:** a preview is evidence about the asset. If the real render cannot be captured, show
+it as unavailable or keep the record unpublished. Never replace it with something that only
+looks similar.
+
+---
+
 ## Every URL served the landing page to crawlers
 
 **Found:** testing routes against the live deployment rather than reading the config.

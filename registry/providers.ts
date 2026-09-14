@@ -55,6 +55,16 @@ export const PROVIDERS: Provider[] = [
     adapter: 'github-json-registry',
     registryPath: 'registry.json',
     registryBaseUrl: 'https://magicui.design/r/',
+    sourceRoot: 'apps/www',
+    excludedComponents: [
+      'script-copy-btn',
+      'flip-text',
+      'scratch-to-reveal',
+      'box-reveal',
+      'iphone-15-pro',
+      'arc-timeline',
+      'grid-beams',
+    ],
     css: 'tailwind',
     approved: true,
     selectedAt: '2026-09-14T00:00:00.000Z',
@@ -270,7 +280,11 @@ export function componentAsset(
       },
     ],
     verifiedAt: now,
-    preview: { kind: 'schematic', label: 'UIXO schematic, not an upstream screenshot' },
+    preview: {
+      kind: 'image',
+      url: `https://uixo-brown.vercel.app/assets/component-previews/${provider.id}/${name}.webp`,
+      label: `Captured from the official ${provider.name} documentation demo.`,
+    },
     editorialPick: false,
   };
 }
@@ -288,7 +302,10 @@ export function jsonRegistryComponentAsset(
       'Provider registry configuration is incomplete.',
       502,
     );
-  const sourceUrl = `https://github.com/${provider.repo}/blob/${ref}/${item.sourcePath}`;
+  const repositoryPath = provider.sourceRoot
+    ? `${provider.sourceRoot}/${item.sourcePath}`
+    : item.sourcePath;
+  const sourceUrl = `https://github.com/${provider.repo}/blob/${ref}/${repositoryPath}`;
   const manifestUrl = `https://github.com/${provider.repo}/blob/${ref}/${provider.registryPath}`;
   return {
     id: `${provider.id}/${item.name}`,
@@ -339,7 +356,11 @@ export function jsonRegistryComponentAsset(
       },
     ],
     verifiedAt: now,
-    preview: { kind: 'schematic', label: 'UIXO illustration, not an upstream render' },
+    preview: {
+      kind: 'image',
+      url: `https://uixo-brown.vercel.app/assets/component-previews/${provider.id}/${item.name}.webp`,
+      label: `Captured from the official ${provider.name} documentation demo.`,
+    },
     editorialPick: false,
   };
 }
@@ -472,9 +493,9 @@ export async function indexPage(
     const manifest = await budget.text(
       `https://raw.githubusercontent.com/${provider.repo}/${ref}/${provider.registryPath}`,
     );
-    all = parseJsonRegistry(manifest).map((item) =>
-      jsonRegistryComponentAsset(item, provider, licence, ref!, now),
-    );
+    all = parseJsonRegistry(manifest)
+      .filter((item) => !provider.excludedComponents?.includes(item.name))
+      .map((item) => jsonRegistryComponentAsset(item, provider, licence, ref!, now));
   } else {
     const tree = record(await budget.json(`${base}/git/trees/${ref}?recursive=1`));
     if (tree.truncated === true || !Array.isArray(tree.tree))
