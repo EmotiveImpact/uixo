@@ -1195,7 +1195,7 @@
   text-decoration: none;
   font-size: 12px;
 }
-.asset-detail-primary-actions a {
+.asset-detail-primary-actions .asset-library-primary {
   flex: 1;
   background: var(--foreground);
   color: var(--background);

@@ -95,6 +95,10 @@ it('restores licence evidence, saving, automatic acquisition and compatibility i
   );
   await screen.findByText('Licence & provenance');
   await screen.findByText('npm install react');
+  expect(screen.getByRole('button', { name: 'Copy install command' })).toBeTruthy();
+  expect(screen.getByRole('link', { name: 'View source' }).getAttribute('href')).toBe(
+    asset.sourceUrl,
+  );
   expect(screen.getByText('Redistribution')).toBeTruthy();
   expect(screen.getByText('Upstream SVG ↗')).toBeTruthy();
   fireEvent.click(screen.getByText('Save asset'));

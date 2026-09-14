@@ -162,14 +162,25 @@ export function AssetDetail({
             <p className="asset-detail-description">{asset.description}</p>
 
             <div className="asset-detail-primary-actions">
-              {sourceUrl && (
+              {command ? (
+                <button className="asset-library-primary" onClick={() => void copy(command)}>
+                  <Copy size={14} />
+                  Copy install command
+                </button>
+              ) : sourceUrl ? (
                 <a
                   className="asset-library-primary"
                   href={sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Use {asset.kind === 'component' ? 'component' : 'asset'}
+                  Open original source
+                  <ArrowUpRight size={14} />
+                </a>
+              ) : null}
+              {command && sourceUrl && (
+                <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
+                  View source
                   <ArrowUpRight size={14} />
                 </a>
               )}
