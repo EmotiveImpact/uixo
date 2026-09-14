@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-12T16:02:44.000Z",
-  "updated_note": "Red-paste Sep12 ingest: +4 new (liquid-glass-design, kobra, loadmo, posts-design); tweet @thedzianis/2098393545006891310 destinations dumped; watchlist +thedzianis discovery. captured=247 og=5 blocked=2",
+  "updated": "2026-09-14T07:45:00.000Z",
+  "updated_note": "Weekday digest 2026-09-14: +15 new from watchlist/discovery list posts since 2026-09-11; resource-first (uiable, vibeprompts, babelize-elements, opendesign.dev, ideadesign) + galleries. Live src/data.ts untouched. | thumbs sweep: captured=261 og=6 blocked=2 pending=0",
   "counts_by_category": {
-    "Inspiration": 92,
-    "Components": 27,
-    "UI libraries": 30,
+    "Inspiration": 101,
+    "Templates": 37,
+    "UI libraries": 32,
+    "Components": 30,
+    "Icons": 27,
     "Marketplace": 14,
     "Backgrounds": 9,
-    "Fonts": 7,
-    "Icons": 27,
     "Illustrations": 8,
-    "Templates": 36,
+    "Fonts": 7,
     "Mockups": 4
   },
   "totals": {
-    "candidates": 254,
-    "needs_review": 176,
-    "new_this_run": 4,
-    "already_present": 7,
-    "skipped_dupes_existing_site": 7,
-    "image_captured": 247,
-    "image_og_captured": 5,
+    "candidates": 269,
+    "needs_review": 191,
+    "new_this_run": 15,
+    "already_present": 0,
+    "skipped_dupes_existing_site": 0,
+    "image_captured": 261,
+    "image_og_captured": 6,
     "image_blocked": 2
   },
   "skipped_dupes": [
@@ -3045,7 +3045,7 @@
       "source": "https://x.com/Tegadesigns/status/2096876615342915877 (@Tegadesigns)",
       "why": "Website design inspiration gallery for landing pages",
       "addedOrder": 122,
-      "image_error": "cloudflare-captcha: title=\"Just a moment...\" / Verify you are human (ray a3978dc8f922ad64). Playwright blocked; html-og/cardyb/microlink/jina/known-paths all 403 or no-og; mshots returned challenge page. Needs Red interactive browser solve. Captcha shot: /workspace/uixo-thumbs/out/land-book-captcha.png"
+      "image_error": "http-403 | og:no-og:{\"error\":\"Unable to generate link preview\",\"likely_type\":\"\",\"url\":\"\",\"title\":\"\",\"description\":\"\",\"image\":\"\"}"
     },
     {
       "id": "lapa-ninja",
@@ -5559,7 +5559,7 @@
         "https://x.com/UiSavior/status/2098225660300775583"
       ],
       "ingest_batch": "paste-2026-09-11",
-      "image_error": "site unreachable: Playwright net::ERR_CONNECTION_CLOSED (https/www); http timeouts; TLS socket disconnect; cardyb no-og; microlink no image; thum.io returned ERR_TUNNEL_CONNECTION_FAILED chrome error page (discarded). Likely dead host (possible successor uxwireframekits.com not applied)."
+      "image_error": "page.goto: net::ERR_CONNECTION_CLOSED at https://wireframekits.com/\nCall log:\n  - navigating to \"https://wireframekits.com/\", waiting until \"domcontentloaded\"\n | og:no-og:{\"error\":\"Unable to generate link preview\",\"likely_type\":\"\",\"url\":\"\",\"title\":\"\",\"description\":\"\",\"image\":\"\"}"
     },
     {
       "id": "figma-community",
@@ -6559,14 +6559,447 @@
       "image_method": "screenshot",
       "ingest_batch": "red-paste-sep12-2026-09-12",
       "addedOrder": 264
+    },
+    {
+      "id": "vibeprompts",
+      "name": "VibePrompts",
+      "category": "Components",
+      "subcategory": "AI prompts",
+      "tags": [
+        "Prompts",
+        "Components",
+        "Vibe coding"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "vibeprompts.dev",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://vibeprompts.dev",
+      "source": "https://x.com/csaba_kissi/status/2099400110589485058 (@csaba_kissi)",
+      "why": "286 free components for vibe coders with prompts",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 265,
+      "harvest_posts": [
+        "https://x.com/csaba_kissi/status/2099400110589485058"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "uiable",
+      "name": "UIable",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React",
+        "Open source",
+        "Components"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "uiable.com",
+      "formats": [
+        "React"
+      ],
+      "url": "https://uiable.com",
+      "source": "https://x.com/csaba_kissi/status/2099400110589485058 (@csaba_kissi)",
+      "why": "683 open-source React components",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "addedOrder": 266,
+      "harvest_posts": [
+        "https://x.com/csaba_kissi/status/2099400110589485058"
+      ],
+      "image_method": "cardyb:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fcdn.uiable.com%2Fog%2Fcompone"
+    },
+    {
+      "id": "opendesign-dev",
+      "name": "OpenDesign.dev",
+      "category": "UI libraries",
+      "subcategory": "AI design skills",
+      "tags": [
+        "Open source",
+        "AI agents",
+        "Design skills"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "opendesign.dev",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://opendesign.dev",
+      "source": "https://x.com/neropursue/status/2098749308338102329 (@neropursue)",
+      "why": "Open-source design skills for AI coding agents",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 267,
+      "harvest_posts": [
+        "https://x.com/neropursue/status/2098749308338102329"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "babelize-elements",
+      "name": "Babelize Elements",
+      "category": "Components",
+      "subcategory": "Localization",
+      "tags": [
+        "Open source",
+        "i18n",
+        "React"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Babelize",
+      "formats": [
+        "React"
+      ],
+      "url": "https://elements.babelize.co",
+      "source": "https://x.com/Babelizeapp/status/2099244162508009473 (@Babelizeapp)",
+      "why": "Open-source multilingual UI components",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 268,
+      "harvest_posts": [
+        "https://x.com/Babelizeapp/status/2099244162508009473"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "ideadesign",
+      "name": "IdeaDesign",
+      "category": "Components",
+      "subcategory": "Reconstruction",
+      "tags": [
+        "UI reconstruction",
+        "HTML",
+        "Interactions"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "IdeaDesign",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://ideadesign.top",
+      "source": "https://x.com/ethan185910/status/2099138645693497430 (@ethan185910)",
+      "why": "Preview reconstructed UI components with interactions + downloadable HTML",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 269,
+      "harvest_posts": [
+        "https://x.com/ethan185910/status/2099138645693497430"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "motionsites-ai",
+      "name": "MotionSites AI",
+      "category": "Templates",
+      "subcategory": "AI prompts",
+      "tags": [
+        "Prompts",
+        "Motion",
+        "Websites"
+      ],
+      "access": [
+        "Paid"
+      ],
+      "creator": "MotionSites",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://motionsites.ai",
+      "source": "https://x.com/k2sbhai/status/2099061468771848625 (@k2sbhai)",
+      "why": "Premium AI website prompts / frontend UI inspiration pack",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 270,
+      "harvest_posts": [
+        "https://x.com/k2sbhai/status/2099061468771848625"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "appshots-design",
+      "name": "Appshots.design",
+      "category": "Inspiration",
+      "subcategory": "Mobile",
+      "tags": [
+        "App screenshots",
+        "Mobile",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "appshots.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://appshots.design",
+      "source": "https://x.com/noahelhadedy/status/2098683254853321073 (@noahelhadedy)",
+      "why": "Mobile app screenshot / UI inspiration gallery",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 271,
+      "harvest_posts": [
+        "https://x.com/noahelhadedy/status/2098683254853321073"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "gummble",
+      "name": "Gummble",
+      "category": "Inspiration",
+      "subcategory": "Mobile",
+      "tags": [
+        "App screenshots",
+        "UX flows",
+        "MCP"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Gummble",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://gummble.com",
+      "source": "https://x.com/noahelhadedy/status/2098683254853321073 (@noahelhadedy)",
+      "why": "Real app UI screenshots, UX flows & design MCP",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 272,
+      "harvest_posts": [
+        "https://x.com/noahelhadedy/status/2098683254853321073"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "a1-gallery",
+      "name": "A1 Gallery",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Gallery",
+        "Web design"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "a1.gallery",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://a1.gallery",
+      "source": "https://x.com/noahelhadedy/status/2098443537062744297 (@noahelhadedy)",
+      "why": "Web design inspiration gallery",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 273,
+      "harvest_posts": [
+        "https://x.com/noahelhadedy/status/2098443537062744297"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "sectionmaster",
+      "name": "SectionMaster",
+      "category": "Inspiration",
+      "subcategory": "Sections",
+      "tags": [
+        "Sections",
+        "Landing",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "sectionmaster.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://sectionmaster.com",
+      "source": "https://x.com/noahelhadedy/status/2098443537062744297 (@noahelhadedy)",
+      "why": "Website section inspiration gallery",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 274,
+      "harvest_posts": [
+        "https://x.com/noahelhadedy/status/2098443537062744297"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "deck-gallery",
+      "name": "Deck Gallery",
+      "category": "Inspiration",
+      "subcategory": "Brand",
+      "tags": [
+        "Brand decks",
+        "Pitch"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "deck.gallery",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://deck.gallery",
+      "source": "https://x.com/ImranUxi/status/2098365275204895015 (@ImranUxi)",
+      "why": "Brand decks worth studying",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 275,
+      "harvest_posts": [
+        "https://x.com/ImranUxi/status/2098365275204895015"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "logosystem",
+      "name": "Logo System",
+      "category": "Inspiration",
+      "subcategory": "Brand",
+      "tags": [
+        "Logo systems",
+        "Identity"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "logosystem.co",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://logosystem.co",
+      "source": "https://x.com/ImranUxi/status/2098365275204895015 (@ImranUxi)",
+      "why": "Logo systems, not just marks",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 276,
+      "harvest_posts": [
+        "https://x.com/ImranUxi/status/2098365275204895015"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "brandguidelines",
+      "name": "Brand Guidelines",
+      "category": "Inspiration",
+      "subcategory": "Brand",
+      "tags": [
+        "Brand guidelines",
+        "Identity"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "brandguidelines.net",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://brandguidelines.net",
+      "source": "https://x.com/ImranUxi/status/2098365275204895015 (@ImranUxi)",
+      "why": "Real brand guidelines from real brands",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 277,
+      "harvest_posts": [
+        "https://x.com/ImranUxi/status/2098365275204895015"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "visualjournal",
+      "name": "Visual Journal",
+      "category": "Inspiration",
+      "subcategory": "Brand",
+      "tags": [
+        "Visual identity",
+        "Inspiration"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "visualjournal.it",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://visualjournal.it",
+      "source": "https://x.com/ImranUxi/status/2098365275204895015 (@ImranUxi)",
+      "why": "Visual identity inspiration",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 278,
+      "harvest_posts": [
+        "https://x.com/ImranUxi/status/2098365275204895015"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "ogfolio",
+      "name": "OGFolio",
+      "category": "Inspiration",
+      "subcategory": "Social",
+      "tags": [
+        "Open Graph",
+        "Social previews",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "OGFolio",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://ogfolio.com",
+      "source": "https://x.com/Manixh02/status/2098354966033564014 (@Manixh02)",
+      "why": "Curated library of Open Graph images from real products",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 279,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2098354966033564014"
+      ],
+      "image_method": "screenshot"
     }
   ],
   "image_capture": {
-    "captured": 243,
-    "og-captured": 5,
-    "blocked": 2,
-    "pending": 0,
-    "at": "2026-09-11T15:12:00.000Z"
+    "batch": "weekday-digest-2026-09-14",
+    "captured": [
+      "vibeprompts",
+      "opendesign-dev",
+      "babelize-elements",
+      "ideadesign",
+      "motionsites-ai",
+      "appshots-design",
+      "gummble",
+      "a1-gallery",
+      "sectionmaster",
+      "deck-gallery",
+      "logosystem",
+      "brandguidelines",
+      "visualjournal",
+      "ogfolio"
+    ],
+    "og_captured": [
+      "uiable"
+    ],
+    "blocked": []
   },
   "paste_ingest": {
     "added_ids": [
@@ -6691,56 +7124,36 @@
     ]
   },
   "weekday_digest": {
-    "batch": "weekday-digest-2026-09-11",
+    "batch": "weekday-digest-2026-09-14",
     "added_ids": [
-      "pttrns",
-      "lawsofux",
-      "uxcrush",
-      "themockup-club",
-      "huemint",
-      "lordicon",
-      "microcopy-me",
-      "mixkit",
-      "happyhues",
-      "growth-design",
-      "toools-design",
-      "basicons",
-      "briefup",
-      "meshgradient",
-      "iconer",
-      "3dicons",
-      "shapefest",
-      "saaslandingpage",
-      "colorhunt",
-      "angle-sh",
-      "designspiration",
-      "storyset",
-      "openpeeps",
-      "drawkit",
-      "sapiens-ui8"
+      "vibeprompts",
+      "uiable",
+      "opendesign-dev",
+      "babelize-elements",
+      "ideadesign",
+      "motionsites-ai",
+      "appshots-design",
+      "gummble",
+      "a1-gallery",
+      "sectionmaster",
+      "deck-gallery",
+      "logosystem",
+      "brandguidelines",
+      "visualjournal",
+      "ogfolio"
     ],
     "source_posts": [
-      "https://x.com/Tegadesigns/status/2098300028859105409",
-      "https://x.com/UiSavior/status/2098225017863434526",
-      "https://x.com/UiSavior/status/2098225093998490038",
-      "https://x.com/UiSavior/status/2098225485184630979",
-      "https://x.com/UiSavior/status/2098225926525882470"
+      "https://x.com/Babelizeapp/status/2099244162508009473",
+      "https://x.com/ImranUxi/status/2098365275204895015",
+      "https://x.com/Manixh02/status/2098354966033564014",
+      "https://x.com/csaba_kissi/status/2099400110589485058",
+      "https://x.com/ethan185910/status/2099138645693497430",
+      "https://x.com/k2sbhai/status/2099061468771848625",
+      "https://x.com/neropursue/status/2098749308338102329",
+      "https://x.com/noahelhadedy/status/2098443537062744297",
+      "https://x.com/noahelhadedy/status/2098683254853321073"
     ],
-    "all_dupe_posts": [
-      "@pengsonal UI libs list \u2014 all already candidates",
-      "@arihantCodes similar list \u2014 all dupes",
-      "@askwhykartik aceternity/reactbits/magicui/hover \u2014 all dupes",
-      "@csaba_kissi kokonut/kinetics/mapcn/openusage/browser-use \u2014 already ingested AM",
-      "@noahelhadedy AI design tools \u2014 already present"
-    ],
-    "skipped": [
-      "tinywow",
-      "picjumbo",
-      "stocksnap",
-      "Stripe",
-      "Trigger.dev",
-      "piwora.com (weak signal)"
-    ]
+    "note": "Since last digest 2026-09-11; watchlist + open discovery; dump-all destinations; skipped off-brief (revyl, sevalla, agent-memory, free APIs) and broken Smashing URL truncation."
   },
   "designer_list_ingest": {
     "batch": "designer-list-paste-2026-09-11",

@@ -1,10 +1,344 @@
 {
-  "collected_at": "2026-09-10T23:25:08Z",
+  "collected_at": "2026-09-14T07:45:00Z",
   "window": {
-    "start_time": "2026-09-04T00:00:00Z",
+    "start_time": "2026-09-07T00:00:00Z",
     "end": "now"
   },
   "list_posts": [
+    {
+      "id": "2099138645693497430",
+      "url": "https://x.com/ethan185910/status/2099138645693497430",
+      "author": "ethan185910",
+      "username": "ethan185910",
+      "created_at": "2026-09-13T14:10:27.000Z",
+      "text_excerpt": "Go beyond the color palette.\n\nWith IdeaDesign, preview reconstructed UI components, try their interactions, inspect the JavaScript, and download the HTML.\n\nReal walkthrough \nRebuilt from references\u2014not the original site's source code.\n\nhttps://t.co/0Yvw2WWNmk https://t.co/TmKPSR9",
+      "metrics": {
+        "bookmark_count": 0,
+        "impression_count": 4,
+        "like_count": 0,
+        "quote_count": 0,
+        "reply_count": 0,
+        "repost_count": 0
+      },
+      "destination_urls": [
+        "https://ideadesign.top/?utm_source=x&utm_medium=social&utm_campaign=component_demo_20260913"
+      ]
+    },
+    {
+      "id": "2099215516543893579",
+      "url": "https://x.com/MONABLIZUIUX/status/2099215516543893579",
+      "author": "MONABLIZUIUX",
+      "username": "MONABLIZUIUX",
+      "created_at": "2026-09-13T19:15:55.000Z",
+      "text_excerpt": "UX Checklists For Interface Designers\n\nExcellent collection of checklists for UI components, research methods, form design and flowcharts. \ud83d\udc47\n\nhttps://t.co/0ObvgHrzEU\u2026 https://t.co/xOe6A3f0M8",
+      "metrics": {
+        "bookmark_count": 1,
+        "impression_count": 260,
+        "like_count": 2,
+        "quote_count": 0,
+        "reply_count": 0,
+        "repost_count": 0
+      },
+      "destination_urls": [
+        "https://smashingmagazine.com/2022/09/ux-che"
+      ]
+    },
+    {
+      "id": "2099244162508009473",
+      "url": "https://x.com/Babelizeapp/status/2099244162508009473",
+      "author": "Babelizeapp",
+      "username": "Babelizeapp",
+      "created_at": "2026-09-13T21:09:45.000Z",
+      "text_excerpt": "Babelize Elements is live.\n\nUI components. Multilingual by default.\n\nOpen source. Built to be forked, extended, and shipped.\n\n\ud83c\udf0d More languages\n\ud83e\udde9 Reusable components\n\u2194\ufe0f Localization in mind\n\n\ud83d\udd17 https://t.co/6EoXshYLBs\n\u2b50 https://t.co/TnvKQMY4JJ\n\nFork it. Extend it. Build on it. http",
+      "metrics": {
+        "bookmark_count": 0,
+        "impression_count": 18,
+        "like_count": 4,
+        "quote_count": 0,
+        "reply_count": 1,
+        "repost_count": 1
+      },
+      "destination_urls": [
+        "https://elements.babelize.co",
+        "https://github.com/babelize/babelize-elements"
+      ]
+    },
+    {
+      "id": "2098784334383915025",
+      "url": "https://x.com/arihantCodes/status/2098784334383915025",
+      "author": "arihantCodes",
+      "username": "arihantCodes",
+      "created_at": "2026-09-12T14:42:33.000Z",
+      "text_excerpt": "Introducing SVG Charts.\n\nA collection of minimal, animated chart components for React.\n\nNow you can add beautiful, interactive charts to your app with a single CLI command. \u2728\n\nPart of Spectrum UI. \nOpen source.\n\nTry it: https://t.co/bUywKxvrGT https://t.co/pFITxwynCr",
+      "metrics": {
+        "bookmark_count": 420,
+        "impression_count": 17155,
+        "like_count": 269,
+        "quote_count": 1,
+        "reply_count": 3,
+        "repost_count": 11
+      },
+      "destination_urls": [
+        "https://ui.spectrumhq.in/blocks/charts"
+      ]
+    },
+    {
+      "id": "2099061468771848625",
+      "url": "https://x.com/k2sbhai/status/2099061468771848625",
+      "author": "k2sbhai",
+      "username": "k2sbhai",
+      "created_at": "2026-09-13T09:03:47.000Z",
+      "text_excerpt": "vibe coders are seriously sleeping on this \ud83d\ude33\n\nFree frontend UI inspiration you can use as a reference for your next project\n\nFree UI: https://t.co/qq4U64sd3N\n\nsave this for whenever you want to build something \ud83d\udc40 https://t.co/lstZEKUNQN",
+      "metrics": {
+        "bookmark_count": 694,
+        "impression_count": 26038,
+        "like_count": 504,
+        "quote_count": 2,
+        "reply_count": 18,
+        "repost_count": 52
+      },
+      "destination_urls": [
+        "https://motionsites.ai"
+      ]
+    },
+    {
+      "id": "2099060439501971894",
+      "url": "https://x.com/Abmankendrick/status/2099060439501971894",
+      "author": "Abmankendrick",
+      "username": "Abmankendrick",
+      "created_at": "2026-09-13T08:59:42.000Z",
+      "text_excerpt": "UI/UX Designers, here are some of the best DESIGN. md resources for AI coding you should bookmark:\n\nStyles \u2192 https://t.co/mSGX5DI19g\nDesign Systems \u2192 https://t.co/amutL8v77K\nUI Components \u2192 https://t.co/kyRRhoV9sH\nWeb Design \u2192 https://t.co/bx0lvxyBjQ\nDesign. md \u2192 https://t.co/FSu",
+      "metrics": {
+        "bookmark_count": 1261,
+        "impression_count": 39695,
+        "like_count": 706,
+        "quote_count": 0,
+        "reply_count": 16,
+        "repost_count": 99
+      },
+      "destination_urls": [
+        "https://styles.refero.design",
+        "https://neuform.ai",
+        "https://typeui.sh",
+        "https://aura.build",
+        "https://design-md.hyperbrowser.ai",
+        "https://designmd.supply",
+        "https://open-design.ai",
+        "https://designmd.me"
+      ]
+    },
+    {
+      "id": "2098393545006891310",
+      "url": "https://x.com/thedzianis/status/2098393545006891310",
+      "author": "thedzianis",
+      "username": "thedzianis",
+      "created_at": "2026-09-11T12:49:42.000Z",
+      "text_excerpt": "\ud83c\udf5f still using Pinterest for design inspo in 2026? these will replace it. \ud83d\udc47\n\n1. https://t.co/Az5gEG8sRa \u2014 50+ website prompts. 300+ 3D scenes, 1000+ interactive gradients, 100+ backgrounds, motion sections. Everything's a prompt.\n2. https://t.co/xWtTjj311a \u2014 a full library of webs",
+      "metrics": {
+        "bookmark_count": 1517,
+        "impression_count": 98580,
+        "like_count": 711,
+        "quote_count": 2,
+        "reply_count": 5,
+        "repost_count": 103
+      },
+      "destination_urls": [
+        "https://getlayers.ai",
+        "https://supahero.io",
+        "https://cta.gallery",
+        "https://loadmo.re",
+        "https://60fps.design",
+        "https://recent.design",
+        "https://posts.design",
+        "https://navbar.gallery"
+      ]
+    },
+    {
+      "id": "2098354966033564014",
+      "url": "https://x.com/Manixh02/status/2098354966033564014",
+      "author": "Manixh02",
+      "username": "Manixh02",
+      "created_at": "2026-09-11T10:16:24.000Z",
+      "text_excerpt": "Found a gallery of Open Graph images from real products.\n\n- Scroll examples that already work on social\n- See layouts, type, and contrast that actually get clicks\n- Steal the structure, not the brand\n\nlink; https://t.co/jFDSZwIUKW https://t.co/85IFXrP4x6",
+      "metrics": {
+        "bookmark_count": 27,
+        "impression_count": 1592,
+        "like_count": 38,
+        "quote_count": 0,
+        "reply_count": 7,
+        "repost_count": 4
+      },
+      "destination_urls": [
+        "https://ogfolio.com"
+      ]
+    },
+    {
+      "id": "2098365275204895015",
+      "url": "https://x.com/ImranUxi/status/2098365275204895015",
+      "author": "ImranUxi",
+      "username": "ImranUxi",
+      "created_at": "2026-09-11T10:57:22.000Z",
+      "text_excerpt": "the secret resource for brand design\n\n\ud83d\udc47 these are the ones I actually open when I'm working on \n\nhttps://t.co/ZtU5gzA1Dk - brand decks worth studying\nhttps://t.co/B3TH1rmfB5 - logo systems, not just marks\nhttps://t.co/oDEAGBOOot - real guidelines from real brands\nhttps://t.co/q2R",
+      "metrics": {
+        "bookmark_count": 106,
+        "impression_count": 3646,
+        "like_count": 74,
+        "quote_count": 0,
+        "reply_count": 1,
+        "repost_count": 9
+      },
+      "destination_urls": [
+        "https://deck.gallery",
+        "https://logosystem.co",
+        "https://brandguidelines.net",
+        "https://rebrand.gallery",
+        "https://visualjournal.it",
+        "https://inspora.design"
+      ]
+    },
+    {
+      "id": "2098373201210278090",
+      "url": "https://x.com/neropursue/status/2098373201210278090",
+      "author": "neropursue",
+      "username": "neropursue",
+      "created_at": "2026-09-11T11:28:51.000Z",
+      "text_excerpt": "Best DESIGN.md Resources for AI Coding, save this \ud83d\udc47 \n\nhttps://t.co/XoJEHGXjcd\nhttps://t.co/gciPhu6Tyf\nhttps://t.co/oO3d1b4ObI\nhttps://t.co/y7A2Y6eyPb\nhttps://t.co/KPTb1kZddi\nhttps://t.co/3FeNRSx5BA\nhttps://t.co/1rkKn7eNG3\nhttps://t.co/c7RHg13chZ\n\nWhat Did I Miss? https://t.co/Iwq",
+      "metrics": {
+        "bookmark_count": 1287,
+        "impression_count": 34016,
+        "like_count": 747,
+        "quote_count": 0,
+        "reply_count": 22,
+        "repost_count": 92
+      },
+      "destination_urls": [
+        "https://styles.refero.design",
+        "https://neuform.ai",
+        "https://typeui.sh",
+        "https://aura.build",
+        "https://design-md.hyperbrowser.ai",
+        "https://designmd.supply",
+        "https://open-design.ai",
+        "https://designmd.me"
+      ]
+    },
+    {
+      "id": "2098443537062744297",
+      "url": "https://x.com/noahelhadedy/status/2098443537062744297",
+      "author": "noahelhadedy",
+      "username": "noahelhadedy",
+      "created_at": "2026-09-11T16:08:21.000Z",
+      "text_excerpt": "9 websites I use for web design inspiration\n\n1. https://t.co/TjOqlpOC16\n2. https://t.co/WOWlwlMZ2w\n3. https://t.co/sjGdqLhHpc\n4. https://t.co/PRdhMuEBNW\n5. https://t.co/R3wHSBbol9\n6. https://t.co/WyVAx0IMYr\n7. https://t.co/wUKT8Ps19o\n8. https://t.co/PDFNn32lLP\n9. https://t.co/GXe",
+      "metrics": {
+        "bookmark_count": 1194,
+        "impression_count": 33057,
+        "like_count": 735,
+        "quote_count": 1,
+        "reply_count": 17,
+        "repost_count": 101
+      },
+      "destination_urls": [
+        "https://bentogrids.com",
+        "https://designspells.com",
+        "https://navbar.gallery",
+        "https://a1.gallery",
+        "https://sectionmaster.com",
+        "https://supahero.io",
+        "https://404s.design",
+        "https://footer.design",
+        "https://unsection.com"
+      ]
+    },
+    {
+      "id": "2098683254853321073",
+      "url": "https://x.com/noahelhadedy/status/2098683254853321073",
+      "author": "noahelhadedy",
+      "username": "noahelhadedy",
+      "created_at": "2026-09-12T08:00:54.000Z",
+      "text_excerpt": "Mobile app inspiration websites\n\n1. https://t.co/qGgObZqBOY\n2. https://t.co/kxLulocuP4\n3. https://t.co/B9OXc4MlAg\n4. https://t.co/vegkaq2slB\n5. https://t.co/NxDa6NBXfZ\n6. https://t.co/rVc4lDvpAj\n7. https://t.co/4VBeuyrMnm\n\nWhat did I miss? https://t.co/zfgPLxqHsz",
+      "metrics": {
+        "bookmark_count": 3224,
+        "impression_count": 78726,
+        "like_count": 1761,
+        "quote_count": 4,
+        "reply_count": 35,
+        "repost_count": 238
+      },
+      "destination_urls": [
+        "https://appshots.design",
+        "https://screensdesign.com",
+        "https://refero.design",
+        "https://pageflows.com",
+        "https://gummble.com",
+        "https://collectui.com",
+        "https://revyl.com"
+      ]
+    },
+    {
+      "id": "2098749308338102329",
+      "url": "https://x.com/neropursue/status/2098749308338102329",
+      "author": "neropursue",
+      "username": "neropursue",
+      "created_at": "2026-09-12T12:23:22.000Z",
+      "text_excerpt": "If you\u2019re vibe coding an app, Save these websites \ud83d\udc47\n\n  - https://t.co/1pquNeDC0a  Open-source design skills for AI coding agents. \n- https://t.co/Q11X5ghX0t  Check if your website is ready to launch. \n- https://t.co/pjgv9tpY80  Free tools, APIs, hosting, and more. Free Public API",
+      "metrics": {
+        "bookmark_count": 670,
+        "impression_count": 21638,
+        "like_count": 370,
+        "quote_count": 0,
+        "reply_count": 12,
+        "repost_count": 30
+      },
+      "destination_urls": [
+        "https://opendesign.dev",
+        "https://isreadyforlaunch.com",
+        "https://Free-for.dev",
+        "https://freepublicapis.com",
+        "https://openclaude.gitlawb.com"
+      ]
+    },
+    {
+      "id": "2099023560429719726",
+      "url": "https://x.com/neropursue/status/2099023560429719726",
+      "author": "neropursue",
+      "username": "neropursue",
+      "created_at": "2026-09-13T06:33:09.000Z",
+      "text_excerpt": "Found a goldmine for UI builders \ud83d\udc40 save it now.\n\nBencho has a bunch of interactive UI components you can actually play with and use in your projects.\n\nCheck it out \u2192 https://t.co/JWMgU9C16v https://t.co/3jg0LBJXVg",
+      "metrics": {
+        "bookmark_count": 1544,
+        "impression_count": 47364,
+        "like_count": 970,
+        "quote_count": 2,
+        "reply_count": 26,
+        "repost_count": 55
+      },
+      "destination_urls": [
+        "https://bencho.dev/"
+      ]
+    },
+    {
+      "id": "2099400110589485058",
+      "url": "https://x.com/csaba_kissi/status/2099400110589485058",
+      "author": "csaba_kissi",
+      "username": "csaba_kissi",
+      "created_at": "2026-09-14T07:29:25.000Z",
+      "text_excerpt": "https://t.co/qaY8gmoiaw - 286 free components for vibe coders with prompts\nhttps://t.co/eyTVzdAne1 - 683 Open-source components for React\nhttps://t.co/QfIg7QY7Sn - Deploy apps without managing infrastructure\nhttps://t.co/MooYdXa0PM - Gives your coding agent a memory\nhttps://t.co/",
+      "metrics": {
+        "bookmark_count": 6,
+        "impression_count": 714,
+        "like_count": 4,
+        "quote_count": 0,
+        "reply_count": 2,
+        "repost_count": 0
+      },
+      "destination_urls": [
+        "https://vibeprompts.dev",
+        "https://uiable.com",
+        "https://sevalla.com",
+        "https://www.agent-memory.dev",
+        "https://styles.refero.design"
+      ]
+    },
     {
       "id": "2098141278404014576",
       "url": "https://x.com/pengsonal/status/2098141278404014576",

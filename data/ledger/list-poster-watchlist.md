@@ -1,6 +1,6 @@
 # List-poster watchlist
 
-Updated: 2026-09-12
+Updated: 2026-09-14
 
 ## Priority handles
 
@@ -46,3 +46,5 @@ Updated: 2026-09-12
 - @mr_nirajkumar07
 - @Shefali__J
 - @thedzianis
+- @Abmankendrick
+- @k2sbhai
