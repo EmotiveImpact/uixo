@@ -46,6 +46,7 @@ export type ProviderRecord = {
   url: string;
   rationale: string;
   assetCount: number;
+  adapter?: string;
 };
 export type Catalogue = { items: AssetRecord[]; total: number; nextOffset: number | null };
 export type RegistryStatus = {

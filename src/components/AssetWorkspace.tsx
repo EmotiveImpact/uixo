@@ -18,8 +18,13 @@ import { useSearchHotkey } from '../hooks/useSearchHotkey';
 import { EMPTY_ROUTE, routeToHref } from '../lib/url';
 import { navigateInApp } from '../lib/navigation';
 import { APP_SIDEBAR_SIZING } from '../lib/layout';
-import { EMPTY_ASSET_QUERY, assetHref, readAssetQuery } from '../lib/asset-library';
-import type { AssetQuery } from '../lib/asset-library';
+import {
+  EMPTY_ASSET_QUERY,
+  assetHref,
+  readAssetQuery,
+  registryRequest,
+} from '../lib/asset-library';
+import type { AssetQuery, ProviderRecord } from '../lib/asset-library';
 import type { ModalName, PriceFilter } from '../types';
 import './asset-library.css';
 
@@ -29,6 +34,7 @@ export function AssetWorkspace() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [modal, setModal] = useState<ModalName | null>(null);
+  const [assetProviders, setAssetProviders] = useState<ProviderRecord[]>([]);
   const searchRef = useRef<HTMLInputElement>(null);
   const dialogRef = useDialog(modal !== null);
   const { light, toggle: toggleTheme } = useTheme();
@@ -52,6 +58,15 @@ export function AssetWorkspace() {
   } = useLists(user?.id ?? null, settled);
   const assetSaves = useAssetSaves(user?.id ?? null, settled);
   useSearchHotkey(searchRef, !modal && !mobileOpen && !query.id);
+  useEffect(() => {
+    const abort = new AbortController();
+    void registryRequest<{ items: ProviderRecord[] }>('providers', { signal: abort.signal })
+      .then((value) => {
+        if (Array.isArray(value.items)) setAssetProviders(value.items);
+      })
+      .catch(() => {});
+    return () => abort.abort();
+  }, []);
   useEffect(() => {
     const read = () => setQuery(readAssetQuery(window.location.search));
     window.addEventListener('popstate', read);
@@ -131,7 +146,14 @@ export function AssetWorkspace() {
         onShowSavedAssets={() => navigate({ view: 'saved' }, true)}
         savedAssetCount={assetSaves.saved.length}
         assetKind={query.kind}
-        onChooseAssetKind={(kind) => navigate({ kind }, true)}
+        onChooseAssetKind={(kind) =>
+          navigate({ kind: query.kind === kind ? '' : kind, offset: 0 }, true)
+        }
+        assetProvider={query.provider}
+        assetProviders={assetProviders}
+        onChooseAssetProvider={(provider) =>
+          navigate({ provider: query.provider === provider ? '' : provider, offset: 0 }, true)
+        }
         onShowAssets={() => navigate({}, true)}
         onShowAll={() => go({ ...EMPTY_ROUTE })}
         homeHref="/browse"

@@ -1,4 +1,15 @@
-import { Grid2X2, Heart, Layers3, PanelLeft, Plus, Shapes, Trash2, X } from 'lucide-react';
+import {
+  Blocks,
+  Box,
+  Grid2X2,
+  Heart,
+  Layers3,
+  PanelLeft,
+  Plus,
+  Shapes,
+  Trash2,
+  X,
+} from 'lucide-react';
 import {
   AnimatedSidebar,
   AnimatedSidebarClose,
@@ -22,6 +33,7 @@ import { categoryCount, populatedSubs } from '../lib/filters';
 import { navigateInApp } from '../lib/navigation';
 import { DEFAULT_LIST_ID } from '../types';
 import type { List } from '../types';
+import type { ProviderRecord } from '../lib/asset-library';
 
 type AppSidebarProps = {
   category: string | null;
@@ -46,6 +58,9 @@ type AppSidebarProps = {
   savedAssetCount?: number;
   assetKind?: string;
   onChooseAssetKind?: (kind: string) => void;
+  assetProvider?: string;
+  assetProviders?: ProviderRecord[];
+  onChooseAssetProvider?: (provider: string) => void;
 };
 
 export function AppSidebar({
@@ -70,8 +85,18 @@ export function AppSidebar({
   savedAssetCount = 0,
   assetKind = '',
   onChooseAssetKind,
+  assetProvider = '',
+  assetProviders = [],
+  onChooseAssetProvider,
 }: AppSidebarProps) {
   const favourites = lists.find((list) => list.id === DEFAULT_LIST_ID);
+  const componentCount = assetProviders
+    .filter((provider) => provider.adapter !== 'github-icons')
+    .reduce((total, provider) => total + provider.assetCount, 0);
+  const iconCount = assetProviders
+    .filter((provider) => provider.adapter === 'github-icons')
+    .reduce((total, provider) => total + provider.assetCount, 0);
+  const assetCount = componentCount + iconCount;
   return (
     <AnimatedSidebar ariaLabel="UIXO navigation" collapsible="icon">
       <AnimatedSidebarHeader className="p-3 pb-2">
@@ -118,6 +143,7 @@ export function AppSidebar({
               <AnimatedSidebarMenuItem>
                 <AnimatedSidebarMenuButton
                   icon={<Shapes className="size-4" />}
+                  badge={assetCount ? String(assetCount) : undefined}
                   isActive={onAssets}
                   onSelect={onShowAssets}
                 >
@@ -172,14 +198,18 @@ export function AppSidebar({
             <AnimatedSidebarGroupLabel>Asset types</AnimatedSidebarGroupLabel>
             <AnimatedSidebarGroupContent>
               <AnimatedSidebarMenu>
-                {['component', 'icon'].map((kind) => (
-                  <AnimatedSidebarMenuItem key={kind}>
+                {[
+                  { id: 'component', label: 'Components', icon: Blocks, count: componentCount },
+                  { id: 'icon', label: 'Icons', icon: Shapes, count: iconCount },
+                ].map(({ id, label, icon: Icon, count }) => (
+                  <AnimatedSidebarMenuItem key={id}>
                     <AnimatedSidebarMenuButton
-                      icon={<Shapes className="size-4" />}
-                      isActive={assetKind === kind}
-                      onSelect={() => onChooseAssetKind(kind)}
+                      icon={<Icon className="size-4" />}
+                      badge={count ? String(count) : undefined}
+                      isActive={assetKind === id}
+                      onSelect={() => onChooseAssetKind(id)}
                     >
-                      {kind === 'icon' ? 'Icons' : 'Components'}
+                      {label}
                     </AnimatedSidebarMenuButton>
                   </AnimatedSidebarMenuItem>
                 ))}
@@ -222,47 +252,73 @@ export function AppSidebar({
           </AnimatedSidebarGroup>
         )}
 
-        <AnimatedSidebarGroup className="border-t border-border pt-4">
-          <AnimatedSidebarGroupLabel>
-            {onAssets ? 'Website categories' : 'Categories'}
-          </AnimatedSidebarGroupLabel>
-          <AnimatedSidebarGroupContent>
-            <AnimatedSidebarMenu>
-              {categories.map((entry) => {
-                const Icon = entry.icon;
-                // Subcategories with nothing in them are hidden rather than shown as dead ends.
-                const subs = populatedSubs(resources, entry);
-                return (
-                  <AnimatedSidebarMenuItem key={entry.name}>
+        {onAssets ? (
+          <AnimatedSidebarGroup className="border-t border-border pt-4">
+            <AnimatedSidebarGroupLabel>Sources</AnimatedSidebarGroupLabel>
+            <AnimatedSidebarGroupContent>
+              <AnimatedSidebarMenu>
+                {assetProviders.map((provider) => (
+                  <AnimatedSidebarMenuItem key={provider.id}>
                     <AnimatedSidebarMenuButton
-                      icon={<Icon className="size-4" />}
-                      badge={String(categoryCount(resources, entry))}
-                      isActive={category === entry.name}
-                      ariaExpanded={subs.length ? openSection === entry.name : undefined}
-                      onSelect={() => onChooseCategory(entry.name)}
+                      icon={
+                        provider.adapter === 'github-icons' ? (
+                          <Shapes className="size-4" />
+                        ) : (
+                          <Box className="size-4" />
+                        )
+                      }
+                      badge={String(provider.assetCount)}
+                      isActive={assetProvider === provider.id}
+                      onSelect={() => onChooseAssetProvider?.(provider.id)}
                     >
-                      {entry.name}
+                      {provider.name}
                     </AnimatedSidebarMenuButton>
-                    {subs.length > 0 && (
-                      <AnimatedSidebarMenuSub open={openSection === entry.name}>
-                        {subs.map((child) => (
-                          <AnimatedSidebarMenuSubItem key={child}>
-                            <AnimatedSidebarMenuSubButton
-                              isActive={category === entry.name && sub === child}
-                              onSelect={() => onChooseSub(entry.name, child)}
-                            >
-                              {child}
-                            </AnimatedSidebarMenuSubButton>
-                          </AnimatedSidebarMenuSubItem>
-                        ))}
-                      </AnimatedSidebarMenuSub>
-                    )}
                   </AnimatedSidebarMenuItem>
-                );
-              })}
-            </AnimatedSidebarMenu>
-          </AnimatedSidebarGroupContent>
-        </AnimatedSidebarGroup>
+                ))}
+              </AnimatedSidebarMenu>
+            </AnimatedSidebarGroupContent>
+          </AnimatedSidebarGroup>
+        ) : (
+          <AnimatedSidebarGroup className="border-t border-border pt-4">
+            <AnimatedSidebarGroupLabel>Categories</AnimatedSidebarGroupLabel>
+            <AnimatedSidebarGroupContent>
+              <AnimatedSidebarMenu>
+                {categories.map((entry) => {
+                  const Icon = entry.icon;
+                  // Subcategories with nothing in them are hidden rather than shown as dead ends.
+                  const subs = populatedSubs(resources, entry);
+                  return (
+                    <AnimatedSidebarMenuItem key={entry.name}>
+                      <AnimatedSidebarMenuButton
+                        icon={<Icon className="size-4" />}
+                        badge={String(categoryCount(resources, entry))}
+                        isActive={category === entry.name}
+                        ariaExpanded={subs.length ? openSection === entry.name : undefined}
+                        onSelect={() => onChooseCategory(entry.name)}
+                      >
+                        {entry.name}
+                      </AnimatedSidebarMenuButton>
+                      {subs.length > 0 && (
+                        <AnimatedSidebarMenuSub open={openSection === entry.name}>
+                          {subs.map((child) => (
+                            <AnimatedSidebarMenuSubItem key={child}>
+                              <AnimatedSidebarMenuSubButton
+                                isActive={category === entry.name && sub === child}
+                                onSelect={() => onChooseSub(entry.name, child)}
+                              >
+                                {child}
+                              </AnimatedSidebarMenuSubButton>
+                            </AnimatedSidebarMenuSubItem>
+                          ))}
+                        </AnimatedSidebarMenuSub>
+                      )}
+                    </AnimatedSidebarMenuItem>
+                  );
+                })}
+              </AnimatedSidebarMenu>
+            </AnimatedSidebarGroupContent>
+          </AnimatedSidebarGroup>
+        )}
       </AnimatedSidebarContent>
 
       <AnimatedSidebarFooter className="gap-3 border-none p-3">
