@@ -44,6 +44,8 @@ export function AppDialog({
   return (
     <dialog
       ref={dialogRef}
+      className={modal === 'submit' ? 'dialog-submit' : undefined}
+      aria-labelledby={modal === 'submit' ? 'dialog-title' : undefined}
       onCancel={onClose}
       onClick={(event) => {
         const dialog = dialogRef.current;

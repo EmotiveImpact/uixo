@@ -66,7 +66,9 @@ input {
 }
 button:focus-visible,
 a:focus-visible,
-input:focus-visible {
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 3px;
 }
@@ -348,6 +350,300 @@ dialog small {
   font-size: 11px;
   line-height: 1.6;
   margin-top: 14px;
+}
+.dialog-submit {
+  width: min(720px, calc(100% - 32px));
+  max-width: 720px;
+  max-height: min(820px, calc(100dvh - 32px));
+  padding: 0;
+  overflow-y: auto;
+}
+.dialog-submit .dialog-close {
+  z-index: 2;
+  background: var(--muted);
+}
+.submit-panel,
+.submit-result {
+  padding: 38px;
+}
+.submit-header {
+  padding-right: 44px;
+  margin-bottom: 30px;
+}
+.submit-kicker {
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+.submit-header h2,
+.submit-result h2 {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-size: 30px;
+  letter-spacing: -1.1px;
+}
+.submit-header p,
+.submit-result p {
+  max-width: 520px;
+  margin: 0;
+  font-size: 13px;
+}
+.submit-form {
+  display: grid;
+  gap: 22px;
+}
+.submit-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.submit-context-grid {
+  grid-template-columns: minmax(170px, 0.75fr) minmax(320px, 1.45fr);
+}
+dialog .submit-field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+  color: var(--foreground);
+  font-size: 11px;
+  font-weight: 500;
+}
+dialog .submit-field > span:first-child,
+dialog .submit-pricing legend {
+  line-height: 1.4;
+}
+dialog .submit-field input,
+dialog .submit-field select,
+dialog .submit-field textarea,
+.submit-url-input,
+.submit-price-options {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  border-radius: 11px;
+  background: #121214;
+  color: var(--foreground);
+}
+.light dialog .submit-field input,
+.light dialog .submit-field select,
+.light dialog .submit-field textarea,
+.light .submit-url-input,
+.light .submit-price-options {
+  background: var(--muted);
+}
+dialog .submit-field input,
+dialog .submit-field select,
+dialog .submit-field textarea {
+  display: block;
+  margin: 0;
+  padding: 13px 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  outline: none;
+}
+dialog .submit-field select {
+  height: 44px;
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 17px) 19px,
+    calc(100% - 12px) 19px;
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+}
+dialog .submit-field textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.55;
+}
+.submit-url-input {
+  display: flex;
+  align-items: center;
+  padding-left: 13px;
+  color: var(--muted-foreground);
+}
+dialog .submit-url-input input {
+  background: transparent;
+  padding-left: 9px;
+}
+dialog .submit-domain {
+  margin: -2px 2px 0;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 400;
+}
+.submit-pricing {
+  padding: 0;
+  border: 0;
+}
+.submit-pricing legend {
+  margin-bottom: 8px;
+}
+.submit-price-options {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 4px;
+}
+.submit-pricing button {
+  height: 36px;
+  border-radius: 8px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.submit-pricing button[data-state='on'] {
+  background: var(--accent);
+  color: var(--foreground);
+}
+.light .submit-pricing button[data-state='on'] {
+  background: var(--background);
+}
+.submit-note > span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+dialog .submit-note > span small {
+  display: inline;
+  margin: 0;
+  font-size: 10px;
+  font-weight: 400;
+}
+.submit-error {
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--destructive) 12%, transparent);
+  color: #fca5a5;
+  padding: 11px 13px;
+  margin: -6px 0 0;
+}
+.light .submit-error {
+  color: var(--destructive);
+}
+.submit-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+.submit-promise {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--foreground);
+  font-size: 11px;
+}
+.submit-promise > svg {
+  color: var(--muted-foreground);
+  flex: 0 0 auto;
+}
+.submit-promise span {
+  display: grid;
+  gap: 1px;
+}
+dialog .submit-promise small {
+  margin: 0;
+  font-size: 10px;
+}
+dialog .primary.submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: auto;
+  min-width: 162px;
+  margin: 0;
+  padding: 13px 17px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 12px;
+  font-weight: 550;
+}
+.submit-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+.submit-result {
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.submit-result-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.submit-result-summary {
+  display: grid;
+  gap: 3px;
+  width: 100%;
+  margin: 26px 0 14px;
+  padding: 15px 16px;
+  border-radius: 11px;
+  background: #121214;
+  font-size: 12px;
+}
+.light .submit-result-summary {
+  background: var(--muted);
+}
+.submit-result-summary small {
+  margin: 0;
+  font-size: 10px;
+}
+.submit-again {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted-foreground);
+  padding: 9px 0;
+  font-size: 11px;
+}
+@media (max-width: 680px) {
+  .dialog-submit {
+    max-height: calc(100dvh - 20px);
+    width: calc(100% - 20px);
+  }
+  .submit-panel,
+  .submit-result {
+    padding: 28px 20px 22px;
+  }
+  .submit-header {
+    margin-bottom: 24px;
+  }
+  .submit-header h2,
+  .submit-result h2 {
+    font-size: 25px;
+  }
+  .submit-field-grid,
+  .submit-context-grid {
+    grid-template-columns: 1fr;
+  }
+  .submit-form {
+    gap: 18px;
+  }
+  .submit-price-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .submit-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  dialog .primary.submit-button {
+    width: 100%;
+  }
 }
 .collection {
   display: flex;

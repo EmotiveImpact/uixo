@@ -4,6 +4,13 @@ Newest first. Dates are Europe/London.
 
 ## 2026-09-14
 
+### Website submissions
+
+- Replace the basic three-field suggestion dialog with a responsive, borderless submission workspace.
+- Capture category and pricing context alongside the curator note without changing the existing moderation API.
+- Accept bare domains, show the detected website before submission, retain entered details after server errors, and show an explicit review-queue success state.
+- Explain anonymous and signed-in behavior at the point of submission and let visitors submit another suggestion without reopening the dialog.
+
 ### Catalogue pagination and footer
 
 - Replace the small asset pager with a full-width, borderless section showing the current page, total pages, visible result range, numbered page choices, and larger Previous/Next actions.
