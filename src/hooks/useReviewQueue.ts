@@ -30,11 +30,18 @@ const EMPTY: QueueState = {
  * re-importing an updated scout file never silently discards work already done.
  */
 export function useReviewQueue(reviewerId: string | null) {
-  const [state, setState] = useState<QueueState>(() => ({
-    ...EMPTY,
-    candidates: readStored<Candidate[]>(CANDIDATES_KEY, []),
-    reviews: readStored<Record<string, Review>>(REVIEWS_KEY, {}),
-  }));
+  const [state, setState] = useState<QueueState>(() => {
+    const storedCandidates = readStored<Candidate[]>(CANDIDATES_KEY, []);
+    const { accepted, problems, duplicates } = importCandidates({ items: storedCandidates });
+
+    return {
+      ...EMPTY,
+      candidates: accepted,
+      reviews: readStored<Record<string, Review>>(REVIEWS_KEY, {}),
+      problems,
+      duplicates,
+    };
+  });
 
   useEffect(() => {
     writeStored(CANDIDATES_KEY, state.candidates);

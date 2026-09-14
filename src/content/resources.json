@@ -5,11 +5,23 @@
     "description": "Drop-in WebGL orbs and shader backgrounds for React, with controls for colour, distortion and motion.",
     "category": "Components",
     "subcategory": "Animation",
-    "tags": ["Shaders", "React"],
+    "tags": [
+      "Shaders",
+      "React"
+    ],
     "pricing": "Free",
     "creator": "zzzzshawn",
-    "formats": ["React"],
-    "aliases": ["orb kit", "shader", "webgl", "three.js", "sphere", "animated background"],
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "orb kit",
+      "shader",
+      "webgl",
+      "three.js",
+      "sphere",
+      "animated background"
+    ],
     "addedOrder": 1,
     "featured": true,
     "url": "https://orbkit.zzzzshawn.cloud/",
@@ -22,11 +34,23 @@
     "description": "Grainy gradient backgrounds in high-resolution PNG, grouped into collections you can browse by mood and colour.",
     "category": "Backgrounds",
     "subcategory": "Gradients",
-    "tags": ["Textures", "Gradients"],
+    "tags": [
+      "Textures",
+      "Gradients"
+    ],
     "pricing": "Freemium",
     "creator": "Basit",
-    "formats": ["PNG"],
-    "aliases": ["grain", "noise", "mesh gradient", "wallpaper", "texture", "hero background"],
+    "formats": [
+      "PNG"
+    ],
+    "aliases": [
+      "grain",
+      "noise",
+      "mesh gradient",
+      "wallpaper",
+      "texture",
+      "hero background"
+    ],
     "addedOrder": 2,
     "featured": true,
     "url": "https://grainient.supply/collections",
@@ -36,14 +60,25 @@
   {
     "id": "shadcn",
     "name": "shadcn/ui",
-    "description": "Accessible React components you copy into your own codebase and own outright \u2014 no dependency to upgrade, no styles to fight.",
+    "description": "Accessible React components you copy into your own codebase and own outright — no dependency to upgrade, no styles to fight.",
     "category": "UI libraries",
     "subcategory": "React",
-    "tags": ["React", "Components"],
+    "tags": [
+      "React",
+      "Components"
+    ],
     "pricing": "Free",
     "creator": "shadcn",
-    "formats": ["React"],
-    "aliases": ["shad cn", "shadcn ui", "radix", "tailwind components", "headless ui"],
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "shad cn",
+      "shadcn ui",
+      "radix",
+      "tailwind components",
+      "headless ui"
+    ],
     "addedOrder": 3,
     "featured": true,
     "url": "https://ui.shadcn.com/",
@@ -53,14 +88,25 @@
   {
     "id": "reactbits",
     "name": "React Bits",
-    "description": "Animated React components \u2014 text effects, backgrounds and transitions \u2014 with the source shown beside every live demo.",
+    "description": "Animated React components — text effects, backgrounds and transitions — with the source shown beside every live demo.",
     "category": "Components",
     "subcategory": "Animation",
-    "tags": ["React", "Motion"],
+    "tags": [
+      "React",
+      "Motion"
+    ],
     "pricing": "Freemium",
     "creator": "David Haz",
-    "formats": ["React"],
-    "aliases": ["react bits", "animation", "motion", "text effects", "scroll effects"],
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "react bits",
+      "animation",
+      "motion",
+      "text effects",
+      "scroll effects"
+    ],
     "addedOrder": 4,
     "featured": true,
     "url": "https://reactbits.dev/",
@@ -72,11 +118,23 @@
     "description": "The community fork of Feather: a large, consistent outline icon set available as raw SVG and as a tree-shakeable React package.",
     "category": "Icons",
     "subcategory": "Outline",
-    "tags": ["SVG", "Open source"],
+    "tags": [
+      "SVG",
+      "Open source"
+    ],
     "pricing": "Free",
     "creator": "Lucide",
-    "formats": ["SVG", "React"],
-    "aliases": ["feather icons", "icon set", "svg icons", "icon pack", "stroke icons"],
+    "formats": [
+      "SVG",
+      "React"
+    ],
+    "aliases": [
+      "feather icons",
+      "icon set",
+      "svg icons",
+      "icon pack",
+      "stroke icons"
+    ],
     "addedOrder": 5,
     "featured": true,
     "url": "https://lucide.dev/",
@@ -88,11 +146,21 @@
     "description": "A directory of tools and sites assembled by working designers, biased toward things people actually ship rather than bookmark.",
     "category": "Inspiration",
     "subcategory": "Directories",
-    "tags": ["Websites", "Tools"],
+    "tags": [
+      "Websites",
+      "Tools"
+    ],
     "pricing": "Free",
     "creator": "shedsgns & Phil Hedayatnia",
-    "formats": ["Web"],
-    "aliases": ["built by designers", "curated directory", "design resources", "tool list"],
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "built by designers",
+      "curated directory",
+      "design resources",
+      "tool list"
+    ],
     "addedOrder": 6,
     "featured": false,
     "url": "https://builtbydesigners.com/",
@@ -116,12 +184,6519 @@
     ],
     "pricing": "Freemium",
     "creator": "UI8",
-    "formats": ["Figma", "Framer", "Webflow", "SVG"],
-    "aliases": ["ui 8", "marketplace", "ui kits", "templates", "mockups", "fonts", "figma files"],
+    "formats": [
+      "Figma",
+      "Framer",
+      "Webflow",
+      "SVG"
+    ],
+    "aliases": [
+      "ui 8",
+      "marketplace",
+      "ui kits",
+      "templates",
+      "mockups",
+      "fonts",
+      "figma files"
+    ],
     "addedOrder": 7,
     "featured": true,
     "url": "https://ui8.net/",
     "lastChecked": "2026-09-10",
     "framing": "center"
+  },
+  {
+    "id": "navbar-gallery",
+    "name": "Navbar Gallery",
+    "description": "Curated navbar / navigation design inspiration.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Navigation",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "navbar.gallery",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Navigation",
+      "Gallery",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 8,
+    "featured": false,
+    "url": "https://www.navbar.gallery/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "supahero",
+    "name": "Supahero",
+    "description": "Handpicked website hero section library.",
+    "category": "Inspiration",
+    "subcategory": "Landing pages",
+    "tags": [
+      "Hero",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "Supahero",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Hero",
+      "Gallery",
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 9,
+    "featured": false,
+    "url": "https://supahero.io/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "cta-gallery",
+    "name": "CTA Gallery",
+    "description": "Curated CTA / button design inspiration.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "CTA",
+      "Buttons",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "cta.gallery",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "CTA",
+      "Buttons",
+      "Gallery",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 10,
+    "featured": false,
+    "url": "https://www.cta.gallery/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "footer-design",
+    "name": "Footer Design",
+    "description": "Footer Design is a reference library for exploring Footer, Gallery and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Footer",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "footer.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Footer",
+      "Gallery",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 11,
+    "featured": false,
+    "url": "https://www.footer.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "404s",
+    "name": "404s",
+    "description": "Curated creative 404 / error page designs.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "404",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "404s.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "404",
+      "Gallery",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 12,
+    "featured": false,
+    "url": "https://www.404s.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "interface-craft",
+    "name": "Interface Craft",
+    "description": "Working library for designing with uncommon care.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Craft",
+      "Interface"
+    ],
+    "pricing": "Free",
+    "creator": "Interface Craft",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Craft",
+      "Interface",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 13,
+    "featured": false,
+    "url": "https://www.interfacecraft.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "userinterface-wiki",
+    "name": "userinterface.wiki",
+    "description": "Living manual: UI patterns, motion, typography.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Patterns",
+      "Motion",
+      "Typography"
+    ],
+    "pricing": "Free",
+    "creator": "userinterface.wiki",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Patterns",
+      "Motion",
+      "Typography",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 14,
+    "featured": false,
+    "url": "https://www.userinterface.wiki/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "devouring-details",
+    "name": "Devouring Details",
+    "description": "Interface details most people miss.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Details",
+      "Craft"
+    ],
+    "pricing": "Freemium",
+    "creator": "Devouring Details",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Details",
+      "Craft",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 15,
+    "featured": false,
+    "url": "https://devouringdetails.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "motion-primitives",
+    "name": "Motion-Primitives",
+    "description": "Open-source animated UI kit (React/Next/Tailwind).",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "React",
+      "Motion",
+      "Open source"
+    ],
+    "pricing": "Free",
+    "creator": "ibelick",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "Motion",
+      "Open source",
+      "Animation"
+    ],
+    "addedOrder": 16,
+    "featured": false,
+    "url": "https://motion-primitives.com",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "aceternity",
+    "name": "Aceternity UI",
+    "description": "React/Tailwind animated components, blocks, templates.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "React",
+      "Tailwind",
+      "Templates"
+    ],
+    "pricing": "Freemium",
+    "creator": "Aceternity",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "Tailwind",
+      "Templates",
+      "Animation"
+    ],
+    "addedOrder": 17,
+    "featured": false,
+    "url": "https://ui.aceternity.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "magic-ui",
+    "name": "Magic UI",
+    "description": "Motion-first UI components & landing templates.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "React",
+      "Motion",
+      "Landing"
+    ],
+    "pricing": "Freemium",
+    "creator": "Magic UI",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "Motion",
+      "Landing",
+      "Animation"
+    ],
+    "addedOrder": 18,
+    "featured": false,
+    "url": "https://magicui.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "hover-dev",
+    "name": "Hover.dev",
+    "description": "Animated UI components & interaction templates.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "React",
+      "Interactions"
+    ],
+    "pricing": "Freemium",
+    "creator": "Hover",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "Interactions",
+      "Animation"
+    ],
+    "addedOrder": 19,
+    "featured": false,
+    "url": "https://www.hover.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "60fps",
+    "name": "60fps",
+    "description": "UI/UX animation & interaction details from top apps.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Animation",
+      "Micro-interactions"
+    ],
+    "pricing": "Freemium",
+    "creator": "60fps",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Animation",
+      "Micro-interactions",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 20,
+    "featured": false,
+    "url": "https://60fps.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "if-design-patterns",
+    "name": "IF Design Patterns",
+    "description": "Trustworthy service / responsible AI design patterns.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Patterns",
+      "Responsible AI"
+    ],
+    "pricing": "Free",
+    "creator": "Projects by IF",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Patterns",
+      "Responsible AI",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 21,
+    "featured": false,
+    "url": "https://catalogue.projectsbyif.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "abtest-design",
+    "name": "abtest.design",
+    "description": "Curated A/B test results from best-in-class apps.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "A/B tests",
+      "UX research"
+    ],
+    "pricing": "Freemium",
+    "creator": "abtest.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "A/B tests",
+      "UX research",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 22,
+    "featured": false,
+    "url": "https://abtest.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "design-spells",
+    "name": "Design Spells",
+    "description": "Micro-interactions, easter eggs, delightful web details.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Micro-interactions",
+      "Delight"
+    ],
+    "pricing": "Free",
+    "creator": "Design Spells",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Micro-interactions",
+      "Delight",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 23,
+    "featured": false,
+    "url": "https://designspells.com",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "uxsnaps",
+    "name": "UXSnaps",
+    "description": "UXSnaps is a reference library for exploring UI breakdowns, Apps and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "UI breakdowns",
+      "Apps"
+    ],
+    "pricing": "Freemium",
+    "creator": "UXSnaps",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "UI breakdowns",
+      "Apps",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 24,
+    "featured": false,
+    "url": "https://uxsnaps.com",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "ui-playbook",
+    "name": "UI Playbook",
+    "description": "Documented collection of UI components.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "UI components",
+      "Reference"
+    ],
+    "pricing": "Free",
+    "creator": "UI Playbook",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "UI components",
+      "Reference",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 25,
+    "featured": false,
+    "url": "https://uiplaybook.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "wandpress",
+    "name": "WandPress",
+    "description": "React/shadcn-style WordPress-admin component library.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "shadcn",
+      "Admin",
+      "WordPress-style"
+    ],
+    "pricing": "Free",
+    "creator": "jonbuster",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "shadcn",
+      "Admin",
+      "WordPress-style",
+      "React"
+    ],
+    "addedOrder": 26,
+    "featured": false,
+    "url": "https://wandpress.netlify.app/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "ripplix",
+    "name": "Ripplix",
+    "description": "Curated UI animation / micro-interaction library.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Animation",
+      "Micro-interactions"
+    ],
+    "pricing": "Freemium",
+    "creator": "Ripplix",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Animation",
+      "Micro-interactions",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 27,
+    "featured": false,
+    "url": "https://www.ripplix.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "spectrum-ui",
+    "name": "Spectrum UI",
+    "description": "Spectrum UI provides reusable components focused on React, shadcn and Motion for building polished interfaces.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "React",
+      "shadcn",
+      "Motion"
+    ],
+    "pricing": "Free",
+    "creator": "Spectrum UI",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "shadcn",
+      "Motion",
+      "Animation"
+    ],
+    "addedOrder": 28,
+    "featured": false,
+    "url": "https://ui.spectrumhq.in/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "21st-dev",
+    "name": "21st.dev",
+    "description": "21st.dev is a marketplace or resource hub for discovering React, Tailwind and shadcn.",
+    "category": "Marketplace",
+    "subcategory": "UI kits",
+    "tags": [
+      "React",
+      "Tailwind",
+      "shadcn",
+      "Components"
+    ],
+    "pricing": "Freemium",
+    "creator": "21st",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "Tailwind",
+      "shadcn",
+      "Components",
+      "UI kits"
+    ],
+    "addedOrder": 29,
+    "featured": false,
+    "url": "https://21st.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "shadcnblocks",
+    "name": "Shadcnblocks",
+    "description": "Shadcnblocks is a marketplace or resource hub for discovering shadcn, Blocks and Premium.",
+    "category": "Marketplace",
+    "subcategory": "UI kits",
+    "tags": [
+      "shadcn",
+      "Blocks",
+      "Premium"
+    ],
+    "pricing": "Paid",
+    "creator": "Shadcnblocks",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "shadcn",
+      "Blocks",
+      "Premium",
+      "React",
+      "UI kits"
+    ],
+    "addedOrder": 30,
+    "featured": false,
+    "url": "https://www.shadcnblocks.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "8bitcn",
+    "name": "8bitcn/ui",
+    "description": "A retro UI library of 8-bit styled shadcn/ui components, blocks, and game-ready interfaces for modern React apps.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "shadcn",
+      "Retro",
+      "8-bit"
+    ],
+    "pricing": "Free",
+    "creator": "8bitcn",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "shadcn",
+      "Retro",
+      "8-bit",
+      "React"
+    ],
+    "addedOrder": 31,
+    "featured": false,
+    "url": "https://www.8bitcn.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "evilcharts",
+    "name": "EvilCharts",
+    "description": "EvilCharts provides reusable components focused on Charts and React for building polished interfaces.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "Charts",
+      "React"
+    ],
+    "pricing": "Freemium",
+    "creator": "EvilCharts",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Charts",
+      "React",
+      "Animation"
+    ],
+    "addedOrder": 32,
+    "featured": false,
+    "url": "https://evilcharts.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "coss-ui",
+    "name": "coss UI",
+    "description": "coss UI is a UI library for building product interfaces with React and UI.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "React",
+      "UI"
+    ],
+    "pricing": "Freemium",
+    "creator": "coss",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "UI"
+    ],
+    "addedOrder": 33,
+    "featured": false,
+    "url": "https://coss.com/ui",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "rareui",
+    "name": "Rare UI",
+    "description": "Rare UI is a UI library for building product interfaces with React and UI.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "React",
+      "UI"
+    ],
+    "pricing": "Freemium",
+    "creator": "Rare UI",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "UI"
+    ],
+    "addedOrder": 34,
+    "featured": false,
+    "url": "https://www.rareui.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "beui",
+    "name": "beui",
+    "description": "beui is a UI library for building product interfaces with React and UI.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "React",
+      "UI"
+    ],
+    "pricing": "Free",
+    "creator": "beui",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "UI"
+    ],
+    "addedOrder": 35,
+    "featured": false,
+    "url": "https://beui.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "easyui",
+    "name": "Easy UI",
+    "description": "Easy UI is a UI library for building product interfaces with React and UI.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "React",
+      "UI"
+    ],
+    "pricing": "Freemium",
+    "creator": "Easy UI",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "UI"
+    ],
+    "addedOrder": 36,
+    "featured": false,
+    "url": "https://www.easyui.site/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "reui",
+    "name": "ReUI",
+    "description": "ReUI is a UI library for building product interfaces with React and UI.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "React",
+      "UI"
+    ],
+    "pricing": "Freemium",
+    "creator": "ReUI",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "UI"
+    ],
+    "addedOrder": 37,
+    "featured": false,
+    "url": "https://reui.io/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "coolors",
+    "name": "Coolors",
+    "description": "Coolors provides backgrounds and colour resources focused on Colors, Palettes and Web.",
+    "category": "Backgrounds",
+    "subcategory": "Gradients",
+    "tags": [
+      "Colors",
+      "Palettes"
+    ],
+    "pricing": "Freemium",
+    "creator": "Coolors",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Colors",
+      "Palettes",
+      "Web",
+      "Gradients"
+    ],
+    "addedOrder": 38,
+    "featured": false,
+    "url": "https://coolors.co/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "fontjoy",
+    "name": "Fontjoy",
+    "description": "Fontjoy helps designers discover and work with typography focused on Pairing, AI and Web.",
+    "category": "Fonts",
+    "subcategory": "Sans serif",
+    "tags": [
+      "Pairing",
+      "AI"
+    ],
+    "pricing": "Free",
+    "creator": "Fontjoy",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Pairing",
+      "AI",
+      "Web",
+      "Sans serif"
+    ],
+    "addedOrder": 39,
+    "featured": false,
+    "url": "https://fontjoy.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "whatthefont",
+    "name": "WhatTheFont",
+    "description": "WhatTheFont helps designers discover and work with typography focused on Identification, Tool and Web.",
+    "category": "Fonts",
+    "subcategory": "Display",
+    "tags": [
+      "Identification",
+      "Tool"
+    ],
+    "pricing": "Freemium",
+    "creator": "MyFonts",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Identification",
+      "Tool",
+      "Web",
+      "Display"
+    ],
+    "addedOrder": 40,
+    "featured": false,
+    "url": "https://www.myfonts.com/pages/whatthefont",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "favicon-io",
+    "name": "favicon.io",
+    "description": "favicon.io provides an icon collection focused on Favicon, Generator and SVG for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Outline",
+    "tags": [
+      "Favicon",
+      "Generator"
+    ],
+    "pricing": "Free",
+    "creator": "favicon.io",
+    "formats": [
+      "SVG",
+      "PNG"
+    ],
+    "aliases": [
+      "Favicon",
+      "Generator",
+      "SVG",
+      "PNG",
+      "Outline"
+    ],
+    "addedOrder": 41,
+    "featured": false,
+    "url": "https://favicon.io/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "undraw",
+    "name": "unDraw",
+    "description": "unDraw provides illustration resources focused on SVG and Open source for digital products.",
+    "category": "Illustrations",
+    "subcategory": "Vector",
+    "tags": [
+      "SVG",
+      "Open source"
+    ],
+    "pricing": "Free",
+    "creator": "unDraw",
+    "formats": [
+      "SVG"
+    ],
+    "aliases": [
+      "SVG",
+      "Open source",
+      "Vector"
+    ],
+    "addedOrder": 42,
+    "featured": false,
+    "url": "https://undraw.co/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "made-design",
+    "name": "made.design",
+    "description": "made.design is a reference library for exploring Design and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Design"
+    ],
+    "pricing": "Freemium",
+    "creator": "made.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Design",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 43,
+    "featured": false,
+    "url": "https://www.made.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "kibo-ui",
+    "name": "Kibo UI",
+    "description": "Kibo UI is a custom registry of composable, accessible and open source components designed for use with shadcn/ui.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "shadcn",
+      "Accessible",
+      "Open source"
+    ],
+    "pricing": "Free",
+    "creator": "Kibo UI",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "shadcn",
+      "Accessible",
+      "Open source",
+      "React"
+    ],
+    "addedOrder": 44,
+    "featured": false,
+    "url": "https://www.kibo-ui.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "tailark",
+    "name": "Tailark",
+    "description": "Tailark is a Shadcn UI registry of marketing blocks, pages, and illustrations for building beautiful marketing websites.",
+    "category": "Templates",
+    "subcategory": "Coded",
+    "tags": [
+      "shadcn",
+      "Marketing",
+      "Blocks"
+    ],
+    "pricing": "Freemium",
+    "creator": "Tailark",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "shadcn",
+      "Marketing",
+      "Blocks",
+      "React",
+      "Coded"
+    ],
+    "addedOrder": 45,
+    "featured": false,
+    "url": "https://tailark.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "dice-ui",
+    "name": "Dice UI",
+    "description": "Dice UI is a UI library for building product interfaces with shadcn, Accessible and Tailwind.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "shadcn",
+      "Accessible",
+      "Tailwind"
+    ],
+    "pricing": "Free",
+    "creator": "Dice UI",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "shadcn",
+      "Accessible",
+      "Tailwind",
+      "React"
+    ],
+    "addedOrder": 46,
+    "featured": false,
+    "url": "https://diceui.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "badtz-ui",
+    "name": "BadtzUI",
+    "description": "An open-source React UI library with production-ready animations. Weekly updates. Built with React, Tailwind, TypeScript & JavaScript.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "React",
+      "Animations",
+      "Open source"
+    ],
+    "pricing": "Free",
+    "creator": "BadtzUI",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "Animations",
+      "Open source"
+    ],
+    "addedOrder": 47,
+    "featured": false,
+    "url": "https://www.badtz-ui.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "bento-grids",
+    "name": "Bento Grids",
+    "description": "Bento Grids is a reference library for exploring Bento, Layouts and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Bento",
+      "Layouts"
+    ],
+    "pricing": "Free",
+    "creator": "Bento Grids",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Bento",
+      "Layouts",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 48,
+    "featured": false,
+    "url": "https://bentogrids.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "rebrand-gallery",
+    "name": "rebrand.gallery",
+    "description": "rebrand.gallery is a reference library for exploring Rebrand, Brand and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Rebrand",
+      "Brand"
+    ],
+    "pricing": "Free",
+    "creator": "rebrand.gallery",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Rebrand",
+      "Brand",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 49,
+    "featured": false,
+    "url": "https://www.rebrand.gallery/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "gridddy",
+    "name": "Gridddy",
+    "description": "Gridddy provides templates and workflow resources focused on Grids and Framer.",
+    "category": "Templates",
+    "subcategory": "Framer",
+    "tags": [
+      "Grids",
+      "Framer"
+    ],
+    "pricing": "Freemium",
+    "creator": "Gridddy",
+    "formats": [
+      "Framer"
+    ],
+    "aliases": [
+      "Grids",
+      "Framer"
+    ],
+    "addedOrder": 50,
+    "featured": false,
+    "url": "https://gridddy.framer.website/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "landing-love",
+    "name": "landing.love",
+    "description": "landing.love is a reference library for exploring Landing pages and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Landing pages",
+    "tags": [
+      "Landing pages"
+    ],
+    "pricing": "Free",
+    "creator": "landing.love",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Landing pages",
+      "Web"
+    ],
+    "addedOrder": 51,
+    "featured": false,
+    "url": "https://www.landing.love/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "refero-styles",
+    "name": "Refero Styles",
+    "description": "Refero Styles is a reference library for exploring Styles, UI and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Styles",
+      "UI"
+    ],
+    "pricing": "Freemium",
+    "creator": "Refero",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Styles",
+      "UI",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 52,
+    "featured": false,
+    "url": "https://styles.refero.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "recent-design",
+    "name": "recent.design",
+    "description": "recent.design is a reference library for exploring Recent, Gallery and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Recent",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "recent.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Recent",
+      "Gallery",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 53,
+    "featured": false,
+    "url": "https://recent.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "curated-design",
+    "name": "curated.design",
+    "description": "curated.design is a reference library for exploring Curated, Gallery and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Curated",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "curated.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Curated",
+      "Gallery",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 54,
+    "featured": false,
+    "url": "https://curated.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "vantaui",
+    "name": "Vanta UI",
+    "description": "Vanta UI is a UI library for building product interfaces with React and UI.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "React",
+      "UI"
+    ],
+    "pricing": "Freemium",
+    "creator": "Vanta UI",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "UI"
+    ],
+    "addedOrder": 55,
+    "featured": false,
+    "url": "https://www.vantaui.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "design-on-x",
+    "name": "Design On X",
+    "description": "A multilingual design inspiration gallery collecting standout interface, brand, motion, and product work from creators on X.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "X",
+      "Gallery",
+      "Motion"
+    ],
+    "pricing": "Free",
+    "creator": "Northlight",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "X",
+      "Gallery",
+      "Motion",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 56,
+    "featured": false,
+    "url": "https://design-on-x.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "internet-designs",
+    "name": "Internet Designs",
+    "description": "Internet Designs is a reference library for exploring Web design, Gallery and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Web design",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "Internet Designs",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web design",
+      "Gallery",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 57,
+    "featured": false,
+    "url": "https://internetdesigns.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "collect-ui",
+    "name": "CollectUI",
+    "description": "Discover amazing UI designs, portfolios, and inspiration curated by design magicians.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "UI",
+      "Daily"
+    ],
+    "pricing": "Free",
+    "creator": "CollectUI",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "UI",
+      "Daily",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 58,
+    "featured": false,
+    "url": "https://collectui.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "page-flows",
+    "name": "Page Flows",
+    "description": "Page Flows is a reference library for exploring User flows, Apps and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "User flows",
+      "Apps"
+    ],
+    "pricing": "Paid",
+    "creator": "Page Flows",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "User flows",
+      "Apps",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 59,
+    "featured": false,
+    "url": "https://pageflows.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "refero",
+    "name": "Refero",
+    "description": "Refero is a reference library for exploring UI, iOS and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "UI",
+      "iOS",
+      "Web"
+    ],
+    "pricing": "Freemium",
+    "creator": "Refero",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "UI",
+      "iOS",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 60,
+    "featured": false,
+    "url": "https://refero.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "mobbin",
+    "name": "Mobbin",
+    "description": "Save hours of UI & UX research with our library of 400,000+ fully searchable mobile & web app screenshots.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Mobile",
+      "Web",
+      "Screens"
+    ],
+    "pricing": "Freemium",
+    "creator": "Mobbin",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Mobile",
+      "Web",
+      "Screens",
+      "Directories"
+    ],
+    "addedOrder": 61,
+    "featured": false,
+    "url": "https://mobbin.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "aura-build",
+    "name": "Aura",
+    "description": "Aura provides templates and workflow resources focused on AI, Builder and Web.",
+    "category": "Templates",
+    "subcategory": "Coded",
+    "tags": [
+      "AI",
+      "Builder"
+    ],
+    "pricing": "Freemium",
+    "creator": "Aura",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "AI",
+      "Builder",
+      "Web",
+      "Coded"
+    ],
+    "addedOrder": 62,
+    "featured": false,
+    "url": "https://www.aura.build/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "neuform",
+    "name": "Neuform",
+    "description": "Neuform provides templates and workflow resources focused on AI, Design and Web.",
+    "category": "Templates",
+    "subcategory": "Coded",
+    "tags": [
+      "AI",
+      "Design"
+    ],
+    "pricing": "Freemium",
+    "creator": "Neuform",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "AI",
+      "Design",
+      "Web",
+      "Coded"
+    ],
+    "addedOrder": 63,
+    "featured": false,
+    "url": "https://neuform.ai/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "microinteractions-ui",
+    "name": "MicroInteractions UI",
+    "description": "A collection of ready-to-use animated UI components built with React, Tailwind CSS, Shadcn, and Framer Motion.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "React",
+      "Framer Motion",
+      "Shadcn"
+    ],
+    "pricing": "Freemium",
+    "creator": "MicroInteractions UI",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "Framer Motion",
+      "Shadcn",
+      "Animation"
+    ],
+    "addedOrder": 64,
+    "featured": false,
+    "url": "https://www.microinteractionsui.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "annnimate",
+    "name": "Annnimate",
+    "description": "Annnimate provides reusable components focused on Animation and React for building polished interfaces.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "Animation"
+    ],
+    "pricing": "Freemium",
+    "creator": "Annnimate",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Animation",
+      "React"
+    ],
+    "addedOrder": 65,
+    "featured": false,
+    "url": "https://annnimate.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "saasframe",
+    "name": "SaaSFrame",
+    "description": "SaaSFrame is a reference library for exploring SaaS, UX and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "SaaS",
+      "UX"
+    ],
+    "pricing": "Freemium",
+    "creator": "SaaSFrame",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "SaaS",
+      "UX",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 66,
+    "featured": false,
+    "url": "https://www.saasframe.io/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "css-design-awards",
+    "name": "CSS Design Awards",
+    "description": "CSS Design Awards is a reference library for exploring Awards, CSS and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Landing pages",
+    "tags": [
+      "Awards",
+      "CSS"
+    ],
+    "pricing": "Free",
+    "creator": "CSS Design Awards",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Awards",
+      "CSS",
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 67,
+    "featured": false,
+    "url": "https://cssdesignawards.com",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "minimal-gallery",
+    "name": "Minimal Gallery",
+    "description": "Minimal Gallery is a reference library for exploring Minimal, Gallery and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Minimal",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "Minimal Gallery",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Minimal",
+      "Gallery",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 68,
+    "featured": false,
+    "url": "https://minimal.gallery/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "hoverstates",
+    "name": "Hover States",
+    "description": "Hover States is a reference library for exploring Websites, Archive and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Landing pages",
+    "tags": [
+      "Websites",
+      "Archive"
+    ],
+    "pricing": "Free",
+    "creator": "Hover States",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Websites",
+      "Archive",
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 69,
+    "featured": false,
+    "url": "https://www.hoverstat.es/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "fonts-in-use",
+    "name": "Fonts In Use",
+    "description": "Fonts In Use helps designers discover and work with typography focused on In use, Inspiration and Web.",
+    "category": "Fonts",
+    "subcategory": "Display",
+    "tags": [
+      "In use",
+      "Inspiration"
+    ],
+    "pricing": "Free",
+    "creator": "Fonts In Use",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "In use",
+      "Inspiration",
+      "Web",
+      "Display"
+    ],
+    "addedOrder": 70,
+    "featured": false,
+    "url": "https://fontsinuse.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "unsection",
+    "name": "Unsection",
+    "description": "Unsection is a reference library for exploring Sections, Hero and CTA and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Landing pages",
+    "tags": [
+      "Sections",
+      "Hero",
+      "CTA"
+    ],
+    "pricing": "Freemium",
+    "creator": "Unsection",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Sections",
+      "Hero",
+      "CTA",
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 71,
+    "featured": false,
+    "url": "https://unsection.com",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "mesh3d-gallery",
+    "name": "mesh3d.gallery",
+    "description": "mesh3d.gallery provides backgrounds and colour resources focused on 3D, Mesh and Gallery.",
+    "category": "Backgrounds",
+    "subcategory": "Shaders",
+    "tags": [
+      "3D",
+      "Mesh",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "mesh3d.gallery",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "3D",
+      "Mesh",
+      "Gallery",
+      "Web",
+      "Shaders"
+    ],
+    "addedOrder": 72,
+    "featured": false,
+    "url": "https://mesh3d.gallery/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "animata",
+    "name": "Animata",
+    "description": "Animata provides reusable components focused on React, Animations and Open source for building polished interfaces.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "React",
+      "Animations",
+      "Open source"
+    ],
+    "pricing": "Free",
+    "creator": "Animata",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "Animations",
+      "Open source",
+      "Animation"
+    ],
+    "addedOrder": 73,
+    "featured": false,
+    "url": "https://animata.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "fancy-components",
+    "name": "Fancy Components",
+    "description": "Ready to use, fancy React components to make the web fun again. Free & Open Source.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "React",
+      "Open source"
+    ],
+    "pricing": "Free",
+    "creator": "Fancy Components",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "Open source",
+      "Animation"
+    ],
+    "addedOrder": 74,
+    "featured": false,
+    "url": "https://www.fancycomponents.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "shader-gradient",
+    "name": "Shader Gradient",
+    "description": "Create beautiful moving gradients on Framer, Figma and React.",
+    "category": "Backgrounds",
+    "subcategory": "Gradients",
+    "tags": [
+      "Shaders",
+      "Gradients",
+      "Framer",
+      "Figma",
+      "React"
+    ],
+    "pricing": "Free",
+    "creator": "Shader Gradient",
+    "formats": [
+      "React",
+      "Figma",
+      "Framer"
+    ],
+    "aliases": [
+      "Shaders",
+      "Gradients",
+      "Framer",
+      "Figma",
+      "React"
+    ],
+    "addedOrder": 75,
+    "featured": false,
+    "url": "https://shadergradient.co/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "webinspoo",
+    "name": "WebInspoo",
+    "description": "Browse 1,200+ curated SaaS websites and filter by category, font, color palette, tech stack, and page type. Updated daily.",
+    "category": "Inspiration",
+    "subcategory": "Landing pages",
+    "tags": [
+      "SaaS",
+      "Landing pages"
+    ],
+    "pricing": "Free",
+    "creator": "WebInspoo",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "SaaS",
+      "Landing pages",
+      "Web"
+    ],
+    "addedOrder": 76,
+    "featured": false,
+    "url": "https://webinspoo.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "logoinspo",
+    "name": "Logoinspo",
+    "description": "Explore 1,200+ hand-picked real and fictional logos searchable by style, industry, and color — each credited to its designer.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Logos",
+      "Brand"
+    ],
+    "pricing": "Free",
+    "creator": "Logoinspo",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Logos",
+      "Brand",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 77,
+    "featured": false,
+    "url": "https://logoinspo.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "asoinspo",
+    "name": "Asoinspo",
+    "description": "Discover the latest iOS App Store screenshot examples, onboarding ideas, and paywall inspiration.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "ASO",
+      "App Store",
+      "Screenshots"
+    ],
+    "pricing": "Free",
+    "creator": "Asoinspo",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "ASO",
+      "App Store",
+      "Screenshots",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 78,
+    "featured": false,
+    "url": "https://www.asoinspo.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "uiinspoo",
+    "name": "Uiinspoo",
+    "description": "Uiinspoo is a reference library for exploring UI, Daily and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "UI",
+      "Daily"
+    ],
+    "pricing": "Free",
+    "creator": "Uiinspoo",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "UI",
+      "Daily",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 79,
+    "featured": false,
+    "url": "https://uiinspoo.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "design-engineer-tools",
+    "name": "Design Engineer Tools",
+    "description": "A list of useful tools for web-focused design engineers; curated by James Warner.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Tools",
+      "Design engineering"
+    ],
+    "pricing": "Free",
+    "creator": "James Warner",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Tools",
+      "Design engineering",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 80,
+    "featured": false,
+    "url": "https://designengineer.tools/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "indie-app-tools",
+    "name": "Indie App Tools",
+    "description": "A curated directory of tools for indie app developers - design, marketing, analytics, AI coding, subscriptions, and more.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Tools",
+      "Indie"
+    ],
+    "pricing": "Free",
+    "creator": "Indie App Tools",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Tools",
+      "Indie",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 81,
+    "featured": false,
+    "url": "https://indieapp.tools/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "typeui",
+    "name": "TypeUI",
+    "description": "TypeUI is a UI library for building product interfaces with Typography, UI and React.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "Typography",
+      "UI"
+    ],
+    "pricing": "Freemium",
+    "creator": "TypeUI",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Typography",
+      "UI",
+      "React"
+    ],
+    "addedOrder": 82,
+    "featured": false,
+    "url": "https://typeui.sh",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "htmlrev-ui-libraries",
+    "name": "HTMLrev UI Libraries",
+    "description": "Free UI component libraries for websites and web apps.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "UI libraries",
+      "Directory"
+    ],
+    "pricing": "Free",
+    "creator": "HTMLrev",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "UI libraries",
+      "Directory",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 83,
+    "featured": false,
+    "url": "https://htmlrev.com/ui-libraries.html",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "kombai-gallery",
+    "name": "Kombai Gallery",
+    "description": "Explore an ever-growing library of web and mobile UI designs. Pick one to remix with Kombai, or take it to your coding agent.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Web UI",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "Kombai",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web UI",
+      "Gallery",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 84,
+    "featured": false,
+    "url": "https://kombai.com/gallery/web/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "saaspo",
+    "name": "Saaspo",
+    "description": "A curated collection of the best SaaS websites on the web.",
+    "category": "Inspiration",
+    "subcategory": "Landing pages",
+    "tags": [
+      "SaaS",
+      "Websites"
+    ],
+    "pricing": "Free",
+    "creator": "Saaspo",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "SaaS",
+      "Websites",
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 85,
+    "featured": false,
+    "url": "https://saaspo.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "inspora",
+    "name": "Inspora",
+    "description": "Inspora is a reference library for exploring Inspiration and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Inspiration"
+    ],
+    "pricing": "Free",
+    "creator": "Inspora",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Inspiration",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 86,
+    "featured": false,
+    "url": "https://www.inspora.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "uiux-showcase",
+    "name": "UIUX Showcase",
+    "description": "UIUX Showcase is a reference library for exploring UI, UX and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "UI",
+      "UX"
+    ],
+    "pricing": "Free",
+    "creator": "UIUX Showcase",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "UI",
+      "UX",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 87,
+    "featured": false,
+    "url": "https://uiuxshowcase.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "uiverse",
+    "name": "UIverse",
+    "description": "UIverse is a UI library for building product interfaces with CSS, HTML and Community.",
+    "category": "UI libraries",
+    "subcategory": "CSS",
+    "tags": [
+      "CSS",
+      "HTML",
+      "Community"
+    ],
+    "pricing": "Free",
+    "creator": "UIverse",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "CSS",
+      "HTML",
+      "Community",
+      "Web"
+    ],
+    "addedOrder": 88,
+    "featured": false,
+    "url": "https://uiverse.io/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "best-designs-on-x",
+    "name": "Best Designs on X",
+    "description": "Best Designs on X is a reference library for exploring X, Design and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "X",
+      "Design"
+    ],
+    "pricing": "Free",
+    "creator": "Best Designs on X",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "X",
+      "Design",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 89,
+    "featured": false,
+    "url": "https://bestdesignsonx.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "appllama",
+    "name": "Appllama",
+    "description": "Find what to build and study why it wins — the onboarding, paywalls and live videos behind the App Store’s top-earning iOS apps.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "iOS",
+      "Apps",
+      "Paywalls"
+    ],
+    "pricing": "Freemium",
+    "creator": "Appllama",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "iOS",
+      "Apps",
+      "Paywalls",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 90,
+    "featured": false,
+    "url": "https://appllama.io/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "shaders",
+    "name": "Shaders",
+    "description": "Component library for creative WebGPU effects in modern frontend frameworks. Compose interactive visuals for Vue, React, Svelte, Solid & JS.",
+    "category": "Backgrounds",
+    "subcategory": "Shaders",
+    "tags": [
+      "WebGPU",
+      "React",
+      "Vue"
+    ],
+    "pricing": "Freemium",
+    "creator": "Shaders",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "WebGPU",
+      "React",
+      "Vue",
+      "Shaders"
+    ],
+    "addedOrder": 91,
+    "featured": false,
+    "url": "https://shaders.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "paper-design",
+    "name": "Paper",
+    "description": "Paper provides templates and workflow resources focused on Design tool, Vector and Web.",
+    "category": "Templates",
+    "subcategory": "Coded",
+    "tags": [
+      "Design tool",
+      "Vector"
+    ],
+    "pricing": "Freemium",
+    "creator": "Paper",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Design tool",
+      "Vector",
+      "Web",
+      "Coded"
+    ],
+    "addedOrder": 92,
+    "featured": false,
+    "url": "https://paper.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "onlook",
+    "name": "Onlook",
+    "description": "Onlook provides templates and workflow resources focused on Visual editor, Open source and Web.",
+    "category": "Templates",
+    "subcategory": "Coded",
+    "tags": [
+      "Visual editor",
+      "Open source"
+    ],
+    "pricing": "Free",
+    "creator": "Onlook",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Visual editor",
+      "Open source",
+      "Web",
+      "Coded"
+    ],
+    "addedOrder": 93,
+    "featured": false,
+    "url": "https://www.onlook.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "godly-design",
+    "name": "Godly Design",
+    "description": "Godly Design is a reference library for exploring Websites and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Landing pages",
+    "tags": [
+      "Websites"
+    ],
+    "pricing": "Free",
+    "creator": "Godly",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Websites",
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 94,
+    "featured": false,
+    "url": "https://godly.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "ogimage-gallery",
+    "name": "ogimage.gallery",
+    "description": "ogimage.gallery is a reference library for exploring OG images, Social and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "OG images",
+      "Social"
+    ],
+    "pricing": "Free",
+    "creator": "ogimage.gallery",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "OG images",
+      "Social",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 95,
+    "featured": false,
+    "url": "https://www.ogimage.gallery/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "fontshare",
+    "name": "Fontshare",
+    "description": "Fontshare helps designers discover and work with typography focused on Free fonts and Web.",
+    "category": "Fonts",
+    "subcategory": "Sans serif",
+    "tags": [
+      "Free fonts"
+    ],
+    "pricing": "Free",
+    "creator": "Indian Type Foundry",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Free fonts",
+      "Web",
+      "Sans serif"
+    ],
+    "addedOrder": 96,
+    "featured": false,
+    "url": "https://fontshare.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "component-gallery",
+    "name": "component.gallery",
+    "description": "component.gallery is a reference library for exploring Components, Gallery and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Components",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "component.gallery",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Components",
+      "Gallery",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 97,
+    "featured": false,
+    "url": "https://component.gallery/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "design-systems-repo",
+    "name": "Design Systems Repo",
+    "description": "Design Systems Repo is a reference library for exploring Design systems and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Design systems"
+    ],
+    "pricing": "Free",
+    "creator": "Design Systems Repo",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Design systems",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 98,
+    "featured": false,
+    "url": "https://designsystemsrepo.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "apple-hig",
+    "name": "Apple HIG",
+    "description": "Apple HIG is a reference library for exploring HIG, Apple and Guidelines and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "HIG",
+      "Apple",
+      "Guidelines"
+    ],
+    "pricing": "Free",
+    "creator": "Apple",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "HIG",
+      "Apple",
+      "Guidelines",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 99,
+    "featured": false,
+    "url": "https://developer.apple.com/design/human-interface-guidelines",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "dark-design",
+    "name": "dark.design",
+    "description": "dark.design is a reference library for exploring Dark mode and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Dark mode"
+    ],
+    "pricing": "Free",
+    "creator": "dark.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Dark mode",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 100,
+    "featured": false,
+    "url": "https://www.dark.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "fontpair",
+    "name": "Font Pair",
+    "description": "Font Pair helps designers discover and work with typography focused on Pairing, Google Fonts and Web.",
+    "category": "Fonts",
+    "subcategory": "Sans serif",
+    "tags": [
+      "Pairing",
+      "Google Fonts"
+    ],
+    "pricing": "Free",
+    "creator": "Font Pair",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Pairing",
+      "Google Fonts",
+      "Web",
+      "Sans serif"
+    ],
+    "addedOrder": 101,
+    "featured": false,
+    "url": "https://fontpair.co/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "dafont",
+    "name": "DaFont",
+    "description": "DaFont helps designers discover and work with typography focused on Free fonts, Display and Web.",
+    "category": "Fonts",
+    "subcategory": "Display",
+    "tags": [
+      "Free fonts",
+      "Display"
+    ],
+    "pricing": "Free",
+    "creator": "DaFont",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Free fonts",
+      "Display",
+      "Web"
+    ],
+    "addedOrder": 102,
+    "featured": false,
+    "url": "https://www.dafont.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "flaticon",
+    "name": "Flaticon",
+    "description": "Flaticon provides an icon collection focused on Icons, SVG and PNG for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Solid",
+    "tags": [
+      "Icons",
+      "SVG"
+    ],
+    "pricing": "Freemium",
+    "creator": "Flaticon",
+    "formats": [
+      "SVG",
+      "PNG"
+    ],
+    "aliases": [
+      "Icons",
+      "SVG",
+      "PNG",
+      "Solid"
+    ],
+    "addedOrder": 103,
+    "featured": false,
+    "url": "https://flaticon.com",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "freepik",
+    "name": "Freepik",
+    "description": "Freepik is a marketplace or resource hub for discovering Assets, Illustrations and Templates.",
+    "category": "Marketplace",
+    "subcategory": "Design assets",
+    "tags": [
+      "Assets",
+      "Illustrations",
+      "Templates"
+    ],
+    "pricing": "Freemium",
+    "creator": "Freepik",
+    "formats": [
+      "SVG",
+      "PNG",
+      "Figma"
+    ],
+    "aliases": [
+      "Assets",
+      "Illustrations",
+      "Templates",
+      "SVG",
+      "PNG",
+      "Figma",
+      "Design assets"
+    ],
+    "addedOrder": 104,
+    "featured": false,
+    "url": "https://freepik.com",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "icons8",
+    "name": "Icons8",
+    "description": "Icons8 provides an icon collection focused on Icons, Illustrations and SVG for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Outline",
+    "tags": [
+      "Icons",
+      "Illustrations"
+    ],
+    "pricing": "Freemium",
+    "creator": "Icons8",
+    "formats": [
+      "SVG",
+      "PNG"
+    ],
+    "aliases": [
+      "Icons",
+      "Illustrations",
+      "SVG",
+      "PNG",
+      "Outline"
+    ],
+    "addedOrder": 105,
+    "featured": false,
+    "url": "https://icons8.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "oil-motion",
+    "name": "Oil Motion",
+    "description": "github.com provides reusable components focused on Motion, Open source and React for building polished interfaces.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "Motion",
+      "Open source"
+    ],
+    "pricing": "Free",
+    "creator": "oil-oil",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Motion",
+      "Open source",
+      "React",
+      "Animation"
+    ],
+    "addedOrder": 106,
+    "featured": false,
+    "url": "https://github.com/oil-oil/oil-motion",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "animmasterlib",
+    "name": "AnimMasterLib",
+    "description": "AnimMasterLib provides reusable components focused on Animation, Library and React for building polished interfaces.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "Animation",
+      "Library"
+    ],
+    "pricing": "Freemium",
+    "creator": "AnimMasterLib",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Animation",
+      "Library",
+      "React"
+    ],
+    "addedOrder": 107,
+    "featured": false,
+    "url": "https://animmasterlib.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "design-bookmark",
+    "name": "Design Bookmark",
+    "description": "Design Bookmark is a reference library for exploring Bookmarks, Tools and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Bookmarks",
+      "Tools"
+    ],
+    "pricing": "Free",
+    "creator": "Design Bookmark",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Bookmarks",
+      "Tools",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 108,
+    "featured": false,
+    "url": "https://designbookmark.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "motion",
+    "name": "Motion",
+    "description": "Motion provides reusable components focused on React, JavaScript and Vue for building polished interfaces.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "React",
+      "JavaScript",
+      "Vue"
+    ],
+    "pricing": "Freemium",
+    "creator": "Motion",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "JavaScript",
+      "Vue",
+      "Animation"
+    ],
+    "addedOrder": 109,
+    "featured": false,
+    "url": "https://motion.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "animejs",
+    "name": "Anime.js",
+    "description": "A fast, multipurpose and lightweight JavaScript animation library.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "JavaScript",
+      "Animation"
+    ],
+    "pricing": "Free",
+    "creator": "Anime.js",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "JavaScript",
+      "Animation",
+      "Web"
+    ],
+    "addedOrder": 110,
+    "featured": false,
+    "url": "https://animejs.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "rn-motion",
+    "name": "React Native Motion",
+    "description": "Beautiful animations for React Native and Expo.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "React Native",
+      "Expo"
+    ],
+    "pricing": "Freemium",
+    "creator": "RN Motion",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React Native",
+      "Expo",
+      "React",
+      "Animation"
+    ],
+    "addedOrder": 111,
+    "featured": false,
+    "url": "https://rnmotion.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "reactix",
+    "name": "Reactix",
+    "description": "Awesome React Native UI components free and open source.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "React Native",
+      "Open source"
+    ],
+    "pricing": "Free",
+    "creator": "Reactix",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React Native",
+      "Open source",
+      "React"
+    ],
+    "addedOrder": 112,
+    "featured": false,
+    "url": "https://reacticx.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "heroui-native",
+    "name": "HeroUI Native",
+    "description": "Open-source UI component library.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "React Native",
+      "Open source"
+    ],
+    "pricing": "Free",
+    "creator": "HeroUI",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React Native",
+      "Open source",
+      "React"
+    ],
+    "addedOrder": 113,
+    "featured": false,
+    "url": "https://heroui.com/en/docs/native/getting-started",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "native-bloom",
+    "name": "Native Bloom",
+    "description": "Native Bloom is a UI library for building product interfaces with React Native, Catalog and React.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "React Native",
+      "Catalog"
+    ],
+    "pricing": "Freemium",
+    "creator": "Native Bloom",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React Native",
+      "Catalog",
+      "React"
+    ],
+    "addedOrder": 114,
+    "featured": false,
+    "url": "https://nativebloom.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "make-it-animated",
+    "name": "Make It Animated",
+    "description": "Make It Animated provides reusable components focused on React Native, Animations and React for building polished interfaces.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "React Native",
+      "Animations"
+    ],
+    "pricing": "Freemium",
+    "creator": "Make It Animated",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React Native",
+      "Animations",
+      "React",
+      "Animation"
+    ],
+    "addedOrder": 115,
+    "featured": false,
+    "url": "https://makeitanimated.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "motionary",
+    "name": "Motionary",
+    "description": "Premium React Native Animations & Interactions.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "React Native",
+      "Premium"
+    ],
+    "pricing": "Paid",
+    "creator": "Motionary",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React Native",
+      "Premium",
+      "React",
+      "Animation"
+    ],
+    "addedOrder": 116,
+    "featured": false,
+    "url": "https://motionary.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "boardui",
+    "name": "BoardUI",
+    "description": "React Design System for Dashboards.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "Dashboard",
+      "Design system"
+    ],
+    "pricing": "Freemium",
+    "creator": "BoardUI",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Dashboard",
+      "Design system",
+      "React"
+    ],
+    "addedOrder": 117,
+    "featured": false,
+    "url": "https://www.boardui.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "cosmos",
+    "name": "Cosmos",
+    "description": "Cosmos is a reference library for exploring Moodboard, Visual discovery and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Moodboard",
+      "Visual discovery"
+    ],
+    "pricing": "Freemium",
+    "creator": "Cosmos",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Moodboard",
+      "Visual discovery",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 118,
+    "featured": false,
+    "url": "https://www.cosmos.so/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "maxibestof",
+    "name": "MaxiBestOf",
+    "description": "Best website design & fonts inspiration feed.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Websites",
+      "Fonts"
+    ],
+    "pricing": "Free",
+    "creator": "MaxiBestOf",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Websites",
+      "Fonts",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 119,
+    "featured": false,
+    "url": "https://maxibestof.one/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "awwwards",
+    "name": "Awwwards",
+    "description": "Website awards recognizing top design and development talent.",
+    "category": "Inspiration",
+    "subcategory": "Awards",
+    "tags": [
+      "Awards",
+      "Web"
+    ],
+    "pricing": "Free",
+    "creator": "Awwwards",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Awards",
+      "Web"
+    ],
+    "addedOrder": 120,
+    "featured": false,
+    "url": "https://www.awwwards.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "backgrounds-supply",
+    "name": "Backgrounds Supply",
+    "description": "Handcrafted and AI-generated backgrounds, wallpapers, gradients.",
+    "category": "Backgrounds",
+    "subcategory": "Gradients",
+    "tags": [
+      "Backgrounds",
+      "Gradients",
+      "AI"
+    ],
+    "pricing": "Freemium",
+    "creator": "Backgrounds Supply",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Backgrounds",
+      "Gradients",
+      "AI",
+      "Web"
+    ],
+    "addedOrder": 121,
+    "featured": false,
+    "url": "https://www.backgrounds.supply/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "behance",
+    "name": "Behance",
+    "description": "Creative portfolio network for UI/UX and visual design.",
+    "category": "Inspiration",
+    "subcategory": "Portfolios",
+    "tags": [
+      "Portfolio",
+      "Adobe"
+    ],
+    "pricing": "Free",
+    "creator": "Adobe",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Portfolio",
+      "Adobe",
+      "Web",
+      "Portfolios"
+    ],
+    "addedOrder": 122,
+    "featured": false,
+    "url": "https://www.behance.net/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "contentcore",
+    "name": "ContentCore",
+    "description": "3D, motion and mockup content creation for app marketing.",
+    "category": "Mockups",
+    "subcategory": "Tools",
+    "tags": [
+      "3D",
+      "Motion",
+      "Mockups"
+    ],
+    "pricing": "Freemium",
+    "creator": "ContentCore",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "3D",
+      "Motion",
+      "Mockups",
+      "Web",
+      "Tools"
+    ],
+    "addedOrder": 123,
+    "featured": false,
+    "url": "https://contentcore.xyz/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "dribbble",
+    "name": "Dribbble",
+    "description": "Design community shots and UI inspiration.",
+    "category": "Inspiration",
+    "subcategory": "Galleries",
+    "tags": [
+      "Shots",
+      "Community"
+    ],
+    "pricing": "Freemium",
+    "creator": "Dribbble",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Shots",
+      "Community",
+      "Web",
+      "Galleries"
+    ],
+    "addedOrder": 124,
+    "featured": false,
+    "url": "https://dribbble.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "lapa-ninja",
+    "name": "Lapa Ninja",
+    "description": "Curated landing page design inspiration.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Landing",
+      "Web"
+    ],
+    "pricing": "Free",
+    "creator": "Lapa Ninja",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Landing",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 125,
+    "featured": false,
+    "url": "https://www.lapa.ninja/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "lummi",
+    "name": "Lummi",
+    "description": "AI-generated images for creative projects.",
+    "category": "Illustrations",
+    "subcategory": "AI",
+    "tags": [
+      "AI",
+      "Images"
+    ],
+    "pricing": "Free",
+    "creator": "Lummi",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "AI",
+      "Images",
+      "Web"
+    ],
+    "addedOrder": 126,
+    "featured": false,
+    "url": "https://www.lummi.ai/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "material-3",
+    "name": "Material Design 3",
+    "description": "Material Design 3 guidelines and design system.",
+    "category": "Inspiration",
+    "subcategory": "Guidelines",
+    "tags": [
+      "Design System",
+      "Google"
+    ],
+    "pricing": "Free",
+    "creator": "Google",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Design System",
+      "Google",
+      "Web",
+      "Guidelines"
+    ],
+    "addedOrder": 127,
+    "featured": false,
+    "url": "https://m3.material.io",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "screensdesign",
+    "name": "Screens Design",
+    "description": "App design inspiration / screenshots gallery.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "App",
+      "Screens"
+    ],
+    "pricing": "Freemium",
+    "creator": "Screens Design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "App",
+      "Screens",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 128,
+    "featured": false,
+    "url": "https://screensdesign.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "siteinspire",
+    "name": "SiteInspire",
+    "description": "Web design inspiration directory.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Web",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "SiteInspire",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Gallery",
+      "Directories"
+    ],
+    "addedOrder": 129,
+    "featured": false,
+    "url": "https://siteinspire.com",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "tranmautritam",
+    "name": "Tran Mau Tri Tam",
+    "description": "Design engineer portfolio / craft inspiration.",
+    "category": "Inspiration",
+    "subcategory": "Portfolios",
+    "tags": [
+      "Portfolio",
+      "Design"
+    ],
+    "pricing": "Free",
+    "creator": "Tran Mau Tri Tam",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Portfolio",
+      "Design",
+      "Web",
+      "Portfolios"
+    ],
+    "addedOrder": 130,
+    "featured": false,
+    "url": "https://tranmautritam.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "codrops",
+    "name": "Codrops",
+    "description": "Creative frontend experiments and interaction inspiration (Codrops).",
+    "category": "Inspiration",
+    "subcategory": "Galleries",
+    "tags": [
+      "Motion",
+      "CSS",
+      "Tutorials"
+    ],
+    "pricing": "Free",
+    "creator": "Codrops",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Motion",
+      "CSS",
+      "Tutorials",
+      "Web",
+      "Galleries"
+    ],
+    "addedOrder": 131,
+    "featured": false,
+    "url": "https://tympanus.net/codrops/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "typescale",
+    "name": "Type Scale",
+    "description": "Typography scale calculator / type system tool.",
+    "category": "Fonts",
+    "subcategory": "Tools",
+    "tags": [
+      "Typography",
+      "Scale"
+    ],
+    "pricing": "Free",
+    "creator": "Type Scale",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Typography",
+      "Scale",
+      "Web",
+      "Tools"
+    ],
+    "addedOrder": 132,
+    "featured": false,
+    "url": "https://typescale.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "supaste",
+    "name": "Supaste",
+    "description": "Local-first clipboard and screenshot history for Mac (full rkant7 set per Red).",
+    "category": "Inspiration",
+    "subcategory": "Tools",
+    "tags": [
+      "Clipboard",
+      "Mac",
+      "Productivity"
+    ],
+    "pricing": "Freemium",
+    "creator": "Supaste",
+    "formats": [
+      "Mac"
+    ],
+    "aliases": [
+      "Clipboard",
+      "Mac",
+      "Productivity",
+      "Tools"
+    ],
+    "addedOrder": 133,
+    "featured": false,
+    "url": "https://www.supaste.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "vehla",
+    "name": "Vehla",
+    "description": "AI command center for macOS (full rkant7 set per Red).",
+    "category": "Inspiration",
+    "subcategory": "Tools",
+    "tags": [
+      "Mac",
+      "AI",
+      "Productivity"
+    ],
+    "pricing": "Freemium",
+    "creator": "Vehla",
+    "formats": [
+      "Mac"
+    ],
+    "aliases": [
+      "Mac",
+      "AI",
+      "Productivity",
+      "Tools"
+    ],
+    "addedOrder": 134,
+    "featured": false,
+    "url": "https://vehla.app/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "cooldock",
+    "name": "Cooldock",
+    "description": "Second Mac dock with live widgets (full rkant7 set per Red).",
+    "category": "Inspiration",
+    "subcategory": "Tools",
+    "tags": [
+      "Mac",
+      "Dock",
+      "Widgets"
+    ],
+    "pricing": "Freemium",
+    "creator": "Cooldock",
+    "formats": [
+      "Mac"
+    ],
+    "aliases": [
+      "Mac",
+      "Dock",
+      "Widgets",
+      "Tools"
+    ],
+    "addedOrder": 135,
+    "featured": false,
+    "url": "https://cooldock.app/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "screen-movie",
+    "name": "Screen.Movie",
+    "description": "Screen recording and editing (full rkant7 set per Red).",
+    "category": "Inspiration",
+    "subcategory": "Tools",
+    "tags": [
+      "Screen Recording",
+      "Video"
+    ],
+    "pricing": "Freemium",
+    "creator": "Screen.Movie",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Screen Recording",
+      "Video",
+      "Web",
+      "Tools"
+    ],
+    "addedOrder": 136,
+    "featured": false,
+    "url": "https://screen.movie/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "macapp-supply",
+    "name": "Macapp Supply",
+    "description": "Discover Mac apps directory (full rkant7 set per Red).",
+    "category": "Marketplace",
+    "subcategory": "Directories",
+    "tags": [
+      "Mac",
+      "Apps"
+    ],
+    "pricing": "Free",
+    "creator": "Macapp Supply",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Mac",
+      "Apps",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 137,
+    "featured": false,
+    "url": "https://macapp.supply/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "cue-design",
+    "name": "Cue Design",
+    "description": "Cue Design provides reusable components focused on Web for building polished interfaces.",
+    "category": "Components",
+    "subcategory": "Premium",
+    "tags": [],
+    "pricing": "Paid",
+    "creator": "cuedesign.space",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Premium"
+    ],
+    "addedOrder": 138,
+    "featured": false,
+    "url": "https://www.cuedesign.space/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "designmd-hyperbrowser",
+    "name": "DesignMD Hyperbrowser",
+    "description": "DesignMD Hyperbrowser provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Design tokens",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "design-md.hyperbrowser.ai",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Design tokens"
+    ],
+    "addedOrder": 139,
+    "featured": false,
+    "url": "https://design-md.hyperbrowser.ai/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "designmd-ai",
+    "name": "DesignMD AI",
+    "description": "DesignMD AI provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Design tokens",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "designmd.ai",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Design tokens"
+    ],
+    "addedOrder": 140,
+    "featured": false,
+    "url": "https://designmd.ai/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "designmd",
+    "name": "DesignMD",
+    "description": "DesignMD provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Design tokens",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "designmd.me",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Design tokens"
+    ],
+    "addedOrder": 141,
+    "featured": false,
+    "url": "https://designmd.me/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "designmd-supply",
+    "name": "DesignMD Supply",
+    "description": "A minimal supply of generated DESIGN.md for any domain.",
+    "category": "Templates",
+    "subcategory": "Design tokens",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "designmd.supply",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Design tokens"
+    ],
+    "addedOrder": 142,
+    "featured": false,
+    "url": "https://www.designmd.supply",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "kage-design",
+    "name": "Kage Design",
+    "description": "Design inspiration ready to build.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "kage.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 143,
+    "featured": false,
+    "url": "https://kage.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "mantine",
+    "name": "Mantine",
+    "description": "Mantine is a UI library for building product interfaces with Web.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "mantine.dev",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "React"
+    ],
+    "addedOrder": 144,
+    "featured": false,
+    "url": "https://mantine.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "nextjsshop",
+    "name": "Nextjsshop",
+    "description": "Discover premium Next.js templates and components built with Tailwind CSS. Ideal for freelancers, developers, and small businesses seeking modern web solutions.",
+    "category": "Templates",
+    "subcategory": "Next.js",
+    "tags": [],
+    "pricing": "Paid",
+    "creator": "nextjsshop.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Next.js"
+    ],
+    "addedOrder": 145,
+    "featured": false,
+    "url": "https://nextjsshop.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "opendesign",
+    "name": "OpenDesign",
+    "description": "Open-source vibe design workspace & Claude Design alternative — build prototypes, landing pages, dashboards, slides & HTML video with your own coding agent.",
+    "category": "UI libraries",
+    "subcategory": "AI tools",
+    "tags": [],
+    "pricing": "Freemium",
+    "creator": "open-design.ai",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "AI tools"
+    ],
+    "addedOrder": 146,
+    "featured": false,
+    "url": "https://open-design.ai/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "pinterest",
+    "name": "Pinterest",
+    "description": "Pinterest is a reference library for exploring Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "pinterest.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 147,
+    "featured": false,
+    "url": "https://www.pinterest.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "rn-neo",
+    "name": "RN Neo",
+    "description": "Neubrutalist UI for React Native.",
+    "category": "UI libraries",
+    "subcategory": "React Native",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "rn-neo.gs-rumana.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "React Native"
+    ],
+    "addedOrder": 148,
+    "featured": false,
+    "url": "https://rn-neo.gs-rumana.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "echo-shadcnblocks",
+    "name": "Echo (shadcnblocks)",
+    "description": "A personal portfolio template built on shadcn/ui and Tailwind. Available in both Next.js and Astro editions, perfect for creating a stunning personal portfolio website.",
+    "category": "Templates",
+    "subcategory": "Portfolio",
+    "tags": [],
+    "pricing": "Freemium",
+    "creator": "shadcnblocks.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Portfolio"
+    ],
+    "addedOrder": 149,
+    "featured": false,
+    "url": "https://www.shadcnblocks.com/template/echo",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "simply-buttons",
+    "name": "Simply Buttons",
+    "description": "Simply Buttons provides reusable components focused on Web for building polished interfaces.",
+    "category": "Components",
+    "subcategory": "Buttons",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "simply-buttons.vercel.app",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Buttons"
+    ],
+    "addedOrder": 150,
+    "featured": false,
+    "url": "https://simply-buttons.vercel.app/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "skills-agentes",
+    "name": "Skills Agentes",
+    "description": "Skills Agentes is a marketplace or resource hub for discovering Web.",
+    "category": "Marketplace",
+    "subcategory": "AI skills",
+    "tags": [],
+    "pricing": "Freemium",
+    "creator": "skillsagentes.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "AI skills"
+    ],
+    "addedOrder": 151,
+    "featured": false,
+    "url": "https://skillsagentes.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "sokosumi-designmd",
+    "name": "Sokosumi DesignMD",
+    "description": "Sokosumi DesignMD provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Design tokens",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "sokosumi.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Design tokens"
+    ],
+    "addedOrder": 152,
+    "featured": false,
+    "url": "https://www.sokosumi.com/tools/design-md",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "weekend-designmd",
+    "name": "Weekend DesignMD",
+    "description": "Weekend DesignMD provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Design tokens",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "weekend.company",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Design tokens"
+    ],
+    "addedOrder": 153,
+    "featured": false,
+    "url": "https://weekend.company/get-design-md/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "akveo-eva-icons",
+    "name": "Akveo",
+    "description": "Akveo provides an icon collection focused on Icons and Web for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Vector",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "akveo.github.io",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Vector"
+    ],
+    "addedOrder": 154,
+    "featured": false,
+    "url": "https://akveo.github.io/eva-icons/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "amicro",
+    "name": "Amicro",
+    "description": "Add beautiful, lightweight, and tree-shakeable micro-interactions and transition components to your React website with a single CLI command.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "Microinteractions"
+    ],
+    "pricing": "Free",
+    "creator": "amicro.vercel.app",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Microinteractions",
+      "React",
+      "Animation"
+    ],
+    "addedOrder": 155,
+    "featured": false,
+    "url": "https://amicro.vercel.app/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "appshot-gallery",
+    "name": "Appshot Gallery",
+    "description": "Appshot Gallery provides mockups and presentation resources focused on ASO and Web.",
+    "category": "Mockups",
+    "subcategory": "Mobile",
+    "tags": [
+      "ASO"
+    ],
+    "pricing": "Free",
+    "creator": "appshot.gallery",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "ASO",
+      "Web",
+      "Mobile"
+    ],
+    "addedOrder": 156,
+    "featured": false,
+    "url": "https://www.appshot.gallery/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "bootstrapmade",
+    "name": "BootstrapMade",
+    "description": "BootstrapMade provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Landing pages",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "bootstrapmade.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 157,
+    "featured": false,
+    "url": "https://bootstrapmade.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "boxicons",
+    "name": "Boxicons",
+    "description": "Boxicons provides an icon collection focused on Icons and Web for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Vector",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "boxicons.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Vector"
+    ],
+    "addedOrder": 158,
+    "featured": false,
+    "url": "https://boxicons.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "carbondesignsystem",
+    "name": "Carbondesignsystem",
+    "description": "Carbondesignsystem provides an icon collection focused on Icons and Web for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Vector",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "carbondesignsystem.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Vector"
+    ],
+    "addedOrder": 159,
+    "featured": false,
+    "url": "https://carbondesignsystem.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "colorlib",
+    "name": "Colorlib",
+    "description": "Colorlib provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Landing pages",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "colorlib.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 160,
+    "featured": false,
+    "url": "https://colorlib.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "craftwork-curated",
+    "name": "Curated Website Inspiration • Craftwork",
+    "description": "Curated Website Inspiration • Craftwork is a reference library for exploring Inspiration and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Inspiration"
+    ],
+    "pricing": "Free",
+    "creator": "craftwork.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Inspiration",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 161,
+    "featured": false,
+    "url": "https://craftwork.design/curated/websites",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "css-gg",
+    "name": "css.gg",
+    "description": "css.gg provides an icon collection focused on Icons and Web for interface and product work.",
+    "category": "Icons",
+    "subcategory": "CSS",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "css.gg",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "CSS"
+    ],
+    "addedOrder": 162,
+    "featured": false,
+    "url": "https://css.gg/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "devicon",
+    "name": "Devicon",
+    "description": "Devicon provides an icon collection focused on Icons and Web for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Vector",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "devicon.dev",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Vector"
+    ],
+    "addedOrder": 163,
+    "featured": false,
+    "url": "https://devicon.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "dialkit",
+    "name": "DialKit",
+    "description": "Make the details feel right. DialKit puts live controls beside the interface you’re building.",
+    "category": "Components",
+    "subcategory": "React",
+    "tags": [
+      "Components"
+    ],
+    "pricing": "Free",
+    "creator": "dialkit.dev",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Components",
+      "React"
+    ],
+    "addedOrder": 164,
+    "featured": false,
+    "url": "https://www.dialkit.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "feathericons",
+    "name": "Feathericons",
+    "description": "Feathericons provides an icon collection focused on Icons and Web for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Outline",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "feathericons.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Outline"
+    ],
+    "addedOrder": 165,
+    "featured": false,
+    "url": "https://feathericons.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "floguo-notes",
+    "name": "Design Engineering",
+    "description": "Links and observations on design engineering.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Uncategorized"
+    ],
+    "pricing": "Free",
+    "creator": "floguo.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Uncategorized",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 166,
+    "featured": false,
+    "url": "https://www.floguo.com/notes/design-engineering",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "flowbite",
+    "name": "Flowbite",
+    "description": "Flowbite is a UI library for building product interfaces with Components and Web.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "Components"
+    ],
+    "pricing": "Free",
+    "creator": "flowbite.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Components",
+      "Web",
+      "React"
+    ],
+    "addedOrder": 167,
+    "featured": false,
+    "url": "https://flowbite.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "google-fonts-icons",
+    "name": "Material Symbols and Icons",
+    "description": "Material Symbols are our newest icons consolidating over 2,500 glyphs in a single font file with a wide range of design variants.",
+    "category": "Icons",
+    "subcategory": "Material",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "fonts.google.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Material"
+    ],
+    "addedOrder": 168,
+    "featured": false,
+    "url": "https://fonts.google.com/icons",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "getdesign",
+    "name": "getdesign.md",
+    "description": "Browse independent design system analyses from popular websites. Drop one into your project as design reference for your coding agent.",
+    "category": "Templates",
+    "subcategory": "Design tokens",
+    "tags": [
+      "Design Tokens"
+    ],
+    "pricing": "Free",
+    "creator": "getdesign.md",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Design Tokens",
+      "Web",
+      "Design tokens"
+    ],
+    "addedOrder": 169,
+    "featured": false,
+    "url": "https://getdesign.md/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "getmd",
+    "name": "getmd.design",
+    "description": "getmd.design provides templates and workflow resources focused on Design Tokens and Web.",
+    "category": "Templates",
+    "subcategory": "Design tokens",
+    "tags": [
+      "Design Tokens"
+    ],
+    "pricing": "Free",
+    "creator": "getmd.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Design Tokens",
+      "Web",
+      "Design tokens"
+    ],
+    "addedOrder": 170,
+    "featured": false,
+    "url": "https://www.getmd.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "heroicons",
+    "name": "Heroicons",
+    "description": "Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.",
+    "category": "Icons",
+    "subcategory": "Outline",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "heroicons.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Outline"
+    ],
+    "addedOrder": 171,
+    "featured": false,
+    "url": "https://heroicons.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "heroui",
+    "name": "HeroUI v3 (Previously NextUI)",
+    "description": "Beautiful, accessible React UI components built on React Aria and Tailwind CSS v4. The modern alternative to MUI, Chakra UI, and shadcn/ui for building production-ready applications.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "Components"
+    ],
+    "pricing": "Free",
+    "creator": "heroui.com",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Components",
+      "React"
+    ],
+    "addedOrder": 172,
+    "featured": false,
+    "url": "https://heroui.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "html5up",
+    "name": "HTML5 UP",
+    "description": "HTML5 UP provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Landing pages",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "html5up.net",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 173,
+    "featured": false,
+    "url": "https://html5up.net/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "hugeicons",
+    "name": "Hugeicons",
+    "description": "Hugeicons provides an icon collection focused on Icons and Web for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Outline",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "hugeicons.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Outline"
+    ],
+    "addedOrder": 174,
+    "featured": false,
+    "url": "https://hugeicons.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "iconify",
+    "name": "Iconify",
+    "description": "Iconify provides an icon collection focused on Icons and Web for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Vector",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "iconify.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Vector"
+    ],
+    "addedOrder": 175,
+    "featured": false,
+    "url": "https://iconify.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "iconoir",
+    "name": "Iconoir",
+    "description": "Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. No premium options or email sign-up required, free for real. Icons.",
+    "category": "Icons",
+    "subcategory": "Outline",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "iconoir.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Outline"
+    ],
+    "addedOrder": 176,
+    "featured": false,
+    "url": "https://iconoir.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "bootstrap-icons",
+    "name": "Bootstrap Icons",
+    "description": "Official open source SVG icon library for Bootstrap.",
+    "category": "Icons",
+    "subcategory": "Outline",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "icons.getbootstrap.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Outline"
+    ],
+    "addedOrder": 177,
+    "featured": false,
+    "url": "https://icons.getbootstrap.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "ionic-ionicons",
+    "name": "Ionicons: The premium icon pack for Ionic Framework",
+    "description": "Ionicons is an open-sourced and MIT licensed icon pack.",
+    "category": "Icons",
+    "subcategory": "Vector",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "ionic.io",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Vector"
+    ],
+    "addedOrder": 178,
+    "featured": false,
+    "url": "https://ionic.io/ionicons",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "kinetics",
+    "name": "Kinetics",
+    "description": "Kinetics is a UI library for building product interfaces with Motion and React.",
+    "category": "UI libraries",
+    "subcategory": "Animation",
+    "tags": [
+      "Motion"
+    ],
+    "pricing": "Free",
+    "creator": "kinetics.colorion.co",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Motion",
+      "React",
+      "Animation"
+    ],
+    "addedOrder": 179,
+    "featured": false,
+    "url": "https://kinetics.colorion.co/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "kokonut",
+    "name": "KokonutUI",
+    "description": "KokonutUI is a UI library for building product interfaces with Components and React.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "Components"
+    ],
+    "pricing": "Free",
+    "creator": "kokonutui.com",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Components",
+      "React"
+    ],
+    "addedOrder": 180,
+    "featured": false,
+    "url": "https://kokonutui.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "libraries-dev",
+    "name": "Libraries.dev",
+    "description": "Libraries.dev is a UI library for building product interfaces with Effects and React.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "Effects"
+    ],
+    "pricing": "Free",
+    "creator": "libraries.dev",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Effects",
+      "React"
+    ],
+    "addedOrder": 181,
+    "featured": false,
+    "url": "https://libraries.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "microkit",
+    "name": "MicroKit",
+    "description": "MicroKit provides reusable components focused on Microinteractions and React for building polished interfaces.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "Microinteractions"
+    ],
+    "pricing": "Free",
+    "creator": "microkit.co",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Microinteractions",
+      "React",
+      "Animation"
+    ],
+    "addedOrder": 182,
+    "featured": false,
+    "url": "https://microkit.co/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "mobirise",
+    "name": "Mobirise",
+    "description": "Mobirise provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Landing pages",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "mobirise.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 183,
+    "featured": false,
+    "url": "https://mobirise.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "muz",
+    "name": "Muzli",
+    "description": "Designers' Secret Source: all the design inspiration from the world in one place. Served fresh.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Inspiration"
+    ],
+    "pricing": "Free",
+    "creator": "muz.li",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Inspiration",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 184,
+    "featured": false,
+    "url": "https://muz.li/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "mx-icons",
+    "name": "Mx-icons",
+    "description": "Mx-icons provides an icon collection focused on Icons and Web for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Vector",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "mx-icons.vercel.app",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Vector"
+    ],
+    "addedOrder": 185,
+    "featured": false,
+    "url": "https://mx-icons.vercel.app/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "onepagelove",
+    "name": "One Page Love",
+    "description": "One Page Love provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Landing pages",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "onepagelove.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 186,
+    "featured": false,
+    "url": "https://onepagelove.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "onepagelove-og",
+    "name": "OG Image Gallery",
+    "description": "OG Image Gallery is a reference library for exploring OG Images and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Galleries",
+    "tags": [
+      "OG Images"
+    ],
+    "pricing": "Free",
+    "creator": "onepagelove.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "OG Images",
+      "Web",
+      "Galleries"
+    ],
+    "addedOrder": 187,
+    "featured": false,
+    "url": "https://onepagelove.com/og",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "phosphoricons",
+    "name": "Phosphor Icons",
+    "description": "A flexible icon family for interfaces, diagrams, presentations — whatever, really.",
+    "category": "Icons",
+    "subcategory": "Outline",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "phosphoricons.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Outline"
+    ],
+    "addedOrder": 188,
+    "featured": false,
+    "url": "https://phosphoricons.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "radix-ui-icons",
+    "name": "Radix-ui",
+    "description": "Radix-ui provides an icon collection focused on Icons and Web for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Outline",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "radix-ui.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Outline"
+    ],
+    "addedOrder": 189,
+    "featured": false,
+    "url": "https://www.radix-ui.com/icons",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "rams",
+    "name": "Rams",
+    "description": "Rams provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Tools",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "rams.ai",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Tools"
+    ],
+    "addedOrder": 190,
+    "featured": false,
+    "url": "https://www.rams.ai/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "remixicon",
+    "name": "Remix Icon",
+    "description": "Remix Icon is a set of open source neutral style system symbols elaborately crafted for designers and developers. All of the icons are free to use for both personal and commercial.",
+    "category": "Icons",
+    "subcategory": "Outline",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "remixicon.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Outline"
+    ],
+    "addedOrder": 191,
+    "featured": false,
+    "url": "https://remixicon.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "rive",
+    "name": "Rive",
+    "description": "Behind Spotify Wrapped, Duolingo, and products reaching 2 billion users. Design, animate, and code in one place. Ship everywhere.",
+    "category": "UI libraries",
+    "subcategory": "Animation",
+    "tags": [
+      "Animation"
+    ],
+    "pricing": "Free",
+    "creator": "rive.app",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Animation",
+      "Web"
+    ],
+    "addedOrder": 192,
+    "featured": false,
+    "url": "https://rive.app/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "simpleicons",
+    "name": "Simpleicons",
+    "description": "Simpleicons provides an icon collection focused on Icons and Web for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Vector",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "simpleicons.org",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Vector"
+    ],
+    "addedOrder": 193,
+    "featured": false,
+    "url": "https://simpleicons.org/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "startbootstrap",
+    "name": "Start Bootstrap",
+    "description": "Start Bootstrap provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Landing pages",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "startbootstrap.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 194,
+    "featured": false,
+    "url": "https://startbootstrap.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "svg",
+    "name": "Svg",
+    "description": "Svg is a reference library for exploring Uncategorized and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Uncategorized"
+    ],
+    "pricing": "Free",
+    "creator": "svg.guide",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Uncategorized",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 195,
+    "featured": false,
+    "url": "https://www.svg.guide/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "tabler-icons",
+    "name": "Tabler Icons: 6150+ free vector icons for web design",
+    "description": "Tabler Icons: 6184 free and open source SVG icons. Customizable size, color and stroke. Available for React, SolidJS, Vue, Figma and more for free!",
+    "category": "Icons",
+    "subcategory": "Outline",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "tabler.io",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Outline"
+    ],
+    "addedOrder": 196,
+    "featured": false,
+    "url": "https://tabler.io/icons",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "templated",
+    "name": "Templated",
+    "description": "Templated provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Landing pages",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "templated.co",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 197,
+    "featured": false,
+    "url": "https://templated.co/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "thealpy-ai-taste",
+    "name": "Thealpy",
+    "description": "Thealpy provides templates and workflow resources focused on Design Tokens and Web.",
+    "category": "Templates",
+    "subcategory": "Design tokens",
+    "tags": [
+      "Design Tokens"
+    ],
+    "pricing": "Free",
+    "creator": "thealpy.studio",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Design Tokens",
+      "Web",
+      "Design tokens"
+    ],
+    "addedOrder": 198,
+    "featured": false,
+    "url": "https://alpymcp.com/ai-taste",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "themefisher",
+    "name": "Themefisher",
+    "description": "Themefisher provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Landing pages",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "themefisher.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 199,
+    "featured": false,
+    "url": "https://themefisher.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "thesvg",
+    "name": "Thesvg",
+    "description": "Thesvg provides an icon collection focused on Icons and Web for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Vector",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "thesvg.org",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "Web",
+      "Vector"
+    ],
+    "addedOrder": 200,
+    "featured": false,
+    "url": "https://thesvg.org/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "ui-skills",
+    "name": "Ui-skills",
+    "description": "Ui-skills is a reference library for exploring Uncategorized and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Uncategorized"
+    ],
+    "pricing": "Free",
+    "creator": "ui-skills.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Uncategorized",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 201,
+    "featured": false,
+    "url": "https://www.ui-skills.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "uideck",
+    "name": "UIDeck",
+    "description": "UIDeck provides templates and workflow resources focused on Web.",
+    "category": "Templates",
+    "subcategory": "Landing pages",
+    "tags": [],
+    "pricing": "Free",
+    "creator": "uideck.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Web",
+      "Landing pages"
+    ],
+    "addedOrder": 202,
+    "featured": false,
+    "url": "https://uideck.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "getlayers",
+    "name": "GetLayers AI",
+    "description": "AI-native library of cinematic web templates, 3D/WebGL scenes, animated backgrounds — copyable as one prompt.",
+    "category": "Templates",
+    "subcategory": "Coded",
+    "tags": [
+      "AI",
+      "Templates",
+      "WebGL"
+    ],
+    "pricing": "Freemium",
+    "creator": "GetLayers",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "AI",
+      "Templates",
+      "WebGL",
+      "Web",
+      "Coded"
+    ],
+    "addedOrder": 203,
+    "featured": false,
+    "url": "https://www.getlayers.ai/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "designmd-co",
+    "name": "DesignMD.co",
+    "description": "DESIGN.md / design-system tooling from Noah's AI design tools list.",
+    "category": "Templates",
+    "subcategory": "Design tokens",
+    "tags": [
+      "Design Tokens",
+      "AI"
+    ],
+    "pricing": "Free",
+    "creator": "designmd.co",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Design Tokens",
+      "AI",
+      "Web",
+      "Design tokens"
+    ],
+    "addedOrder": 204,
+    "featured": false,
+    "url": "https://designmd.co",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "mapcn",
+    "name": "mapcn",
+    "description": "Customizable accessible map components on MapLibre + Tailwind, works with shadcn/ui.",
+    "category": "Components",
+    "subcategory": "React",
+    "tags": [
+      "Maps",
+      "React",
+      "shadcn",
+      "Tailwind"
+    ],
+    "pricing": "Free",
+    "creator": "mapcn.dev",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Maps",
+      "React",
+      "shadcn",
+      "Tailwind"
+    ],
+    "addedOrder": 205,
+    "featured": false,
+    "url": "https://www.mapcn.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "openusage",
+    "name": "OpenUsage",
+    "description": "Mac menu-bar tracker for AI coding subscription limits (Cursor, Claude Code, Codex, etc.).",
+    "category": "Templates",
+    "subcategory": "Tools",
+    "tags": [
+      "AI",
+      "Developer Tools"
+    ],
+    "pricing": "Free",
+    "creator": "openusage.ai",
+    "formats": [
+      "Web",
+      "macOS"
+    ],
+    "aliases": [
+      "AI",
+      "Developer Tools",
+      "Web",
+      "macOS",
+      "Tools"
+    ],
+    "addedOrder": 206,
+    "featured": false,
+    "url": "https://www.openusage.ai/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "bencho",
+    "name": "Bencho",
+    "description": "Bencho provides reusable components focused on UI, Blocks and Interactive for building polished interfaces.",
+    "category": "Components",
+    "subcategory": "React",
+    "tags": [
+      "UI",
+      "Blocks",
+      "Interactive"
+    ],
+    "pricing": "Free",
+    "creator": "bencho.dev",
+    "formats": [
+      "Web",
+      "React"
+    ],
+    "aliases": [
+      "UI",
+      "Blocks",
+      "Interactive",
+      "Web",
+      "React"
+    ],
+    "addedOrder": 207,
+    "featured": false,
+    "url": "https://bencho.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "browser-use",
+    "name": "Browser Use",
+    "description": "Browser Use provides templates and workflow resources focused on Agents, Browser and Web.",
+    "category": "Templates",
+    "subcategory": "Tools",
+    "tags": [
+      "Agents",
+      "Browser"
+    ],
+    "pricing": "Freemium",
+    "creator": "browser-use.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Agents",
+      "Browser",
+      "Web",
+      "Tools"
+    ],
+    "addedOrder": 208,
+    "featured": false,
+    "url": "https://browser-use.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "wellmade",
+    "name": "Wellmade",
+    "description": "Wellmade is a reference library for exploring Creative, Inspiration and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Galleries",
+    "tags": [
+      "Creative",
+      "Inspiration"
+    ],
+    "pricing": "Free",
+    "creator": "wellmade.fyi",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Creative",
+      "Inspiration",
+      "Web",
+      "Galleries"
+    ],
+    "addedOrder": 209,
+    "featured": false,
+    "url": "https://wellmade.fyi/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "untitled-ui",
+    "name": "Untitled UI",
+    "description": "Untitled UI is a marketplace or resource hub for discovering Figma, UI Kit and React.",
+    "category": "Marketplace",
+    "subcategory": "UI kits",
+    "tags": [
+      "Figma",
+      "UI Kit",
+      "React",
+      "Design System"
+    ],
+    "pricing": "Freemium",
+    "creator": "Untitled UI",
+    "formats": [
+      "Figma",
+      "React"
+    ],
+    "aliases": [
+      "Figma",
+      "UI Kit",
+      "React",
+      "Design System",
+      "UI kits"
+    ],
+    "addedOrder": 210,
+    "featured": false,
+    "url": "https://www.untitledui.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "uiprep",
+    "name": "UI Prep",
+    "description": "UI Prep is a marketplace or resource hub for discovering Figma, UI Kit and Design System.",
+    "category": "Marketplace",
+    "subcategory": "UI kits",
+    "tags": [
+      "Figma",
+      "UI Kit",
+      "Design System"
+    ],
+    "pricing": "Paid",
+    "creator": "UI Prep",
+    "formats": [
+      "Figma"
+    ],
+    "aliases": [
+      "Figma",
+      "UI Kit",
+      "Design System",
+      "UI kits"
+    ],
+    "addedOrder": 211,
+    "featured": false,
+    "url": "https://www.uiprep.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "rayna-ui",
+    "name": "Rayna UI",
+    "description": "Rayna UI is a marketplace or resource hub for discovering Figma, UI Kit and Design System.",
+    "category": "Marketplace",
+    "subcategory": "UI kits",
+    "tags": [
+      "Figma",
+      "UI Kit",
+      "Design System"
+    ],
+    "pricing": "Paid",
+    "creator": "Rayna UI",
+    "formats": [
+      "Figma"
+    ],
+    "aliases": [
+      "Figma",
+      "UI Kit",
+      "Design System",
+      "UI kits"
+    ],
+    "addedOrder": 212,
+    "featured": false,
+    "url": "https://www.raynaui.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "figma-community",
+    "name": "Figma Community",
+    "description": "Figma Community is a marketplace or resource hub for discovering Figma, Community and UI Kits.",
+    "category": "Marketplace",
+    "subcategory": "Directories",
+    "tags": [
+      "Figma",
+      "Community",
+      "UI Kits"
+    ],
+    "pricing": "Free",
+    "creator": "Figma",
+    "formats": [
+      "Figma"
+    ],
+    "aliases": [
+      "Figma",
+      "Community",
+      "UI Kits",
+      "Directories"
+    ],
+    "addedOrder": 213,
+    "featured": false,
+    "url": "https://www.figma.com/community",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "libraries-dev-beam",
+    "name": "Beam (Libraries.dev)",
+    "description": "Beam (Libraries.dev) provides reusable components focused on Animation, React and Border for building polished interfaces.",
+    "category": "Components",
+    "subcategory": "React",
+    "tags": [
+      "Animation",
+      "React",
+      "Border",
+      "Beam"
+    ],
+    "pricing": "Free",
+    "creator": "libraries.dev",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Animation",
+      "React",
+      "Border",
+      "Beam"
+    ],
+    "addedOrder": 214,
+    "featured": false,
+    "url": "https://libraries.dev/beam",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "pttrns",
+    "name": "Pttrns",
+    "description": "Pttrns is a reference library for exploring Mobile, UI Patterns and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Mobile",
+    "tags": [
+      "Mobile",
+      "UI Patterns"
+    ],
+    "pricing": "Freemium",
+    "creator": "pttrns.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Mobile",
+      "UI Patterns",
+      "Web"
+    ],
+    "addedOrder": 215,
+    "featured": false,
+    "url": "https://www.pttrns.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "lawsofux",
+    "name": "Laws of UX",
+    "description": "Laws of UX is a reference library for exploring UX, Principles and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "UX",
+    "tags": [
+      "UX",
+      "Principles"
+    ],
+    "pricing": "Free",
+    "creator": "lawsofux.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "UX",
+      "Principles",
+      "Web"
+    ],
+    "addedOrder": 216,
+    "featured": false,
+    "url": "https://lawsofux.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "uxcrush",
+    "name": "UX Crush",
+    "description": "UX Crush is a marketplace or resource hub for discovering Figma, UX and Web.",
+    "category": "Marketplace",
+    "subcategory": "Figma",
+    "tags": [
+      "Figma",
+      "UX"
+    ],
+    "pricing": "Free",
+    "creator": "uxcrush.com",
+    "formats": [
+      "Figma",
+      "Web"
+    ],
+    "aliases": [
+      "Figma",
+      "UX",
+      "Web"
+    ],
+    "addedOrder": 217,
+    "featured": false,
+    "url": "https://uxcrush.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "themockup-club",
+    "name": "The Mockup Club",
+    "description": "The Mockup Club provides mockups and presentation resources focused on Mockups, PSD and Sketch.",
+    "category": "Mockups",
+    "subcategory": "Devices",
+    "tags": [
+      "Mockups"
+    ],
+    "pricing": "Free",
+    "creator": "themockup.club",
+    "formats": [
+      "PSD",
+      "Sketch",
+      "Figma"
+    ],
+    "aliases": [
+      "Mockups",
+      "PSD",
+      "Sketch",
+      "Figma",
+      "Devices"
+    ],
+    "addedOrder": 218,
+    "featured": false,
+    "url": "https://themockup.club/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "huemint",
+    "name": "Huemint",
+    "description": "Huemint provides templates and workflow resources focused on Color, AI and Palette.",
+    "category": "Templates",
+    "subcategory": "Colour tools",
+    "tags": [
+      "Color",
+      "AI",
+      "Palette"
+    ],
+    "pricing": "Free",
+    "creator": "huemint.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Color",
+      "AI",
+      "Palette",
+      "Web",
+      "Colour tools"
+    ],
+    "addedOrder": 219,
+    "featured": false,
+    "url": "https://huemint.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "lordicon",
+    "name": "Lordicon",
+    "description": "Lordicon provides an icon collection focused on Icons, Animation and Lottie for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Animated",
+    "tags": [
+      "Icons",
+      "Animation",
+      "Lottie"
+    ],
+    "pricing": "Freemium",
+    "creator": "lordicon.com",
+    "formats": [
+      "Lottie",
+      "JSON",
+      "SVG"
+    ],
+    "aliases": [
+      "Icons",
+      "Animation",
+      "Lottie",
+      "JSON",
+      "SVG",
+      "Animated"
+    ],
+    "addedOrder": 220,
+    "featured": false,
+    "url": "https://lordicon.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "microcopy-me",
+    "name": "Microcopy.me",
+    "description": "Microcopy.me provides templates and workflow resources focused on UX Writing, Copy and Web.",
+    "category": "Templates",
+    "subcategory": "UX writing",
+    "tags": [
+      "UX Writing",
+      "Copy"
+    ],
+    "pricing": "Free",
+    "creator": "microcopy.me",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "UX Writing",
+      "Copy",
+      "Web",
+      "UX writing"
+    ],
+    "addedOrder": 221,
+    "featured": false,
+    "url": "https://www.microcopy.me/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "mixkit",
+    "name": "Mixkit",
+    "description": "Mixkit is a marketplace or resource hub for discovering Video, Music and Stock.",
+    "category": "Marketplace",
+    "subcategory": "Stock",
+    "tags": [
+      "Video",
+      "Music",
+      "Stock"
+    ],
+    "pricing": "Free",
+    "creator": "mixkit.co",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Video",
+      "Music",
+      "Stock",
+      "Web"
+    ],
+    "addedOrder": 222,
+    "featured": false,
+    "url": "https://mixkit.co/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "happyhues",
+    "name": "Happy Hues",
+    "description": "Curated color palette inspiration.",
+    "category": "Backgrounds",
+    "subcategory": "Colour",
+    "tags": [
+      "Color",
+      "Palette"
+    ],
+    "pricing": "Free",
+    "creator": "happyhues.co",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Color",
+      "Palette",
+      "Web",
+      "Colour"
+    ],
+    "addedOrder": 223,
+    "featured": false,
+    "url": "https://www.happyhues.co/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "growth-design",
+    "name": "Growth.design",
+    "description": "Product growth case studies as comics.",
+    "category": "Inspiration",
+    "subcategory": "Case studies",
+    "tags": [
+      "UX",
+      "Case Studies",
+      "Growth"
+    ],
+    "pricing": "Free",
+    "creator": "growth.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "UX",
+      "Case Studies",
+      "Growth",
+      "Web",
+      "Case studies"
+    ],
+    "addedOrder": 224,
+    "featured": false,
+    "url": "https://growth.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "toools-design",
+    "name": "Toools.design",
+    "description": "1000+ design resources directory.",
+    "category": "Marketplace",
+    "subcategory": "Directories",
+    "tags": [
+      "Directory",
+      "Resources"
+    ],
+    "pricing": "Free",
+    "creator": "toools.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Directory",
+      "Resources",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 225,
+    "featured": false,
+    "url": "https://www.toools.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "basicons",
+    "name": "Basicons",
+    "description": "Basicons provides an icon collection focused on Icons and SVG for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Outline",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "basicons.xyz",
+    "formats": [
+      "SVG"
+    ],
+    "aliases": [
+      "Icons",
+      "SVG",
+      "Outline"
+    ],
+    "addedOrder": 226,
+    "featured": false,
+    "url": "https://basicons.xyz",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "meshgradient",
+    "name": "Mesh Gradient",
+    "description": "Mesh Gradient provides backgrounds and colour resources focused on Gradient, Background and Web.",
+    "category": "Backgrounds",
+    "subcategory": "Gradients",
+    "tags": [
+      "Gradient",
+      "Background"
+    ],
+    "pricing": "Free",
+    "creator": "meshgradient.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Gradient",
+      "Background",
+      "Web",
+      "Gradients"
+    ],
+    "addedOrder": 227,
+    "featured": false,
+    "url": "https://meshgradient.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "iconer",
+    "name": "Iconer",
+    "description": "Iconer provides an icon collection focused on Icons, SVG and Web for interface and product work.",
+    "category": "Icons",
+    "subcategory": "Packs",
+    "tags": [
+      "Icons"
+    ],
+    "pricing": "Free",
+    "creator": "iconer.app",
+    "formats": [
+      "SVG",
+      "Web"
+    ],
+    "aliases": [
+      "Icons",
+      "SVG",
+      "Web",
+      "Packs"
+    ],
+    "addedOrder": 228,
+    "featured": false,
+    "url": "https://iconer.app/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "3dicons",
+    "name": "3D Icons",
+    "description": "3D Icons provides an icon collection focused on Icons, 3D and PNG for interface and product work.",
+    "category": "Icons",
+    "subcategory": "3D",
+    "tags": [
+      "Icons",
+      "3D"
+    ],
+    "pricing": "Free",
+    "creator": "3dicons.co",
+    "formats": [
+      "PNG",
+      "Figma",
+      "Blend"
+    ],
+    "aliases": [
+      "Icons",
+      "3D",
+      "PNG",
+      "Figma",
+      "Blend"
+    ],
+    "addedOrder": 229,
+    "featured": false,
+    "url": "https://3dicons.co/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "shapefest",
+    "name": "Shapefest",
+    "description": "Shapefest provides illustration resources focused on 3D, Shapes and PNG for digital products.",
+    "category": "Illustrations",
+    "subcategory": "3D",
+    "tags": [
+      "3D",
+      "Shapes"
+    ],
+    "pricing": "Free",
+    "creator": "shapefest.com",
+    "formats": [
+      "PNG"
+    ],
+    "aliases": [
+      "3D",
+      "Shapes",
+      "PNG"
+    ],
+    "addedOrder": 230,
+    "featured": false,
+    "url": "https://shapefest.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "saaslandingpage",
+    "name": "SaaS Landing Page",
+    "description": "SaaS Landing Page is a reference library for exploring SaaS, Landing and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Galleries",
+    "tags": [
+      "SaaS",
+      "Landing"
+    ],
+    "pricing": "Free",
+    "creator": "saaslandingpage.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "SaaS",
+      "Landing",
+      "Web",
+      "Galleries"
+    ],
+    "addedOrder": 231,
+    "featured": false,
+    "url": "https://saaslandingpage.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "colorhunt",
+    "name": "Color Hunt",
+    "description": "Color Hunt provides backgrounds and colour resources focused on Color, Palette and Web.",
+    "category": "Backgrounds",
+    "subcategory": "Colour",
+    "tags": [
+      "Color",
+      "Palette"
+    ],
+    "pricing": "Free",
+    "creator": "colorhunt.co",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Color",
+      "Palette",
+      "Web",
+      "Colour"
+    ],
+    "addedOrder": 232,
+    "featured": false,
+    "url": "https://colorhunt.co/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "angle-sh",
+    "name": "Angle",
+    "description": "Angle provides mockups and presentation resources focused on Mockups, Device and Figma.",
+    "category": "Mockups",
+    "subcategory": "Devices",
+    "tags": [
+      "Mockups",
+      "Device"
+    ],
+    "pricing": "Freemium",
+    "creator": "angle.sh",
+    "formats": [
+      "Figma",
+      "Sketch",
+      "XD"
+    ],
+    "aliases": [
+      "Mockups",
+      "Device",
+      "Figma",
+      "Sketch",
+      "XD",
+      "Devices"
+    ],
+    "addedOrder": 233,
+    "featured": false,
+    "url": "https://angle.sh/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "designspiration",
+    "name": "Designspiration",
+    "description": "Designspiration is a reference library for exploring Inspiration, Gallery and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Galleries",
+    "tags": [
+      "Inspiration",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "designspiration.net",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Inspiration",
+      "Gallery",
+      "Web",
+      "Galleries"
+    ],
+    "addedOrder": 234,
+    "featured": false,
+    "url": "https://www.designspiration.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "storyset",
+    "name": "Storyset",
+    "description": "Storyset provides illustration resources focused on Illustration, SVG and PNG for digital products.",
+    "category": "Illustrations",
+    "subcategory": "Customisable",
+    "tags": [
+      "Illustration",
+      "SVG"
+    ],
+    "pricing": "Free",
+    "creator": "storyset.com",
+    "formats": [
+      "SVG",
+      "PNG",
+      "Lottie"
+    ],
+    "aliases": [
+      "Illustration",
+      "SVG",
+      "PNG",
+      "Lottie",
+      "Customisable"
+    ],
+    "addedOrder": 235,
+    "featured": false,
+    "url": "https://storyset.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "openpeeps",
+    "name": "Open Peeps",
+    "description": "Hand-drawn people illustration library.",
+    "category": "Illustrations",
+    "subcategory": "Characters",
+    "tags": [
+      "Illustration",
+      "People"
+    ],
+    "pricing": "Free",
+    "creator": "openpeeps.com",
+    "formats": [
+      "SVG",
+      "PNG"
+    ],
+    "aliases": [
+      "Illustration",
+      "People",
+      "SVG",
+      "PNG",
+      "Characters"
+    ],
+    "addedOrder": 236,
+    "featured": false,
+    "url": "https://openpeeps.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "drawkit",
+    "name": "DrawKit",
+    "description": "DrawKit provides illustration resources focused on Illustration, SVG and PNG for digital products.",
+    "category": "Illustrations",
+    "subcategory": "Vector",
+    "tags": [
+      "Illustration",
+      "SVG"
+    ],
+    "pricing": "Freemium",
+    "creator": "drawkit.com",
+    "formats": [
+      "SVG",
+      "PNG",
+      "Figma"
+    ],
+    "aliases": [
+      "Illustration",
+      "SVG",
+      "PNG",
+      "Figma",
+      "Vector"
+    ],
+    "addedOrder": 237,
+    "featured": false,
+    "url": "https://www.drawkit.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "sapiens-ui8",
+    "name": "Sapiens (UI8)",
+    "description": "Sapiens 3D illustration kit on UI8.",
+    "category": "Illustrations",
+    "subcategory": "3D",
+    "tags": [
+      "Illustration",
+      "3D",
+      "UI8"
+    ],
+    "pricing": "Paid",
+    "creator": "UI8",
+    "formats": [
+      "PNG",
+      "Figma"
+    ],
+    "aliases": [
+      "Illustration",
+      "3D",
+      "UI8",
+      "PNG",
+      "Figma"
+    ],
+    "addedOrder": 238,
+    "featured": false,
+    "url": "https://sapiens.ui8.net/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "aicss-orbs",
+    "name": "AICSS Orbs",
+    "description": "AICSS Orbs provides reusable components focused on Orbs, Agent UI and CSS for building polished interfaces.",
+    "category": "Components",
+    "subcategory": "Animation",
+    "tags": [
+      "Orbs",
+      "Agent UI",
+      "CSS",
+      "Activity"
+    ],
+    "pricing": "Free",
+    "creator": "aicss.dev",
+    "formats": [
+      "CSS",
+      "React"
+    ],
+    "aliases": [
+      "Orbs",
+      "Agent UI",
+      "CSS",
+      "Activity",
+      "React",
+      "Animation"
+    ],
+    "addedOrder": 239,
+    "featured": false,
+    "url": "https://www.aicss.dev/components/orbs",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "tinywow",
+    "name": "TinyWow",
+    "description": "Free AI writing, PDF, image, and other online utility tools for designers/devs.",
+    "category": "Templates",
+    "subcategory": "Tools",
+    "tags": [
+      "AI",
+      "PDF",
+      "Image",
+      "Utilities"
+    ],
+    "pricing": "Free",
+    "creator": "tinywow.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "AI",
+      "PDF",
+      "Image",
+      "Utilities",
+      "Web",
+      "Tools"
+    ],
+    "addedOrder": 240,
+    "featured": false,
+    "url": "https://tinywow.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "stocksnap",
+    "name": "StockSnap",
+    "description": "Free CC0 stock photos — no attribution required.",
+    "category": "Marketplace",
+    "subcategory": "Stock",
+    "tags": [
+      "Photos",
+      "CC0",
+      "Stock"
+    ],
+    "pricing": "Free",
+    "creator": "stocksnap.io",
+    "formats": [
+      "JPG"
+    ],
+    "aliases": [
+      "Photos",
+      "CC0",
+      "Stock",
+      "JPG"
+    ],
+    "addedOrder": 241,
+    "featured": false,
+    "url": "https://stocksnap.io/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "agents-plane",
+    "name": "Agent Avatar Lab (Plane)",
+    "description": "Agent Avatar Lab — generate exportable agent avatars (PNG/SVG/GIF/WebM) for product UIs.",
+    "category": "Illustrations",
+    "subcategory": "Characters",
+    "tags": [
+      "Avatars",
+      "Agents",
+      "Generator"
+    ],
+    "pricing": "Free",
+    "creator": "Plane",
+    "formats": [
+      "PNG",
+      "SVG",
+      "GIF",
+      "WebM"
+    ],
+    "aliases": [
+      "Avatars",
+      "Agents",
+      "Generator",
+      "PNG",
+      "SVG",
+      "GIF",
+      "WebM",
+      "Characters"
+    ],
+    "addedOrder": 242,
+    "featured": false,
+    "url": "https://agents.plane.so/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "liquid-glass-design",
+    "name": "Liquid Glass Design",
+    "description": "Curated liquid glass & glassmorphism inspiration gallery; each reference includes an AI style prompt.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Glassmorphism",
+      "Liquid Glass",
+      "AI prompts",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "Liquid Glass Design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Glassmorphism",
+      "Liquid Glass",
+      "AI prompts",
+      "Gallery",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 243,
+    "featured": false,
+    "url": "https://liquidglassdesign.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "kobra",
+    "name": "Kobra",
+    "description": "shadcn-style React component registry (Input OTP, agent UI patterns, motion) via npx add @kobra/*.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "React",
+      "shadcn",
+      "Motion",
+      "OTP",
+      "Agents"
+    ],
+    "pricing": "Freemium",
+    "creator": "Kobra",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "shadcn",
+      "Motion",
+      "OTP",
+      "Agents"
+    ],
+    "addedOrder": 244,
+    "featured": false,
+    "url": "https://kobra.systems/components/input-otp",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "loadmo",
+    "name": "loadmo.re",
+    "description": "Handpicked archive of bold/alternative mobile website design inspiration.",
+    "category": "Inspiration",
+    "subcategory": "Mobile",
+    "tags": [
+      "Mobile",
+      "Web",
+      "Gallery",
+      "Alternative"
+    ],
+    "pricing": "Free",
+    "creator": "Kim Boutin",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Mobile",
+      "Web",
+      "Gallery",
+      "Alternative"
+    ],
+    "addedOrder": 245,
+    "featured": false,
+    "url": "https://loadmo.re/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "posts-design",
+    "name": "posts.design",
+    "description": "Curated social post / brand creative inspiration (launches, headers, OG images, trends).",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Social",
+      "Posts",
+      "OG",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "posts.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Social",
+      "Posts",
+      "OG",
+      "Gallery",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 246,
+    "featured": false,
+    "url": "https://posts.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "vibeprompts",
+    "name": "VibePrompts",
+    "description": "286 free components for vibe coders with prompts.",
+    "category": "Components",
+    "subcategory": "AI prompts",
+    "tags": [
+      "Prompts",
+      "Components",
+      "Vibe coding"
+    ],
+    "pricing": "Free",
+    "creator": "vibeprompts.dev",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Prompts",
+      "Components",
+      "Vibe coding",
+      "Web",
+      "AI prompts"
+    ],
+    "addedOrder": 247,
+    "featured": false,
+    "url": "https://vibeprompts.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "uiable",
+    "name": "UIable",
+    "description": "683 open-source React components.",
+    "category": "UI libraries",
+    "subcategory": "React",
+    "tags": [
+      "React",
+      "Open source",
+      "Components"
+    ],
+    "pricing": "Free",
+    "creator": "uiable.com",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "React",
+      "Open source",
+      "Components"
+    ],
+    "addedOrder": 248,
+    "featured": false,
+    "url": "https://uiable.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "opendesign-dev",
+    "name": "OpenDesign.dev",
+    "description": "Open-source design skills for AI coding agents.",
+    "category": "UI libraries",
+    "subcategory": "AI tools",
+    "tags": [
+      "Open source",
+      "AI agents",
+      "Design skills"
+    ],
+    "pricing": "Free",
+    "creator": "opendesign.dev",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Open source",
+      "AI agents",
+      "Design skills",
+      "Web",
+      "AI tools"
+    ],
+    "addedOrder": 249,
+    "featured": false,
+    "url": "https://opendesign.dev/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "babelize-elements",
+    "name": "Babelize Elements",
+    "description": "Open-source multilingual UI components.",
+    "category": "Components",
+    "subcategory": "Localization",
+    "tags": [
+      "Open source",
+      "i18n",
+      "React"
+    ],
+    "pricing": "Free",
+    "creator": "Babelize",
+    "formats": [
+      "React"
+    ],
+    "aliases": [
+      "Open source",
+      "i18n",
+      "React",
+      "Localization"
+    ],
+    "addedOrder": 250,
+    "featured": false,
+    "url": "https://elements.babelize.co/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "ideadesign",
+    "name": "IdeaDesign",
+    "description": "Preview reconstructed UI components with interactions + downloadable HTML.",
+    "category": "Components",
+    "subcategory": "Reconstruction",
+    "tags": [
+      "UI reconstruction",
+      "HTML",
+      "Interactions"
+    ],
+    "pricing": "Freemium",
+    "creator": "IdeaDesign",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "UI reconstruction",
+      "HTML",
+      "Interactions",
+      "Web",
+      "Reconstruction"
+    ],
+    "addedOrder": 251,
+    "featured": false,
+    "url": "https://ideadesign.top/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "motionsites-ai",
+    "name": "MotionSites AI",
+    "description": "Premium AI website prompts / frontend UI inspiration pack.",
+    "category": "Templates",
+    "subcategory": "AI prompts",
+    "tags": [
+      "Prompts",
+      "Motion",
+      "Websites"
+    ],
+    "pricing": "Paid",
+    "creator": "MotionSites",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Prompts",
+      "Motion",
+      "Websites",
+      "Web",
+      "AI prompts"
+    ],
+    "addedOrder": 252,
+    "featured": false,
+    "url": "https://motionsites.ai/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "appshots-design",
+    "name": "Appshots.design",
+    "description": "Mobile app screenshot / UI inspiration gallery.",
+    "category": "Inspiration",
+    "subcategory": "Mobile",
+    "tags": [
+      "App screenshots",
+      "Mobile",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "appshots.design",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "App screenshots",
+      "Mobile",
+      "Gallery",
+      "Web"
+    ],
+    "addedOrder": 253,
+    "featured": false,
+    "url": "https://appshots.design/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "gummble",
+    "name": "Gummble",
+    "description": "Real app UI screenshots, UX flows & design MCP.",
+    "category": "Inspiration",
+    "subcategory": "Mobile",
+    "tags": [
+      "App screenshots",
+      "UX flows",
+      "MCP"
+    ],
+    "pricing": "Freemium",
+    "creator": "Gummble",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "App screenshots",
+      "UX flows",
+      "MCP",
+      "Web",
+      "Mobile"
+    ],
+    "addedOrder": 254,
+    "featured": false,
+    "url": "https://gummble.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "a1-gallery",
+    "name": "A1 Gallery",
+    "description": "A1 Gallery is a reference library for exploring Gallery, Web design and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": [
+      "Gallery",
+      "Web design"
+    ],
+    "pricing": "Free",
+    "creator": "a1.gallery",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Gallery",
+      "Web design",
+      "Web",
+      "Directories"
+    ],
+    "addedOrder": 255,
+    "featured": false,
+    "url": "https://www.a1.gallery/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "sectionmaster",
+    "name": "SectionMaster",
+    "description": "Website section inspiration gallery.",
+    "category": "Inspiration",
+    "subcategory": "Sections",
+    "tags": [
+      "Sections",
+      "Landing",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "sectionmaster.com",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Sections",
+      "Landing",
+      "Gallery",
+      "Web"
+    ],
+    "addedOrder": 256,
+    "featured": false,
+    "url": "https://www.sectionmaster.com/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "deck-gallery",
+    "name": "Deck Gallery",
+    "description": "Deck Gallery is a reference library for exploring Brand decks, Pitch and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Brand",
+    "tags": [
+      "Brand decks",
+      "Pitch"
+    ],
+    "pricing": "Free",
+    "creator": "deck.gallery",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Brand decks",
+      "Pitch",
+      "Web",
+      "Brand"
+    ],
+    "addedOrder": 257,
+    "featured": false,
+    "url": "https://deck.gallery/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "logosystem",
+    "name": "Logo System",
+    "description": "Logo System is a reference library for exploring Logo systems, Identity and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Brand",
+    "tags": [
+      "Logo systems",
+      "Identity"
+    ],
+    "pricing": "Free",
+    "creator": "logosystem.co",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Logo systems",
+      "Identity",
+      "Web",
+      "Brand"
+    ],
+    "addedOrder": 258,
+    "featured": false,
+    "url": "https://logosystem.co/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "brandguidelines",
+    "name": "Brand Guidelines",
+    "description": "Real brand guidelines from real brands.",
+    "category": "Inspiration",
+    "subcategory": "Brand",
+    "tags": [
+      "Brand guidelines",
+      "Identity"
+    ],
+    "pricing": "Free",
+    "creator": "brandguidelines.net",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Brand guidelines",
+      "Identity",
+      "Web",
+      "Brand"
+    ],
+    "addedOrder": 259,
+    "featured": false,
+    "url": "https://www.brandguidelines.net/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "visualjournal",
+    "name": "Visual Journal",
+    "description": "Visual Journal is a reference library for exploring Visual identity, Inspiration and Web and interface design ideas.",
+    "category": "Inspiration",
+    "subcategory": "Brand",
+    "tags": [
+      "Visual identity",
+      "Inspiration"
+    ],
+    "pricing": "Free",
+    "creator": "visualjournal.it",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Visual identity",
+      "Inspiration",
+      "Web",
+      "Brand"
+    ],
+    "addedOrder": 260,
+    "featured": false,
+    "url": "https://visualjournal.it/",
+    "lastChecked": "2026-09-14"
+  },
+  {
+    "id": "ogfolio",
+    "name": "OGFolio",
+    "description": "Curated library of Open Graph images from real products.",
+    "category": "Inspiration",
+    "subcategory": "Social",
+    "tags": [
+      "Open Graph",
+      "Social previews",
+      "Gallery"
+    ],
+    "pricing": "Free",
+    "creator": "OGFolio",
+    "formats": [
+      "Web"
+    ],
+    "aliases": [
+      "Open Graph",
+      "Social previews",
+      "Gallery",
+      "Web",
+      "Social"
+    ],
+    "addedOrder": 261,
+    "featured": false,
+    "url": "https://www.ogfolio.com/",
+    "lastChecked": "2026-09-14"
   }
 ]

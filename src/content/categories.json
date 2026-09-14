@@ -2,51 +2,132 @@
   {
     "name": "Components",
     "icon": "layers",
-    "sub": ["Animation", "Buttons", "Navigation"]
+    "sub": [
+      "Animation",
+      "Buttons",
+      "Navigation",
+      "Premium",
+      "React",
+      "AI prompts",
+      "Localization",
+      "Reconstruction"
+    ]
   },
   {
     "name": "UI libraries",
     "icon": "box",
-    "sub": ["React", "Vue", "CSS"]
+    "sub": [
+      "React",
+      "Vue",
+      "CSS",
+      "AI tools",
+      "React Native",
+      "Animation"
+    ]
   },
   {
     "name": "Templates",
     "icon": "panels-top-left",
-    "sub": ["Coded", "Framer", "Webflow"]
+    "sub": [
+      "Coded",
+      "Framer",
+      "Webflow",
+      "Design tokens",
+      "Next.js",
+      "Portfolio",
+      "Landing pages",
+      "Tools",
+      "Colour tools",
+      "UX writing",
+      "AI prompts"
+    ]
   },
   {
     "name": "Icons",
     "icon": "shapes",
-    "sub": ["Outline", "Solid", "3D"]
+    "sub": [
+      "Outline",
+      "Solid",
+      "3D",
+      "Vector",
+      "CSS",
+      "Material",
+      "Animated",
+      "Packs"
+    ]
   },
   {
     "name": "Backgrounds",
     "icon": "image",
-    "sub": ["Gradients", "Textures", "Shaders"]
+    "sub": [
+      "Gradients",
+      "Textures",
+      "Shaders",
+      "Colour"
+    ]
   },
   {
     "name": "Illustrations",
     "icon": "pen-tool",
-    "sub": ["Vector", "3D", "Hand-drawn"]
+    "sub": [
+      "Vector",
+      "3D",
+      "Hand-drawn",
+      "AI",
+      "Customisable",
+      "Characters"
+    ]
   },
   {
     "name": "Fonts",
     "icon": "type",
-    "sub": ["Sans serif", "Serif", "Display"]
+    "sub": [
+      "Sans serif",
+      "Serif",
+      "Display",
+      "Tools"
+    ]
   },
   {
     "name": "Mockups",
     "icon": "rectangle-vertical",
-    "sub": ["Devices", "Branding", "Packaging"]
+    "sub": [
+      "Devices",
+      "Branding",
+      "Packaging",
+      "Tools",
+      "Mobile"
+    ]
   },
   {
     "name": "Inspiration",
     "icon": "lightbulb",
-    "sub": ["Directories", "Landing pages", "Portfolios"]
+    "sub": [
+      "Directories",
+      "Landing pages",
+      "Portfolios",
+      "Awards",
+      "Galleries",
+      "Guidelines",
+      "Tools",
+      "Mobile",
+      "UX",
+      "Case studies",
+      "Sections",
+      "Brand",
+      "Social"
+    ]
   },
   {
     "name": "Marketplace",
     "icon": "store",
-    "sub": ["Design assets", "UI kits"]
+    "sub": [
+      "Design assets",
+      "UI kits",
+      "Directories",
+      "AI skills",
+      "Figma",
+      "Stock"
+    ]
   }
 ]

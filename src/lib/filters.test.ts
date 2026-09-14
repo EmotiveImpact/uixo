@@ -1,8 +1,91 @@
 import { describe, expect, it } from 'vitest';
 import { filterResources, populatedSubs, categoryCount, searchIndex } from './filters';
-import { categories, resources, thumbnailPosition } from '../data';
+import { resources, thumbnailPosition } from '../data';
 import { ALL_FORMATS } from '../types';
 import type { FilterState } from './filters';
+import type { Category, Resource } from '../types';
+
+const resource = (overrides: Partial<Resource>): Resource => ({
+  id: 'resource',
+  name: 'Resource',
+  description: 'A useful design resource.',
+  category: 'Components',
+  subcategory: 'Animation',
+  tags: [],
+  pricing: 'Free',
+  creator: 'Creator',
+  formats: ['Web'],
+  aliases: [],
+  addedOrder: 1,
+  featured: true,
+  url: 'https://example.com',
+  lastChecked: '2026-09-14',
+  ...overrides,
+});
+
+/** Behaviour fixtures stay stable while the editorial catalogue grows independently. */
+const fixtureResources: Resource[] = [
+  resource({
+    id: 'orb',
+    name: 'Orbkit',
+    description: 'React shader backgrounds.',
+    tags: ['Shaders', 'React'],
+    formats: ['React'],
+    addedOrder: 1,
+  }),
+  resource({
+    id: 'grain',
+    name: 'Grainient',
+    category: 'Backgrounds',
+    subcategory: 'Gradients',
+    pricing: 'Freemium',
+    formats: ['PNG'],
+    addedOrder: 2,
+  }),
+  resource({
+    id: 'shadcn',
+    name: 'shadcn/ui',
+    category: 'UI libraries',
+    subcategory: 'React',
+    tags: ['Components'],
+    formats: ['React'],
+    aliases: ['shad cn'],
+    addedOrder: 3,
+  }),
+  resource({
+    id: 'lucide',
+    name: 'Lucide',
+    category: 'Icons',
+    subcategory: 'Outline',
+    formats: ['SVG'],
+    aliases: ['feather'],
+    addedOrder: 4,
+  }),
+  resource({
+    id: 'market',
+    name: 'UI8',
+    description: 'A marketplace for design assets.',
+    category: 'Marketplace',
+    subcategory: 'UI kits',
+    tags: ['Fonts'],
+    pricing: 'Freemium',
+    formats: ['Figma'],
+    addedOrder: 5,
+  }),
+  resource({
+    id: 'built',
+    name: 'Built by Designers',
+    category: 'Inspiration',
+    subcategory: 'Directories',
+    featured: false,
+    addedOrder: 6,
+  }),
+];
+
+const fixtureCategories: Category[] = [
+  { name: 'Components', icon: () => null, sub: ['Animation', 'Buttons'] },
+  { name: 'Fonts', icon: () => null, sub: ['Sans serif', 'Display'] },
+];
 
 const base: FilterState = {
   listIds: null,
@@ -15,7 +98,7 @@ const base: FilterState = {
 };
 
 const names = (state: Partial<FilterState>) =>
-  filterResources(resources, { ...base, ...state }).map((resource) => resource.name);
+  filterResources(fixtureResources, { ...base, ...state }).map((resource) => resource.name);
 
 describe('browse order', () => {
   it('hides non-featured resources on the unfiltered landing view', () => {
@@ -24,8 +107,8 @@ describe('browse order', () => {
 
   it('shows everything under Recent, newest first', () => {
     const recent = names({ browse: 'Recent' });
-    expect(recent).toHaveLength(resources.length);
-    expect(recent[0]).toBe('UI8');
+    expect(recent).toHaveLength(fixtureResources.length);
+    expect(recent[0]).toBe('Built by Designers');
     expect(recent.at(-1)).toBe('Orbkit');
   });
 
@@ -48,13 +131,12 @@ describe('pricing', () => {
     ]);
     expect(names({ price: 'Freemium', browse: 'Recent' })).toEqual([
       'UI8',
-      'React Bits',
       'Grainient',
     ]);
   });
 
   it('never returns a freemium resource under a Free filter', () => {
-    const free = filterResources(resources, { ...base, price: 'Free', browse: 'Recent' });
+    const free = filterResources(fixtureResources, { ...base, price: 'Free', browse: 'Recent' });
     expect(free.every((resource) => resource.pricing === 'Free')).toBe(true);
   });
 });
@@ -66,18 +148,20 @@ describe('categories and subcategories', () => {
   });
 
   it('narrows to a subcategory', () => {
-    expect(names({ category: 'Components', sub: 'Animation' })).toEqual(['Orbkit', 'React Bits']);
+    expect(names({ category: 'Components', sub: 'Animation' })).toEqual(['Orbkit']);
   });
 
   it('reports only subcategories that would return something', () => {
-    const components = categories.find((entry) => entry.name === 'Components')!;
-    expect(populatedSubs(resources, components)).toEqual(['Animation']);
+    const components = fixtureCategories.find((entry) => entry.name === 'Components')!;
+    expect(populatedSubs(fixtureResources, components)).toEqual(['Animation']);
     expect(components.sub).toContain('Buttons');
   });
 
   it('counts resources per category consistently with filtering', () => {
-    for (const category of categories) {
-      expect(categoryCount(resources, category)).toBe(names({ category: category.name }).length);
+    for (const category of fixtureCategories) {
+      expect(categoryCount(fixtureResources, category)).toBe(
+        names({ category: category.name }).length,
+      );
     }
   });
 });
@@ -106,7 +190,7 @@ describe('search', () => {
   });
 
   it('indexes pricing so it is searchable', () => {
-    expect(searchIndex(resources[0])).toContain('free');
+    expect(searchIndex(fixtureResources[0])).toContain('free');
   });
 });
 
@@ -116,7 +200,7 @@ describe('formats and lists', () => {
   });
 
   it('restricts to the ids in a list', () => {
-    expect(names({ listIds: ['lucide', 'orbkit'], browse: 'Recent' })).toEqual([
+    expect(names({ listIds: ['lucide', 'orb'], browse: 'Recent' })).toEqual([
       'Lucide',
       'Orbkit',
     ]);
