@@ -22,7 +22,7 @@ A source's inclusion is not an endorsement or a runtime test of every asset. Lic
 
 ## What is actually in the seed
 
-The source snapshot at `data/registry/captured.json` contains **67 metadata records**: 46 shadcn/ui components, 8 Lucide icons and 13 Heroicons. This is not thousands of downloaded files or a completed live indexing run. Seed source references are mutable and explicitly labelled as such.
+The source snapshots under `data/registry/` contain **175 metadata records**: 46 shadcn/ui components, 8 Lucide icons, 13 Heroicons, 75 Magic UI components and 33 Motion Primitives components. These are not downloaded component files or proof of runtime compatibility. Magic UI and Motion Primitives retain immutable source commits; the original three provider captures remain explicitly labelled as mutable until re-indexed.
 
 The source snapshot does not populate fonts, templates, backgrounds, illustrations or motion libraries. The website directory may list those sources without their individual assets being indexed.
 

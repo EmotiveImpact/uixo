@@ -12,7 +12,12 @@ import {
 } from '../../registry/policy.ts';
 import { FetchBudget } from '../../registry/fetcher.ts';
 import { enqueue, runJob } from '../../registry/jobs.ts';
-import { PROVIDERS, parseShadcnManifest } from '../../registry/providers.ts';
+import {
+  indexPage,
+  parseJsonRegistry,
+  parseShadcnManifest,
+  PROVIDERS,
+} from '../../registry/providers.ts';
 
 async function setup() {
   const db = await sqliteDatabase();
@@ -27,10 +32,10 @@ test('migration and captured-source seed are repeatable; counts reflect actual r
     await migrate(db);
     const first = await seedCaptured(registry),
       second = await seedCaptured(registry);
-    assert.equal(first.inserted, 67);
+    assert.equal(first.inserted, 175);
     assert.equal(second.inserted, 0);
-    assert.equal((await registry.stats()).assets, 67);
-    assert.equal((await registry.providers()).length, 3);
+    assert.equal((await registry.stats()).assets, 175);
+    assert.equal((await registry.providers()).length, 5);
   } finally {
     await db.close();
   }
@@ -246,6 +251,112 @@ test('manifest parser never executes upstream source and rejects unknown layouts
     registryDependencies: [],
   });
   assert.throws(() => parseShadcnManifest('process.exit(1)'));
+});
+test('JSON registry parser accepts declared UI components and ignores examples', () => {
+  const parsed = parseJsonRegistry(
+    JSON.stringify({
+      items: [
+        {
+          name: 'animated-card',
+          type: 'registry:ui',
+          title: 'Animated Card',
+          description: 'A card with a declared animation.',
+          dependencies: ['motion'],
+          registryDependencies: ['button'],
+          categories: ['motion'],
+          files: [{ path: 'components/animated-card.tsx', type: 'registry:component' }],
+        },
+        {
+          name: 'animated-card-demo',
+          type: 'registry:example',
+          files: [{ path: 'examples/animated-card.tsx', type: 'registry:example' }],
+        },
+      ],
+    }),
+  );
+  assert.deepEqual(parsed, [
+    {
+      name: 'animated-card',
+      title: 'Animated Card',
+      description: 'A card with a declared animation.',
+      dependencies: ['motion'],
+      registryDependencies: ['button'],
+      categories: ['motion'],
+      sourcePath: 'components/animated-card.tsx',
+      format: 'tsx',
+    },
+  ]);
+  assert.throws(() => parseJsonRegistry('{broken'));
+  assert.throws(() =>
+    parseJsonRegistry(
+      JSON.stringify({
+        items: [
+          {
+            name: 'unsafe',
+            type: 'registry:ui',
+            files: [{ path: '../unsafe.tsx' }],
+          },
+        ],
+      }),
+    ),
+  );
+});
+test('captured React registries retain pinned source, licence and acquisition evidence', async () => {
+  const assets = await capturedAssets();
+  const magic = assets.filter((asset) => asset.providerId === 'magic-ui');
+  const motion = assets.filter((asset) => asset.providerId === 'motion-primitives');
+  assert.equal(magic.length, 75);
+  assert.equal(motion.length, 33);
+  assert.ok([...magic, ...motion].every((asset) => asset.licence.expression === 'MIT'));
+  assert.ok(
+    magic.every(
+      (asset) => asset.variants[0].sourceRef === '52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1',
+    ),
+  );
+  assert.ok(
+    motion.every(
+      (asset) => asset.variants[0].sourceRef === '40f59b61e567712aa8329c7dc8c2ced763054c34',
+    ),
+  );
+  const magicRecipe = resolveAsset(magic.find((asset) => asset.slug === 'globe')!);
+  assert.equal(magicRecipe.status, 'ready');
+  assert.equal(magicRecipe.url, 'https://magicui.design/r/globe.json');
+  const motionRecipe = resolveAsset(motion.find((asset) => asset.slug === 'text-effect')!);
+  assert.equal(motionRecipe.status, 'ready');
+  assert.equal(motionRecipe.url, 'https://motion-primitives.com/c/text-effect.json');
+});
+test('generic GitHub registry indexing pins the discovered revision', async () => {
+  const provider = PROVIDERS.find((entry) => entry.id === 'magic-ui')!;
+  const ref = 'a'.repeat(40);
+  const manifest = JSON.stringify({
+    items: [
+      {
+        name: 'verified-card',
+        type: 'registry:ui',
+        title: 'Verified Card',
+        description: 'A card declared by the provider registry.',
+        dependencies: ['motion'],
+        files: [{ path: 'registry/verified-card.tsx', type: 'registry:ui' }],
+      },
+    ],
+  });
+  const licence =
+    'Permission is hereby granted, free of charge.\nCopyright notice and this permission notice.';
+  const budget = new FetchBudget({
+    fetchImpl: async (input) => {
+      const url = String(input);
+      if (url.includes('/git/refs/heads/'))
+        return new Response(JSON.stringify({ object: { sha: ref } }));
+      if (url.endsWith(`/${provider.licencePath}`)) return new Response(licence);
+      if (url.endsWith(`/${provider.registryPath}`)) return new Response(manifest);
+      return new Response('', { status: 404 });
+    },
+  });
+  const indexed = await indexPage(provider.id, {}, budget);
+  assert.equal(indexed.sourceRef, ref);
+  assert.equal(indexed.assets.length, 1);
+  assert.equal(indexed.assets[0].id, 'magic-ui/verified-card');
+  assert.equal(indexed.assets[0].variants[0].sourceRef, ref);
 });
 test('scoped token comparison fails closed and rejects short secrets', () => {
   const token = 'x'.repeat(32);

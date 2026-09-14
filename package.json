@@ -18,6 +18,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check:links": "node scripts/check-links.mjs",
+    "screenshots:capture": "node scripts/capture-thumbnails.mjs",
     "thumbnails": "node scripts/thumbnails.mjs",
     "previews:verify": "node scripts/verify-pinned-previews.mjs",
     "candidates:apply": "node scripts/apply-candidates.mjs",

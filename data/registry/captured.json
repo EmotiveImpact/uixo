@@ -1,10 +1,20 @@
 {
   "capturedAt": "2026-09-12T05:52:00.000Z",
-  "method": "Metadata captured through the authorised GitHub connector during implementation. This is a limited source snapshot, not a completed live network indexing run. The mutable source branches are explicitly retained and download routes have not been probed by this offline runtime.",
+  "method": "Metadata captured from official upstream GitHub sources. Legacy seed records retain their mutable branch references; newer provider snapshots retain immutable commit references. This is a source metadata snapshot, not a mirror of component files or proof of runtime compatibility.",
   "sources": {
     "shadcn": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/_registry.ts",
     "lucide": "https://github.com/lucide-icons/lucide/tree/main/icons",
-    "heroicons": "https://github.com/tailwindlabs/heroicons/tree/master/optimized/24/outline"
+    "heroicons": "https://github.com/tailwindlabs/heroicons/tree/master/optimized/24/outline",
+    "magic-ui": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/registry.json",
+    "motion-primitives": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/public/c/registry.json"
+  },
+  "refs": {
+    "magic-ui": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "motion-primitives": "40f59b61e567712aa8329c7dc8c2ced763054c34"
+  },
+  "capturedAtByProvider": {
+    "magic-ui": "2026-09-14T00:00:00.000Z",
+    "motion-primitives": "2026-09-14T00:00:00.000Z"
   },
   "components": [
     ["accordion", ["radix-ui"]], ["alert", []], ["alert-dialog", ["radix-ui"]],

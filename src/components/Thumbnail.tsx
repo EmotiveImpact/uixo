@@ -36,8 +36,8 @@ export function Thumbnail({ id, alt, sizes, eager, onError }: ThumbnailProps) {
       <img
         src={`/assets/${id}.png`}
         alt={alt}
-        width={1200}
-        height={800}
+        width={1280}
+        height={960}
         loading={eager ? 'eager' : 'lazy'}
         decoding="async"
         onError={onError}

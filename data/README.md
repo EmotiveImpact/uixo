@@ -46,13 +46,25 @@ field. A listing whose file is missing renders as a letter tile, not a broken im
 | | |
 |---|---|
 | Format | PNG |
-| Size | **1280×720** (matches the existing set) |
-| Viewport | 1280×720, `deviceScaleFactor: 1` |
+| Size | **1280×960** (matches the directory card shape) |
+| Viewport | 1280×960, `deviceScaleFactor: 1` |
 | Content | above the fold only — do not capture full page |
 
 Cards crop with `object-fit: cover` anchored to the **top**, at aspect ratios between 1.2
-and 1.4, so anything below roughly the first 900px of a 1280-wide capture will never be
-seen. A full-page screenshot produces a card showing a thin strip of header.
+and 1.4. A 1280×960 capture preserves the desktop composition while staying close enough
+to those shapes that the card never enlarges one corner of a 16:9 or phone screenshot. A
+full-page screenshot still produces a card showing a thin strip of header, so capture only
+the viewport.
+
+Use the repeatable capture command rather than resizing screenshots by hand:
+
+```sh
+npm run screenshots:capture -- resource-id=https://example.com
+```
+
+The command captures the PNG, validates that it is a real 1280×960 PNG, and updates that
+resource's 400px and 800px WebP variants. It requires Chrome or Chromium plus `cwebp`; set
+`UIXO_CHROME_PATH` if the browser is installed somewhere non-standard.
 
 If a site's subject sits mid-page rather than top-left, set `"framing": "center"` on the
 listing in `src/content/resources.json` — that centres the crop on every surface.

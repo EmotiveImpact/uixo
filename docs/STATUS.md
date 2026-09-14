@@ -4,7 +4,7 @@ For product editions and delivery phases, see the [master roadmap](PRODUCT-ROADM
 
 ## Current outcome
 
-The entire v2 brief is **not complete**. The integration branch has reliable account favourites, five source-pinned component renders and visitor asset discovery connected to a persistent Neon registry on its protected Vercel preview. CI/release isolation, Eve, the production registry configuration and a larger live-indexed catalogue remain separate release work.
+The entire v2 brief is **not complete**. The application has reliable account favourites, five source-pinned component renders and visitor asset discovery connected to the registry. The bundled evaluation snapshot now contains 175 records from five approved providers, including commit-pinned Magic UI and Motion Primitives catalogues. Deploying the code does not seed an existing persistent registry; an operator must run the explicit seed/index workflow and review production counts.
 
 ## Implemented in the branch before this repair
 

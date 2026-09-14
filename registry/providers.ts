@@ -8,7 +8,12 @@ export const PROVIDERS: Provider[] = [
     name: 'shadcn/ui',
     url: 'https://ui.shadcn.com/',
     repo: 'shadcn-ui/ui',
+    branch: 'main',
+    licencePath: 'LICENSE.md',
     adapter: 'shadcn-registry',
+    registryPath: 'apps/v4/registry/new-york-v4/ui/_registry.ts',
+    registryBaseUrl: 'https://ui.shadcn.com/r/styles/new-york-v4/',
+    css: 'tailwind',
     approved: true,
     selectedAt: '2026-09-12T05:41:00.000Z',
     rationale:
@@ -19,6 +24,8 @@ export const PROVIDERS: Provider[] = [
     name: 'Lucide',
     url: 'https://lucide.dev/',
     repo: 'lucide-icons/lucide',
+    branch: 'main',
+    licencePath: 'LICENSE',
     adapter: 'github-icons',
     approved: true,
     selectedAt: '2026-09-12T05:41:00.000Z',
@@ -30,11 +37,45 @@ export const PROVIDERS: Provider[] = [
     name: 'Heroicons',
     url: 'https://heroicons.com/',
     repo: 'tailwindlabs/heroicons',
+    branch: 'master',
+    licencePath: 'LICENSE',
     adapter: 'github-icons',
     approved: true,
     selectedAt: '2026-09-12T05:41:00.000Z',
     rationale:
       'Selected for the implementation as an additional provider, not a change to the editorial directory. First-party SVG sources and React packages with an explicit MIT licence.',
+  },
+  {
+    id: 'magic-ui',
+    name: 'Magic UI',
+    url: 'https://magicui.design/',
+    repo: 'magicuidesign/magicui',
+    branch: 'main',
+    licencePath: 'LICENSE.md',
+    adapter: 'github-json-registry',
+    registryPath: 'registry.json',
+    registryBaseUrl: 'https://magicui.design/r/',
+    css: 'tailwind',
+    approved: true,
+    selectedAt: '2026-09-14T00:00:00.000Z',
+    rationale:
+      'An existing UIXO-selected React source with an official component registry, declared dependencies, transparent source and an explicit MIT licence.',
+  },
+  {
+    id: 'motion-primitives',
+    name: 'Motion Primitives',
+    url: 'https://motion-primitives.com/',
+    repo: 'ibelick/motion-primitives',
+    branch: 'main',
+    licencePath: 'LICENCE.md',
+    adapter: 'github-json-registry',
+    registryPath: 'public/c/registry.json',
+    registryBaseUrl: 'https://motion-primitives.com/c/',
+    css: 'tailwind',
+    approved: true,
+    selectedAt: '2026-09-14T00:00:00.000Z',
+    rationale:
+      'An existing UIXO-selected React source with an official component registry, declared dependencies, transparent source and an explicit MIT licence.',
   },
 ];
 export function licenceFromText(
@@ -96,6 +137,83 @@ export function parseShadcnManifest(body: string) {
     );
   return records;
 }
+
+export type JsonRegistryComponent = {
+  name: string;
+  title: string;
+  description: string;
+  dependencies: string[];
+  registryDependencies: string[];
+  categories: string[];
+  sourcePath: string;
+  format: 'tsx' | 'jsx';
+};
+
+export function parseJsonRegistry(body: string): JsonRegistryComponent[] {
+  let value: unknown;
+  try {
+    value = JSON.parse(body);
+  } catch {
+    throw new RegistryError('PROVIDER_FORMAT', 'Provider returned invalid registry JSON.', 502);
+  }
+  const manifest = record(value);
+  if (!Array.isArray(manifest.items) || !manifest.items.length || manifest.items.length > 500)
+    throw new RegistryError(
+      'PROVIDER_FORMAT',
+      'Registry layout changed. Update and review the adapter.',
+      502,
+    );
+  const components = manifest.items.flatMap((entry): JsonRegistryComponent[] => {
+    const item = record(entry);
+    if (!['registry:ui', 'registry:component'].includes(String(item.type))) return [];
+    const name = text(item.name, 150);
+    if (!/^[a-z0-9][a-z0-9-]*$/.test(name))
+      throw new RegistryError('PROVIDER_FORMAT', 'Registry component name is invalid.', 502);
+    if (!Array.isArray(item.files) || !item.files.length)
+      throw new RegistryError('PROVIDER_FORMAT', 'Registry component has no source file.', 502);
+    const paths = item.files.map((file) => text(record(file).path, 400));
+    const sourcePath = paths.find((path) => /\.(tsx|jsx)$/.test(path));
+    if (!sourcePath || sourcePath.includes('..') || sourcePath.startsWith('/'))
+      throw new RegistryError('PROVIDER_FORMAT', 'Registry component source path is invalid.', 502);
+    const dependencies = Array.isArray(item.dependencies)
+      ? item.dependencies.map((dependency) => text(dependency, 150))
+      : [];
+    const registryDependencies = Array.isArray(item.registryDependencies)
+      ? item.registryDependencies.map((dependency) => text(dependency, 150))
+      : [];
+    const categories = Array.isArray(item.categories)
+      ? item.categories.map((category) => text(category, 80))
+      : [];
+    const title = item.title
+      ? text(item.title, 150)
+      : name.replace(
+          /(^|-)(\w)/g,
+          (_, separator: string, character: string) =>
+            `${separator ? ' ' : ''}${character.toUpperCase()}`,
+        );
+    return [
+      {
+        name,
+        title,
+        description: item.description ? text(item.description, 1600) : `${title} component.`,
+        dependencies: [...new Set(dependencies)],
+        registryDependencies: [...new Set(registryDependencies)],
+        categories: [...new Set(categories)],
+        sourcePath,
+        format: sourcePath.endsWith('.jsx') ? 'jsx' : 'tsx',
+      },
+    ];
+  });
+  if (!components.length || components.length > 200)
+    throw new RegistryError(
+      'PROVIDER_FORMAT',
+      'Registry contains no supported component records.',
+      502,
+    );
+  if (new Set(components.map((component) => component.name)).size !== components.length)
+    throw new RegistryError('PROVIDER_FORMAT', 'Registry component names must be unique.', 502);
+  return components;
+}
 export function componentAsset(
   name: string,
   dependencies: string[],
@@ -153,6 +271,75 @@ export function componentAsset(
     ],
     verifiedAt: now,
     preview: { kind: 'schematic', label: 'UIXO schematic, not an upstream screenshot' },
+    editorialPick: false,
+  };
+}
+
+export function jsonRegistryComponentAsset(
+  item: JsonRegistryComponent,
+  provider: Provider,
+  licence: Licence,
+  ref: string,
+  now: string,
+): Asset {
+  if (!provider.registryPath || !provider.registryBaseUrl)
+    throw new RegistryError(
+      'PROVIDER_FORMAT',
+      'Provider registry configuration is incomplete.',
+      502,
+    );
+  const sourceUrl = `https://github.com/${provider.repo}/blob/${ref}/${item.sourcePath}`;
+  const manifestUrl = `https://github.com/${provider.repo}/blob/${ref}/${provider.registryPath}`;
+  return {
+    id: `${provider.id}/${item.name}`,
+    providerId: provider.id,
+    slug: item.name,
+    name: item.title,
+    description: item.description,
+    kind: 'component',
+    tags: [
+      'interface',
+      'react',
+      ...(provider.css ? [provider.css] : []),
+      ...item.categories.map((category) => category.toLowerCase()),
+    ],
+    price: licence.commercial === 'allowed' ? 'free' : 'unknown',
+    sourceUrl,
+    licence,
+    variants: [
+      {
+        id: `${provider.id}/${item.name}/react`,
+        framework: 'react',
+        format: item.format,
+        css: provider.css ?? null,
+        dependencies: item.dependencies,
+        registryDependencies: item.registryDependencies,
+        peerDependencies: {},
+        sourceRef: ref,
+        acquisition: {
+          kind: 'registry',
+          url: `${provider.registryBaseUrl}${encodeURIComponent(item.name)}.json`,
+        },
+      },
+    ],
+    evidence: [
+      {
+        field: 'component metadata and declared dependencies',
+        url: manifestUrl,
+        reference: ref,
+        observedAt: now,
+        method: 'declared',
+      },
+      {
+        field: 'component source path',
+        url: sourceUrl,
+        reference: ref,
+        observedAt: now,
+        method: 'declared',
+      },
+    ],
+    verifiedAt: now,
+    preview: { kind: 'schematic', label: 'UIXO illustration, not an upstream render' },
     editorialPick: false,
   };
 }
@@ -247,16 +434,12 @@ export async function indexPage(
     base = `https://api.github.com/repos/${provider.repo}`;
   let ref = options.sourceRef;
   if (!ref) {
-    const refPayload = record(
-      await budget.json(
-        `${base}/git/refs/heads/${provider.id === 'heroicons' ? 'master' : 'main'}`,
-      ),
-    );
+    const refPayload = record(await budget.json(`${base}/git/refs/heads/${provider.branch}`));
     ref = text(record(refPayload.object).sha, 40);
   }
   if (!/^[a-f0-9]{40}$/.test(ref))
     throw new RegistryError('PROVIDER_FORMAT', 'Expected an immutable Git commit.', 502);
-  const licencePath = provider.id === 'shadcn' ? 'LICENSE.md' : 'LICENSE';
+  const licencePath = provider.licencePath;
   const body = await budget.text(
     `https://raw.githubusercontent.com/${provider.repo}/${ref}/${licencePath}`,
   );
@@ -283,6 +466,15 @@ export async function indexPage(
       });
       return asset;
     });
+  } else if (provider.adapter === 'github-json-registry') {
+    if (!provider.registryPath)
+      throw new RegistryError('PROVIDER_FORMAT', 'Provider registry path is missing.', 502);
+    const manifest = await budget.text(
+      `https://raw.githubusercontent.com/${provider.repo}/${ref}/${provider.registryPath}`,
+    );
+    all = parseJsonRegistry(manifest).map((item) =>
+      jsonRegistryComponentAsset(item, provider, licence, ref!, now),
+    );
   } else {
     const tree = record(await budget.json(`${base}/git/trees/${ref}?recursive=1`));
     if (tree.truncated === true || !Array.isArray(tree.tree))

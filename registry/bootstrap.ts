@@ -1,6 +1,13 @@
 import { readFile } from 'node:fs/promises';
 import type { Asset } from './domain.ts';
-import { componentAsset, iconAsset, licenceFromText, PROVIDERS } from './providers.ts';
+import {
+  componentAsset,
+  iconAsset,
+  jsonRegistryComponentAsset,
+  licenceFromText,
+  parseJsonRegistry,
+  PROVIDERS,
+} from './providers.ts';
 import type { Registry } from './service.ts';
 
 export async function capturedAssets(): Promise<Asset[]> {
@@ -11,10 +18,13 @@ export async function capturedAssets(): Promise<Asset[]> {
     components: [string, string[]][];
     lucide: string[];
     heroicons: string[];
+    refs?: Record<string, string>;
+    capturedAtByProvider?: Record<string, string>;
   };
   const assets: Asset[] = [];
   for (const provider of PROVIDERS) {
-    const ref = provider.id === 'heroicons' ? 'master' : 'main';
+    const ref = captured.refs?.[provider.id] ?? provider.branch;
+    const observedAt = captured.capturedAtByProvider?.[provider.id] ?? captured.capturedAt;
     const body = await readFile(
       new URL(`../data/registry/licences/${provider.id}.txt`, import.meta.url),
       'utf8',
@@ -22,13 +32,13 @@ export async function capturedAssets(): Promise<Asset[]> {
     const licence = licenceFromText(
       provider,
       body,
-      `https://github.com/${provider.repo}/blob/${ref}/${provider.id === 'shadcn' ? 'LICENSE.md' : 'LICENSE'}`,
-      captured.capturedAt,
+      `https://github.com/${provider.repo}/blob/${ref}/${provider.licencePath}`,
+      observedAt,
     );
-    if (provider.id === 'shadcn')
+    if (provider.adapter === 'shadcn-registry')
       for (const [name, deps] of captured.components)
-        assets.push(componentAsset(name, deps, provider, licence, ref, captured.capturedAt));
-    else
+        assets.push(componentAsset(name, deps, provider, licence, ref, observedAt));
+    else if (provider.adapter === 'github-icons')
       for (const name of captured[provider.id as 'lucide' | 'heroicons'])
         assets.push(
           iconAsset(
@@ -36,12 +46,22 @@ export async function capturedAssets(): Promise<Asset[]> {
             `${provider.id === 'lucide' ? 'icons' : 'optimized/24/outline'}/${name}.svg`,
             ref,
             licence,
-            captured.capturedAt,
+            observedAt,
           ),
         );
+    else {
+      const manifest = await readFile(
+        new URL(`../data/registry/snapshots/${provider.id}.json`, import.meta.url),
+        'utf8',
+      );
+      for (const item of parseJsonRegistry(manifest))
+        assets.push(jsonRegistryComponentAsset(item, provider, licence, ref, observedAt));
+    }
   }
-  // A branch locator is not an immutable package/version reference.
+  // A branch locator is not an immutable package/version reference. Newer captures retain a
+  // commit SHA; legacy branch snapshots remain explicitly unpinned until they are re-indexed.
   for (const asset of assets) {
+    if (/^[a-f0-9]{40}$/.test(asset.variants[0]?.sourceRef ?? '')) continue;
     asset.variants.forEach((v) => {
       v.sourceRef = null;
     });

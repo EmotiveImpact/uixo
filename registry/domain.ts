@@ -56,7 +56,12 @@ export type Provider = {
   name: string;
   url: string;
   repo: string;
-  adapter: 'github-icons' | 'shadcn-registry';
+  branch: 'main' | 'master';
+  licencePath: string;
+  adapter: 'github-icons' | 'shadcn-registry' | 'github-json-registry';
+  registryPath?: string;
+  registryBaseUrl?: string;
+  css?: string;
   approved: boolean;
   rationale: string;
   selectedAt: string | null;

@@ -62,15 +62,20 @@ export function resolveAsset(asset: Asset, variantId?: string) {
       message: 'Licence verification is stale. Re-index and review before acquisition.',
     };
   const url = new URL(acquisition.url);
-  if (
-    acquisition.kind === 'registry' &&
-    (url.origin !== 'https://ui.shadcn.com' || !url.pathname.startsWith('/r/'))
-  )
-    throw new RegistryError(
-      'UNTRUSTED_SOURCE',
-      'Registry is not in the approved acquisition allowlist.',
-      403,
-    );
+  if (acquisition.kind === 'registry') {
+    const registrySources: Record<string, { origin: string; path: string }> = {
+      shadcn: { origin: 'https://ui.shadcn.com', path: '/r/' },
+      'magic-ui': { origin: 'https://magicui.design', path: '/r/' },
+      'motion-primitives': { origin: 'https://motion-primitives.com', path: '/c/' },
+    };
+    const source = registrySources[asset.providerId];
+    if (!source || url.origin !== source.origin || !url.pathname.startsWith(source.path))
+      throw new RegistryError(
+        'UNTRUSTED_SOURCE',
+        'Registry is not in the approved acquisition allowlist.',
+        403,
+      );
+  }
   if (
     acquisition.kind === 'direct' &&
     (url.origin !== 'https://raw.githubusercontent.com' ||
