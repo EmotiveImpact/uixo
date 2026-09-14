@@ -32,7 +32,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src https: data: blob:; media-src https: blob:; connect-src https:; font-src 'self' data:; form-action 'none'; frame-src https://www.youtube.com https://www.youtube-nocookie.com; base-uri https://magicui.design https://ui.shadcn.com https://motion-primitives.com https://simply-buttons.vercel.app"
+          "value": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; media-src 'self' https: blob:; connect-src https:; font-src 'self' data: https://fonts.gstatic.com https://cdn.prod.website-files.com https://framerusercontent.com; form-action 'none'; frame-src https://www.youtube.com https://www.youtube-nocookie.com; base-uri https://magicui.design https://ui.shadcn.com https://motion-primitives.com https://simply-buttons.vercel.app"
         }
       ]
     }

@@ -32,9 +32,9 @@ test('migration and captured-source seed are repeatable; counts reflect actual r
     await migrate(db);
     const first = await seedCaptured(registry),
       second = await seedCaptured(registry);
-    assert.equal(first.inserted, 176);
+    assert.equal(first.inserted, 264);
     assert.equal(second.inserted, 0);
-    assert.equal((await registry.stats()).assets, 176);
+    assert.equal((await registry.stats()).assets, 264);
     assert.equal((await registry.providers()).length, 6);
   } finally {
     await db.close();
@@ -536,7 +536,7 @@ test('discovery lists icon packs, retains legacy saved icons and filters compone
       'Exercise existing saved icon compatibility.',
     );
     const all = await registry.search({ limit: 48 });
-    assert.equal(all.total, 176);
+    assert.equal(all.total, 264);
     const packs = await registry.search({ kind: 'icon' });
     assert.equal(packs.total, 2);
     assert.ok(packs.items.every((asset) => asset.kind === 'icon-pack'));
@@ -596,7 +596,7 @@ test('icon indexing emits one library without fetching individual glyph trees', 
 
 test('Simply Buttons keeps original provenance and does not invent licence permissions', async () => {
   const assets = (await capturedAssets()).filter((asset) => asset.providerId === 'simply-buttons');
-  assert.equal(assets.length, 20);
+  assert.equal(assets.length, 108);
   for (const original of assets) {
     const asset = validateAsset(original);
     assert.equal(asset.category, 'buttons');
@@ -606,8 +606,10 @@ test('Simply Buttons keeps original provenance and does not invent licence permi
       asset.sourceUrl,
       /bits933\/simply-buttons\/blob\/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d\/src\/buttons\//,
     );
-    assert.equal(asset.variants[0].format, 'jsx');
+    assert.match(asset.variants[0].format, /^(jsx|tsx)$/);
     assert.equal(resolveAsset(asset).status, 'external');
     assert.match(resolveAsset(asset).url, /^https:\/\/simply-buttons\.vercel\.app\//);
   }
+  assert.ok(assets.some((asset) => asset.variants[0].dependencies.includes('three')));
+  assert.ok(assets.some((asset) => asset.sourceUrl.endsWith('ContextWindowStatusButton.tsx')));
 });

@@ -13,7 +13,7 @@ export function buttonGalleryAsset(
   if (!/^[a-z0-9-]+$/.test(slug) || !/^[a-f0-9]{40}$/.test(ref))
     throw new Error('Invalid pinned gallery record');
   const sourcePath = text(row.sourcePath, 250);
-  if (!/^src\/buttons\/[A-Za-z0-9-]+\.jsx$/.test(sourcePath))
+  if (!/^src\/buttons\/[A-Za-z0-9-]+\.(jsx|tsx)$/.test(sourcePath))
     throw new Error('Invalid button source path');
   const sourceUrl = `https://github.com/${provider.repo}/blob/${ref}/${sourcePath}`;
   const evidenceUrl = `https://github.com/${provider.repo}/blob/${ref}/README.md`;
@@ -45,7 +45,7 @@ export function buttonGalleryAsset(
         framework: 'react',
         format: 'jsx',
         css: 'css',
-        dependencies: [],
+        dependencies: strings(row.dependencies).slice(0, 20),
         peerDependencies: { react: '^19.1.1' },
         sourceRef: ref,
         acquisition: {

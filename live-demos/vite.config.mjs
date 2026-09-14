@@ -16,9 +16,19 @@ export default defineConfig({
         if (source.startsWith('@/') && importer) {
           const provider = importer.match(/vendor\/([^/]+)\//)?.[1];
           if (provider)
-            return this.resolve(path.join(root, 'vendor', provider, source.slice(2)), importer, {
-              skipSelf: true,
-            });
+            return this.resolve(
+              path.join(
+                root,
+                'vendor',
+                provider,
+                provider === 'simply-buttons' ? 'src' : '',
+                source.slice(2),
+              ),
+              importer,
+              {
+                skipSelf: true,
+              },
+            );
         }
       },
     },

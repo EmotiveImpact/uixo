@@ -6,7 +6,7 @@ Newest first. Dates are Europe/London.
 
 ### Component categories and icon packs
 
-- Add 20 source-pinned Simply Buttons live examples and source reuse guidance, bringing the component total to 174.
+- Expand Simply Buttons from 20 to all 108 source catalogue entries, including their original local styles, fonts, media, shaders and declared packages. This brings the component total to 262.
 - Show component subcategories immediately on the default asset view, including Buttons & actions.
 
 - Add seven original shadcn demos: Switch, Table, Tabs, Textarea, Toggle, Toggle Group and Tooltip (154 components total).

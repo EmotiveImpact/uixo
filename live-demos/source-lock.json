@@ -1695,6 +1695,16 @@
     "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/letter-roll.css"
   },
   {
+    "path": "simply-buttons/src/buttons/CluelyCtaButton.jsx",
+    "sha256": "d3b9730d635d078697ff4b2bb326addf0bab3e2bc2e837ea94c93df4a1af750f",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/CluelyCtaButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/cluely-cta.css",
+    "sha256": "8c541de41a6bb5baf6bb0a1fa4ccb4fa22ff843d8b73841ede8f2cb924d8d9ca",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/cluely-cta.css"
+  },
+  {
     "path": "simply-buttons/src/buttons/HulyCtaButton.jsx",
     "sha256": "530177401bc7a9e47dbb6390ab8fbcb5e299502441c5489829cec201eb2f5042",
     "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/HulyCtaButton.jsx"
@@ -1725,6 +1735,21 @@
     "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/form-studio.css"
   },
   {
+    "path": "simply-buttons/src/buttons/RiveRocketButton.jsx",
+    "sha256": "f76368399d90ef073b394a0fcf4341604a53095553a53c5475d58236f064201f",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/RiveRocketButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/lordicon-rocket/wired-outline-489-rocket-hover-flying.json",
+    "sha256": "f02731dcb3348ef4fe86587d2c9ad1c2dd78d49375f71896ee60b6d46a531096",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/lordicon-rocket/wired-outline-489-rocket-hover-flying.json"
+  },
+  {
+    "path": "simply-buttons/src/buttons/rive-rocket.css",
+    "sha256": "9d51db03243d800c81280fe4f1b3b71c4598597100a81cdcc0f08fb7b25ded3f",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/rive-rocket.css"
+  },
+  {
     "path": "simply-buttons/src/buttons/KultiveretMenuButton.jsx",
     "sha256": "1ea79cb8eba878f947d08e73e52583da9d4685a92913db88c824eca2e20d8bf2",
     "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/KultiveretMenuButton.jsx"
@@ -1733,6 +1758,116 @@
     "path": "simply-buttons/src/buttons/kultiveret-menu.css",
     "sha256": "5e6c20750342787cdaf6e37d34aa7efaba2c88405dd20c65f5e61c3f651782ac",
     "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/kultiveret-menu.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/MitkoCtaButton.jsx",
+    "sha256": "d07fb1cbf155a66b7df57603c4c67501a1cfef14681a2bb3167af3fbd46db71c",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/MitkoCtaButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/mitko-cta.tokens.js",
+    "sha256": "40eabb52828a8401c00ce97f33623c374eb10255b212e0a50d103a7e51b49706",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/mitko-cta.tokens.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ReferencePairButtons.jsx",
+    "sha256": "f5e141ad73c87d78141d68c49b6f4f2b0a22e898199267fb852ba6e604e82dc5",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ReferencePairButtons.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/reference-pair.css",
+    "sha256": "4185db7956eee31bcf178d5e1914cfb3410faae85da2337a8aea252fd621ea3e",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/reference-pair.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ArttechDownloadButton.jsx",
+    "sha256": "fe7af16e045433d372b65c237974e038a8a4e464f598e72d523882f0e35dbaf2",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ArttechDownloadButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/arttech-download.tokens.js",
+    "sha256": "a0c0d0f3b13c7c143164437da8e62cb6101ef2feb6999a3c11cc3e4e075514f0",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/arttech-download.tokens.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/StarButton.jsx",
+    "sha256": "439576fc989a62810e8c33f2caa6854b1bb385ad605668a4beb115e4c1027534",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/StarButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/lordicon-star/wired-flat-237-star-hover-pinch.json",
+    "sha256": "18fe9484f592ecc1ed9dd58bf041678700f776e09237f86fcc8f09bd3f56561c",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/lordicon-star/wired-flat-237-star-hover-pinch.json"
+  },
+  {
+    "path": "simply-buttons/src/buttons/star-button.css",
+    "sha256": "64408b5a1a20ec547e1a13edbdeae52b23b48d8275c32eb234ddbc5c355f75d4",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/star-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/star-button.tokens.js",
+    "sha256": "051772666f0317ef1f680346b26fc08a272f23a62fe3b5df6a343cdfd3650b67",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/star-button.tokens.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/KoulenWipeButton.jsx",
+    "sha256": "26f4cb7fbb35de27f08fc37d02b8a5f93b028f39cc21db249baac91d6033029a",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/KoulenWipeButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/koulen-wipe.css",
+    "sha256": "ceca8d5f83675a3a9f6b455d0b980b1cc8a3ae4d9f3ba6015160c1361b59713e",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/koulen-wipe.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/koulen-wipe.tokens.js",
+    "sha256": "5a075dd137fc8ae49a3c4187e17ab3954adfb4c5e0c564f96792b78f530ae33a",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/koulen-wipe.tokens.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/FloemaCtaButton.jsx",
+    "sha256": "4449d67168559a20640513bbf24ea18a37c0c9e9494305a55fecc9eca6b4f4e4",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/FloemaCtaButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/floema-cta.css",
+    "sha256": "103da00f70b3fe901730f2069c0b7fc22d6b4057e7fad303aade4be6c2bf2bd7",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/floema-cta.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/KrissCtaButton.jsx",
+    "sha256": "194cec17e67269b1247b3dbb4092df25436bd165aeec2d28eab43230171acb8d",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/KrissCtaButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/kriss-cta.tokens.js",
+    "sha256": "149750216b1af781e2e82d61f3f913648284ee14529260460bd2c1d147ba71cc",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/kriss-cta.tokens.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/kriss-cta.css",
+    "sha256": "4ce464c4dc1298c32e3450a07b28f587c7cf953c86ecb20c43e98da5d10646f1",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/kriss-cta.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/fonts/krissai-normal.woff2",
+    "sha256": "f1057ff7d6846b9f439617de5fbe64f6e3aa1d182973808c21ca7a906e6bea0e",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/fonts/krissai-normal.woff2"
+  },
+  {
+    "path": "simply-buttons/src/buttons/StrokeMoveGroup.jsx",
+    "sha256": "d38772c1d768df3f5c9af474c5e344eb5218de38621e4da17a98261bc318b703",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/StrokeMoveGroup.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/stroke-move-group.tokens.js",
+    "sha256": "baeecb64b45e3b1f439516e57595e55c189d085fffaf768606de9b0a013b54d9",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/stroke-move-group.tokens.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/stroke-move-group.css",
+    "sha256": "e56f6523eca464724aa2b385440e7d445c810c2c982de5d8b07b3046003379b3",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/stroke-move-group.css"
   },
   {
     "path": "simply-buttons/src/buttons/DayNightButton.jsx",
@@ -1785,6 +1920,61 @@
     "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/glass.css"
   },
   {
+    "path": "simply-buttons/src/buttons/ArrakisButton.jsx",
+    "sha256": "d1f06ddeb97a7c263c9efec6b92fedf0a5b32e1ccb4517e076c5da049ecd84fa",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ArrakisButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/arrakis-fluid.js",
+    "sha256": "71539a49f2fede84f9efac8f75d8647f8a504a245318be477f73fc626a68e43c",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/arrakis-fluid.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/arrakis.css",
+    "sha256": "a212e01677d7fd7af2a7ad3a4fafd113118661c9682d87142319d80fb401e9f9",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/arrakis.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/fonts/terrane-sans-400.woff2",
+    "sha256": "5410e470fe53a6d7a3e3f606917608af052269dcfc532a498ebaa57fde15cadd",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/fonts/terrane-sans-400.woff2"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ConcreteDestroyButton.jsx",
+    "sha256": "4e2ef11d4ea18f8c26328285832ef0bdf456523b0af09d4be136787c53fa9f2f",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ConcreteDestroyButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/concrete-destroy-logic.js",
+    "sha256": "550a9008647f297ec12d385da399d8503778e238dff046e6c513f092d22eb2dc",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/concrete-destroy-logic.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/concrete-destroy.css",
+    "sha256": "913a7b397f66367f6f343bc7fbd3e94c9b4826fc746eeb1af78065208bf5a9f7",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/concrete-destroy.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/concrete/ConcreteScene.jsx",
+    "sha256": "72658148a57a4af9c80768410f97f0904bc4fa3eb7588e6e5b03fdd8ef88f569",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/concrete/ConcreteScene.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/concrete/textures.js",
+    "sha256": "0bd5e16cb4baae42846bb88b13b36827a6d6d9570d4f7c2c71fd11e83597b344",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/concrete/textures.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/concrete/physics.js",
+    "sha256": "d88c281c31dd424fefe2d5e62d41e4de69434160ff11599166164e5300028fdd",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/concrete/physics.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/concrete/dust.js",
+    "sha256": "c6b4af632977c8364d2f453ca93e4fd511e6aa35e5bd0088849da168f975506b",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/concrete/dust.js"
+  },
+  {
     "path": "simply-buttons/src/buttons/MorphButton.jsx",
     "sha256": "cee17bb683feef27ec477aa9954d121ce8ddd692e1514b9a5fa24979cfc48930",
     "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/MorphButton.jsx"
@@ -1805,6 +1995,21 @@
     "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/neu-hover.css"
   },
   {
+    "path": "simply-buttons/src/buttons/RadialMetalButton.jsx",
+    "sha256": "a05de758423716dc7c430592d6ffcc2fd1cb6bfd31fc742b71d14f18dac02b0b",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/RadialMetalButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/radial-metal.css",
+    "sha256": "f3702304ced75c589ecb523a8b3caa4e1af507f1e06a4434868a8f95d6fc67e1",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/radial-metal.css"
+  },
+  {
+    "path": "simply-buttons/public/textures/radial-brushed-aluminum.webp",
+    "sha256": "b9a523cb164eed87f22e3b8582f8ba4e2abaa1d02ab58b94ce462bb18f864cee",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/public/textures/radial-brushed-aluminum.webp"
+  },
+  {
     "path": "simply-buttons/src/buttons/GlossyBubbleButton.jsx",
     "sha256": "2c8c9eb28930bc7c83e1cc06673e8bb892de35fda0898b90c190960949a4c301",
     "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/GlossyBubbleButton.jsx"
@@ -1813,6 +2018,821 @@
     "path": "simply-buttons/src/buttons/glossy-bubble.css",
     "sha256": "5850919c309446515155550b23bec7163e969204617ada2f2f72e505edac250e",
     "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/glossy-bubble.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/StarlightGenerateButton.jsx",
+    "sha256": "1ffbf62ed07361a102f062fa8018c916c13b013900028d915036a7fd6c784c34",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/StarlightGenerateButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/starlight-generate.css",
+    "sha256": "234ddd2330f71ac6a8554615fda70d0e6b19c9214f4427b67c2643f48a024156",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/starlight-generate.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/MechanicalKeyboardButton.jsx",
+    "sha256": "b6b594284192d9c85828cac5d9479c504c83a0d2d6a764461af8f430343e5177",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/MechanicalKeyboardButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/mechanical-key/base.svg",
+    "sha256": "96251b8c65da07b00d3791bc160a1d4acc66fcb4a31cbbfca19ed4be8fedfead",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/mechanical-key/base.svg"
+  },
+  {
+    "path": "simply-buttons/src/buttons/mechanical-key/clicked.svg",
+    "sha256": "2ceb669f320cfdfa135e726fd55cb777a9fa83a48f8825932da9f1def73c6061",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/mechanical-key/clicked.svg"
+  },
+  {
+    "path": "simply-buttons/src/buttons/mechanical-keyboard.js",
+    "sha256": "d7641338c35f4bfef96dfbcebf046b0340264823a96936e3f1ac2115418070ff",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/mechanical-keyboard.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/mechanical-keyboard.css",
+    "sha256": "9014273e7c1a69e529efd33ec5ca5d39dd03ef22020396a982bbb42279f6144f",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/mechanical-keyboard.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/AsciiScrambleButton.jsx",
+    "sha256": "05b03adfeabc5a2d4b293b979323fd09e4ec3a3af93d38b8e6d015303a8d8487",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/AsciiScrambleButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ascii-scramble.js",
+    "sha256": "dbcca562ec6ca2519dd673e95a932c949b263ede2643e272fe4eda8d3f2b036a",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ascii-scramble.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ascii-scramble.css",
+    "sha256": "9fbccd01606d6f4cce152c7c86225ed4744977a2b7b55c1245f1e22cd9b469de",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ascii-scramble.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/LetterScrambleButton.jsx",
+    "sha256": "51310456004a916f7dcb1b7f50021c272c2c22c5f8ef7f4fbc8549dad99767ce",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/LetterScrambleButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/letter-scramble.js",
+    "sha256": "33757ae5f5234a4b357556de0d3199a13d8fd3e89244cde64e74edebf361df95",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/letter-scramble.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/letter-scramble.css",
+    "sha256": "36b5425be91ed1cd0321600cf298b32b54beaccb3d603d9bf7f0a006a8f1690b",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/letter-scramble.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/LapButton.jsx",
+    "sha256": "4e922f9716be7a4b931a62757276c9d298be0dbc05d0a78c1374dfa80474ec68",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/LapButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/lap-button.css",
+    "sha256": "10275f78ccc357f0c820fa11f590d8225e83fcfefa44ba110c5edfbd94f2eaa5",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/lap-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/LapArrowButton.jsx",
+    "sha256": "44cc4c76472a1120cb29d9eeba21cd1aa3e8a88761fb9e2829dd2fe3e3608982",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/LapArrowButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/lap-arrow.css",
+    "sha256": "07734e9d0b7596aae28bc8afb48d3d033418a3f76175f7a5513e9d6d5f3c02fc",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/lap-arrow.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/OranoPushCtaButton.jsx",
+    "sha256": "f091d9ba836a0899ae125505f1524094cdff81ac9d54bcda5e489bfb7be11341",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/OranoPushCtaButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/orano-push-cta.css",
+    "sha256": "7ec8584e57ccb78850206c065d671853974f4bfa6b5a8b2b7161b34614fab682",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/orano-push-cta.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/SuperlistNotifyButton.jsx",
+    "sha256": "a82ce2f995b678683c9a8ff14612e01a2bcbf1c09cfabd13ce2d457df635db34",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/SuperlistNotifyButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/superlist-notify/button.glb",
+    "sha256": "24ab8eac765702d55a98ebd584b0be077eed53ad1db862498b6596240e24b22d",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/superlist-notify/button.glb"
+  },
+  {
+    "path": "simply-buttons/src/buttons/superlist-notify/matcap-orange.png",
+    "sha256": "a01eaa099e2748dfddb7965d204ee3ebf5193d9ad4b6184b492b727998637616",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/superlist-notify/matcap-orange.png"
+  },
+  {
+    "path": "simply-buttons/src/buttons/superlist-notify/matcap-black.png",
+    "sha256": "16483c9c12162fb8ac53c0895a4bf877e90534340145b5c5319410f797f4fe13",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/superlist-notify/matcap-black.png"
+  },
+  {
+    "path": "simply-buttons/src/buttons/superlist-notify/click.mp3",
+    "sha256": "2097aad4a3cdd1c3467d293854b6d2b302ffabe289c19ffceed3d899f8c4990b",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/superlist-notify/click.mp3"
+  },
+  {
+    "path": "simply-buttons/src/buttons/superlist-notify-motion.js",
+    "sha256": "b377fdc1a53821e659c831a0754f93ac175e21cbe4cd83108533694064351af1",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/superlist-notify-motion.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/superlist-notify.css",
+    "sha256": "9e19c76694d8d98dca9f025902e8e701097d54eee5b80f97d3d835315676e064",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/superlist-notify.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/superlist-notify/aeonik-regular.woff2",
+    "sha256": "49b373559151bf9437c77a086472cca9576c78352477b4213e85a0471bb8ec10",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/superlist-notify/aeonik-regular.woff2"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ContextWindowStatusButton.tsx",
+    "sha256": "f704d4fe92abde888590200bec3b99a6288bf109ea408e449654f730318004fe",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ContextWindowStatusButton.tsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/DotMatrixCompressButton.jsx",
+    "sha256": "1f6dbeed9e96b7198fe075d360d36c839c6dec855a73bcf8fe583610e404df20",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/DotMatrixCompressButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/DotMatrixIcon.jsx",
+    "sha256": "a3905d6ef1d45d86008bb815fae5b8087f933ddc342fc61ff8ffaf91ad22bc78",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/DotMatrixIcon.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/dot-matrix-compress.css",
+    "sha256": "766f38c76e4e4cc7eb230482dd36006b157edb0e8ccebbc4d11e93929d395bc3",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/dot-matrix-compress.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/PixelRippleButton.tsx",
+    "sha256": "0238808f7509400af692ac72090113db3ae71fdf0f6dff071843e2ec7a440757",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/PixelRippleButton.tsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/OrbitStrokeButton.jsx",
+    "sha256": "bf247014b03038d96bf334f35deffdde8ba697c268972549b10d514954446613",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/OrbitStrokeButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/text-shimmer-wave.jsx",
+    "sha256": "3edd170b76e091f74a9fdea7238007190405f6c819c434f2e474e3f620ffeca2",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/text-shimmer-wave.jsx"
+  },
+  {
+    "path": "simply-buttons/src/lib/utils.ts",
+    "sha256": "73a7ea615973009e0d74bf51d91c37ea6006240c74e3b52d1b45c9d586c5652f",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/lib/utils.ts"
+  },
+  {
+    "path": "simply-buttons/src/buttons/orbit-stroke.css",
+    "sha256": "d560a032e04347e01fa35b1bc0e50d4f95b5cffde18fc722bc224a28780b3d87",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/orbit-stroke.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/OsmoButton003.jsx",
+    "sha256": "2e67f36cc1ffb36d5faaf3040250dd65ecb30436438b02751cdac48b792dc79b",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/OsmoButton003.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/osmo-button-003.css",
+    "sha256": "c8f68959e1471a2c4ec83d795e26ddadfbe394c18d5d141b334ec463eed16a46",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/osmo-button-003.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/TetrisStackButton.jsx",
+    "sha256": "1d957d0337285e8adea8e4979440eeb81854f7cecad7ded0dd19859555cc1d17",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/TetrisStackButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/tetris-stack-button.css",
+    "sha256": "ec29c0e17861daf2656baf47c296d3a5aa58b0b2aed29d3f02d3040ad57b8ab8",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/tetris-stack-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/DiagonalRevealButton.jsx",
+    "sha256": "8c6e50fc9fb5e55b7b9151a34334f2e1f381c6943b1817c35feeb17a21ba21f9",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/DiagonalRevealButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/diagonal-reveal-button.css",
+    "sha256": "2d8574c6957fe04236504e54d5a62d9fdfd96558ca7e378e281f789baffc5f9b",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/diagonal-reveal-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/MagneticButton.jsx",
+    "sha256": "48155f05b58ef2050e98d1c64227b1ff7dc4d1afdb8097db7934d2b652aea4c7",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/MagneticButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/magnetic-button.css",
+    "sha256": "9f66c2bdfa444212b5ea06b5ca63e4c2267d4a41c6fa52724d1b98aff9a2b5f0",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/magnetic-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/DoodleWiggleButton.jsx",
+    "sha256": "f8230e511a1f8bf35fa229cc6eccd84ae6d40071cae73e549476fb1165a28a9f",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/DoodleWiggleButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/doodle-wiggle-button.css",
+    "sha256": "3086852dbfe42c93f395c89e6d6b4df9ac5f7e7a52c337bfd8148017f287f8f9",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/doodle-wiggle-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/BlurStaggerButton.jsx",
+    "sha256": "b6b373810dc9035691a55260829e31308ab6c02d9847ba7a50fd13e29bff9355",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/BlurStaggerButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/blur-stagger-button.css",
+    "sha256": "1c9fa0468cfc1516b435e9a18519b0d0be5614ee159c2b18c46ab6d1a48ea1b7",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/blur-stagger-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/IconSweepButton.jsx",
+    "sha256": "9490fd53f3a18c0b5c65f308a1645e1c6823f6ebf0bf08d151f5fdc6485e7c2c",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/IconSweepButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/icon-sweep-button.css",
+    "sha256": "6572f657304c91c7985da589da7f007484ed6324bdfe86f9b7f4ba573e1e8a43",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/icon-sweep-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ElasticPulseButton.jsx",
+    "sha256": "5a7bd6ebd4022b0341bb5e007f46932c2a41c1fa7d4fb8ee1f6173eb819c5300",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ElasticPulseButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/elastic-pulse-button.css",
+    "sha256": "6c18aa91e3c5b29d79d275392d7e71db35d1918a6f45b82276177d77b6dcf1da",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/elastic-pulse-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/CursorCircleButton.jsx",
+    "sha256": "81ba253592e8933db6cc7c30f35fbc94ad04060839e99744e6f1ae47ce4a5bdb",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/CursorCircleButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/cursor-circle-button.css",
+    "sha256": "7d6e7f9d6259eb610d14fea6b3eee64c551aa9aa9d0e889374daf10bde7fb851",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/cursor-circle-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/RollFillButton.jsx",
+    "sha256": "f74d6e565b878f5b4682fbe243ca615ddf77f26a41d9817b0dd6fc1c7f44cb71",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/RollFillButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/roll-fill-button.css",
+    "sha256": "d1fc3f4208b69e2a42adf0e43e3931ddb527b3f23855b28cd9aa7a9dab44786b",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/roll-fill-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ClipFillButton.jsx",
+    "sha256": "e7c2a20348e7ff34ae0e9f29e17b0c6830cfac0e34abfadaa134b11037fbbce7",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ClipFillButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/clip-fill-button.css",
+    "sha256": "a9ad32b3a6153e4d436cf9659bd65200d892ba56b05696bc961c644c704f52fc",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/clip-fill-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ArrowSwapButton.jsx",
+    "sha256": "6515b3c2848e426af5c9eceb6f401e789fc150d5e77c45bba3d03ea15f48ad38",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ArrowSwapButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/arrow-swap-button.css",
+    "sha256": "57c373acc6482674e360d318c7b5b6f21467f2b540500643c709dd6b2edc5b46",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/arrow-swap-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/DirectionStaggerButton.jsx",
+    "sha256": "5ba5643b6a6ee1076c202868f02cde96eeb57106b4f8ee237ff39ad1dd3fef7e",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/DirectionStaggerButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/direction-stagger-button.css",
+    "sha256": "2ca98b207c9b6d31711400b05a2712a47366bdb757a8dc2e79ab45091a59b24f",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/direction-stagger-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ChromaticRiseButton.jsx",
+    "sha256": "309ecd74b583b43ae191324a75c351e836f43561f68558d905c29d981e461ff9",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ChromaticRiseButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/chromatic-rise-button.css",
+    "sha256": "5eee0d3bc4a8cd5efa78ba78c65e6a442f1eeac45a57fb06b15a718c9a630dc6",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/chromatic-rise-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ItemBoxButton.jsx",
+    "sha256": "db34c0cb188380f6bf4f093ad6d487a57a3737639351b5e53bfef88119abadf5",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ItemBoxButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/item-box-button.css",
+    "sha256": "9feb54ac73debaf5238a645eccce1b0a141695aeb1ee4ac8398afe669ea9c46d",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/item-box-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/LetterRotateButton.jsx",
+    "sha256": "b7e9a00a19648d8e69b3efb8fc4c3ea71efb8dfffef7037c9d64a2d592a3e8c5",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/LetterRotateButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/letter-rotate-button.css",
+    "sha256": "2cb4d9925d680ef4c84ab110caa43754c1018d673920576158f33e8e5de8ad67",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/letter-rotate-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/CornerFrameButton.jsx",
+    "sha256": "7a665f052b7f9aad785e1954e6e2132718fafda5574a958fa81edca2a847de33",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/CornerFrameButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/corner-frame-button.css",
+    "sha256": "036fec442b9a08a38d7a707a46ae2f641789b9a9b9571149f5a4c43a55a12b05",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/corner-frame-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/CharRollButton.jsx",
+    "sha256": "cfd18b48361cda65ca0f27a418bb19c34ddf833a632c9f65fda5a90c20fbbcb8",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/CharRollButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/char-roll-button.css",
+    "sha256": "8b41d47219e3cf34d29642b13a9bb7fe6991e5b4a2954f4bd8df9095d1291abe",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/char-roll-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/RandomRiseButton.jsx",
+    "sha256": "007ad34a9dcec94bd02cb8c6475d303329067711b0e2e71dbfae6f1831ce8d2f",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/RandomRiseButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/random-rise-button.css",
+    "sha256": "56afa7f4a6cdf78c7b13cc91b58beeb06525751b30d50f4bb02b8fd4bc5a83f3",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/random-rise-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/DualBlockFillButton.jsx",
+    "sha256": "d1673f8e6d3e568573844fa9a18c01ada4fc304a58972d5cc656ee70d5ff6f90",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/DualBlockFillButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/dual-block-fill-button.css",
+    "sha256": "119071cd79651d36ad68b552836921d1100b638061537487f3c76b62ccea9a30",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/dual-block-fill-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/DrawArrowButton.jsx",
+    "sha256": "0d7f89070cef7ea8f89539f5a8d3a872ee5961ad45ce9362cd13415076641e88",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/DrawArrowButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/draw-arrow-button.css",
+    "sha256": "72135c90bea1329ef146f41d7f6f23230639158f5ea960900e9fa7b233206ebc",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/draw-arrow-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/JumpBurstButton.jsx",
+    "sha256": "03938bdf6cbb6058630eb58ed116a3ec7db286c1d7ef79bfc0478047575fd59c",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/JumpBurstButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/jump-burst-button.css",
+    "sha256": "3ab44ab4f89e89c8b0d4f61531167d27b77600df40a02ba1616bc2b6252970e2",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/jump-burst-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ShineScaleButton.jsx",
+    "sha256": "e5693401afd40272b7a5fe3eb26fdcb0f8525de6b68186e088b676e2637ab0aa",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ShineScaleButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/shine-scale-button.css",
+    "sha256": "bf03798b61a6eb40ce0ba84aac450d9086a5addde3ef72cfb9972aca8cc46248",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/shine-scale-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/StripeScrollButton.jsx",
+    "sha256": "a4a83236dca405e1b0d6906b18d7720e702fe86d17f4af74756f31b0af297c09",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/StripeScrollButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/stripe-scroll-button.css",
+    "sha256": "32bb8ae67bef892c367814d8fa3ce6a3a10bfa262182927edde0386c4b48a699",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/stripe-scroll-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/LineBloomButton.jsx",
+    "sha256": "17cd052e8f96fc44497af8da1673ce205680b93789d32086cad012e3b215d4fb",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/LineBloomButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/line-bloom-button.css",
+    "sha256": "6b3ac01b6083e429f03d2f2bc49417aac44020eff8bd12c54d1f1a365515fbcf",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/line-bloom-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/OnlineStatusButton.jsx",
+    "sha256": "65ac6dff6437b93f4bfea9bd2528a7b0d4dc7e55095e4ee0ccf6e47cb4f2bd70",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/OnlineStatusButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/online-status-button.css",
+    "sha256": "807123b25743cff8f08406e6d0601157b64685a83c702975ab21c184c66ef556",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/online-status-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/RunCompilerButton.jsx",
+    "sha256": "6d05bdbe0a971a247e17dcc38a1299b8ff93f2e4ed5d9f5b57be993191b116d1",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/RunCompilerButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/run-compiler-button.css",
+    "sha256": "a40ef46c5f10312c84ba18dec84452258757864b4f10ba6e415f0d1b3104d507",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/run-compiler-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/run-compiler-light.css",
+    "sha256": "c9fd4233e94f3d54670aed5dd649c74340679f40cddec5ca7a45a9b5c74fb359",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/run-compiler-light.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ExploreNowButton.jsx",
+    "sha256": "d846a5c662cea2c8849f10cadfa9065c750a8d09e54b22274417e98c17c872ef",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ExploreNowButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/explore-now-button.css",
+    "sha256": "4ed82d68ed40676f81e682ff87a12f4857d45e5a7f4c463d0065f84d08777607",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/explore-now-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/SuperhumanCtaButton.jsx",
+    "sha256": "453b5a85a95f579ae3cbbf2f05ffb49027ca9d3a81fcf5b628e8a2bed0c0158c",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/SuperhumanCtaButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/superhuman-cta-button.css",
+    "sha256": "bd711fa1b4c5c7f4ed6e4a18860da6f1f2c6e1200df3cb54e85e24dcee5acf01",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/superhuman-cta-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/MacFolderButton.jsx",
+    "sha256": "617f688ee22510ef10420137defc8815283c19fe59e3493021bbe067300f1e4a",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/MacFolderButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/mac-folder-button.css",
+    "sha256": "930459d90fcb6387abc43aec01ee5e7cc6cd61397d7f6bf6fb2b3eea7cb57483",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/mac-folder-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/DonutCtaButton.jsx",
+    "sha256": "4f9c745889e99c8f06e2d62600c861b01dba442fd601094ab0fb3dfd238bafba",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/DonutCtaButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/donut-cta-button.css",
+    "sha256": "2cde2fc736e3d4ac3c9a44f7530643f17f53740973fee9b2f2f123df1a1ba062",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/donut-cta-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/DesigncodeCtaButton.jsx",
+    "sha256": "1679f1172078b0b4463bf28997bfb8053336cc5ddf0ce8ceda35dad9884d063d",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/DesigncodeCtaButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/designcode-cta.launch.js",
+    "sha256": "7eb97053a38c9fcfd30de6a31a527ad97008fa8c778905568e2390f98d14a4c4",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/designcode-cta.launch.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/designcode-cta.css",
+    "sha256": "f27a3751c2011eb39d1fe31f2b82b239da8a239a720fe45daf34579077564c5b",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/designcode-cta.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/PangeamBendButton.jsx",
+    "sha256": "686d20dbe09b6a77afd743497c2898e1e22459cd33201918656269d72e26ad86",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/PangeamBendButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/pangeam-bend-button.css",
+    "sha256": "681bbc4a0a913e7fb14bd2b3ec0f2d55a9251b3851b4f3fe8a7fa3e1a58bc4ff",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/pangeam-bend-button.css"
+  },
+  {
+    "path": "simply-buttons/public/arges-black.woff2",
+    "sha256": "073a08db78ba22843607fa8f229fa4aafda53fea211525f407dd81106b8e2172",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/public/arges-black.woff2"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ClaudeCodeButton.jsx",
+    "sha256": "87df14cb29b693657165d255a83ab4ffc218de940b457d7c5246f87832fd35e8",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ClaudeCodeButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/claude-code-button.css",
+    "sha256": "6d9019a24dc93dbad271c5c75403b7132fc323b70e7a77468558425272e93d0f",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/claude-code-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/claude-code-webgl.js",
+    "sha256": "d15bf1cb6a3668cf172e61ab49eea8412cef04e013edb002f8f2ee59a5002e04",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/claude-code-webgl.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/DustPremiumButton.jsx",
+    "sha256": "4e4c05d818fb6b102fad312af0dd19fc562f76c3ce91273b0abba152b0363f3e",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/DustPremiumButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/dust-premium.gl.js",
+    "sha256": "5a6dad6d1ea1d59ed2145c8b4e70f2019b08e2d43981ea8ad8fbfb1f286a627c",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/dust-premium.gl.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/dust-premium-button.css",
+    "sha256": "013f8e21d64ca07205667ea871effdf612a35c97245eda4e954cd09258a585c4",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/dust-premium-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/UnseenEnterButton.jsx",
+    "sha256": "db76383cdcfe8c82b9d7cf7227b35e2fc81a01566c967fca5243c4948f9745ef",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/UnseenEnterButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/unseen-enter-button.css",
+    "sha256": "d83898986466b2ade6e945053ded96d6b7b2a9cfc64deb057490a23b4ab41580",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/unseen-enter-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ExoCircleButton.jsx",
+    "sha256": "0f774db5fe772b939ff9987e793513fd8e05104b403f0dd3654a0795607cf82b",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ExoCircleButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/exo-circle-button.css",
+    "sha256": "0b556dd15b4df0bdf00e39ba4d8bcf0cb9b2692396993417057c9d4f50a17b86",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/exo-circle-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ZajnoUnderlineButton.jsx",
+    "sha256": "4bbe851985d4e6a713df7d38792e3e0c184cafe2ea682c9ee2892c623608e361",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ZajnoUnderlineButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/zajno-underline-button.css",
+    "sha256": "514e4e0ae8b264ff472876f4671d4937de873b6a2b4f1350f621582d4cc45650",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/zajno-underline-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ObysUnderlineButton.jsx",
+    "sha256": "ef2b467c03c996adb14580e0b89252b6d1996e87528b1e46d676a96bb9378a70",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ObysUnderlineButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/obys-underline-button.css",
+    "sha256": "70ac80ff85a226c95e8e442750728ecea0485a14ccd1b2c10148e0f7ef9e65ae",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/obys-underline-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ResnRollSlabButton.jsx",
+    "sha256": "37a58663c3edbdd3397f1cd5736f41c0a485ec792972565d9f64e1b41dfd0225",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ResnRollSlabButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/resn-roll-slab-button.css",
+    "sha256": "5df9f42dccc5c5465f5ce8ddf22eac18fa8b1ff7881f66ac517b9e4fe8fd1612",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/resn-roll-slab-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/LenisSwapButton.jsx",
+    "sha256": "0aa7d1cf77aad4174a28522f2f02e9f421c34b02303c0d342283b5fe0b304698",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/LenisSwapButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/lenis-swap-button.css",
+    "sha256": "36ae9c5484b8f07095923605827f87aa281294e54f8f7bde0961d8cdf9a364af",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/lenis-swap-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/SearchSlashButton.jsx",
+    "sha256": "60daaa13cc4f5faf9b4d2bfe2365eee3976d0f40b08948f2d3cd5e1fd2eb22df",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/SearchSlashButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/search-slash-button.css",
+    "sha256": "e15e5ccbcc90886b0b973b535d62582a25d45281a046d2a0e6936a9b8a1f1775",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/search-slash-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/WaterRippleButton.jsx",
+    "sha256": "50bfa28d1ac3e0a23c0bcdca88252e2e2d819e4240d179d80ba0e09a70cc0fcb",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/WaterRippleButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/water-ripple-button.css",
+    "sha256": "8c4f2302d2a53171efa9f7cf8133e610af48e7610aee29cff0a221a38555291e",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/water-ripple-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/water-ripple-webgl.js",
+    "sha256": "2f40b2a5206e0a567826de6ecbfd0168d4f864823c7c4da6f8ef4cd9cc895aae",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/water-ripple-webgl.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/JellySwitchButton.jsx",
+    "sha256": "4db2a0ba93c2c8d66a1898e102ea038ca2afa6caca1a16b2afd290fd6668e98d",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/JellySwitchButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/jelly-switch-button.css",
+    "sha256": "1bce930ed463b355a6a29e39a6c0db0a309ffa287d8ffffad9ff4562137d1978",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/jelly-switch-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/jelly-switch-webgl.js",
+    "sha256": "293afcabb41ef51866fda282203c0f969269471fe49a4e1899fccba7db8b0d7e",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/jelly-switch-webgl.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/DotBorderButton.jsx",
+    "sha256": "aab92a678e567f01fcbef2fa6866794eb910a3a9db832a0b2952a98f342b7cf2",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/DotBorderButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/dot-border-button.css",
+    "sha256": "82a1d6b410c9b161ecf76b3c1756d17ab2543893cda3e8a44488f8b8d554b003",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/dot-border-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/LiquidMetalPlayButton.jsx",
+    "sha256": "b1ac8ea13cf1e5bc3f641af5fe065954cb5ea22e467dd5b1d421c8a13411a482",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/LiquidMetalPlayButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/shaders/liquid-metal-button/LiquidMetalButton.tsx",
+    "sha256": "89b940bab445f17fafb444a7833b3c785d24c86a28156d8ad231e18de9503e11",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/shaders/liquid-metal-button/LiquidMetalButton.tsx"
+  },
+  {
+    "path": "simply-buttons/src/shaders/liquid-metal-button/liquid-metal-button.html",
+    "sha256": "76624e881a3aecbd79b473d9c51f53c7157d47052abd0f9dc28fefd223b0a819",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/shaders/liquid-metal-button/liquid-metal-button.html"
+  },
+  {
+    "path": "simply-buttons/src/shaders/threeui.css",
+    "sha256": "efe4447139f1358dd8e9be68edf6fa46cbefbd1de423a4d6c439ca61d2c8eccf",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/shaders/threeui.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/liquid-metal-button.css",
+    "sha256": "89b52222a481be5d0142b3755a43321e24383aed83cab8b5b7d15b42e5b1f415",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/liquid-metal-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ThreeUiLiquidMetalPillPreview.jsx",
+    "sha256": "e41d77b421fb39e9e6dfa197495a31f3c59f61cee9c14914ffb9cf3e91c5bfc0",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ThreeUiLiquidMetalPillPreview.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/threeui-liquid-metal-pill.css",
+    "sha256": "ad5305bda38c24eff0cf47f7f8fd75cd781974dfda9babd8c156db24a237d902",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/threeui-liquid-metal-pill.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/GenerateButton.jsx",
+    "sha256": "8224ab8890f6691add7130d350ea5d55d3f546ba4ece92e2e6cd6da336560f4e",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/GenerateButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/generate-button.css",
+    "sha256": "3edb22edfbf5685b4698b1dfd7aa6a721969a9d0250618ca240853f89b5cd8dc",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/generate-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/SpinningBorderButton.jsx",
+    "sha256": "077af87821e30aefeb7bce0fe6b7357f507f34efd0f52d20df3d5cf21c26a60b",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/SpinningBorderButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/spinning-border-button.css",
+    "sha256": "10cb2641182f577fcb65724c73fb9c6e8512cb82a1b65b1d9ab4544d0c52575c",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/spinning-border-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/PlasmaButton.jsx",
+    "sha256": "9d7529ab7358e9614dc8d4ca4e2c9e65a39e4240dde416de5c1f3b6fe24b6c4e",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/PlasmaButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/plasma-button.css",
+    "sha256": "c9c15762828afb07331753fcdc1bf74f26657dc4cafe1110ed418fd1be1bd0ed",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/plasma-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/aetheris-webgl.js",
+    "sha256": "acfc5c9ac4b2837940a2050bd5a9e5b35f46cfe640138df458c4ddbed5641321",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/aetheris-webgl.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ArjunConnectButton.jsx",
+    "sha256": "548121418d798d2ef4f09d6c34499682d33d0bde13dad8fe923d6128971b7e22",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ArjunConnectButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/arjun-connect-button.css",
+    "sha256": "cbc2db2a74423c1c2dcf3eb034e3c482c4fdfe91ad08ececd9236c0aae8f07b3",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/arjun-connect-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/ArjunSocialButtons.jsx",
+    "sha256": "426420317285d34bdbfd5088ff19d2a96ed3f24538649cb2b31726ee80ecad98",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/ArjunSocialButtons.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/arjun-social-buttons.css",
+    "sha256": "0f32d01516e61e57c1b12dab6e675205524be4c1e89c19cf096cc5ea29943003",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/arjun-social-buttons.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/NextjsFlareButton.jsx",
+    "sha256": "b726e9e800290418367bf78bf5d49aea06bbc3c39e1f5bc76689e5d5ff51fed1",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/NextjsFlareButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/nextjs-flare-button.css",
+    "sha256": "12f383bd331a6bd5d2db78891d67828869671d9e511a14167e1dc00d781cc479",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/nextjs-flare-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/nextjs-flare-webgl.js",
+    "sha256": "3beaf4a927d19afeefa623c9587b3eff4ac7a1890d998c46ed55aa6a788c161b",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/nextjs-flare-webgl.js"
+  },
+  {
+    "path": "simply-buttons/src/buttons/GrigolettiProjectsButton.jsx",
+    "sha256": "789a76b58558136669cec0e0f84e7a1a0975f7bbd0ff629f94668ae756612b02",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/GrigolettiProjectsButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/grigoletti-projects-button.css",
+    "sha256": "14133ff9ef76c6bd17d31b1e3c80aed6b6c42b8f2b1b33162499f5da3717f089",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/grigoletti-projects-button.css"
+  },
+  {
+    "path": "simply-buttons/public/fonts/pp-neue-corp-tight-ultrabold.woff2",
+    "sha256": "efe5ed3e55d486ea71a52ce9719c6143d5cd8b2ee14d068afec19a4924248690",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/public/fonts/pp-neue-corp-tight-ultrabold.woff2"
+  },
+  {
+    "path": "simply-buttons/src/buttons/GrigolettiServicesButton.jsx",
+    "sha256": "9962ec20ddfdf607c5233772012d366d99da7f47511c98a55c0de10358f13a89",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/GrigolettiServicesButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/grigoletti-services-button.css",
+    "sha256": "e2a15b376782386b54a326de3440505ad883db17f64f060dc10143703dcefc94",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/grigoletti-services-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/GrigolettiFaqButton.jsx",
+    "sha256": "6142fb8b8e85645ea95bcb67f380273e72e2f43580f8c031d59f8e3cdca6df55",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/GrigolettiFaqButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/grigoletti-faq-button.css",
+    "sha256": "e145a2b2d4221505e2e39189541cf97d31c7446f82e35b10296e86e01feb92b5",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/grigoletti-faq-button.css"
+  },
+  {
+    "path": "simply-buttons/src/buttons/GrigolettiFramerButton.jsx",
+    "sha256": "43ad499398c961254ffe9b61b08d13c928924e453c546127611c61964bd181ef",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/GrigolettiFramerButton.jsx"
+  },
+  {
+    "path": "simply-buttons/src/buttons/grigoletti-framer-button.css",
+    "sha256": "a635624462b0e63404b2be2d165cf33cc49a83b46aeb9cdc116bd6f015f8de22",
+    "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/src/buttons/grigoletti-framer-button.css"
   },
   {
     "path": "simply-buttons/README.md",

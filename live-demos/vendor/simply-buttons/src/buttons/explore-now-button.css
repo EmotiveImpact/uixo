@@ -1,0 +1,92 @@
+/* Explore now button — neo-brutalist yellow face (Unbounded 800) with a thick
+   black/dark-grey border and a chunky offset block; on click the face glides
+   down-right to align with the offset block area (shadow collapses), click again to
+   pop back. Border + offset block are painted as box-shadows on a single layer
+   so the yellow background can never bleed past the black/grey frame.
+   Original specimen for the Simply Buttons gallery (not a replica). */
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@800&display=swap");
+
+.explore-now-root,
+.btn-explore-now {
+  --explore-now-face: #ffd23f;
+  --explore-now-dark: #131313;
+}
+
+:root[data-theme="dark"] .explore-now-root,
+:root[data-theme="dark"] .btn-explore-now,
+[data-theme="dark"] .explore-now-root,
+[data-theme="dark"] .btn-explore-now {
+  --explore-now-dark: #2d2f36;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .explore-now-root,
+  :root:not([data-theme="light"]) .btn-explore-now {
+    --explore-now-dark: #2d2f36;
+  }
+}
+
+.explore-now-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1.125rem;
+}
+
+.btn-explore-now {
+  position: relative;
+  border: 0;
+  background: none;
+  padding: 0;
+  font-family: "Unbounded", "IBM Plex Sans", sans-serif;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-explore-now__face {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  border: 3px solid var(--explore-now-dark, #131313);
+  background: var(--explore-now-face, #ffd23f);
+  background-clip: padding-box;
+  box-shadow: 8px 10px 0 var(--explore-now-dark, #131313);
+  padding: 0.95em 1.5em;
+  font-size: 1em;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: var(--explore-now-dark, #131313);
+  transition: translate 0.18s cubic-bezier(0.3, 0.7, 0.4, 1), box-shadow 0.18s cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.btn-explore-now:hover .btn-explore-now__face {
+  translate: 3px 4px;
+  box-shadow: 5px 6px 0 var(--explore-now-dark, #131313);
+}
+
+.btn-explore-now:active .btn-explore-now__face {
+  transition-duration: 0.08s;
+}
+
+.btn-explore-now.is--pressed .btn-explore-now__face {
+  translate: 8px 10px;
+  box-shadow: 0 0 0 var(--explore-now-dark, #131313);
+}
+
+.btn-explore-now:focus-visible {
+  outline: none;
+}
+
+.btn-explore-now:focus-visible .btn-explore-now__face {
+  outline: 2px dashed var(--explore-now-face, #ffd23f);
+  outline-offset: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-explore-now__face {
+    transition: none;
+  }
+}

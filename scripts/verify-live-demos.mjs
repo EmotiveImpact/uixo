@@ -10,6 +10,8 @@ for (const [slug] of captured.components) {
   if (!manifest[`shadcn/${slug}`]) throw new Error(`Missing live shadcn demo: ${slug}`);
 }
 const gallery = JSON.parse(fs.readFileSync('data/registry/snapshots/simply-buttons.json'));
+if (gallery.items.length !== 108)
+  throw new Error(`Simply Buttons snapshot is incomplete: ${gallery.items.length}/108`);
 for (const item of gallery.items) {
   if (!manifest[`simply-buttons/${item.slug}`])
     throw new Error(`Missing Simply Buttons demo: ${item.slug}`);
