@@ -195,11 +195,13 @@ export function App() {
           signedIn={Boolean(user)}
           hrefs={{
             browse: routeToHref(EMPTY_ROUTE),
+            assets: '/browse/assets',
             collections: routeToHref({ ...EMPTY_ROUTE, collectionsIndex: true }),
             collection: (slug) => routeToHref({ ...EMPTY_ROUTE, collectionSlug: slug }),
             resource: (id) => routeToHref({ ...EMPTY_ROUTE, resourceId: id }),
           }}
           onBrowse={() => navigate({ ...EMPTY_ROUTE })}
+          onAssets={() => navigateInApp('/browse/assets')}
           onCollections={() => navigate({ ...EMPTY_ROUTE, collectionsIndex: true })}
           onOpenCollection={(collectionSlug) => navigate({ ...EMPTY_ROUTE, collectionSlug })}
           onOpenResource={(resourceId) => navigate({ ...EMPTY_ROUTE, resourceId })}

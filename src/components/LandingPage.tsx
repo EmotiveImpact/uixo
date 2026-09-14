@@ -12,11 +12,13 @@ type LandingPageProps = {
   signedIn: boolean;
   hrefs: {
     browse: string;
+    assets: string;
     collections: string;
     collection: (slug: string) => string;
     resource: (id: string) => string;
   };
   onBrowse: () => void;
+  onAssets: () => void;
   onCollections: () => void;
   onOpenCollection: (slug: string) => void;
   onOpenResource: (id: string) => void;
@@ -79,6 +81,7 @@ export function LandingPage({
   signedIn,
   hrefs,
   onBrowse,
+  onAssets,
   onCollections,
   onOpenCollection,
   onOpenResource,
@@ -104,14 +107,19 @@ export function LandingPage({
           </a>
           <span className="landing-links">
             <a href={hrefs.browse} onClick={internal(onBrowse)}>
-              Explore
+              Websites
+            </a>
+            <a href={hrefs.assets} onClick={internal(onAssets)}>
+              Assets
             </a>
             <a href={hrefs.collections} onClick={internal(onCollections)}>
               Collections
             </a>
-            <button onClick={onAbout}>About</button>
           </span>
           <span className="landing-nav-right">
+            <button className="ghost" onClick={onAbout}>
+              About
+            </button>
             {!authAvailable ? (
               <a className="solid" href={hrefs.browse} onClick={internal(onBrowse)}>
                 Browse the directory

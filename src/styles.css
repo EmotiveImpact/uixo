@@ -1994,8 +1994,15 @@ kbd {
   .pick-note {
     font-size: 17px;
   }
+  .landing-nav {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
   .landing-links {
-    display: none;
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    gap: 22px;
   }
   .landing-handoff {
     padding: 34px 26px;
