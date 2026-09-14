@@ -2,8 +2,7 @@
 
 Updated: 2026-09-14
 
-## Priority handles
-
+Core handles (priority):
 - @walebuilds_
 - @rkant7
 - @Tegadesigns
@@ -30,8 +29,7 @@ Updated: 2026-09-14
 - @deb_isadev
 - @Mohd__Shahid_07
 
-## Discovery candidates
-
+Discovery candidates (list-droppers to watch; not exclusive):
 - @theansarh
 - @eddieeee0716
 - @mredu000
@@ -46,5 +44,6 @@ Updated: 2026-09-14
 - @mr_nirajkumar07
 - @Shefali__J
 - @thedzianis
-- @Abmankendrick
-- @k2sbhai
+- @CJfromJBW
+
+Note: Core handles are priority; also discover and add new list-droppers. Dump all links from list posts.
