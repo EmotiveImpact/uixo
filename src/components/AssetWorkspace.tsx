@@ -154,11 +154,8 @@ export function AssetWorkspace() {
         onChooseAssetProvider={(provider) =>
           navigate({ provider: query.provider === provider ? '' : provider, offset: 0 }, true)
         }
-        onShowAssets={() => navigate({}, true)}
         onShowAll={() => go({ ...EMPTY_ROUTE })}
         homeHref="/browse"
-        onShowCollections={() => go({ ...EMPTY_ROUTE, collectionsIndex: true })}
-        onCollections={false}
         onChooseList={(listId) => go({ ...EMPTY_ROUTE, listId })}
         onDeleteList={remove}
         onChooseCategory={openCategory}

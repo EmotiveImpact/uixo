@@ -37,29 +37,33 @@ function ComponentCanvas({ providerId, slug }: { providerId: string; slug: strin
 
 export function AssetPreview({ asset }: { asset: AssetRecord }) {
   const [failedUrl, setFailedUrl] = useState('');
+  const pinnedSource =
+    asset.kind === 'component' ? pinnedComponentSource(asset.providerId, asset.slug) : null;
   const remoteUrl = safeAssetUrl(asset.preview?.url);
   const capturedUrl =
     asset.kind === 'component' &&
     ['shadcn', 'magic-ui', 'motion-primitives'].includes(asset.providerId)
       ? `/assets/component-previews/${asset.providerId}/${asset.slug}.webp`
       : undefined;
-  const imageUrl = capturedUrl ?? (asset.preview?.kind === 'image' ? remoteUrl : undefined);
+  // Reviewed local source is a real, theme-aware component. Captures remain the safe fallback
+  // for providers whose runtime code has not yet been vendored and reviewed.
+  const imageUrl = pinnedSource
+    ? undefined
+    : (capturedUrl ?? (asset.preview?.kind === 'image' ? remoteUrl : undefined));
   const showImage = imageUrl && failedUrl !== imageUrl;
-  const pinnedSource =
-    asset.kind === 'component' ? pinnedComponentSource(asset.providerId, asset.slug) : null;
   return (
     <div
-      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${capturedUrl ? 'is-component-capture' : ''}`}
+      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${showImage && capturedUrl ? 'is-component-capture' : ''} ${pinnedSource ? 'is-live-component' : ''}`}
     >
-      {showImage ? (
+      {pinnedSource ? (
+        <ComponentCanvas providerId={asset.providerId} slug={asset.slug} />
+      ) : showImage ? (
         <img
           src={imageUrl}
           loading="lazy"
           alt={`${asset.name} rendered preview from ${asset.providerId}`}
           onError={() => setFailedUrl(imageUrl)}
         />
-      ) : pinnedSource ? (
-        <ComponentCanvas providerId={asset.providerId} slug={asset.slug} />
       ) : (
         <div className="asset-library-no-preview">
           <span aria-hidden="true">◇</span>
@@ -67,12 +71,12 @@ export function AssetPreview({ asset }: { asset: AssetRecord }) {
         </div>
       )}
       <small title={pinnedSource ?? undefined}>
-        {showImage
-          ? capturedUrl
-            ? 'Official provider demo capture'
-            : 'Original GitHub SVG'
-          : pinnedSource
-            ? `Pinned source render · shadcn/ui ${SHADCN_PREVIEW_SHORT_REF}`
+        {pinnedSource
+          ? `Live source preview · shadcn/ui ${SHADCN_PREVIEW_SHORT_REF}`
+          : showImage
+            ? capturedUrl
+              ? 'Official provider demo capture'
+              : 'Original GitHub SVG'
             : 'Source preview not captured'}
       </small>
     </div>

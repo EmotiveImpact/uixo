@@ -245,11 +245,6 @@ export function App() {
           lists={lists}
           onShowAll={showAll}
           homeHref={routeToHref(EMPTY_ROUTE)}
-          onShowCollections={() => {
-            setOpenSection(null);
-            navigate({ ...EMPTY_ROUTE, collectionsIndex: true });
-          }}
-          onCollections={route.collectionsIndex || Boolean(activeCollection)}
           onChooseList={chooseList}
           onDeleteList={remove}
           onChooseCategory={chooseCategory}

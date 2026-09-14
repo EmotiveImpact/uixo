@@ -1,15 +1,4 @@
-import {
-  Blocks,
-  Box,
-  Grid2X2,
-  Heart,
-  Layers3,
-  PanelLeft,
-  Plus,
-  Shapes,
-  Trash2,
-  X,
-} from 'lucide-react';
+import { Blocks, Box, Heart, PanelLeft, Plus, Shapes, Trash2, X } from 'lucide-react';
 import {
   AnimatedSidebar,
   AnimatedSidebarClose,
@@ -28,7 +17,7 @@ import {
   AnimatedSidebarRail,
   AnimatedSidebarTrigger,
 } from './motion/animated-sidebar';
-import { categories, collections, resources } from '../data';
+import { categories, resources } from '../data';
 import { categoryCount, populatedSubs } from '../lib/filters';
 import { navigateInApp } from '../lib/navigation';
 import { DEFAULT_LIST_ID } from '../types';
@@ -44,15 +33,12 @@ type AppSidebarProps = {
   onShowAll: () => void;
   /** Where the wordmark points: the directory root, not the landing page. */
   homeHref: string;
-  onShowCollections: () => void;
-  onCollections: boolean;
   onChooseList: (id: string) => void;
   onDeleteList: (id: string) => void;
   onChooseCategory: (name: string) => void;
   onChooseSub: (category: string, sub: string) => void;
   onSubmit: () => void;
   onAssets?: boolean;
-  onShowAssets?: () => void;
   onSavedAssets?: boolean;
   onShowSavedAssets?: () => void;
   savedAssetCount?: number;
@@ -71,15 +57,12 @@ export function AppSidebar({
   lists,
   onShowAll,
   homeHref,
-  onShowCollections,
-  onCollections,
   onChooseList,
   onDeleteList,
   onChooseCategory,
   onChooseSub,
   onSubmit,
   onAssets = false,
-  onShowAssets = () => navigateInApp('/browse/assets'),
   onSavedAssets = false,
   onShowSavedAssets = () => navigateInApp('/browse/assets?view=saved'),
   savedAssetCount = 0,
@@ -96,7 +79,6 @@ export function AppSidebar({
   const iconCount = assetProviders
     .filter((provider) => provider.adapter === 'github-icons')
     .reduce((total, provider) => total + provider.assetCount, 0);
-  const assetCount = componentCount + iconCount;
   return (
     <AnimatedSidebar ariaLabel="UIXO navigation" collapsible="icon">
       <AnimatedSidebarHeader className="p-3 pb-2">
@@ -127,44 +109,7 @@ export function AppSidebar({
       </AnimatedSidebarHeader>
 
       <AnimatedSidebarContent className="px-2 pt-1">
-        <AnimatedSidebarGroup className="pb-5 pt-5">
-          <AnimatedSidebarGroupContent>
-            <AnimatedSidebarMenu>
-              <AnimatedSidebarMenuItem>
-                <AnimatedSidebarMenuButton
-                  icon={<Grid2X2 className="size-4" />}
-                  badge={String(resources.length)}
-                  isActive={!category && !listId && !onCollections && !onAssets}
-                  onSelect={onShowAll}
-                >
-                  All websites
-                </AnimatedSidebarMenuButton>
-              </AnimatedSidebarMenuItem>
-              <AnimatedSidebarMenuItem>
-                <AnimatedSidebarMenuButton
-                  icon={<Shapes className="size-4" />}
-                  badge={assetCount ? String(assetCount) : undefined}
-                  isActive={onAssets}
-                  onSelect={onShowAssets}
-                >
-                  All assets
-                </AnimatedSidebarMenuButton>
-              </AnimatedSidebarMenuItem>
-              <AnimatedSidebarMenuItem>
-                <AnimatedSidebarMenuButton
-                  icon={<Layers3 className="size-4" />}
-                  badge={String(collections.length)}
-                  isActive={onCollections}
-                  onSelect={onShowCollections}
-                >
-                  Collections
-                </AnimatedSidebarMenuButton>
-              </AnimatedSidebarMenuItem>
-            </AnimatedSidebarMenu>
-          </AnimatedSidebarGroupContent>
-        </AnimatedSidebarGroup>
-
-        <AnimatedSidebarGroup className="pt-4">
+        <AnimatedSidebarGroup className="pt-5">
           <AnimatedSidebarGroupLabel>Favourites</AnimatedSidebarGroupLabel>
           <AnimatedSidebarGroupContent>
             <AnimatedSidebarMenu>

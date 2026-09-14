@@ -30,8 +30,6 @@ function renderSidebar(onAssets: boolean) {
         lists={[]}
         onShowAll={vi.fn()}
         homeHref="/browse"
-        onShowCollections={vi.fn()}
-        onCollections={false}
         onChooseList={vi.fn()}
         onDeleteList={vi.fn()}
         onChooseCategory={vi.fn()}
@@ -75,6 +73,9 @@ describe('AppSidebar catalogue context', () => {
     expect(screen.getByText('Sources')).toBeTruthy();
     expect(screen.getByText('Magic UI')).toBeTruthy();
     expect(screen.getByText('Lucide')).toBeTruthy();
+    expect(screen.queryByText('All websites')).toBeNull();
+    expect(screen.queryByText('All assets')).toBeNull();
+    expect(screen.queryByText('Collections')).toBeNull();
     expect(screen.queryByText('Website categories')).toBeNull();
     expect(screen.queryByText('UI libraries')).toBeNull();
   });
@@ -84,6 +85,9 @@ describe('AppSidebar catalogue context', () => {
 
     expect(screen.getByText('Categories')).toBeTruthy();
     expect(screen.getByText('UI libraries')).toBeTruthy();
+    expect(screen.queryByText('All websites')).toBeNull();
+    expect(screen.queryByText('All assets')).toBeNull();
+    expect(screen.queryByText('Collections')).toBeNull();
     expect(screen.queryByText('Sources')).toBeNull();
   });
 });

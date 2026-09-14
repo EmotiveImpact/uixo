@@ -192,7 +192,7 @@
 }
 .asset-library-preview.is-component-capture {
   padding: 0;
-  background: #fff;
+  background: #0c0c0e;
 }
 .asset-library-preview.is-component-capture img {
   position: absolute;
@@ -206,6 +206,14 @@
   max-height: none;
   object-fit: contain;
   object-position: center;
+  filter: invert(1) hue-rotate(180deg);
+  transition: filter 180ms ease;
+}
+.light .asset-library-preview.is-component-capture {
+  background: #fff;
+}
+.light .asset-library-preview.is-component-capture img {
+  filter: none;
 }
 .asset-library-preview.is-component-capture > small {
   right: auto;
@@ -1054,6 +1062,9 @@
 }
 .asset-library-card .asset-library-preview.is-component-capture {
   padding: 0;
+  background: #0c0c0e;
+}
+.light .asset-library-card .asset-library-preview.is-component-capture {
   background: #fff;
 }
 .light .asset-library-card .asset-library-preview {
@@ -1142,6 +1153,9 @@
 }
 .asset-detail-drawer .asset-library-preview.is-component-capture {
   padding: 0;
+  background: #0c0c0e;
+}
+.light .asset-detail-drawer .asset-library-preview.is-component-capture {
   background: #fff;
 }
 .asset-detail-drawer .asset-library-preview.is-icon img {
