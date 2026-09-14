@@ -101,7 +101,9 @@ documentation and commits the result as a local WebP. The catalogue uses 147 rea
 captures: 46 shadcn, 68 Magic UI, and 33 Motion Primitives. Magic UI source links now include
 the real repository root. The seven entries without source at the pinned revision are
 excluded instead of being given a substitute preview. The invented semantic renderer and
-its fallback illustrations were removed.
+its fallback illustrations were removed. The capture layer fills the card or drawer viewport
+and uses `object-fit: contain`, so portrait and landscape demos retain their native proportions
+instead of stretching or being clipped by card padding.
 
 **Prevention:** `npm run previews:verify` derives the expected component set from the captured
 registries and provider exclusion policy, then requires exactly one valid WebP and official
@@ -109,6 +111,10 @@ source URL for every publishable component. Registry tests require component pre
 images, reject schematic placeholders, verify corrected source paths, and assert that
 unbacked manifest entries stay excluded. A missing or changed provider demo now fails the
 build; it cannot quietly become an approximation.
+
+The release was also checked with both portrait and landscape captures in the live card and
+asset-detail layouts. The image box matched its preview viewport at each size while the
+browser retained `object-fit: contain`.
 
 **Rule:** a preview is evidence about the asset. If the real render cannot be captured, show
 it as unavailable or keep the record unpublished. Never replace it with something that only
