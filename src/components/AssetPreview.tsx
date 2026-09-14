@@ -6,6 +6,7 @@ import {
   pinnedComponentSource,
   SHADCN_PREVIEW_SHORT_REF,
 } from './previews/pinned-component-sources';
+import { SemanticComponentPreview } from './previews/SemanticComponentPreview';
 
 const FORM_CONTROLS = new Set([
   'checkbox',
@@ -174,7 +175,15 @@ function ComponentPreview({ slug }: { slug: string }) {
 }
 
 /** Scale the complete illustration uniformly; never reflow its miniature UI. */
-function ComponentCanvas({ providerId, slug }: { providerId: string; slug: string }) {
+function ComponentCanvas({
+  providerId,
+  slug,
+  name,
+}: {
+  providerId: string;
+  slug: string;
+  name: string;
+}) {
   const viewport = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
   useLayoutEffect(() => {
@@ -197,6 +206,8 @@ function ComponentCanvas({ providerId, slug }: { providerId: string; slug: strin
       >
         {pinnedComponentSource(providerId, slug) ? (
           <PinnedComponentPreview providerId={providerId} slug={slug} />
+        ) : providerId === 'magic-ui' || providerId === 'motion-primitives' ? (
+          <SemanticComponentPreview providerId={providerId} slug={slug} name={name} />
         ) : (
           <ComponentPreview slug={slug} />
         )}
@@ -223,7 +234,7 @@ export function AssetPreview({ asset }: { asset: AssetRecord }) {
           onError={() => setFailedUrl(url)}
         />
       ) : asset.kind === 'component' ? (
-        <ComponentCanvas providerId={asset.providerId} slug={asset.slug} />
+        <ComponentCanvas providerId={asset.providerId} slug={asset.slug} name={asset.name} />
       ) : (
         <div className="asset-library-no-preview">
           <span aria-hidden="true">◇</span>
