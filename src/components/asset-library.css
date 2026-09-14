@@ -1285,3 +1285,46 @@
     gap: 15px;
   }
 }
+
+/* Interactive canvases sit above the card link, which remains on the title/body. */
+.asset-library-preview.is-live-component {
+  padding: 0;
+  z-index: 1;
+  isolation: isolate;
+}
+.asset-live-viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.asset-live-viewport iframe {
+  display: block;
+  border: 0;
+  transform-origin: top left;
+  background: var(--background);
+}
+.asset-live-viewport.is-detail {
+  position: relative;
+  width: 100%;
+  height: 480px;
+}
+.asset-live-viewport.is-detail iframe {
+  width: 100%;
+  height: 100%;
+}
+.asset-detail-drawer .is-live-component {
+  height: auto;
+  min-height: 480px;
+  aspect-ratio: auto;
+}
+.asset-library-preview.is-live-component > small {
+  pointer-events: none;
+  z-index: 2;
+}
+.asset-live-fallback {
+  position: absolute;
+  bottom: 32px;
+  left: 16px;
+  padding: 8px;
+  background: var(--background);
+}

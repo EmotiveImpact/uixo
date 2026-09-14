@@ -1,3 +1,4 @@
+import { Tooltip } from 'radix-ui';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { WorkspaceRouter } from './WorkspaceRouter';
@@ -8,6 +9,8 @@ if (!container) throw new Error('Root element #root is missing from index.html')
 
 createRoot(container).render(
   <StrictMode>
-    <WorkspaceRouter />
+    <Tooltip.Provider delayDuration={500}>
+      <WorkspaceRouter />
+    </Tooltip.Provider>
   </StrictMode>,
 );

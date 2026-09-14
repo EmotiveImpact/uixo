@@ -2,6 +2,17 @@
 
 Newest first. Dates are Europe/London.
 
+## 2026-09-14
+
+### Live demos and shared controls
+
+- Replace component screenshot previews with 147 lazy-loaded original React demos in isolated frames.
+- Preserve source commits, hashes and licences for 311 upstream files; check coverage and integrity during builds.
+- Allow interaction inside both cards and the detail drawer, and synchronize light/dark themes without resetting demo state.
+- Add Radix Primitives for shared pricing, browse order and tooltips while retaining UIXO styling.
+- Persist the desktop sidebar preference across workspaces, refresh and browser tabs; mobile navigation stays independent.
+- Record the preview regression and sidebar reset in BUGS-AND-FIXES.md.
+
 ## 2026-09-12
 
 ### Asset-library layout repair (draft branch)

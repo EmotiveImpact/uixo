@@ -21,5 +21,20 @@
       "source": "/(.*)",
       "destination": "/"
     }
+  ],
+  "headers": [
+    {
+      "source": "/live-demos/:path*",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src https: data: blob:; media-src https: blob:; connect-src https:; font-src 'self' data:; form-action 'none'; frame-src https://www.youtube.com https://www.youtube-nocookie.com; base-uri https://magicui.design https://ui.shadcn.com https://motion-primitives.com"
+        }
+      ]
+    }
   ]
 }

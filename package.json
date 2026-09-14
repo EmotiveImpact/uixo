@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 3000",
-    "build": "npm run registry:deps && npm run registry:verify && npm run previews:verify && tsc --noEmit && vite build && node scripts/prerender.mjs",
+    "build": "npm run demos:build && npm run registry:deps && npm run registry:verify && npm run previews:verify && tsc --noEmit && vite build && node scripts/prerender.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "prerender": "node scripts/prerender.mjs",
     "typecheck": "tsc --noEmit",
@@ -32,7 +32,8 @@
     "registry:verify": "node tools/verify-registry.mjs",
     "registry:mcp": "node --experimental-strip-types registry/stdio.ts",
     "registry:db": "node --experimental-strip-types tools/registry-db.ts",
-    "registry:sync": "node --env-file=.env.local --experimental-strip-types tools/registry-db.ts sync --allow-remote"
+    "registry:sync": "node --env-file=.env.local --experimental-strip-types tools/registry-db.ts sync --allow-remote",
+    "demos:build": "node scripts/verify-live-demos.mjs && npm ci --prefix live-demos --ignore-scripts && vite build --config live-demos/vite.config.mjs"
   },
   "dependencies": {
     "@neondatabase/auth": "^0.5.0-beta",
@@ -42,6 +43,7 @@
     "jose": "^6.2.12",
     "lucide-react": "^0.468.0",
     "motion": "^12.0.0",
+    "radix-ui": "^1.6.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwind-merge": "^3.0.0"

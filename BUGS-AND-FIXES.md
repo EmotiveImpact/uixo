@@ -203,3 +203,31 @@ as duplicates of live `reactbits` and `shadcn` — different ids, same site.
 - **The quick view auto-scrolled** past its own preview on open.
 - **`db/schema.sql` claimed to be re-runnable** but every `create type` failed on a second
   apply.
+
+## Static captures were still being used after live demos were requested (14 September 2026)
+
+**Cause:** 147 component records pointed to WebP captures. Only five local renderers
+existed, and their canvas disabled pointer events and hid controls from accessibility.
+The full-card link also intercepted clicks over the preview. Calling these demos did
+not make them interactive.
+
+**Fix:** A separate source-pinned React preview build maps every captured component to
+its original live demo. Frames allow scripts but have no same-origin permission. The
+preview canvas sits above the card link; details remain accessible through the title.
+Theme changes reach the frame without reloading its state. Offscreen frames unmount.
+Component images are no longer a runtime fallback. Icons retain their original SVGs.
+
+**Prevention:** Live-demo coverage and vendor file hashes are build checks. Browser
+verification must include an actual state change (expand Accordion, type in Input),
+keyboard access and both themes. A screenshot, animation recording, successful build,
+or an approximation of the component does not satisfy a request for a live demo.
+
+## Sidebar reopened when switching workspaces (14 September 2026)
+
+**Cause:** Website and asset shells each started with `useState(true)`, so crossing
+between them discarded the collapsed preference.
+
+**Fix:** Both shells read one persistent desktop preference before rendering and
+subscribe to changes. Refresh, catalogue navigation and other tabs retain the choice.
+Mobile drawer visibility remains separate so a saved desktop collapse does not prevent
+opening mobile navigation.

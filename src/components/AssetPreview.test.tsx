@@ -39,6 +39,19 @@ function asset(overrides: Partial<AssetRecord>): AssetRecord {
 
 beforeEach(() => {
   vi.stubGlobal('ResizeObserver', ResizeObserverStub);
+  vi.stubGlobal(
+    'IntersectionObserver',
+    class {
+      constructor(private callback: IntersectionObserverCallback) {}
+      observe() {
+        this.callback(
+          [{ isIntersecting: true }] as IntersectionObserverEntry[],
+          this as unknown as IntersectionObserver,
+        );
+      }
+      disconnect() {}
+    },
+  );
 });
 
 afterEach(() => {
@@ -50,13 +63,13 @@ describe('AssetPreview', () => {
   it('prefers a reviewed live component over its static capture', () => {
     const { container } = render(<AssetPreview asset={asset({})} />);
 
-    expect(screen.getByText('Changes saved')).toBeTruthy();
-    expect(screen.getByText(/^Live source preview/)).toBeTruthy();
+    expect(screen.getByTitle('Live Alert demo').getAttribute('sandbox')).toBe('allow-scripts');
+    expect(screen.getByText(/^Live demo/)).toBeTruthy();
     expect(container.querySelector('img')).toBeNull();
     expect(container.querySelector('.is-live-component')).toBeTruthy();
   });
 
-  it('keeps an official capture as the fallback for components without reviewed runtime code', () => {
+  it('runs original provider components instead of screenshots', () => {
     const { container } = render(
       <AssetPreview
         asset={asset({
@@ -68,8 +81,9 @@ describe('AssetPreview', () => {
       />,
     );
 
-    expect(screen.getByText('Official provider demo capture')).toBeTruthy();
-    expect(container.querySelector('img')).toBeTruthy();
-    expect(container.querySelector('.is-component-capture')).toBeTruthy();
+    expect(screen.getByTitle('Live Marquee demo').getAttribute('src')).toContain(
+      'magic-ui%2Fmarquee',
+    );
+    expect(container.querySelector('img')).toBeNull();
   });
 });

@@ -1,3 +1,4 @@
+import { useSidebarPreference } from '../hooks/useSidebarPreference';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatedSidebarInset, AnimatedSidebarProvider } from './motion/animated-sidebar';
 import { AppSidebar } from './AppSidebar';
@@ -31,7 +32,7 @@ import './asset-library.css';
 /** Same UIXO components as App, with a separately loaded, server-backed catalogue. */
 export function AssetWorkspace() {
   const [query, setQuery] = useState(() => readAssetQuery(window.location.search));
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useSidebarPreference();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [modal, setModal] = useState<ModalName | null>(null);
   const [assetProviders, setAssetProviders] = useState<ProviderRecord[]>([]);

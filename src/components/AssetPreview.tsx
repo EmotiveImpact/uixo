@@ -1,83 +1,120 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { AssetRecord } from '../lib/asset-library';
 import { safeAssetUrl } from '../lib/asset-library';
-import { PinnedComponentPreview } from './previews/PinnedComponentPreview';
-import {
-  pinnedComponentSource,
-  SHADCN_PREVIEW_SHORT_REF,
-} from './previews/pinned-component-sources';
+import demos from '../../live-demos/manifest.json';
 
-/** Keep the reviewed source render as a fallback if a committed capture fails to load. */
-function ComponentCanvas({ providerId, slug }: { providerId: string; slug: string }) {
+function LivePreview({ asset, detail }: { asset: AssetRecord; detail: boolean }) {
   const viewport = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(1);
-  useLayoutEffect(() => {
+  const frame = useRef<HTMLIFrameElement>(null);
+  const [visible, setVisible] = useState(detail);
+  const [size, setSize] = useState({ width: 480, height: 330 });
+  const [status, setStatus] = useState('loading');
+  const [theme, setTheme] = useState(() =>
+    document.documentElement.classList.contains('light') ? 'light' : 'dark',
+  );
+  const [initialTheme] = useState(theme);
+  useEffect(() => {
     const element = viewport.current;
     if (!element) return;
-    const resize = () => {
-      setScale(Math.min(element.clientWidth / 320, element.clientHeight / 200, 1.5));
+    const resize = new ResizeObserver(() =>
+      setSize({ width: element.clientWidth || 480, height: element.clientHeight || 330 }),
+    );
+    resize.observe(element);
+    const intersection = new IntersectionObserver(
+      (entries) => setVisible(detail || entries[0].isIntersecting),
+      { rootMargin: '100px' },
+    );
+    intersection.observe(element);
+    const observer = new MutationObserver(() =>
+      setTheme(document.documentElement.classList.contains('light') ? 'light' : 'dark'),
+    );
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => {
+      resize.disconnect();
+      intersection.disconnect();
+      observer.disconnect();
     };
-    resize();
-    const observer = new ResizeObserver(resize);
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
+  }, [detail]);
+  useEffect(() => {
+    frame.current?.contentWindow?.postMessage({ type: 'uixo-preview-theme', theme }, '*');
+  }, [theme]);
+  useEffect(() => {
+    const receive = (event: MessageEvent) => {
+      if (
+        event.source !== frame.current?.contentWindow ||
+        event.data?.type !== 'uixo-preview-status' ||
+        event.data.id !== asset.id
+      )
+        return;
+      if (event.data.status === 'ready' || event.data.status === 'error')
+        setStatus(event.data.status);
+    };
+    window.addEventListener('message', receive);
+    return () => window.removeEventListener('message', receive);
+  }, [asset.id]);
+  const scale = detail ? 1 : size.width / 480;
+  const demo = demos[asset.id as keyof typeof demos];
   return (
-    <div ref={viewport} className="asset-preview-viewport">
-      <div
-        className="asset-preview-canvas"
-        aria-hidden="true"
-        style={{ transform: `translate(-50%, -50%) scale(${scale})` }}
-      >
-        <PinnedComponentPreview providerId={providerId} slug={slug} />
-      </div>
+    <div ref={viewport} className={`asset-live-viewport ${detail ? 'is-detail' : ''}`}>
+      {visible && (
+        <iframe
+          ref={frame}
+          title={`Live ${asset.name} demo`}
+          src={`/live-demos/index.html?id=${encodeURIComponent(asset.id)}&theme=${initialTheme}`}
+          sandbox="allow-scripts"
+          referrerPolicy="no-referrer"
+          style={
+            detail
+              ? undefined
+              : { width: 480, height: size.height / scale, transform: `scale(${scale})` }
+          }
+          onLoad={() =>
+            frame.current?.contentWindow?.postMessage({ type: 'uixo-preview-theme', theme }, '*')
+          }
+        />
+      )}
+      {status === 'error' && (
+        <a
+          className="asset-live-fallback"
+          href={demo.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open original live demo ↗
+        </a>
+      )}
     </div>
   );
 }
 
-export function AssetPreview({ asset }: { asset: AssetRecord }) {
+export function AssetPreview({ asset, detail = false }: { asset: AssetRecord; detail?: boolean }) {
   const [failedUrl, setFailedUrl] = useState('');
-  const pinnedSource =
-    asset.kind === 'component' ? pinnedComponentSource(asset.providerId, asset.slug) : null;
-  const remoteUrl = safeAssetUrl(asset.preview?.url);
-  const capturedUrl =
-    asset.kind === 'component' &&
-    ['shadcn', 'magic-ui', 'motion-primitives'].includes(asset.providerId)
-      ? `/assets/component-previews/${asset.providerId}/${asset.slug}.webp`
-      : undefined;
-  // Reviewed local source is a real, theme-aware component. Captures remain the safe fallback
-  // for providers whose runtime code has not yet been vendored and reviewed.
-  const imageUrl = pinnedSource
-    ? undefined
-    : (capturedUrl ?? (asset.preview?.kind === 'image' ? remoteUrl : undefined));
+  const live = asset.kind === 'component' && Object.hasOwn(demos, asset.id);
+  const imageUrl = asset.kind === 'icon' ? safeAssetUrl(asset.preview?.url) : undefined;
   const showImage = imageUrl && failedUrl !== imageUrl;
   return (
     <div
-      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${showImage && capturedUrl ? 'is-component-capture' : ''} ${pinnedSource ? 'is-live-component' : ''}`}
+      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${live ? 'is-live-component' : ''}`}
     >
-      {pinnedSource ? (
-        <ComponentCanvas providerId={asset.providerId} slug={asset.slug} />
+      {live ? (
+        <LivePreview key={asset.id} asset={asset} detail={detail} />
       ) : showImage ? (
         <img
           src={imageUrl}
           loading="lazy"
-          alt={`${asset.name} rendered preview from ${asset.providerId}`}
+          alt={`${asset.name} original SVG`}
           onError={() => setFailedUrl(imageUrl)}
         />
       ) : (
         <div className="asset-library-no-preview">
-          <span aria-hidden="true">◇</span>
-          <strong>Official preview unavailable</strong>
+          <strong>Live preview unavailable</strong>
+          <a href={safeAssetUrl(asset.sourceUrl)} target="_blank" rel="noopener noreferrer">
+            Open original source ↗
+          </a>
         </div>
       )}
-      <small title={pinnedSource ?? undefined}>
-        {pinnedSource
-          ? `Live source preview · shadcn/ui ${SHADCN_PREVIEW_SHORT_REF}`
-          : showImage
-            ? capturedUrl
-              ? 'Official provider demo capture'
-              : 'Original GitHub SVG'
-            : 'Source preview not captured'}
+      <small>
+        {live ? 'Live demo · Try it' : showImage ? 'Original GitHub SVG' : 'No live demo available'}
       </small>
     </div>
   );

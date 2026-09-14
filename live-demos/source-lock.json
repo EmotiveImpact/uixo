@@ -1,0 +1,1557 @@
+[
+  {
+    "path": "magic-ui/LICENSE.md",
+    "sha256": "0147b84235ed916b8b4e89c1f80655351c5afe7d211b629be61f553a227b34ba",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/LICENSE.md"
+  },
+  {
+    "path": "magic-ui/components/ui/button.tsx",
+    "sha256": "881fabaf889450b7c671ffabe455bd4b4d101c36f80868f1bf4819ba5f4f4886",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/components/ui/button.tsx"
+  },
+  {
+    "path": "magic-ui/components/ui/calendar.tsx",
+    "sha256": "aa89c528ff5aee5130efea70bf863854a128820d5cd97326783534f1d0d92e35",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/components/ui/calendar.tsx"
+  },
+  {
+    "path": "magic-ui/components/ui/card.tsx",
+    "sha256": "588076549982a167b2bd72c9325100f77f9ba513cd57d80d815ab37d0a9ba5f5",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/components/ui/card.tsx"
+  },
+  {
+    "path": "magic-ui/components/ui/input.tsx",
+    "sha256": "993bf6edf0b78822e17ec20737bbbe2fb7a2ddf861f78ebf6a377c2842803d9c",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/components/ui/input.tsx"
+  },
+  {
+    "path": "magic-ui/components/ui/label.tsx",
+    "sha256": "2eac8fbb04002c42b0fbc4062d20d131e421796eaf65c37d2049e29e42ecbc5a",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/components/ui/label.tsx"
+  },
+  {
+    "path": "magic-ui/components/ui/scroll-area.tsx",
+    "sha256": "1a06e1b69040141acc38f0b80f6c850396bbc697486819c438a34b8a70598cc0",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/components/ui/scroll-area.tsx"
+  },
+  {
+    "path": "magic-ui/components/ui/separator.tsx",
+    "sha256": "4bcfbb420d54c125fbd86157f031d81d968909984f4307eb9cafc02aaf5e4e67",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/components/ui/separator.tsx"
+  },
+  {
+    "path": "magic-ui/components/ui/tooltip.tsx",
+    "sha256": "93145c085b4d547b1ddce7c5d90488ce6e4e8bd73253150ca4042a6055b32e08",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/components/ui/tooltip.tsx"
+  },
+  {
+    "path": "magic-ui/config/site.ts",
+    "sha256": "a3b2ca4a9df6e9aa41fcda17fa49b9106ac0357280b25f553d8b12be36152fcd",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/config/site.ts"
+  },
+  {
+    "path": "magic-ui/lib/utils.ts",
+    "sha256": "e7c07dc285a0a7ad16ca4c94204ca97cb94face47004827fc6bece0d28a9394c",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/lib/utils.ts"
+  },
+  {
+    "path": "magic-ui/registry/example/android-demo.tsx",
+    "sha256": "f9cb5429515206c872d56e22e4e14fea5d5eb70a3fc37a356c537ad7c4a3ae03",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/android-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/animated-beam-demo.tsx",
+    "sha256": "e47585cf5e93b3a22d868f894d93f75e9316d8f4ab1aca0353a46456ad2cc1e5",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/animated-beam-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/animated-beam-multiple-outputs.tsx",
+    "sha256": "e8203047bd2fe441cc0aa278e53a037b8883bb82b8f2e5d7aa9630a83ddd33d7",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/animated-beam-multiple-outputs.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/animated-circular-progress-bar-demo.tsx",
+    "sha256": "24a98a6315503d1cc65a4d7c618574d7800c8e41d14dd1318379db756b15435f",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/animated-circular-progress-bar-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/animated-gradient-text-demo.tsx",
+    "sha256": "8f62d32bd01852c6a27d4e24eb547ff17f17838d944d6e67c8d8f0734befc722",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/animated-gradient-text-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/animated-grid-pattern-demo.tsx",
+    "sha256": "42b0a3253d7e73d7de3b6b478a129f2210f6f68036061951f0307a2a06ec057c",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/animated-grid-pattern-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/animated-list-demo.tsx",
+    "sha256": "3ca33ae7a60fd711d54c5969d474d63767741cb07df4cd84bf7b31fda5dcf874",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/animated-list-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/animated-shiny-text-demo.tsx",
+    "sha256": "463f80b2a14226e3b7a3c8a54e0a377c92c1e00586138f304a06907b2174d94d",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/animated-shiny-text-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/animated-theme-toggler-demo.tsx",
+    "sha256": "438ab1f4fafc0b98aa0b6f46d927efec3761467d42a3359fbaed70641741e927",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/animated-theme-toggler-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/aurora-text-demo.tsx",
+    "sha256": "199001d28f2aeaaeae3bb99a4f92c7e5a50312f0e57e34fbf2719074cfb08790",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/aurora-text-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/avatar-circles-demo.tsx",
+    "sha256": "b42ed418bd409cc6400126e1757ab9093d0ff2ae4655163fe7634c288c4f5d3c",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/avatar-circles-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/bento-demo.tsx",
+    "sha256": "5a2dc970025a6b120eea0fa65c1b84f12f20cfe20983790c2db5b457a6f69add",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/bento-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/blur-fade-demo.tsx",
+    "sha256": "953f35b55a1791c56797667cd1d16ea9107da22aa11651be6b77a92c3b5910e8",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/blur-fade-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/border-beam-demo.tsx",
+    "sha256": "83cda19fa5014ad4c3616565083d0e6a10fb19e8713da844e09144d2258ec247",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/border-beam-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/code-comparison-demo.tsx",
+    "sha256": "c591b506b2244cc331ce3e3a99984e8cdd403bbafd4fd8170e32d2e7f0a4f945",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/code-comparison-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/comic-text-demo.tsx",
+    "sha256": "37b16b057227f58febe479c8588b835846cb27c0d1044a255ead10c828d618ea",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/comic-text-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/confetti-demo.tsx",
+    "sha256": "772f8855414e08df83543e8788bb9e7ae48f44d3b02bcfac2c60dfd9c97d80ac",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/confetti-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/cool-mode-demo.tsx",
+    "sha256": "435a9a20667c4f66977ada7bd111b168a4be97aecd73e950d21caac724d350cc",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/cool-mode-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/dock-demo.tsx",
+    "sha256": "ced6964db07e0bfb45017370386e6d722462dddcfe8203fd5a7598fcae99a0fa",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/dock-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/dot-pattern-demo.tsx",
+    "sha256": "aa7206c333e068c751dca45c4a78dfae907e9979d763ffe69820a4f2e66f86a3",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/dot-pattern-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/file-tree-demo.tsx",
+    "sha256": "a47bdce9906e5432120c18ddc1e7a06c04562315a37668edcdbd4e2040105c43",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/file-tree-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/flickering-grid-demo.tsx",
+    "sha256": "fd55c4a09876c107f627b30c78227b1af15845fb6e07bbeae1cd08b7fa082cca",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/flickering-grid-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/globe-demo.tsx",
+    "sha256": "9280b0b41a8569f885ba45877db66394510800f9a6f34f7722191a2bccd6a6f9",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/globe-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/glyph-matrix-demo.tsx",
+    "sha256": "0445fb928b889d31ee6b75392bee66dabce67bfb4fddebe70755c44fd276bf79",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/glyph-matrix-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/grid-pattern-demo.tsx",
+    "sha256": "9b7c0d43897f31083bcd24cee87b7413e73eefae92365d04bdb2cfcb09fbac50",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/grid-pattern-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/hero-video-dialog-demo.tsx",
+    "sha256": "486011ac00cad35987c49e776608fb32ec9b5c8d68bb1ca0d9279986a1ed4508",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/hero-video-dialog-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/highlighter-demo.tsx",
+    "sha256": "a8d46282a2a7096bd6ba9193df67e763c53c3a1ef098361d0e05b52daec4049c",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/highlighter-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/hyper-text-demo.tsx",
+    "sha256": "134e0d0261b27d8d71b31cbadeb6958045a5f3551fb72aa756638727a042e7aa",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/hyper-text-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/icon-cloud-demo.tsx",
+    "sha256": "07bd18a9be120ae4fc80b6cc971c3c51b9b95fff4d2895d6c252559a8e15c36e",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/icon-cloud-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/interactive-grid-pattern-demo.tsx",
+    "sha256": "af269198cae96cd3f944fe002971ece658daf3f207d53ec902be2dcccde0fb7e",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/interactive-grid-pattern-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/interactive-hover-button-demo.tsx",
+    "sha256": "c8260b6c0cf85dc751018719656fe40865066964e5caa2d837d5a666b05ddaf1",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/interactive-hover-button-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/lens-demo.tsx",
+    "sha256": "cecc756e1d8fcc724cd9047b0bb9db7ea18e109f687d6ca9a0b2ececa51c4ea7",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/lens-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/line-shadow-text-demo.tsx",
+    "sha256": "357b245b9426415082dfc8efe474abfcd8a44d120cf5b0a73a9518bc4e8c74ba",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/line-shadow-text-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/magic-card-demo.tsx",
+    "sha256": "27d1fc598d10907d4870d7d128e2beda3ae3e404d734a52dc33920a680f17e3f",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/magic-card-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/marquee-demo.tsx",
+    "sha256": "7ed4e929bbf6c54b6464cea98cc29fd1b4da16f1ab4cdcc7a49e2ef98ec19536",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/marquee-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/meteors-demo.tsx",
+    "sha256": "ba1343f7dd4b0f72c0b7a68012ebd9e48c0a1a97b912dddc5ee5c3e1921c4fe5",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/meteors-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/morphing-text-demo.tsx",
+    "sha256": "9661c0a40073751d4c821f60d3575f66a496e103f49895ffa5754d66e9ca97bd",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/morphing-text-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/neon-gradient-card-demo.tsx",
+    "sha256": "1d984dafca4e761067c289beb38e9c1ba95fe8edbde589c28ec654471328d22e",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/neon-gradient-card-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/number-ticker-demo.tsx",
+    "sha256": "f189295a609cd20bfde8c4b70ca4a8d5d957176f2d3459521eaba74dedafc11b",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/number-ticker-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/orbiting-circles-demo.tsx",
+    "sha256": "6ff1d9122d2519c15eb4d566557613f4ce541b169db7740f518fab584560a455",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/orbiting-circles-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/particles-demo.tsx",
+    "sha256": "11a9a593028ac123aa6daad026646492e8d9840440545d7033198925dfa9ecc3",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/particles-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/pixel-image-demo.tsx",
+    "sha256": "d4f8ac03149d7246d8aaea9063f96feaf9102bff7cf2776beec4006d45c738d1",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/pixel-image-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/pointer-demo-1.tsx",
+    "sha256": "7c680b98fe4c14ef8416b0cc2b246082135c2b699d57eb10eda0b9775cf5b103",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/pointer-demo-1.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/progressive-blur-demo.tsx",
+    "sha256": "4998844f2e99316adee5fb5107e8de44b0434425846477d4efa8bd425b01a13d",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/progressive-blur-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/pulsating-button-demo.tsx",
+    "sha256": "45bea0642d383007c1811408845a639792c0e89e914d57a6c2622174cb3bbc63",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/pulsating-button-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/rainbow-button-demo.tsx",
+    "sha256": "3dd2b9dec233609407fa1ecdd4533d0ad2a4ef04e2770892c728ff7030cf5e2d",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/rainbow-button-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/retro-grid-demo.tsx",
+    "sha256": "7f65eddb1db8959c7f399797dc390c23907eaccbc1f35b152c8c04ef60a9e8fd",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/retro-grid-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/ripple-button-demo.tsx",
+    "sha256": "de6b2c1dd09fe3f984357c6d457d23888a53b25a0190e0d112b97fba4fa309c7",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/ripple-button-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/ripple-demo.tsx",
+    "sha256": "78e12b21f4919d83030656d18caa088aa859e57a67265b1e0b7a27b9da768414",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/ripple-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/safari-demo.tsx",
+    "sha256": "107686f75fa4dbfea82ad80eb29d8145ccf7d2319cf65606f4e9795dfe48dece",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/safari-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/scroll-based-velocity-demo.tsx",
+    "sha256": "6fbd077bcfa248a0c0125fec77ec01567f8dbb5c64ff3e85c8811f0ea6f3a156",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/scroll-based-velocity-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/scroll-progress-demo.tsx",
+    "sha256": "682091dc20311da32d88e7d6606b0f1ed9546130d38f88f6423dbdbb698c3047",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/scroll-progress-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/shimmer-button-demo.tsx",
+    "sha256": "079683a50878b46a554cf78851811a4ece74e6400262c6ecf80b1c1468de48ec",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/shimmer-button-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/shine-border-demo.tsx",
+    "sha256": "a7c9410583e33411bfa577ecfa271931cc9a28f2a674f19b3fc57805492599a8",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/shine-border-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/shiny-button-demo.tsx",
+    "sha256": "0a6d6576bbb19d50ad4a48750193173c48fe1a08074ca52f87590602f67ab5b6",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/shiny-button-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/smooth-cursor-demo.tsx",
+    "sha256": "c10ab610bc4fe4f27c0ed8fe498c1bdcd123fb517496990734c450da3db8bcd8",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/smooth-cursor-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/sparkles-text-demo.tsx",
+    "sha256": "8bb99b55c59fb63c5f9c930636f41235ecd95d8bcdc50a45d49fd3736646048a",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/sparkles-text-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/spinning-text-demo.tsx",
+    "sha256": "0ded5b5e8a39690f8c21584b0c7fe13f6fc4b14b45bc6e0b36e5a8f352acb594",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/spinning-text-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/striped-pattern-demo.tsx",
+    "sha256": "9f62530a82640bbf25538558a1a0362b7cad9a4d5ed584d46cc7d31aa35933a4",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/striped-pattern-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/terminal-demo.tsx",
+    "sha256": "869f0ffee9300ee052659bf3a5b10ab1c3b727cbc6dc841bc3bca128e35795d1",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/terminal-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/text-animate-demo.tsx",
+    "sha256": "0dbb2e98a42f5b40be3223414400ec51785e99f86ebcfd79d9c89efdf00fa75e",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/text-animate-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/text-reveal-demo.tsx",
+    "sha256": "874031091b4bb36e48b5278734653f5e42c967af1fe4284500d118d052930369",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/text-reveal-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/tweet-card-demo.tsx",
+    "sha256": "e55aceebd0d6b5975a003e4d4f67dd9ab19bc3839a4afc1ccbe1e04368501782",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/tweet-card-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/typing-animation-demo.tsx",
+    "sha256": "5d7971ba7e6cfa06dd4901410522329b3b77f6eab1b309f8acb33b0c118bb4d4",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/typing-animation-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/video-text-demo.tsx",
+    "sha256": "2a428f360427ee2ea72add81d16e2088d1a04b8ef296fd28a3d7e4cc0f4ae46f",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/video-text-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/warp-background-demo.tsx",
+    "sha256": "0fc88aa94922c1b739c99eed6363b2ea47aea536e67fa2c6ab9d717987a8f6ae",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/warp-background-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/example/word-rotate-demo.tsx",
+    "sha256": "ed43dede364e3e9e3556aa7f0b5003eb29cb2c43652d919656fef0629175a93c",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/example/word-rotate-demo.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/android.tsx",
+    "sha256": "9235d2e9204078c65ff8077bf8adc6b3ed4b12c55a8354345faa8f8abbddb5cf",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/android.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/animated-beam.tsx",
+    "sha256": "6afa2ee1d01694a428eb8517d48deebe5c6b532dc0ee871800bb9d92aae43e79",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/animated-beam.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/animated-circular-progress-bar.tsx",
+    "sha256": "c7f974283804607484afba34a5886af027cb58528a1987f392c35a577a77a782",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/animated-circular-progress-bar.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/animated-gradient-text.tsx",
+    "sha256": "e5f0b81be1a9dc707199c2fd10c588bde872c72a02e2eb6d195d080112a34692",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/animated-gradient-text.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/animated-grid-pattern.tsx",
+    "sha256": "fda051f51f5b805983beb855633e05bfcbf17a4b94a2459e5352d8bd624f618a",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/animated-grid-pattern.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/animated-list.tsx",
+    "sha256": "9363c5afa61d7aab1919b4500f7325cc8871b35103d5dd60a2a1625fe5e7dc58",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/animated-list.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/animated-shiny-text.tsx",
+    "sha256": "3743a0a0b4894840a96bacd839e493872bac484a940684f91fd23a1784c00fbb",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/animated-shiny-text.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/animated-subscribe-button.tsx",
+    "sha256": "c441fd29a120f50c8030250a938c6082e7220108a8e3d0e8f8e969a215b90c85",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/animated-subscribe-button.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/animated-theme-toggler.tsx",
+    "sha256": "5d09afdb5968e9f7f3967943c27103d727f264fdd51fa14b10a4b3130a1970a8",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/animated-theme-toggler.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/aurora-text.tsx",
+    "sha256": "c7bd0b72a093084a881416975249c507ddd715249ac5832a9161538eeef29927",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/aurora-text.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/avatar-circles.tsx",
+    "sha256": "e0900fa87df8042ad4f98d1ec8168b1504b207eb0211ed19b1ba079d1f9741dd",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/avatar-circles.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/bento-grid.tsx",
+    "sha256": "9c2abcb2a4e51519e56d510299771a2d0e170ab9927a9a792a58614b1837ed47",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/bento-grid.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/blur-fade.tsx",
+    "sha256": "99a8e83aa8817f48e26d921e959ff9abefb5c2f1f0b72b166ed95e88e015949f",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/blur-fade.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/border-beam.tsx",
+    "sha256": "ccdfb52cb8f2089e7823a9edfe9c3a52e52ab6759ed5b91d184b1e2bb80cf414",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/border-beam.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/client-tweet-card.tsx",
+    "sha256": "865680fbed5876bbda320e2ab75222b696175a67cc70001d56100a96c7afe4e4",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/client-tweet-card.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/code-comparison.tsx",
+    "sha256": "a06698296a219ac0d7ffa098f6d5d2bbf38c3f825af5a8b01786fddf16b969ac",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/code-comparison.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/comic-text.tsx",
+    "sha256": "d259aa2d9ef9fadcfd565a9bf29557660c511a08e3c18b675dd4b3d731417113",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/comic-text.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/confetti.tsx",
+    "sha256": "c2a713b9a768d0f62f2c67837c441586de02a744b528c91548d043d8cb3fc8a6",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/confetti.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/cool-mode.tsx",
+    "sha256": "9eba11d050264db27329fe0321c0a41305440244fddcc3c640ee92ff31033fd3",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/cool-mode.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/dock.tsx",
+    "sha256": "c12d578d4a273036fa435b67d8374d6fe9c7bcb962665cefc7b851aa86d12441",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/dock.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/dot-pattern.tsx",
+    "sha256": "f198ffad23f2404f7f8d0d562e1eec5d5d43e61635994bf74a214af9fa553bcb",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/dot-pattern.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/file-tree.tsx",
+    "sha256": "19f8c8923a3aba1ef840b8a2c0eca1c7e4772f850140c38a532c0cb2d4d20875",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/file-tree.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/flickering-grid.tsx",
+    "sha256": "16e5ee59fda4298a8e2210b38ad260b9c278ab8cf4a0817ed410d9e78edbdc3b",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/flickering-grid.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/globe.tsx",
+    "sha256": "76422bf378c6503883706fe7af90132f7716dbe383fab7728a95c95e4d16cfd0",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/globe.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/glyph-matrix.tsx",
+    "sha256": "0c4c11f8a81dab493b0adbf9ed3dd7342c64fd8957926a4e39b31294b1853633",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/glyph-matrix.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/grid-pattern.tsx",
+    "sha256": "1d1caaf01de0a1ebfdffea1163535f8fbfdfbee33cd0a640e09388815d1823df",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/grid-pattern.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/hero-video-dialog.tsx",
+    "sha256": "8a7a25227054b5b747e77efe12aacf3e4fff4410a55e4bcd8fda6c5bcf71b670",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/hero-video-dialog.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/highlighter.tsx",
+    "sha256": "521c876ac04938ae747126a5277c14c6eb19114a9a09c3567249a7d2ee2af5b2",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/highlighter.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/hyper-text.tsx",
+    "sha256": "12a2f5aa5d53e20ccbe611bde8057083451bda69a31318db166f758289cb93e8",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/hyper-text.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/icon-cloud.tsx",
+    "sha256": "243e182efdb70940b01452135160747011b01ba6766a8d5e47ba93b526ae105f",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/icon-cloud.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/interactive-grid-pattern.tsx",
+    "sha256": "953385a7fae475dac73f5a88de878cfd8dab1ea5b83a95638ef06bbb10f0a6e2",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/interactive-grid-pattern.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/interactive-hover-button.tsx",
+    "sha256": "ab16b3a2efea7fcc84a0eddeb7dad5304b403f89d22e056427fd3f905baaa0de",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/interactive-hover-button.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/lens.tsx",
+    "sha256": "85e2ae91387ee22d1492224e5767788653b5954a2d65ec0fd59ca023dae6f0e3",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/lens.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/line-shadow-text.tsx",
+    "sha256": "5103c5e2c2d30325d8581c1d172837b0040810f7361080208ecba1556bd52afa",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/line-shadow-text.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/magic-card.tsx",
+    "sha256": "6139e78ed228ebca18ed144f4a2714a89214c2ef604f1f82bc2f61204c3f3fa3",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/magic-card.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/marquee.tsx",
+    "sha256": "779f360a107409bfa35cda13bcef7d54cd620a15ab4a0ee50412442a4dd6b9c7",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/marquee.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/meteors.tsx",
+    "sha256": "0730d0d6449fb3fb098a5e9edc80d066bdf06ebbb1d1e598b8fb6a10ff4a5ff9",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/meteors.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/morphing-text.tsx",
+    "sha256": "8475ec9beae637a2af6183ed1f91227d0e048f93051352faa0e8d921b2c53d62",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/morphing-text.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/neon-gradient-card.tsx",
+    "sha256": "bd96e18be176f3f2365cf27d686bf31d6f062c0abb707ca21e88079ab28f76ed",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/neon-gradient-card.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/number-ticker.tsx",
+    "sha256": "0f7dcbc6a1962615a877590304e846f33d390002a51f2226f544938577c220f4",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/number-ticker.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/orbiting-circles.tsx",
+    "sha256": "859b88b6c22144e5cd4bf04ab49d339090eea13b422d3085a80584e6b9d4da68",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/orbiting-circles.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/particles.tsx",
+    "sha256": "f768e19deca7c0ba9c424b4683b62cae3eedd11ef3dac8b0363e65c2773f236e",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/particles.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/pixel-image.tsx",
+    "sha256": "88240ed4cfcf58eb1c77ab79b524ee5721135dc0a243d892d0ac3420708626c2",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/pixel-image.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/pointer.tsx",
+    "sha256": "f46b0109767ca079e5bc87ccbaac0091216ad84c3da09b15b7c176664aff9e6f",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/pointer.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/progressive-blur.tsx",
+    "sha256": "2d1a95b26a66b707cd786c626e3fe7819330d7ec585618afb301e6cd776d811b",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/progressive-blur.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/pulsating-button.tsx",
+    "sha256": "f73dd2d7da811ea0202b5bab7d441562f48772a55459b26316c8dc836ee852ca",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/pulsating-button.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/rainbow-button.tsx",
+    "sha256": "cda40de677181acd8690cd24bad7f734753fec3b2d921206e733f7d6a4e36ea0",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/rainbow-button.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/retro-grid.tsx",
+    "sha256": "7434890f7345291453245866ae78f3f8d622a75a4e3b806729ca33c995ef6142",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/retro-grid.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/ripple-button.tsx",
+    "sha256": "828d7883953843761cb80fd6f59b6115e72d8db6bc83471e7ee8abf049ab6863",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/ripple-button.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/ripple.tsx",
+    "sha256": "1ac207017c0f4e993f83a1ead8b8a1b4a92286ef1595a297aba79782b2616eaf",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/ripple.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/safari.tsx",
+    "sha256": "2cb6ce69def86020f6860a3dd8696f0998dac340db932a3eee05e990b2e29f3e",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/safari.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/scroll-based-velocity.tsx",
+    "sha256": "17cebe769a2337587bcb0e8e5d3ebd71f5b7ffc27ad1f6f59a8971f5d277b844",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/scroll-based-velocity.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/scroll-progress.tsx",
+    "sha256": "4d79d33956520a69ff3c74509deaee7be6036125b0e0fb54078eba7eeefe894a",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/scroll-progress.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/shimmer-button.tsx",
+    "sha256": "c85ffda63ba086d2078a8dacffdfc25f0b106e1566362fa251888a214ee3c010",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/shimmer-button.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/shine-border.tsx",
+    "sha256": "c9344b563c2427f26393f6f5e2fe5c72d6a3fcb4b90b8f073ebad515e963c46c",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/shine-border.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/shiny-button.tsx",
+    "sha256": "916c8b8ffe1a018b560dff80aed78cdfaeded889bcbec70e3fe34618d5073abf",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/shiny-button.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/smooth-cursor.tsx",
+    "sha256": "bbcb3812f29fe0c128066bb83f810849a6eeb951569109d5b46bcd0f16a83c0c",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/smooth-cursor.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/sparkles-text.tsx",
+    "sha256": "bab902a2260bcf17ae0065d13e0a231ddc0ec3a9ab74da164998ed1d4a330697",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/sparkles-text.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/spinning-text.tsx",
+    "sha256": "55726f972d09705b0cd10e8739e74afe8d11b7164537554f99905267e456dafa",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/spinning-text.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/striped-pattern.tsx",
+    "sha256": "e7616db6087216fc5e8ad0e0aa3fada349ea238a651d85ef4986c88f1f070966",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/striped-pattern.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/terminal.tsx",
+    "sha256": "a0ece03773e1a17862e049f11f72647b5db44dc1400473bdecd3c0e81f43f2d7",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/terminal.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/text-animate.tsx",
+    "sha256": "0ebece79c412661f57bc0489416b55a376e9f006e0f558162bb6e91f814a99a6",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/text-animate.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/text-reveal.tsx",
+    "sha256": "af69b435aa66a762af04d7d85b8578627ad9fb6541d01170135756e647d36240",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/text-reveal.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/tweet-card.tsx",
+    "sha256": "6d3c76c487e091b0da0327f17df7bd358286a86214a526316050a9fbccf3143e",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/tweet-card.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/typing-animation.tsx",
+    "sha256": "70ce53aff9dd61cba9d5c8999e8a05120839d4d8e0396a5e0a1579f155d18e4b",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/typing-animation.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/video-text.tsx",
+    "sha256": "93fdb8caeb85d84700b78a14cfccc471d1b364b4c23bab702eb0ef832683e0dd",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/video-text.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/warp-background.tsx",
+    "sha256": "ca2d664c7ca43fcf9d59a20a484be9945a1ffc4a835f8a9e6bbb039c93249a39",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/warp-background.tsx"
+  },
+  {
+    "path": "magic-ui/registry/magicui/word-rotate.tsx",
+    "sha256": "201852c2ddd0c63f1cefa730c50f97d88c1d4ee4b7158ca35032b8efc91d2293",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/word-rotate.tsx"
+  },
+  {
+    "path": "magic-ui/upstream.css",
+    "sha256": "b290ad71358829d043a8453924e0b97878596294849de34ea08451412fd760f2",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/styles/globals.css"
+  },
+  {
+    "path": "motion-primitives/app/docs/accordion/accordion-basic.tsx",
+    "sha256": "f599cc966f9702df0a54278763d16bdddbf48fdbff4ef669e8ab8084a4e8947a",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/accordion/accordion-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/animated-background/animated-tabs.tsx",
+    "sha256": "ff972ce2e4c09d815f54b196c40a34cc3dd18f96e522baa9a4a16aeaf7984fa5",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/animated-background/animated-tabs.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/animated-group/animated-group-preset.tsx",
+    "sha256": "297a1ddb7856483a3d1a76024b4c6eb88b303774bdff1a2466054b4df0630f5b",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/animated-group/animated-group-preset.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/animated-number/animated-number-basic.tsx",
+    "sha256": "4d19ec6ca15793fb89ff030d1f2f01e09a1ab8cfa6c6d6cf163bf9c39150d5a3",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/animated-number/animated-number-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/border-trail/border-trail-card-1.tsx",
+    "sha256": "94d061d294723055e0ee822fef6661b17fe9a584d97501572d35562d2fd0aa6e",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/border-trail/border-trail-card-1.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/carousel/carousel-basic.tsx",
+    "sha256": "a73a2154239b5499a0c1de5e6ebfdbbe37989e26f7030a114234b579a6d9b053",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/carousel/carousel-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/cursor/cursor-1.tsx",
+    "sha256": "02a5639c4c2df3ad6a8d383770427e560d0adeb58473f989aa868c2038f9e886",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/cursor/cursor-1.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/dialog/dialog-basic.tsx",
+    "sha256": "435705cb39c786f9cae20143af8b66fcd98873bc10843b847cf0cf236e8557b8",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/dialog/dialog-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/disclosure/disclosure-basic.tsx",
+    "sha256": "41336ff4431b2fed03f5b323bc473293271a0e5677b5876cecb006a4a19b6163",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/disclosure/disclosure-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/dock/apple-style-dock.tsx",
+    "sha256": "01c0c656fbed7ff294897c0b6867e48ea70db70deb1d92d81f98e96c4f9b64b9",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/dock/apple-style-dock.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/glow-effect/glow-effect-card-background.tsx",
+    "sha256": "82bd9bc0e5e369692bc211084c461f30d357d717396e70fba5ee2c14133c4246",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/glow-effect/glow-effect-card-background.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/image-comparison/image-comparison-basic.tsx",
+    "sha256": "28f2a92d8376ed416baf8dd9c6a9758a82813809f7a4f59214aff4cfc14bd285",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/image-comparison/image-comparison-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/in-view/in-view-basic.tsx",
+    "sha256": "bc053165bdedb184c6d683cd1e4b325ee72a85316b551e732a8fd6120315b6f0",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/in-view/in-view-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/infinite-slider/infinite-slider-basic.tsx",
+    "sha256": "8c729506389f81b1326350443cbb0a6773716e61a9e69a63ce8b4aa4ae27a5aa",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/infinite-slider/infinite-slider-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/magnetic/magnetic-basic.tsx",
+    "sha256": "d73e5d87b1b1ad1894ac2cd23c7beafb8734f41bfe4341fc32c16123ee55a885",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/magnetic/magnetic-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/morphing-dialog/morphing-dialog-basic-1.tsx",
+    "sha256": "674774998950668b4d996ecfff68fc7045056df0151bbe7faa41644a2fce0f71",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/morphing-dialog/morphing-dialog-basic-1.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/morphing-popover/morphing-popover-basic.tsx",
+    "sha256": "e2d2d3b387e76f7d96749fbfa18acf730c64eb50d734e88ff9965da0c05d1bc2",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/morphing-popover/morphing-popover-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/progressive-blur/progressive-blur-basic.tsx",
+    "sha256": "0a7a827f869ad802750625a44aee278d66c2b7ca0a18f385e6f1e6452bdf216b",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/progressive-blur/progressive-blur-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/scroll-progress/scroll-progress-basic-1.tsx",
+    "sha256": "381954151a62d697f003d1ea62b1b9ab33ac0b397083f6c24847a6db43eb8a4f",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/scroll-progress/scroll-progress-basic-1.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/sliding-number/clock.tsx",
+    "sha256": "188d4ac1f7339d033f608a4ae598bf4b78945bd06a797ba201822cd0ce9a6458",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/sliding-number/clock.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/spinning-text/spinning-text-basic.tsx",
+    "sha256": "5a26e2ae1ada7442a9c6d6bb129691e3ecab93082d426ac7596e27d6f8c33439",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/spinning-text/spinning-text-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/spotlight/spotlight-basic.tsx",
+    "sha256": "fde627350beb870f4b45c6a915d2a208ebf0641636f42135a2f93a3371ada7a6",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/spotlight/spotlight-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/text-effect/text-effect-per-char.tsx",
+    "sha256": "89029b97e96915bc1ef4d4ef5a5f175b6d5357f466cf6a0ba5ee61cac1730b5c",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/text-effect/text-effect-per-char.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/text-loop/text-loop-basic.tsx",
+    "sha256": "b470c02e54e7fd9d9d9d33eb19e557bceffac09672d19c545f183d88c0eb6c8f",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/text-loop/text-loop-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/text-morph/text-morph-button.tsx",
+    "sha256": "74a890652cdbf47e46379c9c5a560107178ada895871de562ad8ccfa4d1cc22e",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/text-morph/text-morph-button.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/text-roll/text-roll-basic.tsx",
+    "sha256": "35393513c9f64f761e9b91d3e8ae98c7410d80da9cbca5eb869df3411c58ad67",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/text-roll/text-roll-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/text-scramble/text-scramble-basic.tsx",
+    "sha256": "90415756484814983f450a1d6cf38f47301e7348e13da738ae3f13934dab9392",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/text-scramble/text-scramble-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/text-shimmer/text-shimmer-basic.tsx",
+    "sha256": "85e92ea3234e08b185782f6a772f63fbf5bd9299317d84e16aac739f273c8ae9",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/text-shimmer/text-shimmer-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/text-shimmer-wave/text-shimmer-wave-basic.tsx",
+    "sha256": "e296c6bc00aae91af6045e7a2835f944f4ad6f965e46d64e0d2ade53b952886c",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/text-shimmer-wave/text-shimmer-wave-basic.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/tilt/tilt-card-1.tsx",
+    "sha256": "f884c20c771c9f38baa1a0ef7ac4ff3a52af40fa741e7cd4e68824fd52c06086",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/tilt/tilt-card-1.tsx"
+  },
+  {
+    "path": "motion-primitives/app/docs/transition-panel/transition-panel-tabs.tsx",
+    "sha256": "f5cf3a683c8ef9052642f1a851c97d4ee816059eed15fad803be37b45b3dfd8d",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/docs/transition-panel/transition-panel-tabs.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/accordion.tsx",
+    "sha256": "5de8206a53d083d3c5d4503fc4d203efaed734ea904de4fd77b33c1ebc991b7c",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/accordion.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/animated-background.tsx",
+    "sha256": "fa592713c408eaf58b21976c20737d84239c42a0b7e47cf9e7843121b1c0852c",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/animated-background.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/animated-group.tsx",
+    "sha256": "0c162bbdd3c332e7aa113cd7ddfa7ac36de3184866cb82ad9140525561e08c35",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/animated-group.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/animated-number.tsx",
+    "sha256": "3b4a9f3262cb79527fba01a76576e920e340137f0643bf34a7732f7f8b1ff792",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/animated-number.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/border-trail.tsx",
+    "sha256": "6b6334b83c97304c68143a45971fe492aaf24676047d05e4fec13cd42cefe916",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/border-trail.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/carousel.tsx",
+    "sha256": "7ba8079ae027252f34ba5707e057182d87a8243da61556a3192513f1924beff9",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/carousel.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/cursor.tsx",
+    "sha256": "e856a3aa32030525929b0e2262565b33859f9a16175b3ebf4ef220bcd7e18fc6",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/cursor.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/dialog.tsx",
+    "sha256": "11ab87b504cb42e778f947ad722925b051b977f62638741402f170a57ca6ba2d",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/dialog.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/disclosure.tsx",
+    "sha256": "6ff585f95b063f1fdcff31c117051f732ef247a99fe039fe500bcccb3dc8bd40",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/disclosure.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/dock.tsx",
+    "sha256": "5b624424f0fd8b66f174ecbd4e0d8c260f438d933963126bf34298eadcebf719",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/dock.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/glow-effect.tsx",
+    "sha256": "cd9f31a6d7cf261801569547241530794f578b37b946ff320bd6192897658949",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/glow-effect.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/image-comparison.tsx",
+    "sha256": "010bb85a8051bcb341974eb9a1f3ec65ca0eecb8281d5dab8c082bfaa06ed08a",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/image-comparison.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/in-view.tsx",
+    "sha256": "8504e2e6fd2126619be6170132c8557fb2070a6a5225587cd2813f1f83b1e468",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/in-view.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/infinite-slider.tsx",
+    "sha256": "66bca95cd394826200cca57d9efd1824de9d08df40ecfb7dd5c61946ec6773c0",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/infinite-slider.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/magnetic.tsx",
+    "sha256": "3fd95392d2c7929336a25e513130c26ae4b57af695fceb01378800cd10522762",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/magnetic.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/morphing-dialog.tsx",
+    "sha256": "3783289015c56be36cd74701468a4d2aa345b48676b7fa12964ace9558e4e33e",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/morphing-dialog.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/morphing-popover.tsx",
+    "sha256": "72811cafa2d38d548919e2742325a5360dbd698ca19baf5d1af4c3417e8c425c",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/morphing-popover.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/progressive-blur.tsx",
+    "sha256": "28271af357f7f52bf69e6f13f3b0ac33042204e8338427881c28456419b936cd",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/progressive-blur.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/scroll-progress.tsx",
+    "sha256": "e5decf683e55b351e971ecb47483e12169daaaf1a0a7ba079a2270d8ca6270b3",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/scroll-progress.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/sliding-number.tsx",
+    "sha256": "cc30412f3ee6d925457e8559b7cda36faf3330e29da1e832b7a3e3bd087a6290",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/sliding-number.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/spinning-text.tsx",
+    "sha256": "e1c49be937f4427987f650c8eb35d644d9f47095435d924e0f8f330534c32c38",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/spinning-text.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/spotlight.tsx",
+    "sha256": "04419912db5ebe72a03199a39265a3db33398b3c48c0e854e9fb5be604700041",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/spotlight.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/text-effect.tsx",
+    "sha256": "4b93c0ea6b9d747d69b7a244d5279f790a11a784e73713f3fe17a636abf53484",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/text-effect.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/text-loop.tsx",
+    "sha256": "87707ae5f7a3e13f1e6d348e735e65b05d742dc24343d20b6470f8b857d0d2d4",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/text-loop.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/text-morph.tsx",
+    "sha256": "e3839272d22e1b041378263019d0716a29a8b99656b64eb385b66402698c9294",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/text-morph.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/text-roll.tsx",
+    "sha256": "3b5ff3fea2734bedfe03cfe03561c3e04e5e4f97152ed3e748fb45093b716ca6",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/text-roll.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/text-scramble.tsx",
+    "sha256": "119cda3b695ee97235ab7aaa62698a98e881d5bdc8b9c96d2597730cd07aeff2",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/text-scramble.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/text-shimmer-wave.tsx",
+    "sha256": "d2b8c2e8a5bd24ce75ded6ea559d7f660ce947e75ea9cf2be092e07f19ccb78f",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/text-shimmer-wave.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/text-shimmer.tsx",
+    "sha256": "a294c8a1092296a38e28128ad8f2953401fcca85b5ae29ee479bd71bfac3348e",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/text-shimmer.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/tilt.tsx",
+    "sha256": "a572d002cf82f396eea5ea4e04665114bee7ed075ad0123f32bc0dfa5867abf4",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/tilt.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/toolbar-dynamic.tsx",
+    "sha256": "96ddeb748b166d7d14906800239ba1cc03ec452f007405677e5626814ae20046",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/toolbar-dynamic.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/toolbar-expandable.tsx",
+    "sha256": "00dafdb8ab9c667a8460b693ac7dfdab4f04057251cd374a5887aecfc103d5e1",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/toolbar-expandable.tsx"
+  },
+  {
+    "path": "motion-primitives/components/core/transition-panel.tsx",
+    "sha256": "1b3c67058a09a560a034b7fe52ad1c205b589a63ed80055900e8a66830db0be2",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/core/transition-panel.tsx"
+  },
+  {
+    "path": "motion-primitives/components/ui/button.tsx",
+    "sha256": "a5aeb910a45fa423b08e4c0f1cdb4d64f8557b5b39ddcbf75b3887af98176b33",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/ui/button.tsx"
+  },
+  {
+    "path": "motion-primitives/components/ui/input.tsx",
+    "sha256": "6299a6a387dc55e528aec4342deaea0b83f1ea3a365c135a31a18ee55334f441",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/ui/input.tsx"
+  },
+  {
+    "path": "motion-primitives/components/ui/label.tsx",
+    "sha256": "2eac8fbb04002c42b0fbc4062d20d131e421796eaf65c37d2049e29e42ecbc5a",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/components/ui/label.tsx"
+  },
+  {
+    "path": "motion-primitives/hooks/useClickOutside.tsx",
+    "sha256": "a239b751802f4a67e13d962bdf18118f7b24c7806a3f2ab3c41eca199d624445",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/hooks/useClickOutside.tsx"
+  },
+  {
+    "path": "motion-primitives/hooks/usePreventScroll.tsx",
+    "sha256": "5005e7adccc89cde10c01f85ffcee3b4e468ab668bc04a614283ca25f1a8047b",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/hooks/usePreventScroll.tsx"
+  },
+  {
+    "path": "motion-primitives/lib/utils.ts",
+    "sha256": "9304a861c8673bee09e0f12de31773abbde503b02e59dfd74763ddec2e37cf05",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/lib/utils.ts"
+  },
+  {
+    "path": "motion-primitives/upstream.css",
+    "sha256": "f950f824931eba81d32b879d1cb38a8a093a5c74d3775bdd3de39a46c36d3fe5",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/app/globals.css"
+  },
+  {
+    "path": "shadcn/LICENSE.md",
+    "sha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/LICENSE.md"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/accordion-demo.tsx",
+    "sha256": "adb155525e248ea3803682e26d53f797106cdd531e988cf1f29de3e100b81dc0",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/accordion-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/alert-demo.tsx",
+    "sha256": "692415a8701b0c8494b955b8980fe6d0ee0d79a852e3cd639bfa5f858d775087",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/alert-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/alert-dialog-demo.tsx",
+    "sha256": "0df2feb3b43b6ec1173a801211b005db551150157eb0af0fa58a8132cc64c8ff",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/alert-dialog-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/aspect-ratio-demo.tsx",
+    "sha256": "35fd84eae0154c7166e7d6631606d2d30a4b9d4c7f18f435b0c55a32df123b40",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/aspect-ratio-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/avatar-demo.tsx",
+    "sha256": "e5a08187c1161d942f4df678f1fc8641acfc2b96659a4e213f931f6f9f5440a3",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/avatar-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/badge-demo.tsx",
+    "sha256": "be8d271adea8b2fcd2f900d8e8bead615ab09a0a39591edeedfc535616978b73",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/badge-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/breadcrumb-demo.tsx",
+    "sha256": "ae89a126027ca3fba323c5048856ce917f8545a7ca629601545115e147ab818d",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/breadcrumb-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/button-demo.tsx",
+    "sha256": "79b686fd86aae77ff1307ebd9ce843832331d6ce85ba49af82113acfc9a377ac",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/button-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/button-group-demo.tsx",
+    "sha256": "73e3bb613a039e58ebdb89a647f2ff7c8b000797fa5c980db7506cadfe2c2ade",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/button-group-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/calendar-demo.tsx",
+    "sha256": "2b90c835fb12981f6becd8492b1a546943c1c0d0bf638bea3bb7c062355c1313",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/calendar-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/card-demo.tsx",
+    "sha256": "5e480048442a8a5bab54ddde1333c5ead1c9d5140543ece42203f0dbc542b58e",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/card-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/carousel-demo.tsx",
+    "sha256": "ab0d6db53c82a6964bd7533d12b7d6cc986d72a85e65171fde9986d63f8aac4a",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/carousel-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/chart-bar-demo.tsx",
+    "sha256": "d6e4921be5a9f8d48f88a64c6479d00bf6c9e98acf2682b2374500b0bcd6a4b7",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/chart-bar-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/checkbox-demo.tsx",
+    "sha256": "963c8036e466a3652bb73b713be3d2475a5621e5e7d75e744f4cf251adb01e6d",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/checkbox-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/collapsible-demo.tsx",
+    "sha256": "37abc88bacbc1d98d6b675a48a457096f3a40ff0722369ae61476c59f048d278",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/collapsible-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/combobox-demo.tsx",
+    "sha256": "587117e09dca105e5799a57883a2938743be2d82268658a081aa1a8629de34d8",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/combobox-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/command-demo.tsx",
+    "sha256": "da6068f90f9d8fd428acac6235b84b23287b7a4a9d563cc4516dcd264590e19b",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/command-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/context-menu-demo.tsx",
+    "sha256": "1b923b68b383ca503c88dd29f12f5f53222aa677456d843ce4ee952a7ca7a824",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/context-menu-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/dialog-demo.tsx",
+    "sha256": "1a4e0f495dc3a3d00f6ab0a4e677aedc24f80a4a4f3c267e472eedc99f9c1828",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/dialog-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/drawer-demo.tsx",
+    "sha256": "76b49ff4b558d5014009219285bb7b907152d2fd08613d79553bcce0c6bb3699",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/drawer-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/dropdown-menu-demo.tsx",
+    "sha256": "246125468036387ef225fb68bc3976e4a28126a5e1e68af7dd97ba08fb5568ca",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/dropdown-menu-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/empty-demo.tsx",
+    "sha256": "256fafa66022abe16cbd45c715da901d8002da003898e8dd0fe781e101360d70",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/empty-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/field-demo.tsx",
+    "sha256": "e0e480c2beb9223b112b8e04f37e3ad83283e257cdd24e6f3a00e5f9542c4ba2",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/field-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/form-rhf-demo.tsx",
+    "sha256": "8bf9f06f36635d523c71bc404d3fc1d3accec0fa43e087dc8a57198a91299880",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/form-rhf-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/hover-card-demo.tsx",
+    "sha256": "ac1782d82c3fd0f5783d53f83e5b3831def02e3dab6c5bd57030cbcdba22c9b3",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/hover-card-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/input-demo.tsx",
+    "sha256": "2a6430567a36119562ef31a7764aef541005d0e84af3e4ebe0f440972be2afce",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/input-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/input-group-demo.tsx",
+    "sha256": "6c9ba44ea7d78cd632f8f88c15d10b527709a4b648fa27a38741b1cc52199040",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/input-group-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/input-otp-demo.tsx",
+    "sha256": "7ded8c77df963fc6f63193c77dd1f395c93b2e52195ca71b8780462ee05a3780",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/input-otp-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/item-demo.tsx",
+    "sha256": "73fcf3db09a720e83952ce75c41c372a1a4696680bada3203ec03d09f761f45a",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/item-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/label-demo.tsx",
+    "sha256": "f5a586dc0c336af069d105d2b91e6324654d3208b457cef5ee8e23bfc40e64e4",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/label-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/menubar-demo.tsx",
+    "sha256": "827d98a3b4fdc16dc21f2fd691e49417c8aef5a253a75d9dda0a82dee5a064ee",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/menubar-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/navigation-menu-demo.tsx",
+    "sha256": "17464911daa88a84345fbc6c1485d0f346b5417f0bb3370f623ee435fb50265d",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/navigation-menu-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/pagination-demo.tsx",
+    "sha256": "d1d892b87ce2650ffff81660a087942df0cf119eac87260e69f4f671075c7746",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/pagination-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/popover-demo.tsx",
+    "sha256": "92fce28d0dfd42d9eb605ae7e8e4786ac7f7cf48517dd4ca279c9006b0c3d1ce",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/popover-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/progress-demo.tsx",
+    "sha256": "0c712ef88df3e3c953c8e4ef42bd2ebbc6736605484031b97334501ac130529c",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/progress-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/radio-group-demo.tsx",
+    "sha256": "bc67f9b495b2384aea14cf1fba73f7cc0b4875b1fbfe4a6e9523de8bfdb387d3",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/radio-group-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/resizable-demo.tsx",
+    "sha256": "225d846fa5e8724da3966e5a5d23ab31a22a9b97fd43c78c3331adbd05af397a",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/resizable-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/scroll-area-demo.tsx",
+    "sha256": "f8ea27481634f98570aa108a8fcbc0a11ed14516421a2c10c349cfbe1e3b8e1f",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/scroll-area-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/select-demo.tsx",
+    "sha256": "b9539f4e912127b34b1b49b73e40604db6cc878a4f76fffc9ded1af34d8df21b",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/select-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/separator-demo.tsx",
+    "sha256": "128e76026308dd47d64a7935b2847bc9e4fd20de5c08653c9dae6807858d838d",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/separator-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/sheet-demo.tsx",
+    "sha256": "eee993aff55b31bc5eb07af188910614ea2ba6e4d43c98557bf1ed9f6d0f3509",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/sheet-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/skeleton-demo.tsx",
+    "sha256": "dad425fea6f07d573d1b214ea683e7e9aee52795272123688fceca95c163f874",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/skeleton-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/slider-demo.tsx",
+    "sha256": "5bfea9cf7f7444237e9d60d3a519e29498bf8300442b7a9e1f499d7a484c3d14",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/slider-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/sonner-demo.tsx",
+    "sha256": "828727175d23414ee680032e7131701b81772e3f688965e6f47ebe80146880b8",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/sonner-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/examples/spinner-demo.tsx",
+    "sha256": "1d7910dbb0a9a30e208c8c494cfac2970d0313075e3e4e87e4f8204dac24ac4c",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/examples/spinner-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/hooks/use-mobile.ts",
+    "sha256": "ad0936f84f1df79d3697bfbff9c18f8ad58431c1cbaf2359c6a853b0fcc9f28b",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/hooks/use-mobile.ts"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/internal/sidebar-demo.tsx",
+    "sha256": "a6cc9417903fdcc36f3fcf16fa3f50449cfda4b1f9d01ff5d176f5fb2f036b7a",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/internal/sidebar-demo.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/accordion.tsx",
+    "sha256": "99de242681eb43121969db02bbb102aeeb1865ef52c7635672508a58c5429085",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/accordion.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/alert-dialog.tsx",
+    "sha256": "b3dfb83e54ed8c82071df5289e5149628bf573458fc2da2d62f93f8380041b28",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/alert-dialog.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/alert.tsx",
+    "sha256": "d03dcae5cdb63c381c1144ca9a0c49ba0e46466967d7deb94662034042acb034",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/alert.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/aspect-ratio.tsx",
+    "sha256": "b1c157886236782cb92d8fbcd4749532aaf6d8aabefd6e157ca40358f902f407",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/aspect-ratio.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/avatar.tsx",
+    "sha256": "0c5c48b8a1dff4fdc5ff9b6cb79cc9cd138682b7d86868068f571befe9675e88",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/avatar.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/badge.tsx",
+    "sha256": "13a9380dfff853ee730c14a52df49f22aecd31f40f2998d7c1e7ec458b6e1650",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/badge.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/breadcrumb.tsx",
+    "sha256": "c75fcd3d9e8470188bc0dd4b27a2b26fff3ad42b9c9c534a953dc090ae2cba33",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/breadcrumb.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/button-group.tsx",
+    "sha256": "a9ac862707ff8d78255f2696baf48f9a87d9e92e21eb476f8f9e9361313c1761",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/button-group.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/button.tsx",
+    "sha256": "79dd6f75f8136394442202d6b8b922fb269eaad0a5dba579397c9d5b41f893bb",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/button.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/calendar.tsx",
+    "sha256": "78ed2cc49dafc5bb5df7b1d4a325e5fc314237386747362e5f0761a2c539a934",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/calendar.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/card.tsx",
+    "sha256": "ef8305b12c3112dab42a4708b41b1ebcc042fa5ab4c20f039da8d45b09ed5059",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/card.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/carousel.tsx",
+    "sha256": "70ba30941a3adb448166ddcf8557c97734b7be09f6fd69512a6e444084365557",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/carousel.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/chart.tsx",
+    "sha256": "35e2fa755465ef8eb8ff8b483d493204d452152e7a8863474b1a69f5d44484db",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/chart.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/checkbox.tsx",
+    "sha256": "ba0ac64064e2d8fa7299d53e9e84b9a4772fef8dd4cf6170c56d3030a1d69941",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/checkbox.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/collapsible.tsx",
+    "sha256": "c6598e5584f4258b5d9fefadbc5ad6a66888ad58729f4b634a0bb2d9c513188b",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/collapsible.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/command.tsx",
+    "sha256": "319e9264567dd46f04d705028bc345470663ca5919f31292c4ec43ea5ceb9336",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/command.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/context-menu.tsx",
+    "sha256": "bcde5df1ed9887bb050f0badabfb5f79912eb53bdc883dbe6c003d05914d99a4",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/context-menu.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/dialog.tsx",
+    "sha256": "2ade6074e5fad0a4eb171ead44c43d3301a3c83d186d7236fb1fdbea80ee556b",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/dialog.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/drawer.tsx",
+    "sha256": "63f04fe50a4bf29b56b0f5e2944c6efe980b895f589923659cc2e8ecc90b16c6",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/drawer.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/dropdown-menu.tsx",
+    "sha256": "d954efb735f13734751207ad22cb0cddd7f6ec53c59d16675d103dae08cb61fb",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/dropdown-menu.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/empty.tsx",
+    "sha256": "54f529ccf72c18c4b5abd5586a7cf1f2a4c8d207aac366029d66ed095cb2965d",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/empty.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/field.tsx",
+    "sha256": "4a4d17fcb933513f637f9f7e2daf5d8348f7de086b29738337dec7e6dd1819a0",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/field.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/hover-card.tsx",
+    "sha256": "73f59aa759656501ed615604ac3f2c04ba564acaea4529288fe3a487ad934953",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/hover-card.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/input-group.tsx",
+    "sha256": "e379899ac50d6cabc9d9eb1668f265176951c62b1fe83a6f23ee97fe8074d526",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/input-group.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/input-otp.tsx",
+    "sha256": "9f81898aeaabbb104cc22ffda551a333eb22608c543c4800412e2faaa802e311",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/input-otp.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/input.tsx",
+    "sha256": "0c9457181f6ddc80969bcf854e92c362903a55b6e889fbef3fd85343ecc4af5b",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/input.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/item.tsx",
+    "sha256": "9ade8136f010284b7ec0142f52606616dd4b23798012e75a9fc6aac1fb2d792e",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/item.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/label.tsx",
+    "sha256": "344bde38b8531615dbf8e14af3895517c24d8ef6ce56ddeda7e2e6fe4b5d0c00",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/label.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/menubar.tsx",
+    "sha256": "ca1a7f6775f9095183d63faadc6d4ed5ee2097139b4edeeefa60210379c47092",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/menubar.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/navigation-menu.tsx",
+    "sha256": "fbe81d7c358df0d21e49b03174ef53be7d66226a3dce1a97ff3d4a260ed833a3",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/navigation-menu.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/pagination.tsx",
+    "sha256": "224843c4f509e8b8c9848adefa43d1491846f0851138fa9b51cc6ba1319c5653",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/pagination.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/popover.tsx",
+    "sha256": "3f99d3add6c9fa4f03721e81297ee10e1310785ee1d9d9d4c82a114d84ab0757",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/popover.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/progress.tsx",
+    "sha256": "e012e1f7e6e66d11229d1233eccf91954edcd9179b418ff1d114dc651b86fd35",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/progress.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/radio-group.tsx",
+    "sha256": "cfc4f99ee68be2fbbd70de3ffad82e1462d5e8e0bb0aecfd190a4f5115325862",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/radio-group.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/resizable.tsx",
+    "sha256": "aaf3ea20e8060c75dd86e06fedfca053d49f81071123ba647b5699efcbc010ea",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/resizable.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/scroll-area.tsx",
+    "sha256": "8b73bb9be51300079c7f561bafbe43ee10f6f464cf39c8c1b25123cd4edb94dd",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/scroll-area.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/select.tsx",
+    "sha256": "962830436bd0b7ee50e556f0747e277d6a86869ed27d167516346b15f26309d8",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/select.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/separator.tsx",
+    "sha256": "ad7d5403fe337160e41dbf04147896e448ae3a747b8d06660d627d74d60021bc",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/separator.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/sheet.tsx",
+    "sha256": "ea473d38a26a9b0b879e5a13139899ad45e9782e896b3fa205c7763a6c506876",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/sheet.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/sidebar.tsx",
+    "sha256": "2ba1a9b9422f4172373f4cd0587b675d2331a41f4fa68f65dab2b23ca98fd9d2",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/sidebar.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/skeleton.tsx",
+    "sha256": "f51ce0fcd31e5c31437382e80ea0af94b4fc3d64221d27091d36824546780a43",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/skeleton.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/slider.tsx",
+    "sha256": "6a531f6182de6efec2c25d30a7626b66cbf11cf52d505e47f907124934f7188e",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/slider.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/spinner.tsx",
+    "sha256": "5d040fc49cb54c0296070644053b5a8840ddbfca89a430546bf308df3fffad65",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/spinner.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/textarea.tsx",
+    "sha256": "5cafcfeeee29534f449387a16b585f5923d2faab1a0cdc50a874416b175f59ce",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/textarea.tsx"
+  },
+  {
+    "path": "shadcn/registry/new-york-v4/ui/tooltip.tsx",
+    "sha256": "611e4305879b2773eafe76bf3c5caa69d8e47367fd97887a71634a27828f4433",
+    "sourceUrl": "https://github.com/shadcn-ui/ui/blob/2b3e6d4f8d9161fe5c19340dc383aade392012dd/apps/v4/registry/new-york-v4/ui/tooltip.tsx"
+  }
+]

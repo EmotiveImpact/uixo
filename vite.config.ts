@@ -54,7 +54,8 @@ function localPreviews(): Plugin {
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         const urlPath = decodeURIComponent((req.url ?? '').split('?')[0] ?? '');
-        if (!urlPath.startsWith('/previews/')) return next();
+        if (!urlPath.startsWith('/previews/') && !urlPath.startsWith('/live-demos/')) return next();
+        if (urlPath.startsWith('/live-demos/')) res.setHeader('Access-Control-Allow-Origin', '*');
         const file = previewFile(urlPath);
         if (file) {
           sendPreview(res, file);

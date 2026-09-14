@@ -12,3 +12,5 @@ dist/
 .vercel
 .env*.local
 .uixo/
+
+/public/live-demos/

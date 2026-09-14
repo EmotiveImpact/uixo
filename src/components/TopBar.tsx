@@ -1,3 +1,5 @@
+import { ToggleGroup } from 'radix-ui';
+import { ControlHint } from './ControlHint';
 import { ArrowLeft, Moon, PanelLeft, Search, ShieldCheck, Sun } from 'lucide-react';
 import type { RefObject } from 'react';
 import { AnimatedSidebarTrigger } from './motion/animated-sidebar';
@@ -98,13 +100,15 @@ export function TopBar({
           <button onClick={() => onOpenModal('about')}>About</button>
         </nav>
 
-        <button
-          className="utility theme"
-          onClick={onToggleTheme}
-          aria-label={`Switch to ${light ? 'dark' : 'light'} theme`}
-        >
-          {light ? <Moon size={18} /> : <Sun size={18} />}
-        </button>
+        <ControlHint label={`Switch to ${light ? 'dark' : 'light'} theme`}>
+          <button
+            className="utility theme"
+            onClick={onToggleTheme}
+            aria-label={`Switch to ${light ? 'dark' : 'light'} theme`}
+          >
+            {light ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
+        </ControlHint>
 
         {account}
       </header>
@@ -157,20 +161,27 @@ export function DiscoveryControls({
             </div>
           )}
           {!collectionIndex && showDiscovery && (
-            <div className="segments prices" role="group" aria-label="Pricing">
+            <ToggleGroup.Root
+              className="segments prices"
+              type="single"
+              value={price}
+              onValueChange={(value) => {
+                if (value) onPriceChange(value as PriceFilter);
+              }}
+              aria-label="Pricing"
+            >
               {PRICE_FILTERS.filter((option) => !assetSearch || option !== 'Freemium').map(
                 (option) => (
-                  <button
+                  <ToggleGroup.Item
+                    value={option}
                     key={option}
                     className={price === option ? 'selected' : ''}
-                    aria-pressed={price === option}
-                    onClick={() => onPriceChange(option)}
                   >
                     {option}
-                  </button>
+                  </ToggleGroup.Item>
                 ),
               )}
-            </div>
+            </ToggleGroup.Root>
           )}
         </div>
       )}

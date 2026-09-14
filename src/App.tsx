@@ -1,3 +1,4 @@
+import { useSidebarPreference } from './hooks/useSidebarPreference';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   AnimatedSidebarInset,
@@ -64,7 +65,7 @@ export function App() {
   const assetSaves = useAssetSaves(user?.id ?? null, settled);
 
   const [openSection, setOpenSection] = useState<string | null>(route.category);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useSidebarPreference();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [modal, setModal] = useState<ModalName | null>(null);
   const [paletteOpen, setPaletteOpen] = useState(false);

@@ -107,8 +107,8 @@ export function AssetUtilities({ view }: { view: AssetQuery['view'] }) {
           </li>
         </ol>
         <p>
-          Icon previews show the original SVG. Component illustrations show the type of control;
-          they are not renders of the upstream code.
+          Icon previews show the original SVG. Component demos run the original source in an
+          isolated preview: click, type and interact with them before choosing an asset.
         </p>
         <a href={assetHref(EMPTY_ASSET_QUERY)}>Browse assets ↗</a>
       </section>

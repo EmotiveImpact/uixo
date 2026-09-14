@@ -12,3 +12,6 @@ scripts/og-template.html
 # Written by other agents; reformatting guarantees a conflict on their next push
 data
 ops
+
+live-demos/vendor
+live-demos/package-lock.json

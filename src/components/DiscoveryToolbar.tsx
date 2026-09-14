@@ -1,3 +1,4 @@
+import { ToggleGroup } from 'radix-ui';
 import { ChevronDown, LayoutGrid, Rows3 } from 'lucide-react';
 import { formats } from '../data';
 import { ALL_FORMATS, BROWSE_CAPTIONS, BROWSE_TABS } from '../types';
@@ -24,19 +25,26 @@ export function DiscoveryToolbar({
   return (
     <div className="discovery-toolbar">
       <div className="browse-group">
-        <div className="segments browse-tabs" role="group" aria-label="Browse order">
+        <ToggleGroup.Root
+          className="segments browse-tabs"
+          type="single"
+          value={browse}
+          onValueChange={(value) => {
+            if (value) onBrowseChange(value as BrowseOrder);
+          }}
+          aria-label="Browse order"
+        >
           {BROWSE_TABS.map((tab) => (
-            <button
+            <ToggleGroup.Item
+              value={tab}
               key={tab}
               className={browse === tab ? 'selected' : ''}
-              aria-pressed={browse === tab}
               title={BROWSE_CAPTIONS[tab]}
-              onClick={() => onBrowseChange(tab)}
             >
               {tab}
-            </button>
+            </ToggleGroup.Item>
           ))}
-        </div>
+        </ToggleGroup.Root>
         {/* The two orderings mean different things, so say which is which. */}
         <p className="browse-caption">{BROWSE_CAPTIONS[browse]}</p>
       </div>

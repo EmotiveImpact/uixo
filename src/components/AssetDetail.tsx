@@ -153,7 +153,7 @@ export function AssetDetail({
       )}
       {asset && (
         <div className="asset-detail-scroll">
-          <AssetPreview asset={asset} />
+          <AssetPreview asset={asset} detail />
           <div className="asset-library-detail">
             <p className="asset-eyebrow">
               {nameOf(asset.providerId)} / {asset.kind}

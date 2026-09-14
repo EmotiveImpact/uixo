@@ -1,0 +1,884 @@
+{
+  "shadcn/accordion": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/accordion-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/accordion"
+  },
+  "shadcn/alert": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/alert-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/alert"
+  },
+  "shadcn/alert-dialog": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/alert-dialog-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/alert-dialog"
+  },
+  "shadcn/aspect-ratio": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/aspect-ratio-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/aspect-ratio"
+  },
+  "shadcn/avatar": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/avatar-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/avatar"
+  },
+  "shadcn/badge": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/badge-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/badge"
+  },
+  "shadcn/breadcrumb": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/breadcrumb-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/breadcrumb"
+  },
+  "shadcn/button": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/button-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/button"
+  },
+  "shadcn/button-group": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/button-group-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/button-group"
+  },
+  "shadcn/calendar": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/calendar-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/calendar"
+  },
+  "shadcn/card": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/card-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/card"
+  },
+  "shadcn/carousel": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/carousel-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/carousel"
+  },
+  "shadcn/chart": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/chart-bar-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/chart"
+  },
+  "shadcn/checkbox": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/checkbox-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/checkbox"
+  },
+  "shadcn/collapsible": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/collapsible-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/collapsible"
+  },
+  "shadcn/combobox": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/combobox-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/combobox"
+  },
+  "shadcn/command": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/command-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/command"
+  },
+  "shadcn/context-menu": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/context-menu-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/context-menu"
+  },
+  "shadcn/dialog": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/dialog-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/dialog"
+  },
+  "shadcn/drawer": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/drawer-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/drawer"
+  },
+  "shadcn/dropdown-menu": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/dropdown-menu-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/dropdown-menu"
+  },
+  "shadcn/empty": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/empty-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/empty"
+  },
+  "shadcn/field": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/field-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/field"
+  },
+  "shadcn/hover-card": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/hover-card-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/hover-card"
+  },
+  "shadcn/input": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/input-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/input"
+  },
+  "shadcn/input-group": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/input-group-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/input-group"
+  },
+  "shadcn/input-otp": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/input-otp-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/input-otp"
+  },
+  "shadcn/item": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/item-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/item"
+  },
+  "shadcn/label": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/label-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/label"
+  },
+  "shadcn/menubar": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/menubar-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/menubar"
+  },
+  "shadcn/navigation-menu": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/navigation-menu-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/navigation-menu"
+  },
+  "shadcn/pagination": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/pagination-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/pagination"
+  },
+  "shadcn/popover": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/popover-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/popover"
+  },
+  "shadcn/radio-group": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/radio-group-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/radio-group"
+  },
+  "shadcn/resizable": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/resizable-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/resizable"
+  },
+  "shadcn/scroll-area": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/scroll-area-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/scroll-area"
+  },
+  "shadcn/select": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/select-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/select"
+  },
+  "shadcn/separator": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/separator-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/separator"
+  },
+  "shadcn/sheet": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/sheet-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/sheet"
+  },
+  "shadcn/slider": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/slider-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/slider"
+  },
+  "shadcn/sonner": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/sonner-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/sonner"
+  },
+  "shadcn/spinner": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/spinner-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/spinner"
+  },
+  "shadcn/form": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/form-rhf-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/forms/react-hook-form"
+  },
+  "shadcn/progress": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/progress-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/progress"
+  },
+  "shadcn/sidebar": {
+    "file": "./vendor/shadcn/registry/new-york-v4/internal/sidebar-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/radix/sidebar"
+  },
+  "shadcn/skeleton": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/skeleton-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/skeleton"
+  },
+  "magic-ui/android": {
+    "file": "./vendor/magic-ui/registry/example/android-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/android"
+  },
+  "magic-ui/magic-card": {
+    "file": "./vendor/magic-ui/registry/example/magic-card-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/magic-card"
+  },
+  "magic-ui/warp-background": {
+    "file": "./vendor/magic-ui/registry/example/warp-background-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/warp-background"
+  },
+  "magic-ui/line-shadow-text": {
+    "file": "./vendor/magic-ui/registry/example/line-shadow-text-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/line-shadow-text"
+  },
+  "magic-ui/aurora-text": {
+    "file": "./vendor/magic-ui/registry/example/aurora-text-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/aurora-text"
+  },
+  "magic-ui/morphing-text": {
+    "file": "./vendor/magic-ui/registry/example/morphing-text-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/morphing-text"
+  },
+  "magic-ui/scroll-progress": {
+    "file": "./vendor/magic-ui/registry/example/scroll-progress-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/scroll-progress"
+  },
+  "magic-ui/lens": {
+    "file": "./vendor/magic-ui/registry/example/lens-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/lens"
+  },
+  "magic-ui/pointer": {
+    "file": "./vendor/magic-ui/registry/example/pointer-demo-1.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/pointer"
+  },
+  "magic-ui/smooth-cursor": {
+    "file": "./vendor/magic-ui/registry/example/smooth-cursor-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/smooth-cursor"
+  },
+  "magic-ui/progressive-blur": {
+    "file": "./vendor/magic-ui/registry/example/progressive-blur-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/progressive-blur"
+  },
+  "magic-ui/neon-gradient-card": {
+    "file": "./vendor/magic-ui/registry/example/neon-gradient-card-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/neon-gradient-card"
+  },
+  "magic-ui/meteors": {
+    "file": "./vendor/magic-ui/registry/example/meteors-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/meteors"
+  },
+  "magic-ui/grid-pattern": {
+    "file": "./vendor/magic-ui/registry/example/grid-pattern-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/grid-pattern"
+  },
+  "magic-ui/striped-pattern": {
+    "file": "./vendor/magic-ui/registry/example/striped-pattern-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/striped-pattern"
+  },
+  "magic-ui/interactive-grid-pattern": {
+    "file": "./vendor/magic-ui/registry/example/interactive-grid-pattern-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/interactive-grid-pattern"
+  },
+  "magic-ui/dot-pattern": {
+    "file": "./vendor/magic-ui/registry/example/dot-pattern-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/dot-pattern"
+  },
+  "magic-ui/flickering-grid": {
+    "file": "./vendor/magic-ui/registry/example/flickering-grid-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/flickering-grid"
+  },
+  "magic-ui/hero-video-dialog": {
+    "file": "./vendor/magic-ui/registry/example/hero-video-dialog-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/hero-video-dialog"
+  },
+  "magic-ui/code-comparison": {
+    "file": "./vendor/magic-ui/registry/example/code-comparison-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/code-comparison"
+  },
+  "magic-ui/marquee": {
+    "file": "./vendor/magic-ui/registry/example/marquee-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/marquee"
+  },
+  "magic-ui/glyph-matrix": {
+    "file": "./vendor/magic-ui/registry/example/glyph-matrix-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/glyph-matrix"
+  },
+  "magic-ui/globe": {
+    "file": "./vendor/magic-ui/registry/example/globe-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/globe"
+  },
+  "magic-ui/shimmer-button": {
+    "file": "./vendor/magic-ui/registry/example/shimmer-button-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/shimmer-button"
+  },
+  "magic-ui/tweet-card": {
+    "file": "./vendor/magic-ui/registry/example/tweet-card-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/tweet-card"
+  },
+  "magic-ui/client-tweet-card": {
+    "file": "./vendor/magic-ui/registry/example/tweet-card-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/tweet-card"
+  },
+  "magic-ui/bento-grid": {
+    "file": "./vendor/magic-ui/registry/example/bento-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/bento-grid"
+  },
+  "magic-ui/particles": {
+    "file": "./vendor/magic-ui/registry/example/particles-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/particles"
+  },
+  "magic-ui/number-ticker": {
+    "file": "./vendor/magic-ui/registry/example/number-ticker-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/number-ticker"
+  },
+  "magic-ui/ripple": {
+    "file": "./vendor/magic-ui/registry/example/ripple-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/ripple"
+  },
+  "magic-ui/retro-grid": {
+    "file": "./vendor/magic-ui/registry/example/retro-grid-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/retro-grid"
+  },
+  "magic-ui/animated-list": {
+    "file": "./vendor/magic-ui/registry/example/animated-list-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/animated-list"
+  },
+  "magic-ui/animated-shiny-text": {
+    "file": "./vendor/magic-ui/registry/example/animated-shiny-text-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/animated-shiny-text"
+  },
+  "magic-ui/animated-grid-pattern": {
+    "file": "./vendor/magic-ui/registry/example/animated-grid-pattern-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/animated-grid-pattern"
+  },
+  "magic-ui/border-beam": {
+    "file": "./vendor/magic-ui/registry/example/border-beam-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/border-beam"
+  },
+  "magic-ui/animated-beam": {
+    "file": "./vendor/magic-ui/registry/example/animated-beam-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/animated-beam"
+  },
+  "magic-ui/text-reveal": {
+    "file": "./vendor/magic-ui/registry/example/text-reveal-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/text-reveal"
+  },
+  "magic-ui/hyper-text": {
+    "file": "./vendor/magic-ui/registry/example/hyper-text-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/hyper-text"
+  },
+  "magic-ui/animated-gradient-text": {
+    "file": "./vendor/magic-ui/registry/example/animated-gradient-text-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/animated-gradient-text"
+  },
+  "magic-ui/orbiting-circles": {
+    "file": "./vendor/magic-ui/registry/example/orbiting-circles-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/orbiting-circles"
+  },
+  "magic-ui/dock": {
+    "file": "./vendor/magic-ui/registry/example/dock-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/dock"
+  },
+  "magic-ui/word-rotate": {
+    "file": "./vendor/magic-ui/registry/example/word-rotate-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/word-rotate"
+  },
+  "magic-ui/avatar-circles": {
+    "file": "./vendor/magic-ui/registry/example/avatar-circles-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/avatar-circles"
+  },
+  "magic-ui/typing-animation": {
+    "file": "./vendor/magic-ui/registry/example/typing-animation-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/typing-animation"
+  },
+  "magic-ui/sparkles-text": {
+    "file": "./vendor/magic-ui/registry/example/sparkles-text-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/sparkles-text"
+  },
+  "magic-ui/spinning-text": {
+    "file": "./vendor/magic-ui/registry/example/spinning-text-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/spinning-text"
+  },
+  "magic-ui/comic-text": {
+    "file": "./vendor/magic-ui/registry/example/comic-text-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/comic-text"
+  },
+  "magic-ui/icon-cloud": {
+    "file": "./vendor/magic-ui/registry/example/icon-cloud-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/icon-cloud"
+  },
+  "magic-ui/text-animate": {
+    "file": "./vendor/magic-ui/registry/example/text-animate-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/text-animate"
+  },
+  "magic-ui/scroll-based-velocity": {
+    "file": "./vendor/magic-ui/registry/example/scroll-based-velocity-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/scroll-based-velocity"
+  },
+  "magic-ui/shiny-button": {
+    "file": "./vendor/magic-ui/registry/example/shiny-button-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/shiny-button"
+  },
+  "magic-ui/shine-border": {
+    "file": "./vendor/magic-ui/registry/example/shine-border-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/shine-border"
+  },
+  "magic-ui/animated-circular-progress-bar": {
+    "file": "./vendor/magic-ui/registry/example/animated-circular-progress-bar-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/animated-circular-progress-bar"
+  },
+  "magic-ui/confetti": {
+    "file": "./vendor/magic-ui/registry/example/confetti-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/confetti"
+  },
+  "magic-ui/cool-mode": {
+    "file": "./vendor/magic-ui/registry/example/cool-mode-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/cool-mode"
+  },
+  "magic-ui/pulsating-button": {
+    "file": "./vendor/magic-ui/registry/example/pulsating-button-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/pulsating-button"
+  },
+  "magic-ui/ripple-button": {
+    "file": "./vendor/magic-ui/registry/example/ripple-button-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/ripple-button"
+  },
+  "magic-ui/file-tree": {
+    "file": "./vendor/magic-ui/registry/example/file-tree-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/file-tree"
+  },
+  "magic-ui/blur-fade": {
+    "file": "./vendor/magic-ui/registry/example/blur-fade-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/blur-fade"
+  },
+  "magic-ui/safari": {
+    "file": "./vendor/magic-ui/registry/example/safari-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/safari"
+  },
+  "magic-ui/rainbow-button": {
+    "file": "./vendor/magic-ui/registry/example/rainbow-button-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/rainbow-button"
+  },
+  "magic-ui/interactive-hover-button": {
+    "file": "./vendor/magic-ui/registry/example/interactive-hover-button-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/interactive-hover-button"
+  },
+  "magic-ui/terminal": {
+    "file": "./vendor/magic-ui/registry/example/terminal-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/terminal"
+  },
+  "magic-ui/video-text": {
+    "file": "./vendor/magic-ui/registry/example/video-text-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/video-text"
+  },
+  "magic-ui/pixel-image": {
+    "file": "./vendor/magic-ui/registry/example/pixel-image-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/pixel-image"
+  },
+  "magic-ui/highlighter": {
+    "file": "./vendor/magic-ui/registry/example/highlighter-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/highlighter"
+  },
+  "magic-ui/animated-theme-toggler": {
+    "file": "./vendor/magic-ui/registry/example/animated-theme-toggler-demo.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://magicui.design/docs/components/animated-theme-toggler"
+  },
+  "motion-primitives/accordion": {
+    "file": "./vendor/motion-primitives/app/docs/accordion/accordion-basic.tsx",
+    "export": "AccordionBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/accordion"
+  },
+  "motion-primitives/animated-background": {
+    "file": "./vendor/motion-primitives/app/docs/animated-background/animated-tabs.tsx",
+    "export": "AnimatedTabs",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/animated-background"
+  },
+  "motion-primitives/animated-group": {
+    "file": "./vendor/motion-primitives/app/docs/animated-group/animated-group-preset.tsx",
+    "export": "AnimatedGroupPreset",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/animated-group"
+  },
+  "motion-primitives/animated-number": {
+    "file": "./vendor/motion-primitives/app/docs/animated-number/animated-number-basic.tsx",
+    "export": "AnimatedNumberBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/animated-number"
+  },
+  "motion-primitives/border-trail": {
+    "file": "./vendor/motion-primitives/app/docs/border-trail/border-trail-card-1.tsx",
+    "export": "BorderTrailCard1",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/border-trail"
+  },
+  "motion-primitives/carousel": {
+    "file": "./vendor/motion-primitives/app/docs/carousel/carousel-basic.tsx",
+    "export": "CarouselBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/carousel"
+  },
+  "motion-primitives/cursor": {
+    "file": "./vendor/motion-primitives/app/docs/cursor/cursor-1.tsx",
+    "export": "Cursor1",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/cursor"
+  },
+  "motion-primitives/dialog": {
+    "file": "./vendor/motion-primitives/app/docs/dialog/dialog-basic.tsx",
+    "export": "DialogBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/dialog"
+  },
+  "motion-primitives/disclosure": {
+    "file": "./vendor/motion-primitives/app/docs/disclosure/disclosure-basic.tsx",
+    "export": "DisclosureBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/disclosure"
+  },
+  "motion-primitives/in-view": {
+    "file": "./vendor/motion-primitives/app/docs/in-view/in-view-basic.tsx",
+    "export": "InViewBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/in-view"
+  },
+  "motion-primitives/infinite-slider": {
+    "file": "./vendor/motion-primitives/app/docs/infinite-slider/infinite-slider-basic.tsx",
+    "export": "InfiniteSliderBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/infinite-slider"
+  },
+  "motion-primitives/transition-panel": {
+    "file": "./vendor/motion-primitives/app/docs/transition-panel/transition-panel-tabs.tsx",
+    "export": "TabsTransitionPanel",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/transition-panel"
+  },
+  "motion-primitives/text-effect": {
+    "file": "./vendor/motion-primitives/app/docs/text-effect/text-effect-per-char.tsx",
+    "export": "TextEffectPerChar",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/text-effect"
+  },
+  "motion-primitives/text-loop": {
+    "file": "./vendor/motion-primitives/app/docs/text-loop/text-loop-basic.tsx",
+    "export": "TextLoopBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/text-loop"
+  },
+  "motion-primitives/text-morph": {
+    "file": "./vendor/motion-primitives/app/docs/text-morph/text-morph-button.tsx",
+    "export": "TextMorphButton",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/text-morph"
+  },
+  "motion-primitives/text-roll": {
+    "file": "./vendor/motion-primitives/app/docs/text-roll/text-roll-basic.tsx",
+    "export": "TextRollBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/text-roll"
+  },
+  "motion-primitives/text-scramble": {
+    "file": "./vendor/motion-primitives/app/docs/text-scramble/text-scramble-basic.tsx",
+    "export": "TextScrambleBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/text-scramble"
+  },
+  "motion-primitives/text-shimmer": {
+    "file": "./vendor/motion-primitives/app/docs/text-shimmer/text-shimmer-basic.tsx",
+    "export": "TextShimmerBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/text-shimmer"
+  },
+  "motion-primitives/text-shimmer-wave": {
+    "file": "./vendor/motion-primitives/app/docs/text-shimmer-wave/text-shimmer-wave-basic.tsx",
+    "export": "TextShimmerWaveBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/text-shimmer-wave"
+  },
+  "motion-primitives/magnetic": {
+    "file": "./vendor/motion-primitives/app/docs/magnetic/magnetic-basic.tsx",
+    "export": "MagneticBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/magnetic"
+  },
+  "motion-primitives/morphing-dialog": {
+    "file": "./vendor/motion-primitives/app/docs/morphing-dialog/morphing-dialog-basic-1.tsx",
+    "export": "MorphingDialogBasicOne",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/morphing-dialog"
+  },
+  "motion-primitives/morphing-popover": {
+    "file": "./vendor/motion-primitives/app/docs/morphing-popover/morphing-popover-basic.tsx",
+    "export": "MorphingPopoverBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/morphing-popover"
+  },
+  "motion-primitives/dock": {
+    "file": "./vendor/motion-primitives/app/docs/dock/apple-style-dock.tsx",
+    "export": "AppleStyleDock",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/dock"
+  },
+  "motion-primitives/glow-effect": {
+    "file": "./vendor/motion-primitives/app/docs/glow-effect/glow-effect-card-background.tsx",
+    "export": "GlowEffectCardBackground",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/glow-effect"
+  },
+  "motion-primitives/image-comparison": {
+    "file": "./vendor/motion-primitives/app/docs/image-comparison/image-comparison-basic.tsx",
+    "export": "ImageComparisonBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/image-comparison"
+  },
+  "motion-primitives/toolbar-dynamic": {
+    "file": "./vendor/motion-primitives/components/core/toolbar-dynamic.tsx",
+    "export": "default",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/toolbar-dynamic"
+  },
+  "motion-primitives/toolbar-expandable": {
+    "file": "./vendor/motion-primitives/components/core/toolbar-expandable.tsx",
+    "export": "default",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/toolbar-expandable"
+  },
+  "motion-primitives/progressive-blur": {
+    "file": "./vendor/motion-primitives/app/docs/progressive-blur/progressive-blur-basic.tsx",
+    "export": "ProgressiveBlurBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/progressive-blur"
+  },
+  "motion-primitives/scroll-progress": {
+    "file": "./vendor/motion-primitives/app/docs/scroll-progress/scroll-progress-basic-1.tsx",
+    "export": "ScrollProgressBasic1",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/scroll-progress"
+  },
+  "motion-primitives/sliding-number": {
+    "file": "./vendor/motion-primitives/app/docs/sliding-number/clock.tsx",
+    "export": "Clock",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/sliding-number"
+  },
+  "motion-primitives/spotlight": {
+    "file": "./vendor/motion-primitives/app/docs/spotlight/spotlight-basic.tsx",
+    "export": "SpotlightBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/spotlight"
+  },
+  "motion-primitives/spinning-text": {
+    "file": "./vendor/motion-primitives/app/docs/spinning-text/spinning-text-basic.tsx",
+    "export": "SpinningTextBasic",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/spinning-text"
+  },
+  "motion-primitives/tilt": {
+    "file": "./vendor/motion-primitives/app/docs/tilt/tilt-card-1.tsx",
+    "export": "TiltCard1",
+    "ref": "40f59b61e567712aa8329c7dc8c2ced763054c34",
+    "sourceUrl": "https://motion-primitives.com/docs/tilt"
+  },
+  "magic-ui/animated-subscribe-button": {
+    "file": "./examples/animated-subscribe-button.tsx",
+    "export": "default",
+    "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
+    "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/animated-subscribe-button.tsx"
+  }
+}

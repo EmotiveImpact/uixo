@@ -9,6 +9,7 @@ export default tseslint.config(
   {
     ignores: [
       'dist',
+      'live-demos',
       'legacy',
       'src/components/motion',
       'src/components/previews/shadcn/*.tsx',
