@@ -1,17 +1,17 @@
 /** UIXO editorial taxonomy, independent of provider naming and package structure. */
 export const COMPONENT_CATEGORIES = [
-  { id: 'buttons', label: 'Buttons & actions' },
-  { id: 'forms', label: 'Forms & inputs' },
+  { id: 'buttons', label: 'Buttons' },
+  { id: 'forms', label: 'Forms' },
   { id: 'navigation', label: 'Navigation' },
-  { id: 'layout', label: 'Layout & containers' },
-  { id: 'overlays', label: 'Dialogs & overlays' },
+  { id: 'layout', label: 'Layout' },
+  { id: 'overlays', label: 'Overlays' },
   { id: 'data-display', label: 'Data display' },
-  { id: 'feedback', label: 'Feedback & loading' },
-  { id: 'text', label: 'Text & typography' },
-  { id: 'backgrounds', label: 'Backgrounds & effects' },
-  { id: 'media', label: 'Images & media' },
-  { id: 'motion', label: 'Motion & interaction' },
-  { id: 'other', label: 'Other components' },
+  { id: 'feedback', label: 'Feedback' },
+  { id: 'text', label: 'Typography' },
+  { id: 'backgrounds', label: 'Backgrounds' },
+  { id: 'media', label: 'Media' },
+  { id: 'motion', label: 'Motion' },
+  { id: 'other', label: 'Other' },
 ] as const;
 export function componentCategory(slug: string): string {
   if (['infinite-slider', 'progressive-blur'].includes(slug)) return 'layout';

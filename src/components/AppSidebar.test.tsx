@@ -70,8 +70,8 @@ describe('AppSidebar catalogue context', () => {
     renderSidebar(true);
 
     expect(screen.getByText('Asset types')).toBeTruthy();
-    expect(screen.getByRole('button', { name: 'Buttons & actions' })).toBeTruthy();
-    expect(screen.getByRole('button', { name: 'Forms & inputs' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Buttons' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Forms' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Navigation' })).toBeTruthy();
     expect(screen.queryByText('Sources')).toBeNull();
     expect(screen.queryByText('Magic UI')).toBeNull();

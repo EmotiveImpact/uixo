@@ -736,6 +736,11 @@ kbd {
   }
 }
 /* Menu hover uses text only; preserve the active selection indicator. */
+[data-slot='sidebar-menu-sub'] {
+  margin-left: 0.75rem;
+  padding-left: 0.5rem;
+}
+
 [data-slot='sidebar-menu'] > li > .pointer-events-none.absolute {
   display: none;
 }
