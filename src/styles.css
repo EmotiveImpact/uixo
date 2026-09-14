@@ -2342,6 +2342,12 @@ kbd {
   flex-wrap: nowrap;
   gap: 10px;
   justify-content: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  margin-top: -8px;
+  padding: 8px 0;
+  background: var(--background);
 }
 .catalogue-nav {
   display: flex;
@@ -2736,28 +2742,29 @@ kbd {
 .site-footer {
   border: 0;
   color: var(--muted-foreground);
-  align-items: flex-end;
+  align-items: center;
   margin-top: auto;
   padding: 64px 0 18px;
   font-size: 11px;
   line-height: 1.6;
+  width: 100%;
 }
 .footer-intro {
-  align-items: flex-start;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
 }
-.footer-statement {
-  color: var(--foreground);
-  font-size: 13px;
-  font-weight: 500;
-}
-.footer-note {
-  line-height: 1.7;
+.footer-description {
+  color: var(--muted-foreground);
+  font-size: inherit;
+  font-weight: 400;
+  white-space: nowrap;
 }
 .site-footer nav {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  font-size: 12px;
+  font-size: inherit;
 }
 .site-footer a {
   color: var(--muted-foreground);
@@ -2774,6 +2781,9 @@ kbd {
     align-items: flex-start;
     flex-direction: column;
     gap: 22px;
+  }
+  .footer-description {
+    white-space: normal;
   }
   .footer-meta {
     justify-content: flex-start;

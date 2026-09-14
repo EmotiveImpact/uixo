@@ -1028,7 +1028,7 @@
 .asset-workspace .discovery-controls {
   position: sticky;
   z-index: 8;
-  top: 10px;
+  top: 58px;
   margin: 0 0 12px;
   padding: 8px 0;
   background: var(--background);

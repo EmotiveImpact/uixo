@@ -9,6 +9,8 @@ Newest first. Dates are Europe/London.
 - Replace the small asset pager with a full-width, borderless section showing the current page, total pages, visible result range, numbered page choices, and larger Previous/Next actions.
 - Return the viewport to the result heading after changing pages and simplify the pager to two large actions on mobile.
 - Give the shared footer readable hierarchy and spacing, and pin it to the bottom of short website, asset, utility, and landing views.
+- Keep the complete footer statement on one desktop line at one type size; allow natural wrapping only when the viewport is too narrow.
+- Keep the shared catalogue top menu visible while scrolling and place the sticky asset search directly beneath it.
 
 ### Component categories and icon packs
 
