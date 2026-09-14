@@ -1,4 +1,4 @@
-import { Blocks, Box, Heart, PanelLeft, Plus, Shapes, Trash2, X } from 'lucide-react';
+import { Blocks, Heart, PanelLeft, Plus, Shapes, Trash2, X } from 'lucide-react';
 import {
   AnimatedSidebar,
   AnimatedSidebarClose,
@@ -44,9 +44,7 @@ type AppSidebarProps = {
   savedAssetCount?: number;
   assetKind?: string;
   onChooseAssetKind?: (kind: string) => void;
-  assetProvider?: string;
   assetProviders?: ProviderRecord[];
-  onChooseAssetProvider?: (provider: string) => void;
 };
 
 export function AppSidebar({
@@ -68,9 +66,7 @@ export function AppSidebar({
   savedAssetCount = 0,
   assetKind = '',
   onChooseAssetKind,
-  assetProvider = '',
   assetProviders = [],
-  onChooseAssetProvider,
 }: AppSidebarProps) {
   const favourites = lists.find((list) => list.id === DEFAULT_LIST_ID);
   const componentCount = assetProviders
@@ -197,33 +193,7 @@ export function AppSidebar({
           </AnimatedSidebarGroup>
         )}
 
-        {onAssets ? (
-          <AnimatedSidebarGroup className="border-t border-border pt-4">
-            <AnimatedSidebarGroupLabel>Sources</AnimatedSidebarGroupLabel>
-            <AnimatedSidebarGroupContent>
-              <AnimatedSidebarMenu>
-                {assetProviders.map((provider) => (
-                  <AnimatedSidebarMenuItem key={provider.id}>
-                    <AnimatedSidebarMenuButton
-                      icon={
-                        provider.adapter === 'github-icons' ? (
-                          <Shapes className="size-4" />
-                        ) : (
-                          <Box className="size-4" />
-                        )
-                      }
-                      badge={String(provider.assetCount)}
-                      isActive={assetProvider === provider.id}
-                      onSelect={() => onChooseAssetProvider?.(provider.id)}
-                    >
-                      {provider.name}
-                    </AnimatedSidebarMenuButton>
-                  </AnimatedSidebarMenuItem>
-                ))}
-              </AnimatedSidebarMenu>
-            </AnimatedSidebarGroupContent>
-          </AnimatedSidebarGroup>
-        ) : (
+        {!onAssets && (
           <AnimatedSidebarGroup className="border-t border-border pt-4">
             <AnimatedSidebarGroupLabel>Categories</AnimatedSidebarGroupLabel>
             <AnimatedSidebarGroupContent>

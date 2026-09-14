@@ -59,20 +59,19 @@ function renderSidebar(onAssets: boolean) {
               ]
             : []
         }
-        onChooseAssetProvider={onAssets ? vi.fn() : undefined}
       />
     </AnimatedSidebarProvider>,
   );
 }
 
 describe('AppSidebar catalogue context', () => {
-  it('shows asset types and indexed sources without website categories on asset pages', () => {
+  it('shows asset types without sources or website categories on asset pages', () => {
     renderSidebar(true);
 
     expect(screen.getByText('Asset types')).toBeTruthy();
-    expect(screen.getByText('Sources')).toBeTruthy();
-    expect(screen.getByText('Magic UI')).toBeTruthy();
-    expect(screen.getByText('Lucide')).toBeTruthy();
+    expect(screen.queryByText('Sources')).toBeNull();
+    expect(screen.queryByText('Magic UI')).toBeNull();
+    expect(screen.queryByText('Lucide')).toBeNull();
     expect(screen.queryByText('All websites')).toBeNull();
     expect(screen.queryByText('All assets')).toBeNull();
     expect(screen.queryByText('Collections')).toBeNull();

@@ -149,11 +149,7 @@ export function AssetWorkspace() {
         onChooseAssetKind={(kind) =>
           navigate({ kind: query.kind === kind ? '' : kind, offset: 0 }, true)
         }
-        assetProvider={query.provider}
         assetProviders={assetProviders}
-        onChooseAssetProvider={(provider) =>
-          navigate({ provider: query.provider === provider ? '' : provider, offset: 0 }, true)
-        }
         onShowAll={() => go({ ...EMPTY_ROUTE })}
         homeHref="/browse"
         onChooseList={(listId) => go({ ...EMPTY_ROUTE, listId })}
