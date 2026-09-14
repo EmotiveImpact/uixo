@@ -160,7 +160,7 @@ export function AssetWorkspace() {
           navigate({
             kind: 'component',
             category,
-            view: query.view === 'saved' ? 'saved' : '',
+            view: query.view === 'saved' ? 'saved' : 'assets',
             offset: 0,
             id: '',
           })
@@ -169,7 +169,7 @@ export function AssetWorkspace() {
           navigate({
             kind,
             category: '',
-            view: query.view === 'saved' ? 'saved' : '',
+            view: query.view === 'saved' ? 'saved' : 'assets',
             offset: 0,
             id: '',
           })
