@@ -4,13 +4,14 @@ import React, { Component, Suspense, lazy, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import manifest from './manifest.json';
 import './styles.css';
-const files = import.meta.glob(['./vendor/**/*.tsx', './examples/*.tsx']);
+const files = import.meta.glob(['./vendor/**/*.tsx', './vendor/**/*.jsx', './examples/*.tsx']);
 const params = new URLSearchParams(location.search),
   id = params.get('id') || '',
   entry = manifest[id];
 function setTheme(theme) {
   document.documentElement.classList.toggle('dark', theme === 'dark');
   document.documentElement.style.colorScheme = theme;
+  document.documentElement.dataset.theme = theme;
   window.dispatchEvent(new Event('uixo-theme'));
 }
 setTheme(params.get('theme') === 'light' ? 'light' : 'dark');
@@ -19,13 +20,16 @@ window.addEventListener('message', (event) => {
     setTheme(event.data.theme);
 });
 const origins = {
+  'simply-buttons': 'https://simply-buttons.vercel.app',
   'magic-ui': 'https://magicui.design',
   shadcn: 'https://ui.shadcn.com',
   'motion-primitives': 'https://motion-primitives.com',
 };
 const base = document.createElement('base');
 base.href = origins[id.split('/')[0]] + '/';
-document.head.append(base);
+// These button demos are self-contained. Keep lazy CSS on UIXO's origin;
+// a provider <base> would redirect Vite's stylesheet preloads to the gallery.
+if (!id.startsWith('simply-buttons/')) document.head.append(base);
 window.addEventListener('error', () => notify('error'));
 function notify(status) {
   parent.postMessage({ type: 'uixo-preview-status', id, status }, '*');

@@ -1,3 +1,4 @@
+import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
 import { useEffect, useState, type ReactNode } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark, SlidersHorizontal, X } from 'lucide-react';
 import {
@@ -32,7 +33,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
   const [notice, setNotice] = useState('');
   const [refineOpen, setRefineOpen] = useState(false);
   const { saved, save, accountBacked } = assetSaves;
-  const { q, kind, provider, framework, format, commercial, price, offset, view } = query;
+  const { q, kind, category, provider, framework, format, commercial, price, offset, view } = query;
   useEffect(() => {
     const abort = new AbortController();
     void registryRequest<{ items: ProviderRecord[] }>('providers', { signal: abort.signal })
@@ -60,6 +61,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
       const parameters: Record<string, string> = {
         q,
         kind,
+        category,
         provider,
         framework,
         format,
@@ -88,7 +90,20 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
       clearTimeout(timer);
       abort.abort();
     };
-  }, [q, kind, provider, framework, format, commercial, price, offset, view, saved, retry]);
+  }, [
+    q,
+    kind,
+    category,
+    provider,
+    framework,
+    format,
+    commercial,
+    price,
+    offset,
+    view,
+    saved,
+    retry,
+  ]);
   const nameOf = (id: string) => providers.find((p) => p.id === id)?.name ?? id;
   function toggleSave(id: string) {
     if (!saved.includes(id) && saved.length >= 200) {
@@ -107,8 +122,10 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
     if (view === 'saved') navigate({ offset: 0 });
   }
   const filter = (key: keyof AssetQuery, value: string | boolean) =>
-    navigate({ [key]: value, offset: 0, id: '' });
-  const refinementCount = [kind, provider, framework, format, commercial].filter(Boolean).length;
+    navigate({ [key]: value, ...(key === 'kind' ? { category: '' } : {}), offset: 0, id: '' });
+  const refinementCount = [kind, category, provider, framework, format, commercial].filter(
+    Boolean,
+  ).length;
   return (
     <section className="asset-library" aria-label="Asset library">
       {discovery}
@@ -186,11 +203,24 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                 <select value={kind} onChange={(e) => filter('kind', e.target.value)}>
                   <option value="">All asset types</option>
                   <option value="component">Components</option>
-                  <option value="icon">Icons</option>
+                  <option value="icon-pack">Icon packs</option>
                   <option value="font">Fonts</option>
                   <option value="template">Templates</option>
                 </select>
               </label>
+              {kind === 'component' && (
+                <label>
+                  Component category
+                  <select value={category} onChange={(e) => filter('category', e.target.value)}>
+                    <option value="">All components</option>
+                    {COMPONENT_CATEGORIES.map((entry) => (
+                      <option key={entry.id} value={entry.id}>
+                        {entry.label}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              )}
               <label>
                 Source
                 <select value={provider} onChange={(e) => filter('provider', e.target.value)}>
@@ -278,7 +308,8 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                   <AssetPreview asset={asset} />
                   <div className="asset-library-card-body">
                     <small>
-                      {nameOf(asset.providerId)} · {asset.kind}
+                      {nameOf(asset.providerId)} ·{' '}
+                      {asset.kind === 'icon-pack' ? 'Icon pack' : asset.kind}
                     </small>
                     <h2>
                       <a

@@ -1,3 +1,4 @@
+import { COMPONENT_CATEGORIES, componentCategory } from '../shared/component-categories.ts';
 import { createHash } from 'node:crypto';
 
 export type Permission = 'allowed' | 'restricted' | 'unknown';
@@ -40,7 +41,8 @@ export type Asset = {
   slug: string;
   name: string;
   description: string;
-  kind: 'component' | 'icon' | 'font' | 'template';
+  kind: 'component' | 'icon' | 'icon-pack' | 'font' | 'template';
+  category?: string;
   tags: string[];
   price: 'free' | 'paid' | 'unknown';
   sourceUrl: string;
@@ -58,7 +60,7 @@ export type Provider = {
   repo: string;
   branch: 'main' | 'master';
   licencePath: string;
-  adapter: 'github-icons' | 'shadcn-registry' | 'github-json-registry';
+  adapter: 'github-icons' | 'shadcn-registry' | 'github-json-registry' | 'reviewed-gallery';
   registryPath?: string;
   registryBaseUrl?: string;
   /** Repository prefix applied to install-registry file paths before linking source. */
@@ -74,6 +76,7 @@ export type Search = {
   q: string;
   provider: string;
   kind: string;
+  category: string;
   framework: string;
   format: string;
   price: string;
@@ -212,7 +215,14 @@ export function parseSearch(input: unknown): Search {
   return {
     q,
     provider: raw.provider ? identifier(raw.provider) : '',
-    kind: choice(raw.kind, ['component', 'icon', 'font', 'template']),
+    kind:
+      raw.kind === 'icon'
+        ? 'icon-pack'
+        : choice(raw.kind, ['component', 'icon-pack', 'font', 'template']),
+    category: choice(
+      raw.category,
+      COMPONENT_CATEGORIES.map((entry) => entry.id),
+    ),
     framework,
     format,
     price,
@@ -274,7 +284,19 @@ export function validateAsset(input: unknown): Asset {
     slug: identifier(a.slug),
     name: text(a.name, 150),
     description: text(a.description, 1600),
-    kind: choice(text(a.kind, 40), ['component', 'icon', 'font', 'template']) as Asset['kind'],
+    kind: choice(text(a.kind, 40), [
+      'component',
+      'icon',
+      'icon-pack',
+      'font',
+      'template',
+    ]) as Asset['kind'],
+    category:
+      a.kind === 'component'
+        ? a.providerId === 'simply-buttons'
+          ? 'buttons'
+          : componentCategory(text(a.slug, 180))
+        : '',
     tags: strings(a.tags),
     price: choice(a.price, ['free', 'paid', 'unknown'], 'unknown') as Asset['price'],
     sourceUrl: httpsUrl(a.sourceUrl),

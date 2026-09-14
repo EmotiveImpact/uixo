@@ -32,10 +32,10 @@ test('migration and captured-source seed are repeatable; counts reflect actual r
     await migrate(db);
     const first = await seedCaptured(registry),
       second = await seedCaptured(registry);
-    assert.equal(first.inserted, 168);
+    assert.equal(first.inserted, 176);
     assert.equal(second.inserted, 0);
-    assert.equal((await registry.stats()).assets, 168);
-    assert.equal((await registry.providers()).length, 5);
+    assert.equal((await registry.stats()).assets, 176);
+    assert.equal((await registry.providers()).length, 6);
   } finally {
     await db.close();
   }
@@ -347,8 +347,15 @@ test('captured React registries retain pinned source, licence and acquisition ev
   assert.equal(magic.length, 68);
   assert.equal(motion.length, 33);
   assert.ok(
-    components.every((asset) => asset.preview?.kind === 'image' && asset.preview.url),
-    'Every published React component must have a real captured image preview',
+    components.every(
+      (asset) =>
+        (asset.preview?.kind === 'image' && asset.preview.url) ||
+        asset.providerId === 'simply-buttons' ||
+        ['switch', 'table', 'tabs', 'textarea', 'toggle', 'toggle-group', 'tooltip'].includes(
+          asset.slug,
+        ),
+    ),
+    'Existing captures are retained; new live-only components must not invent screenshot URLs',
   );
   assert.ok(
     [...magic, ...motion].every(
@@ -502,5 +509,105 @@ test('continuation runs keep the provider revision and do not repeat page one', 
     await assert.rejects(enqueue(registry, 'shadcn', next.id), /remaining page/);
   } finally {
     await db.close();
+  }
+});
+
+test('discovery lists icon packs, retains legacy saved icons and filters component categories', async () => {
+  const { db, registry } = await setup();
+  try {
+    await seedCaptured(registry);
+    const pack = await registry.inspect('lucide/pack');
+    const legacy = {
+      ...pack,
+      id: 'lucide/legacy-glyph',
+      slug: 'legacy-glyph',
+      name: 'Legacy glyph',
+      variants: pack.variants.map((variant) => ({
+        ...variant,
+        id: variant.id.replace('/pack/', '/legacy-glyph/'),
+      })),
+      kind: 'icon',
+    };
+    const staged = await registry.stage(legacy);
+    await registry.review(
+      staged.id,
+      'approve',
+      'test-curator',
+      'Exercise existing saved icon compatibility.',
+    );
+    const all = await registry.search({ limit: 48 });
+    assert.equal(all.total, 176);
+    const packs = await registry.search({ kind: 'icon' });
+    assert.equal(packs.total, 2);
+    assert.ok(packs.items.every((asset) => asset.kind === 'icon-pack'));
+    assert.equal(
+      (await registry.search({ saved: ['lucide/legacy-glyph'] })).items[0].id,
+      legacy.id,
+    );
+    assert.equal((await registry.inspect(legacy.id)).kind, 'icon');
+    const forms = await registry.search({ category: 'forms', limit: 48 });
+    assert.ok(forms.items.some((asset) => asset.id === 'shadcn/switch'));
+    assert.ok(
+      forms.items.every((asset) => asset.kind === 'component' && asset.category === 'forms'),
+    );
+    const combined = await registry.search({
+      category: 'forms',
+      q: 'switch',
+      provider: 'shadcn',
+      price: 'free',
+      framework: 'react',
+    });
+    assert.deepEqual(
+      combined.items.map((asset) => asset.id),
+      ['shadcn/switch'],
+    );
+    assert.equal(
+      (await registry.search({ category: 'forms', offset: 1, limit: 1 })).total,
+      forms.total,
+    );
+    assert.throws(() => parseSearch({ category: 'made-up' }), /Expected one of/);
+  } finally {
+    await db.close();
+  }
+});
+
+test('icon indexing emits one library without fetching individual glyph trees', async () => {
+  const provider = PROVIDERS.find((entry) => entry.id === 'lucide')!;
+  const ref = 'a'.repeat(40);
+  const requests: string[] = [];
+  const budget = new FetchBudget({
+    fetchImpl: async (input) => {
+      const url = String(input);
+      requests.push(url);
+      if (url.endsWith('/LICENSE'))
+        return new Response(
+          'Permission is hereby granted, free of charge. Copyright notice and this permission notice.',
+        );
+      throw new Error(`Unexpected icon crawl: ${url}`);
+    },
+  });
+  const result = await indexPage(provider.id, { sourceRef: ref }, budget);
+  assert.equal(result.total, 1);
+  assert.equal(result.nextOffset, null);
+  assert.equal(result.assets[0].kind, 'icon-pack');
+  assert.equal(result.assets[0].sourceUrl, provider.url);
+  assert.equal(requests.length, 1);
+});
+
+test('Simply Buttons keeps original provenance and does not invent licence permissions', async () => {
+  const assets = (await capturedAssets()).filter((asset) => asset.providerId === 'simply-buttons');
+  assert.equal(assets.length, 20);
+  for (const original of assets) {
+    const asset = validateAsset(original);
+    assert.equal(asset.category, 'buttons');
+    assert.equal(asset.licence.commercial, 'unknown');
+    assert.equal(asset.licence.redistribution, 'unknown');
+    assert.match(
+      asset.sourceUrl,
+      /bits933\/simply-buttons\/blob\/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d\/src\/buttons\//,
+    );
+    assert.equal(asset.variants[0].format, 'jsx');
+    assert.equal(resolveAsset(asset).status, 'external');
+    assert.match(resolveAsset(asset).url, /^https:\/\/simply-buttons\.vercel\.app\//);
   }
 });

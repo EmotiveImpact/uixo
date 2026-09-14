@@ -231,3 +231,19 @@ between them discarded the collapsed preference.
 subscribe to changes. Refresh, catalogue navigation and other tabs retain the choice.
 Mobile drawer visibility remains separate so a saved desktop collapse does not prevent
 opening mobile navigation.
+
+
+## Icon ingestion overwhelmed component discovery; components lacked subcategories
+
+**Changed 2026-09-14:** Icon indexers now emit one `icon-pack` per source and never enumerate glyph trees. Discovery excludes legacy individual icons, but inspection and explicitly saved results retain them. Old `kind=icon` discovery URLs map to packs. Component classification is shared between ingestion, search and the sidebar; category filters apply in SQL before counts and pagination.
+
+**Prevention:** Registry regression tests verify pack-only indexing without a tree request, preservation of old saved icons, combined category/search/source/price/framework filters, and pagination totals. UI route tests cover category URL round trips and old icon links. Original source hashes and demo coverage are build checks. New live-only demos have no invented static thumbnail URL.
+
+
+## Simply Buttons lazy CSS initially loaded from the provider origin
+
+**Found 2026-09-14 during pre-release browser checks:** Setting a provider `<base>` redirected Vite's lazy CSS URLs to Simply Buttons instead of UIXO, so all 20 new demonstrations failed to start despite compiling successfully.
+
+**Fix:** Self-contained Simply Buttons frames retain UIXO as their document base. Original JSX and CSS stay unchanged; the frame theme also sets the upstream `data-theme` attribute. Provider-relative asset bases remain only for the existing demonstrations that need them.
+
+**Prevention:** Browser smoke-check each new provider's entire demo batch in sandboxed frames with production CSP and assert the rendered ready/error statuses, not merely a successful build. Exercise a representative state change before release.

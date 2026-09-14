@@ -1,3 +1,4 @@
+import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
 import { auth } from './auth';
 
 /** Browser-only registry contract. Never import the Node registry runtime into the UI. */
@@ -69,6 +70,7 @@ export { ASSET_SAVES_KEY as ASSET_SAVES, parseSavedAssets } from './asset-saves'
 export type AssetQuery = {
   q: string;
   kind: string;
+  category: string;
   provider: string;
   framework: string;
   format: string;
@@ -81,6 +83,7 @@ export type AssetQuery = {
 export const EMPTY_ASSET_QUERY: AssetQuery = {
   q: '',
   kind: '',
+  category: '',
   provider: '',
   framework: '',
   format: '',
@@ -97,7 +100,14 @@ export function readAssetQuery(search: string): AssetQuery {
   const offset = Number(p.get('offset'));
   return {
     q: (p.get('q') ?? '').slice(0, 300),
-    kind: valid(p.get('kind'), ['component', 'icon', 'font', 'template']),
+    kind:
+      p.get('kind') === 'icon'
+        ? 'icon-pack'
+        : valid(p.get('kind'), ['component', 'icon-pack', 'font', 'template']),
+    category: valid(
+      p.get('category'),
+      COMPONENT_CATEGORIES.map((entry) => entry.id),
+    ),
     provider: /^[a-z0-9-]{1,80}$/.test(p.get('provider') ?? '') ? p.get('provider')! : '',
     framework: valid(p.get('framework'), ['react', 'vue', 'html', 'agnostic']),
     format: valid(p.get('format'), ['tsx', 'jsx', 'svg', 'css', 'woff2']),

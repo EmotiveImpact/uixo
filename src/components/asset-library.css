@@ -1328,3 +1328,19 @@
   padding: 8px;
   background: var(--background);
 }
+
+.asset-library-preview.is-icon-pack .asset-library-no-preview {
+  padding: 24px;
+}
+.asset-library-preview.is-icon-pack strong {
+  font-size: 24px;
+  color: var(--foreground);
+}
+.asset-library-preview.is-icon-pack .asset-library-no-preview > span {
+  font: inherit;
+  opacity: 1;
+}
+.asset-library-preview.is-icon-pack a {
+  position: relative;
+  z-index: 1;
+}

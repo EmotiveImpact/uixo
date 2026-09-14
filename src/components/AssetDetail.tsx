@@ -156,7 +156,7 @@ export function AssetDetail({
           <AssetPreview asset={asset} detail />
           <div className="asset-library-detail">
             <p className="asset-eyebrow">
-              {nameOf(asset.providerId)} / {asset.kind}
+              {nameOf(asset.providerId)} / {asset.kind === 'icon-pack' ? 'Icon pack' : asset.kind}
             </p>
             <h2 id="asset-detail-title">{asset.name}</h2>
             <p className="asset-detail-description">{asset.description}</p>
@@ -174,7 +174,7 @@ export function AssetDetail({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Open original source
+                  {asset.kind === 'icon-pack' ? 'Browse icon pack' : 'Open original source'}
                   <ArrowUpRight size={14} />
                 </a>
               ) : null}

@@ -41,7 +41,10 @@ export function resolveAsset(asset: Asset, variantId?: string) {
       status: 'external',
       url: acquisition.url,
       command: null,
-      message: 'Complete any purchase or authorisation at the original provider.',
+      message:
+        asset.kind === 'icon-pack'
+          ? 'Browse and choose icons on the official library website.'
+          : 'Complete any purchase or authorisation at the original provider.',
     };
   if (asset.licence.redistribution !== 'allowed' || !asset.licence.checkedAt || !asset.licence.text)
     return {

@@ -94,9 +94,17 @@ export function AssetPreview({ asset, detail = false }: { asset: AssetRecord; de
   const showImage = imageUrl && failedUrl !== imageUrl;
   return (
     <div
-      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${live ? 'is-live-component' : ''}`}
+      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${live ? 'is-live-component' : ''} ${asset.kind === 'icon-pack' ? 'is-icon-pack' : ''}`}
     >
-      {live ? (
+      {asset.kind === 'icon-pack' ? (
+        <div className="asset-library-no-preview">
+          <strong>{asset.name}</strong>
+          <span>Explore the complete library</span>
+          <a href={safeAssetUrl(asset.sourceUrl)} target="_blank" rel="noopener noreferrer">
+            Browse icon pack ↗
+          </a>
+        </div>
+      ) : live ? (
         <LivePreview key={asset.id} asset={asset} detail={detail} />
       ) : showImage ? (
         <img
@@ -114,7 +122,13 @@ export function AssetPreview({ asset, detail = false }: { asset: AssetRecord; de
         </div>
       )}
       <small>
-        {live ? 'Live demo · Try it' : showImage ? 'Original GitHub SVG' : 'No live demo available'}
+        {asset.kind === 'icon-pack'
+          ? 'Icon library · Official source'
+          : live
+            ? 'Live demo · Try it'
+            : showImage
+              ? 'Original GitHub SVG'
+              : 'No live demo available'}
       </small>
     </div>
   );

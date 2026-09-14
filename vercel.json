@@ -6,10 +6,10 @@
   "cleanUrls": true,
   "functions": {
     "api/registry.ts": {
-      "includeFiles": "{registry/**,db/migrations/002-registry.sql,data/registry/**}"
+      "includeFiles": "{registry/**,db/migrations/002-registry.sql,data/registry/**,shared/**,public/assets/component-previews/manifest.json}"
     },
     "api/mcp.ts": {
-      "includeFiles": "{registry/**,db/migrations/002-registry.sql,data/registry/**}"
+      "includeFiles": "{registry/**,db/migrations/002-registry.sql,data/registry/**,shared/**,public/assets/component-previews/manifest.json}"
     }
   },
   "rewrites": [
@@ -32,7 +32,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src https: data: blob:; media-src https: blob:; connect-src https:; font-src 'self' data:; form-action 'none'; frame-src https://www.youtube.com https://www.youtube-nocookie.com; base-uri https://magicui.design https://ui.shadcn.com https://motion-primitives.com"
+          "value": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src https: data: blob:; media-src https: blob:; connect-src https:; font-src 'self' data:; form-action 'none'; frame-src https://www.youtube.com https://www.youtube-nocookie.com; base-uri https://magicui.design https://ui.shadcn.com https://motion-primitives.com https://simply-buttons.vercel.app"
         }
       ]
     }

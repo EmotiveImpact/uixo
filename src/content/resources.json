@@ -3853,14 +3853,18 @@
   {
     "id": "simply-buttons",
     "name": "Simply Buttons",
-    "description": "Simply Buttons provides reusable components focused on Web for building polished interfaces.",
+    "description": "Interactive button patterns with original HTML, CSS and React examples. Explore hover, loading, confirmation and toggle states, then copy the implementation.",
     "category": "Components",
     "subcategory": "Buttons",
-    "tags": [],
+    "tags": [
+      "Buttons",
+      "Animation"
+    ],
     "pricing": "Free",
-    "creator": "simply-buttons.vercel.app",
+    "creator": "bits933",
     "formats": [
-      "Web"
+      "React",
+      "HTML/CSS"
     ],
     "aliases": [
       "Web",

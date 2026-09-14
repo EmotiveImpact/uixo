@@ -31,7 +31,7 @@ export class Registry {
   }
   async providers() {
     const rows = await this.db.query(
-      'SELECT p.payload, (SELECT COUNT(*) FROM uixo_v2_assets a WHERE a.provider_id=p.id) AS asset_count FROM uixo_v2_providers p WHERE p.approved=1 ORDER BY p.name',
+      "SELECT p.payload, (SELECT COUNT(*) FROM uixo_v2_assets a WHERE a.provider_id=p.id AND a.kind<>'icon') AS asset_count FROM uixo_v2_providers p WHERE p.approved=1 ORDER BY p.name",
     );
     return rows.map((r) => ({
       ...(JSON.parse(String(r.payload)) as Provider),
@@ -143,7 +143,9 @@ export class Registry {
       const searchText = [
         asset.name,
         asset.description,
+        asset.providerId.replace(/-/g, ' '),
         asset.kind,
+        asset.category ? `category:${asset.category}:` : '',
         ...asset.tags,
         ...asset.variants.flatMap((v) => [v.framework, v.format, v.css ?? '']),
       ]
@@ -282,6 +284,8 @@ export class Registry {
   }
   private searchWhere(search: Search) {
     const clauses = ['p.approved=1'];
+    // Retain old icon detail/saved links without flooding catalogue discovery.
+    if (!search.saved.length) clauses.push("a.kind<>'icon'");
     const args: (string | number | null)[] = [];
     const bind = (value: string | number) => {
       args.push(value);
@@ -289,6 +293,10 @@ export class Registry {
     };
     if (search.provider) clauses.push(`a.provider_id=${bind(search.provider)}`);
     if (search.kind) clauses.push(`a.kind=${bind(search.kind)}`);
+    if (search.category) {
+      clauses.push("a.kind='component'");
+      clauses.push(`a.search_text LIKE ${bind(`%category:${search.category}:%`)}`);
+    }
     if (search.price) clauses.push(`a.price=${bind(search.price)}`);
     if (search.commercial) clauses.push("l.commercial='allowed'");
     if (search.framework || search.format) {
@@ -333,7 +341,7 @@ export class Registry {
     const result: Record<string, number> = {};
     for (const [key, query] of Object.entries({
       assets:
-        'SELECT COUNT(*) AS count FROM uixo_v2_assets a JOIN uixo_v2_providers p ON p.id=a.provider_id WHERE p.approved=1',
+        "SELECT COUNT(*) AS count FROM uixo_v2_assets a JOIN uixo_v2_providers p ON p.id=a.provider_id WHERE p.approved=1 AND a.kind<>'icon'",
       providers: 'SELECT COUNT(*) AS count FROM uixo_v2_providers WHERE approved=1',
       pending: "SELECT COUNT(*) AS count FROM uixo_v2_revisions WHERE status='pending'",
       discoveries: 'SELECT COUNT(*) AS count FROM uixo_v2_scout',

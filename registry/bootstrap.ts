@@ -3,12 +3,13 @@ import { readFile } from 'node:fs/promises';
 import { fingerprint, type Asset, validateAsset } from './domain.ts';
 import {
   componentAsset,
-  iconAsset,
+  iconPackAsset,
   jsonRegistryComponentAsset,
   licenceFromText,
   parseJsonRegistry,
   PROVIDERS,
 } from './providers.ts';
+import { buttonGalleryAsset } from './button-gallery.ts';
 import type { Registry } from './service.ts';
 
 export async function capturedAssets(): Promise<Asset[]> {
@@ -17,6 +18,7 @@ export async function capturedAssets(): Promise<Asset[]> {
   ) as {
     capturedAt: string;
     components: [string, string[]][];
+    componentRegistryDependencies?: Record<string, string[]>;
     lucide: string[];
     heroicons: string[];
     refs?: Record<string, string>;
@@ -24,6 +26,23 @@ export async function capturedAssets(): Promise<Asset[]> {
   };
   const assets: Asset[] = [];
   for (const provider of PROVIDERS) {
+    if (provider.adapter === 'reviewed-gallery') {
+      const snapshot = JSON.parse(
+        await readFile(
+          new URL('../data/registry/snapshots/simply-buttons.json', import.meta.url),
+          'utf8',
+        ),
+      );
+      const guidance = await readFile(
+        new URL('../data/registry/licences/simply-buttons.txt', import.meta.url),
+        'utf8',
+      );
+      for (const item of snapshot.items)
+        assets.push(
+          buttonGalleryAsset(item, provider, snapshot.ref, snapshot.observedAt, guidance),
+        );
+      continue;
+    }
     const ref = captured.refs?.[provider.id] ?? provider.branch;
     const observedAt = captured.capturedAtByProvider?.[provider.id] ?? captured.capturedAt;
     const body = await readFile(
@@ -37,19 +56,14 @@ export async function capturedAssets(): Promise<Asset[]> {
       observedAt,
     );
     if (provider.adapter === 'shadcn-registry')
-      for (const [name, deps] of captured.components)
-        assets.push(componentAsset(name, deps, provider, licence, ref, observedAt));
+      for (const [name, deps] of captured.components) {
+        const asset = componentAsset(name, deps, provider, licence, ref, observedAt);
+        asset.variants[0].registryDependencies =
+          captured.componentRegistryDependencies?.[name] ?? [];
+        assets.push(asset);
+      }
     else if (provider.adapter === 'github-icons')
-      for (const name of captured[provider.id as 'lucide' | 'heroicons'])
-        assets.push(
-          iconAsset(
-            provider,
-            `${provider.id === 'lucide' ? 'icons' : 'optimized/24/outline'}/${name}.svg`,
-            ref,
-            licence,
-            observedAt,
-          ),
-        );
+      assets.push(iconPackAsset(provider, ref, licence, observedAt));
     else {
       const manifest = await readFile(
         new URL(`../data/registry/snapshots/${provider.id}.json`, import.meta.url),
@@ -60,6 +74,21 @@ export async function capturedAssets(): Promise<Asset[]> {
       ))
         assets.push(jsonRegistryComponentAsset(item, provider, licence, ref, observedAt));
     }
+  }
+  const previews = JSON.parse(
+    await readFile(
+      new URL('../public/assets/component-previews/manifest.json', import.meta.url),
+      'utf8',
+    ),
+  ).captures;
+  for (const asset of assets) {
+    const capture = previews[asset.id];
+    if (asset.kind === 'component' && capture)
+      asset.preview = {
+        kind: 'image',
+        url: `https://uixo-brown.vercel.app${capture.path}`,
+        label: 'Captured from the official provider demonstration.',
+      };
   }
   // A branch locator is not an immutable package/version reference. Newer captures retain a
   // commit SHA; legacy branch snapshots remain explicitly unpinned until they are re-indexed.

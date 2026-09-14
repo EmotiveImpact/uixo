@@ -1,3 +1,4 @@
+import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
 import { Blocks, Heart, PanelLeft, Plus, Shapes, Trash2, X } from 'lucide-react';
 import {
   AnimatedSidebar,
@@ -43,6 +44,8 @@ type AppSidebarProps = {
   onShowSavedAssets?: () => void;
   savedAssetCount?: number;
   assetKind?: string;
+  assetCategory?: string;
+  onChooseAssetCategory?: (category: string) => void;
   onChooseAssetKind?: (kind: string) => void;
   assetProviders?: ProviderRecord[];
 };
@@ -65,6 +68,8 @@ export function AppSidebar({
   onShowSavedAssets = () => navigateInApp('/browse/assets?view=saved'),
   savedAssetCount = 0,
   assetKind = '',
+  assetCategory = '',
+  onChooseAssetCategory,
   onChooseAssetKind,
   assetProviders = [],
 }: AppSidebarProps) {
@@ -141,17 +146,32 @@ export function AppSidebar({
               <AnimatedSidebarMenu>
                 {[
                   { id: 'component', label: 'Components', icon: Blocks, count: componentCount },
-                  { id: 'icon', label: 'Icons', icon: Shapes, count: iconCount },
+                  { id: 'icon-pack', label: 'Icon packs', icon: Shapes, count: iconCount },
                 ].map(({ id, label, icon: Icon, count }) => (
                   <AnimatedSidebarMenuItem key={id}>
                     <AnimatedSidebarMenuButton
                       icon={<Icon className="size-4" />}
                       badge={count ? String(count) : undefined}
-                      isActive={assetKind === id}
+                      ariaExpanded={id === 'component' ? assetKind !== 'icon-pack' : undefined}
+                      isActive={assetKind === id && !assetCategory}
                       onSelect={() => onChooseAssetKind(id)}
                     >
                       {label}
                     </AnimatedSidebarMenuButton>
+                    {id === 'component' && assetKind !== 'icon-pack' && onChooseAssetCategory && (
+                      <AnimatedSidebarMenuSub open>
+                        {COMPONENT_CATEGORIES.map((entry) => (
+                          <AnimatedSidebarMenuSubItem key={entry.id}>
+                            <AnimatedSidebarMenuSubButton
+                              isActive={assetCategory === entry.id}
+                              onSelect={() => onChooseAssetCategory(entry.id)}
+                            >
+                              {entry.label}
+                            </AnimatedSidebarMenuSubButton>
+                          </AnimatedSidebarMenuSubItem>
+                        ))}
+                      </AnimatedSidebarMenuSub>
+                    )}
                   </AnimatedSidebarMenuItem>
                 ))}
               </AnimatedSidebarMenu>
@@ -244,10 +264,6 @@ export function AppSidebar({
             </AnimatedSidebarMenuButton>
           </AnimatedSidebarMenuItem>
         </AnimatedSidebarMenu>
-        <p className="sidebar-note group-data-[state=collapsed]/sidebar:hidden">
-          Curated for the curious.
-          <br />A little corner of the internet.
-        </p>
       </AnimatedSidebarFooter>
       <AnimatedSidebarRail />
     </AnimatedSidebar>

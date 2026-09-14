@@ -20,8 +20,10 @@ for (const provider of PROVIDERS.filter((entry) => entry.adapter === 'github-jso
   }
 }
 
+const live = JSON.parse(await readFile(new URL('live-demos/manifest.json', root), 'utf8'));
+for (const id of Object.keys(live)) expected.add(id);
 const capturedIds = new Set(Object.keys(manifest.captures));
-const missing = [...expected].filter((id) => !capturedIds.has(id));
+const missing = [...expected].filter((id) => !capturedIds.has(id) && !live[id]);
 const unexpected = [...capturedIds].filter((id) => !expected.has(id));
 if (missing.length || unexpected.length) {
   throw new Error(
@@ -36,6 +38,7 @@ if (missing.length || unexpected.length) {
 
 for (const id of expected) {
   const capture = manifest.captures[id];
+  if (!capture) continue;
   const provider = PROVIDERS.find((entry) => id.startsWith(`${entry.id}/`));
   if (!provider || !new URL(capture.sourceUrl).hostname.endsWith(new URL(provider.url).hostname)) {
     throw new Error(`${id} is not attributed to its official provider URL.`);
@@ -57,5 +60,5 @@ for (const id of expected) {
 }
 
 console.log(
-  `Verified ${expected.size} official provider demo captures; schematic previews are forbidden.`,
+  `Verified ${capturedIds.size} official provider demo captures plus ${expected.size - capturedIds.size} live-only demos; schematic previews are forbidden.`,
 );

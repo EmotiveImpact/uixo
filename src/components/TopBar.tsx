@@ -153,7 +153,7 @@ export function DiscoveryControls({
                   collectionIndex
                     ? 'Search collections…'
                     : assetSearch
-                      ? 'Search components, icons and assets…'
+                      ? 'Search components and icon packs…'
                       : 'Search by name, tag or use case…'
                 }
               />

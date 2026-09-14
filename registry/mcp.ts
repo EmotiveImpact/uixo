@@ -52,7 +52,11 @@ export function createRegistryMcp(registry: Registry) {
       inputSchema: z.object({
         q: z.string().max(300).optional(),
         provider: id.optional(),
-        kind: z.enum(['component', 'icon', 'font', 'template']).optional(),
+        category: z
+          .string()
+          .optional()
+          .describe('Component subcategory, e.g. forms, navigation, overlays, text'),
+        kind: z.enum(['component', 'icon-pack', 'font', 'template']).optional(),
         framework: z.enum(['react', 'vue', 'html', 'agnostic']).optional(),
         format: z.enum(['tsx', 'jsx', 'svg', 'css', 'woff2']).optional(),
         price: z.enum(['free', 'paid', 'unknown']).optional(),

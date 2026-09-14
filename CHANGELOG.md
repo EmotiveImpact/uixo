@@ -4,6 +4,18 @@ Newest first. Dates are Europe/London.
 
 ## 2026-09-14
 
+### Component categories and icon packs
+
+- Add 20 source-pinned Simply Buttons live examples and source reuse guidance, bringing the component total to 174.
+- Show component subcategories immediately on the default asset view, including Buttons & actions.
+
+- Add seven original shadcn demos: Switch, Table, Tabs, Textarea, Toggle, Toggle Group and Tooltip (154 components total).
+- Add shareable component categories across the sidebar, Refine controls, HTTP search and MCP.
+- Replace individual-icon ingestion with one linked pack per library: Lucide and Heroicons.
+- Keep existing individual icon detail and saved links accessible; exclude those rows from general discovery and public counts.
+- Retain original demo sources, SHA256 locks, licences and declared registry dependencies. Never invent a screenshot URL for a live-only component.
+- Share one footer across website, asset and landing views; move the sidebar byline into the footer.
+
 ### Live demos and shared controls
 
 - Replace component screenshot previews with 147 lazy-loaded original React demos in isolated frames.

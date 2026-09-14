@@ -1,7 +1,6 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import { Copyright } from './Copyright';
+import { SiteFooter } from './SiteFooter';
 import { EditorPick } from './EditorPick';
-import { MadeIn } from './MadeIn';
 import { Thumbnail } from './Thumbnail';
 import { collections, resources, thumbnailPosition } from '../data';
 import { editorPick } from '../data';
@@ -264,16 +263,7 @@ export function LandingPage({
           </a>
         </section>
 
-        <footer className="landing-footer">
-          <span className="footer-group">
-            <span>UIXO</span>
-            <span>Handpicked, not scraped.</span>
-          </span>
-          <span className="footer-group">
-            <MadeIn />
-            <Copyright />
-          </span>
-        </footer>
+        <SiteFooter count={null} />
       </div>
     </div>
   );

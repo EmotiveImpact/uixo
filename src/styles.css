@@ -2726,3 +2726,22 @@ kbd {
 .control-hint svg {
   fill: var(--foreground);
 }
+
+/* Shared footer for every catalogue and the landing page. */
+.site-footer {
+  border: 0;
+  color: var(--muted-foreground);
+  align-items: center;
+  padding-bottom: 18px;
+}
+.footer-note {
+  line-height: 1.7;
+}
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.site-footer a:hover {
+  color: var(--foreground);
+}

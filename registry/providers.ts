@@ -87,6 +87,19 @@ export const PROVIDERS: Provider[] = [
     rationale:
       'An existing UIXO-selected React source with an official component registry, declared dependencies, transparent source and an explicit MIT licence.',
   },
+  {
+    id: 'simply-buttons',
+    name: 'Simply Buttons',
+    url: 'https://simply-buttons.vercel.app/',
+    repo: 'bits933/simply-buttons',
+    branch: 'main',
+    licencePath: 'README.md',
+    adapter: 'reviewed-gallery',
+    approved: true,
+    selectedAt: '2026-09-14T00:00:00.000Z',
+    rationale:
+      'User-selected button gallery. Original self-contained React demos are reviewed and pinned individually; README reuse guidance is retained without claiming a standard licence.',
+  },
 ];
 export function licenceFromText(
   provider: Provider,
@@ -280,11 +293,7 @@ export function componentAsset(
       },
     ],
     verifiedAt: now,
-    preview: {
-      kind: 'image',
-      url: `https://uixo-brown.vercel.app/assets/component-previews/${provider.id}/${name}.webp`,
-      label: `Captured from the official ${provider.name} documentation demo.`,
-    },
+    preview: null,
     editorialPick: false,
   };
 }
@@ -356,11 +365,7 @@ export function jsonRegistryComponentAsset(
       },
     ],
     verifiedAt: now,
-    preview: {
-      kind: 'image',
-      url: `https://uixo-brown.vercel.app/assets/component-previews/${provider.id}/${item.name}.webp`,
-      label: `Captured from the official ${provider.name} documentation demo.`,
-    },
+    preview: null,
     editorialPick: false,
   };
 }
@@ -433,6 +438,64 @@ export function iconAsset(
     editorialPick: false,
   };
 }
+/** One catalogue entry per icon library; individual glyphs stay at the source. */
+export function iconPackAsset(
+  provider: Provider,
+  ref: string,
+  licence: Licence,
+  now: string,
+): Asset {
+  return {
+    id: `${provider.id}/pack`,
+    providerId: provider.id,
+    slug: 'pack',
+    name: `${provider.name} icon pack`,
+    kind: 'icon-pack',
+    description: `Browse the complete ${provider.name} icon library on its official site. Choose individual icons there or install the React package.`,
+    tags: ['icons', 'icon pack', 'outline', 'svg', 'react'],
+    price: 'free',
+    sourceUrl: provider.url,
+    licence,
+    verifiedAt: now,
+    editorialPick: false,
+    preview: null,
+    variants: [
+      {
+        id: `${provider.id}/pack/browse`,
+        framework: 'agnostic',
+        format: 'svg',
+        css: null,
+        dependencies: [],
+        peerDependencies: {},
+        sourceRef: ref,
+        acquisition: { kind: 'external', url: provider.url },
+      },
+      {
+        id: `${provider.id}/pack/react`,
+        framework: 'react',
+        format: 'tsx',
+        css: null,
+        dependencies: [],
+        peerDependencies: {},
+        sourceRef: null,
+        acquisition: {
+          kind: 'package',
+          packageName: provider.id === 'lucide' ? 'lucide-react' : '@heroicons/react',
+          url: provider.url,
+        },
+      },
+    ],
+    evidence: [
+      {
+        field: 'icon library source and licence',
+        url: `https://github.com/${provider.repo}/tree/${ref}`,
+        reference: ref,
+        observedAt: now,
+        method: 'declared',
+      },
+    ],
+  };
+}
 export type IndexPage = {
   assets: Asset[];
   nextOffset: number | null;
@@ -448,6 +511,12 @@ export async function indexPage(
   const provider = PROVIDERS.find((p) => p.id === providerId);
   if (!provider?.approved)
     throw new RegistryError('PROVIDER_NOT_APPROVED', 'Choose an approved provider adapter.', 403);
+  if (provider.adapter === 'reviewed-gallery')
+    throw new RegistryError(
+      'SOURCE_REVIEW_REQUIRED',
+      'This gallery is ingested in source-reviewed batches with matching live demos. Update its pinned snapshot and verify before publishing.',
+      409,
+    );
   const offset = options.offset ?? 0;
   if (!Number.isSafeInteger(offset) || offset < 0 || offset > 100000)
     throw new RegistryError('INVALID_INPUT', 'Invalid provider offset.');
@@ -497,36 +566,7 @@ export async function indexPage(
       .filter((item) => !provider.excludedComponents?.includes(item.name))
       .map((item) => jsonRegistryComponentAsset(item, provider, licence, ref!, now));
   } else {
-    const tree = record(await budget.json(`${base}/git/trees/${ref}?recursive=1`));
-    if (tree.truncated === true || !Array.isArray(tree.tree))
-      throw new RegistryError(
-        'PROVIDER_FORMAT',
-        'Incomplete upstream tree; refusing a misleading index.',
-        502,
-      );
-    const pattern =
-      provider.id === 'lucide'
-        ? /^icons\/[a-z0-9-]+\.svg$/
-        : /^optimized\/24\/outline\/[a-z0-9-]+\.svg$/;
-    // Sort before slicing: stable pages retain one immutable source revision.
-    const paths = tree.tree
-      .map(record)
-      .filter(
-        (entry) =>
-          entry.type === 'blob' && typeof entry.path === 'string' && pattern.test(entry.path),
-      )
-      .map((entry) => String(entry.path))
-      .sort();
-    const assets = paths
-      .slice(offset, offset + 200)
-      .map((path) => iconAsset(provider, path, ref!, licence, now));
-    return {
-      assets,
-      total: paths.length,
-      offset,
-      nextOffset: offset + assets.length < paths.length ? offset + assets.length : null,
-      sourceRef: ref,
-    };
+    all = [iconPackAsset(provider, ref!, licence, now)];
   }
   all.sort((a, b) => a.id.localeCompare(b.id));
   const assets = all.slice(offset, offset + 200);

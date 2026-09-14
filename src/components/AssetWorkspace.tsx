@@ -1,3 +1,5 @@
+import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
+import { SiteFooter } from './SiteFooter';
 import { useSidebarPreference } from '../hooks/useSidebarPreference';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatedSidebarInset, AnimatedSidebarProvider } from './motion/animated-sidebar';
@@ -118,10 +120,16 @@ export function AssetWorkspace() {
       ? 'Indexed sources'
       : query.view === 'saved'
         ? 'Saved assets'
-        : 'Assets');
+        : COMPONENT_CATEGORIES.find((entry) => entry.id === query.category)?.label ||
+          (query.kind === 'icon-pack'
+            ? 'Icon packs'
+            : query.kind === 'component'
+              ? 'Components'
+              : 'Assets'));
   const hasFilters = Boolean(
     query.q ||
     query.kind ||
+    query.category ||
     query.provider ||
     query.framework ||
     query.format ||
@@ -147,9 +155,11 @@ export function AssetWorkspace() {
         onShowSavedAssets={() => navigate({ view: 'saved' }, true)}
         savedAssetCount={assetSaves.saved.length}
         assetKind={query.kind}
-        onChooseAssetKind={(kind) =>
-          navigate({ kind: query.kind === kind ? '' : kind, offset: 0 }, true)
+        assetCategory={query.category}
+        onChooseAssetCategory={(category) =>
+          navigate({ kind: 'component', category, offset: 0, id: '' })
         }
+        onChooseAssetKind={(kind) => navigate({ kind, category: '', offset: 0, id: '' })}
         assetProviders={assetProviders}
         onShowAll={() => go({ ...EMPTY_ROUTE })}
         homeHref="/browse"
@@ -191,7 +201,7 @@ export function AssetWorkspace() {
           subtitle={
             utility
               ? 'One library. Your workflow.'
-              : 'Components and icons, with the source left intact. Find it, understand it, make it yours.'
+              : 'Live components and icon packs, with the source left intact. Find it, understand it, make it yours.'
           }
           canClear={hasFilters}
           onClear={() => navigate({ view: query.view }, true)}
@@ -240,8 +250,7 @@ export function AssetWorkspace() {
             }
           />
         )}
-        <footer className="asset-library-footer">
-          <span>UIXO keeps the index. Creators keep the credit.</span>
+        <SiteFooter count={null} assets>
           <nav aria-label="Asset workspace links">
             <a
               href="/browse/assets?view=guide"
@@ -276,7 +285,7 @@ export function AssetWorkspace() {
               </a>
             )}
           </nav>
-        </footer>
+        </SiteFooter>
       </AnimatedSidebarInset>
       <AppDialog
         dialogRef={dialogRef}

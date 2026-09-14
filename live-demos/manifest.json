@@ -880,5 +880,167 @@
     "export": "default",
     "ref": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
     "sourceUrl": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/apps/www/registry/magicui/animated-subscribe-button.tsx"
+  },
+  "shadcn/switch": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/switch-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/switch"
+  },
+  "shadcn/table": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/table-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/table"
+  },
+  "shadcn/tabs": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/tabs-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/tabs"
+  },
+  "shadcn/textarea": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/textarea-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/textarea"
+  },
+  "shadcn/toggle": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/toggle-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/toggle"
+  },
+  "shadcn/toggle-group": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/toggle-group-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/toggle-group"
+  },
+  "shadcn/tooltip": {
+    "file": "./vendor/shadcn/registry/new-york-v4/examples/tooltip-demo.tsx",
+    "export": "default",
+    "ref": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "sourceUrl": "https://ui.shadcn.com/docs/components/tooltip"
+  },
+  "simply-buttons/pixel-load": {
+    "file": "./vendor/simply-buttons/src/buttons/PixelLoadButton.jsx",
+    "export": "PixelLoadPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Pixel%20load#pixel-load"
+  },
+  "simply-buttons/wipe-cta": {
+    "file": "./vendor/simply-buttons/src/buttons/WipeCtaButton.jsx",
+    "export": "WipeCtaPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Wipe%20invert#wipe-cta"
+  },
+  "simply-buttons/fill-load": {
+    "file": "./vendor/simply-buttons/src/buttons/FillLoadButton.jsx",
+    "export": "FillLoadPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Fill%20load#fill-load"
+  },
+  "simply-buttons/like-burst": {
+    "file": "./vendor/simply-buttons/src/buttons/LikeBurstButton.jsx",
+    "export": "LikeBurstPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Like%20burst#like-burst"
+  },
+  "simply-buttons/hold-confirm": {
+    "file": "./vendor/simply-buttons/src/buttons/HoldConfirmButton.jsx",
+    "export": "HoldConfirmPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Hold%20confirm#hold-confirm"
+  },
+  "simply-buttons/tracker": {
+    "file": "./vendor/simply-buttons/src/buttons/TrackerButton.jsx",
+    "export": "TrackerPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Tracker#tracker"
+  },
+  "simply-buttons/orb-load": {
+    "file": "./vendor/simply-buttons/src/buttons/OrbLoadButton.jsx",
+    "export": "OrbLoadPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Orb%20load#orb-load"
+  },
+  "simply-buttons/letter-roll": {
+    "file": "./vendor/simply-buttons/src/buttons/LetterRollButton.jsx",
+    "export": "LetterRollPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Letter%20roll#letter-roll"
+  },
+  "simply-buttons/huly-cta": {
+    "file": "./vendor/simply-buttons/src/buttons/HulyCtaButton.jsx",
+    "export": "HulyCtaPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Huly%20CTA#huly-cta"
+  },
+  "simply-buttons/ripple": {
+    "file": "./vendor/simply-buttons/src/buttons/RippleButton.jsx",
+    "export": "RipplePreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Material%20ripple#ripple"
+  },
+  "simply-buttons/form-studio": {
+    "file": "./vendor/simply-buttons/src/buttons/FormStudioButton.jsx",
+    "export": "FormStudioPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Form%20studio%20pill#form-studio"
+  },
+  "simply-buttons/kultiveret-menu": {
+    "file": "./vendor/simply-buttons/src/buttons/KultiveretMenuButton.jsx",
+    "export": "KultiveretMenuPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Kultiveret%20Menu#kultiveret-menu"
+  },
+  "simply-buttons/day-night": {
+    "file": "./vendor/simply-buttons/src/buttons/DayNightButton.jsx",
+    "export": "DayNightPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Day%20night#day-night"
+  },
+  "simply-buttons/rise-fill": {
+    "file": "./vendor/simply-buttons/src/buttons/RiseFillButton.jsx",
+    "export": "RiseFillPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Rise%20fill#rise-fill"
+  },
+  "simply-buttons/directional-fill": {
+    "file": "./vendor/simply-buttons/src/buttons/DirectionalFillButton.jsx",
+    "export": "DirectionalFillPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Directional%20fill#directional-fill"
+  },
+  "simply-buttons/igloo-close": {
+    "file": "./vendor/simply-buttons/src/buttons/IglooCloseButton.jsx",
+    "export": "IglooClosePreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Glitch#igloo-close"
+  },
+  "simply-buttons/glass": {
+    "file": "./vendor/simply-buttons/src/buttons/GlassButton.jsx",
+    "export": "GlassPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Glass#glass"
+  },
+  "simply-buttons/morph": {
+    "file": "./vendor/simply-buttons/src/buttons/MorphButton.jsx",
+    "export": "MorphPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Morph%20send#morph"
+  },
+  "simply-buttons/neu-hover": {
+    "file": "./vendor/simply-buttons/src/buttons/NeuHoverButton.jsx",
+    "export": "NeuHoverPreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Neumorphic%20hover#neu-hover"
+  },
+  "simply-buttons/glossy-bubble": {
+    "file": "./vendor/simply-buttons/src/buttons/GlossyBubbleButton.jsx",
+    "export": "GlossyBubblePreview",
+    "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
+    "sourceUrl": "https://simply-buttons.vercel.app/?q=Glossy%20Bubble#glossy-bubble"
   }
 }
