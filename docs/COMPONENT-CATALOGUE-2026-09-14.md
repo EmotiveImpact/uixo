@@ -21,7 +21,11 @@
 
 ## Release
 
-Release verification and production publication are in progress. For a persistent registry, deploy the API/UI and run the existing explicit `registry:sync` operation against the intended database. This updates captured component classifications and publishes the two pack records without deleting legacy glyphs. Do not run a broad icon crawl. The local preview uses an isolated in-memory registry.
+Published on 14 September 2026 at https://uixo-brown.vercel.app. Main code commit: `cb4db0b`; Vercel production deployment `dpl_2mpSbcJp4RaJ9b5igJHoLqwgRPFR` is READY.
+
+The existing Neon catalogue sync inserted 29 records and updated 147, with zero removals. Public API verification returns 174 components, two icon packs, six providers, and 20 Simply Buttons results with both source/category filtering and keyword search. Production browser checks confirm subcategory navigation, including returning from the guide to Buttons & actions. The deployment error-log query returned no matching logs.
+
+Future releases should deploy the API/UI and run the explicit `registry:sync` operation against the intended database. This updates reviewed classifications without deleting legacy glyphs. Do not run a broad icon crawl. The local preview uses an isolated in-memory registry.
 
 ## Simply Buttons source terms
 
