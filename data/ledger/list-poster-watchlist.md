@@ -47,3 +47,9 @@ Discovery candidates (list-droppers to watch; not exclusive):
 - @CJfromJBW
 
 Note: Core handles are priority; also discover and add new list-droppers. Dump all links from list posts.
+
+
+## Discovery added 2026-09-15
+
+- apvarun — large design-resources bookmark dump
+- codebydinil — UI component libraries list posts
