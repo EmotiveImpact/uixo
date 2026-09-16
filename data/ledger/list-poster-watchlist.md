@@ -2,7 +2,12 @@
 
 Updated: 2026-09-16
 
-Core handles (priority):
+Exclusive allowlist: False
+
+Core handles are priority; also discover and add new list-droppers. Dump all links from list posts.
+
+## Handles (priority)
+
 - @walebuilds_
 - @rkant7
 - @Tegadesigns
@@ -29,7 +34,8 @@ Core handles (priority):
 - @deb_isadev
 - @Mohd__Shahid_07
 
-Discovery candidates (list-droppers to watch; not exclusive):
+## Discovery candidates
+
 - @theansarh
 - @eddieeee0716
 - @mredu000
@@ -48,15 +54,4 @@ Discovery candidates (list-droppers to watch; not exclusive):
 - @apvarun
 - @codebydinil
 - @VullnetAdemaj
-
-Note: Core handles are priority; also discover and add new list-droppers. Dump all links from list posts.
-
-
-## Discovery added 2026-09-15
-
-- apvarun — large design-resources bookmark dump
-- codebydinil — UI component libraries list posts
-
-## Discovery added 2026-09-16
-
-- VullnetAdemaj — multi-link logo/typography/icon tool dumps (via taher_max_ reply)
+- @suriadesign

@@ -1,35 +1,37 @@
 # UIXO Candidates
 
-Updated: 2026-09-14 | total: 273 | new this harvest: 4
+Updated: 2026-09-16 | total: 349 | new this harvest: 1
 
 ## Counts by category
 
-- Inspiration: 101
-- Templates: 37
-- Components: 33
-- UI libraries: 32
-- Icons: 27
-- Marketplace: 14
-- Backgrounds: 9
-- Fonts: 8
-- Illustrations: 8
-- Mockups: 4
+- Inspiration: 113
+- Components: 54
+- Templates: 43
+- Icons: 38
+- UI libraries: 37
+- Marketplace: 21
+- Backgrounds: 13
+- Fonts: 12
+- Illustrations: 11
+- Mockups: 7
 
 ## Image status
 
 - blocked: 1
-- captured: 266
+- captured: 342
 - og-captured: 6
 - pending: 0
 
-## New this run (cjfromjbw list-drop)
+## New this run (suriadesign list-drop + neropursue verify)
 
-- **AICSS** (`aicss`) — Components/Agent UI — https://www.aicss.dev/ — cjfromjbw list-drop — `captured`
-- **UI by Halaska** (`ui-halaska`) — Components/AI Products — https://ui.halaska.com — cjfromjbw list-drop — `captured`
-- **Torph** (`torph`) — Components/Animation — https://torph.lochie.me — cjfromjbw list-drop — `captured`
-- **Typehug** (`typehug`) — Fonts/Tools — https://typehug.aliszu.com — cjfromjbw list-drop — `captured`
+- **UImaxxing** (`uimaxx`) — UI libraries/React — https://uimaxx.ing/ — suriadesign list-drop — `captured`
 
-## Already present
+## Already present (suriadesign)
 
-- bencho — https://bencho.dev
-- built-by-designers — https://builtbydesigners.com
+- bencho, ui-halaska, libraries-dev, aicss, beui, built-by-designers, beautiful-ui
+- kobra input-otp — already live `resources.json` (`kobra`)
+
+## Already present (neropursue — morning digest verify)
+
+- inspora, loadmo, logosystem, mobbin, supahero, page-flows, collect-ui, siteinspire, 404s
+
