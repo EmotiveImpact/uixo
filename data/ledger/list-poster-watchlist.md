@@ -1,6 +1,6 @@
 # List-poster watchlist
 
-Updated: 2026-09-14
+Updated: 2026-09-16
 
 Core handles (priority):
 - @walebuilds_
@@ -45,6 +45,9 @@ Discovery candidates (list-droppers to watch; not exclusive):
 - @Shefali__J
 - @thedzianis
 - @CJfromJBW
+- @apvarun
+- @codebydinil
+- @VullnetAdemaj
 
 Note: Core handles are priority; also discover and add new list-droppers. Dump all links from list posts.
 
@@ -53,3 +56,7 @@ Note: Core handles are priority; also discover and add new list-droppers. Dump a
 
 - apvarun — large design-resources bookmark dump
 - codebydinil — UI component libraries list posts
+
+## Discovery added 2026-09-16
+
+- VullnetAdemaj — multi-link logo/typography/icon tool dumps (via taher_max_ reply)

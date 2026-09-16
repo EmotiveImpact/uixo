@@ -1,73 +1,404 @@
 # UIXO Candidates
 
-Updated: 2026-09-15 | total: 321 | new this harvest: 48
+Updated: 2026-09-16 | total: 348 | new this harvest: 27
 
 ## Counts by category
 
-- Inspiration: 109
-- Components: 50
-- Templates: 39
+- Inspiration: 113
+- Components: 54
+- Templates: 43
+- Icons: 38
 - UI libraries: 36
-- Icons: 31
-- Marketplace: 18
-- Backgrounds: 12
-- Fonts: 11
+- Marketplace: 21
+- Backgrounds: 13
+- Fonts: 12
 - Illustrations: 11
-- Mockups: 4
+- Mockups: 7
 
 ## Image status
 
-- captured: 314
+- captured: 341
 - og-captured: 6
 - blocked: 1
+- pending: 0
 
-## New this run (weekday digest 2026-09-15)
+## New this run (weekday digest 2026-09-16)
 
-- **Liquid Glass (Samasante)** (`liquid-glass-samasante`) — Components/Effects — https://glass.samasante.com — `captured`
-- **Screenshot to Code** (`screenshot-to-code`) — Marketplace/AI Tools — https://screenshottocode.com — `captured`
-- **UI SFX** (`uisfx`) — Components/Sound — https://uisfx.com — `captured`
-- **Libraries.dev Orbs** (`libraries-dev-orbs`) — Components/Loaders — https://libraries.dev/orbs — `captured`
-- **Typeface.fyi** (`typeface-fyi`) — Fonts/Tools — https://www.typeface.fyi/ — `captured`
-- **VibeUI** (`vibeui`) — Templates/Prompts — https://vibeui.online — `captured`
-- **Design.md Store** (`designmd-store`) — Marketplace/Design Systems — https://designmd-store.com — `captured`
-- **Transitions.dev** (`transitions-dev`) — Components/Motion — https://transitions.dev — `captured`
-- **Astryx** (`astryx`) — UI libraries/Design Systems — https://astryx.atmeta.com — `captured`
-- **Origin Kit** (`originkit`) — Components/Interactive — https://originkit.dev — `captured`
-- **Beautiful UI** (`beautiful-ui`) — Components/AI Products — https://beautifului.dev — `captured`
-- **MetalForge** (`metalforge`) — Components/Shaders — https://metalforge.xyz/editor — `captured`
-- **OneWorks Avatars** (`oneworks-avatars`) — Illustrations/Avatars — https://oneworks.cloud/avatar/ — `captured`
-- **Spectrum Footers** (`spectrum-footers`) — Components/Blocks — https://ui.spectrumhq.in/blocks/footers — `captured`
-- **Spectrum Charts** (`spectrum-charts`) — Components/Blocks — https://ui.spectrumhq.in/blocks/charts — `captured`
-- **OSS Perks** (`oss-perks`) — Marketplace/Directories — https://www.ossperks.com/ — `captured`
-- **shadcn.io** (`shadcn-io`) — UI libraries/Directories — https://shadcn.io — `captured`
-- **Mesh Gradient (IN)** (`meshgradient-in`) — Backgrounds/Gradients — https://meshgradient.in — `captured`
-- **Paper Shaders** (`paper-shaders`) — Backgrounds/Shaders — https://shaders.paper.design — `captured`
-- **UseAnimations** (`useanimations`) — Icons/Animated — https://useanimations.com — `captured`
-- **LightUGC** (`lightugc`) — Marketplace/UGC — https://lightugc.com — `captured`
-- **Circle Loaders** (`circle-loaders`) — Components/Loaders — https://circleloaders.dominikakissi.com — `captured`
-- **OpenUI** (`openui`) — UI libraries/Generative UI — https://www.openui.com — `captured`
-- **Gallereee** (`gallereee`) — Inspiration/Portfolios — https://www.gallereee.com/ — `captured`
-- **Fuse (Framer)** (`fuse-framer`) — Templates/Framer — https://www.framer.com/marketplace/templates/fuse/ — `captured`
-- **Interfaces.dev** (`interfaces-dev`) — Inspiration/Magazine — https://interfaces.dev/ — `captured`
-- **Opensource UI** (`opensource-ui`) — Components/React — https://opensourceui.in/ — `captured`
-- **Nebula Sans** (`nebula-sans`) — Fonts/Typefaces — https://www.nebulasans.com/ — `captured`
-- **product.now** (`product-now`) — Inspiration/Products — https://product.now/ — `captured`
-- **Link Lowdown** (`link-lowdown`) — Inspiration/Directories — https://www.linklowdown.com/ — `captured`
-- **Curation Systems** (`curation-systems`) — Inspiration/Directories — https://curation.systems/ — `captured`
-- **Rune Icons** (`rune-icons`) — Icons/Sets — https://www.runeicons.com/ — `captured`
-- **TypeScope** (`typescope`) — Fonts/Tools — https://www.typescope.app/ — `captured`
-- **Great UI** (`great-ui`) — UI libraries/Components — https://www.great-ui.com/ — `captured`
-- **Vertically** (`vertically-works`) — Inspiration/Layouts — https://vertically.works/ — `captured`
-- **Sona UI** (`sona-ui`) — Components/React — https://sona-ui.vercel.app/ — `captured`
-- **Drawably** (`drawably`) — Illustrations/Drawing — https://www.drawably.dev/ — `captured`
-- **Blocks.so** (`blocks-so`) — Components/Blocks — https://blocks.so/ — `captured`
-- **Vessa** (`vessa`) — Inspiration/Design — https://www.vessa.design/ — `captured`
-- **Morphicons** (`morphicons`) — Icons/Animated — https://www.morphicons.com/ — `captured`
-- **Rubik (Sachi)** (`rubik-sachi`) — Components/Playground — https://rubik.sachi.dev/ — `captured`
-- **ASCII Magic** (`ascii-magic`) — Illustrations/ASCII — https://www.ascii-magic.com/ — `captured`
-- **Shift Graphics** (`shift-graphics`) — Backgrounds/Graphics — https://www.shift.graphics/ — `captured`
-- **App Icons Store** (`appicons-store`) — Icons/App Icons — https://www.appicons.store/ — `captured`
-- **Cuelume** (`cuelume`) — Components/UI — https://cuelume.dev/ — `captured`
-- **Three UI** (`threeui`) — Components/3D — https://threeui.com/browse — `captured`
-- **Light Stroke Rail** (`light-stroke-rail`) — Components/Effects — https://light-stroke-rail.vercel.app/ — `captured`
-- **Awesome Design Resources List** (`awesome-design-resources-list`) — Inspiration/Directories — https://github.com/darelova/Awesome-Design-Resources-List — `captured`
+- **Colir** (`colir`) — Backgrounds/Gradients — https://colir.space — `captured`
+- **Bloub** (`bloub`) — Inspiration/Motion — https://bloub.vercel.app — `captured`
+- **Micrograph Studio** (`micrograph-studio`) — Templates/Tools — https://micrograph-studio.vercel.app — `captured`
+- **Holosticker** (`holosticker`) — Mockups/Stickers — https://www.holosticker.dev — `captured`
+- **Mockit** (`mockit`) — Mockups/3D Devices — https://www.mockit.design — `captured`
+- **Animos** (`animos`) — Templates/Motion — https://animos.app/ — `captured`
+- **Shots** (`shots`) — Mockups/Screenshots — https://shots.so/ — `captured`
+- **DiffUI** (`diffui`) — Marketplace/AI Design — https://diffui.ai — `captured`
+- **Modulify Logo Maker** (`modulify-logo-maker`) — Marketplace/Logos — https://logomaker.modulify.ai/ — `captured`
+- **Font in Logo** (`font-in-logo`) — Fonts/Tools — https://www.fontinlogo.com/ — `captured`
+- **Logo to Use** (`logo-to-use`) — Inspiration/Logos — https://logotouse.com/ — `captured`
+- **Preview Kit** (`preview-kit`) — Templates/Presentations — https://usepreviewkit.com/ — `captured`
+- **Iconly** (`iconly`) — Icons/App Icons — https://iconly.design/ — `captured`
+- **better-ui (skills.sh)** (`skills-better-ui`) — Components/Agent Skills — https://skills.sh/jakubkrehel/skills/better-ui — `captured`
+- **emil-design-eng (skills.sh)** (`skills-emil-design-eng`) — Components/Agent Skills — https://skills.sh/emilkowalski/skills/emil-design-eng — `captured`
+- **Lucide Icons** (`lucide-icons`) — Icons/SVG — https://lucide.dev/icons — `captured`
+- **Lucide Animated** (`lucide-animated`) — Icons/Animated — https://lucide-animated.com — `captured`
+- **Moving Icons** (`moving-icons`) — Icons/Animated — https://www.movingicons.dev/icons — `captured`
+- **Iconsax** (`iconsax`) — Icons/SVG — https://app.iconsax.io — `captured`
+- **Isocons** (`isocons`) — Icons/Isometric — https://www.isocons.app/ — `captured`
+- **Nucleo** (`nucleo`) — Icons/SVG — https://nucleoapp.com — `captured`
+- **Calligraph** (`calligraph`) — Components/Typography — https://calligraph.raphaelsalaja.com — `captured`
+- **Elyx** (`elyx`) — Marketplace/Design Tools — https://elyx.design — `captured`
+- **SceneAI** (`sceneai`) — Inspiration/UI Prompts — https://sceneai.art — `captured`
+- **Design Gems** (`design-gems`) — Inspiration/Directories — https://www.gems.design/ — `captured`
+- **Sona UI (sonaui.com)** (`sonaui-com`) — Components/React — https://www.sonaui.com/ — `captured`
+- **GrabUI FlowContent** (`grabui-flowcontent`) — Templates/SaaS — https://grabui.com/library/flowcontent — `captured`
+
+## All candidates
+
+- `navbar-gallery` | Navbar Gallery | Inspiration | https://navbar.gallery | captured
+- `supahero` | Supahero | Inspiration | https://supahero.io | captured
+- `cta-gallery` | CTA Gallery | Inspiration | https://cta.gallery | captured
+- `footer-design` | Footer Design | Inspiration | https://footer.design | captured
+- `404s` | 404s | Inspiration | https://404s.design | captured
+- `interface-craft` | Interface Craft | Inspiration | https://interfacecraft.dev | captured
+- `userinterface-wiki` | userinterface.wiki | Inspiration | https://userinterface.wiki | captured
+- `devouring-details` | Devouring Details | Inspiration | https://devouringdetails.com | captured
+- `motion-primitives` | Motion-Primitives | Components | https://motion-primitives.com | captured
+- `aceternity` | Aceternity UI | Components | https://ui.aceternity.com | captured
+- `magic-ui` | Magic UI | Components | https://magicui.design | captured
+- `hover-dev` | Hover.dev | Components | https://hover.dev | captured
+- `60fps` | 60fps | Inspiration | https://60fps.design | captured
+- `if-design-patterns` | IF Design Patterns | Inspiration | https://catalogue.projectsbyif.com | captured
+- `abtest-design` | abtest.design | Inspiration | https://abtest.design | captured
+- `design-spells` | Design Spells | Inspiration | https://designspells.com | captured
+- `uxsnaps` | UXSnaps | Inspiration | https://uxsnaps.com | captured
+- `ui-playbook` | UI Playbook | Inspiration | https://uiplaybook.dev | captured
+- `wandpress` | WandPress | UI libraries | https://wandpress.netlify.app | captured
+- `ripplix` | Ripplix | Inspiration | https://ripplix.com | captured
+- `spectrum-ui` | Spectrum UI | Components | https://ui.spectrumhq.in | captured
+- `21st-dev` | 21st.dev | Marketplace | https://21st.dev | captured
+- `shadcnblocks` | Shadcnblocks | Marketplace | https://shadcnblocks.com | captured
+- `8bitcn` | 8bitcn/ui | UI libraries | https://8bitcn.com | captured
+- `evilcharts` | EvilCharts | Components | https://evilcharts.com | captured
+- `coss-ui` | coss UI | UI libraries | https://coss.com/ui | captured
+- `rareui` | Rare UI | UI libraries | https://rareui.com | captured
+- `beui` | beui | UI libraries | https://beui.dev | captured
+- `easyui` | Easy UI | UI libraries | https://easyui.site | captured
+- `reui` | ReUI | UI libraries | https://reui.io | captured
+- `coolors` | Coolors | Backgrounds | https://coolors.co | captured
+- `fontjoy` | Fontjoy | Fonts | https://fontjoy.com | captured
+- `whatthefont` | WhatTheFont | Fonts | https://myfonts.com/WhatTheFont | captured
+- `favicon-io` | favicon.io | Icons | https://favicon.io | captured
+- `undraw` | unDraw | Illustrations | https://undraw.co | captured
+- `made-design` | made.design | Inspiration | https://made.design | captured
+- `kibo-ui` | Kibo UI | UI libraries | https://kibo-ui.com | captured
+- `tailark` | Tailark | Templates | https://tailark.com | captured
+- `dice-ui` | Dice UI | UI libraries | https://diceui.com | captured
+- `badtz-ui` | BadtzUI | UI libraries | https://badtz-ui.com | captured
+- `bento-grids` | Bento Grids | Inspiration | https://bentogrids.com | captured
+- `rebrand-gallery` | rebrand.gallery | Inspiration | https://rebrand.gallery | captured
+- `gridddy` | Gridddy | Templates | https://gridddy.framer.website | captured
+- `landing-love` | landing.love | Inspiration | https://landing.love | captured
+- `refero-styles` | Refero Styles | Inspiration | https://styles.refero.design | captured
+- `recent-design` | recent.design | Inspiration | https://recent.design | captured
+- `curated-design` | curated.design | Inspiration | https://curated.design | captured
+- `vantaui` | Vanta UI | UI libraries | https://vantaui.com | captured
+- `design-on-x` | Design On X | Inspiration | https://design-on-x.com | captured
+- `internet-designs` | Internet Designs | Inspiration | https://internetdesigns.com | captured
+- `collect-ui` | CollectUI | Inspiration | https://collectui.com | captured
+- `page-flows` | Page Flows | Inspiration | https://pageflows.com | captured
+- `refero` | Refero | Inspiration | https://refero.design | captured
+- `mobbin` | Mobbin | Inspiration | https://mobbin.com | captured
+- `screenlane` | Screenlane | Inspiration | https://screenlane.com | captured
+- `aura-build` | Aura | Templates | https://aura.build | captured
+- `neuform` | Neuform | Templates | https://neuform.ai | captured
+- `microinteractions-ui` | MicroInteractions UI | Components | https://microinteractionsui.com | captured
+- `annnimate` | Annnimate | Components | https://annnimate.com | captured
+- `saasframe` | SaaSFrame | Inspiration | https://saasframe.io | captured
+- `godly` | Godly | Inspiration | https://godly.website | captured
+- `css-design-awards` | CSS Design Awards | Inspiration | https://cssdesignawards.com | captured
+- `minimal-gallery` | Minimal Gallery | Inspiration | https://minimal.gallery | captured
+- `hoverstates` | Hover States | Inspiration | https://hoverstat.es | captured
+- `ui-movement` | UI Movement | Inspiration | https://uimovement.com | captured
+- `fonts-in-use` | Fonts In Use | Fonts | https://fontsinuse.com | captured
+- `unsection` | Unsection | Inspiration | https://unsection.com | captured
+- `mesh3d-gallery` | mesh3d.gallery | Backgrounds | https://mesh3d.gallery | captured
+- `animata` | Animata | Components | https://animata.design | captured
+- `fancy-components` | Fancy Components | Components | https://fancycomponents.dev | captured
+- `shader-gradient` | Shader Gradient | Backgrounds | https://shadergradient.co | captured
+- `webinspoo` | WebInspoo | Inspiration | https://webinspoo.com | og-captured
+- `logoinspo` | Logoinspo | Inspiration | https://logoinspo.com | og-captured
+- `asoinspo` | Asoinspo | Inspiration | https://asoinspo.com | captured
+- `uiinspoo` | Uiinspoo | Inspiration | https://uiinspoo.com | og-captured
+- `design-engineer-tools` | Design Engineer Tools | Inspiration | https://designengineer.tools | captured
+- `indie-app-tools` | Indie App Tools | Inspiration | https://indieapp.tools | captured
+- `typeui` | TypeUI | UI libraries | https://typeui.sh | captured
+- `htmlrev-ui-libraries` | HTMLrev UI Libraries | Inspiration | https://htmlrev.com/ui-libraries.html | captured
+- `kombai-gallery` | Kombai Gallery | Inspiration | https://kombai.com/gallery/web | captured
+- `saaspo` | Saaspo | Inspiration | https://saaspo.com | captured
+- `inspora` | Inspora | Inspiration | https://inspora.design | captured
+- `uiux-showcase` | UIUX Showcase | Inspiration | https://uiuxshowcase.com | og-captured
+- `uiverse` | UIverse | UI libraries | https://uiverse.io | captured
+- `best-designs-on-x` | Best Designs on X | Inspiration | https://bestdesignsonx.com | captured
+- `appllama` | Appllama | Inspiration | https://appllama.io | captured
+- `shaders` | Shaders | Backgrounds | https://shaders.com | captured
+- `paper-design` | Paper | Templates | https://paper.design | captured
+- `onlook` | Onlook | Templates | https://onlook.com | captured
+- `godly-design` | Godly Design | Inspiration | https://godly.design | captured
+- `ogimage-gallery` | ogimage.gallery | Inspiration | https://ogimage.gallery | captured
+- `fontshare` | Fontshare | Fonts | https://fontshare.com | captured
+- `component-gallery` | component.gallery | Inspiration | https://component.gallery | captured
+- `design-systems-repo` | Design Systems Repo | Inspiration | https://designsystemsrepo.com | captured
+- `apple-hig` | Apple HIG | Inspiration | https://developer.apple.com/design/human-interface-guidelines | captured
+- `dark-design` | dark.design | Inspiration | https://dark.design | captured
+- `fontpair` | Font Pair | Fonts | https://fontpair.co | captured
+- `dafont` | DaFont | Fonts | https://dafont.com | captured
+- `flaticon` | Flaticon | Icons | https://flaticon.com | captured
+- `freepik` | Freepik | Marketplace | https://freepik.com | captured
+- `icons8` | Icons8 | Icons | https://icons8.com | captured
+- `oil-motion` | github.com | Components | https://github.com/oil-oil/oil-motion | captured
+- `animmasterlib` | AnimMasterLib | Components | https://animmasterlib.dev | captured
+- `design-bookmark` | Design Bookmark | Inspiration | https://designbookmark.com | captured
+- `motion` | Motion | Components | https://motion.dev | captured
+- `animejs` | Anime.js | Components | https://animejs.com | captured
+- `rn-motion` | React Native Motion | Components | https://rnmotion.dev | captured
+- `reactix` | Reactix | UI libraries | https://reacticx.com | captured
+- `heroui-native` | HeroUI Native | UI libraries | https://heroui.com/en/docs/native/getting-started | captured
+- `native-bloom` | Native Bloom | UI libraries | https://nativebloom.dev | captured
+- `make-it-animated` | Make It Animated | Components | https://makeitanimated.dev | captured
+- `motionary` | Motionary | Components | https://motionary.dev | captured
+- `boardui` | BoardUI | UI libraries | https://boardui.com | captured
+- `cosmos` | Cosmos | Inspiration | https://cosmos.so | captured
+- `maxibestof` | MaxiBestOf | Inspiration | https://maxibestof.one | captured
+- `awwwards` | Awwwards | Inspiration | https://awwwards.com | captured
+- `backgrounds-supply` | Backgrounds Supply | Backgrounds | https://backgrounds.supply | captured
+- `behance` | Behance | Inspiration | https://behance.net | captured
+- `contentcore` | ContentCore | Mockups | https://contentcore.xyz | captured
+- `dribbble` | Dribbble | Inspiration | https://dribbble.com | captured
+- `fwa` | FWA | Inspiration | https://fwa.com | captured
+- `land-book` | Landbook | Inspiration | https://land-book.com | captured
+- `lapa-ninja` | Lapa Ninja | Inspiration | https://lapa.ninja | captured
+- `lummi` | Lummi | Illustrations | https://lummi.ai | captured
+- `material-3` | Material Design 3 | Inspiration | https://m3.material.io | captured
+- `screensdesign` | Screens Design | Inspiration | https://screensdesign.com | captured
+- `siteinspire` | SiteInspire | Inspiration | https://siteinspire.com | captured
+- `tranmautritam` | Tran Mau Tri Tam | Inspiration | https://tranmautritam.com | captured
+- `codrops` | Codrops | Inspiration | https://tympanus.net/codrops | captured
+- `typescale` | Type Scale | Fonts | https://typescale.com | captured
+- `supaste` | Supaste | Inspiration | https://supaste.com | captured
+- `vehla` | Vehla | Inspiration | https://vehla.app | captured
+- `cooldock` | Cooldock | Inspiration | https://dock.cool | captured
+- `screen-movie` | Screen.Movie | Inspiration | https://screen.movie | captured
+- `macapp-supply` | Macapp Supply | Marketplace | https://macapp.supply | captured
+- `cue-design` | Cue Design | Components | https://cuedesign.space | captured
+- `designmd-hyperbrowser` | DesignMD Hyperbrowser | Templates | https://design-md.hyperbrowser.ai | captured
+- `designmd-ai` | DesignMD AI | Templates | https://designmd.ai | captured
+- `designmd` | DesignMD | Templates | https://designmd.me | captured
+- `designmd-supply` | DesignMD Supply | Templates | https://www.designmd.supply | captured
+- `heroui-native-2` | HeroUI Native | UI libraries | https://heroui.com/en/docs/native | captured
+- `kage-design` | Kage Design | Inspiration | https://kage.design | captured
+- `mantine` | Mantine | UI libraries | https://mantine.dev | captured
+- `nextjsshop` | Nextjsshop | Templates | https://nextjsshop.com | og-captured
+- `opendesign` | OpenDesign | UI libraries | https://open-design.ai | captured
+- `pinterest` | Pinterest | Inspiration | https://pinterest.com | captured
+- `react-bits` | React Bits | Components | https://reactbits.dev | captured
+- `rn-neo` | RN Neo | UI libraries | https://rn-neo.gs-rumana.com | captured
+- `echo-shadcnblocks` | Echo (shadcnblocks) | Templates | https://www.shadcnblocks.com/template/echo | captured
+- `simply-buttons` | Simply Buttons | Components | https://simply-buttons.vercel.app | captured
+- `skills-agentes` | Skills Agentes | Marketplace | https://skillsagentes.com | captured
+- `sokosumi-designmd` | Sokosumi DesignMD | Templates | https://sokosumi.com/tools/design-md | captured
+- `shadcn-ui` | shadcn/ui | UI libraries | https://ui.shadcn.com | captured
+- `weekend-designmd` | Weekend DesignMD | Templates | https://weekend.company/get-design-md | captured
+- `grainient` | Grainient | Backgrounds | https://grainient.supply | captured
+- `akveo-eva-icons` | Akveo | Icons | https://akveo.github.io/eva-icons | captured
+- `amicro` | Amicro | Components | https://amicro.vercel.app | captured
+- `appmotion` | Appmotion | Inspiration | https://appmotion.design | captured
+- `appshot-gallery` | Appshot Gallery | Mockups | https://appshot.gallery | captured
+- `bootstrapmade` | BootstrapMade | Templates | https://bootstrapmade.com | captured
+- `boxicons` | Boxicons | Icons | https://boxicons.com | captured
+- `built-by-designers` | Built by Designers | Inspiration | https://builtbydesigners.com | captured
+- `carbondesignsystem` | Carbondesignsystem | Icons | https://carbondesignsystem.com | captured
+- `colorlib` | Colorlib | Templates | https://colorlib.com | captured
+- `craftwork-curated` | Curated Website Inspiration • Craftwork | Inspiration | https://craftwork.design/curated/websites | captured
+- `css-gg` | css.gg | Icons | https://css.gg | captured
+- `devicon` | Devicon | Icons | https://devicon.dev | captured
+- `dialkit` | DialKit | Components | https://dialkit.dev | captured
+- `feathericons` | Feathericons | Icons | https://feathericons.com | captured
+- `floguo-notes` | Design Engineering | Inspiration | https://floguo.com/notes/design-engineering | captured
+- `flowbite` | Flowbite | UI libraries | https://flowbite.com | captured
+- `google-fonts-icons` | Material Symbols and Icons | Icons | https://fonts.google.com/icons | captured
+- `free-css` | Free CSS | Templates | https://www.free-css.com | captured
+- `getdesign` | getdesign.md | Templates | https://getdesign.md | captured
+- `getmd` | getmd.design | Templates | https://getmd.design | captured
+- `heroicons` | Heroicons | Icons | https://heroicons.com | captured
+- `heroui` | HeroUI v3 (Previously NextUI) | UI libraries | https://heroui.com | captured
+- `html5up` | HTML5 UP | Templates | https://html5up.net | captured
+- `hugeicons` | Hugeicons | Icons | https://hugeicons.com | captured
+- `iconify` | Iconify | Icons | https://iconify.design | captured
+- `iconoir` | Iconoir | Icons | https://iconoir.com | captured
+- `bootstrap-icons` | Bootstrap Icons | Icons | https://icons.getbootstrap.com | captured
+- `ionic-ionicons` | Ionicons: The premium icon pack for Ionic Framework | Icons | https://ionic.io/ionicons | captured
+- `kinetics` | Kinetics | UI libraries | https://kinetics.colorion.co | captured
+- `kokonut` | KokonutUI | UI libraries | https://kokonutui.com | captured
+- `libraries-dev` | Libraries.dev | UI libraries | https://libraries.dev | captured
+- `microkit` | MicroKit | Components | https://microkit.co | captured
+- `mobirise` | Mobirise | Templates | https://mobirise.com | captured
+- `muz` | Muzli | Inspiration | https://muz.li | captured
+- `mx-icons` | Mx-icons | Icons | https://mx-icons.vercel.app | captured
+- `onepagelove` | One Page Love | Templates | https://onepagelove.com | captured
+- `onepagelove-og` | OG Image Gallery | Inspiration | https://onepagelove.com/og | captured
+- `originui` | Originui | UI libraries | https://originui.com | captured
+- `phosphoricons` | Phosphor Icons | Icons | https://phosphoricons.com | captured
+- `radix-ui-icons` | Radix-ui | Icons | https://radix-ui.com/icons | captured
+- `rams` | Rams | Templates | https://rams.ai | captured
+- `remixicon` | Remix Icon | Icons | https://remixicon.com | captured
+- `rive` | Rive | UI libraries | https://rive.app | captured
+- `simpleicons` | Simpleicons | Icons | https://simpleicons.org | captured
+- `startbootstrap` | Start Bootstrap | Templates | https://startbootstrap.com | captured
+- `svg` | Svg | Inspiration | https://svg.guide | captured
+- `tabler-icons` | Tabler Icons: 6150+ free vector icons for web design | Icons | https://tabler.io/icons | captured
+- `templated` | Templated | Templates | https://templated.co | captured
+- `thealpy-ai-taste` | Thealpy | Templates | https://thealpy.studio/ai-taste | captured
+- `themefisher` | Themefisher | Templates | https://themefisher.com | captured
+- `thesvg` | Thesvg | Icons | https://thesvg.org | captured
+- `ui-skills` | Ui-skills | Inspiration | https://ui-skills.com | captured
+- `uideck` | UIDeck | Templates | https://uideck.com | captured
+- `getlayers` | GetLayers AI | Templates | https://getlayers.ai | captured
+- `designmd-co` | DesignMD.co | Templates | https://designmd.co | captured
+- `mapcn` | mapcn | Components | https://mapcn.dev | captured
+- `openusage` | OpenUsage | Templates | https://openusage.ai | captured
+- `bencho` | Bencho | Components | https://bencho.dev | captured
+- `browser-use` | Browser Use | Templates | https://browser-use.com | captured
+- `wellmade` | Wellmade | Inspiration | https://wellmade.fyi | captured
+- `untitled-ui` | Untitled UI | Marketplace | https://untitledui.com | captured
+- `uiprep` | UI Prep | Marketplace | https://uiprep.com | captured
+- `rayna-ui` | Rayna UI | Marketplace | https://raynaui.com | captured
+- `wireframekits` | Wireframe Kits | Marketplace | https://wireframekits.com | blocked
+- `figma-community` | Figma Community | Marketplace | https://www.figma.com/community | captured
+- `libraries-dev-beam` | Beam (Libraries.dev) | Components | https://libraries.dev/beam | captured
+- `pttrns` | Pttrns | Inspiration | https://www.pttrns.com | captured
+- `lawsofux` | Laws of UX | Inspiration | https://lawsofux.com | captured
+- `uxcrush` | UX Crush | Marketplace | https://uxcrush.com | captured
+- `themockup-club` | The Mockup Club | Mockups | https://themockup.club | captured
+- `huemint` | Huemint | Templates | https://huemint.com | captured
+- `lordicon` | Lordicon | Icons | https://lordicon.com | captured
+- `microcopy-me` | Microcopy.me | Templates | https://microcopy.me | captured
+- `mixkit` | Mixkit | Marketplace | https://mixkit.co | captured
+- `happyhues` | Happy Hues | Backgrounds | https://happyhues.co | captured
+- `growth-design` | Growth.design | Inspiration | https://growth.design | captured
+- `toools-design` | Toools.design | Marketplace | https://toools.design | captured
+- `basicons` | Basicons | Icons | https://basicons.xyz | captured
+- `briefup` | Briefup | Templates | https://briefup.co | captured
+- `meshgradient` | Mesh Gradient | Backgrounds | https://meshgradient.com | captured
+- `iconer` | Iconer | Icons | https://iconer.app | captured
+- `3dicons` | 3D Icons | Icons | https://3dicons.co | captured
+- `shapefest` | Shapefest | Illustrations | https://shapefest.com | captured
+- `saaslandingpage` | SaaS Landing Page | Inspiration | https://saaslandingpage.com | captured
+- `colorhunt` | Color Hunt | Backgrounds | https://colorhunt.co | captured
+- `angle-sh` | Angle | Mockups | https://angle.sh | captured
+- `designspiration` | Designspiration | Inspiration | https://designspiration.net | captured
+- `storyset` | Storyset | Illustrations | https://storyset.com | captured
+- `openpeeps` | Open Peeps | Illustrations | https://openpeeps.com | captured
+- `drawkit` | DrawKit | Illustrations | https://drawkit.com | captured
+- `sapiens-ui8` | Sapiens (UI8) | Illustrations | https://sapiens.ui8.net | captured
+- `aicss-orbs` | AICSS Orbs | Components | https://www.aicss.dev/components/orbs | captured
+- `tinywow` | TinyWow | Templates | https://tinywow.com | captured
+- `stocksnap` | StockSnap | Marketplace | https://stocksnap.io | captured
+- `agents-plane` | Agent Avatar Lab (Plane) | Illustrations | https://agents.plane.so | captured
+- `liquid-glass-design` | Liquid Glass Design | Inspiration | https://liquidglassdesign.com | captured
+- `kobra` | Kobra | UI libraries | https://kobra.systems | captured
+- `loadmo` | loadmo.re | Inspiration | https://loadmo.re | captured
+- `posts-design` | posts.design | Inspiration | https://posts.design | captured
+- `vibeprompts` | VibePrompts | Components | https://vibeprompts.dev | captured
+- `uiable` | UIable | UI libraries | https://uiable.com | og-captured
+- `opendesign-dev` | OpenDesign.dev | UI libraries | https://opendesign.dev | captured
+- `babelize-elements` | Babelize Elements | Components | https://elements.babelize.co | captured
+- `ideadesign` | IdeaDesign | Components | https://ideadesign.top | captured
+- `motionsites-ai` | MotionSites AI | Templates | https://motionsites.ai | captured
+- `appshots-design` | Appshots.design | Inspiration | https://appshots.design | captured
+- `gummble` | Gummble | Inspiration | https://gummble.com | captured
+- `a1-gallery` | A1 Gallery | Inspiration | https://a1.gallery | captured
+- `sectionmaster` | SectionMaster | Inspiration | https://sectionmaster.com | captured
+- `deck-gallery` | Deck Gallery | Inspiration | https://deck.gallery | captured
+- `logosystem` | Logo System | Inspiration | https://logosystem.co | captured
+- `brandguidelines` | Brand Guidelines | Inspiration | https://brandguidelines.net | captured
+- `visualjournal` | Visual Journal | Inspiration | https://visualjournal.it | captured
+- `ogfolio` | OGFolio | Inspiration | https://ogfolio.com | captured
+- `aicss` | AICSS | Components | https://www.aicss.dev/ | captured
+- `ui-halaska` | UI by Halaska | Components | https://ui.halaska.com | captured
+- `torph` | Torph | Components | https://torph.lochie.me | captured
+- `typehug` | Typehug | Fonts | https://typehug.aliszu.com | captured
+- `liquid-glass-samasante` | Liquid Glass (Samasante) | Components | https://glass.samasante.com | captured
+- `screenshot-to-code` | Screenshot to Code | Marketplace | https://screenshottocode.com | captured
+- `uisfx` | UI SFX | Components | https://uisfx.com | captured
+- `libraries-dev-orbs` | Libraries.dev Orbs | Components | https://libraries.dev/orbs | captured
+- `typeface-fyi` | Typeface.fyi | Fonts | https://www.typeface.fyi/ | captured
+- `vibeui` | VibeUI | Templates | https://vibeui.online | captured
+- `designmd-store` | Design.md Store | Marketplace | https://designmd-store.com | captured
+- `transitions-dev` | Transitions.dev | Components | https://transitions.dev | captured
+- `astryx` | Astryx | UI libraries | https://astryx.atmeta.com | captured
+- `originkit` | Origin Kit | Components | https://originkit.dev | captured
+- `beautiful-ui` | Beautiful UI | Components | https://beautifului.dev | captured
+- `metalforge` | MetalForge | Components | https://metalforge.xyz/editor | captured
+- `oneworks-avatars` | OneWorks Avatars | Illustrations | https://oneworks.cloud/avatar/ | captured
+- `spectrum-footers` | Spectrum Footers | Components | https://ui.spectrumhq.in/blocks/footers | captured
+- `spectrum-charts` | Spectrum Charts | Components | https://ui.spectrumhq.in/blocks/charts | captured
+- `oss-perks` | OSS Perks | Marketplace | https://www.ossperks.com/ | captured
+- `shadcn-io` | shadcn.io | UI libraries | https://shadcn.io | captured
+- `meshgradient-in` | Mesh Gradient (IN) | Backgrounds | https://meshgradient.in | captured
+- `paper-shaders` | Paper Shaders | Backgrounds | https://shaders.paper.design | captured
+- `useanimations` | UseAnimations | Icons | https://useanimations.com | captured
+- `lightugc` | LightUGC | Marketplace | https://lightugc.com | captured
+- `circle-loaders` | Circle Loaders | Components | https://circleloaders.dominikakissi.com | captured
+- `openui` | OpenUI | UI libraries | https://www.openui.com | captured
+- `gallereee` | Gallereee | Inspiration | https://www.gallereee.com/ | captured
+- `fuse-framer` | Fuse (Framer) | Templates | https://www.framer.com/marketplace/templates/fuse/ | captured
+- `interfaces-dev` | Interfaces.dev | Inspiration | https://interfaces.dev/ | captured
+- `opensource-ui` | Opensource UI | Components | https://opensourceui.in/ | captured
+- `nebula-sans` | Nebula Sans | Fonts | https://www.nebulasans.com/ | captured
+- `product-now` | product.now | Inspiration | https://product.now/ | captured
+- `link-lowdown` | Link Lowdown | Inspiration | https://www.linklowdown.com/ | captured
+- `curation-systems` | Curation Systems | Inspiration | https://curation.systems/ | captured
+- `rune-icons` | Rune Icons | Icons | https://www.runeicons.com/ | captured
+- `typescope` | TypeScope | Fonts | https://www.typescope.app/ | captured
+- `great-ui` | Great UI | UI libraries | https://www.great-ui.com/ | captured
+- `vertically-works` | Vertically | Inspiration | https://vertically.works/ | captured
+- `sona-ui` | Sona UI | Components | https://sona-ui.vercel.app/ | captured
+- `drawably` | Drawably | Illustrations | https://www.drawably.dev/ | captured
+- `blocks-so` | Blocks.so | Components | https://blocks.so/ | captured
+- `vessa` | Vessa | Inspiration | https://www.vessa.design/ | captured
+- `morphicons` | Morphicons | Icons | https://www.morphicons.com/ | captured
+- `rubik-sachi` | Rubik (Sachi) | Components | https://rubik.sachi.dev/ | captured
+- `ascii-magic` | ASCII Magic | Illustrations | https://www.ascii-magic.com/ | captured
+- `shift-graphics` | Shift Graphics | Backgrounds | https://www.shift.graphics/ | captured
+- `appicons-store` | App Icons Store | Icons | https://www.appicons.store/ | captured
+- `cuelume` | Cuelume | Components | https://cuelume.dev/ | captured
+- `threeui` | Three UI | Components | https://threeui.com/browse | captured
+- `light-stroke-rail` | Light Stroke Rail | Components | https://light-stroke-rail.vercel.app/ | captured
+- `awesome-design-resources-list` | Awesome Design Resources List | Inspiration | https://github.com/darelova/Awesome-Design-Resources-List | captured
+- `colir` | Colir | Backgrounds | https://colir.space | captured
+- `bloub` | Bloub | Inspiration | https://bloub.vercel.app | captured
+- `micrograph-studio` | Micrograph Studio | Templates | https://micrograph-studio.vercel.app | captured
+- `holosticker` | Holosticker | Mockups | https://www.holosticker.dev | captured
+- `mockit` | Mockit | Mockups | https://www.mockit.design | captured
+- `animos` | Animos | Templates | https://animos.app/ | captured
+- `shots` | Shots | Mockups | https://shots.so/ | captured
+- `diffui` | DiffUI | Marketplace | https://diffui.ai | captured
+- `modulify-logo-maker` | Modulify Logo Maker | Marketplace | https://logomaker.modulify.ai/ | captured
+- `font-in-logo` | Font in Logo | Fonts | https://www.fontinlogo.com/ | captured
+- `logo-to-use` | Logo to Use | Inspiration | https://logotouse.com/ | captured
+- `preview-kit` | Preview Kit | Templates | https://usepreviewkit.com/ | captured
+- `iconly` | Iconly | Icons | https://iconly.design/ | captured
+- `skills-better-ui` | better-ui (skills.sh) | Components | https://skills.sh/jakubkrehel/skills/better-ui | captured
+- `skills-emil-design-eng` | emil-design-eng (skills.sh) | Components | https://skills.sh/emilkowalski/skills/emil-design-eng | captured
+- `lucide-icons` | Lucide Icons | Icons | https://lucide.dev/icons | captured
+- `lucide-animated` | Lucide Animated | Icons | https://lucide-animated.com | captured
+- `moving-icons` | Moving Icons | Icons | https://www.movingicons.dev/icons | captured
+- `iconsax` | Iconsax | Icons | https://app.iconsax.io | captured
+- `isocons` | Isocons | Icons | https://www.isocons.app/ | captured
+- `nucleo` | Nucleo | Icons | https://nucleoapp.com | captured
+- `calligraph` | Calligraph | Components | https://calligraph.raphaelsalaja.com | captured
+- `elyx` | Elyx | Marketplace | https://elyx.design | captured
+- `sceneai` | SceneAI | Inspiration | https://sceneai.art | captured
+- `design-gems` | Design Gems | Inspiration | https://www.gems.design/ | captured
+- `sonaui-com` | Sona UI (sonaui.com) | Components | https://www.sonaui.com/ | captured
+- `grabui-flowcontent` | GrabUI FlowContent | Templates | https://grabui.com/library/flowcontent | captured

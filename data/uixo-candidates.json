@@ -1,25 +1,25 @@
 {
-  "updated": "2026-09-15T07:46:56Z",
-  "updated_note": "weekday digest 2026-09-15: +48 candidates; thumbs 48/48 screenshot; live src/data.ts untouched.",
+  "updated": "2026-09-16T07:50:41Z",
+  "updated_note": "weekday digest 2026-09-16: +27 candidates + thumbs",
   "counts_by_category": {
-    "Inspiration": 109,
-    "Components": 50,
+    "Inspiration": 113,
+    "Components": 54,
+    "Templates": 43,
+    "Icons": 38,
     "UI libraries": 36,
-    "Marketplace": 18,
-    "Backgrounds": 12,
-    "Fonts": 11,
-    "Icons": 31,
+    "Marketplace": 21,
+    "Backgrounds": 13,
+    "Fonts": 12,
     "Illustrations": 11,
-    "Templates": 39,
-    "Mockups": 4
+    "Mockups": 7
   },
   "totals": {
-    "candidates": 321,
-    "needs_review": 243,
-    "new_this_run": 48,
+    "candidates": 348,
+    "needs_review": 270,
+    "new_this_run": 27,
     "already_present": 0,
     "skipped_dupes_existing_site": 0,
-    "image_captured": 314,
+    "image_captured": 341,
     "image_og_captured": 6,
     "image_blocked": 1,
     "image_pending": 0
@@ -8500,14 +8500,795 @@
         "https://x.com/apvarun/status/2099736736880529680"
       ],
       "image_method": "screenshot"
+    },
+    {
+      "id": "colir",
+      "name": "Colir",
+      "category": "Backgrounds",
+      "subcategory": "Gradients",
+      "tags": [
+        "Gradients",
+        "WebGL",
+        "Generator"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "colir.space",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://colir.space",
+      "why": "Curve-based WebGL gradient generator",
+      "source": "weekday digest 2026-09-16 \u2014 Manixh02",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 332,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2100119400078889306"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "bloub",
+      "name": "Bloub",
+      "category": "Inspiration",
+      "subcategory": "Motion",
+      "tags": [
+        "SVG",
+        "Animation",
+        "Avatar"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "bloub",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://bloub.vercel.app",
+      "why": "Animated SVG avatar morph playground",
+      "source": "weekday digest 2026-09-16 \u2014 Manixh02",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 333,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2100119400078889306"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "micrograph-studio",
+      "name": "Micrograph Studio",
+      "category": "Templates",
+      "subcategory": "Tools",
+      "tags": [
+        "Labels",
+        "Stickers",
+        "Studio"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "micrograph-studio",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://micrograph-studio.vercel.app",
+      "why": "Photo label/sticker studio",
+      "source": "weekday digest 2026-09-16 \u2014 Manixh02",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 334,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2100119400078889306"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "holosticker",
+      "name": "Holosticker",
+      "category": "Mockups",
+      "subcategory": "Stickers",
+      "tags": [
+        "Holographic",
+        "Stickers",
+        "Export"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "holosticker.dev",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://www.holosticker.dev",
+      "why": "Holographic sticker studio with PNG export",
+      "source": "weekday digest 2026-09-16 \u2014 Manixh02",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 335,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2100119400078889306"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "mockit",
+      "name": "Mockit",
+      "category": "Mockups",
+      "subcategory": "3D Devices",
+      "tags": [
+        "3D",
+        "Mockups",
+        "Devices"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "mockit.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://www.mockit.design",
+      "why": "Browser 3D device mockup generator",
+      "source": "weekday digest 2026-09-16 \u2014 Manixh02",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 336,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2100119400078889306"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "animos",
+      "name": "Animos",
+      "category": "Templates",
+      "subcategory": "Motion",
+      "tags": [
+        "Motion",
+        "Templates",
+        "Showcase"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "animos.app",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://animos.app/",
+      "why": "Motion templates for design showcases",
+      "source": "weekday digest 2026-09-16 \u2014 Manixh02",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 337,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2100119400078889306"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "shots",
+      "name": "Shots",
+      "category": "Mockups",
+      "subcategory": "Screenshots",
+      "tags": [
+        "Mockups",
+        "Screenshots"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "shots.so",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://shots.so/",
+      "why": "Create polished mockups in browser",
+      "source": "weekday digest 2026-09-16 \u2014 Manixh02",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 338,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2100119400078889306"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "diffui",
+      "name": "DiffUI",
+      "category": "Marketplace",
+      "subcategory": "AI Design",
+      "tags": [
+        "AI",
+        "Prompt-to-design",
+        "Code"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "DiffUI",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://diffui.ai",
+      "why": "Prompt-to-design AI without the slop",
+      "source": "weekday digest 2026-09-16 \u2014 Manixh02",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 339,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2100046245322731952"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "modulify-logo-maker",
+      "name": "Modulify Logo Maker",
+      "category": "Marketplace",
+      "subcategory": "Logos",
+      "tags": [
+        "AI",
+        "Logos",
+        "Generator"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Modulify",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://logomaker.modulify.ai/",
+      "why": "AI logo generator",
+      "source": "weekday digest 2026-09-16 \u2014 VullnetAdemaj",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 340,
+      "harvest_posts": [
+        "https://x.com/VullnetAdemaj/status/2099781233622274110"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "font-in-logo",
+      "name": "Font in Logo",
+      "category": "Fonts",
+      "subcategory": "Tools",
+      "tags": [
+        "Typography",
+        "Logos"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "fontinlogo.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://www.fontinlogo.com/",
+      "why": "Find typography used in logos",
+      "source": "weekday digest 2026-09-16 \u2014 VullnetAdemaj",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 341,
+      "harvest_posts": [
+        "https://x.com/VullnetAdemaj/status/2099781233622274110"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "logo-to-use",
+      "name": "Logo to Use",
+      "category": "Inspiration",
+      "subcategory": "Logos",
+      "tags": [
+        "Logos",
+        "Gallery"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "logotouse.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://logotouse.com/",
+      "why": "Browse real logos gallery",
+      "source": "weekday digest 2026-09-16 \u2014 VullnetAdemaj",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 342,
+      "harvest_posts": [
+        "https://x.com/VullnetAdemaj/status/2099781233622274110"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "preview-kit",
+      "name": "Preview Kit",
+      "category": "Templates",
+      "subcategory": "Presentations",
+      "tags": [
+        "Presentations",
+        "Animated",
+        "Preview"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "usepreviewkit.com",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://usepreviewkit.com/",
+      "why": "Animated presentation / preview kit",
+      "source": "weekday digest 2026-09-16 \u2014 VullnetAdemaj",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 343,
+      "harvest_posts": [
+        "https://x.com/VullnetAdemaj/status/2099781233622274110"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "iconly",
+      "name": "Iconly",
+      "category": "Icons",
+      "subcategory": "App Icons",
+      "tags": [
+        "App Icons",
+        "Icons"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "iconly.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://iconly.design/",
+      "why": "App icon inspiration and assets",
+      "source": "weekday digest 2026-09-16 \u2014 VullnetAdemaj",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 344,
+      "harvest_posts": [
+        "https://x.com/VullnetAdemaj/status/2099781233622274110"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "skills-better-ui",
+      "name": "better-ui (skills.sh)",
+      "category": "Components",
+      "subcategory": "Agent Skills",
+      "tags": [
+        "Skills",
+        "UI Polish",
+        "Agents"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "jakubkrehel",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://skills.sh/jakubkrehel/skills/better-ui",
+      "why": "Agent skill for UI polish details",
+      "source": "weekday digest 2026-09-16 \u2014 arihantCodes",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 345,
+      "harvest_posts": [
+        "https://x.com/arihantCodes/status/2099845122884272426"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "skills-emil-design-eng",
+      "name": "emil-design-eng (skills.sh)",
+      "category": "Components",
+      "subcategory": "Agent Skills",
+      "tags": [
+        "Skills",
+        "Design Eng",
+        "Motion"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "emilkowalski",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://skills.sh/emilkowalski/skills/emil-design-eng",
+      "why": "Emil Kowalski design-engineering skill",
+      "source": "weekday digest 2026-09-16 \u2014 arihantCodes",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 346,
+      "harvest_posts": [
+        "https://x.com/arihantCodes/status/2099845122884272426"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "lucide-icons",
+      "name": "Lucide Icons",
+      "category": "Icons",
+      "subcategory": "SVG",
+      "tags": [
+        "Icons",
+        "SVG"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Lucide",
+      "formats": [
+        "SVG"
+      ],
+      "url": "https://lucide.dev/icons",
+      "why": "Open-source Lucide icon set",
+      "source": "weekday digest 2026-09-16 \u2014 neropursue",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 347,
+      "harvest_posts": [
+        "https://x.com/neropursue/status/2099827788521889995"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "lucide-animated",
+      "name": "Lucide Animated",
+      "category": "Icons",
+      "subcategory": "Animated",
+      "tags": [
+        "Icons",
+        "Motion"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "lucide-animated",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://lucide-animated.com",
+      "why": "Animated Lucide icons",
+      "source": "weekday digest 2026-09-16 \u2014 neropursue",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 348,
+      "harvest_posts": [
+        "https://x.com/neropursue/status/2099827788521889995"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "moving-icons",
+      "name": "Moving Icons",
+      "category": "Icons",
+      "subcategory": "Animated",
+      "tags": [
+        "Icons",
+        "Motion"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "movingicons.dev",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://www.movingicons.dev/icons",
+      "why": "Animated icon set",
+      "source": "weekday digest 2026-09-16 \u2014 neropursue",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 349,
+      "harvest_posts": [
+        "https://x.com/neropursue/status/2099827788521889995"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "iconsax",
+      "name": "Iconsax",
+      "category": "Icons",
+      "subcategory": "SVG",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Iconsax",
+      "formats": [
+        "SVG"
+      ],
+      "url": "https://app.iconsax.io",
+      "why": "Iconsax icon library",
+      "source": "weekday digest 2026-09-16 \u2014 neropursue",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 350,
+      "harvest_posts": [
+        "https://x.com/neropursue/status/2099827788521889995"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "isocons",
+      "name": "Isocons",
+      "category": "Icons",
+      "subcategory": "Isometric",
+      "tags": [
+        "Icons",
+        "Isometric"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "isocons.app",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://www.isocons.app/",
+      "why": "Isometric icons",
+      "source": "weekday digest 2026-09-16 \u2014 neropursue",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 351,
+      "harvest_posts": [
+        "https://x.com/neropursue/status/2099827788521889995"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "nucleo",
+      "name": "Nucleo",
+      "category": "Icons",
+      "subcategory": "SVG",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Paid"
+      ],
+      "creator": "Nucleo",
+      "formats": [
+        "SVG"
+      ],
+      "url": "https://nucleoapp.com",
+      "why": "Nucleo icon manager/library",
+      "source": "weekday digest 2026-09-16 \u2014 neropursue",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 352,
+      "harvest_posts": [
+        "https://x.com/neropursue/status/2099827788521889995"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "calligraph",
+      "name": "Calligraph",
+      "category": "Components",
+      "subcategory": "Typography",
+      "tags": [
+        "Text",
+        "Transitions",
+        "Motion"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "raphaelsalaja",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://calligraph.raphaelsalaja.com",
+      "why": "Fluid text transitions",
+      "source": "weekday digest 2026-09-16 \u2014 csaba_kissi",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 353,
+      "harvest_posts": [
+        "https://x.com/csaba_kissi/status/2100106901824664063"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "elyx",
+      "name": "Elyx",
+      "category": "Marketplace",
+      "subcategory": "Design Tools",
+      "tags": [
+        "Design Tool",
+        "Local-first",
+        "AI"
+      ],
+      "access": [
+        "Paid"
+      ],
+      "creator": "Elyx",
+      "formats": [
+        "App"
+      ],
+      "url": "https://elyx.design",
+      "why": "Local-first design tool from Sketch alumni (private beta)",
+      "source": "weekday digest 2026-09-16 \u2014 noahelhadedy",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 354,
+      "harvest_posts": [
+        "https://x.com/noahelhadedy/status/2099955937276748024"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "sceneai",
+      "name": "SceneAI",
+      "category": "Inspiration",
+      "subcategory": "UI Prompts",
+      "tags": [
+        "Inspiration",
+        "Prompts",
+        "Hero"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "SceneAI",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://sceneai.art",
+      "why": "UI prompt / frontend inspiration library",
+      "source": "weekday digest 2026-09-16 \u2014 ah4alt",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 355,
+      "harvest_posts": [
+        "https://x.com/ah4alt/status/2099909396805611695",
+        "https://x.com/k2sbhai/status/2099787581689049446"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "design-gems",
+      "name": "Design Gems",
+      "category": "Inspiration",
+      "subcategory": "Directories",
+      "tags": [
+        "Curated",
+        "Tools",
+        "UI kits"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "CJfromJBW",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://www.gems.design/",
+      "why": "Curated tools/UI kits directory (waitlist)",
+      "source": "weekday digest 2026-09-16 \u2014 CJfromJBW",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 356,
+      "harvest_posts": [
+        "https://x.com/CJfromJBW/status/2099836234054951092"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "sonaui-com",
+      "name": "Sona UI (sonaui.com)",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [
+        "React",
+        "Motion",
+        "Accessible"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Sona UI",
+      "formats": [
+        "React"
+      ],
+      "url": "https://www.sonaui.com/",
+      "why": "Animated accessible React components (new domain)",
+      "source": "weekday digest 2026-09-16 \u2014 codebydinil",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 357,
+      "harvest_posts": [
+        "https://x.com/codebydinil/status/2099785510134964340"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "grabui-flowcontent",
+      "name": "GrabUI FlowContent",
+      "category": "Templates",
+      "subcategory": "SaaS",
+      "tags": [
+        "SaaS",
+        "Template",
+        "Landing"
+      ],
+      "access": [
+        "Paid"
+      ],
+      "creator": "GrabUI",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://grabui.com/library/flowcontent",
+      "why": "SaaS conversion-ready website template",
+      "source": "weekday digest 2026-09-16 \u2014 eamin_ux",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-16",
+      "addedOrder": 358,
+      "harvest_posts": [
+        "https://x.com/eamin_ux/status/2099891102140535186"
+      ],
+      "image_method": "screenshot"
     }
   ],
   "image_capture": {
-    "captured": 314,
+    "captured": 341,
     "og-captured": 6,
     "blocked": 1,
-    "at": "2026-09-15T07:46:56Z",
-    "batch": "weekday-digest-2026-09-15"
+    "at": "2026-09-16T07:50:41Z"
   },
   "paste_ingest": {
     "added_ids": [
@@ -8632,76 +9413,60 @@
     ]
   },
   "weekday_digest": {
-    "batch": "weekday-digest-2026-09-15",
+    "batch": "weekday-digest-2026-09-16",
     "added_ids": [
-      "liquid-glass-samasante",
-      "screenshot-to-code",
-      "uisfx",
-      "libraries-dev-orbs",
-      "typeface-fyi",
-      "vibeui",
-      "designmd-store",
-      "transitions-dev",
-      "astryx",
-      "originkit",
-      "beautiful-ui",
-      "metalforge",
-      "oneworks-avatars",
-      "spectrum-footers",
-      "spectrum-charts",
-      "oss-perks",
-      "shadcn-io",
-      "meshgradient-in",
-      "paper-shaders",
-      "useanimations",
-      "lightugc",
-      "circle-loaders",
-      "openui",
-      "gallereee",
-      "fuse-framer",
-      "interfaces-dev",
-      "opensource-ui",
-      "nebula-sans",
-      "product-now",
-      "link-lowdown",
-      "curation-systems",
-      "rune-icons",
-      "typescope",
-      "great-ui",
-      "vertically-works",
-      "sona-ui",
-      "drawably",
-      "blocks-so",
-      "vessa",
-      "morphicons",
-      "rubik-sachi",
-      "ascii-magic",
-      "shift-graphics",
-      "appicons-store",
-      "cuelume",
-      "threeui",
-      "light-stroke-rail",
-      "awesome-design-resources-list"
+      "colir",
+      "bloub",
+      "micrograph-studio",
+      "holosticker",
+      "mockit",
+      "animos",
+      "shots",
+      "diffui",
+      "modulify-logo-maker",
+      "font-in-logo",
+      "logo-to-use",
+      "preview-kit",
+      "iconly",
+      "skills-better-ui",
+      "skills-emil-design-eng",
+      "lucide-icons",
+      "lucide-animated",
+      "moving-icons",
+      "iconsax",
+      "isocons",
+      "nucleo",
+      "calligraph",
+      "elyx",
+      "sceneai",
+      "design-gems",
+      "sonaui-com",
+      "grabui-flowcontent"
     ],
     "source_posts": [
-      "https://x.com/DevItaliya22/status/2099437348513857680",
-      "https://x.com/DevItaliya22/status/2099506798139244839",
-      "https://x.com/ImranUxi/status/2099509008252149919",
-      "https://x.com/apvarun/status/2099736736880529680",
-      "https://x.com/arihantCodes/status/2099508522484679158",
-      "https://x.com/arihantCodes/status/2099508920926777518",
-      "https://x.com/codebydinil/status/2099719772871209209",
-      "https://x.com/csaba_kissi/status/2099748071399903247",
-      "https://x.com/daveomeizaozi/status/2099712670123356279",
-      "https://x.com/eamin_ux/status/2099476853283324390",
-      "https://x.com/letcontactabhi/status/2099399151499026521",
-      "https://x.com/neropursue/status/2099385518848987268",
-      "https://x.com/neropursue/status/2099449677556977844",
-      "https://x.com/neropursue/status/2099761096772964794",
-      "https://x.com/noahelhadedy/status/2099748240207888432",
-      "https://x.com/stringsaeed/status/2099724538980470823"
+      "https://x.com/CJfromJBW/status/2099836234054951092",
+      "https://x.com/Manixh02/status/2100046245322731952",
+      "https://x.com/Manixh02/status/2100119400078889306",
+      "https://x.com/VullnetAdemaj/status/2099781233622274110",
+      "https://x.com/ah4alt/status/2099909396805611695",
+      "https://x.com/arihantCodes/status/2099845122884272426",
+      "https://x.com/codebydinil/status/2099785510134964340",
+      "https://x.com/csaba_kissi/status/2100106901824664063",
+      "https://x.com/eamin_ux/status/2099891102140535186",
+      "https://x.com/k2sbhai/status/2099787581689049446",
+      "https://x.com/neropursue/status/2099827788521889995",
+      "https://x.com/noahelhadedy/status/2099955937276748024"
     ],
-    "note": "Since last digest 2026-09-14; watchlist + open discovery; dump-all destinations; skipped AI free-token/telegram/API-key posts and known dupes."
+    "new_count": 27,
+    "at": "2026-09-16T07:48:24Z",
+    "watchlist_adds": [
+      "VullnetAdemaj"
+    ],
+    "thumbs": {
+      "captured": 27,
+      "og_captured": 0,
+      "blocked": 0
+    }
   },
   "designer_list_ingest": {
     "batch": "designer-list-paste-2026-09-11",
