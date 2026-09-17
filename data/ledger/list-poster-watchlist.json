@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16",
+  "updated": "2026-09-17",
   "exclusive_allowlist": false,
   "note": "Core handles are priority; also discover and add new list-droppers. Dump all links from list posts.",
   "handles": [
@@ -48,6 +48,10 @@
     "apvarun",
     "codebydinil",
     "VullnetAdemaj",
-    "suriadesign"
+    "suriadesign",
+    "TeddyinMedia",
+    "FareaNFts",
+    "cviklihamar",
+    "abhishvekcn"
   ]
 }

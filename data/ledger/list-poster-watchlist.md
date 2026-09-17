@@ -55,3 +55,7 @@ Core handles are priority; also discover and add new list-droppers. Dump all lin
 - @codebydinil
 - @VullnetAdemaj
 - @suriadesign
+- @TeddyinMedia (added 2026-09-17 digest)
+- @FareaNFts (added 2026-09-17 digest)
+- @cviklihamar (added 2026-09-17 digest)
+- @abhishvekcn (added 2026-09-17 digest)
