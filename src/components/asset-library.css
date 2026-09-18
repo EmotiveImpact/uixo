@@ -1404,3 +1404,48 @@
   position: relative;
   z-index: 1;
 }
+
+
+/* Catalogue inventory keeps discovery honest: unavailable asset types stay visible but inert. */
+.asset-library-inventory {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin: 10px 0 18px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.asset-library-inventory > span {
+  margin-right: 3px;
+  letter-spacing: 0.02em;
+}
+.asset-library .asset-library-inventory button {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 7px;
+  background: #111114;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.light .asset-library .asset-library-inventory button {
+  background: var(--muted);
+}
+.asset-library .asset-library-inventory button[aria-pressed='true'] {
+  background: var(--foreground);
+  color: var(--background);
+}
+.asset-library .asset-library-inventory button:disabled {
+  opacity: 0.34;
+  cursor: default;
+}
+.asset-library .asset-library-inventory button strong {
+  color: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.72;
+}
