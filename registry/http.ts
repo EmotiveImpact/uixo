@@ -83,6 +83,7 @@ export function createRegistryHandler(
         search: ['GET'],
         asset: ['GET'],
         providers: ['GET'],
+        inventory: ['GET'],
         status: ['GET'],
         compatibility: ['POST'],
         resolve: ['POST'],
@@ -139,6 +140,7 @@ export function createRegistryHandler(
       } else if (action === 'asset')
         result = await registry.inspect(identifier(url.searchParams.get('id')));
       else if (action === 'providers') result = { items: await registry.providers() };
+      else if (action === 'inventory') result = await registry.inventory();
       else if (action === 'status') {
         const stats = await registry.stats();
         const { pending, discoveries, ...publicStats } = stats;
