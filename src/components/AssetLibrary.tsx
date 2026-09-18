@@ -5,12 +5,19 @@ import {
   EMPTY_ASSET_QUERY,
   assetHref,
   catalogueResult,
+  inventoryResult,
   registryRequest,
   safeAssetUrl,
 } from '../lib/asset-library';
 import { AssetDetail } from './AssetDetail';
 import { AssetPreview } from './AssetPreview';
-import type { AssetQuery, Catalogue, ProviderRecord, RegistryStatus } from '../lib/asset-library';
+import type {
+  AssetQuery,
+  Catalogue,
+  CatalogueInventory,
+  ProviderRecord,
+  RegistryStatus,
+} from '../lib/asset-library';
 
 type Props = {
   query: AssetQuery;
@@ -25,6 +32,19 @@ type Props = {
 };
 
 const ASSET_PAGE_SIZE = 24;
+const KIND_OPTIONS = [
+  { id: 'component', label: 'Components' },
+  { id: 'icon-pack', label: 'Icon packs' },
+  { id: 'font', label: 'Fonts' },
+  { id: 'template', label: 'Templates' },
+] as const;
+const FRAMEWORK_OPTIONS = [
+  { id: 'react', label: 'React' },
+  { id: 'vue', label: 'Vue' },
+  { id: 'html', label: 'HTML' },
+  { id: 'agnostic', label: 'Framework agnostic' },
+] as const;
+const FORMAT_OPTIONS = ['svg', 'tsx', 'jsx', 'css', 'woff2'] as const;
 
 function paginationItems(currentPage: number, totalPages: number): Array<number | 'ellipsis'> {
   if (totalPages <= 7) return Array.from({ length: totalPages }, (_, index) => index + 1);
@@ -41,6 +61,7 @@ function paginationItems(currentPage: number, totalPages: number): Array<number 
 export function AssetLibrary({ query, navigate, density, discovery, assetSaves }: Props) {
   const [providers, setProviders] = useState<ProviderRecord[]>([]);
   const [status, setStatus] = useState<RegistryStatus | null>(null);
+  const [inventory, setInventory] = useState<CatalogueInventory | null>(null);
   const [result, setResult] = useState<Catalogue | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -60,6 +81,10 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
       .then((value) => {
         if (value.stats && typeof value.readOnly === 'boolean') setStatus(value);
       })
+      .catch(() => {});
+    void registryRequest<unknown>('inventory', { signal: abort.signal })
+      .then(inventoryResult)
+      .then(setInventory)
       .catch(() => {});
     return () => abort.abort();
   }, [retry]);
@@ -120,6 +145,10 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
     retry,
   ]);
   const nameOf = (id: string) => providers.find((p) => p.id === id)?.name ?? id;
+  const inventoryCount = (
+    facet: 'kinds' | 'providers' | 'frameworks' | 'formats' | 'prices' | 'categories',
+    id: string,
+  ) => inventory?.[facet].find((entry) => entry.id === id)?.count ?? 0;
   function toggleSave(id: string) {
     if (!saved.includes(id) && saved.length >= 200) {
       setNotice('This browser list holds 200 assets. Remove one before saving another.');
@@ -191,6 +220,25 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
           </button>
         )}
       </div>
+      {view !== 'sources' && inventory && (
+        <div className="asset-library-inventory" aria-label="Catalogue inventory">
+          <span>{inventory.total} indexed</span>
+          {KIND_OPTIONS.map((option) => {
+            const count = inventoryCount('kinds', option.id);
+            return (
+              <button
+                key={option.id}
+                type="button"
+                disabled={count === 0}
+                aria-pressed={kind === option.id}
+                onClick={() => filter('kind', kind === option.id ? '' : option.id)}
+              >
+                {option.label} <strong>{count}</strong>
+              </button>
+            );
+          })}
+        </div>
+      )}
       <p className="asset-library-status">
         {status
           ? status.readOnly
@@ -229,11 +277,15 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
               <label>
                 Type
                 <select value={kind} onChange={(e) => filter('kind', e.target.value)}>
-                  <option value="">All asset types</option>
-                  <option value="component">Components</option>
-                  <option value="icon-pack">Icon packs</option>
-                  <option value="font">Fonts</option>
-                  <option value="template">Templates</option>
+                  <option value="">All asset types{inventory ? ` (${inventory.total})` : ''}</option>
+                  {KIND_OPTIONS.map((option) => {
+                    const count = inventoryCount('kinds', option.id);
+                    return (
+                      <option key={option.id} value={option.id} disabled={Boolean(inventory) && count === 0}>
+                        {option.label}{inventory ? ` (${count})` : ''}
+                      </option>
+                    );
+                  })}
                 </select>
               </label>
               {kind === 'component' && (
@@ -241,11 +293,18 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                   Component category
                   <select value={category} onChange={(e) => filter('category', e.target.value)}>
                     <option value="">All components</option>
-                    {COMPONENT_CATEGORIES.map((entry) => (
-                      <option key={entry.id} value={entry.id}>
-                        {entry.label}
-                      </option>
-                    ))}
+                    {COMPONENT_CATEGORIES.map((entry) => {
+                      const count = inventoryCount('categories', entry.id);
+                      return (
+                        <option
+                          key={entry.id}
+                          value={entry.id}
+                          disabled={Boolean(inventory) && count === 0}
+                        >
+                          {entry.label}{inventory ? ` (${count})` : ''}
+                        </option>
+                      );
+                    })}
                   </select>
                 </label>
               )}
@@ -254,8 +313,8 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                 <select value={provider} onChange={(e) => filter('provider', e.target.value)}>
                   <option value="">Every source</option>
                   {providers.map((p) => (
-                    <option key={p.id} value={p.id}>
-                      {p.name}
+                    <option key={p.id} value={p.id} disabled={p.assetCount === 0}>
+                      {p.name} ({p.assetCount})
                     </option>
                   ))}
                 </select>
@@ -264,20 +323,28 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                 Framework
                 <select value={framework} onChange={(e) => filter('framework', e.target.value)}>
                   <option value="">Any framework</option>
-                  <option value="react">React</option>
-                  <option value="vue">Vue</option>
-                  <option value="agnostic">Framework agnostic</option>
+                  {FRAMEWORK_OPTIONS.map((option) => {
+                    const count = inventoryCount('frameworks', option.id);
+                    return (
+                      <option key={option.id} value={option.id} disabled={Boolean(inventory) && count === 0}>
+                        {option.label}{inventory ? ` (${count})` : ''}
+                      </option>
+                    );
+                  })}
                 </select>
               </label>
               <label>
                 Format
                 <select value={format} onChange={(e) => filter('format', e.target.value)}>
                   <option value="">Any format</option>
-                  {['svg', 'tsx', 'jsx', 'css', 'woff2'].map((f) => (
-                    <option key={f} value={f}>
-                      {f.toUpperCase()}
-                    </option>
-                  ))}
+                  {FORMAT_OPTIONS.map((f) => {
+                    const count = inventoryCount('formats', f);
+                    return (
+                      <option key={f} value={f} disabled={Boolean(inventory) && count === 0}>
+                        {f.toUpperCase()}{inventory ? ` (${count})` : ''}
+                      </option>
+                    );
+                  })}
                 </select>
               </label>
               <label className="asset-library-checkbox">
@@ -286,7 +353,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                   checked={commercial}
                   onChange={(e) => filter('commercial', e.target.checked)}
                 />{' '}
-                Commercial-use evidence
+                Commercial-use evidence{inventory ? ` (${inventory.commercialUse})` : ''}
               </label>
               <button onClick={() => navigate({ view }, true)}>Reset filters</button>
             </div>
