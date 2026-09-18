@@ -1,37 +1,35 @@
 # UIXO Candidates
 
-Updated: 2026-09-16 | total: 349 | new this harvest: 1
+Updated: 2026-09-18 | total: 383 | new this harvest: 12
 
 ## Counts by category
 
-- Inspiration: 113
-- Components: 54
-- Templates: 43
-- Icons: 38
-- UI libraries: 37
-- Marketplace: 21
-- Backgrounds: 13
+- Inspiration: 116
+- Components: 61
+- Templates: 48
+- UI libraries: 47
+- Icons: 40
+- Marketplace: 22
+- Backgrounds: 15
 - Fonts: 12
-- Illustrations: 11
-- Mockups: 7
+- Illustrations: 12
+- Mockups: 10
 
 ## Image status
 
 - blocked: 1
-- captured: 342
-- og-captured: 6
-- pending: 0
 
-## New this run (suriadesign list-drop + neropursue verify)
+## New this run (weekday digest 2026-09-18)
 
-- **UImaxxing** (`uimaxx`) — UI libraries/React — https://uimaxx.ing/ — suriadesign list-drop — `captured`
-
-## Already present (suriadesign)
-
-- bencho, ui-halaska, libraries-dev, aicss, beui, built-by-designers, beautiful-ui
-- kobra input-otp — already live `resources.json` (`kobra`)
-
-## Already present (neropursue — morning digest verify)
-
-- inspora, loadmo, logosystem, mobbin, supahero, page-flows, collect-ui, siteinspire, 404s
-
+- **Empty States** (`spectrum-empty-states`) — Components — https://ui.spectrumhq.in/blocks/empty-states
+- **Reelfolio** (`reelfolio`) — Templates — https://reelfolio.io/
+- **CSS Toggles** (`css-toggles-colorion`) — Components — https://toggles.colorion.co/
+- **Ant Design** (`ant-design`) — UI libraries — https://ant.design/
+- **daisyUI** (`daisyui`) — UI libraries — https://daisyui.com/
+- **React Aria Components** (`react-aria`) — UI libraries — https://react-spectrum.adobe.com/react-aria/
+- **Reshaped** (`reshaped`) — UI libraries — https://www.reshaped.so/
+- **Venstyler** (`venstyler`) — UI libraries — https://www.venstyler.com/
+- **Scritto** (`scritto`) — Components — https://scrit.to/
+- **DiceBear** (`dicebear`) — Illustrations — https://www.dicebear.com/
+- **Fluid Functionalism** (`fluid-functionalism`) — Components — https://fluidfunctionalism.com/
+- **shadcn/lint** (`shadcn-lint`) — Components — https://github.com/shadcn-ui/lint

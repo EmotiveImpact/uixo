@@ -1,12 +1,10 @@
 # List-poster watchlist
 
-Updated: 2026-09-16
+Updated: 2026-09-18
 
-Exclusive allowlist: False
+Priority seed (not exclusive) — also discover new list-droppers.
 
-Core handles are priority; also discover and add new list-droppers. Dump all links from list posts.
-
-## Handles (priority)
+## Priority handles
 
 - @walebuilds_
 - @rkant7
@@ -55,7 +53,15 @@ Core handles are priority; also discover and add new list-droppers. Dump all lin
 - @codebydinil
 - @VullnetAdemaj
 - @suriadesign
-- @TeddyinMedia (added 2026-09-17 digest)
-- @FareaNFts (added 2026-09-17 digest)
-- @cviklihamar (added 2026-09-17 digest)
-- @abhishvekcn (added 2026-09-17 digest)
+- @TeddyinMedia
+- @FareaNFts
+- @cviklihamar
+- @abhishvekcn
+- @codestirring
+- @jarradgrigg
+- @Hartdrawss
+- @AAishakar
+
+## Notes
+
+Core handles are priority; also discover and add new list-droppers. Dump all links from list posts.
