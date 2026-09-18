@@ -50,6 +50,17 @@ export type ProviderRecord = {
   adapter?: string;
 };
 export type Catalogue = { items: AssetRecord[]; total: number; nextOffset: number | null };
+export type InventoryBucket = { id: string; count: number };
+export type CatalogueInventory = {
+  total: number;
+  kinds: InventoryBucket[];
+  providers: InventoryBucket[];
+  frameworks: InventoryBucket[];
+  formats: InventoryBucket[];
+  prices: InventoryBucket[];
+  categories: InventoryBucket[];
+  commercialUse: number;
+};
 export type RegistryStatus = {
   storage: string;
   readOnly: boolean;
@@ -172,6 +183,30 @@ export function catalogueResult(value: unknown): Catalogue {
       throw new Error('An asset record is incomplete. Please report this registry response.');
   }
   return result as Catalogue;
+}
+export function inventoryResult(value: unknown): CatalogueInventory {
+  const result = value as Partial<CatalogueInventory> | null;
+  const buckets = ['kinds', 'providers', 'frameworks', 'formats', 'prices', 'categories'] as const;
+  if (
+    !result ||
+    !Number.isSafeInteger(result.total) ||
+    result.total! < 0 ||
+    !Number.isSafeInteger(result.commercialUse) ||
+    result.commercialUse! < 0 ||
+    buckets.some(
+      (key) =>
+        !Array.isArray(result[key]) ||
+        result[key]!.some(
+          (entry) =>
+            !entry ||
+            typeof entry.id !== 'string' ||
+            !Number.isSafeInteger(entry.count) ||
+            entry.count < 0,
+        ),
+    )
+  )
+    throw new Error('The registry returned invalid inventory metadata.');
+  return result as CatalogueInventory;
 }
 export async function registryRequest<T>(
   action: string,
