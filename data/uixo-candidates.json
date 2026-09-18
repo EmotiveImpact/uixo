@@ -1,11 +1,11 @@
 {
   "updated": "2026-09-18",
-  "updated_note": "weekday digest 2026-09-18: +12 candidates + thumbs (12 screenshot / 0 og / 0 blocked)",
+  "updated_note": "Red verified UI libs: +3 candidates (canvas-ui, spell-ui, animate-ui) + thumbs (2 screenshot / 1 og)",
   "counts_by_category": {
     "Inspiration": 116,
-    "Components": 61,
+    "Components": 63,
     "Templates": 48,
-    "UI libraries": 47,
+    "UI libraries": 48,
     "Icons": 40,
     "Marketplace": 22,
     "Backgrounds": 15,
@@ -14,13 +14,13 @@
     "Mockups": 10
   },
   "totals": {
-    "candidates": 383,
-    "needs_review": 305,
-    "new_this_run": 12,
-    "already_present": 0,
+    "candidates": 386,
+    "needs_review": 308,
+    "new_this_run": 3,
+    "already_present": 13,
     "skipped_dupes_existing_site": 0,
-    "image_captured": 376,
-    "image_og_captured": 6,
+    "image_captured": 378,
+    "image_og_captured": 7,
     "image_blocked": 1,
     "image_pending": 0
   },
@@ -10459,6 +10459,94 @@
       ],
       "addedOrder": 393,
       "image_method": "screenshot"
+    },
+    {
+      "id": "canvas-ui",
+      "name": "Canvas UI",
+      "category": "UI libraries",
+      "subcategory": "Components",
+      "tags": [
+        "WebGL",
+        "WebGPU",
+        "Creative",
+        "Components",
+        "React"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "React",
+        "Web",
+        "WebGL",
+        "WebGPU"
+      ],
+      "url": "https://canvasui.dev/",
+      "why": "Creative components, in a new dimension — WebGL/WebGPU creative components",
+      "creator": "Canvas UI",
+      "source": "Red verified UI libs list",
+      "needs_review": true,
+      "image_status": "captured",
+      "image_method": "screenshot",
+      "ingest_batch": "red-verified-ui-libs-2026-09-18",
+      "addedOrder": 394
+    },
+    {
+      "id": "spell-ui",
+      "name": "Spell UI",
+      "category": "Components",
+      "subcategory": "UI components",
+      "tags": [
+        "React",
+        "Tailwind",
+        "Design Engineers",
+        "Components"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "React",
+        "Web"
+      ],
+      "url": "https://spell.sh/",
+      "why": "Refined UI for Design Engineers",
+      "creator": "Spell UI",
+      "source": "Red verified UI libs list",
+      "needs_review": true,
+      "image_status": "captured",
+      "image_method": "screenshot",
+      "ingest_batch": "red-verified-ui-libs-2026-09-18",
+      "addedOrder": 395
+    },
+    {
+      "id": "animate-ui",
+      "name": "Animate UI",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "Motion",
+        "shadcn",
+        "React",
+        "Animation",
+        "Tailwind"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "React",
+        "Web"
+      ],
+      "url": "https://animate-ui.com",
+      "why": "Animate your UI with smooth style — Motion/shadcn animated components",
+      "creator": "Animate UI",
+      "source": "Red verified UI libs list",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "image_method": "og",
+      "ingest_batch": "red-verified-ui-libs-2026-09-18",
+      "addedOrder": 396
     }
   ],
   "image_capture": {
@@ -10768,5 +10856,32 @@
     "neropursue_destinations": 9,
     "new": 1,
     "already": 17
+  },
+  "red_verified_ui_libs_2026_09_18": {
+    "new": [
+      "canvas-ui",
+      "spell-ui",
+      "animate-ui"
+    ],
+    "already_present": [
+      "rareui",
+      "react-bits",
+      "beui",
+      "bencho",
+      "microkit",
+      "aceternity",
+      "beautiful-ui",
+      "transitions-dev",
+      "originkit",
+      "heroui",
+      "magic-ui",
+      "untitled-ui",
+      "reui"
+    ],
+    "thumbs": {
+      "captured": 2,
+      "og_captured": 1,
+      "blocked": 0
+    }
   }
 }
