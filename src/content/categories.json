@@ -16,14 +16,7 @@
   {
     "name": "UI libraries",
     "icon": "box",
-    "sub": [
-      "React",
-      "Vue",
-      "CSS",
-      "AI tools",
-      "React Native",
-      "Animation"
-    ]
+    "sub": ["React", "Vue", "CSS", "AI tools", "React Native", "Animation"]
   },
   {
     "name": "Templates",
@@ -45,59 +38,27 @@
   {
     "name": "Icons",
     "icon": "shapes",
-    "sub": [
-      "Outline",
-      "Solid",
-      "3D",
-      "Vector",
-      "CSS",
-      "Material",
-      "Animated",
-      "Packs"
-    ]
+    "sub": ["Outline", "Solid", "3D", "Vector", "CSS", "Material", "Animated", "Packs"]
   },
   {
     "name": "Backgrounds",
     "icon": "image",
-    "sub": [
-      "Gradients",
-      "Textures",
-      "Shaders",
-      "Colour"
-    ]
+    "sub": ["Gradients", "Textures", "Shaders", "Colour"]
   },
   {
     "name": "Illustrations",
     "icon": "pen-tool",
-    "sub": [
-      "Vector",
-      "3D",
-      "Hand-drawn",
-      "AI",
-      "Customisable",
-      "Characters"
-    ]
+    "sub": ["Vector", "3D", "Hand-drawn", "AI", "Customisable", "Characters"]
   },
   {
     "name": "Fonts",
     "icon": "type",
-    "sub": [
-      "Sans serif",
-      "Serif",
-      "Display",
-      "Tools"
-    ]
+    "sub": ["Sans serif", "Serif", "Display", "Tools"]
   },
   {
     "name": "Mockups",
     "icon": "rectangle-vertical",
-    "sub": [
-      "Devices",
-      "Branding",
-      "Packaging",
-      "Tools",
-      "Mobile"
-    ]
+    "sub": ["Devices", "Branding", "Packaging", "Tools", "Mobile"]
   },
   {
     "name": "Inspiration",
@@ -121,13 +82,6 @@
   {
     "name": "Marketplace",
     "icon": "store",
-    "sub": [
-      "Design assets",
-      "UI kits",
-      "Directories",
-      "AI skills",
-      "Figma",
-      "Stock"
-    ]
+    "sub": ["Design assets", "UI kits", "Directories", "AI skills", "Figma", "Stock"]
   }
 ]

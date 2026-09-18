@@ -277,12 +277,19 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
               <label>
                 Type
                 <select value={kind} onChange={(e) => filter('kind', e.target.value)}>
-                  <option value="">All asset types{inventory ? ` (${inventory.total})` : ''}</option>
+                  <option value="">
+                    All asset types{inventory ? ` (${inventory.total})` : ''}
+                  </option>
                   {KIND_OPTIONS.map((option) => {
                     const count = inventoryCount('kinds', option.id);
                     return (
-                      <option key={option.id} value={option.id} disabled={Boolean(inventory) && count === 0}>
-                        {option.label}{inventory ? ` (${count})` : ''}
+                      <option
+                        key={option.id}
+                        value={option.id}
+                        disabled={Boolean(inventory) && count === 0}
+                      >
+                        {option.label}
+                        {inventory ? ` (${count})` : ''}
                       </option>
                     );
                   })}
@@ -301,7 +308,8 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                           value={entry.id}
                           disabled={Boolean(inventory) && count === 0}
                         >
-                          {entry.label}{inventory ? ` (${count})` : ''}
+                          {entry.label}
+                          {inventory ? ` (${count})` : ''}
                         </option>
                       );
                     })}
@@ -326,8 +334,13 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                   {FRAMEWORK_OPTIONS.map((option) => {
                     const count = inventoryCount('frameworks', option.id);
                     return (
-                      <option key={option.id} value={option.id} disabled={Boolean(inventory) && count === 0}>
-                        {option.label}{inventory ? ` (${count})` : ''}
+                      <option
+                        key={option.id}
+                        value={option.id}
+                        disabled={Boolean(inventory) && count === 0}
+                      >
+                        {option.label}
+                        {inventory ? ` (${count})` : ''}
                       </option>
                     );
                   })}
@@ -341,7 +354,8 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                     const count = inventoryCount('formats', f);
                     return (
                       <option key={f} value={f} disabled={Boolean(inventory) && count === 0}>
-                        {f.toUpperCase()}{inventory ? ` (${count})` : ''}
+                        {f.toUpperCase()}
+                        {inventory ? ` (${count})` : ''}
                       </option>
                     );
                   })}

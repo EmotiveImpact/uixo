@@ -39,7 +39,10 @@ test('migration and captured-source seed are repeatable; counts reflect actual r
     const inventory = await registry.inventory();
     assert.equal(inventory.total, 264);
     assert.ok(inventory.kinds.find((entry) => entry.id === 'component')!.count > 0);
-    assert.equal(inventory.kinds.find((entry) => entry.id === 'font'), undefined);
+    assert.equal(
+      inventory.kinds.find((entry) => entry.id === 'font'),
+      undefined,
+    );
     assert.ok(inventory.frameworks.find((entry) => entry.id === 'react')!.count > 0);
     assert.ok(inventory.categories.find((entry) => entry.id === 'buttons')!.count > 0);
     assert.ok(inventory.commercialUse > 0);

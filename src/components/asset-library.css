@@ -1405,7 +1405,6 @@
   z-index: 1;
 }
 
-
 /* Catalogue inventory keeps discovery honest: unavailable asset types stay visible but inert. */
 .asset-library-inventory {
   display: flex;
