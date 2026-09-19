@@ -63,6 +63,7 @@ jobs:
 
       - name: Browser and network acceptance with an isolated registry
         run: |
+          set -o pipefail
           mkdir -p test-results/intelligence
           node --experimental-strip-types tools/registry-dev.ts --memory --dev-curator > test-results/intelligence/registry.log 2>&1 &
           REGISTRY_PID=$!
