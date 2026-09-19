@@ -1,6 +1,7 @@
+import { SourceDirectory } from './SourceDirectory';
 import { ArrowLeft, ArrowRight, ArrowUpRight, RefreshCw } from 'lucide-react';
 import { safeAssetUrl } from '../lib/asset-library';
-import type { AssetQuery, ProviderRecord } from '../lib/asset-library';
+import type { AssetQuery } from '../lib/asset-library';
 import type { CoverageReport, SourceHealth } from '../../shared/intelligence';
 import { RegistryOperations } from './RegistryOperations';
 import { AssetCollections } from './AssetCollections';
@@ -153,45 +154,7 @@ function Health({ query, navigate }: IntelligenceProps) {
   );
 }
 function Sources(props: IntelligenceProps) {
-  const { query, navigate } = props;
-  const remote = useRegistryData<{ items: ProviderRecord[] }>('providers');
-  if (query.provider) return <SourceProfile {...props} />;
-  return (
-    <RegistryState {...remote}>
-      <div className="ri-heading">
-        <div>
-          <span className="ri-eyebrow">SOURCE INTELLIGENCE</span>
-          <h2>Understand the source, not just the count.</h2>
-          <p>Inspect provenance, preview coverage and declared dependencies before choosing.</p>
-        </div>
-      </div>
-      <div className="ri-source-grid">
-        {remote.data?.items.map((p) => (
-          <article className="ri-source" key={p.id}>
-            <span className="ri-eyebrow">APPROVED PROVIDER</span>
-            <h3>{p.name}</h3>
-            <p>{p.rationale}</p>
-            <strong>
-              {p.assetCount} <small>published assets</small>
-            </strong>
-            <div className="ri-actions">
-              <RegistryLink
-                query={query}
-                navigate={navigate}
-                changes={{ view: 'sources', provider: p.id }}
-              >
-                View evidence <ArrowRight size={14} />
-              </RegistryLink>
-              <a href={safeAssetUrl(p.url)} target="_blank" rel="noopener noreferrer">
-                Original source <ArrowUpRight size={14} />
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
-      {!remote.loading && !remote.data?.items.length && <p>No approved sources are available.</p>}
-    </RegistryState>
-  );
+  return props.query.provider ? <SourceProfile {...props} /> : <SourceDirectory {...props} />;
 }
 function SourceProfile({ query, navigate, isCurator }: IntelligenceProps) {
   const remote = useRegistryData<SourceHealth>('source-health', { provider: query.provider });

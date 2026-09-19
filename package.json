@@ -27,13 +27,14 @@
     "db:schema": "psql \"$DATABASE_URL\" -v ON_ERROR_STOP=1 -f db/schema.sql",
     "registry:dev": "node --experimental-strip-types tools/registry-dev.ts",
     "registry:deps": "npm ci --prefix registry --ignore-scripts",
-    "registry:test": "node --experimental-strip-types --test tests/registry/core.node.ts tests/registry/http.node.ts tests/registry/intelligence.node.ts services/eve/lib/client.node.ts",
+    "registry:test": "node --experimental-strip-types --test tests/registry/core.node.ts tests/registry/http.node.ts tests/registry/intelligence.node.ts services/eve/lib/client.node.ts tests/registry/discovery.node.ts",
     "registry:test:mcp": "node --experimental-strip-types --test registry/tests/mcp.node.ts",
     "registry:verify": "node tools/verify-registry.mjs",
     "registry:mcp": "node --experimental-strip-types registry/stdio.ts",
     "registry:db": "node --experimental-strip-types tools/registry-db.ts",
     "registry:sync": "node --env-file=.env.local --experimental-strip-types tools/registry-db.ts sync --allow-remote",
-    "demos:build": "node scripts/verify-live-demos.mjs && npm ci --prefix live-demos --ignore-scripts && vite build --config live-demos/vite.config.mjs"
+    "demos:build": "node scripts/verify-live-demos.mjs && npm ci --prefix live-demos --ignore-scripts && vite build --config live-demos/vite.config.mjs",
+    "registry:verify-release": "node --experimental-strip-types registry/verify-release.ts"
   },
   "dependencies": {
     "@neondatabase/auth": "^0.5.0-beta",

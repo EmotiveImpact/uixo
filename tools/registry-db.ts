@@ -1,11 +1,25 @@
+import { publishNewStarterCollections } from '../registry/release-collections.ts';
+import { intelligenceReadiness } from '../registry/readiness.ts';
 import { seedCollectionDrafts } from '../registry/collections.ts';
 import { migrate, sqliteDatabase } from '../registry/database.ts';
 import { Registry } from '../registry/service.ts';
 import { seedCaptured, syncCaptured } from '../registry/bootstrap.ts';
 import { enqueue, runJob } from '../registry/jobs.ts';
 const [command, provider] = process.argv.slice(2);
-if (!['migrate', 'seed', 'sync', 'index', 'collections-seed'].includes(command))
-  throw new Error('Usage: registry-db.ts migrate|seed|sync|index|collections-seed [provider-id]');
+if (
+  ![
+    'migrate',
+    'seed',
+    'sync',
+    'index',
+    'collections-seed',
+    'readiness',
+    'collections-publish-new',
+  ].includes(command)
+)
+  throw new Error(
+    'Usage: registry-db.ts migrate|seed|sync|index|collections-seed|readiness|collections-publish-new [provider-id]',
+  );
 if (process.env.UIXO_DATABASE_URL && !process.argv.includes('--allow-remote'))
   throw new Error(
     'Remote database writes require --allow-remote. Use a dedicated registry development database first.',
@@ -18,6 +32,16 @@ try {
   if (command === 'migrate') {
     await migrate(db);
     console.log('Registry migration complete.');
+  }
+  if (command === 'readiness') console.log(JSON.stringify(await intelligenceReadiness(registry)));
+  if (command === 'collections-publish-new') {
+    const actor = process.env.UIXO_OPERATOR_ID || '';
+    const reason = process.env.UIXO_EDITORIAL_REASON || '';
+    if (!process.argv.includes('--publish-reviewed'))
+      throw new Error(
+        'Explicit --publish-reviewed acknowledgement, UIXO_OPERATOR_ID and UIXO_EDITORIAL_REASON are required. Existing drafts and withdrawals are never overwritten.',
+      );
+    console.log(JSON.stringify(await publishNewStarterCollections(registry, actor, reason)));
   }
   if (command === 'collections-seed')
     console.log(JSON.stringify(await seedCollectionDrafts(registry)));

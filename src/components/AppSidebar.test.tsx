@@ -19,7 +19,7 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-function renderSidebar(onAssets: boolean) {
+function renderSidebar(onAssets: boolean, curator = false) {
   render(
     <AnimatedSidebarProvider>
       <AppSidebar
@@ -36,6 +36,8 @@ function renderSidebar(onAssets: boolean) {
         onChooseSub={vi.fn()}
         onSubmit={vi.fn()}
         onAssets={onAssets}
+        registryCurator={curator}
+        onChooseAssetView={vi.fn()}
         onChooseAssetKind={onAssets ? vi.fn() : undefined}
         onChooseAssetCategory={onAssets ? vi.fn() : undefined}
         assetProviders={
@@ -66,31 +68,41 @@ function renderSidebar(onAssets: boolean) {
 }
 
 describe('AppSidebar catalogue context', () => {
-  it('shows asset types without sources or website categories on asset pages', () => {
+  it('exposes Explore destinations without mixing source rows into asset categories', () => {
     renderSidebar(true);
 
     expect(screen.getByText('Asset types')).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Buttons' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Forms' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Navigation' })).toBeTruthy();
-    expect(screen.queryByText('Sources')).toBeNull();
+    expect(screen.getByRole('button', { name: 'Sources' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'All assets' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Asset collections' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Connect your AI agent' })).toBeTruthy();
     expect(screen.queryByText('Magic UI')).toBeNull();
     expect(screen.queryByText('Lucide')).toBeNull();
     expect(screen.queryByText('All websites')).toBeNull();
-    expect(screen.queryByText('All assets')).toBeNull();
-    expect(screen.queryByText('Collections')).toBeNull();
     expect(screen.queryByText('Website categories')).toBeNull();
     expect(screen.queryByText('UI libraries')).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Operations' })).toBeNull();
   });
 
-  it('keeps the website category tree on website pages', () => {
+  it('keeps website categories and makes asset discovery reachable from website pages', () => {
     renderSidebar(false);
 
     expect(screen.getByText('Categories')).toBeTruthy();
     expect(screen.getByText('UI libraries')).toBeTruthy();
-    expect(screen.queryByText('All websites')).toBeNull();
-    expect(screen.queryByText('All assets')).toBeNull();
-    expect(screen.queryByText('Collections')).toBeNull();
-    expect(screen.queryByText('Sources')).toBeNull();
+    expect(screen.getByRole('button', { name: 'All assets' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Asset collections' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Sources' })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: 'Registry health' })).toBeNull();
+  });
+
+  it('exposes operator workspaces to curator sessions without adding them for visitors', () => {
+    renderSidebar(true, true);
+
+    for (const name of ['Registry health', 'Operations', 'Editorial', 'Indexing']) {
+      expect(screen.getByRole('button', { name })).toBeTruthy();
+    }
   });
 });

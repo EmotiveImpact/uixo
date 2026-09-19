@@ -6,7 +6,9 @@ import { fileURLToPath } from 'node:url';
 const root = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   root,
-  base: '/live-demos/',
+  // Vite uses import.meta.url for lazy preloads with a relative base. A provider
+  // <base> used by original demo media must never redirect UIXO's JS/CSS chunks.
+  base: './',
   publicDir: false,
   plugins: [
     {
