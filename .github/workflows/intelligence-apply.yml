@@ -1,0 +1,47 @@
+name: Apply verified intelligence implementation
+
+on:
+  push:
+    branches: [codex/registry-intelligence-v1]
+    paths: ['.uixo-build/**', '.github/workflows/intelligence-apply.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: intelligence-source-transfer
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: codex/registry-intelligence-v1
+          fetch-depth: 0
+      - name: Apply hash-verified authored patch to the isolated branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          while IFS= read -r path; do
+            case "$path" in
+              .uixo-build/*|.github/workflows/intelligence-apply.yml) ;;
+              *) echo 'Branch changed outside the transfer. Stopping safely.'; exit 1 ;;
+            esac
+          done < <(git diff --name-only 996cd69a390b8cf6a1dca6c2d379615562bac26d HEAD)
+          cat .uixo-build/0{0,1,2,3,4,5,6,7}.part > "$RUNNER_TEMP/intelligence.patch.xz"
+          echo "8972ab66742ad789bb69bd5dec5a12aeba71df6e85583f506125638643f52070  $RUNNER_TEMP/intelligence.patch.xz" | sha256sum --check
+          xz -dc "$RUNNER_TEMP/intelligence.patch.xz" > "$RUNNER_TEMP/intelligence.patch"
+          echo "44dd5a743910c06e3f8083a7e0e36d5b76e98854e8511706cfcc4e2fdd972495  $RUNNER_TEMP/intelligence.patch" | sha256sum --check
+          git apply --check "$RUNNER_TEMP/intelligence.patch"
+          git apply "$RUNNER_TEMP/intelligence.patch"
+          rm -r .uixo-build
+          git config user.name 'UIXO Build'
+          git config user.email 'uixo-build@users.noreply.github.com'
+          git add -A
+          git commit -m 'feat: registry intelligence, editorial collections and bounded operations'
+          git push origin HEAD:codex/registry-intelligence-v1
