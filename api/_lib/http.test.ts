@@ -1,9 +1,14 @@
-import { describe, expect, it } from 'vitest';
-import { hasCuratorToken, httpUrl, text } from './http';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { hasCuratorToken, httpUrl, text, verifiedCookieUserId } from './http';
 import type { VercelRequest } from '@vercel/node';
 
 const req = (authorization?: string) =>
   ({ headers: authorization ? { authorization } : {} }) as VercelRequest;
+
+afterEach(() => {
+  vi.unstubAllGlobals();
+  delete process.env.NEON_AUTH_BASE_URL;
+});
 
 describe('text', () => {
   it('trims and accepts', () => {
@@ -65,5 +70,55 @@ describe('hasCuratorToken (break-glass)', () => {
     expect(hasCuratorToken(req('Bearer abc'))).toBe(false);
     expect(hasCuratorToken(req('Bearer abcdefgh'))).toBe(false);
     delete process.env.CURATOR_TOKEN;
+  });
+});
+
+describe('verifiedCookieUserId', () => {
+  it('asks the configured Neon Auth service to verify the first-party session cookie', async () => {
+    process.env.NEON_AUTH_BASE_URL = 'https://example.neonauth.test/neondb/auth';
+    const fetchMock = vi.fn(async (_input: string | URL | Request, init?: RequestInit) => {
+      expect(init?.headers).toEqual({
+        cookie: '__Secure-neon-auth.session_token=signed-session',
+      });
+      return new Response(
+        JSON.stringify({ user: { id: 'be7bd668-ffdb-40d3-b89e-44bc7b03c629' } }),
+        { status: 200, headers: { 'content-type': 'application/json' } },
+      );
+    });
+    vi.stubGlobal('fetch', fetchMock);
+    const request = {
+      headers: {
+        cookie:
+          'theme=dark; neon-auth.session_token=signed-session; unrelated-secret=do-not-forward',
+      },
+    } as VercelRequest;
+
+    expect(await verifiedCookieUserId(request)).toBe('be7bd668-ffdb-40d3-b89e-44bc7b03c629');
+    expect(String(fetchMock.mock.calls[0]?.[0])).toBe(
+      'https://example.neonauth.test/neondb/auth/get-session',
+    );
+  });
+
+  it('rejects an unverified, failed or malformed session', async () => {
+    process.env.NEON_AUTH_BASE_URL = 'https://example.neonauth.test/neondb/auth';
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => Response.json({ user: { id: 'not-a-user-id' } }, { status: 200 })),
+    );
+    expect(
+      await verifiedCookieUserId({
+        headers: { cookie: 'neon-auth.session_token=x' },
+      } as VercelRequest),
+    ).toBeNull();
+
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => Response.json({}, { status: 401 })),
+    );
+    expect(
+      await verifiedCookieUserId({
+        headers: { cookie: 'neon-auth.session_token=x' },
+      } as VercelRequest),
+    ).toBeNull();
   });
 });
