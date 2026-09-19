@@ -106,7 +106,7 @@ try {
         storage: status.storage,
         schemaReady: status.intelligence.ready,
         publicCollections: collections.total,
-        approvedSources: sources.items.length,
+        approvedSources: sources.total,
         tools: tools.tools.map((tool) => tool.name),
         webMcpParity: true,
         unauthorisedPrivateReadsBlocked: true,

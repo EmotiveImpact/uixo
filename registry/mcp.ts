@@ -1,4 +1,4 @@
-import { sourceHealth } from './intelligence.ts';
+import { publicSourceHealth as sourceHealth } from './source-directory.ts';
 import { listCollections, getCollection } from './collections.ts';
 import { McpServer } from '@modelcontextprotocol/server';
 import * as z from 'zod/v4';
@@ -44,7 +44,7 @@ async function guarded(action: () => Promise<Record<string, unknown>>) {
 }
 /** A new server per HTTP request or stdio connection; business logic stays in Registry. */
 export function createRegistryMcp(registry: Registry) {
-  const server = new McpServer({ name: 'uixo', version: '0.3.0' });
+  const server = new McpServer({ name: 'uixo', version: '0.3.1' });
   server.registerTool(
     'search_assets',
     {
@@ -139,7 +139,7 @@ export function createRegistryMcp(registry: Registry) {
     'get_source_health',
     {
       description:
-        'Read measured evidence coverage for one approved provider. Pins, previews, dependency declarations and dated licence evidence are distinct from security or runtime certification. Upstream availability is not checked.',
+        'Read exact indexed asset counts and bounded evidence coverage for one approved provider. When evidenceStatus is deferred, metrics is null and must not be interpreted as zero coverage. Pins and licence observations are not security or runtime certification. Upstream availability is not checked.',
       annotations,
       inputSchema: z.object({ provider: id }),
     },

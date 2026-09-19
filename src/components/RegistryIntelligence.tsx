@@ -2,7 +2,8 @@ import { SourceDirectory } from './SourceDirectory';
 import { ArrowLeft, ArrowRight, ArrowUpRight, RefreshCw } from 'lucide-react';
 import { safeAssetUrl } from '../lib/asset-library';
 import type { AssetQuery } from '../lib/asset-library';
-import type { CoverageReport, SourceHealth } from '../../shared/intelligence';
+import type { CoverageReport } from '../../shared/intelligence';
+import type { SourceSummary } from '../../shared/source-directory';
 import { RegistryOperations } from './RegistryOperations';
 import { AssetCollections } from './AssetCollections';
 import {
@@ -157,7 +158,7 @@ function Sources(props: IntelligenceProps) {
   return props.query.provider ? <SourceProfile {...props} /> : <SourceDirectory {...props} />;
 }
 function SourceProfile({ query, navigate, isCurator }: IntelligenceProps) {
-  const remote = useRegistryData<SourceHealth>('source-health', { provider: query.provider });
+  const remote = useRegistryData<SourceSummary>('source-health', { provider: query.provider });
   const s = remote.data;
   return (
     <>
@@ -174,7 +175,7 @@ function SourceProfile({ query, navigate, isCurator }: IntelligenceProps) {
                 <p>{s.rationale}</p>
               </div>
               <RegistryLink query={query} navigate={navigate} changes={{ provider: s.id }}>
-                Browse {s.metrics.total} assets <ArrowRight size={15} />
+                Browse {s.assetCount ?? s.metrics?.total ?? 0} assets <ArrowRight size={15} />
               </RegistryLink>
             </div>
             <div className="ri-tags">
@@ -184,7 +185,13 @@ function SourceProfile({ query, navigate, isCurator }: IntelligenceProps) {
                 </span>
               ))}
             </div>
-            <EvidenceCards metrics={s.metrics} />
+            {s.metrics ? (
+              <EvidenceCards metrics={s.metrics} />
+            ) : (
+              <p className="dv2-inline-state" role="status">
+                {s.evidenceNote}
+              </p>
+            )}
             <section className="ri-section">
               <h3>What the evidence does, and does not, establish</h3>
               <dl className="ri-facts">
@@ -193,7 +200,9 @@ function SourceProfile({ query, navigate, isCurator }: IntelligenceProps) {
                   <dd>
                     {s.oldestVerifiedAt
                       ? new Date(s.oldestVerifiedAt).toLocaleDateString('en-GB')
-                      : 'Unknown'}
+                      : s.evidenceStatus === 'deferred'
+                        ? 'Not assessed'
+                        : 'Unknown'}
                   </dd>
                 </div>
                 <div>
@@ -201,7 +210,9 @@ function SourceProfile({ query, navigate, isCurator }: IntelligenceProps) {
                   <dd>
                     {s.newestVerifiedAt
                       ? new Date(s.newestVerifiedAt).toLocaleDateString('en-GB')
-                      : 'Unknown'}
+                      : s.evidenceStatus === 'deferred'
+                        ? 'Not assessed'
+                        : 'Unknown'}
                   </dd>
                 </div>
                 <div>

@@ -22,7 +22,7 @@ type Media = {
   live: Record<string, { ref: string; sourceUrl: string }>;
 };
 let mediaPromise: Promise<Media> | undefined;
-function media(): Promise<Media> {
+export function media(): Promise<Media> {
   return (mediaPromise ??= Promise.all([
     readFile(new URL('../public/assets/component-previews/manifest.json', import.meta.url), 'utf8'),
     readFile(new URL('../live-demos/manifest.json', import.meta.url), 'utf8'),
