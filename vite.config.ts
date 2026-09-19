@@ -78,7 +78,15 @@ function localPreviews(): Plugin {
           for (const header of deployment.headers.find(
             (rule) => rule.source === '/live-demos/:path*',
           )?.headers ?? []) {
-            res.setHeader(header.key, header.value);
+            // Local GLTF/model fetches use HTTP; deployed previews use HTTPS.
+            const value =
+              header.key === 'Content-Security-Policy'
+                ? header.value.replace(
+                    'connect-src https:',
+                    'connect-src https: http://localhost:3000 http://127.0.0.1:3000',
+                  )
+                : header.value;
+            res.setHeader(header.key, value);
           }
         }
         const file = previewFile(urlPath);

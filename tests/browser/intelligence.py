@@ -124,7 +124,7 @@ with sync_playwright() as p:
         guest.close()
 
         demo = ctx.new_page()
-        for asset_id in ['shadcn/card', 'magic-ui/blur-fade', 'motion-primitives/accordion', 'simply-buttons/arttech-download']:
+        for asset_id in ['shadcn/card', 'magic-ui/blur-fade', 'motion-primitives/accordion', 'simply-buttons/arttech-download', 'simply-buttons/superlist-notify']:
             demo.goto(WEB + '/live-demos/index.html?id=' + asset_id, wait_until='networkidle')
             assert '/live-demos?' in demo.url, demo.url
             expect(demo.locator('html')).to_have_attribute('data-preview-ready', 'true')
