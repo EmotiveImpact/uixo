@@ -40,8 +40,20 @@ with sync_playwright() as p:
     def heading(name):
         page.get_by_role('heading', name=name, exact=True).wait_for(timeout=15000)
 
+    def verify_visible_cover():
+        cover = page.locator('.dv2-collection-visual').first
+        cover.scroll_into_view_if_needed()
+        dimensions = cover.evaluate("""el => [el, ...el.querySelectorAll('.asset-library-preview,.asset-live-viewport,iframe')].map(node => {const box=node.getBoundingClientRect(); const style=getComputedStyle(node); return {tag:node.tagName,classes:node.className,width:box.width,height:box.height,display:style.display,position:style.position};})""")
+        print(json.dumps({'embeddedPreviewGeometry': dimensions}), flush=True)
+        viewport = cover.locator('.asset-live-viewport')
+        box = viewport.bounding_box()
+        assert box and box['width'] > 100 and box['height'] > 100, dimensions
+        expect(cover.locator('iframe')).to_have_count(1)
+        expect(cover.frame_locator('iframe').locator('html')).to_have_attribute('data-preview-ready', 'true', timeout=15000)
+        results.append({'embeddedCollectionPreviewReady': True, 'width': box['width'], 'height': box['height']})
+        page.evaluate('window.scrollTo(0,0)')
+
     try:
-        # Same canonical hostname as index.html, via the actual Vite registry proxy.
         page.goto(WEB + '/registry/index.html', wait_until='domcontentloaded')
         assert api('status')['role'] == 'curator'
         prepared = api('collection-starters', {})
@@ -74,6 +86,8 @@ with sync_playwright() as p:
                 page.goto(WEB + '/browse/assets?' + query, wait_until='networkidle')
                 heading(expected_heading)
                 page.wait_for_timeout(300)
+                if view == 'collections':
+                    verify_visible_cover()
                 overflow = page.evaluate('document.documentElement.scrollWidth > innerWidth + 1')
                 alerts = page.locator('.registry-intelligence [role=alert]').all_text_contents()
                 page.screenshot(path=str(OUTPUT / f'{view}-{width}.png'), full_page=True)
@@ -91,14 +105,12 @@ with sync_playwright() as p:
         expect(page.locator('.dv2-collection-visual')).to_have_count(6)
         results.append({'visibleNavigation': True, 'sourceSearch': True, 'realCollectionCards': 6})
 
-        # A real local editor mutation leaves the public snapshot unchanged.
         page.goto(WEB + '/browse/assets?view=collection-editor&collection=dashboard-foundations', wait_until='networkidle')
         page.get_by_label('Collection title', exact=True).fill('Dashboard foundations, revised draft')
         page.get_by_role('button', name='Save draft', exact=True).click()
         page.get_by_text('Draft saved. The public version is unchanged.', exact=True).wait_for()
         assert api('collection&slug=dashboard-foundations')['title'] == 'Dashboard foundations'
 
-        # Guests cannot read private screens or APIs and retain public discovery.
         guest = browser.new_context(viewport={'width': 390, 'height': 844})
         guest.route('**/api/auth/**', lambda r: r.fulfill(body='null', content_type='application/json'))
         gp = guest.new_page()
@@ -111,7 +123,6 @@ with sync_playwright() as p:
         results.append({'editorSaveKeptPublishedTitle': True, 'guestPrivateRouteBlocked': True, 'guestOperationsHTTP': unauthorised.status})
         guest.close()
 
-        # Provider media bases must not redirect the generated lazy JS/CSS chunks.
         demo = ctx.new_page()
         for asset_id in ['shadcn/card', 'magic-ui/blur-fade', 'motion-primitives/accordion']:
             demo.goto(WEB + '/live-demos/index.html?id=' + asset_id, wait_until='networkidle')
