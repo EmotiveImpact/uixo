@@ -1,25 +1,25 @@
 {
-  "updated": "2026-09-18",
-  "updated_note": "Red verified UI libs: +3 candidates (canvas-ui, spell-ui, animate-ui) + thumbs (2 screenshot / 1 og)",
+  "updated": "2026-09-19",
+  "updated_note": "athrix_codes + alibey_10 harvest: +3 candidates (obsidian-ui, xiod-ui, shoogle)",
   "counts_by_category": {
     "Inspiration": 116,
     "Components": 63,
     "Templates": 48,
-    "UI libraries": 48,
+    "UI libraries": 50,
     "Icons": 40,
-    "Marketplace": 22,
+    "Marketplace": 23,
     "Backgrounds": 15,
     "Fonts": 12,
     "Illustrations": 12,
     "Mockups": 10
   },
   "totals": {
-    "candidates": 386,
-    "needs_review": 308,
+    "candidates": 389,
+    "needs_review": 311,
     "new_this_run": 3,
     "already_present": 13,
     "skipped_dupes_existing_site": 0,
-    "image_captured": 378,
+    "image_captured": 381,
     "image_og_captured": 7,
     "image_blocked": 1,
     "image_pending": 0
@@ -10547,13 +10547,110 @@
       "image_method": "og",
       "ingest_batch": "red-verified-ui-libs-2026-09-18",
       "addedOrder": 396
+    },
+    {
+      "id": "obsidian-ui",
+      "name": "ObsidianUI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React",
+        "Tailwind",
+        "Motion",
+        "Components",
+        "Templates"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "React",
+        "Web"
+      ],
+      "url": "https://www.obsidianui.dev/",
+      "why": "React + Tailwind component library with 35+ components, blocks, and landing templates (Motion)",
+      "creator": "athrix_codes",
+      "source": "X harvest @athrix_codes/status/2100875103970152597",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "athrix-alibey-sep19",
+      "harvest_posts": [
+        "https://x.com/athrix_codes/status/2100875103970152597"
+      ],
+      "addedOrder": 397,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "xiod-ui",
+      "name": "XiodUI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React",
+        "Tailwind",
+        "Base UI",
+        "Components",
+        "npm"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "React",
+        "npm",
+        "Web"
+      ],
+      "url": "https://ui.xiod.dev",
+      "why": "89 React components on Base UI + Tailwind CSS 4 as one npm package (per-component imports)",
+      "creator": "ImKKingshuk",
+      "source": "X harvest @alibey_10/status/2100863905220161905",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "athrix-alibey-sep19",
+      "harvest_posts": [
+        "https://x.com/alibey_10/status/2100863905220161905"
+      ],
+      "addedOrder": 398,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "shoogle",
+      "name": "Shoogle",
+      "category": "Marketplace",
+      "subcategory": "UI kits",
+      "tags": [
+        "shadcn",
+        "Search",
+        "Components",
+        "Blocks",
+        "Templates"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "Web"
+      ],
+      "url": "https://shoogle.dev",
+      "why": "Search engine for shadcn UI blocks, components and templates across registries",
+      "creator": "alibey_10",
+      "source": "X harvest @alibey_10/status/2100863905220161905",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "athrix-alibey-sep19",
+      "harvest_posts": [
+        "https://x.com/alibey_10/status/2100863905220161905"
+      ],
+      "addedOrder": 399,
+      "image_method": "screenshot"
     }
   ],
   "image_capture": {
-    "captured": 376,
-    "og-captured": 6,
+    "captured": 381,
+    "og-captured": 7,
     "blocked": 1,
-    "at": "2026-09-18T07:48:17Z"
+    "pending": 0,
+    "at": "2026-09-19T10:04:41.705Z"
   },
   "paste_ingest": {
     "added_ids": [
@@ -10883,5 +10980,50 @@
       "og_captured": 1,
       "blocked": 0
     }
+  },
+  "athrix_alibey_ingest_sep19": {
+    "date": "2026-09-19",
+    "posts": [
+      "https://x.com/athrix_codes/status/2100875103970152597",
+      "https://x.com/alibey_10/status/2100863905220161905"
+    ],
+    "new_ids": [
+      "obsidian-ui",
+      "xiod-ui",
+      "shoogle"
+    ],
+    "destinations_accounted": [
+      {
+        "url": "https://ObsidianUI.dev",
+        "status": "NEW",
+        "id": "obsidian-ui"
+      },
+      {
+        "url": "https://ui.xiod.dev",
+        "status": "NEW",
+        "id": "xiod-ui"
+      },
+      {
+        "url": "https://shoogle.dev",
+        "status": "NEW",
+        "id": "shoogle"
+      },
+      {
+        "url": "pic.x.com media (both)",
+        "status": "SKIP",
+        "note": "x.com media"
+      },
+      {
+        "url": "quoted status links (both)",
+        "status": "SKIP",
+        "note": "x.com/twitter status"
+      },
+      {
+        "url": "https://kobra.systems (quoted alibey only)",
+        "status": "ALREADY",
+        "id": "kobra",
+        "note": "in quoted post entities, not main destination"
+      }
+    ]
   }
 }

@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-16T10:14:07Z",
-  "updated_note": "suriadesign list-drop + neropursue digest verify 2026-09-16: +1 NEW (uimaxx); neropursue 9/9 already",
+  "updated": "2026-09-19",
+  "updated_note": "athrix_codes + alibey_10 harvest: +3 candidates (obsidian-ui, xiod-ui, shoogle)",
   "counts_by_category": {
-    "Inspiration": 113,
-    "Components": 54,
-    "Templates": 43,
-    "Icons": 38,
-    "UI libraries": 37,
-    "Marketplace": 21,
-    "Backgrounds": 13,
+    "Inspiration": 116,
+    "Components": 63,
+    "Templates": 48,
+    "UI libraries": 50,
+    "Icons": 40,
+    "Marketplace": 23,
+    "Backgrounds": 15,
     "Fonts": 12,
-    "Illustrations": 11,
-    "Mockups": 7
+    "Illustrations": 12,
+    "Mockups": 10
   },
   "totals": {
-    "candidates": 349,
-    "needs_review": 271,
-    "new_this_run": 1,
-    "already_present": 17,
+    "candidates": 389,
+    "needs_review": 311,
+    "new_this_run": 3,
+    "already_present": 13,
     "skipped_dupes_existing_site": 0,
-    "image_captured": 342,
-    "image_og_captured": 6,
+    "image_captured": 381,
+    "image_og_captured": 7,
     "image_blocked": 1,
     "image_pending": 0
   },
@@ -9416,14 +9416,1241 @@
         "https://x.com/suriadesign/status/2099963201823920273"
       ],
       "image_method": "screenshot"
+    },
+    {
+      "id": "colors-visualizer",
+      "name": "Colors Palette Visualizer",
+      "category": "Backgrounds",
+      "subcategory": "Color tools",
+      "tags": [
+        "Colors",
+        "Palette",
+        "Visualizer"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "colors-visualizer.vercel.app",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://colors-visualizer.vercel.app",
+      "why": "Preview color palettes on actual layout mockups",
+      "source": "weekday digest 2026-09-17 — Manixh02",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 360,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2100424848900325725"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "brandbird",
+      "name": "BrandBird",
+      "category": "Mockups",
+      "subcategory": "Screenshot mockups",
+      "tags": [
+        "Mockups",
+        "Screenshots",
+        "Social",
+        "3D"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "BrandBird",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://brandbird.app",
+      "why": "Screenshot mockup editor with device frames and 3D effects for social posts",
+      "source": "weekday digest 2026-09-17 — Manixh02",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 361,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2100424848900325725"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "shortcuts-design",
+      "name": "shortcuts.design",
+      "category": "Inspiration",
+      "subcategory": "Design tooling",
+      "tags": [
+        "Shortcuts",
+        "Design tools",
+        "Reference"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "shortcuts.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://shortcuts.design",
+      "why": "Keyboard shortcut reference for design tools",
+      "source": "weekday digest 2026-09-17 — Manixh02",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 362,
+      "harvest_posts": [
+        "https://x.com/Manixh02/status/2100424848900325725",
+        "https://x.com/sonalshukla3377/status/2100422883633676429"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "modulify",
+      "name": "Modulify",
+      "category": "Templates",
+      "subcategory": "AI website builder",
+      "tags": [
+        "AI",
+        "Website builder",
+        "Templates",
+        "CMS"
+      ],
+      "access": [
+        "Paid"
+      ],
+      "creator": "Modulify",
+      "formats": [
+        "Web",
+        "AI"
+      ],
+      "url": "https://modulify.ai",
+      "why": "Prompt-to-website/web-app builder with CMS, hosting, and edit-in-place",
+      "source": "weekday digest 2026-09-17 — VullnetAdemaj",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 363,
+      "harvest_posts": [
+        "https://x.com/VullnetAdemaj/status/2100208273626398736"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "ikonik",
+      "name": "Ikonik",
+      "category": "Icons",
+      "subcategory": "Icon library",
+      "tags": [
+        "Icons",
+        "SVG",
+        "Open source",
+        "Editor"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Modulify",
+      "formats": [
+        "SVG",
+        "Web"
+      ],
+      "url": "https://ikonik.modulify.ai",
+      "why": "50k+ open-source icons with built-in SVG editor",
+      "source": "weekday digest 2026-09-17 — VullnetAdemaj",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 364,
+      "harvest_posts": [
+        "https://x.com/VullnetAdemaj/status/2100208273626398736"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "wonderlist",
+      "name": "Wonderlist",
+      "category": "Templates",
+      "subcategory": "Figma websites",
+      "tags": [
+        "Figma",
+        "Templates",
+        "SaaS",
+        "Agency",
+        "Portfolio"
+      ],
+      "access": [
+        "Paid"
+      ],
+      "creator": "Wonderlist",
+      "formats": [
+        "Figma"
+      ],
+      "url": "https://wonderlist.design",
+      "why": "127 premium Figma website designs (SaaS, agency, portfolio, consulting)",
+      "source": "weekday digest 2026-09-17 — VullnetAdemaj",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 365,
+      "harvest_posts": [
+        "https://x.com/VullnetAdemaj/status/2100208273626398736"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "motionin",
+      "name": "Motion",
+      "category": "Components",
+      "subcategory": "Interactive sections",
+      "tags": [
+        "Motion",
+        "Interactive",
+        "Physics",
+        "Specs"
+      ],
+      "access": [
+        "Paid"
+      ],
+      "creator": "motionin.design",
+      "formats": [
+        "Web",
+        "Spec"
+      ],
+      "url": "https://www.motionin.design/",
+      "why": "Premium interactive web sections (physics/cursor) sold as detailed specs",
+      "source": "weekday digest 2026-09-17 — VullnetAdemaj",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 366,
+      "harvest_posts": [
+        "https://x.com/VullnetAdemaj/status/2100208273626398736"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "vibeindex",
+      "name": "Vibe Index",
+      "category": "Marketplace",
+      "subcategory": "Dev tools directory",
+      "tags": [
+        "Vibe coding",
+        "Tools",
+        "Directory"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "vibeindex.dev",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://vibeindex.dev/",
+      "why": "Directory of 280+ tools for vibe coders",
+      "source": "weekday digest 2026-09-17 — csaba_kissi",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 367,
+      "harvest_posts": [
+        "https://x.com/csaba_kissi/status/2100469453163262164"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "iconcreator",
+      "name": "Icon Creator",
+      "category": "Icons",
+      "subcategory": "Icon generator",
+      "tags": [
+        "Icons",
+        "Generator",
+        "Custom packs"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "iconcreator.dev",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://iconcreator.dev/",
+      "why": "Free customized icon packs generator",
+      "source": "weekday digest 2026-09-17 — csaba_kissi",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 368,
+      "harvest_posts": [
+        "https://x.com/csaba_kissi/status/2100469453163262164"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "watermelon-ui",
+      "name": "Watermelon UI",
+      "category": "UI libraries",
+      "subcategory": "shadcn",
+      "tags": [
+        "shadcn",
+        "Components",
+        "Blocks",
+        "React"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "ui.watermelon.sh",
+      "formats": [
+        "React",
+        "Web"
+      ],
+      "url": "https://ui.watermelon.sh/",
+      "why": "Hundreds of shadcn components and blocks",
+      "source": "weekday digest 2026-09-17 — csaba_kissi",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 369,
+      "harvest_posts": [
+        "https://x.com/csaba_kissi/status/2100469453163262164"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "uidesign-tips",
+      "name": "UI Design Tips",
+      "category": "Inspiration",
+      "subcategory": "Tips",
+      "tags": [
+        "UI tips",
+        "Patterns",
+        "Reference"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "uidesign.tips",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://uidesign.tips/ui-tips",
+      "why": "Curated UI design tips and patterns",
+      "source": "weekday digest 2026-09-17 — cviklihamar",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 370,
+      "harvest_posts": [
+        "https://x.com/cviklihamar/status/2100149199748673545"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "morphing-menu",
+      "name": "Morphing Menu",
+      "category": "Components",
+      "subcategory": "Navigation",
+      "tags": [
+        "Motion",
+        "Menu",
+        "Playground",
+        "React"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Danny JP Williams",
+      "formats": [
+        "Web",
+        "React"
+      ],
+      "url": "https://dannyjpwilliams.com/playground/morphing-menu",
+      "why": "Morphing navigation menu playground component",
+      "source": "weekday digest 2026-09-17 — cviklihamar",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 371,
+      "harvest_posts": [
+        "https://x.com/cviklihamar/status/2100149199748673545"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "liquid-orb",
+      "name": "Liquid Orb",
+      "category": "Backgrounds",
+      "subcategory": "Orbs",
+      "tags": [
+        "Orb",
+        "Liquid",
+        "WebGL",
+        "Editor"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "lersent001",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://lersent001.github.io/orb",
+      "why": "Liquid orb editor / playground",
+      "source": "weekday digest 2026-09-17 — cviklihamar",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 372,
+      "harvest_posts": [
+        "https://x.com/cviklihamar/status/2100149199748673545"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "ai-elements",
+      "name": "AI Elements",
+      "category": "UI libraries",
+      "subcategory": "AI chat",
+      "tags": [
+        "AI",
+        "shadcn",
+        "Vercel",
+        "Chat",
+        "Agents"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Vercel",
+      "formats": [
+        "React",
+        "Web"
+      ],
+      "url": "https://elements.ai-sdk.dev",
+      "why": "Vercel AI Elements — shadcn components for chat, reasoning, tools, workflows",
+      "source": "weekday digest 2026-09-17 — FareaNFts",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 373,
+      "harvest_posts": [
+        "https://x.com/FareaNFts/status/2100472439344136509"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "cult-ui",
+      "name": "Cult UI",
+      "category": "UI libraries",
+      "subcategory": "Creative interactions",
+      "tags": [
+        "React",
+        "Interactions",
+        "Creative"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Cult UI",
+      "formats": [
+        "React",
+        "Web"
+      ],
+      "url": "https://www.cult-ui.com",
+      "why": "Creative interaction-focused UI component library",
+      "source": "weekday digest 2026-09-17 — abhishvekcn",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 374,
+      "harvest_posts": [
+        "https://x.com/abhishvekcn/status/2100165821612106082"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "tremor",
+      "name": "Tremor",
+      "category": "UI libraries",
+      "subcategory": "Dashboards",
+      "tags": [
+        "Dashboards",
+        "Charts",
+        "React",
+        "Tailwind"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Tremor",
+      "formats": [
+        "React",
+        "Web"
+      ],
+      "url": "https://www.tremor.so",
+      "why": "Dashboard and chart components for React",
+      "source": "weekday digest 2026-09-17 — abhishvekcn",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 375,
+      "harvest_posts": [
+        "https://x.com/abhishvekcn/status/2100165821612106082"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "base-ui",
+      "name": "Base UI",
+      "category": "UI libraries",
+      "subcategory": "Unstyled primitives",
+      "tags": [
+        "Primitives",
+        "Accessible",
+        "Unstyled",
+        "React"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Base UI",
+      "formats": [
+        "React",
+        "Web"
+      ],
+      "url": "https://base-ui.com",
+      "why": "Unstyled accessible React component primitives",
+      "source": "weekday digest 2026-09-17 — abhishvekcn",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 376,
+      "harvest_posts": [
+        "https://x.com/abhishvekcn/status/2100165821612106082"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "tailwind-plus",
+      "name": "Tailwind Plus",
+      "category": "Templates",
+      "subcategory": "UI blocks",
+      "tags": [
+        "Tailwind",
+        "Templates",
+        "UI blocks",
+        "Paid"
+      ],
+      "access": [
+        "Paid"
+      ],
+      "creator": "Tailwind Labs",
+      "formats": [
+        "HTML",
+        "React",
+        "Vue"
+      ],
+      "url": "https://tailwindcss.com/plus",
+      "why": "Official Tailwind polished UI blocks / Plus kit",
+      "source": "weekday digest 2026-09-17 — abhishvekcn",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 377,
+      "harvest_posts": [
+        "https://x.com/abhishvekcn/status/2100165821612106082"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "apple-design-resources",
+      "name": "Apple Design Resources",
+      "category": "Templates",
+      "subcategory": "iOS UI kits",
+      "tags": [
+        "Apple",
+        "iOS",
+        "Figma",
+        "Sketch",
+        "UI kits"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Apple",
+      "formats": [
+        "Figma",
+        "Sketch"
+      ],
+      "url": "https://developer.apple.com/design/resources/",
+      "why": "Official Apple design templates, icon production templates, iOS 27 kits",
+      "source": "weekday digest 2026-09-17 — lindadong",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 378,
+      "harvest_posts": [
+        "https://x.com/lindadong/status/2100332145344741616"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "scenerecap",
+      "name": "SceneRecap Explained",
+      "category": "Inspiration",
+      "subcategory": "UI bugs gallery",
+      "tags": [
+        "UI bugs",
+        "QA",
+        "Gallery",
+        "AI"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "SceneRecap",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://scenerecap.com/explained",
+      "why": "Public gallery of real UI bugs reproduced on live sites with AI writeups",
+      "source": "weekday digest 2026-09-17 — SceneRecap",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 379,
+      "harvest_posts": [
+        "https://x.com/SceneRecap/status/2100119436589969568"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "screely",
+      "name": "Screely",
+      "category": "Mockups",
+      "subcategory": "Screenshot frames",
+      "tags": [
+        "Screenshots",
+        "Mockups",
+        "Browser frame"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Screely",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://screely.com",
+      "why": "Beautiful browser-frame screenshot mockups",
+      "source": "weekday digest 2026-09-17 — sonalshukla3377",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 380,
+      "harvest_posts": [
+        "https://x.com/sonalshukla3377/status/2100422883633676429"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "carbon-now",
+      "name": "Carbon",
+      "category": "Mockups",
+      "subcategory": "Code screenshots",
+      "tags": [
+        "Code",
+        "Screenshots",
+        "Share"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "carbon.now.sh",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://carbon.now.sh",
+      "why": "Create and share beautiful images of source code",
+      "source": "weekday digest 2026-09-17 — sonalshukla3377",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-17",
+      "addedOrder": 381,
+      "harvest_posts": [
+        "https://x.com/sonalshukla3377/status/2100422883633676429"
+      ],
+      "image_method": "screenshot"
+    },
+    {
+      "id": "spectrum-empty-states",
+      "name": "Empty States",
+      "category": "Components",
+      "subcategory": "Blocks",
+      "tags": [
+        "shadcn",
+        "Empty states",
+        "Motion",
+        "React"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Spectrum UI / arihantCodes",
+      "formats": [
+        "React"
+      ],
+      "url": "https://ui.spectrumhq.in/blocks/empty-states",
+      "why": "25 animated empty-state blocks for React — Spectrum UI + shadcn/Motion, one CLI command",
+      "source": "weekday digest 2026-09-18 — arihantCodes",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-18",
+      "harvest_posts": [
+        "https://x.com/arihantCodes/status/2100679925145714701",
+        "https://x.com/arihantCodes/status/2100572001895166144"
+      ],
+      "addedOrder": 382,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "reelfolio",
+      "name": "Reelfolio",
+      "category": "Templates",
+      "subcategory": "Portfolio",
+      "tags": [
+        "Portfolio",
+        "Reels",
+        "Showcase"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Reelfolio",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://reelfolio.io/",
+      "why": "Showcase creative work / reels in a styled portfolio",
+      "source": "weekday digest 2026-09-18 — neropursue",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-18",
+      "harvest_posts": [
+        "https://x.com/neropursue/status/2100843735084921068"
+      ],
+      "addedOrder": 383,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "css-toggles-colorion",
+      "name": "CSS Toggles",
+      "category": "Components",
+      "subcategory": "Toggles",
+      "tags": [
+        "CSS",
+        "Toggles",
+        "Copy-paste",
+        "Free"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Colorion",
+      "formats": [
+        "CSS",
+        "Web"
+      ],
+      "url": "https://toggles.colorion.co/",
+      "why": "36 free CSS toggles ready to copy",
+      "source": "weekday digest 2026-09-18 — csaba_kissi",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-18",
+      "harvest_posts": [
+        "https://x.com/csaba_kissi/status/2100840794160816596"
+      ],
+      "addedOrder": 384,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "ant-design",
+      "name": "Ant Design",
+      "category": "UI libraries",
+      "subcategory": "Enterprise",
+      "tags": [
+        "React",
+        "Enterprise",
+        "Design system"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Ant Group",
+      "formats": [
+        "React"
+      ],
+      "url": "https://ant.design/",
+      "why": "Enterprise-focused React component library and design system",
+      "source": "weekday digest 2026-09-18 — eamin_ux",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-18",
+      "harvest_posts": [
+        "https://x.com/eamin_ux/status/2100657219322908788"
+      ],
+      "addedOrder": 385,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "daisyui",
+      "name": "daisyUI",
+      "category": "UI libraries",
+      "subcategory": "Tailwind",
+      "tags": [
+        "Tailwind",
+        "Components",
+        "Themes"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "daisyUI",
+      "formats": [
+        "CSS",
+        "Tailwind"
+      ],
+      "url": "https://daisyui.com/",
+      "why": "68+ components and 600+ utility classes for Tailwind",
+      "source": "weekday digest 2026-09-18 — eamin_ux",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-18",
+      "harvest_posts": [
+        "https://x.com/eamin_ux/status/2100657215392899566"
+      ],
+      "addedOrder": 386,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "react-aria",
+      "name": "React Aria Components",
+      "category": "UI libraries",
+      "subcategory": "Accessibility",
+      "tags": [
+        "React",
+        "ARIA",
+        "Accessibility",
+        "Unstyled"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Adobe",
+      "formats": [
+        "React"
+      ],
+      "url": "https://react-spectrum.adobe.com/react-aria/",
+      "why": "Unstyled accessible React components with ARIA patterns (Adobe)",
+      "source": "weekday digest 2026-09-18 — eamin_ux",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-18",
+      "harvest_posts": [
+        "https://x.com/eamin_ux/status/2100657198951272635"
+      ],
+      "addedOrder": 387,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "reshaped",
+      "name": "Reshaped",
+      "category": "UI libraries",
+      "subcategory": "Design system",
+      "tags": [
+        "React",
+        "Figma",
+        "Design system"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Reshaped",
+      "formats": [
+        "React",
+        "Figma"
+      ],
+      "url": "https://www.reshaped.so/",
+      "why": "Balanced neutral React design system with Figma plugin",
+      "source": "weekday digest 2026-09-18 — eamin_ux",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-18",
+      "harvest_posts": [
+        "https://x.com/eamin_ux/status/2100657203296506265"
+      ],
+      "addedOrder": 388,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "venstyler",
+      "name": "Venstyler",
+      "category": "UI libraries",
+      "subcategory": "3D components",
+      "tags": [
+        "3D",
+        "Components",
+        "React"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Venstyler / AAishakar",
+      "formats": [
+        "Web",
+        "React"
+      ],
+      "url": "https://www.venstyler.com/",
+      "why": "3D component library for developers",
+      "source": "weekday digest 2026-09-18 — AAishakar",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-18",
+      "harvest_posts": [
+        "https://x.com/AAishakar/status/2100820877973815545"
+      ],
+      "addedOrder": 389,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "scritto",
+      "name": "Scritto",
+      "category": "Components",
+      "subcategory": "Text animation",
+      "tags": [
+        "Text",
+        "Animation",
+        "React",
+        "Vue",
+        "Svelte"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Scritto",
+      "formats": [
+        "React",
+        "Vue",
+        "Svelte",
+        "Solid"
+      ],
+      "url": "https://scrit.to/",
+      "why": "Animated text that only morphs changed characters — multi-framework",
+      "source": "weekday digest 2026-09-18 — codestirring",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-18",
+      "harvest_posts": [
+        "https://x.com/codestirring/status/2100796203332227481"
+      ],
+      "addedOrder": 390,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "dicebear",
+      "name": "DiceBear",
+      "category": "Illustrations",
+      "subcategory": "Avatars",
+      "tags": [
+        "Avatars",
+        "SVG",
+        "API",
+        "Open source"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "DiceBear",
+      "formats": [
+        "SVG",
+        "API",
+        "Web"
+      ],
+      "url": "https://www.dicebear.com/",
+      "why": "60+ open-source avatar styles / API for profile placeholders",
+      "source": "weekday digest 2026-09-18 — codestirring",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-18",
+      "harvest_posts": [
+        "https://x.com/codestirring/status/2100796203332227481"
+      ],
+      "addedOrder": 391,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "fluid-functionalism",
+      "name": "Fluid Functionalism",
+      "category": "Components",
+      "subcategory": "UI components",
+      "tags": [
+        "Open source",
+        "UI",
+        "Components"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Fluid Functionalism",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://fluidfunctionalism.com/",
+      "why": "Open-source UI components collection",
+      "source": "weekday digest 2026-09-18 — codestirring",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-18",
+      "harvest_posts": [
+        "https://x.com/codestirring/status/2100796203332227481"
+      ],
+      "addedOrder": 392,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "shadcn-lint",
+      "name": "shadcn/lint",
+      "category": "Components",
+      "subcategory": "Tooling",
+      "tags": [
+        "shadcn",
+        "Tailwind",
+        "Lint",
+        "Agents",
+        "Design system"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "shadcn-ui",
+      "formats": [
+        "CLI",
+        "Web"
+      ],
+      "url": "https://github.com/shadcn-ui/lint",
+      "why": "Agent-first linter for Tailwind design systems — verify component/theme rules",
+      "source": "weekday digest 2026-09-18 — jarradgrigg",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "weekday-digest-2026-09-18",
+      "harvest_posts": [
+        "https://x.com/jarradgrigg/status/2100784131773006057",
+        "https://x.com/jarradgrigg/status/2100784328502657202"
+      ],
+      "addedOrder": 393,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "canvas-ui",
+      "name": "Canvas UI",
+      "category": "UI libraries",
+      "subcategory": "Components",
+      "tags": [
+        "WebGL",
+        "WebGPU",
+        "Creative",
+        "Components",
+        "React"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "React",
+        "Web",
+        "WebGL",
+        "WebGPU"
+      ],
+      "url": "https://canvasui.dev/",
+      "why": "Creative components, in a new dimension — WebGL/WebGPU creative components",
+      "creator": "Canvas UI",
+      "source": "Red verified UI libs list",
+      "needs_review": true,
+      "image_status": "captured",
+      "image_method": "screenshot",
+      "ingest_batch": "red-verified-ui-libs-2026-09-18",
+      "addedOrder": 394
+    },
+    {
+      "id": "spell-ui",
+      "name": "Spell UI",
+      "category": "Components",
+      "subcategory": "UI components",
+      "tags": [
+        "React",
+        "Tailwind",
+        "Design Engineers",
+        "Components"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "React",
+        "Web"
+      ],
+      "url": "https://spell.sh/",
+      "why": "Refined UI for Design Engineers",
+      "creator": "Spell UI",
+      "source": "Red verified UI libs list",
+      "needs_review": true,
+      "image_status": "captured",
+      "image_method": "screenshot",
+      "ingest_batch": "red-verified-ui-libs-2026-09-18",
+      "addedOrder": 395
+    },
+    {
+      "id": "animate-ui",
+      "name": "Animate UI",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "Motion",
+        "shadcn",
+        "React",
+        "Animation",
+        "Tailwind"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "React",
+        "Web"
+      ],
+      "url": "https://animate-ui.com",
+      "why": "Animate your UI with smooth style — Motion/shadcn animated components",
+      "creator": "Animate UI",
+      "source": "Red verified UI libs list",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "image_method": "og",
+      "ingest_batch": "red-verified-ui-libs-2026-09-18",
+      "addedOrder": 396
+    },
+    {
+      "id": "obsidian-ui",
+      "name": "ObsidianUI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React",
+        "Tailwind",
+        "Motion",
+        "Components",
+        "Templates"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "React",
+        "Web"
+      ],
+      "url": "https://www.obsidianui.dev/",
+      "why": "React + Tailwind component library with 35+ components, blocks, and landing templates (Motion)",
+      "creator": "athrix_codes",
+      "source": "X harvest @athrix_codes/status/2100875103970152597",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "athrix-alibey-sep19",
+      "harvest_posts": [
+        "https://x.com/athrix_codes/status/2100875103970152597"
+      ],
+      "addedOrder": 397,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "xiod-ui",
+      "name": "XiodUI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "React",
+        "Tailwind",
+        "Base UI",
+        "Components",
+        "npm"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "React",
+        "npm",
+        "Web"
+      ],
+      "url": "https://ui.xiod.dev",
+      "why": "89 React components on Base UI + Tailwind CSS 4 as one npm package (per-component imports)",
+      "creator": "ImKKingshuk",
+      "source": "X harvest @alibey_10/status/2100863905220161905",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "athrix-alibey-sep19",
+      "harvest_posts": [
+        "https://x.com/alibey_10/status/2100863905220161905"
+      ],
+      "addedOrder": 398,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "shoogle",
+      "name": "Shoogle",
+      "category": "Marketplace",
+      "subcategory": "UI kits",
+      "tags": [
+        "shadcn",
+        "Search",
+        "Components",
+        "Blocks",
+        "Templates"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "Web"
+      ],
+      "url": "https://shoogle.dev",
+      "why": "Search engine for shadcn UI blocks, components and templates across registries",
+      "creator": "alibey_10",
+      "source": "X harvest @alibey_10/status/2100863905220161905",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "athrix-alibey-sep19",
+      "harvest_posts": [
+        "https://x.com/alibey_10/status/2100863905220161905"
+      ],
+      "addedOrder": 399,
+      "image_method": "screenshot"
     }
   ],
   "image_capture": {
-    "captured": 342,
-    "og-captured": 6,
+    "captured": 381,
+    "og-captured": 7,
     "blocked": 1,
     "pending": 0,
-    "at": "2026-09-16T10:14:26.577Z"
+    "at": "2026-09-19T10:04:41.705Z"
   },
   "paste_ingest": {
     "added_ids": [
@@ -9548,60 +10775,72 @@
     ]
   },
   "weekday_digest": {
-    "batch": "weekday-digest-2026-09-16",
+    "batch": "weekday-digest-2026-09-18",
     "added_ids": [
-      "colir",
-      "bloub",
-      "micrograph-studio",
-      "holosticker",
-      "mockit",
-      "animos",
-      "shots",
-      "diffui",
-      "modulify-logo-maker",
-      "font-in-logo",
-      "logo-to-use",
-      "preview-kit",
-      "iconly",
-      "skills-better-ui",
-      "skills-emil-design-eng",
-      "lucide-icons",
-      "lucide-animated",
-      "moving-icons",
-      "iconsax",
-      "isocons",
-      "nucleo",
-      "calligraph",
-      "elyx",
-      "sceneai",
-      "design-gems",
-      "sonaui-com",
-      "grabui-flowcontent"
+      "spectrum-empty-states",
+      "reelfolio",
+      "css-toggles-colorion",
+      "ant-design",
+      "daisyui",
+      "react-aria",
+      "reshaped",
+      "venstyler",
+      "scritto",
+      "dicebear",
+      "fluid-functionalism",
+      "shadcn-lint"
     ],
     "source_posts": [
-      "https://x.com/CJfromJBW/status/2099836234054951092",
-      "https://x.com/Manixh02/status/2100046245322731952",
-      "https://x.com/Manixh02/status/2100119400078889306",
-      "https://x.com/VullnetAdemaj/status/2099781233622274110",
-      "https://x.com/ah4alt/status/2099909396805611695",
-      "https://x.com/arihantCodes/status/2099845122884272426",
-      "https://x.com/codebydinil/status/2099785510134964340",
-      "https://x.com/csaba_kissi/status/2100106901824664063",
-      "https://x.com/eamin_ux/status/2099891102140535186",
-      "https://x.com/k2sbhai/status/2099787581689049446",
-      "https://x.com/neropursue/status/2099827788521889995",
-      "https://x.com/noahelhadedy/status/2099955937276748024"
+      "https://x.com/AAishakar/status/2100820877973815545",
+      "https://x.com/Hartdrawss/status/2100578141433385082",
+      "https://x.com/arihantCodes/status/2100572001895166144",
+      "https://x.com/arihantCodes/status/2100679925145714701",
+      "https://x.com/codestirring/status/2100796203332227481",
+      "https://x.com/csaba_kissi/status/2100840794160816596",
+      "https://x.com/eamin_ux/status/2100657187500822889",
+      "https://x.com/jarradgrigg/status/2100784131773006057",
+      "https://x.com/neropursue/status/2100843735084921068",
+      "https://x.com/taher_max_/status/2100613393426366908"
     ],
-    "new_count": 27,
-    "at": "2026-09-16T07:48:24Z",
+    "new_count": 12,
+    "at": "2026-09-18T07:48:17Z",
     "watchlist_adds": [
-      "VullnetAdemaj"
+      "codestirring",
+      "jarradgrigg",
+      "Hartdrawss",
+      "AAishakar"
     ],
     "thumbs": {
-      "captured": 27,
+      "captured": 12,
       "og_captured": 0,
       "blocked": 0
-    }
+    },
+    "skipped_off_brief": [
+      "agent-memory.dev (AI agent memory — Tech Scout)",
+      "lightvela.ai (AI agent credits)",
+      "activebuilders.dev (builder community, not UI resource)",
+      "Stowdrop.app (bookmark folders)",
+      "app.scenario.com (AI 3D/content gen — Tech Scout)"
+    ],
+    "skipped_dupes_sample": [
+      "elyx.design",
+      "open-design.ai",
+      "spectrumhq empty host (added path block)",
+      "inspora",
+      "backgrounds.supply",
+      "fontshare",
+      "libraries.dev",
+      "astryx",
+      "kibo-ui",
+      "shadcn",
+      "heroui",
+      "vibeui",
+      "torph",
+      "typehug",
+      "uisfx",
+      "kage.design",
+      "all 20 Hartdrawss icon libs already present"
+    ]
   },
   "designer_list_ingest": {
     "batch": "designer-list-paste-2026-09-11",
@@ -9714,5 +10953,77 @@
     "neropursue_destinations": 9,
     "new": 1,
     "already": 17
+  },
+  "red_verified_ui_libs_2026_09_18": {
+    "new": [
+      "canvas-ui",
+      "spell-ui",
+      "animate-ui"
+    ],
+    "already_present": [
+      "rareui",
+      "react-bits",
+      "beui",
+      "bencho",
+      "microkit",
+      "aceternity",
+      "beautiful-ui",
+      "transitions-dev",
+      "originkit",
+      "heroui",
+      "magic-ui",
+      "untitled-ui",
+      "reui"
+    ],
+    "thumbs": {
+      "captured": 2,
+      "og_captured": 1,
+      "blocked": 0
+    }
+  },
+  "athrix_alibey_ingest_sep19": {
+    "date": "2026-09-19",
+    "posts": [
+      "https://x.com/athrix_codes/status/2100875103970152597",
+      "https://x.com/alibey_10/status/2100863905220161905"
+    ],
+    "new_ids": [
+      "obsidian-ui",
+      "xiod-ui",
+      "shoogle"
+    ],
+    "destinations_accounted": [
+      {
+        "url": "https://ObsidianUI.dev",
+        "status": "NEW",
+        "id": "obsidian-ui"
+      },
+      {
+        "url": "https://ui.xiod.dev",
+        "status": "NEW",
+        "id": "xiod-ui"
+      },
+      {
+        "url": "https://shoogle.dev",
+        "status": "NEW",
+        "id": "shoogle"
+      },
+      {
+        "url": "pic.x.com media (both)",
+        "status": "SKIP",
+        "note": "x.com media"
+      },
+      {
+        "url": "quoted status links (both)",
+        "status": "SKIP",
+        "note": "x.com/twitter status"
+      },
+      {
+        "url": "https://kobra.systems (quoted alibey only)",
+        "status": "ALREADY",
+        "id": "kobra",
+        "note": "in quoted post entities, not main destination"
+      }
+    ]
   }
 }

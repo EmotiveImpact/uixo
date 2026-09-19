@@ -1,11 +1,8 @@
 # List-poster watchlist
 
-Updated: 2026-09-18
+Updated: 2026-09-19
 
-Priority seed (not exclusive) — also discover new list-droppers.
-
-## Priority handles
-
+## Core handles (25)
 - @walebuilds_
 - @rkant7
 - @Tegadesigns
@@ -32,8 +29,7 @@ Priority seed (not exclusive) — also discover new list-droppers.
 - @deb_isadev
 - @Mohd__Shahid_07
 
-## Discovery candidates
-
+## Discovery candidates (20)
 - @theansarh
 - @eddieeee0716
 - @mredu000
@@ -53,15 +49,7 @@ Priority seed (not exclusive) — also discover new list-droppers.
 - @codebydinil
 - @VullnetAdemaj
 - @suriadesign
-- @TeddyinMedia
-- @FareaNFts
-- @cviklihamar
-- @abhishvekcn
-- @codestirring
-- @jarradgrigg
-- @Hartdrawss
-- @AAishakar
+- @alibey_10
 
-## Notes
-
-Core handles are priority; also discover and add new list-droppers. Dump all links from list posts.
+Note: exclusive_allowlist=False. Core handles are priority; also discover and add new list-droppers. Dump all links from list posts.
+Sep19: added ['alibey_10'] (alibey_10 list-dropper; athrix_codes skipped — product maker self-promo, not list-drop).

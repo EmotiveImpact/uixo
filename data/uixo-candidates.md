@@ -1,15 +1,15 @@
 # UIXO Candidates
 
-Updated: 2026-09-18 | total: 386 | new this harvest: 3
+Updated: 2026-09-19 | total: 389 | new this harvest: 3
 
 ## Counts by category
 
 - Inspiration: 116
 - Components: 63
+- UI libraries: 50
 - Templates: 48
-- UI libraries: 48
 - Icons: 40
-- Marketplace: 22
+- Marketplace: 23
 - Backgrounds: 15
 - Fonts: 12
 - Illustrations: 12
@@ -20,10 +20,10 @@ Updated: 2026-09-18 | total: 386 | new this harvest: 3
 - blocked: 1
 - captured: 378
 - og-captured: 7
+- pending: 3
 
-## New this run (Red verified UI libs 2026-09-18)
+## New this run (athrix_codes + alibey_10 2026-09-19)
 
-- **Canvas UI** (`canvas-ui`) — UI libraries — https://canvasui.dev/
-- **Spell UI** (`spell-ui`) — Components — https://spell.sh/
-- **Animate UI** (`animate-ui`) — Components — https://animate-ui.com
-
+- **ObsidianUI** (`obsidian-ui`) — UI libraries — https://www.obsidianui.dev/
+- **XiodUI** (`xiod-ui`) — UI libraries — https://ui.xiod.dev
+- **Shoogle** (`shoogle`) — Marketplace — https://shoogle.dev

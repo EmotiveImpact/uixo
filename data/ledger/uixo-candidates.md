@@ -1,15 +1,15 @@
 # UIXO Candidates
 
-Updated: 2026-09-18 | total: 383 | new this harvest: 12
+Updated: 2026-09-19 | total: 389 | new this harvest: 3
 
 ## Counts by category
 
 - Inspiration: 116
-- Components: 61
+- Components: 63
+- UI libraries: 50
 - Templates: 48
-- UI libraries: 47
 - Icons: 40
-- Marketplace: 22
+- Marketplace: 23
 - Backgrounds: 15
 - Fonts: 12
 - Illustrations: 12
@@ -18,18 +18,12 @@ Updated: 2026-09-18 | total: 383 | new this harvest: 12
 ## Image status
 
 - blocked: 1
+- captured: 378
+- og-captured: 7
+- pending: 3
 
-## New this run (weekday digest 2026-09-18)
+## New this run (athrix_codes + alibey_10 2026-09-19)
 
-- **Empty States** (`spectrum-empty-states`) — Components — https://ui.spectrumhq.in/blocks/empty-states
-- **Reelfolio** (`reelfolio`) — Templates — https://reelfolio.io/
-- **CSS Toggles** (`css-toggles-colorion`) — Components — https://toggles.colorion.co/
-- **Ant Design** (`ant-design`) — UI libraries — https://ant.design/
-- **daisyUI** (`daisyui`) — UI libraries — https://daisyui.com/
-- **React Aria Components** (`react-aria`) — UI libraries — https://react-spectrum.adobe.com/react-aria/
-- **Reshaped** (`reshaped`) — UI libraries — https://www.reshaped.so/
-- **Venstyler** (`venstyler`) — UI libraries — https://www.venstyler.com/
-- **Scritto** (`scritto`) — Components — https://scrit.to/
-- **DiceBear** (`dicebear`) — Illustrations — https://www.dicebear.com/
-- **Fluid Functionalism** (`fluid-functionalism`) — Components — https://fluidfunctionalism.com/
-- **shadcn/lint** (`shadcn-lint`) — Components — https://github.com/shadcn-ui/lint
+- **ObsidianUI** (`obsidian-ui`) — UI libraries — https://www.obsidianui.dev/
+- **XiodUI** (`xiod-ui`) — UI libraries — https://ui.xiod.dev
+- **Shoogle** (`shoogle`) — Marketplace — https://shoogle.dev
