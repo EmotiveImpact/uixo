@@ -1,0 +1,26 @@
+name: Intelligence workbench
+on:
+  push:
+    branches: [codex/registry-intelligence-v1]
+    paths: [.github/workflows/intelligence-workbench.yml]
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts && npm ci --prefix registry --ignore-scripts && npm ci --prefix live-demos --ignore-scripts
+      - name: Package source and locked dependencies
+        run: tar --exclude=.git --exclude='*.tar.gz' -czf /tmp/uixo-workbench.tar.gz .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: intelligence-workbench
+          path: /tmp/uixo-workbench.tar.gz
+          retention-days: 1
