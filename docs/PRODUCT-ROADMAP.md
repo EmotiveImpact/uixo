@@ -1,6 +1,6 @@
 # UIXO master product scope and roadmap
 
-Updated 12 September 2026. This document describes the destination and sequencing; it does not claim those products already exist. The [engineering audit](PRODUCT-AUDIT-2026-09-12.md) records defects and implementation gaps. The [original v2 brief](ASTRA-UIXO-V2-BUILD.md) remains the detailed foundation specification.
+Updated 19 September 2026. This document is the source of truth for UIXO's product destination and sequencing; it does not claim that planned products already exist. The [engineering audit](PRODUCT-AUDIT-2026-09-12.md) records defects and implementation gaps. The [original v2 brief](ASTRA-UIXO-V2-BUILD.md) remains the detailed foundation specification.
 
 ## Evidence and decision status
 
@@ -21,6 +21,40 @@ The website serves people. API/MCP serve applications and agents. Scouts and wor
 
 The journey is **discover → understand → select → save → acquire → use → learn from the outcome**. Inspiration remains useful, but the product must eventually help people produce working interfaces.
 
+
+## Product phase map
+
+The numbered product phases below are the strategic product sequence. The engineering gates `R0–R5` later in this document are acceptance gates nested beneath that sequence; they are not competing versions of the roadmap.
+
+| Product phase | Objective | Major product outcome |
+| --- | --- | --- |
+| **Phase 1 — Registry + Discovery foundation** | Make UIXO a credible, visible, evidence-backed registry for humans and machines | Public discovery, Assets, Sources, Collections, provenance, Registry Intelligence, production activation and **UIXO Discovery V2** |
+| **Phase 2 — Agent-scaled registry growth** | Make the registry improve continuously without giving agents editorial authority | Grok discovery, Eve investigation/maintenance, gap queues, freshness work and bounded automated operations |
+| **Phase 3 — Search intelligence** | Make UIXO materially better than directory/key-word search | Semantic retrieval, visual similarity, intent understanding, style/use-case metadata and explainable contextual ranking |
+| **Phase 4 — UIXO for agents** | Make UIXO infrastructure for software-building agents and coding tools | Mature API/MCP, project-aware asset selection, acquisition/installation workflows, SDKs, quotas and commercial platform access |
+| **Phase 5 — Project intelligence + organisation products** | Help people and teams assemble coherent interfaces and learn from outcomes | Personal projects, Teams, private registries, governance, composition/adaptation and evidence-backed outcome intelligence |
+
+### Phase 1 completion: UIXO Discovery V2
+
+**UIXO Discovery V2 is part of Phase 1. It is not a later Phase 2 initiative.** Registry Intelligence V1 built much of the operating spine, but too much of that value is currently hidden behind routes, curator gating and unpublished drafts. Discovery V2 turns that foundation into a product a visitor can actually perceive and use.
+
+The informal description that the foundation is “about 70% done” and that roughly “30% remains” is planning shorthand, not an audited completion percentage. The remaining Phase 1 work is defined by acceptance evidence, not by a numeric progress bar.
+
+Discovery V2 must make the following first-class and visible:
+
+- **Explore:** Assets, Collections and Sources in normal navigation, plus Saved for personal recall.
+- **Curator:** Registry Health, Operations, Editorial and Indexing for authorised users.
+- **Collections:** publish a deliberately small set of useful starter collections with strong visual cards, ordered assets, notes and source context.
+- **Sources:** visual provider profiles with asset counts, frameworks, licence/provenance evidence, preview coverage and verification context.
+- **Asset detail:** make provenance, licence, dependencies, source/version evidence and acquisition route easy to understand.
+- **Agent entry point:** make “Connect your AI agent” discoverable and explain what UIXO's MCP/API can actually return.
+- **Production activation:** run and verify the additive Registry Intelligence migration against the intended persistent environment, verify curator auth, public/private boundaries and production API routes.
+- **Release acceptance:** responsive browser acceptance and normal CI must pass; hidden URLs alone do not count as shipped product.
+
+**Phase 1 exit:** a new visitor can discover assets, collections and sources without knowing query parameters; a curator can visibly operate the registry; published collections contain real reviewed records; the persistent registry serves the Intelligence V1 schema; and the same approved records are available consistently through web and MCP/API.
+
+Detailed build scope: [UIXO Discovery V2](UIXO-DISCOVERY-V2.md).
+
 ## Products and editions
 
 These share one foundation. Do not build disconnected databases or unrelated shells for each edition.
@@ -30,9 +64,9 @@ These share one foundation. Do not build disconnected databases or unrelated she
 | WEB        | Public Web / designers and developers                  | Curated websites, individual asset discovery, real previews, provenance, variants, useful filters, favourites, editorial collections and original acquisition routes | Established direction                                            | Partial and usable on preview; representative source renders and account saves work, while catalogue depth remains limited |
 | PRO        | Personal workspace / frequent builders                 | Mixed project boards, project requirements, comparisons, advanced discovery, compatibility guidance, export/acquisition and paid high-value assistance               | Proposed edition; personal saved projects are established scope  | Account-backed website/asset favourites work; no complete mixed project workspace or paid entitlement                      |
 | TEAM       | Collaborative workspace / design and engineering teams | Shared projects, roles, comments/decisions, approved sources, private libraries, reusable project constraints and team usage                                         | Proposed edition                                                 | Not implemented as a team product                                                                                          |
-| PLATFORM   | API/MCP / coding tools and product integrators         | Search, inspect, preview, compatibility, resolve/acquire; scoped credentials, documented contracts, usage limits and eventual SDK                                    | Core API/MCP established; commercial platform packaging proposed | Six MCP tools and shared registry service exist; full external-client journey remains an acceptance gate                   |
+| PLATFORM   | API/MCP / coding tools and product integrators         | Search, inspect, preview, compatibility, resolve/acquire; scoped credentials, documented contracts, usage limits and eventual SDK                                    | Core API/MCP established; commercial platform packaging proposed | Nine read-only MCP tools and a shared registry service exist; full external-client journey remains an acceptance gate                   |
 | ENTERPRISE | Governed infrastructure / organisations                | Private registries, organisation policies, preferred internal design systems, licence/source restrictions, audit history, SSO and contractual support                | Longer-term proposal                                             | Not an enterprise-ready service                                                                                            |
-| OPS        | Internal curator and intelligence workspace            | Scout intake, evidence investigation, indexing, deduplication, review, publication, refresh, job controls and operational visibility                                 | Established direction                                            | Routes/tools exist; real Grok/Eve workflow and signed-in operator acceptance incomplete                                    |
+| OPS        | Internal curator and intelligence workspace            | Scout intake, evidence investigation, indexing, deduplication, review, publication, refresh, job controls and operational visibility                                 | Established direction                                            | Registry Health, Sources, Collections, Operations and Editorial routes/tools exist; visible navigation, production activation and real Grok/Eve acceptance remain incomplete                                    |
 | MARKET     | Provider marketplace / creators                        | Provider onboarding, ownership claims, official integrations and potentially authorised sales/licensing with a transaction fee                                       | Later option, not v1                                             | Editorial directory and source links; no marketplace commerce                                                              |
 
 ## Application surfaces and navigation
@@ -104,7 +138,10 @@ Before launching a paid edition, decide:
 
 Sponsorship must not buy an editorial endorsement or alter undisclosed quality ranking. A purchase route to a third-party asset is not a UIXO marketplace transaction.
 
-## Delivery phases and exit gates
+## Engineering delivery gates
+
+These gates provide implementation and acceptance evidence beneath the product phase map above. Discovery V2 completes visible and operational portions of **Product Phase 1** while drawing primarily on R0 and R1 requirements.
+
 
 ### R0 — Coherent and reliable current product
 
@@ -176,6 +213,10 @@ The engineering audit is the implementation inventory. These stable IDs connect 
 | SAVE-02   | **Completed:** typed account-backed asset favourites and guest migration | R0   | Cross-device add/remove, account isolation and migration tests; existing saves preserved       |
 | MEDIA-01  | **Completed:** representative source-pinned component rendering          | R0   | Five integrity-checked shadcn/ui primitives match gallery/detail views at desktop/mobile sizes |
 | OPS-01    | CI and release isolation/auth checks                                     | R0   | Ordinary PR checks, role acceptance, preview database boundary and release runbook             |
+| DV2-01     | **Discovery V2 visible information architecture**                        | R0   | Assets, Collections, Sources and Saved are discoverable in normal navigation; curator tools appear for authorised users |
+| DV2-02     | **Publish initial editorial asset collections**                         | R0/R1| Reviewed collection cards/details are useful on desktop/mobile and public snapshots stay separate from drafts |
+| DV2-03     | **Source Intelligence public experience**                               | R0/R1| Source cards/profiles expose provenance, framework, licence, preview and verification context without invented scores |
+| ACT-01     | **Registry Intelligence production activation**                         | R0/R1| 004 migration verified in intended persistent environment; curator auth/private boundaries/API routes pass acceptance |
 | REG-01    | Fresh approved-provider indexing                                         | R1   | Source-pinned records, staged review, retry/continuation and published search evidence         |
 | INGEST-01 | Grok issue handoff and one Eve run                                       | R1   | Linked issue/candidate/job/review IDs with success and failure traces                          |
 | USE-01    | External-client MCP acquisition acceptance                               | R1   | One real asset used successfully with retained source/licence notices                          |
@@ -190,4 +231,4 @@ The engineering audit is the implementation inventory. These stable IDs connect 
 - Each completed work package records code/PR, tests, live acceptance where applicable and remaining limits. A checked task without evidence is not complete.
 - New ideas enter as proposals with dependencies; do not silently expand the current release or discard later scope.
 
-SAVE-01, SAVE-02 and MEDIA-01 are complete on the integration branch. The next implementation package is **OPS-01**. Account saves and the reviewed preview allow-list are reliable foundations for later personal workspaces and broader component coverage.
+SAVE-01, SAVE-02, MEDIA-01, the inventory-aware discovery work and Registry Intelligence V1 are merged to `main`. The immediate product package is **UIXO Discovery V2 + production activation**, which completes the visible/operational remainder of Product Phase 1 before Phase 2 agent scaling. Account saves, source-backed previews, Registry Intelligence and the nine-tool MCP surface are foundations to expose and validate, not reasons to skip the visitor product.

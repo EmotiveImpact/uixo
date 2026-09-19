@@ -1,5 +1,28 @@
 # UIXO v2 status
 
+## Main and next product package, 19 September 2026
+
+Registry Intelligence V1 is merged into `main` through PR #34 at merge commit
+`812f29c4d27df1138490361b62a171732386d530`.
+
+The next product package is **UIXO Discovery V2**, explicitly the completion sprint inside
+**Product Phase 1 — Registry + Discovery foundation**. It makes Assets, Collections and Sources
+first-class public navigation; exposes Registry Health, Operations, Editorial and Indexing to
+authorised curators; publishes reviewed starter collections; improves visible source/provenance
+context; and completes the persistent Registry Intelligence activation/acceptance work.
+
+See [UIXO Discovery V2](UIXO-DISCOVERY-V2.md) and the
+[master roadmap](PRODUCT-ROADMAP.md). The informal “70% done / 30% remaining” description is
+planning shorthand rather than a measured completion percentage; Phase 1 completion is determined
+by the acceptance gates in those documents.
+
+Important current release caveat: merging PR #34 did **not** itself run `004-intelligence.sql`
+against a production database or activate Grok/Eve. The merged main commit's GitHub Actions browser
+acceptance is also still failing, while the application/registry/MCP verification and Vercel build
+have otherwise passed their previously recorded checks. Discovery V2 includes fixing that release
+acceptance rather than treating hidden routes as a finished product.
+
+
 ## Registry Intelligence V1, 19 September 2026
 
 The next source build adds evidence coverage, provider profiles, private/published editorial asset
