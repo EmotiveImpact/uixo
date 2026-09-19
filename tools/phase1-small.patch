@@ -1,0 +1,194 @@
+diff --git a/docs/PHASE-1-RELEASE.md b/docs/PHASE-1-RELEASE.md
+index 896ec2d..19cab5a 100644
+--- a/docs/PHASE-1-RELEASE.md
++++ b/docs/PHASE-1-RELEASE.md
+@@ -4,6 +4,13 @@ Updated 19 September 2026. Implementation: PR #36, `build/discovery-v2-phase1`.
+ This is the acceptance ledger for [Discovery V2](UIXO-DISCOVERY-V2.md), within
+ [Product Phase 1](PRODUCT-ROADMAP.md). A merged source release is not a signed-off production launch.
+ 
++## Follow-up hardening and live observation
++
++[Phase 1 hardening](PHASE-1-HARDENING.md) records the Sources capacity fix and the
++19 September 19:23 UTC public observation: Discovery V2 is deployed on PostgreSQL with
++264 assets, but `intelligence.ready` is false and Collections returns 503. This is a
++missing persistent schema gate, not an absent code merge. Production activation remains open.
++
+ ## Delivered product surfaces
+ 
+ The shared sidebar now exposes All assets, Asset collections, Sources and Connect your AI agent.
+diff --git a/package.json b/package.json
+index d89a540..3dc6c51 100644
+--- a/package.json
++++ b/package.json
+@@ -27,7 +27,7 @@
+     "db:schema": "psql \"$DATABASE_URL\" -v ON_ERROR_STOP=1 -f db/schema.sql",
+     "registry:dev": "node --experimental-strip-types tools/registry-dev.ts",
+     "registry:deps": "npm ci --prefix registry --ignore-scripts",
+-    "registry:test": "node --experimental-strip-types --test tests/registry/core.node.ts tests/registry/http.node.ts tests/registry/intelligence.node.ts services/eve/lib/client.node.ts tests/registry/discovery.node.ts",
++    "registry:test": "node --experimental-strip-types --test tests/registry/core.node.ts tests/registry/http.node.ts tests/registry/intelligence.node.ts services/eve/lib/client.node.ts tests/registry/discovery.node.ts tests/registry/source-directory.node.ts",
+     "registry:test:mcp": "node --experimental-strip-types --test registry/tests/mcp.node.ts",
+     "registry:verify": "node tools/verify-registry.mjs",
+     "registry:mcp": "node --experimental-strip-types registry/stdio.ts",
+diff --git a/registry/http.ts b/registry/http.ts
+index 68525b2..9e0645c 100644
+--- a/registry/http.ts
++++ b/registry/http.ts
+@@ -1,4 +1,5 @@
+-import { coverage, sourceHealth } from './intelligence.ts';
++import { coverage } from './intelligence.ts';
++import { sourceDirectory, publicSourceHealth } from './source-directory.ts';
+ import { intelligenceReadiness } from './readiness.ts';
+ import {
+   listCollections,
+@@ -207,10 +208,14 @@ export function createRegistryHandler(
+       if (action === 'coverage')
+         result = await coverage(registry, url.searchParams.get('provider') || undefined);
+       else if (action === 'source-directory')
+-        result = { items: (await coverage(registry)).sources };
++        result = await sourceDirectory(registry, {
++          q: url.searchParams.get('q') ?? undefined,
++          limit: integer(url.searchParams.get('limit') ?? undefined, 24, 1, 48),
++          offset: integer(url.searchParams.get('offset') ?? undefined, 0, 0, 100000),
++        });
+       else if (action === 'collection-starters') result = await seedCollectionDrafts(registry);
+       else if (action === 'source-health')
+-        result = await sourceHealth(registry, identifier(url.searchParams.get('provider')));
++        result = await publicSourceHealth(registry, identifier(url.searchParams.get('provider')));
+       else if (action === 'collections' || action === 'collections-editor')
+         result = await listCollections(
+           registry,
+diff --git a/registry/intelligence.ts b/registry/intelligence.ts
+index ee7ce06..29abe52 100644
+--- a/registry/intelligence.ts
++++ b/registry/intelligence.ts
+@@ -22,7 +22,7 @@ type Media = {
+   live: Record<string, { ref: string; sourceUrl: string }>;
+ };
+ let mediaPromise: Promise<Media> | undefined;
+-function media(): Promise<Media> {
++export function media(): Promise<Media> {
+   return (mediaPromise ??= Promise.all([
+     readFile(new URL('../public/assets/component-previews/manifest.json', import.meta.url), 'utf8'),
+     readFile(new URL('../live-demos/manifest.json', import.meta.url), 'utf8'),
+diff --git a/registry/mcp.ts b/registry/mcp.ts
+index f17af28..3e6e159 100644
+--- a/registry/mcp.ts
++++ b/registry/mcp.ts
+@@ -1,4 +1,4 @@
+-import { sourceHealth } from './intelligence.ts';
++import { publicSourceHealth as sourceHealth } from './source-directory.ts';
+ import { listCollections, getCollection } from './collections.ts';
+ import { McpServer } from '@modelcontextprotocol/server';
+ import * as z from 'zod/v4';
+@@ -44,7 +44,7 @@ async function guarded(action: () => Promise<Record<string, unknown>>) {
+ }
+ /** A new server per HTTP request or stdio connection; business logic stays in Registry. */
+ export function createRegistryMcp(registry: Registry) {
+-  const server = new McpServer({ name: 'uixo', version: '0.3.0' });
++  const server = new McpServer({ name: 'uixo', version: '0.3.1' });
+   server.registerTool(
+     'search_assets',
+     {
+@@ -139,7 +139,7 @@ export function createRegistryMcp(registry: Registry) {
+     'get_source_health',
+     {
+       description:
+-        'Read measured evidence coverage for one approved provider. Pins, previews, dependency declarations and dated licence evidence are distinct from security or runtime certification. Upstream availability is not checked.',
++        'Read exact indexed asset counts and bounded evidence coverage for one approved provider. When evidenceStatus is deferred, metrics is null and must not be interpreted as zero coverage. Pins and licence observations are not security or runtime certification. Upstream availability is not checked.',
+       annotations,
+       inputSchema: z.object({ provider: id }),
+     },
+diff --git a/registry/verify-release.ts b/registry/verify-release.ts
+index c13ff48..3fde870 100644
+--- a/registry/verify-release.ts
++++ b/registry/verify-release.ts
+@@ -106,7 +106,7 @@ try {
+         storage: status.storage,
+         schemaReady: status.intelligence.ready,
+         publicCollections: collections.total,
+-        approvedSources: sources.items.length,
++        approvedSources: sources.total,
+         tools: tools.tools.map((tool) => tool.name),
+         webMcpParity: true,
+         unauthorisedPrivateReadsBlocked: true,
+diff --git a/src/components/RegistryIntelligence.tsx b/src/components/RegistryIntelligence.tsx
+index 918af02..47c8d0a 100644
+--- a/src/components/RegistryIntelligence.tsx
++++ b/src/components/RegistryIntelligence.tsx
+@@ -2,7 +2,8 @@ import { SourceDirectory } from './SourceDirectory';
+ import { ArrowLeft, ArrowRight, ArrowUpRight, RefreshCw } from 'lucide-react';
+ import { safeAssetUrl } from '../lib/asset-library';
+ import type { AssetQuery } from '../lib/asset-library';
+-import type { CoverageReport, SourceHealth } from '../../shared/intelligence';
++import type { CoverageReport } from '../../shared/intelligence';
++import type { SourceSummary } from '../../shared/source-directory';
+ import { RegistryOperations } from './RegistryOperations';
+ import { AssetCollections } from './AssetCollections';
+ import {
+@@ -157,7 +158,7 @@ function Sources(props: IntelligenceProps) {
+   return props.query.provider ? <SourceProfile {...props} /> : <SourceDirectory {...props} />;
+ }
+ function SourceProfile({ query, navigate, isCurator }: IntelligenceProps) {
+-  const remote = useRegistryData<SourceHealth>('source-health', { provider: query.provider });
++  const remote = useRegistryData<SourceSummary>('source-health', { provider: query.provider });
+   const s = remote.data;
+   return (
+     <>
+@@ -174,7 +175,7 @@ function SourceProfile({ query, navigate, isCurator }: IntelligenceProps) {
+                 <p>{s.rationale}</p>
+               </div>
+               <RegistryLink query={query} navigate={navigate} changes={{ provider: s.id }}>
+-                Browse {s.metrics.total} assets <ArrowRight size={15} />
++                Browse {s.assetCount ?? s.metrics?.total ?? 0} assets <ArrowRight size={15} />
+               </RegistryLink>
+             </div>
+             <div className="ri-tags">
+@@ -184,7 +185,13 @@ function SourceProfile({ query, navigate, isCurator }: IntelligenceProps) {
+                 </span>
+               ))}
+             </div>
+-            <EvidenceCards metrics={s.metrics} />
++            {s.metrics ? (
++              <EvidenceCards metrics={s.metrics} />
++            ) : (
++              <p className="dv2-inline-state" role="status">
++                {s.evidenceNote}
++              </p>
++            )}
+             <section className="ri-section">
+               <h3>What the evidence does, and does not, establish</h3>
+               <dl className="ri-facts">
+@@ -193,7 +200,9 @@ function SourceProfile({ query, navigate, isCurator }: IntelligenceProps) {
+                   <dd>
+                     {s.oldestVerifiedAt
+                       ? new Date(s.oldestVerifiedAt).toLocaleDateString('en-GB')
+-                      : 'Unknown'}
++                      : s.evidenceStatus === 'deferred'
++                        ? 'Not assessed'
++                        : 'Unknown'}
+                   </dd>
+                 </div>
+                 <div>
+@@ -201,7 +210,9 @@ function SourceProfile({ query, navigate, isCurator }: IntelligenceProps) {
+                   <dd>
+                     {s.newestVerifiedAt
+                       ? new Date(s.newestVerifiedAt).toLocaleDateString('en-GB')
+-                      : 'Unknown'}
++                      : s.evidenceStatus === 'deferred'
++                        ? 'Not assessed'
++                        : 'Unknown'}
+                   </dd>
+                 </div>
+                 <div>
+diff --git a/tools/verify-registry.mjs b/tools/verify-registry.mjs
+index eec17a0..6235635 100644
+--- a/tools/verify-registry.mjs
++++ b/tools/verify-registry.mjs
+@@ -8,6 +8,7 @@ const suites = [
+       'tests/registry/http.node.ts',
+       'tests/registry/intelligence.node.ts',
+       'tests/registry/discovery.node.ts',
++      'tests/registry/source-directory.node.ts',
+       'services/eve/lib/client.node.ts',
+     ],
+   ],

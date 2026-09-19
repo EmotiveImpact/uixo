@@ -1,0 +1,25 @@
+name: Apply verified Phase 1 integration patch
+on:
+  push:
+    branches: [build/phase1-release-hardening]
+    paths: [tools/phase1-small.patch]
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: build/phase1-release-hardening
+      - name: Apply local-verified integration changes and remove temporary tooling
+        run: |
+          git apply --check tools/phase1-small.patch
+          git apply tools/phase1-small.patch
+          rm tools/phase1-small.patch .github/workflows/phase1-apply.yml
+          git add -A
+          git config user.name 'UIXO Build'
+          git config user.email 'actions@users.noreply.github.com'
+          git commit -m 'fix: connect bounded source discovery and remove temporary tooling'
+          git push origin HEAD:build/phase1-release-hardening
