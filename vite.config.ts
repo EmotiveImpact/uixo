@@ -55,6 +55,12 @@ function localPreviews(): Plugin {
       server.middlewares.use((req, res, next) => {
         const urlPath = decodeURIComponent((req.url ?? '').split('?')[0] ?? '');
         if (!urlPath.startsWith('/previews/') && !urlPath.startsWith('/live-demos/')) return next();
+        // Source-module JSON imports belong to Vite, not the generated preview directory.
+        if (
+          urlPath === '/live-demos/manifest.json' &&
+          new URL(req.url ?? '/', 'http://localhost').searchParams.has('import')
+        )
+          return next();
         if (urlPath.startsWith('/live-demos/')) res.setHeader('Access-Control-Allow-Origin', '*');
         const file = previewFile(urlPath);
         if (file) {
