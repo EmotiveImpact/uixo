@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { createRemoteJWKSet, jwtVerify } from 'jose';
+import { toUpstreamCookies } from './cookies.js';
 import { db } from './db.js';
 
 export function json(res: VercelResponse, status: number, body: unknown) {
@@ -39,6 +40,7 @@ export function hasCuratorToken(req: VercelRequest): boolean {
  * the service publishes. Nothing the caller says about itself is taken on trust.
  */
 let keys: ReturnType<typeof createRemoteJWKSet> | null = null;
+const USER_ID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 function jwks() {
   const base = (process.env.NEON_AUTH_BASE_URL ?? '').replace(/\/+$/, '');
@@ -47,8 +49,7 @@ function jwks() {
   return keys;
 }
 
-/** The verified subject of the request, or null. Expiry and issuer are checked too. */
-export async function verifiedUserId(req: VercelRequest): Promise<string | null> {
+async function verifiedBearerUserId(req: VercelRequest): Promise<string | null> {
   const header = req.headers.authorization ?? '';
   if (!header.startsWith('Bearer ')) return null;
 
@@ -65,7 +66,7 @@ export async function verifiedUserId(req: VercelRequest): Promise<string | null>
       requiredClaims: ['sub', 'exp', 'iat'],
       clockTolerance: 5,
     });
-    if (typeof payload.sub !== 'string' || !/^[a-f0-9-]{36}$/i.test(payload.sub)) return null;
+    if (typeof payload.sub !== 'string' || !USER_ID.test(payload.sub)) return null;
     if (!configuredIssuer) {
       if (typeof payload.iss !== 'string') return null;
       const authOrigin = new URL(base).origin;
@@ -77,6 +78,47 @@ export async function verifiedUserId(req: VercelRequest): Promise<string | null>
     // Bad signature, expired, wrong key — all mean the same thing here.
     return null;
   }
+}
+
+/**
+ * Validate the first-party session cookie against Neon Auth itself.
+ *
+ * Some Neon Auth configurations expose the account through get-session but do not return a
+ * browser JWT from /token. The proxy already rewrites Neon's cookie names for this origin; put
+ * those names back and ask the configured auth service to verify the session. The API never
+ * decodes or trusts cookie contents locally.
+ */
+export async function verifiedCookieUserId(req: VercelRequest): Promise<string | null> {
+  const base = (process.env.NEON_AUTH_BASE_URL ?? '').replace(/\/+$/, '');
+  const rawCookie = req.headers.cookie;
+  const cookie = Array.isArray(rawCookie) ? rawCookie.join('; ') : rawCookie;
+  if (!base || !cookie) return null;
+  const authCookies = cookie
+    .split(';')
+    .map((part) => part.trim())
+    .filter((part) => /^(?:__Secure-)?(?:neon-auth\.|neonauth\.)[^=]*=/i.test(part))
+    .join('; ');
+  if (!authCookies) return null;
+
+  try {
+    const response = await fetch(`${base}/get-session`, {
+      method: 'GET',
+      headers: { cookie: toUpstreamCookies(authCookies) },
+      redirect: 'manual',
+      signal: AbortSignal.timeout(5_000),
+    });
+    if (!response.ok) return null;
+    const data = (await response.json()) as { user?: { id?: unknown } | null };
+    const id = data.user?.id;
+    return typeof id === 'string' && USER_ID.test(id) ? id : null;
+  } catch {
+    return null;
+  }
+}
+
+/** The verified subject of the request, or null. */
+export async function verifiedUserId(req: VercelRequest): Promise<string | null> {
+  return (await verifiedBearerUserId(req)) ?? verifiedCookieUserId(req);
 }
 
 /**
