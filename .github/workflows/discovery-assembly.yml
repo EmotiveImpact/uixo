@@ -1,0 +1,38 @@
+name: Assemble Discovery V2
+on:
+  push:
+    branches: [build/discovery-v2-phase1]
+    paths:
+      - .github/workflows/discovery-assembly.yml
+      - tools/discovery-assembly.mjs
+permissions:
+  contents: write
+concurrency:
+  group: discovery-v2-assembly
+  cancel-in-progress: false
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: build/discovery-v2-phase1
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Apply inspected source edits
+        run: |
+          node --check tools/discovery-assembly.mjs
+          node tools/discovery-assembly.mjs
+          rm tools/discovery-assembly.mjs .github/workflows/discovery-assembly.yml
+          npm run format > /tmp/uixo-format.log
+      - name: Commit assembled branch for ordinary PR verification
+        run: |
+          git config user.name "UIXO Build"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: integrate and format Discovery V2 Phase 1 product surfaces"
+          git push origin HEAD:build/discovery-v2-phase1
