@@ -29,7 +29,8 @@ jobs:
           node tools/discovery-polish.mjs
           rm tools/discovery-polish.mjs .github/workflows/discovery-polish.yml
           npm run format > /tmp/uixo-format.log
-      - name: Commit for ordinary PR verification
+          git restore .github/workflows/ci.yml
+      - name: Commit application changes only
         run: |
           git config user.name "UIXO Build"
           git config user.email "actions@users.noreply.github.com"
