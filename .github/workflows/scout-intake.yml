@@ -1,0 +1,29 @@
+name: Structured scout intake
+on:
+  issues:
+    types: [opened, edited, labeled, reopened]
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: scout-intake-${{ github.event.issue.number }}
+  cancel-in-progress: false
+jobs:
+  intake:
+    if: contains(github.event.issue.labels.*.name, 'uixo-candidate') && vars.UIXO_SCOUT_INTAKE_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+      - name: Validate and deliver structured candidate
+        env:
+          UIXO_API_ORIGIN: ${{ vars.UIXO_API_ORIGIN }}
+          UIXO_SCOUT_GITHUB_LOGINS: ${{ vars.UIXO_SCOUT_GITHUB_LOGINS }}
+          UIXO_SCOUT_TOKEN: ${{ secrets.UIXO_SCOUT_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node --experimental-strip-types tools/grok-issue-intake.ts
