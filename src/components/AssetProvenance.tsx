@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { EMPTY_ASSET_QUERY, assetHref, safeAssetUrl } from '../lib/asset-library';
 import type { AssetRecord } from '../lib/asset-library';
@@ -11,11 +12,12 @@ export function AssetProvenance({
   variantId: string;
   providerName: string;
 }) {
+  const [openedAt] = useState(() => Date.now());
   const variant = asset.variants.find((entry) => entry.id === variantId);
   const sourceRef = variant?.sourceRef;
   const pinned = /^[a-f0-9]{40}$/i.test(sourceRef ?? '');
   const observed = asset.verifiedAt ? Date.parse(asset.verifiedAt) : NaN;
-  const dated = Number.isFinite(observed) && observed <= Date.now();
+  const dated = Number.isFinite(observed) && observed <= openedAt;
   return (
     <section className="asset-drawer-section dv2-provenance" aria-label="Source evidence summary">
       <div className="dv2-provenance-heading">
