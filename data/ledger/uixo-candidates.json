@@ -1,9 +1,9 @@
 {
   "updated": "2026-09-19",
-  "updated_note": "athrix_codes + alibey_10 harvest: +3 candidates (obsidian-ui, xiod-ui, shoogle)",
+  "updated_note": "codestirring Steal some taste paste: +1 candidate (interior)",
   "counts_by_category": {
     "Inspiration": 116,
-    "Components": 63,
+    "Components": 64,
     "Templates": 48,
     "UI libraries": 50,
     "Icons": 40,
@@ -14,12 +14,12 @@
     "Mockups": 10
   },
   "totals": {
-    "candidates": 389,
-    "needs_review": 311,
-    "new_this_run": 3,
-    "already_present": 13,
+    "candidates": 390,
+    "needs_review": 312,
+    "new_this_run": 1,
+    "already_present": 6,
     "skipped_dupes_existing_site": 0,
-    "image_captured": 381,
+    "image_captured": 382,
     "image_og_captured": 7,
     "image_blocked": 1,
     "image_pending": 0
@@ -171,6 +171,42 @@
       "url": "https://404s.design",
       "reason": "already candidate (404s) — neropursue digest verify",
       "ingest_batch": "suriadesign-neropursue-2026-09-16"
+    },
+    {
+      "title": "Built by Designers",
+      "url": "https://builtbydesigners.com",
+      "reason": "already candidate (built-by-designers)",
+      "ingest_batch": "codestirring-steal-taste-sep19"
+    },
+    {
+      "title": "Kage",
+      "url": "https://kage.design",
+      "reason": "already candidate (kage-design)",
+      "ingest_batch": "codestirring-steal-taste-sep19"
+    },
+    {
+      "title": "Rare UI",
+      "url": "https://rareui.com",
+      "reason": "already candidate (rareui)",
+      "ingest_batch": "codestirring-steal-taste-sep19"
+    },
+    {
+      "title": "Liquid Glass",
+      "url": "https://glass.samasante.com",
+      "reason": "already candidate (liquid-glass-samasante)",
+      "ingest_batch": "codestirring-steal-taste-sep19"
+    },
+    {
+      "title": "VibeUI",
+      "url": "https://vibeui.online",
+      "reason": "already candidate (vibeui)",
+      "ingest_batch": "codestirring-steal-taste-sep19"
+    },
+    {
+      "title": "Uiable",
+      "url": "https://uiable.com",
+      "reason": "already candidate (uiable)",
+      "ingest_batch": "codestirring-steal-taste-sep19"
     }
   ],
   "skipped_other": [
@@ -10643,14 +10679,46 @@
       ],
       "addedOrder": 399,
       "image_method": "screenshot"
+    },
+    {
+      "id": "interior",
+      "name": "Interior",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "React",
+        "Motion",
+        "Interactions",
+        "Open source",
+        "TypeScript"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "React",
+        "Web"
+      ],
+      "url": "https://interior.dev",
+      "why": "Beautiful interactions and motion — free animated React micro-interaction components (MIT)",
+      "creator": "interior.dev",
+      "source": "X list @codestirring/status/2101264540327633356 (Steal some taste)",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "codestirring-steal-taste-sep19",
+      "harvest_posts": [
+        "https://x.com/codestirring/status/2101264540327633356"
+      ],
+      "addedOrder": 400,
+      "image_method": "screenshot"
     }
   ],
   "image_capture": {
-    "captured": 381,
+    "captured": 382,
     "og-captured": 7,
     "blocked": 1,
     "pending": 0,
-    "at": "2026-09-19T10:04:41.705Z"
+    "at": "2026-09-19T17:06:44.774Z"
   },
   "paste_ingest": {
     "added_ids": [
@@ -11025,5 +11093,31 @@
         "note": "in quoted post entities, not main destination"
       }
     ]
+  },
+  "codestirring_steal_taste_ingest_sep19": {
+    "date": "2026-09-19",
+    "tweet": "https://x.com/codestirring/status/2101264540327633356",
+    "author": "codestirring",
+    "note_tweet_destinations": [
+      "https://builtbydesigners.com",
+      "https://kage.design",
+      "https://rareui.com",
+      "https://interior.dev",
+      "https://glass.samasante.com",
+      "https://vibeui.online",
+      "https://uiable.com"
+    ],
+    "new_ids": [
+      "interior"
+    ],
+    "already_ids": [
+      "built-by-designers",
+      "kage-design",
+      "rareui",
+      "liquid-glass-samasante",
+      "vibeui",
+      "uiable"
+    ],
+    "at": "2026-09-19T18:06:30.628435+01:00"
   }
 }

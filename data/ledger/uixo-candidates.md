@@ -1,11 +1,11 @@
 # UIXO Candidates
 
-Updated: 2026-09-19 | total: 389 | new this harvest: 3
+Updated: 2026-09-19 | total: 390 | new this harvest: 1
 
 ## Counts by category
 
 - Inspiration: 116
-- Components: 63
+- Components: 64
 - UI libraries: 50
 - Templates: 48
 - Icons: 40
@@ -18,12 +18,9 @@ Updated: 2026-09-19 | total: 389 | new this harvest: 3
 ## Image status
 
 - blocked: 1
-- captured: 378
+- captured: 382
 - og-captured: 7
-- pending: 3
 
-## New this run (athrix_codes + alibey_10 2026-09-19)
+## New this run (codestirring Steal some taste 2026-09-19)
 
-- **ObsidianUI** (`obsidian-ui`) — UI libraries — https://www.obsidianui.dev/
-- **XiodUI** (`xiod-ui`) — UI libraries — https://ui.xiod.dev
-- **Shoogle** (`shoogle`) — Marketplace — https://shoogle.dev
+- **Interior** (`interior`) — Components — https://interior.dev
