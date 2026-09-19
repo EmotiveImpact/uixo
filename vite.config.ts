@@ -130,6 +130,9 @@ export default defineConfig(({ mode }) => {
       port: 3000,
       strictPort: true,
       proxy: {
+        // The page canonicalises to localhost. Bootstrap the opt-in development
+        // session through this origin so its host-only cookie follows browser requests.
+        '/registry': { target: 'http://127.0.0.1:4175', changeOrigin: true },
         '/api/registry': { target: 'http://127.0.0.1:4175', changeOrigin: true },
         '/api/mcp': { target: 'http://127.0.0.1:4175', changeOrigin: true },
       },
