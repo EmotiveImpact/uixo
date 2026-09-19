@@ -21,7 +21,7 @@ jobs:
       - run: npm ci --prefix registry --ignore-scripts
       - name: Package source and locked test dependencies without credentials
         run: |
-          tar --exclude=.git --exclude='.env*' --exclude=test-results --exclude=dist --exclude=public/live-demos -czf /tmp/uixo-verification-workspace.tgz .
+          tar --exclude='./.git' --exclude='.env*' --exclude='./test-results' --exclude='./dist' --exclude='./public/live-demos' -czf /tmp/uixo-verification-workspace.tgz .
       - uses: actions/upload-artifact@v4
         with:
           name: phase1-verification-workspace
