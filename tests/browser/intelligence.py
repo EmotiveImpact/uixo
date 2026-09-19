@@ -5,12 +5,14 @@ The browser receives a real randomly issued loopback development cookie.
 import json
 import os
 from pathlib import Path
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, expect
 
 OUTPUT = Path(os.environ.get('UIXO_BROWSER_RESULTS', 'test-results/intelligence'))
 OUTPUT.mkdir(parents=True, exist_ok=True)
-API = 'http://127.0.0.1:4175'
-WEB = 'http://127.0.0.1:3000'
+# index.html canonicalises browser navigation to localhost, not 127.0.0.1.
+# The Vite development proxy issues and forwards the API's host-only cookie here.
+WEB = 'http://localhost:3000'
+API = WEB
 
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=True)
@@ -29,8 +31,7 @@ with sync_playwright() as p:
     errors, api_failures, results = [], [], []
     page.on('pageerror', lambda error: errors.append(str(error)))
     page.on('response', lambda response: api_failures.append({'url': response.url, 'status': response.status}) if '/api/registry' in response.url and response.status >= 400 else None)
-    # Use Chromium itself for the session bootstrap, not only APIRequestContext's jar.
-    page.goto(API + '/registry/index.html', wait_until='domcontentloaded')
+    page.goto(WEB + '/registry/index.html', wait_until='domcontentloaded')
 
     def api(action, body=None):
         url = API + '/api/registry?action=' + action
@@ -54,10 +55,9 @@ with sync_playwright() as p:
     ]})
 
     page.goto(WEB + '/browse/assets', wait_until='networkidle')
-    proxy_status = ctx.request.get(WEB + '/api/registry?action=status').json()
     browser_status = page.evaluate("async () => (await fetch('/api/registry?action=status', {credentials:'same-origin'})).json()")
-    print(json.dumps({'preflight': {'apiRole': api('status')['role'], 'proxyRole': proxy_status['role'], 'browserRole': browser_status['role']}, 'cookies': [{key: c[key] for key in ['name', 'domain', 'path', 'secure', 'sameSite']} for c in ctx.cookies()]}), flush=True)
-    assert browser_status['role'] == 'curator', 'The browser/proxy did not retain the issued development session.'
+    print(json.dumps({'preflight': {'apiRole': api('status')['role'], 'browserRole': browser_status['role'], 'pageUrl': page.url}, 'cookies': [{key: c[key] for key in ['name', 'domain', 'path', 'secure', 'sameSite']} for c in ctx.cookies()]}), flush=True)
+    assert browser_status['role'] == 'curator', 'The canonical browser/proxy did not retain the issued development session.'
 
     def check_screen(view, query, heading, width):
         page.set_viewport_size({'width': width, 'height': 1100 if width == 1440 else 844})
@@ -87,17 +87,17 @@ with sync_playwright() as p:
         for width in [1440, 390]:
             check_screen(view, query, heading, width)
 
-    # Click actual visible discovery navigation, rather than only knowing query-string routes.
+    # Use visible discovery navigation, not only query-string routes.
     page.set_viewport_size({'width': 1440, 'height': 1100})
     page.goto(WEB + '/browse/assets', wait_until='networkidle')
     page.get_by_role('button', name='Sources', exact=True).click()
     page.get_by_role('heading', name='Understand the source, not just the count.', exact=True).wait_for()
     page.get_by_role('searchbox', name='Find a source').fill('shadcn')
-    assert page.locator('.dv2-source-card').count() == 1
+    expect(page.locator('.dv2-source-card')).to_have_count(1)
     page.get_by_role('button', name='Asset collections', exact=True).click()
     page.get_by_role('heading', name='A considered starting point.', exact=True).wait_for()
-    assert page.locator('.dv2-collection-card').count() == 3
-    assert page.locator('.dv2-collection-visual').count() == 3
+    expect(page.locator('.dv2-collection-card')).to_have_count(3)
+    expect(page.locator('.dv2-collection-visual')).to_have_count(3)
     results.append({'visibleNavigation': True, 'sourceSearch': True, 'realCollectionCards': 3})
 
     # A real local curator write cannot change the separate published snapshot.
