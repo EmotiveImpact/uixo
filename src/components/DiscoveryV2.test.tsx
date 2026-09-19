@@ -75,7 +75,9 @@ function props() {
     assetSaves: { saved: [], save: vi.fn(() => true), accountBacked: false },
   };
 }
-beforeEach(() => request.mockReset());
+beforeEach(() => {
+  request.mockReset();
+});
 afterEach(cleanup);
 
 it('exposes public discovery and agent connection without exposing curator tools', () => {
