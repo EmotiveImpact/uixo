@@ -380,3 +380,32 @@
     height: 190px;
   }
 }
+
+.dv2-provenance-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.dv2-provenance-heading h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+.dv2-provenance-heading a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--foreground);
+  text-decoration: none;
+}
+.dv2-provenance-note {
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+}
+.dv2-provenance code {
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}

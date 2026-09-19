@@ -25,33 +25,49 @@ function asset(sourceRef: string | null): AssetRecord {
       sourceUrl: 'https://github.com/shadcn-ui/ui/blob/main/LICENSE.md',
       note: 'Retain the original licence.',
     },
-    variants: [{
-      id: 'react-tsx',
-      framework: 'react',
-      format: 'tsx',
-      dependencies: [],
-      css: 'tailwind',
-      sourceRef,
-      registryDependencies: ['utils'],
-      peerDependencies: { react: '^19.0.0' },
-    }],
+    variants: [
+      {
+        id: 'react-tsx',
+        framework: 'react',
+        format: 'tsx',
+        dependencies: [],
+        css: 'tailwind',
+        sourceRef,
+        registryDependencies: ['utils'],
+        peerDependencies: { react: '^19.0.0' },
+      },
+    ],
   };
 }
 
 it('shows an immutable source pin without claiming runtime certification', () => {
-  render(<AssetProvenance asset={asset('a'.repeat(40))} variantId="react-tsx" providerName="shadcn/ui" />);
+  render(
+    <AssetProvenance
+      asset={asset('a'.repeat(40))}
+      variantId="react-tsx"
+      providerName="shadcn/ui"
+    />,
+  );
   expect(screen.getByText('Immutable commit')).toBeTruthy();
   expect(screen.getByTitle('a'.repeat(40)).textContent).toBe('a'.repeat(12));
-  expect(screen.getByRole('link', { name: 'Source profile' }).getAttribute('href')).toContain('provider=shadcn');
-  expect(screen.getByText(/not a security, accessibility or compatibility certification/)).toBeTruthy();
+  expect(screen.getByRole('link', { name: 'Source profile' }).getAttribute('href')).toContain(
+    'provider=shadcn',
+  );
+  expect(
+    screen.getByText(/not a security, accessibility or compatibility certification/),
+  ).toBeTruthy();
   expect(screen.getByText(/react \^19.0.0/)).toBeTruthy();
 });
 
 it('does not turn a mutable branch or a missing reference into a verified commit', () => {
-  const mounted = render(<AssetProvenance asset={asset('main')} variantId="react-tsx" providerName="shadcn/ui" />);
+  const mounted = render(
+    <AssetProvenance asset={asset('main')} variantId="react-tsx" providerName="shadcn/ui" />,
+  );
   expect(screen.getByText('Declared reference')).toBeTruthy();
   expect(screen.queryByText('Immutable commit')).toBeNull();
-  mounted.rerender(<AssetProvenance asset={asset(null)} variantId="react-tsx" providerName="shadcn/ui" />);
+  mounted.rerender(
+    <AssetProvenance asset={asset(null)} variantId="react-tsx" providerName="shadcn/ui" />,
+  );
   expect(screen.getByText('Not pinned')).toBeTruthy();
   expect(screen.getByText('Unknown')).toBeTruthy();
 });

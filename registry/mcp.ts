@@ -44,7 +44,7 @@ async function guarded(action: () => Promise<Record<string, unknown>>) {
 }
 /** A new server per HTTP request or stdio connection; business logic stays in Registry. */
 export function createRegistryMcp(registry: Registry) {
-  const server = new McpServer({ name: 'uixo', version: '0.2.0' });
+  const server = new McpServer({ name: 'uixo', version: '0.3.0' });
   server.registerTool(
     'search_assets',
     {

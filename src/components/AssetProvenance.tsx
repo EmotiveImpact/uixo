@@ -32,7 +32,11 @@ export function AssetProvenance({
         <div>
           <dt>Source reference</dt>
           <dd>
-            {sourceRef ? <code title={sourceRef}>{pinned ? sourceRef.slice(0, 12) : sourceRef}</code> : 'Not pinned'}
+            {sourceRef ? (
+              <code title={sourceRef}>{pinned ? sourceRef.slice(0, 12) : sourceRef}</code>
+            ) : (
+              'Not pinned'
+            )}
           </dd>
         </div>
         <div>
@@ -44,17 +48,27 @@ export function AssetProvenance({
           <dd>{dated ? new Date(observed).toLocaleDateString('en-GB') : 'Not recorded'}</dd>
         </div>
       </dl>
-      <p className="dv2-provenance-note">A source pin records the inspected version. It is not a security, accessibility or compatibility certification.</p>
+      <p className="dv2-provenance-note">
+        A source pin records the inspected version. It is not a security, accessibility or
+        compatibility certification.
+      </p>
       <div className="ri-actions">
         <a href={safeAssetUrl(asset.licence.sourceUrl)} target="_blank" rel="noopener noreferrer">
           Original licence <ArrowUpRight size={13} aria-hidden="true" />
         </a>
       </div>
       {!!variant?.registryDependencies?.length && (
-        <p className="dv2-provenance-note"><strong>Related registry components:</strong> {variant.registryDependencies.join(', ')}</p>
+        <p className="dv2-provenance-note">
+          <strong>Related registry components:</strong> {variant.registryDependencies.join(', ')}
+        </p>
       )}
       {!!Object.keys(variant?.peerDependencies ?? {}).length && (
-        <p className="dv2-provenance-note"><strong>Declared peer versions:</strong> {Object.entries(variant!.peerDependencies!).map(([name, version]) => name + ' ' + version).join(', ')}</p>
+        <p className="dv2-provenance-note">
+          <strong>Declared peer versions:</strong>{' '}
+          {Object.entries(variant!.peerDependencies!)
+            .map(([name, version]) => name + ' ' + version)
+            .join(', ')}
+        </p>
       )}
     </section>
   );

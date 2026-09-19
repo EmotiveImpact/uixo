@@ -9,12 +9,12 @@ import {
   AnimatedSidebarMenuButton,
 } from './motion/animated-sidebar';
 
-export const EXPLORE_VIEWS = [
+const EXPLORE_VIEWS = [
   { view: 'assets', label: 'All assets', icon: Boxes },
   { view: 'collections', label: 'Asset collections', icon: Layers },
   { view: 'sources', label: 'Sources', icon: Database },
 ] as const;
-export const CURATOR_VIEWS = [
+const CURATOR_VIEWS = [
   { view: 'health', label: 'Registry health', icon: Activity },
   { view: 'operations', label: 'Operations', icon: Workflow },
   { view: 'collection-editor', label: 'Editorial', icon: BookOpen },

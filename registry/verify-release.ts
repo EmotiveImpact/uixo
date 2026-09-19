@@ -7,13 +7,20 @@ const input = process.argv[2];
 if (!input) throw new Error('Usage: verify-release.ts <origin> [--require-persistent]');
 const origin = new URL(input);
 const loopback = ['127.0.0.1', 'localhost'].includes(origin.hostname);
-if ((origin.protocol !== 'https:' && !(loopback && origin.protocol === 'http:')) ||
-    origin.username || origin.password || origin.pathname !== '/' || origin.search || origin.hash)
+if (
+  (origin.protocol !== 'https:' && !(loopback && origin.protocol === 'http:')) ||
+  origin.username ||
+  origin.password ||
+  origin.pathname !== '/' ||
+  origin.search ||
+  origin.hash
+)
   throw new Error('Supply one HTTPS origin, or an isolated loopback HTTP origin.');
 const endpoint = origin.origin;
 const read = async (action: string) => {
   const response = await fetch(endpoint + '/api/registry?' + action, {
-    redirect: 'error', signal: AbortSignal.timeout(15000),
+    redirect: 'error',
+    signal: AbortSignal.timeout(15000),
   });
   assert.equal(response.status, 200, 'Public registry request failed: ' + action);
   assert.ok(response.headers.get('content-type')?.includes('application/json'));
@@ -34,13 +41,17 @@ const search = await read('action=search&q=card&framework=react&limit=12');
 assert.ok(search.items.length > 0, 'The representative acquisition journey has no asset.');
 for (const action of ['coverage', 'operations', 'collections-editor']) {
   const response = await fetch(endpoint + '/api/registry?action=' + action, {
-    redirect: 'error', signal: AbortSignal.timeout(15000),
+    redirect: 'error',
+    signal: AbortSignal.timeout(15000),
   });
   assert.equal(response.status, 401, 'Private data must not be exposed: ' + action);
 }
-const client = new Client({ name: 'uixo-release-acceptance', version: '1.0.0' }, {
-  versionNegotiation: { mode: 'auto' },
-});
+const client = new Client(
+  { name: 'uixo-release-acceptance', version: '1.0.0' },
+  {
+    versionNegotiation: { mode: 'auto' },
+  },
+);
 const transport = new StreamableHTTPClientTransport(new URL(endpoint + '/api/mcp'), {
   fetch: (url, init) => {
     if (new URL(String(url)).origin !== endpoint) throw new Error('Unexpected MCP origin.');
@@ -59,7 +70,10 @@ try {
     return response.structuredContent!;
   };
   const results = await call('search_assets', { q: 'card', framework: 'react', limit: 12 });
-  assert.deepEqual((results.items as { id: string }[]).map((item) => item.id), search.items.map((item: { id: string }) => item.id));
+  assert.deepEqual(
+    (results.items as { id: string }[]).map((item) => item.id),
+    search.items.map((item: { id: string }) => item.id),
+  );
   const id = search.items[0].id;
   const detail = await read('action=asset&id=' + encodeURIComponent(id));
   const inspected = await call('inspect_asset', { id });
@@ -71,28 +85,39 @@ try {
   assert.equal(resolved.sourceRef, acquired.sourceRef);
   await call('check_compatibility', { id, project: { framework: 'react', packages: {} } });
   const source = await call('get_source_health', { provider: detail.providerId });
-  const publicSource = await read('action=source-health&provider=' + encodeURIComponent(detail.providerId));
+  const publicSource = await read(
+    'action=source-health&provider=' + encodeURIComponent(detail.providerId),
+  );
   assert.deepEqual(source.source, publicSource);
   const selections = await call('list_asset_collections', { limit: 12 });
   assert.deepEqual(selections.items, collections.items);
   const slug = collections.items[0].slug;
   const selection = await call('inspect_asset_collection', { slug });
-  assert.deepEqual(selection.collection, await read('action=collection&slug=' + encodeURIComponent(slug)));
-  console.log(JSON.stringify({
-    origin: endpoint,
-    release: status.release,
-    build: status.build,
-    storage: status.storage,
-    schemaReady: status.intelligence.ready,
-    publicCollections: collections.total,
-    approvedSources: sources.items.length,
-    tools: tools.tools.map((tool) => tool.name),
-    webMcpParity: true,
-    unauthorisedPrivateReadsBlocked: true,
-    representativeAsset: id,
-    acquisitionExecuted: false,
-    scope: 'read-only-network-acceptance; not signed-in identity or installation acceptance',
-  }, null, 2));
+  assert.deepEqual(
+    selection.collection,
+    await read('action=collection&slug=' + encodeURIComponent(slug)),
+  );
+  console.log(
+    JSON.stringify(
+      {
+        origin: endpoint,
+        release: status.release,
+        build: status.build,
+        storage: status.storage,
+        schemaReady: status.intelligence.ready,
+        publicCollections: collections.total,
+        approvedSources: sources.items.length,
+        tools: tools.tools.map((tool) => tool.name),
+        webMcpParity: true,
+        unauthorisedPrivateReadsBlocked: true,
+        representativeAsset: id,
+        acquisitionExecuted: false,
+        scope: 'read-only-network-acceptance; not signed-in identity or installation acceptance',
+      },
+      null,
+      2,
+    ),
+  );
 } finally {
   await client.close();
 }

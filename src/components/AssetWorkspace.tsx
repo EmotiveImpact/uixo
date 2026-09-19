@@ -1,3 +1,4 @@
+import { RegistryReadiness } from './RegistryReadiness';
 import { FeaturedCollections } from './DiscoveryCollections';
 import { RegistryIntelligence } from './RegistryIntelligence';
 import { NotFound } from './NotFound';
@@ -240,6 +241,7 @@ export function AssetWorkspace() {
           canClear={hasFilters}
           onClear={() => navigate({ view: query.view }, true)}
         />
+        <RegistryReadiness />
         <SaveSyncNotice
           label="Asset favourites"
           status={assetSaves.syncStatus}
