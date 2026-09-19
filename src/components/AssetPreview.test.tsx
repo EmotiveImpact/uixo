@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import { act, cleanup, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { AssetRecord } from '../lib/asset-library';
 import { AssetPreview } from './AssetPreview';
@@ -56,10 +56,31 @@ beforeEach(() => {
 
 afterEach(() => {
   cleanup();
+  vi.useRealTimers();
   vi.unstubAllGlobals();
 });
 
 describe('AssetPreview', () => {
+  it('offers the original source when the frame never starts, and recovers on ready', () => {
+    vi.useFakeTimers();
+    render(<AssetPreview asset={asset({})} />);
+    const frame = screen.getByTitle('Live Alert demo') as HTMLIFrameElement;
+    expect(frame.style.visibility).toBe('hidden');
+    expect(screen.getByRole('status').textContent).toContain('Loading live demo');
+    act(() => vi.advanceTimersByTime(20000));
+    expect(screen.getByRole('link', { name: /Open original live demo/ })).toBeTruthy();
+    act(() => {
+      window.dispatchEvent(
+        new MessageEvent('message', {
+          source: frame.contentWindow,
+          data: { type: 'uixo-preview-status', id: 'shadcn/alert', status: 'ready' },
+        }),
+      );
+    });
+    expect(frame.style.visibility).toBe('visible');
+    expect(screen.queryByRole('link', { name: /Open original live demo/ })).toBeNull();
+  });
+
   it('prefers a reviewed live component over its static capture', () => {
     const { container } = render(<AssetPreview asset={asset({})} />);
 

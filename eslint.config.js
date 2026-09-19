@@ -9,6 +9,7 @@ export default tseslint.config(
   {
     ignores: [
       'dist',
+      'public/live-demos',
       'live-demos',
       'legacy',
       'src/components/motion',

@@ -11,6 +11,7 @@ import {
   sendAuthResponse,
 } from './api/_lib/auth-proxy';
 import { runVercelHandler } from './api/_lib/dev-api';
+import deployment from './vercel.json';
 
 const publicRoot = fileURLToPath(new URL('./public', import.meta.url));
 
@@ -27,7 +28,7 @@ function previewFile(urlPath: string) {
   if (!path.extname(urlPath)) {
     const trimmed = relative.replace(/\/$/, '');
     guesses.push(`${trimmed}.html`);
-    if (urlPath.endsWith('/')) guesses.push(`${relative}index.html`);
+    guesses.push(`${trimmed}/index.html`);
   }
   for (const guess of guesses) {
     const file = path.normalize(path.join(publicRoot, guess));
@@ -54,14 +55,32 @@ function localPreviews(): Plugin {
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         const urlPath = decodeURIComponent((req.url ?? '').split('?')[0] ?? '');
-        if (!urlPath.startsWith('/previews/') && !urlPath.startsWith('/live-demos/')) return next();
+        const isLiveDemo = urlPath === '/live-demos' || urlPath.startsWith('/live-demos/');
+        if (!urlPath.startsWith('/previews/') && !isLiveDemo) return next();
         // Source-module JSON imports belong to Vite, not the generated preview directory.
         if (
           urlPath === '/live-demos/manifest.json' &&
           new URL(req.url ?? '/', 'http://localhost').searchParams.has('import')
         )
           return next();
-        if (urlPath.startsWith('/live-demos/')) res.setHeader('Access-Control-Allow-Origin', '*');
+        if (isLiveDemo) {
+          // Exercise the same clean URL and sandbox response headers locally as
+          // production. Otherwise browser acceptance can pass broken entry URLs.
+          if (urlPath === '/live-demos/index.html' || urlPath === '/live-demos/') {
+            res.statusCode = 308;
+            res.setHeader(
+              'Location',
+              `/live-demos${new URL(req.url ?? '/', 'http://localhost').search}`,
+            );
+            res.end();
+            return;
+          }
+          for (const header of deployment.headers.find(
+            (rule) => rule.source === '/live-demos/:path*',
+          )?.headers ?? []) {
+            res.setHeader(header.key, header.value);
+          }
+        }
         const file = previewFile(urlPath);
         if (file) {
           sendPreview(res, file);
