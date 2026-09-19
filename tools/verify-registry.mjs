@@ -8,6 +8,7 @@ const suites = [
       'tests/registry/http.node.ts',
       'tests/registry/intelligence.node.ts',
       'tests/registry/discovery.node.ts',
+      'tests/registry/source-directory.node.ts',
       'services/eve/lib/client.node.ts',
     ],
   ],

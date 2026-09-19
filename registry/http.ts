@@ -1,4 +1,5 @@
-import { coverage, sourceHealth } from './intelligence.ts';
+import { coverage } from './intelligence.ts';
+import { sourceDirectory, publicSourceHealth } from './source-directory.ts';
 import { intelligenceReadiness } from './readiness.ts';
 import {
   listCollections,
@@ -207,10 +208,14 @@ export function createRegistryHandler(
       if (action === 'coverage')
         result = await coverage(registry, url.searchParams.get('provider') || undefined);
       else if (action === 'source-directory')
-        result = { items: (await coverage(registry)).sources };
+        result = await sourceDirectory(registry, {
+          q: url.searchParams.get('q') ?? undefined,
+          limit: integer(url.searchParams.get('limit') ?? undefined, 24, 1, 48),
+          offset: integer(url.searchParams.get('offset') ?? undefined, 0, 0, 100000),
+        });
       else if (action === 'collection-starters') result = await seedCollectionDrafts(registry);
       else if (action === 'source-health')
-        result = await sourceHealth(registry, identifier(url.searchParams.get('provider')));
+        result = await publicSourceHealth(registry, identifier(url.searchParams.get('provider')));
       else if (action === 'collections' || action === 'collections-editor')
         result = await listCollections(
           registry,

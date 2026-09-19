@@ -27,7 +27,7 @@
     "db:schema": "psql \"$DATABASE_URL\" -v ON_ERROR_STOP=1 -f db/schema.sql",
     "registry:dev": "node --experimental-strip-types tools/registry-dev.ts",
     "registry:deps": "npm ci --prefix registry --ignore-scripts",
-    "registry:test": "node --experimental-strip-types --test tests/registry/core.node.ts tests/registry/http.node.ts tests/registry/intelligence.node.ts services/eve/lib/client.node.ts tests/registry/discovery.node.ts",
+    "registry:test": "node --experimental-strip-types --test tests/registry/core.node.ts tests/registry/http.node.ts tests/registry/intelligence.node.ts services/eve/lib/client.node.ts tests/registry/discovery.node.ts tests/registry/source-directory.node.ts",
     "registry:test:mcp": "node --experimental-strip-types --test registry/tests/mcp.node.ts",
     "registry:verify": "node tools/verify-registry.mjs",
     "registry:mcp": "node --experimental-strip-types registry/stdio.ts",

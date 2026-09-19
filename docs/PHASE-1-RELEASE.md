@@ -4,6 +4,13 @@ Updated 19 September 2026. Implementation: PR #36, `build/discovery-v2-phase1`.
 This is the acceptance ledger for [Discovery V2](UIXO-DISCOVERY-V2.md), within
 [Product Phase 1](PRODUCT-ROADMAP.md). A merged source release is not a signed-off production launch.
 
+## Follow-up hardening and live observation
+
+[Phase 1 hardening](PHASE-1-HARDENING.md) records the Sources capacity fix and the
+19 September 19:23 UTC public observation: Discovery V2 is deployed on PostgreSQL with
+264 assets, but `intelligence.ready` is false and Collections returns 503. This is a
+missing persistent schema gate, not an absent code merge. Production activation remains open.
+
 ## Delivered product surfaces
 
 The shared sidebar now exposes All assets, Asset collections, Sources and Connect your AI agent.
