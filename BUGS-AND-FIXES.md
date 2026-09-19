@@ -5,6 +5,29 @@ in the source and only showed up when something was actually run.
 
 ---
 
+## Live asset previews were blank after Vercel clean URL redirects
+
+**Found:** 20 September 2026, production asset cards showed white frames despite
+264 catalogue records loading successfully. Checking card metadata alone missed it.
+
+**Cause:** Vercel redirects `/live-demos/index.html` to `/live-demos`. The built HTML
+referenced `./assets/…`, which then resolved to `/assets/…` instead of
+`/live-demos/assets/…`. The demo entry script and stylesheet never loaded.
+
+**Fix:** Emit absolute `/live-demos/assets/…` entry URLs in HTML, while keeping
+lazy module and CSS imports relative to their module URL so provider base tags
+cannot redirect those chunks. Keep frames hidden until their actual ready signal;
+show a loading state and an original-source link if startup fails or times out.
+
+**Regression protection:** `demos:build` verifies built JS/CSS URLs resolve to real
+files at all three document paths, including the production clean URL. Component
+tests cover a frame that never starts and recovery when it signals readiness.
+Release verification must inspect rendered iframe content, not just catalogue
+counts, iframe presence or HTTP 200 responses. Retain the sandbox and pinned
+upstream sources; never substitute invented visual approximations.
+
+---
+
 ## The auth check could never have worked
 
 **Found:** testing a signed-in non-curator against production, then promoting them to admin

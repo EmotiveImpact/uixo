@@ -124,11 +124,12 @@ with sync_playwright() as p:
         guest.close()
 
         demo = ctx.new_page()
-        for asset_id in ['shadcn/card', 'magic-ui/blur-fade', 'motion-primitives/accordion']:
+        for asset_id in ['shadcn/card', 'magic-ui/blur-fade', 'motion-primitives/accordion', 'simply-buttons/arttech-download', 'simply-buttons/superlist-notify']:
             demo.goto(WEB + '/live-demos/index.html?id=' + asset_id, wait_until='networkidle')
+            assert '/live-demos?' in demo.url, demo.url
             expect(demo.locator('html')).to_have_attribute('data-preview-ready', 'true')
         demo.close()
-        results.append({'threeProviderDemoBoots': True})
+        results.append({'fourProviderDemoBootsAfterCleanURLRedirect': True})
         assert not errors, errors
         assert not api_failures, api_failures
         assert not any(check.get('horizontalOverflow') or check.get('alerts') for check in results), results

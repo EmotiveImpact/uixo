@@ -9,6 +9,14 @@ export default defineConfig({
   // Vite uses import.meta.url for lazy preloads with a relative base. A provider
   // <base> used by original demo media must never redirect UIXO's JS/CSS chunks.
   base: './',
+  experimental: {
+    // Vercel cleanUrls serves index.html at /live-demos (without a slash).
+    // HTML entry URLs must survive that redirect. Lazy JS/CSS URLs must remain
+    // relative to import.meta.url so provider <base> tags cannot redirect them.
+    renderBuiltUrl(filename, { hostType }) {
+      return hostType === 'html' ? `/live-demos/${filename}` : { relative: true };
+    },
+  },
   publicDir: false,
   plugins: [
     {

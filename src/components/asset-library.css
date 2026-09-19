@@ -1388,6 +1388,15 @@
   padding: 8px;
   background: var(--background);
 }
+.asset-live-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  pointer-events: none;
+}
 
 .asset-library-preview.is-icon-pack .asset-library-no-preview {
   padding: 24px;

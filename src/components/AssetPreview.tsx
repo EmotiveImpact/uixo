@@ -21,7 +21,11 @@ function LivePreview({ asset, detail }: { asset: CollectionAssetPreview; detail:
     );
     resize.observe(element);
     const intersection = new IntersectionObserver(
-      (entries) => setVisible(detail || entries[0].isIntersecting),
+      (entries) => {
+        const active = detail || entries[0].isIntersecting;
+        setVisible(active);
+        if (!active) setStatus('loading');
+      },
       { rootMargin: '100px' },
     );
     intersection.observe(element);
@@ -52,6 +56,12 @@ function LivePreview({ asset, detail }: { asset: CollectionAssetPreview; detail:
     window.addEventListener('message', receive);
     return () => window.removeEventListener('message', receive);
   }, [asset.id]);
+  useEffect(() => {
+    if (!visible || status !== 'loading') return;
+    // A failed entry script cannot post an error back to the parent.
+    const timeout = window.setTimeout(() => setStatus('error'), 20000);
+    return () => window.clearTimeout(timeout);
+  }, [visible, status]);
   const scale = detail ? 1 : size.width / 480;
   const demo = demos[asset.id as keyof typeof demos];
   return (
@@ -63,15 +73,22 @@ function LivePreview({ asset, detail }: { asset: CollectionAssetPreview; detail:
           src={`/live-demos/index.html?id=${encodeURIComponent(asset.id)}&theme=${initialTheme}`}
           sandbox="allow-scripts"
           referrerPolicy="no-referrer"
-          style={
-            detail
-              ? undefined
-              : { width: 480, height: size.height / scale, transform: `scale(${scale})` }
-          }
+          style={{
+            colorScheme: theme,
+            visibility: status === 'ready' ? 'visible' : 'hidden',
+            ...(detail
+              ? {}
+              : { width: 480, height: size.height / scale, transform: `scale(${scale})` }),
+          }}
           onLoad={() =>
             frame.current?.contentWindow?.postMessage({ type: 'uixo-preview-theme', theme }, '*')
           }
         />
+      )}
+      {visible && status === 'loading' && (
+        <span className="asset-live-loading" role="status">
+          Loading live demo…
+        </span>
       )}
       {status === 'error' && (
         <a

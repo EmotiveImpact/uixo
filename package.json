@@ -33,7 +33,7 @@
     "registry:mcp": "node --experimental-strip-types registry/stdio.ts",
     "registry:db": "node --experimental-strip-types tools/registry-db.ts",
     "registry:sync": "node --env-file=.env.local --experimental-strip-types tools/registry-db.ts sync --allow-remote",
-    "demos:build": "node scripts/verify-live-demos.mjs && npm ci --prefix live-demos --ignore-scripts && vite build --config live-demos/vite.config.mjs",
+    "demos:build": "node scripts/verify-live-demos.mjs && npm ci --prefix live-demos --ignore-scripts && vite build --config live-demos/vite.config.mjs && node scripts/verify-live-demo-output.mjs",
     "registry:verify-release": "node --experimental-strip-types registry/verify-release.ts"
   },
   "dependencies": {
