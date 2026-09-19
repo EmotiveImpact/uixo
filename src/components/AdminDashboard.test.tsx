@@ -24,6 +24,11 @@ it('loads live admin queues and persists submission decisions', async () => {
       const url = String(input);
       const method = init?.method ?? 'GET';
       requests.push({ url, method });
+      if (url.includes('/api/auth/get-session'))
+        return jsonResponse({
+          user: { id: 'admin-1', email: 'emotiveimpact@gmail.com', role: 'curator' },
+          session: { token: 'admin-token' },
+        });
       if (url.includes('/api/auth/token')) return jsonResponse({ token: 'admin-token' });
       if (url === '/api/submissions' && method === 'GET')
         return jsonResponse({
