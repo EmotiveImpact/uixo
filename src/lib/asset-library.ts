@@ -88,8 +88,22 @@ export type AssetQuery = {
   commercial: boolean;
   price: string;
   offset: number;
-  view: 'assets' | 'saved' | 'sources' | 'connect' | 'guide' | 'review' | 'scout' | 'jobs';
+  view:
+    | 'assets'
+    | 'saved'
+    | 'sources'
+    | 'connect'
+    | 'guide'
+    | 'review'
+    | 'scout'
+    | 'jobs'
+    | 'health'
+    | 'operations'
+    | 'collections'
+    | 'collection-editor';
   id: string;
+  collection: string;
+  candidate: string;
 };
 export const EMPTY_ASSET_QUERY: AssetQuery = {
   q: '',
@@ -103,6 +117,8 @@ export const EMPTY_ASSET_QUERY: AssetQuery = {
   offset: 0,
   view: 'assets',
   id: '',
+  collection: '',
+  candidate: '',
 };
 const valid = (value: string | null, options: string[]) =>
   value && options.includes(value) ? value : '';
@@ -134,7 +150,15 @@ export function readAssetQuery(search: string): AssetQuery {
       'review',
       'scout',
       'jobs',
+      'health',
+      'operations',
+      'collections',
+      'collection-editor',
     ]) || 'assets') as AssetQuery['view'],
+    collection: /^[a-z0-9][a-z0-9-]{0,79}$/.test(p.get('collection') ?? '')
+      ? p.get('collection')!
+      : '',
+    candidate: /^[a-f0-9-]{36}$/.test(p.get('candidate') ?? '') ? p.get('candidate')! : '',
     id:
       /^[a-z0-9][a-z0-9._/-]{0,179}$/.test(p.get('id') ?? '') && !p.get('id')!.includes('..')
         ? p.get('id')!

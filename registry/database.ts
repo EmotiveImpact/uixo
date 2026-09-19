@@ -45,10 +45,13 @@ export async function sqliteDatabase(path = ':memory:', snapshot = false): Promi
   };
 }
 export async function migrate(db: Database) {
-  const source = await readFile(
-    new URL('../db/migrations/002-registry.sql', import.meta.url),
-    'utf8',
-  );
+  const source = (
+    await Promise.all(
+      ['002-registry.sql', '004-intelligence.sql'].map((name) =>
+        readFile(new URL('../db/migrations/' + name, import.meta.url), 'utf8'),
+      ),
+    )
+  ).join('\n');
   const statements = source
     .split(';')
     .map((sql) => sql.trim())

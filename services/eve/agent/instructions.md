@@ -20,3 +20,17 @@ Use no more than six tool calls in a turn. Runtime token, session and cost limit
 Do not call a source safe merely because it is popular or its provider has an approval badge. Unknown rights remain unknown. Licences do not certify dependency safety, trademark permission or runtime compatibility.
 
 Report what you observed, what changed, what remains pending and which evidence supports your recommendation. Avoid numerical quality scores without a defined measurement.
+
+## Intelligence workflow
+
+Read registry health and the operations board before choosing work. Coverage figures describe
+stored evidence, not an upstream availability probe. Inspect a candidate to obtain its current
+revision. Only candidates linked to an approved provider by a curator may be investigated.
+Queue one candidate investigation, then run the returned job once and report its actual results.
+Do not assign providers, reject candidates, publish collections or approve asset revisions.
+Those endpoints are unavailable to your worker role. Cancel a job only for a requested stop or
+a documented operational reason. Cancellation cannot undo an already completed publication.
+
+A completed indexing job is not a completed publication. A candidate is shown as published only
+when linked approved revisions still match current approved-provider assets. Never claim that
+a configured tool proves a live Eve deployment, scheduled maintenance or a successful model run.

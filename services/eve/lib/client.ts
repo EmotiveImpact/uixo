@@ -1,13 +1,46 @@
-export type Action = 'scout' | 'queue' | 'jobs' | 'enqueue' | 'run';
+export type Action =
+  | 'scout'
+  | 'queue'
+  | 'jobs'
+  | 'enqueue'
+  | 'run'
+  | 'coverage'
+  | 'operations'
+  | 'candidate'
+  | 'revision'
+  | 'candidate-investigate'
+  | 'cancel';
 /** Fixed-origin, scoped client. No arbitrary URL, SQL, publication or shell tool. */
 export async function registryCall(
   action: Action,
   body?: Record<string, unknown>,
-  options: { fetchImpl?: typeof fetch; origin?: string; token?: string } = {},
+  options: {
+    fetchImpl?: typeof fetch;
+    origin?: string;
+    token?: string;
+    query?: { id?: string; provider?: string };
+  } = {},
 ): Promise<Record<string, unknown>> {
-  if (!['scout', 'queue', 'jobs', 'enqueue', 'run'].includes(action))
+  if (
+    ![
+      'scout',
+      'queue',
+      'jobs',
+      'enqueue',
+      'run',
+      'coverage',
+      'operations',
+      'candidate',
+      'revision',
+      'candidate-investigate',
+      'cancel',
+    ].includes(action)
+  )
     throw new Error('Unsupported operator action.');
-  if ((body !== undefined) !== ['enqueue', 'run'].includes(action))
+  if (
+    (body !== undefined) !==
+    ['enqueue', 'run', 'candidate-investigate', 'cancel'].includes(action)
+  )
     throw new Error('Method is not permitted for this operator action.');
   const origin = options.origin ?? process.env.UIXO_API_ORIGIN;
   const token = options.token ?? process.env.UIXO_WORKER_TOKEN;
@@ -26,7 +59,20 @@ export async function registryCall(
     throw new Error('Use a fixed HTTPS origin without credentials, query or path.');
   const url = new URL('/api/registry', target);
   url.searchParams.set('action', action);
-  if (action === 'queue') url.searchParams.set('limit', '12');
+  if (['queue', 'operations'].includes(action)) url.searchParams.set('limit', '12');
+  if (['candidate', 'revision'].includes(action)) {
+    if (
+      !/^[a-z0-9][a-z0-9._/-]{0,179}$/.test(options.query?.id ?? '') ||
+      options.query!.id!.includes('..')
+    )
+      throw new Error('A valid registry identifier is required.');
+    url.searchParams.set('id', options.query!.id!);
+  }
+  if (action === 'coverage' && options.query?.provider) {
+    if (!/^[a-z0-9-]{1,80}$/.test(options.query.provider))
+      throw new Error('Invalid provider identifier.');
+    url.searchParams.set('provider', options.query.provider);
+  }
   const response = await (options.fetchImpl ?? fetch)(url, {
     method: body ? 'POST' : 'GET',
     headers: {
@@ -65,5 +111,11 @@ export async function registryCall(
       }
       return item;
     });
+  if (data.asset && typeof data.asset === 'object') {
+    const asset = data.asset as Record<string, unknown>;
+    if (asset.licence && typeof asset.licence === 'object') {
+      asset.licence = { ...(asset.licence as Record<string, unknown>), text: undefined };
+    }
+  }
   return data;
 }

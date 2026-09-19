@@ -77,6 +77,11 @@ export async function runJob(
       );
       if (!owned.length) throw new RegistryError('LEASE_LOST', 'Indexing lease was lost.', 409);
       const result = await registry.stage(asset, true);
+      // Retain exact lineage even if cancellation arrives immediately after staging.
+      await registry.db.query(
+        'INSERT INTO uixo_v2_job_revisions(job_id,revision_id) VALUES($1,$2) ON CONFLICT DO NOTHING',
+        [id, result.id],
+      );
       if (result.created) staged++;
       else duplicates++;
     }
@@ -90,17 +95,19 @@ export async function runJob(
       sourceRef: Array.isArray(indexed) ? null : indexed.sourceRef,
       sourceTotal: Array.isArray(indexed) ? assets.length : indexed.total,
     };
-    await registry.db.query(
-      "UPDATE uixo_v2_jobs SET status='complete',stats=$3,lease_until=NULL,updated_at=$4 WHERE id=$1 AND lease_owner=$2",
+    const completed = await registry.db.query(
+      "UPDATE uixo_v2_jobs SET status='complete',stats=$3,lease_until=NULL,error=NULL,updated_at=$4 WHERE id=$1 AND lease_owner=$2 AND status='running' AND lease_until>$4 RETURNING id",
       [id, owner, JSON.stringify(stats), new Date().toISOString()],
     );
+    if (!completed.length)
+      throw new RegistryError('LEASE_LOST', 'The job was cancelled or its lease was lost.', 409);
     return { id, status: 'complete', ...stats };
   } catch (error) {
     const exhausted = Number(claim[0].attempts) >= 3;
     const code = error instanceof RegistryError ? error.code : 'INDEX_FAILED';
     const retryAt = new Date(Date.now() + Number(claim[0].attempts) * 60_000).toISOString();
     await registry.db.query(
-      'UPDATE uixo_v2_jobs SET status=$3,error=$4,lease_until=$5,updated_at=$6 WHERE id=$1 AND lease_owner=$2',
+      "UPDATE uixo_v2_jobs SET status=$3,error=$4,lease_until=$5,updated_at=$6 WHERE id=$1 AND lease_owner=$2 AND status='running'",
       [id, owner, exhausted ? 'failed' : 'retry', code, retryAt, new Date().toISOString()],
     );
     throw new RegistryError(

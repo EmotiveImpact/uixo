@@ -15,3 +15,7 @@ dist/
 
 /public/live-demos/
 .env*
+
+# Generated browser acceptance evidence
+test-results/
+__pycache__/

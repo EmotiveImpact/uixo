@@ -145,6 +145,9 @@ export function AssetUtilities({ view }: { view: AssetQuery['view'] }) {
               ['check_compatibility', 'Compare declared project requirements.'],
               ['resolve_asset', 'Find an authorised source.'],
               ['acquire_asset', 'Get installation guidance for your approval.'],
+              ['get_source_health', 'Inspect stored source evidence and coverage.'],
+              ['list_asset_collections', 'Find published editorial selections.'],
+              ['inspect_asset_collection', 'Read a typed selection and its curator notes.'],
             ].map(([name, description]) => (
               <div className="asset-evidence" key={name}>
                 <code>{name}</code>

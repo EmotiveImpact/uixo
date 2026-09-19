@@ -1,3 +1,4 @@
+import { navigateInApp } from '../lib/navigation';
 import { useState } from 'react';
 import {
   ArrowLeft,
@@ -152,14 +153,30 @@ export function AdminSidebar({
                 <AnimatedSidebarMenuButton
                   icon={<Database className="size-4" />}
                   isActive={section === 'registry'}
-                  onSelect={() => showSection('registry')}
+                  onSelect={() => navigateInApp('/browse/assets?view=health')}
                 >
-                  Sources &amp; health
+                  Registry health
                 </AnimatedSidebarMenuButton>
               </AnimatedSidebarMenuItem>
               <AnimatedSidebarMenuItem>
                 <AnimatedSidebarMenuButton icon={<Radar className="size-4" />} onSelect={onScout}>
                   Scout intake
+                </AnimatedSidebarMenuButton>
+              </AnimatedSidebarMenuItem>
+              <AnimatedSidebarMenuItem>
+                <AnimatedSidebarMenuButton
+                  icon={<FileCheck2 className="size-4" />}
+                  onSelect={() => navigateInApp('/browse/assets?view=collection-editor')}
+                >
+                  Asset collections
+                </AnimatedSidebarMenuButton>
+              </AnimatedSidebarMenuItem>
+              <AnimatedSidebarMenuItem>
+                <AnimatedSidebarMenuButton
+                  icon={<Radar className="size-4" />}
+                  onSelect={() => navigateInApp('/browse/assets?view=operations')}
+                >
+                  Operations board
                 </AnimatedSidebarMenuButton>
               </AnimatedSidebarMenuItem>
               <AnimatedSidebarMenuItem>

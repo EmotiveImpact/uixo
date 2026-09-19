@@ -16,6 +16,11 @@ export function CollectionsIndex({ onOpen, href, search = '' }: CollectionsIndex
   );
   return (
     <section className="collection-index" aria-label="Collections">
+      <p>
+        <a href="/browse/assets?view=collections">
+          Explore curated asset collections <ArrowUpRight size={14} />
+        </a>
+      </p>
       {shown.length === 0 && <p role="status">No collections match your search.</p>}
       {shown.map((collection) => {
         const covers = collection.resourceIds

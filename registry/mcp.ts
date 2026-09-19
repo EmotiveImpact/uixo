@@ -1,3 +1,5 @@
+import { sourceHealth } from './intelligence.ts';
+import { listCollections, getCollection } from './collections.ts';
 import { McpServer } from '@modelcontextprotocol/server';
 import * as z from 'zod/v4';
 import type { Registry } from './service.ts';
@@ -132,6 +134,45 @@ export function createRegistryMcp(registry: Registry) {
       inputSchema: assetInput,
     },
     ({ id, variantId }) => guarded(async () => resolveAsset(await registry.inspect(id), variantId)),
+  );
+  server.registerTool(
+    'get_source_health',
+    {
+      description:
+        'Read measured evidence coverage for one approved provider. Pins, previews, dependency declarations and dated licence evidence are distinct from security or runtime certification. Upstream availability is not checked.',
+      annotations,
+      inputSchema: z.object({ provider: id }),
+    },
+    ({ provider }) => guarded(async () => ({ source: await sourceHealth(registry, provider) })),
+  );
+  server.registerTool(
+    'list_asset_collections',
+    {
+      description:
+        'List published editorial asset/provider collections. Private drafts and currently unapproved or unavailable members are withheld.',
+      annotations,
+      inputSchema: z.object({
+        limit: z.number().int().min(1).max(24).default(12),
+        offset: z.number().int().min(0).max(100000).default(0),
+      }),
+    },
+    ({ limit, offset }) => guarded(async () => listCollections(registry, false, limit, offset)),
+  );
+  server.registerTool(
+    'inspect_asset_collection',
+    {
+      description:
+        'Inspect a published editorial selection with ordered typed items and curator notes. This is not a tested installation bundle; inspect and resolve each asset before use.',
+      annotations,
+      inputSchema: z.object({
+        slug: z
+          .string()
+          .min(1)
+          .max(80)
+          .regex(/^[a-z0-9][a-z0-9-]*$/),
+      }),
+    },
+    ({ slug }) => guarded(async () => ({ collection: await getCollection(registry, slug) })),
   );
   server.registerResource(
     'registry-policy',

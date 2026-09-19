@@ -1,3 +1,5 @@
+import { RegistryIntelligence } from './RegistryIntelligence';
+import { NotFound } from './NotFound';
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
 import { SiteFooter } from './SiteFooter';
 import { useSidebarPreference } from '../hooks/useSidebarPreference';
@@ -106,8 +108,20 @@ export function AssetWorkspace() {
   const go = (changes: Parameters<typeof routeToHref>[0]) => navigateInApp(routeToHref(changes));
   const openCategory = (category: string, sub: string | null = null) =>
     go({ ...EMPTY_ROUTE, category, sub });
+  const intelligence = [
+    'health',
+    'operations',
+    'collections',
+    'collection-editor',
+    'sources',
+  ].includes(query.view);
+  const privateWorkspace = ['health', 'operations', 'collection-editor'].includes(query.view);
   const utility = ['connect', 'guide', 'review', 'scout', 'jobs'].includes(query.view);
   const titles: Record<string, string> = {
+    health: 'Registry health',
+    operations: 'Registry operations',
+    collections: 'Asset collections',
+    'collection-editor': 'Collection editorial',
     connect: 'Connect your AI agent',
     guide: 'How to use UIXO',
     review: 'Review queue',
@@ -232,7 +246,20 @@ export function AssetWorkspace() {
           error={listSyncError}
           onRetry={retryListSync}
         />
-        {utility ? (
+        {intelligence ? (
+          privateWorkspace && !settled ? (
+            <p role="status">Checking account…</p>
+          ) : privateWorkspace && !isCurator ? (
+            <NotFound onReset={() => navigate({}, true)} />
+          ) : (
+            <RegistryIntelligence
+              query={query}
+              navigate={navigate}
+              isCurator={isCurator}
+              assetSaves={assetSaves}
+            />
+          )
+        ) : utility ? (
           <AssetUtilities key={query.view} view={query.view} />
         ) : (
           <AssetLibrary
@@ -266,6 +293,14 @@ export function AssetWorkspace() {
         )}
         <SiteFooter count={null} assets>
           <nav aria-label="Asset workspace links">
+            <a href="/browse/assets?view=collections">Asset collections</a>
+            {isCurator && (
+              <>
+                <a href="/browse/assets?view=health">Registry health</a>
+                <a href="/browse/assets?view=operations">Operations board</a>
+                <a href="/browse/assets?view=collection-editor">Collection editorial</a>
+              </>
+            )}
             <a
               href="/browse/assets?view=guide"
               onClick={(event) => {
