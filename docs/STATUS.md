@@ -1,5 +1,15 @@
 # UIXO v2 status
 
+## Registry Intelligence V1, 19 September 2026
+
+The next source build adds evidence coverage, provider profiles, private/published editorial asset
+collections, a linked candidate/job/revision operations board, structured opt-in GitHub scout intake,
+six bounded Eve tools and three additional public MCP tools. See
+[Registry Intelligence V1](REGISTRY-INTELLIGENCE-V1.md) for routes, permissions, migration and live
+acceptance gates. This entry describes source/test implementation, not a production database
+migration, live Grok activation or deployed Eve execution. The bundled test catalogue is now
+264 published discovery records from six approved providers; older figures below are historical.
+
 For product editions and delivery phases, see the [master roadmap](PRODUCT-ROADMAP.md). For the later UI and favourites repairs and current engineering priorities, see the [12 September audit](PRODUCT-AUDIT-2026-09-12.md). The integration-repair sections below retain their original verification context.
 
 ## Current outcome

@@ -188,7 +188,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
       {discovery}
       <div className="asset-library-toolbar">
         <nav aria-label="Asset views">
-          {(['assets', 'sources', 'saved'] as const).map((entry) => (
+          {(['assets', 'sources', 'collections', 'saved'] as const).map((entry) => (
             <a
               key={entry}
               href={assetHref({ ...EMPTY_ASSET_QUERY, view: entry })}
@@ -204,7 +204,9 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                 ? 'All assets'
                 : entry === 'sources'
                   ? 'Indexed sources'
-                  : `Saved (${saved.length})`}
+                  : entry === 'collections'
+                    ? 'Collections'
+                    : `Saved (${saved.length})`}
             </a>
           ))}
         </nav>

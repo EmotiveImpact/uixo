@@ -1,5 +1,15 @@
 # Changelog
 
+## 19 September 2026: Registry Intelligence V1
+
+- Add evidence/freshness reporting and provider profiles without claiming live upstream checks.
+- Add typed asset/provider collections with private drafts, revision-safe saves and explicit publication.
+- Link scout candidates, approved providers, jobs and exact review revisions in the operations board.
+- Add cancellation-safe jobs, opt-in structured GitHub intake and bounded Eve investigation tools.
+- Extend MCP to nine read-only tools; retain source permissions and public/draft separation.
+- Add the explicit additive migration and API/UI/browser verification described in the
+  [release notes](docs/REGISTRY-INTELLIGENCE-V1.md).
+
 Newest first. Dates are Europe/London.
 
 ## 2026-09-14

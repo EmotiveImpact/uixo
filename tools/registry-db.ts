@@ -1,10 +1,11 @@
+import { seedCollectionDrafts } from '../registry/collections.ts';
 import { migrate, sqliteDatabase } from '../registry/database.ts';
 import { Registry } from '../registry/service.ts';
 import { seedCaptured, syncCaptured } from '../registry/bootstrap.ts';
 import { enqueue, runJob } from '../registry/jobs.ts';
 const [command, provider] = process.argv.slice(2);
-if (!['migrate', 'seed', 'sync', 'index'].includes(command))
-  throw new Error('Usage: registry-db.ts migrate|seed|sync|index [provider-id]');
+if (!['migrate', 'seed', 'sync', 'index', 'collections-seed'].includes(command))
+  throw new Error('Usage: registry-db.ts migrate|seed|sync|index|collections-seed [provider-id]');
 if (process.env.UIXO_DATABASE_URL && !process.argv.includes('--allow-remote'))
   throw new Error(
     'Remote database writes require --allow-remote. Use a dedicated registry development database first.',
@@ -18,6 +19,8 @@ try {
     await migrate(db);
     console.log('Registry migration complete.');
   }
+  if (command === 'collections-seed')
+    console.log(JSON.stringify(await seedCollectionDrafts(registry)));
   if (command === 'seed') console.log(JSON.stringify(await seedCaptured(registry)));
   if (command === 'sync') console.log(JSON.stringify(await syncCaptured(registry)));
   if (command === 'index') {

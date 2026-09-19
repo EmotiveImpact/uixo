@@ -6,10 +6,10 @@
   "cleanUrls": true,
   "functions": {
     "api/registry.ts": {
-      "includeFiles": "{registry/**,db/migrations/002-registry.sql,data/registry/**,shared/**,public/assets/component-previews/manifest.json}"
+      "includeFiles": "{registry/**,db/migrations/*.sql,data/registry/**,shared/**,public/assets/component-previews/manifest.json,live-demos/manifest.json}"
     },
     "api/mcp.ts": {
-      "includeFiles": "{registry/**,db/migrations/002-registry.sql,data/registry/**,shared/**,public/assets/component-previews/manifest.json}"
+      "includeFiles": "{registry/**,db/migrations/*.sql,data/registry/**,shared/**,public/assets/component-previews/manifest.json,live-demos/manifest.json}"
     }
   },
   "rewrites": [

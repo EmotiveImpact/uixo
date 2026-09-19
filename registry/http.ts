@@ -1,3 +1,19 @@
+import { coverage, sourceHealth } from './intelligence.ts';
+import {
+  listCollections,
+  getCollection,
+  saveCollection,
+  publishCollection,
+} from './collections.ts';
+import {
+  operations,
+  candidateDetail,
+  updateCandidate,
+  investigateCandidate,
+  cancelJob,
+  revisionDetail,
+} from './operations.ts';
+import { ingestGithubIssue } from './scout-github.ts';
 import { createHash, randomUUID } from 'node:crypto';
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import { RegistryError, identifier, integer, record, text } from './domain.ts';
@@ -80,6 +96,21 @@ export function createRegistryHandler(
         action = url.searchParams.get('action') ?? 'search';
       const method = req.method ?? 'GET';
       const routes: Record<string, string[]> = {
+        coverage: ['GET'],
+        'source-health': ['GET'],
+        collections: ['GET'],
+        collection: ['GET'],
+        'collections-editor': ['GET'],
+        'collection-editor': ['GET'],
+        'collection-save': ['POST'],
+        'collection-publish': ['POST'],
+        operations: ['GET'],
+        candidate: ['GET'],
+        revision: ['GET'],
+        'candidate-update': ['POST'],
+        'candidate-investigate': ['POST'],
+        cancel: ['POST'],
+        'scout-github': ['POST'],
         search: ['GET'],
         asset: ['GET'],
         providers: ['GET'],
@@ -108,15 +139,50 @@ export function createRegistryHandler(
         : (req.socket.remoteAddress ?? 'local');
       await rateLimit(registry, `request:${ip}`, 180);
       const who = await authenticate(req);
-      const operatorAction = ['queue', 'review', 'scout', 'jobs', 'enqueue', 'run'].includes(
-        action,
-      );
+      const operatorAction = [
+        'queue',
+        'review',
+        'scout',
+        'jobs',
+        'enqueue',
+        'run',
+        'coverage',
+        'operations',
+        'candidate',
+        'revision',
+        'candidate-update',
+        'candidate-investigate',
+        'cancel',
+        'collections-editor',
+        'collection-editor',
+        'collection-save',
+        'collection-publish',
+        'scout-github',
+      ].includes(action);
       if (
         operatorAction &&
         (!who ||
           (who.role !== 'curator' &&
-            !(who.role === 'scout' && action === 'scout' && method === 'POST') &&
-            !(who.role === 'worker' && ['queue', 'jobs', 'enqueue', 'run'].includes(action)) &&
+            !(
+              who.role === 'scout' &&
+              ['scout', 'scout-github'].includes(action) &&
+              method === 'POST'
+            ) &&
+            !(
+              who.role === 'worker' &&
+              [
+                'queue',
+                'jobs',
+                'enqueue',
+                'run',
+                'coverage',
+                'operations',
+                'candidate',
+                'revision',
+                'candidate-investigate',
+                'cancel',
+              ].includes(action)
+            ) &&
             !(who.role === 'worker' && action === 'scout' && method === 'GET')))
       )
         throw new RegistryError(
@@ -133,7 +199,39 @@ export function createRegistryHandler(
       if (operatorAction) await rateLimit(registry, `operator:${who!.id}`, 60);
       const body = method === 'POST' ? record(await readJson(req)) : {};
       let result: unknown;
-      if (action === 'search') {
+      if (action === 'coverage')
+        result = await coverage(registry, url.searchParams.get('provider') || undefined);
+      else if (action === 'source-health')
+        result = await sourceHealth(registry, identifier(url.searchParams.get('provider')));
+      else if (action === 'collections' || action === 'collections-editor')
+        result = await listCollections(
+          registry,
+          action === 'collections-editor',
+          integer(url.searchParams.get('limit') ?? undefined, 24, 1, 48),
+          integer(url.searchParams.get('offset') ?? undefined, 0, 0, 100000),
+        );
+      else if (action === 'collection' || action === 'collection-editor')
+        result = await getCollection(
+          registry,
+          String(url.searchParams.get('slug') ?? ''),
+          action === 'collection-editor',
+        );
+      else if (action === 'collection-save') result = await saveCollection(registry, body, who!.id);
+      else if (action === 'collection-publish')
+        result = await publishCollection(registry, body, who!.id);
+      else if (action === 'operations')
+        result = await operations(registry, Object.fromEntries(url.searchParams));
+      else if (action === 'candidate')
+        result = await candidateDetail(registry, identifier(url.searchParams.get('id')));
+      else if (action === 'revision')
+        result = await revisionDetail(registry, identifier(url.searchParams.get('id')));
+      else if (action === 'candidate-update')
+        result = await updateCandidate(registry, body, who!.id);
+      else if (action === 'candidate-investigate')
+        result = await investigateCandidate(registry, body, who!.id);
+      else if (action === 'cancel') result = await cancelJob(registry, body, who!.id);
+      else if (action === 'scout-github') result = await ingestGithubIssue(registry, body, who!.id);
+      else if (action === 'search') {
         const input: Record<string, unknown> = Object.fromEntries(url.searchParams);
         if (input.saved) input.saved = String(input.saved).split(',');
         result = await registry.search(input);
