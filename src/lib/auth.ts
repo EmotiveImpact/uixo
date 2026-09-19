@@ -55,7 +55,7 @@ type BetterAuthUser = { id: string; name?: string; email: string; role?: string 
 
 type SessionPayload = {
   user?: BetterAuthUser | null;
-  session?: unknown;
+  session?: { token?: unknown } | null;
 };
 
 /** Only an explicit admin role curates. Everyone else is a member. */
@@ -144,15 +144,25 @@ async function loadSession(verifier: string | null): Promise<Session> {
   const data = await call<SessionPayload | null>(path);
   const session = sessionFrom(data);
   if (session) {
+    rememberApiToken(data);
     dropVerifier();
     clearOAuthPending();
+  } else {
+    rememberedApiToken = null;
   }
   return session;
 }
 
 let inFlight: Promise<Session> | null = null;
 let remembered: { session: Session; at: number } | null = null;
+let rememberedApiToken: { token: string; at: number } | null = null;
 const REMEMBER_MS = 8000;
+
+function rememberApiToken(data: SessionPayload | null) {
+  const token = data?.session?.token;
+  rememberedApiToken =
+    typeof token === 'string' && token.length > 0 ? { token, at: Date.now() } : null;
+}
 
 async function readSessionOnce(): Promise<Session> {
   if (remembered && Date.now() - remembered.at < REMEMBER_MS) return remembered.session;
@@ -251,6 +261,7 @@ export const neonAuth: AuthProvider = {
 
   async signOut() {
     remembered = null;
+    rememberedApiToken = null;
     clearOAuthPending();
     await call('/sign-out', {});
   },
@@ -262,8 +273,15 @@ export const neonAuth: AuthProvider = {
    * verifies the token against Neon's published keys.
    */
   async apiToken() {
+    await readSession();
+    if (rememberedApiToken && Date.now() - rememberedApiToken.at < REMEMBER_MS) {
+      return rememberedApiToken.token;
+    }
+
+    // Older Neon Auth deployments may omit the token from get-session while still
+    // exposing the dedicated endpoint, so keep it as a compatibility fallback.
     const data = await call<{ token?: string }>('/token').catch(() => null);
-    return data?.token ?? null;
+    return typeof data?.token === 'string' && data.token.length > 0 ? data.token : null;
   },
 };
 

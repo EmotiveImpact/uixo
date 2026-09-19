@@ -55,4 +55,22 @@ describe('getSession', () => {
     expect(a?.user.email).toBe('red@uixo.io');
     expect(b?.user.email).toBe('red@uixo.io');
   });
+
+  it('uses the signed token included in the verified session for account APIs', async () => {
+    const fetchMock = vi.fn(async (input: RequestInfo | URL) => {
+      void input;
+      return new Response(
+        JSON.stringify({
+          user: { id: '1', email: 'red@uixo.io', name: 'Red' },
+          session: { id: 's1', token: 'signed-session-jwt' },
+        }),
+        { status: 200, headers: { 'content-type': 'application/json' } },
+      );
+    });
+    vi.stubGlobal('fetch', fetchMock);
+
+    expect(await auth.apiToken()).toBe('signed-session-jwt');
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(String(fetchMock.mock.calls[0]?.[0])).toContain('/api/auth/get-session');
+  });
 });
