@@ -73,6 +73,7 @@ Target a deliberately small first set such as:
 Names and exact membership can change during curation. Quality and usefulness matter more than hitting an arbitrary collection count.
 
 Each collection should have:
+
 - a visual identity/card;
 - a clear editorial purpose;
 - ordered items;
@@ -84,6 +85,7 @@ Each collection should have:
 ## Source Intelligence experience
 
 Source profiles should answer:
+
 - What is this source?
 - What has UIXO indexed from it?
 - Which frameworks and formats are represented?
@@ -99,6 +101,7 @@ Do not introduce arbitrary “quality scores”. Evidence and editorial judgemen
 Discovery V2 should make existing registry evidence legible rather than merely storing it.
 
 Prioritise:
+
 - original source;
 - provider;
 - source/version reference;
@@ -115,6 +118,7 @@ Prioritise:
 “Connect your AI agent” should be a visible product surface.
 
 Explain that UIXO's API/MCP can support:
+
 - asset search;
 - asset inspection;
 - source inspection;

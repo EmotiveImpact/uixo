@@ -103,7 +103,8 @@ export function AssetUtilities({ view }: { view: AssetQuery['view'] }) {
             project.
           </li>
           <li>
-            Save useful assets and share the URL. Saved assets currently stay in this browser.
+            Save useful assets and share the URL. Guest saves stay in this browser. Sign in to
+            synchronise assets across devices.
           </li>
         </ol>
         <p>
@@ -132,8 +133,9 @@ export function AssetUtilities({ view }: { view: AssetQuery['view'] }) {
             <p>From the UIXO repository with dependencies installed:</p>
             <pre>npm run registry:mcp</pre>
             <p>
-              This preview requires Vercel deployment access. Public client setup will use the
-              production endpoint after release.
+              Protected Vercel previews require deployment access. Use an accessible deployment
+              endpoint for your coding client. Acquisition tools return instructions; they do not
+              install code.
             </p>
           </section>
           <section>

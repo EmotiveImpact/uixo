@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import type { AssetRecord } from '../lib/asset-library';
+import type { CollectionAssetPreview } from '../../shared/intelligence';
 import { safeAssetUrl } from '../lib/asset-library';
 import demos from '../../live-demos/manifest.json';
 
-function LivePreview({ asset, detail }: { asset: AssetRecord; detail: boolean }) {
+function LivePreview({ asset, detail }: { asset: CollectionAssetPreview; detail: boolean }) {
   const viewport = useRef<HTMLDivElement>(null);
   const frame = useRef<HTMLIFrameElement>(null);
   const [visible, setVisible] = useState(detail);
@@ -87,7 +87,13 @@ function LivePreview({ asset, detail }: { asset: AssetRecord; detail: boolean })
   );
 }
 
-export function AssetPreview({ asset, detail = false }: { asset: AssetRecord; detail?: boolean }) {
+export function AssetPreview({
+  asset,
+  detail = false,
+}: {
+  asset: CollectionAssetPreview;
+  detail?: boolean;
+}) {
   const [failedUrl, setFailedUrl] = useState('');
   const live = asset.kind === 'component' && Object.hasOwn(demos, asset.id);
   const imageUrl = asset.kind === 'icon' ? safeAssetUrl(asset.preview?.url) : undefined;

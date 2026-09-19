@@ -1,5 +1,6 @@
 import { ArrowUpRight, Bookmark, Check, Copy, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { AssetProvenance } from './AssetProvenance';
 import { AssetPreview } from './AssetPreview';
 import { registryRequest, safeAssetUrl } from '../lib/asset-library';
 import type { Acquisition, AssetQuery, AssetRecord } from '../lib/asset-library';
@@ -225,6 +226,11 @@ export function AssetDetail({
               </div>
             </dl>
 
+            <AssetProvenance
+              asset={asset}
+              variantId={variant}
+              providerName={nameOf(asset.providerId)}
+            />
             <label className="asset-library-field asset-variant-field">
               Choose a variant
               <select

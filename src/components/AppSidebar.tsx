@@ -1,3 +1,5 @@
+import { RegistryExplore } from './RegistryExplore';
+import { EMPTY_ASSET_QUERY, assetHref } from '../lib/asset-library';
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
 import { Blocks, Heart, PanelLeft, Plus, Shapes, Trash2, X } from 'lucide-react';
 import {
@@ -23,7 +25,7 @@ import { categoryCount, populatedSubs } from '../lib/filters';
 import { navigateInApp } from '../lib/navigation';
 import { DEFAULT_LIST_ID } from '../types';
 import type { List } from '../types';
-import type { ProviderRecord } from '../lib/asset-library';
+import type { AssetQuery, ProviderRecord } from '../lib/asset-library';
 
 type AppSidebarProps = {
   category: string | null;
@@ -48,6 +50,9 @@ type AppSidebarProps = {
   onChooseAssetCategory?: (category: string) => void;
   onChooseAssetKind?: (kind: string) => void;
   assetProviders?: ProviderRecord[];
+  assetView?: AssetQuery['view'];
+  registryCurator?: boolean;
+  onChooseAssetView?: (view: AssetQuery['view']) => void;
 };
 
 export function AppSidebar({
@@ -72,6 +77,9 @@ export function AppSidebar({
   onChooseAssetCategory,
   onChooseAssetKind,
   assetProviders = [],
+  assetView = 'assets',
+  registryCurator = false,
+  onChooseAssetView,
 }: AppSidebarProps) {
   const favourites = lists.find((list) => list.id === DEFAULT_LIST_ID);
   const componentCount = assetProviders
@@ -110,6 +118,14 @@ export function AppSidebar({
       </AnimatedSidebarHeader>
 
       <AnimatedSidebarContent className="px-2 pt-1">
+        <RegistryExplore
+          view={onAssets ? assetView : null}
+          isCurator={registryCurator}
+          onChoose={
+            onChooseAssetView ??
+            ((view) => navigateInApp(assetHref({ ...EMPTY_ASSET_QUERY, view })))
+          }
+        />
         <AnimatedSidebarGroup className="pt-5">
           <AnimatedSidebarGroupLabel>Favourites</AnimatedSidebarGroupLabel>
           <AnimatedSidebarGroupContent>

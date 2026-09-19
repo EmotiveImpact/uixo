@@ -1,9 +1,11 @@
 import { coverage, sourceHealth } from './intelligence.ts';
+import { intelligenceReadiness } from './readiness.ts';
 import {
   listCollections,
   getCollection,
   saveCollection,
   publishCollection,
+  seedCollectionDrafts,
 } from './collections.ts';
 import {
   operations,
@@ -98,6 +100,8 @@ export function createRegistryHandler(
       const routes: Record<string, string[]> = {
         coverage: ['GET'],
         'source-health': ['GET'],
+        'source-directory': ['GET'],
+        'collection-starters': ['POST'],
         collections: ['GET'],
         collection: ['GET'],
         'collections-editor': ['GET'],
@@ -156,6 +160,7 @@ export function createRegistryHandler(
         'collections-editor',
         'collection-editor',
         'collection-save',
+        'collection-starters',
         'collection-publish',
         'scout-github',
       ].includes(action);
@@ -201,6 +206,9 @@ export function createRegistryHandler(
       let result: unknown;
       if (action === 'coverage')
         result = await coverage(registry, url.searchParams.get('provider') || undefined);
+      else if (action === 'source-directory')
+        result = { items: (await coverage(registry)).sources };
+      else if (action === 'collection-starters') result = await seedCollectionDrafts(registry);
       else if (action === 'source-health')
         result = await sourceHealth(registry, identifier(url.searchParams.get('provider')));
       else if (action === 'collections' || action === 'collections-editor')
@@ -245,7 +253,10 @@ export function createRegistryHandler(
         void pending;
         void discoveries;
         result = {
-          version: '0.2.0',
+          version: '0.3.0',
+          release: 'discovery-v2',
+          build: process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 12) ?? null,
+          intelligence: await intelligenceReadiness(registry),
           storage: registry.db.mode,
           readOnly: registry.db.mode === 'snapshot',
           stats: who?.role === 'curator' ? stats : publicStats,

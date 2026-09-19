@@ -1,3 +1,5 @@
+import { RegistryReadiness } from './RegistryReadiness';
+import { FeaturedCollections } from './DiscoveryCollections';
 import { RegistryIntelligence } from './RegistryIntelligence';
 import { NotFound } from './NotFound';
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
@@ -165,6 +167,9 @@ export function AssetWorkspace() {
         openSection={null}
         lists={lists}
         onAssets
+        assetView={query.view}
+        registryCurator={isCurator}
+        onChooseAssetView={(view) => navigate({ view }, true)}
         onSavedAssets={query.view === 'saved'}
         onShowSavedAssets={() => navigate({ view: 'saved' }, true)}
         savedAssetCount={assetSaves.saved.length}
@@ -227,13 +232,16 @@ export function AssetWorkspace() {
         <PageHeading
           title={title}
           subtitle={
-            utility
-              ? 'One library. Your workflow.'
-              : 'Live components and icon packs, with the source left intact. Find it, understand it, make it yours.'
+            intelligence
+              ? 'Source-backed selections and evidence from the UIXO registry.'
+              : utility
+                ? 'One library. Your workflow.'
+                : 'Live components and icon packs, with the source left intact. Find it, understand it, make it yours.'
           }
           canClear={hasFilters}
           onClear={() => navigate({ view: query.view }, true)}
         />
+        <RegistryReadiness />
         <SaveSyncNotice
           label="Asset favourites"
           status={assetSaves.syncStatus}
@@ -246,6 +254,12 @@ export function AssetWorkspace() {
           error={listSyncError}
           onRetry={retryListSync}
         />
+        {!intelligence &&
+          !utility &&
+          query.view === 'assets' &&
+          !hasFilters &&
+          query.offset === 0 &&
+          !query.id && <FeaturedCollections query={query} navigate={navigate} />}
         {intelligence ? (
           privateWorkspace && !settled ? (
             <p role="status">Checking account…</p>
@@ -260,7 +274,13 @@ export function AssetWorkspace() {
             />
           )
         ) : utility ? (
-          <AssetUtilities key={query.view} view={query.view} />
+          ['review', 'scout', 'jobs'].includes(query.view) && !settled ? (
+            <p role="status">Checking account…</p>
+          ) : ['review', 'scout', 'jobs'].includes(query.view) && !isCurator ? (
+            <NotFound onReset={() => navigate({}, true)} />
+          ) : (
+            <AssetUtilities key={query.view} view={query.view} />
+          )
         ) : (
           <AssetLibrary
             query={query}
@@ -291,6 +311,7 @@ export function AssetWorkspace() {
             }
           />
         )}
+        <p className="dv2-release-label">DISCOVERY V2 · SOURCE-BACKED ASSET REGISTRY</p>
         <SiteFooter count={null} assets>
           <nav aria-label="Asset workspace links">
             <a href="/browse/assets?view=collections">Asset collections</a>
