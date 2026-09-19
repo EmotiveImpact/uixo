@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { EMPTY_ASSET_QUERY, registryRequest } from '../lib/asset-library';
 import { SourceDirectory } from './SourceDirectory';
 import { RegistryIntelligence } from './RegistryIntelligence';
@@ -36,7 +36,10 @@ const props = () => ({
 beforeEach(() => {
   request.mockReset();
 });
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  vi.useRealTimers();
+});
 
 it('renders an exact large-source count without inventing zero evidence', async () => {
   request.mockResolvedValue({ items: [source], total: 1, nextOffset: null });
@@ -59,12 +62,14 @@ it('paginates on the server and retains search input while data reloads', async 
   expect((screen.getByRole('searchbox', { name: 'Find a source' }) as HTMLInputElement).value).toBe(
     'MIT',
   );
-  expect(request).toHaveBeenLastCalledWith(
-    'source-directory',
-    expect.objectContaining({
-      query: { q: 'MIT', offset: '0', limit: '12' },
-      authenticated: false,
-    }),
+  await waitFor(() =>
+    expect(request).toHaveBeenLastCalledWith(
+      'source-directory',
+      expect.objectContaining({
+        query: { q: 'MIT', offset: '0', limit: '12' },
+        authenticated: false,
+      }),
+    ),
   );
 });
 
@@ -96,4 +101,38 @@ it('keeps a large source profile browsable and labels unassessed verification ho
   expect(screen.getAllByText('Not assessed')).toHaveLength(2);
   expect(screen.getByText(source.evidenceNote!)).toBeTruthy();
   expect(screen.queryByText('Licence evidence')).toBeNull();
+});
+
+it('coalesces rapid source typing into one request after the typing pause', async () => {
+  request.mockResolvedValue({ items: [source], total: 1, nextOffset: null });
+  const p = props();
+  const rendered = render(<SourceDirectory {...p} />);
+  await screen.findByText('10001');
+  request.mockClear();
+  vi.useFakeTimers();
+  for (const q of ['r', 're', 'rea', 'react'])
+    rendered.rerender(<SourceDirectory {...p} query={{ ...p.query, q }} />);
+  expect((screen.getByRole('searchbox', { name: 'Find a source' }) as HTMLInputElement).value).toBe(
+    'react',
+  );
+  expect(request).not.toHaveBeenCalled();
+  await act(() => vi.advanceTimersByTimeAsync(179));
+  expect(request).not.toHaveBeenCalled();
+  await act(() => vi.advanceTimersByTimeAsync(1));
+  expect(request).toHaveBeenCalledTimes(1);
+  expect(request).toHaveBeenCalledWith(
+    'source-directory',
+    expect.objectContaining({
+      query: { q: 'react', offset: '0', limit: '12' },
+    }),
+  );
+});
+
+it('cancels a pending source request when its screen is unmounted', async () => {
+  vi.useFakeTimers();
+  request.mockResolvedValue({ items: [], total: 0, nextOffset: null });
+  const rendered = render(<SourceDirectory {...props()} />);
+  rendered.unmount();
+  await act(() => vi.advanceTimersByTimeAsync(200));
+  expect(request).not.toHaveBeenCalled();
 });

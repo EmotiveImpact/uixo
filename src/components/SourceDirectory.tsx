@@ -7,11 +7,12 @@ import './discovery-v2.css';
 
 export function SourceDirectory({ query, navigate }: IntelligenceProps) {
   const pageSize = 12;
-  const remote = useRegistryData<SourceDirectoryResult>('source-directory', {
-    q: query.q,
-    offset: String(query.offset),
-    limit: String(pageSize),
-  });
+  const remote = useRegistryData<SourceDirectoryResult>(
+    'source-directory',
+    { q: query.q, offset: String(query.offset), limit: String(pageSize) },
+    false,
+    180,
+  );
   const sources = remote.data?.items ?? [];
   const total = remote.data?.total ?? sources.length;
   return (

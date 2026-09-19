@@ -12,7 +12,8 @@ The private curator report retains its existing cap and permissions.
 `GET /api/registry?action=source-directory` accepts `q` (at most 120 characters), `limit`
 (1 to 48, default 24) and `offset`. It returns `items`, `total`, `offset`, `limit`, `nextOffset`
 and `generatedAt`. Search operates across the approved provider set, not just the loaded page.
-The Sources interface requests 12 providers per page and keeps search available during reloads.
+The Sources interface requests 12 providers per page and keeps search available during reloads. Requests wait for a 180 ms typing pause; superseded
+queries and unmounted screens cancel their pending timer before server work starts.
 
 Each public source summary has an exact SQL `assetCount`. Evidence is either complete for that
 source or explicitly deferred: `metrics: null`, `evidenceStatus: deferred` and an explanatory
@@ -32,7 +33,7 @@ the nine tool names and publication permissions remain unchanged.
 
 ## Verification
 
-Local checks passed: 197 application tests in 28 files, 62 registry/API/Eve tests, the official
+Local checks passed: 199 application tests in 28 files, 62 registry/API/Eve tests, the official
 nine-tool MCP integration, TypeScript and ESLint. Scale regression tests cover a 10,001-asset
 provider, several large providers, revoked providers, server pagination, search beyond page one,
 literal wildcard input, the shared evidence budget and unchanged private-route denial. UI tests

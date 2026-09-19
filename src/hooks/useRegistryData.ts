@@ -6,6 +6,7 @@ export function useRegistryData<T>(
   action: string,
   parameters: Record<string, string> = {},
   authenticated = false,
+  debounceMs = 0,
 ) {
   const serialised = JSON.stringify(parameters);
   const [version, setVersion] = useState(0);
@@ -13,24 +14,31 @@ export function useRegistryData<T>(
   const [state, setState] = useState<{ key: string; data: T | null; error: string } | null>(null);
   useEffect(() => {
     const controller = new AbortController();
-    void registryRequest<T>(action, {
-      query: JSON.parse(serialised),
-      authenticated,
-      signal: controller.signal,
-    })
-      .then((data) => {
-        if (!controller.signal.aborted) setState({ key, data, error: '' });
+    const load = () => {
+      void registryRequest<T>(action, {
+        query: JSON.parse(serialised),
+        authenticated,
+        signal: controller.signal,
       })
-      .catch((e: unknown) => {
-        if (!controller.signal.aborted)
-          setState({
-            key,
-            data: null,
-            error: e instanceof Error ? e.message : 'Registry request failed.',
-          });
-      });
-    return () => controller.abort();
-  }, [action, serialised, authenticated, key]);
+        .then((data) => {
+          if (!controller.signal.aborted) setState({ key, data, error: '' });
+        })
+        .catch((e: unknown) => {
+          if (!controller.signal.aborted)
+            setState({
+              key,
+              data: null,
+              error: e instanceof Error ? e.message : 'Registry request failed.',
+            });
+        });
+    };
+    const timer = debounceMs > 0 ? setTimeout(load, debounceMs) : undefined;
+    if (timer === undefined) load();
+    return () => {
+      if (timer !== undefined) clearTimeout(timer);
+      controller.abort();
+    };
+  }, [action, serialised, authenticated, key, debounceMs]);
   return {
     data: state?.key === key ? state.data : null,
     error: state?.key === key ? state.error : '',
