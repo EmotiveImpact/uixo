@@ -129,10 +129,7 @@ describe('pricing', () => {
       'shadcn/ui',
       'Orbkit',
     ]);
-    expect(names({ price: 'Freemium', browse: 'Recent' })).toEqual([
-      'UI8',
-      'Grainient',
-    ]);
+    expect(names({ price: 'Freemium', browse: 'Recent' })).toEqual(['UI8', 'Grainient']);
   });
 
   it('never returns a freemium resource under a Free filter', () => {
@@ -200,10 +197,7 @@ describe('formats and lists', () => {
   });
 
   it('restricts to the ids in a list', () => {
-    expect(names({ listIds: ['lucide', 'orb'], browse: 'Recent' })).toEqual([
-      'Lucide',
-      'Orbkit',
-    ]);
+    expect(names({ listIds: ['lucide', 'orb'], browse: 'Recent' })).toEqual(['Lucide', 'Orbkit']);
   });
 
   it('returns nothing for an empty list', () => {

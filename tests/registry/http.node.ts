@@ -131,6 +131,10 @@ test('server enforces curator, scout and worker scopes instead of trusting the U
     );
     assert.equal((await f.api('status')).data.role, 'visitor');
     assert.equal((await f.api('status', 'curator')).data.role, 'curator');
+    const inventory = await f.api('inventory');
+    assert.equal(inventory.status, 200);
+    assert.equal(inventory.data.total, 0);
+    assert.deepEqual(inventory.data.kinds, []);
   } finally {
     await f.close();
   }

@@ -1,4 +1,5 @@
 import { randomUUID } from 'node:crypto';
+import { COMPONENT_CATEGORIES } from '../shared/component-categories.ts';
 import type { Database, Statement } from './database.ts';
 import {
   type Asset,
@@ -37,6 +38,52 @@ export class Registry {
       ...(JSON.parse(String(r.payload)) as Provider),
       assetCount: Number(r.asset_count),
     }));
+  }
+  async inventory() {
+    const published =
+      "FROM uixo_v2_assets a JOIN uixo_v2_providers p ON p.id=a.provider_id WHERE p.approved=1 AND a.kind<>'icon'";
+    const facet = async (column: 'kind' | 'provider_id' | 'price') =>
+      (
+        await this.db.query(
+          `SELECT a.${column} AS value, COUNT(*) AS count ${published} GROUP BY a.${column} ORDER BY count DESC,a.${column}`,
+        )
+      ).map((row) => ({ id: String(row.value), count: Number(row.count) }));
+    const variants = async (column: 'framework' | 'format') =>
+      (
+        await this.db.query(
+          `SELECT v.${column} AS value, COUNT(DISTINCT a.id) AS count FROM uixo_v2_assets a JOIN uixo_v2_providers p ON p.id=a.provider_id JOIN uixo_v2_variants v ON v.asset_id=a.id WHERE p.approved=1 AND a.kind<>'icon' GROUP BY v.${column} ORDER BY count DESC,v.${column}`,
+        )
+      ).map((row) => ({ id: String(row.value), count: Number(row.count) }));
+    const categorySql = COMPONENT_CATEGORIES.map(
+      (entry) =>
+        `SELECT '${entry.id}' AS value, COUNT(*) AS count ${published} AND a.kind='component' AND a.search_text LIKE '%category:${entry.id}:%'`,
+    ).join(' UNION ALL ');
+    const [kinds, providers, prices, frameworks, formats, categoryRows, commercialRows] =
+      await Promise.all([
+        facet('kind'),
+        facet('provider_id'),
+        facet('price'),
+        variants('framework'),
+        variants('format'),
+        this.db.query(categorySql),
+        this.db.query(
+          "SELECT COUNT(*) AS count FROM uixo_v2_assets a JOIN uixo_v2_providers p ON p.id=a.provider_id JOIN uixo_v2_licences l ON l.id=a.licence_id WHERE p.approved=1 AND a.kind<>'icon' AND l.commercial='allowed'",
+        ),
+      ]);
+    const categories = categoryRows.map((row) => ({
+      id: String(row.value),
+      count: Number(row.count),
+    }));
+    return {
+      total: kinds.reduce((sum, entry) => sum + entry.count, 0),
+      kinds,
+      providers,
+      frameworks,
+      formats,
+      prices,
+      categories,
+      commercialUse: Number(commercialRows[0]?.count ?? 0),
+    };
   }
   async provider(id: string): Promise<Provider> {
     const rows = await this.db.query(
