@@ -1,4 +1,7 @@
 import { randomUUID } from 'node:crypto';
+import { STARTER_COLLECTIONS } from '../shared/starter-collections.ts';
+import type { Asset } from './domain.ts';
+import type { PublicCollectionItem } from '../shared/intelligence.ts';
 import type {
   CollectionInput,
   CollectionRecord,
@@ -50,7 +53,7 @@ export function parseCollection(input: unknown): CollectionInput {
 }
 /** Resolve each typed target once across a page. Avoid a remote query per collection item. */
 async function targets(registry: Registry, collections: CollectionInput[]) {
-  const found = new Map<string, { name: string; sourceUrl: string }>();
+  const found = new Map<string, Omit<PublicCollectionItem, 'kind' | 'targetId' | 'note'>>();
   for (const kind of ['asset', 'provider'] as const) {
     const ids = [
       ...new Set(
@@ -62,14 +65,31 @@ async function targets(registry: Registry, collections: CollectionInput[]) {
       const placeholders = chunk.map((_, i) => `$${i + 1}`).join(',');
       const rows = await registry.db.query(
         kind === 'asset'
-          ? `SELECT a.id,a.name,a.source_url AS source_url FROM uixo_v2_assets a JOIN uixo_v2_providers p ON p.id=a.provider_id WHERE p.approved=1 AND a.id IN (${placeholders})`
+          ? `SELECT a.id,a.name,a.source_url AS source_url,a.payload,p.name AS provider_name FROM uixo_v2_assets a JOIN uixo_v2_providers p ON p.id=a.provider_id WHERE p.approved=1 AND a.id IN (${placeholders})`
           : `SELECT id,payload FROM uixo_v2_providers WHERE approved=1 AND id IN (${placeholders})`,
         chunk,
       );
       for (const row of rows) {
         const value =
           kind === 'asset'
-            ? { name: String(row.name), sourceUrl: String(row.source_url) }
+            ? (() => {
+                const asset = JSON.parse(String(row.payload)) as Asset;
+                return {
+                  name: asset.name,
+                  sourceUrl: asset.sourceUrl,
+                  providerId: asset.providerId,
+                  providerName: String(row.provider_name),
+                  frameworks: [...new Set(asset.variants.map((variant) => variant.framework))],
+                  licenceExpression: asset.licence.expression,
+                  asset: {
+                    id: asset.id,
+                    name: asset.name,
+                    kind: asset.kind,
+                    sourceUrl: asset.sourceUrl,
+                    preview: asset.preview,
+                  },
+                };
+              })()
             : (() => {
                 const provider = JSON.parse(String(row.payload));
                 return { name: String(provider.name), sourceUrl: String(provider.url) };
@@ -234,43 +254,24 @@ export async function publishCollection(registry: Registry, input: unknown, acto
 }
 /** Starter selections are drafts, never implicitly public. Safe to rerun without editing existing work. */
 export async function seedCollectionDrafts(registry: Registry) {
-  const starters = [
-    {
-      slug: 'dashboard-foundations',
-      title: 'Dashboard foundations',
-      description:
-        'A practical starting set for navigation, data display and structured interaction. Inspect each dependency before combining.',
-      ids: ['shadcn/sidebar', 'shadcn/table', 'shadcn/card', 'shadcn/command', 'shadcn/dialog'],
-    },
-    {
-      slug: 'considered-forms',
-      title: 'Considered forms',
-      description:
-        'Inputs, labels, selection and feedback for a clear form experience. This selection is not a runtime-certified bundle.',
-      ids: ['shadcn/input', 'shadcn/label', 'shadcn/select', 'shadcn/checkbox', 'shadcn/alert'],
-    },
-    {
-      slug: 'navigation-essentials',
-      title: 'Navigation essentials',
-      description:
-        'Explore distinct navigation patterns, then select the one that fits the task and screen size.',
-      ids: ['shadcn/navigation-menu', 'shadcn/breadcrumb', 'shadcn/tabs', 'shadcn/pagination'],
-    },
-  ];
+  requireWritable(registry);
   let inserted = 0;
-  for (const s of starters) {
+  const skipped: string[] = [];
+  for (const starter of STARTER_COLLECTIONS) {
     if (
-      (await registry.db.query('SELECT slug FROM uixo_v2_collections WHERE slug=$1', [s.slug]))
-        .length
+      (
+        await registry.db.query('SELECT slug FROM uixo_v2_collections WHERE slug=$1', [
+          starter.slug,
+        ])
+      ).length
     )
       continue;
-    const items = s.ids.map((targetId) => ({
-      kind: 'asset' as const,
-      targetId,
-      note: 'Inspect source, dependencies and accessibility before use.',
-    }));
-    await saveCollection(registry, { ...s, items, expectedRevision: 0 }, 'collection-bootstrap');
+    if ((await available(registry, starter)).length !== starter.items.length) {
+      skipped.push(starter.slug);
+      continue;
+    }
+    await saveCollection(registry, { ...starter, expectedRevision: 0 }, 'collection-bootstrap');
     inserted++;
   }
-  return { inserted, published: 0 };
+  return { inserted, published: 0, skipped };
 }

@@ -12,7 +12,10 @@ export function SourceDirectory({ query, navigate }: IntelligenceProps) {
   const needle = search.trim().toLowerCase();
   const sources = remote.data?.items ?? [];
   const matches = sources.filter((source) =>
-    [source.name, source.url, ...source.frameworks, ...source.licences].join(' ').toLowerCase().includes(needle),
+    [source.name, source.url, ...source.frameworks, ...source.licences]
+      .join(' ')
+      .toLowerCase()
+      .includes(needle),
   );
   return (
     <RegistryState {...remote}>
@@ -35,7 +38,9 @@ export function SourceDirectory({ query, navigate }: IntelligenceProps) {
               type="search"
             />
           </label>
-          <span role="status">{matches.length} of {sources.length} sources</span>
+          <span role="status">
+            {matches.length} of {sources.length} sources
+          </span>
         </div>
       )}
       {!sources.length ? (
@@ -52,7 +57,9 @@ export function SourceDirectory({ query, navigate }: IntelligenceProps) {
             return (
               <article className="dv2-source-card" key={source.id}>
                 <div className="dv2-source-identity">
-                  <span className="dv2-source-monogram" aria-hidden="true">{source.name.slice(0, 2).toUpperCase()}</span>
+                  <span className="dv2-source-monogram" aria-hidden="true">
+                    {source.name.slice(0, 2).toUpperCase()}
+                  </span>
                   <div>
                     <h3>{source.name}</h3>
                     <a href={safeAssetUrl(source.url)} target="_blank" rel="noopener noreferrer">
@@ -61,20 +68,51 @@ export function SourceDirectory({ query, navigate }: IntelligenceProps) {
                   </div>
                 </div>
                 <p className="dv2-source-description">{source.rationale}</p>
-                <div className="dv2-source-count"><strong>{source.metrics.total}</strong><span>indexed assets</span></div>
+                <div className="dv2-source-count">
+                  <strong>{source.metrics.total}</strong>
+                  <span>indexed assets</span>
+                </div>
                 <div className="ri-tags">
-                  {[...new Set([...source.frameworks, ...source.licences])].map((value) =>
-                    <span className="ri-tag" key={value}>{value}</span>,
-                  )}
+                  {[...new Set([...source.frameworks, ...source.licences])].map((value) => (
+                    <span className="ri-tag" key={value}>
+                      {value}
+                    </span>
+                  ))}
                 </div>
                 <dl className="dv2-source-evidence">
-                  <div><dt>Preview evidence</dt><dd>{previewed}/{source.metrics.total}</dd></div>
-                  <div><dt>Pinned sources</dt><dd>{source.metrics.sourcePinned}/{source.metrics.total}</dd></div>
-                  <div><dt>Licence evidence</dt><dd>{source.metrics.licenceEvidence}/{source.metrics.total}</dd></div>
-                  <div><dt>Last recorded verification</dt><dd>{source.newestVerifiedAt ? new Date(source.newestVerifiedAt).toLocaleDateString('en-GB') : 'Not recorded'}</dd></div>
+                  <div>
+                    <dt>Preview evidence</dt>
+                    <dd>
+                      {previewed}/{source.metrics.total}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Pinned sources</dt>
+                    <dd>
+                      {source.metrics.sourcePinned}/{source.metrics.total}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Licence evidence</dt>
+                    <dd>
+                      {source.metrics.licenceEvidence}/{source.metrics.total}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Last recorded verification</dt>
+                    <dd>
+                      {source.newestVerifiedAt
+                        ? new Date(source.newestVerifiedAt).toLocaleDateString('en-GB')
+                        : 'Not recorded'}
+                    </dd>
+                  </div>
                 </dl>
                 <div className="dv2-source-actions">
-                  <RegistryLink query={query} navigate={navigate} changes={{ view: 'sources', provider: source.id }}>
+                  <RegistryLink
+                    query={query}
+                    navigate={navigate}
+                    changes={{ view: 'sources', provider: source.id }}
+                  >
                     View evidence <ArrowRight size={15} aria-hidden="true" />
                   </RegistryLink>
                   <RegistryLink query={query} navigate={navigate} changes={{ provider: source.id }}>
@@ -86,7 +124,10 @@ export function SourceDirectory({ query, navigate }: IntelligenceProps) {
           })}
         </div>
       )}
-      <p className="dv2-evidence-footnote">These are retained registry observations, not live upstream checks or a guarantee of accessibility, security or project compatibility.</p>
+      <p className="dv2-evidence-footnote">
+        These are retained registry observations, not live upstream checks or a guarantee of
+        accessibility, security or project compatibility.
+      </p>
     </RegistryState>
   );
 }

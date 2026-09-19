@@ -16,7 +16,12 @@ export function CollectionVisual({ collection }: { collection: PublicCollection 
       ) : (
         <div className="dv2-collection-no-media">
           <span>CURATED SOURCES</span>
-          <strong>{collection.items.map((item) => item.name).slice(0, 3).join(' / ')}</strong>
+          <strong>
+            {collection.items
+              .map((item) => item.name)
+              .slice(0, 3)
+              .join(' / ')}
+          </strong>
           <small>No component preview is available for this selection.</small>
         </div>
       )}
@@ -33,9 +38,13 @@ export function CollectionGrid({
   return (
     <div className={'dv2-collections' + (compact ? ' is-compact' : '')}>
       {items.map((collection) => {
-        const sources = [...new Set(collection.items.flatMap((item) =>
-          item.providerName ? [item.providerName] : item.kind === 'provider' ? [item.name] : [],
-        ))];
+        const sources = [
+          ...new Set(
+            collection.items.flatMap((item) =>
+              item.providerName ? [item.providerName] : item.kind === 'provider' ? [item.name] : [],
+            ),
+          ),
+        ];
         const frameworks = [...new Set(collection.items.flatMap((item) => item.frameworks ?? []))];
         return (
           <article className="dv2-collection-card" key={collection.slug}>
@@ -55,7 +64,9 @@ export function CollectionGrid({
                 </RegistryLink>
               </h3>
               <p>{collection.description}</p>
-              {sources.length > 0 && <small className="dv2-source-line">From {sources.join(' + ')}</small>}
+              {sources.length > 0 && (
+                <small className="dv2-source-line">From {sources.join(' + ')}</small>
+              )}
             </div>
           </article>
         );
@@ -65,7 +76,9 @@ export function CollectionGrid({
 }
 
 export function FeaturedCollections({ query, navigate }: Navigation) {
-  const remote = useRegistryData<{ items: PublicCollection[]; total: number }>('collections', { limit: '3' });
+  const remote = useRegistryData<{ items: PublicCollection[]; total: number }>('collections', {
+    limit: '3',
+  });
   return (
     <section className="discovery-featured" aria-label="Featured asset collections">
       <div className="dv2-section-heading">
@@ -78,7 +91,9 @@ export function FeaturedCollections({ query, navigate }: Navigation) {
         </RegistryLink>
       </div>
       {remote.loading ? (
-        <p role="status" className="dv2-muted">Loading editorial collections…</p>
+        <p role="status" className="dv2-muted">
+          Loading editorial collections…
+        </p>
       ) : remote.error ? (
         <div className="dv2-inline-state">
           <p>Collections are unavailable. Asset browsing remains available below.</p>
@@ -96,7 +111,10 @@ export function FeaturedCollections({ query, navigate }: Navigation) {
       )}
       <div className="dv2-agent-entry">
         <Terminal size={19} aria-hidden="true" />
-        <p><strong>The same library, in your coding workflow.</strong> Search and inspect UIXO through MCP.</p>
+        <p>
+          <strong>The same library, in your coding workflow.</strong> Search and inspect UIXO
+          through MCP.
+        </p>
         <RegistryLink query={query} navigate={navigate} changes={{ view: 'connect' }}>
           Connect your agent <ArrowRight size={15} aria-hidden="true" />
         </RegistryLink>

@@ -15,13 +15,25 @@ vi.mock('./motion/animated-sidebar', () => {
     AnimatedSidebarGroupContent: Group,
     AnimatedSidebarMenu: Group,
     AnimatedSidebarMenuItem: Group,
-    AnimatedSidebarMenuButton: ({ children, onSelect, 'aria-label': label }: {
-      children: ReactNode; onSelect: () => void; 'aria-label'?: string;
-    }) => <button aria-label={label} onClick={onSelect}>{children}</button>,
+    AnimatedSidebarMenuButton: ({
+      children,
+      onSelect,
+      'aria-label': label,
+    }: {
+      children: ReactNode;
+      onSelect: () => void;
+      'aria-label'?: string;
+    }) => (
+      <button aria-label={label} onClick={onSelect}>
+        {children}
+      </button>
+    ),
   };
 });
 vi.mock('./AssetPreview', () => ({
-  AssetPreview: ({ asset }: { asset: CollectionAssetPreview }) => <div data-testid="original-preview">{asset.id}</div>,
+  AssetPreview: ({ asset }: { asset: CollectionAssetPreview }) => (
+    <div data-testid="original-preview">{asset.id}</div>
+  ),
 }));
 vi.mock('../lib/asset-library', async (original) => ({
   ...(await original<typeof import('../lib/asset-library')>()),
@@ -34,13 +46,26 @@ const collection: PublicCollection = {
   description: 'A focused selection for workspace navigation and data.',
   revision: 2,
   unavailableItems: 0,
-  items: [{
-    kind: 'asset', targetId: 'shadcn/sidebar', name: 'Sidebar',
-    sourceUrl: 'https://ui.shadcn.com/docs/components/sidebar',
-    note: 'Preserve the navigation context.',
-    providerId: 'shadcn', providerName: 'shadcn/ui', frameworks: ['react'], licenceExpression: 'MIT',
-    asset: { id: 'shadcn/sidebar', name: 'Sidebar', kind: 'component', sourceUrl: 'https://ui.shadcn.com/docs/components/sidebar', preview: null },
-  }],
+  items: [
+    {
+      kind: 'asset',
+      targetId: 'shadcn/sidebar',
+      name: 'Sidebar',
+      sourceUrl: 'https://ui.shadcn.com/docs/components/sidebar',
+      note: 'Preserve the navigation context.',
+      providerId: 'shadcn',
+      providerName: 'shadcn/ui',
+      frameworks: ['react'],
+      licenceExpression: 'MIT',
+      asset: {
+        id: 'shadcn/sidebar',
+        name: 'Sidebar',
+        kind: 'component',
+        sourceUrl: 'https://ui.shadcn.com/docs/components/sidebar',
+        preview: null,
+      },
+    },
+  ],
 };
 function props() {
   return {
@@ -79,7 +104,10 @@ it('uses a real member asset as collection media and preserves source context', 
   expect(screen.getByText('From shadcn/ui')).toBeTruthy();
   expect(screen.getByText('1 available items')).toBeTruthy();
   fireEvent.click(screen.getByRole('link', { name: 'Dashboard foundations' }));
-  expect(p.navigate).toHaveBeenCalledWith({ view: 'collections', collection: 'dashboard-foundations' }, true);
+  expect(p.navigate).toHaveBeenCalledWith(
+    { view: 'collections', collection: 'dashboard-foundations' },
+    true,
+  );
 });
 
 it('does not manufacture a component thumbnail when no member preview is available', () => {
@@ -92,7 +120,9 @@ it('does not manufacture a component thumbnail when no member preview is availab
 it('keeps asset discovery usable when the optional featured-collection request fails', async () => {
   request.mockRejectedValue(new Error('Registry migration required.'));
   render(<FeaturedCollections {...props()} />);
-  expect(await screen.findByText('Collections are unavailable. Asset browsing remains available below.')).toBeTruthy();
+  expect(
+    await screen.findByText('Collections are unavailable. Asset browsing remains available below.'),
+  ).toBeTruthy();
   expect(screen.getByRole('button', { name: 'Retry collections' })).toBeTruthy();
   expect(screen.getByRole('link', { name: 'Connect your agent' })).toBeTruthy();
 });
@@ -108,5 +138,8 @@ it('requests the batched public source directory without an operator credential'
   request.mockResolvedValue({ items: [] });
   render(<SourceDirectory {...props()} />);
   await screen.findByText('No approved sources are available.');
-  expect(request).toHaveBeenCalledWith('source-directory', expect.objectContaining({ authenticated: false }));
+  expect(request).toHaveBeenCalledWith(
+    'source-directory',
+    expect.objectContaining({ authenticated: false }),
+  );
 });

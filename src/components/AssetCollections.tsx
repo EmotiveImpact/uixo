@@ -8,6 +8,8 @@ import type {
 } from '../../shared/intelligence';
 import type { Catalogue, ProviderRecord } from '../lib/asset-library';
 import { registryRequest, safeAssetUrl } from '../lib/asset-library';
+import { AssetPreview } from './AssetPreview';
+import { CollectionGrid } from './DiscoveryCollections';
 import { AssetDetail } from './AssetDetail';
 import { RegistryLink, RegistryState, type IntelligenceProps } from './RegistryPrimitives';
 import { useRegistryData } from '../hooks/useRegistryData';
@@ -44,35 +46,7 @@ function PublicCollectionList({ query, navigate }: IntelligenceProps) {
           </a>
         </section>
       ) : (
-        <div className="ri-source-grid">
-          {remote.data.items.map((c, i) => (
-            <article className="ri-source ri-collection" key={c.slug}>
-              <span className="ri-collection-number">
-                {String(query.offset + i + 1).padStart(2, '0')}
-              </span>
-              <h3>
-                <RegistryLink
-                  query={query}
-                  navigate={navigate}
-                  changes={{ view: 'collections', collection: c.slug }}
-                >
-                  {c.title}
-                </RegistryLink>
-              </h3>
-              <p>{c.description}</p>
-              <div className="ri-actions">
-                <span>{c.items.length} available items</span>
-                <RegistryLink
-                  query={query}
-                  navigate={navigate}
-                  changes={{ view: 'collections', collection: c.slug }}
-                >
-                  Explore <ArrowRight size={14} />
-                </RegistryLink>
-              </div>
-            </article>
-          ))}
-        </div>
+        <CollectionGrid items={remote.data.items} query={query} navigate={navigate} />
       )}
       <div className="ri-pagination">
         <button
@@ -142,10 +116,22 @@ function PublicCollectionDetail({ query, navigate, assetSaves }: IntelligencePro
             <div className="ri-collection-items">
               {c.items.map((i, index) => (
                 <article key={i.kind + i.targetId} className="ri-collection-item">
+                  {i.asset && (
+                    <div className="dv2-item-preview">
+                      <AssetPreview asset={i.asset} />
+                    </div>
+                  )}
                   <span className="ri-item-number">{String(index + 1).padStart(2, '0')}</span>
                   <div>
                     <span className="ri-eyebrow">{i.kind === 'asset' ? 'ASSET' : 'PROVIDER'}</span>
                     <h3>{i.name}</h3>
+                    <div className="dv2-selection-meta">
+                      {i.providerName && <span>{i.providerName}</span>}
+                      {i.frameworks?.map((framework) => (
+                        <span key={framework}>{framework}</span>
+                      ))}
+                      {i.licenceExpression && <span>{i.licenceExpression}</span>}
+                    </div>
                     <p>{i.note}</p>
                     <div className="ri-actions">
                       {i.kind === 'asset' ? (
@@ -195,12 +181,39 @@ function PublicCollectionDetail({ query, navigate, assetSaves }: IntelligencePro
 }
 function EditorialCollections(props: IntelligenceProps) {
   const [create, setCreate] = useState(false);
+  const [preparing, setPreparing] = useState(false);
+  const [prepareError, setPrepareError] = useState('');
+  const [prepareNotice, setPrepareNotice] = useState('');
   const { query, navigate } = props;
   const remote = useRegistryData<CollectionList<CollectionRecord>>(
     'collections-editor',
     { offset: String(query.offset) },
     true,
   );
+  async function prepareStarters() {
+    setPreparing(true);
+    setPrepareError('');
+    setPrepareNotice('');
+    try {
+      const result = await registryRequest<{
+        inserted: number;
+        published: number;
+        skipped: string[];
+      }>('collection-starters', { authenticated: true, body: {} });
+      setPrepareNotice(
+        result.inserted +
+          ' starter drafts prepared. Nothing was published.' +
+          (result.skipped.length
+            ? ' Some selections need missing source assets before they can be prepared.'
+            : ''),
+      );
+      remote.reload();
+    } catch (error) {
+      setPrepareError(error instanceof Error ? error.message : 'Could not prepare starter drafts.');
+    } finally {
+      setPreparing(false);
+    }
+  }
   if (query.collection) return <ExistingCollectionEditor {...props} />;
   if (create)
     return (
@@ -219,16 +232,31 @@ function EditorialCollections(props: IntelligenceProps) {
           <h2>Curate first. Publish deliberately.</h2>
           <p>Draft changes remain separate from the version visitors see.</p>
         </div>
-        <button className="ri-primary" onClick={() => setCreate(true)}>
-          <Plus size={15} /> New collection
-        </button>
+        <div className="dv2-starter-actions">
+          <button disabled={preparing} onClick={() => void prepareStarters()}>
+            {preparing ? 'Preparing drafts…' : 'Prepare starter drafts'}
+          </button>
+          <button className="ri-primary" onClick={() => setCreate(true)}>
+            <Plus size={15} /> New collection
+          </button>
+        </div>
       </div>
+      {prepareError && (
+        <p role="alert" className="ri-notice">
+          {prepareError}
+        </p>
+      )}
+      {prepareNotice && (
+        <p role="status" className="ri-notice">
+          {prepareNotice}
+        </p>
+      )}
       {!remote.data?.items.length && (
         <section className="ri-state">
           <h3>Your editorial workspace is empty.</h3>
           <p>
-            Create a collection, or run the documented collections-seed command to prepare three
-            starter drafts.
+            Create a collection or prepare the starter drafts above. Inspect each selection, then
+            publish deliberately.
           </p>
         </section>
       )}

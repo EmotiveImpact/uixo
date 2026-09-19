@@ -31,8 +31,15 @@ with sync_playwright() as p:
     ctx.route('**/api/auth/**',fake_auth)
     ctx.route('**/api/lists',lambda r:r.fulfill(json={'lists':[],'revision':0}))
     ctx.route('**/api/saved-assets',lambda r:r.fulfill(json={'assetIds':[],'revision':0}))
+    assert api('status')['role']=='curator', 'The local API fixture did not receive its curator cookie.'
     page=ctx.new_page();errors=[]
     page.on('pageerror',lambda err:errors.append(str(err)))
+    api_failures=[]
+    page.on('response', lambda response: api_failures.append({'url':response.url,'status':response.status}) if '/api/registry' in response.url and response.status>=400 else None)
+    page.goto('http://127.0.0.1:3000/browse/assets',wait_until='networkidle')
+    browser_status=page.evaluate("async () => (await fetch('/api/registry?action=status', {credentials:'same-origin'})).json()")
+    print(json.dumps({'browserPreflight':browser_status,'cookieNames':[c['name'] for c in ctx.cookies()],'apiFailures':api_failures}),flush=True)
+    assert browser_status['role']=='curator', 'The browser/proxy did not retain the issued development session.'
     results=[]
     for view,query,heading in [
         ('health','view=health','Know what is in the library.'),
@@ -46,7 +53,12 @@ with sync_playwright() as p:
         for width in [1440,390]:
             page.set_viewport_size({'width':width,'height':1100 if width==1440 else 844})
             page.goto('http://127.0.0.1:3000/browse/assets?'+query,wait_until='networkidle')
-            page.get_by_role('heading',name=heading,exact=True).wait_for()
+            try:
+                page.get_by_role('heading',name=heading,exact=True).wait_for(timeout=15000)
+            except Exception:
+                page.screenshot(path=str(output / f'FAILED-{view}-{width}.png'),full_page=True)
+                print(json.dumps({'view':view,'url':page.url,'headings':page.locator('h1,h2').all_text_contents(),'alerts':page.locator('[role=alert]').all_text_contents(),'apiFailures':api_failures,'pageErrors':errors}),flush=True)
+                raise
             page.wait_for_timeout(300)
             overflow=page.evaluate('document.documentElement.scrollWidth > innerWidth + 1')
             alerts=page.locator('.registry-intelligence [role=alert]').all_text_contents()

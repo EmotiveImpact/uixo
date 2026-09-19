@@ -1,6 +1,7 @@
 import { sqliteDatabase, migrate } from './database.ts';
 import { Registry } from './service.ts';
 import { seedCaptured } from './bootstrap.ts';
+import { bootstrapSnapshotCollections } from './release-collections.ts';
 let current: Promise<Registry> | undefined;
 export function getRegistry(): Promise<Registry> {
   current ??= initialise().catch((error) => {
@@ -21,5 +22,6 @@ async function initialise(): Promise<Registry> {
   await migrate(db);
   const registry = new Registry(db);
   await seedCaptured(registry);
+  await bootstrapSnapshotCollections(registry);
   return registry;
 }

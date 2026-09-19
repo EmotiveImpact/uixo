@@ -64,8 +64,24 @@ export type CollectionRecord = CollectionInput & {
   hasUnpublishedChanges: boolean;
   updatedAt: string;
 };
+export type CollectionAssetPreview = {
+  id: string;
+  name: string;
+  kind: string;
+  sourceUrl: string;
+  preview: { kind: string; url?: string; label: string } | null;
+};
+export type PublicCollectionItem = CollectionItem & {
+  name: string;
+  sourceUrl: string;
+  providerId?: string;
+  providerName?: string;
+  frameworks?: string[];
+  licenceExpression?: string;
+  asset?: CollectionAssetPreview;
+};
 export type PublicCollection = Omit<CollectionInput, 'items'> & {
-  items: (CollectionItem & { name: string; sourceUrl: string })[];
+  items: PublicCollectionItem[];
   revision: number;
   unavailableItems: number;
 };

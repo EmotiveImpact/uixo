@@ -267,7 +267,7 @@ test('provider revocation hides collection members and prevents stale publicatio
 test('starter collections are repeatable drafts rather than automatic editorial publications', async () => {
   const { db, registry } = await setup();
   try {
-    assert.equal((await seedCollectionDrafts(registry)).inserted, 3);
+    assert.equal((await seedCollectionDrafts(registry)).inserted, 6);
     assert.equal((await seedCollectionDrafts(registry)).inserted, 0);
     assert.equal((await listCollections(registry)).total, 0);
   } finally {

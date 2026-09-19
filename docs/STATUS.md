@@ -22,7 +22,6 @@ acceptance is also still failing, while the application/registry/MCP verificatio
 have otherwise passed their previously recorded checks. Discovery V2 includes fixing that release
 acceptance rather than treating hidden routes as a finished product.
 
-
 ## Registry Intelligence V1, 19 September 2026
 
 The next source build adds evidence coverage, provider profiles, private/published editorial asset
