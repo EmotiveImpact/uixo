@@ -86,7 +86,7 @@ function LivePreview({
 
   useEffect(() => {
     if (!visible || status !== 'loading') return;
-    const timeout = window.setTimeout(() => setStatus('error'), 12000);
+    const timeout = window.setTimeout(() => setStatus('error'), 20000);
     return () => window.clearTimeout(timeout);
   }, [visible, status]);
 
@@ -101,7 +101,7 @@ function LivePreview({
         showFallbackImage ? 'has-captured-fallback' : ''
       }`}
     >
-      {visible && status !== 'error' && (
+      {visible && (
         <iframe
           ref={frame}
           title={`Live ${asset.name} demo`}
@@ -124,7 +124,7 @@ function LivePreview({
       )}
       {visible && status === 'loading' && (
         <span className="asset-live-loading" role="status">
-          Loading preview…
+          Loading live demo…
         </span>
       )}
       {showFallbackImage && (
@@ -222,8 +222,8 @@ export function AssetPreview({
           ? 'Icon library · Official source'
           : live || embedUrl
             ? imageUrl
-              ? 'Live preview · Captured fallback'
-              : 'Live preview'
+              ? 'Live demo · Captured fallback'
+              : 'Live demo'
             : showImage
               ? asset.kind === 'component'
                 ? 'Captured render'
