@@ -3,6 +3,8 @@ Runs against the local test registry only; no production credentials or database
 """
 import json
 import os
+import re
+from urllib.parse import quote
 from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
 
@@ -53,14 +55,23 @@ with sync_playwright() as p:
                 results.append({'view': view, 'theme': theme, 'width': width, 'headerWidth': header['width'], 'overflow': False})
             page.goto(WEB + '/browse/assets', wait_until='domcontentloaded')
             expect(page.locator('.asset-library-card').first).to_be_visible()
-            page.locator('.component-category-chips').get_by_role('button', name='Forms', exact=True).click()
-            expect(page).to_have_url(__import__('re').compile('category=forms'))
-            expect(page.locator('.asset-library-card').first).to_be_visible()
+            # Filtering is asynchronous. Save the returned asset, not the outgoing grid's first card.
+            with page.expect_response(lambda response: '/api/registry?' in response.url and 'action=search' in response.url and 'category=forms' in response.url) as filtered:
+                page.locator('.component-category-chips').get_by_role('button', name='Forms', exact=True).click()
+            assert filtered.value.status == 200
+            payload = filtered.value.json()
+            assert payload['items'] and payload['total'] > 0
+            selected = payload['items'][0]
+            expect(page).to_have_url(re.compile('category=forms'))
+            expect(page.locator('.asset-library-result-count')).to_contain_text(f"{payload['total']} assets found")
+            first_card = page.locator('.asset-library-card').first
+            expect(first_card.locator('.asset-library-card-link')).to_have_attribute('href', re.compile('id=' + re.escape(quote(selected['id'], safe=''))))
             expect(page.locator('.component-category-chips').get_by_role('button', name='Forms', exact=True)).to_have_attribute('aria-pressed', 'true')
-            page.locator('.asset-library-save').first.click()
-            expect(page.locator('.asset-library-save').first).to_have_attribute('aria-pressed', 'true')
+            first_card.locator('.asset-library-save').click()
+            expect(first_card.locator('.asset-library-save')).to_have_attribute('aria-pressed', 'true')
             page.goto(WEB + '/browse/assets?view=saved', wait_until='domcontentloaded')
             expect(page.locator('.asset-library-card')).to_have_count(1)
+            expect(page.locator('.asset-library-card-link')).to_have_attribute('href', re.compile('id=' + re.escape(quote(selected['id'], safe=''))))
             if width == 390:
                 page.get_by_role('button', name='Open navigation', exact=True).click()
                 expect(page.locator('[data-mobile="true"]')).to_be_visible()
@@ -70,9 +81,9 @@ with sync_playwright() as p:
             page.goto(WEB + '/', wait_until='domcontentloaded')
             page.get_by_role('searchbox', name='Search components', exact=True).fill('button')
             page.locator('.hero-search').get_by_role('button').click()
-            expect(page).to_have_url(__import__('re').compile('/browse/assets\\?q=button'))
+            expect(page).to_have_url(re.compile('/browse/assets\\?q=button'))
             assert not errors, errors
-            results.append({'theme': theme, 'width': width, 'searchFilterSaveReload': True, 'pageErrors': errors})
+            results.append({'theme': theme, 'width': width, 'searchFilterSaveReload': True, 'savedAssetId': selected['id'], 'pageErrors': errors})
             ctx.close()
     browser.close()
 (OUT / 'results.json').write_text(json.dumps(results, indent=2))

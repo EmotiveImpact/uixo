@@ -76,12 +76,25 @@ jobs:
           npm run dev > test-results/redesign/vite.log 2>&1 &
           VITE_PID=$!
           trap 'kill "$REGISTRY_PID" "$VITE_PID" 2>/dev/null || true' EXIT
+          READY=false
           for attempt in $(seq 1 60); do
-            if curl --fail --silent 'http://localhost:4175/api/registry?action=status' > /dev/null && curl --fail --silent 'http://localhost:3000' > /dev/null; then break; fi
+            if curl --fail --silent 'http://127.0.0.1:4175/api/registry?action=status' > /dev/null && curl --fail --silent 'http://localhost:3000' > /dev/null; then
+              READY=true
+              break
+            fi
             sleep 1
           done
+          test "$READY" = true
           python tests/browser/redesign.py > test-results/redesign/browser.log 2>&1 || { cat test-results/redesign/browser.log; exit 1; }
           cat test-results/redesign/browser.log
+
+      - name: Retain public layout evidence before operator checks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-layout-${{ github.run_id }}
+          path: test-results/redesign
+          retention-days: 7
 
       - name: Browser and network acceptance with an isolated registry
         if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.browser-tools.outcome == 'success' }}
