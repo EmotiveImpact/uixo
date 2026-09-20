@@ -2,7 +2,12 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { LandingPage } from './LandingPage';
 
-afterEach(cleanup);
+vi.mock('../hooks/useRegistryData', () => ({ useRegistryData: () => ({ data: null }) }));
+
+afterEach(() => {
+  cleanup();
+  window.history.replaceState(null, '', '/');
+});
 
 describe('LandingPage catalogue navigation', () => {
   it('exposes the same three catalogue destinations as the application shell', () => {
@@ -41,6 +46,6 @@ describe('LandingPage catalogue navigation', () => {
     expect(collections?.textContent).toBe('Collections');
 
     fireEvent.click(components!);
-    expect(onAssets).toHaveBeenCalledOnce();
+    expect(window.location.pathname).toBe('/browse/assets');
   });
 });

@@ -86,7 +86,8 @@ describe('AssetPreview', () => {
     const { container } = render(<AssetPreview asset={asset({})} />);
 
     expect(screen.getByTitle('Live Alert demo').getAttribute('sandbox')).toBe('allow-scripts');
-    expect(screen.getByText(/^Live demo/)).toBeTruthy();
+    expect(screen.getByText('Loading preview')).toBeTruthy();
+    expect(screen.queryByText('Live · Try it')).toBeNull();
     expect(container.querySelector('img')).toBeNull();
     expect(container.querySelector('.is-live-component')).toBeTruthy();
   });

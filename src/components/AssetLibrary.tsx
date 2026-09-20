@@ -2,7 +2,6 @@ import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
 import { useEffect, useState, type ReactNode } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark, SlidersHorizontal, X } from 'lucide-react';
 import {
-  EMPTY_ASSET_QUERY,
   assetHref,
   catalogueResult,
   inventoryResult,
@@ -187,29 +186,23 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
     <section className="asset-library" aria-label="Asset library">
       {discovery}
       <div className="asset-library-toolbar">
-        <nav aria-label="Asset views">
-          {(['assets', 'sources', 'collections', 'saved'] as const).map((entry) => (
-            <a
-              key={entry}
-              href={assetHref({ ...EMPTY_ASSET_QUERY, view: entry })}
-              className={view === entry ? 'selected' : ''}
-              aria-current={view === entry ? 'page' : undefined}
-              onClick={(event) => {
-                if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-                event.preventDefault();
-                navigate({ view: entry }, true);
-              }}
+        <div className="component-category-chips" role="group" aria-label="Component categories">
+          <button
+            aria-pressed={!category && !kind}
+            onClick={() => navigate({ kind: '', category: '', offset: 0, id: '' })}
+          >
+            All
+          </button>
+          {COMPONENT_CATEGORIES.slice(0, 7).map((entry) => (
+            <button
+              key={entry.id}
+              aria-pressed={category === entry.id}
+              onClick={() => navigate({ kind: 'component', category: entry.id, offset: 0, id: '' })}
             >
-              {entry === 'assets'
-                ? 'All assets'
-                : entry === 'sources'
-                  ? 'UI libraries'
-                  : entry === 'collections'
-                    ? 'Collections'
-                    : `Saved (${saved.length})`}
-            </a>
+              {entry.label}
+            </button>
           ))}
-        </nav>
+        </div>
         {view !== 'sources' && (
           <button
             className="asset-refine"
@@ -222,32 +215,6 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
           </button>
         )}
       </div>
-      {view !== 'sources' && inventory && (
-        <div className="asset-library-inventory" aria-label="Catalogue inventory">
-          <span>{inventory.total} indexed</span>
-          {KIND_OPTIONS.map((option) => {
-            const count = inventoryCount('kinds', option.id);
-            return (
-              <button
-                key={option.id}
-                type="button"
-                disabled={count === 0}
-                aria-pressed={kind === option.id}
-                onClick={() => filter('kind', kind === option.id ? '' : option.id)}
-              >
-                {option.label} <strong>{count}</strong>
-              </button>
-            );
-          })}
-        </div>
-      )}
-      <p className="asset-library-status">
-        {status
-          ? `${status.stats.assets} assets · ${status.stats.providers} sources${
-              status.readOnly ? ' · Browse-only preview' : ''
-            }`
-          : 'Loading catalogue…'}
-      </p>
       {view === 'sources' ? (
         <div className="asset-library-source-grid">
           {providers.map((p) => (
@@ -375,7 +342,10 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
               : error
                 ? 'Registry unavailable, not an empty result'
                 : `${result?.total ?? 0} ${result?.total === 1 ? 'asset' : 'assets'} found`}
-            <span>Keyword search · Source-level curation</span>
+            <span>
+              {status?.readOnly ? 'Preview catalogue' : 'Source-linked'} · {providers.length}{' '}
+              sources
+            </span>
           </div>
           {error ? (
             <section className="asset-library-empty" role="alert">
@@ -413,10 +383,6 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                 <article className="asset-library-card" key={asset.id}>
                   <AssetPreview asset={asset} />
                   <div className="asset-library-card-body">
-                    <small>
-                      {nameOf(asset.providerId)} ·{' '}
-                      {asset.kind === 'icon-pack' ? 'Icon pack' : asset.kind}
-                    </small>
                     <h2>
                       <a
                         className="asset-library-card-link"
@@ -432,7 +398,11 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                         {asset.name}
                       </a>
                     </h2>
-                    <p>{asset.description}</p>
+                    <small>
+                      {nameOf(asset.providerId)} ·{' '}
+                      {asset.kind === 'icon-pack' ? 'Icon pack' : asset.kind}
+                    </small>
+
                     <div className="asset-library-tags">
                       <span>{asset.variants[0]?.framework}</span>
                       <span>{asset.variants[0]?.format.toUpperCase()}</span>

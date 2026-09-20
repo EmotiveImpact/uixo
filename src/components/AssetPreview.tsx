@@ -97,6 +97,7 @@ function LivePreview({
   return (
     <div
       ref={viewport}
+      data-preview-state={status}
       className={`asset-live-viewport ${detail ? 'is-detail' : ''} ${
         showFallbackImage ? 'has-captured-fallback' : ''
       }`}
@@ -145,6 +146,15 @@ function LivePreview({
           Open original source ↗
         </a>
       )}
+      <small className="actual-preview-label">
+        {status === 'ready'
+          ? 'Live · Try it'
+          : showFallbackImage
+            ? 'Screenshot · Live unavailable'
+            : status === 'error'
+              ? 'Preview unavailable'
+              : 'Loading preview'}
+      </small>
     </div>
   );
 }
@@ -217,19 +227,15 @@ export function AssetPreview({
           </a>
         </div>
       )}
-      <small>
-        {asset.kind === 'icon-pack'
-          ? 'Icon library · Official source'
-          : live || embedUrl
-            ? imageUrl
-              ? 'Live demo · Captured fallback'
-              : 'Live demo'
+      {!livePreview && (
+        <small>
+          {asset.kind === 'icon-pack'
+            ? 'Icon pack · Official source'
             : showImage
-              ? asset.kind === 'component'
-                ? 'Captured render'
-                : 'Original preview'
+              ? 'Screenshot'
               : 'Source only'}
-      </small>
+        </small>
+      )}
     </div>
   );
 }

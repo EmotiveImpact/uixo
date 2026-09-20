@@ -1,3 +1,4 @@
+import { CatalogueSidebar } from './discovery/CatalogueSidebar';
 import { RegistryExplore } from './RegistryExplore';
 import { EMPTY_ASSET_QUERY, assetHref } from '../lib/asset-library';
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
@@ -27,7 +28,10 @@ import { DEFAULT_LIST_ID } from '../types';
 import type { List } from '../types';
 import type { AssetQuery, ProviderRecord } from '../lib/asset-library';
 
-type AppSidebarProps = {
+export type AppSidebarProps = {
+  publicMode?: boolean;
+  assetQuery?: AssetQuery;
+  onNavigateAssets?: (changes: Partial<AssetQuery>) => void;
   category: string | null;
   sub: string | null;
   listId: string | null;
@@ -55,7 +59,7 @@ type AppSidebarProps = {
   onChooseAssetView?: (view: AssetQuery['view']) => void;
 };
 
-export function AppSidebar({
+function LegacyAppSidebar({
   category,
   sub,
   listId,
@@ -284,4 +288,8 @@ export function AppSidebar({
       <AnimatedSidebarRail />
     </AnimatedSidebar>
   );
+}
+
+export function AppSidebar(props: AppSidebarProps) {
+  return props.publicMode ? <CatalogueSidebar {...props} /> : <LegacyAppSidebar {...props} />;
 }

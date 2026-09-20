@@ -192,6 +192,8 @@ export function App() {
     return (
       <>
         <LandingPage
+          light={light}
+          onToggleTheme={toggleTheme}
           authAvailable={authAvailable}
           signedIn={Boolean(user)}
           hrefs={{
@@ -225,193 +227,197 @@ export function App() {
 
   return (
     <AnimatedSidebarProvider
+      className="uixo-shell"
       open={sidebarOpen}
       onOpenChange={setSidebarOpen}
       openMobile={mobileOpen}
       onOpenMobileChange={setMobileOpen}
       style={APP_SIDEBAR_SIZING}
     >
-      {adminMode ? (
-        <AdminSidebar
-          onExit={showAll}
-          onWebsiteReview={() => navigate({ ...EMPTY_ROUTE, review: true })}
-          onAssetReview={() => navigateInApp('/browse/assets?view=review')}
-          onScout={() => navigateInApp('/browse/assets?view=scout')}
-          onJobs={() => navigateInApp('/browse/assets?view=jobs')}
-        />
-      ) : (
-        <AppSidebar
-          category={route.category}
-          sub={route.sub}
-          listId={route.listId}
-          openSection={openSection}
-          lists={lists}
-          onShowAll={showAll}
-          homeHref={routeToHref(EMPTY_ROUTE)}
-          onChooseList={chooseList}
-          onDeleteList={remove}
-          onChooseCategory={chooseCategory}
-          onChooseSub={chooseSub}
-          onSubmit={() => setModal('submit')}
-          savedAssetCount={assetSaves.saved.length}
-        />
-      )}
-
-      <a className="skip-link" href="#main">
-        Skip to content
-      </a>
-
-      <AnimatedSidebarInset className="site-main" id="main" tabIndex={-1}>
-        <TopBar
-          catalogue={route.collectionsIndex || activeCollection ? 'collections' : 'websites'}
-          light={light}
-          onToggleTheme={toggleTheme}
-          onOpenModal={setModal}
-          adminMode={adminMode}
-          adminAction={
-            isCurator
-              ? adminMode
-                ? { label: 'Exit admin', href: '/browse', onSelect: showAll }
-                : {
-                    label: 'Admin',
-                    href: routeToHref({ ...EMPTY_ROUTE, admin: true }),
-                    onSelect: () => navigate({ ...EMPTY_ROUTE, admin: true }),
-                  }
-              : undefined
-          }
-          account={
-            <AccountMenu
-              available={authAvailable}
-              settled={settled}
-              user={user}
-              onSignIn={() => setModal('signin')}
-              onDashboard={() => navigate({ ...EMPTY_ROUTE, dashboard: true })}
-              onAdmin={() => navigate({ ...EMPTY_ROUTE, admin: true })}
-              onSignOut={signOut}
-              dashboardHref={routeToHref({ ...EMPTY_ROUTE, dashboard: true })}
-              adminHref={routeToHref({ ...EMPTY_ROUTE, admin: true })}
-            />
-          }
-        />
-
-        <PageHeading
-          title={title}
-          subtitle={subtitle}
-          canClear={hasFilters}
-          onClear={clearFilters}
-        />
-
-        <SaveSyncNotice
-          label="Website favourites"
-          status={listSyncStatus}
-          error={listSyncError}
-          onRetry={retryListSync}
-        />
-        <SaveSyncNotice
-          label="Asset favourites"
-          status={assetSaves.syncStatus}
-          error={assetSaves.syncError}
-          onRetry={assetSaves.retrySync}
-        />
-
-        {activeCollection && <p className="collection-lede">{activeCollection.description}</p>}
-
-        {showsGrid && (
-          <DiscoveryToolbar
-            browse={route.browse}
-            onBrowseChange={(browse: BrowseOrder) => navigate({ browse })}
-            format={route.format}
-            onFormatChange={(format) => navigate({ format })}
-            density={density}
-            onDensityChange={setDensity}
-          />
-        )}
-
-        <DiscoveryControls
-          catalogue={route.collectionsIndex || activeCollection ? 'collections' : 'websites'}
-          collectionIndex={route.collectionsIndex}
-          showDiscovery={showsGrid || route.collectionsIndex}
-          searchRef={searchRef}
-          search={route.search}
-          onSearchChange={(search) => navigate({ search })}
-          price={route.price}
-          onPriceChange={(price: PriceFilter) => navigate({ price })}
-        />
-
-        {/* Announce result counts so filtering is not silent to a screen reader. */}
-        <p className="sr-only" role="status" aria-live="polite">
-          {showsGrid ? `${shown.length} website${shown.length === 1 ? '' : 's'} shown` : ''}
-        </p>
-
-        {route.notFound && <NotFound onReset={reset} />}
-
-        {route.collectionsIndex && (
-          <CollectionsIndex
-            search={route.search}
-            onOpen={(collectionSlug) => navigate({ ...EMPTY_ROUTE, collectionSlug })}
-            href={(slug) => routeToHref({ ...EMPTY_ROUTE, collectionSlug: slug })}
-          />
-        )}
-
-        {route.review && (!authAvailable || !isCurator) && <NotFound onReset={reset} />}
-        {route.review && authAvailable && isCurator && user && <ReviewInbox user={user} />}
-
-        {route.admin && (!authAvailable || !isCurator) && <NotFound onReset={reset} />}
-        {route.admin && authAvailable && isCurator && user && (
-          <AdminDashboard
+      <TopBar
+        catalogue={route.collectionsIndex || activeCollection ? 'collections' : 'websites'}
+        light={light}
+        onToggleTheme={toggleTheme}
+        onOpenModal={setModal}
+        adminMode={adminMode}
+        adminAction={
+          isCurator
+            ? adminMode
+              ? { label: 'Exit admin', href: '/browse', onSelect: showAll }
+              : {
+                  label: 'Admin',
+                  href: routeToHref({ ...EMPTY_ROUTE, admin: true }),
+                  onSelect: () => navigate({ ...EMPTY_ROUTE, admin: true }),
+                }
+            : undefined
+        }
+        account={
+          <AccountMenu
+            available={authAvailable}
+            settled={settled}
             user={user}
-            onOpenResource={(resourceId) => navigate({ ...EMPTY_ROUTE, resourceId })}
-            onOpenWebsiteReview={() => navigate({ ...EMPTY_ROUTE, review: true })}
+            onSignIn={() => setModal('signin')}
+            onDashboard={() => navigate({ ...EMPTY_ROUTE, dashboard: true })}
+            onAdmin={() => navigate({ ...EMPTY_ROUTE, admin: true })}
+            onSignOut={signOut}
+            dashboardHref={routeToHref({ ...EMPTY_ROUTE, dashboard: true })}
+            adminHref={routeToHref({ ...EMPTY_ROUTE, admin: true })}
+          />
+        }
+      />
+
+      <div className="catalogue-body">
+        {adminMode ? (
+          <AdminSidebar
+            onExit={showAll}
+            onWebsiteReview={() => navigate({ ...EMPTY_ROUTE, review: true })}
+            onAssetReview={() => navigateInApp('/browse/assets?view=review')}
+            onScout={() => navigateInApp('/browse/assets?view=scout')}
+            onJobs={() => navigateInApp('/browse/assets?view=jobs')}
+          />
+        ) : (
+          <AppSidebar
+            publicMode={showsGrid || route.collectionsIndex}
+            category={route.category}
+            sub={route.sub}
+            listId={route.listId}
+            openSection={openSection}
+            lists={lists}
+            onShowAll={showAll}
+            homeHref={routeToHref(EMPTY_ROUTE)}
+            onChooseList={chooseList}
+            onDeleteList={remove}
+            onChooseCategory={chooseCategory}
+            onChooseSub={chooseSub}
+            onSubmit={() => setModal('submit')}
+            savedAssetCount={assetSaves.saved.length}
           />
         )}
 
-        {route.dashboard && !authAvailable && <NotFound onReset={reset} />}
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
 
-        {route.dashboard &&
-          authAvailable &&
-          (user ? (
-            <Dashboard
-              user={user}
-              isCurator={isCurator}
-              lists={lists}
-              savedAssetCount={assetSaves.saved.length}
-              onOpenList={chooseList}
-              onOpenResource={(resourceId) => navigate({ ...EMPTY_ROUTE, resourceId })}
-              onSubmit={() => setModal('submit')}
-              onReview={() => navigate({ ...EMPTY_ROUTE, review: true })}
-              reviewHref={routeToHref({ ...EMPTY_ROUTE, review: true })}
-            />
-          ) : (
-            <section className="empty">
-              <h2>Sign in to see your dashboard.</h2>
-              <p>Your lists, submissions and review queue live here.</p>
-              <button onClick={() => setModal('signin')}>Sign in</button>
-            </section>
-          ))}
+        <AnimatedSidebarInset className="site-main" id="main" tabIndex={-1}>
+          <PageHeading
+            title={title}
+            subtitle={subtitle}
+            canClear={hasFilters}
+            onClear={clearFilters}
+          />
 
-        {showsGrid && (
-          <>
-            <ResourceGrid
+          <SaveSyncNotice
+            label="Website favourites"
+            status={listSyncStatus}
+            error={listSyncError}
+            onRetry={retryListSync}
+          />
+          <SaveSyncNotice
+            label="Asset favourites"
+            status={assetSaves.syncStatus}
+            error={assetSaves.syncError}
+            onRetry={assetSaves.retrySync}
+          />
+
+          {activeCollection && <p className="collection-lede">{activeCollection.description}</p>}
+
+          {showsGrid && (
+            <DiscoveryToolbar
+              browse={route.browse}
+              onBrowseChange={(browse: BrowseOrder) => navigate({ browse })}
+              format={route.format}
+              onFormatChange={(format) => navigate({ format })}
               density={density}
-              resources={shown}
-              lists={lists}
-              onOpen={(resourceId) => navigate({ resourceId })}
-              onToggleSaved={toggleSaved}
-              onSelectCategory={chooseCategory}
-              onSelectFormat={(format) => navigate({ format })}
+              onDensityChange={setDensity}
             />
+          )}
 
-            {!shown.length && (
-              <EmptyState
-                emptyList={Boolean(activeList && !activeList.resourceIds.length)}
-                onReset={reset}
+          <DiscoveryControls
+            catalogue={route.collectionsIndex || activeCollection ? 'collections' : 'websites'}
+            collectionIndex={route.collectionsIndex}
+            showDiscovery={showsGrid || route.collectionsIndex}
+            searchRef={searchRef}
+            search={route.search}
+            onSearchChange={(search) => navigate({ search })}
+            price={route.price}
+            onPriceChange={(price: PriceFilter) => navigate({ price })}
+          />
+
+          {/* Announce result counts so filtering is not silent to a screen reader. */}
+          <p className="sr-only" role="status" aria-live="polite">
+            {showsGrid ? `${shown.length} website${shown.length === 1 ? '' : 's'} shown` : ''}
+          </p>
+
+          {route.notFound && <NotFound onReset={reset} />}
+
+          {route.collectionsIndex && (
+            <CollectionsIndex
+              search={route.search}
+              onOpen={(collectionSlug) => navigate({ ...EMPTY_ROUTE, collectionSlug })}
+              href={(slug) => routeToHref({ ...EMPTY_ROUTE, collectionSlug: slug })}
+            />
+          )}
+
+          {route.review && (!authAvailable || !isCurator) && <NotFound onReset={reset} />}
+          {route.review && authAvailable && isCurator && user && <ReviewInbox user={user} />}
+
+          {route.admin && (!authAvailable || !isCurator) && <NotFound onReset={reset} />}
+          {route.admin && authAvailable && isCurator && user && (
+            <AdminDashboard
+              user={user}
+              onOpenResource={(resourceId) => navigate({ ...EMPTY_ROUTE, resourceId })}
+              onOpenWebsiteReview={() => navigate({ ...EMPTY_ROUTE, review: true })}
+            />
+          )}
+
+          {route.dashboard && !authAvailable && <NotFound onReset={reset} />}
+
+          {route.dashboard &&
+            authAvailable &&
+            (user ? (
+              <Dashboard
+                user={user}
+                isCurator={isCurator}
+                lists={lists}
+                savedAssetCount={assetSaves.saved.length}
+                onOpenList={chooseList}
+                onOpenResource={(resourceId) => navigate({ ...EMPTY_ROUTE, resourceId })}
+                onSubmit={() => setModal('submit')}
+                onReview={() => navigate({ ...EMPTY_ROUTE, review: true })}
+                reviewHref={routeToHref({ ...EMPTY_ROUTE, review: true })}
               />
-            )}
-          </>
-        )}
+            ) : (
+              <section className="empty">
+                <h2>Sign in to see your dashboard.</h2>
+                <p>Your lists, submissions and review queue live here.</p>
+                <button onClick={() => setModal('signin')}>Sign in</button>
+              </section>
+            ))}
 
-        <SiteFooter count={showsGrid ? shown.length : null} />
-      </AnimatedSidebarInset>
+          {showsGrid && (
+            <>
+              <ResourceGrid
+                density={density}
+                resources={shown}
+                lists={lists}
+                onOpen={(resourceId) => navigate({ resourceId })}
+                onToggleSaved={toggleSaved}
+                onSelectCategory={chooseCategory}
+                onSelectFormat={(format) => navigate({ format })}
+              />
+
+              {!shown.length && (
+                <EmptyState
+                  emptyList={Boolean(activeList && !activeList.resourceIds.length)}
+                  onReset={reset}
+                />
+              )}
+            </>
+          )}
+
+          <SiteFooter count={showsGrid ? shown.length : null} />
+        </AnimatedSidebarInset>
+      </div>
 
       <QuickView
         key={route.resourceId ?? 'closed'}
