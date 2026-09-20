@@ -81,6 +81,7 @@ jobs:
           test "$READY" = true
           python tests/browser/bootstrap.py | tee test-results/intelligence/bootstrap.json
           python tests/browser/intelligence.py
+          python tests/browser/kibo.py
           npm run registry:verify-release -- http://127.0.0.1:4175 | tee test-results/intelligence/network-acceptance.log
 
       - name: Retain browser verification evidence
