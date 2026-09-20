@@ -1,6 +1,8 @@
 import { createHash } from 'node:crypto';
+import { componentCategory } from '../shared/component-categories.ts';
 import { type Asset, type Licence, type Provider, RegistryError, record, text } from './domain.ts';
 import { FetchBudget } from './fetcher.ts';
+import { readAnimataSnapshot } from './animata.ts';
 
 export const PROVIDERS: Provider[] = [
   {
@@ -99,6 +101,21 @@ export const PROVIDERS: Provider[] = [
     selectedAt: '2026-09-14T00:00:00.000Z',
     rationale:
       'User-selected button gallery. Original self-contained React demos are reviewed and pinned individually; README reuse guidance is retained without claiming a standard licence.',
+  },
+  {
+    id: 'animata',
+    name: 'Animata',
+    url: 'https://animata.design/',
+    repo: 'codse/animata',
+    branch: 'main',
+    licencePath: 'LICENSE.md',
+    adapter: 'github-storybook',
+    registryBaseUrl: 'https://animata.design/preview/?path=/story/',
+    css: 'tailwind',
+    approved: true,
+    selectedAt: '2026-09-20T00:00:00.000Z',
+    rationale:
+      'Official open-source React component collection with an MIT licence, pinned upstream source files, and provider-hosted Storybook demos for each catalogued component.',
   },
 ];
 export function licenceFromText(
@@ -369,6 +386,101 @@ export function jsonRegistryComponentAsset(
     editorialPick: false,
   };
 }
+
+export type StorybookSnapshotItem = {
+  path: string;
+  category: string;
+  slug: string;
+  name: string;
+  storyId: string;
+};
+
+const ANIMATA_CATEGORY_MAP: Record<string, string> = {
+  accordion: 'layout',
+  background: 'backgrounds',
+  'bento-grid': 'layout',
+  button: 'buttons',
+  card: 'layout',
+  carousel: 'media',
+  container: 'layout',
+  fabs: 'buttons',
+  'feature-cards': 'layout',
+  graphs: 'data-display',
+  hero: 'layout',
+  icon: 'media',
+  image: 'media',
+  list: 'layout',
+  overlay: 'overlays',
+  preloader: 'feedback',
+  progress: 'feedback',
+  scroll: 'navigation',
+  section: 'layout',
+  skeleton: 'feedback',
+  tabs: 'navigation',
+  text: 'text',
+  widget: 'other',
+};
+
+export function storybookComponentAsset(
+  item: StorybookSnapshotItem,
+  provider: Provider,
+  licence: Licence,
+  ref: string,
+  now: string,
+): Asset {
+  const sourceUrl = `https://github.com/${provider.repo}/blob/${ref}/${item.path}`;
+  const category = ANIMATA_CATEGORY_MAP[item.category] ?? componentCategory(item.slug);
+  const storyUrl = `https://animata.design/preview/?path=/story/${item.storyId}`;
+  const slug = `${item.category}-${item.slug}`.toLowerCase();
+  return {
+    id: `${provider.id}/${slug}`,
+    providerId: provider.id,
+    slug,
+    name: item.name,
+    description: `${item.name} is an Animata ${item.category.replace(/-/g, ' ')} component. Preview the original implementation, then inspect its pinned upstream source before using it.`,
+    kind: 'component',
+    category,
+    tags: ['interface', 'react', 'tailwind', category, item.category, 'category:' + category],
+    price: licence.commercial === 'allowed' ? 'free' : 'unknown',
+    sourceUrl,
+    licence,
+    variants: [
+      {
+        id: `${provider.id}/${slug}/react`,
+        framework: 'react',
+        format: 'tsx',
+        css: provider.css ?? null,
+        dependencies: [],
+        peerDependencies: {},
+        sourceRef: ref,
+        acquisition: { kind: 'external', url: sourceUrl },
+      },
+    ],
+    evidence: [
+      {
+        field: 'pinned upstream component source',
+        url: sourceUrl,
+        reference: ref,
+        observedAt: now,
+        method: 'inspected',
+      },
+      {
+        field: 'official provider Storybook demonstration',
+        url: storyUrl,
+        reference: item.storyId,
+        observedAt: now,
+        method: 'declared',
+      },
+    ],
+    verifiedAt: now,
+    preview: {
+      kind: 'embed',
+      url: `https://animata.design/preview/iframe?id=${encodeURIComponent(item.storyId)}&viewMode=story`,
+      label: 'Official live Animata Storybook demo. The demonstration is hosted by Animata.',
+    },
+    editorialPick: false,
+  };
+}
 export function iconAsset(
   provider: Provider,
   path: string,
@@ -520,6 +632,37 @@ export async function indexPage(
   const offset = options.offset ?? 0;
   if (!Number.isSafeInteger(offset) || offset < 0 || offset > 100000)
     throw new RegistryError('INVALID_INPUT', 'Invalid provider offset.');
+  if (provider.adapter === 'github-storybook') {
+    const snapshot = await readAnimataSnapshot();
+    if (options.sourceRef && options.sourceRef !== snapshot.ref)
+      throw new RegistryError(
+        'SOURCE_REVIEW_REQUIRED',
+        'Animata can only be indexed from its reviewed, Storybook-verified source snapshot.',
+        409,
+      );
+    const body = await budget.text(
+      `https://raw.githubusercontent.com/${provider.repo}/${snapshot.ref}/${provider.licencePath}`,
+    );
+    const licence = licenceFromText(
+      provider,
+      body,
+      `https://github.com/${provider.repo}/blob/${snapshot.ref}/${provider.licencePath}`,
+      snapshot.observedAt,
+    );
+    const all = snapshot.items
+      .map((item) =>
+        storybookComponentAsset(item, provider, licence, snapshot.ref, snapshot.observedAt),
+      )
+      .sort((a, b) => a.id.localeCompare(b.id));
+    const assets = all.slice(offset, offset + 200);
+    return {
+      assets,
+      total: all.length,
+      offset,
+      nextOffset: offset + assets.length < all.length ? offset + assets.length : null,
+      sourceRef: snapshot.ref,
+    };
+  }
   const now = new Date().toISOString(),
     base = `https://api.github.com/repos/${provider.repo}`;
   let ref = options.sourceRef;

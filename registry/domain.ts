@@ -50,7 +50,7 @@ export type Asset = {
   variants: Variant[];
   evidence: Evidence[];
   verifiedAt: string | null;
-  preview: { kind: 'image'; url: string; label: string } | null;
+  preview: { kind: 'image' | 'embed'; url: string; label: string } | null;
   editorialPick: boolean;
 };
 export type Provider = {
@@ -60,7 +60,12 @@ export type Provider = {
   repo: string;
   branch: 'main' | 'master';
   licencePath: string;
-  adapter: 'github-icons' | 'shadcn-registry' | 'github-json-registry' | 'reviewed-gallery';
+  adapter:
+    | 'github-icons'
+    | 'shadcn-registry'
+    | 'github-json-registry'
+    | 'github-storybook'
+    | 'reviewed-gallery';
   registryPath?: string;
   registryBaseUrl?: string;
   /** Repository prefix applied to install-registry file paths before linking source. */
@@ -346,7 +351,7 @@ export function validateAsset(input: unknown): Asset {
     }),
     preview: preview
       ? {
-          kind: choice(text(preview.kind, 40), ['image']) as 'image',
+          kind: choice(text(preview.kind, 40), ['image', 'embed']) as 'image' | 'embed',
           url: httpsUrl(preview.url),
           label: text(preview.label, 200),
         }

@@ -3,7 +3,27 @@ import type { CollectionAssetPreview } from '../../shared/intelligence';
 import { safeAssetUrl } from '../lib/asset-library';
 import demos from '../../live-demos/manifest.json';
 
-function LivePreview({ asset, detail }: { asset: CollectionAssetPreview; detail: boolean }) {
+function officialEmbedUrl(asset: CollectionAssetPreview): string | undefined {
+  if (asset.providerId !== 'animata' || asset.preview?.kind !== 'embed') return undefined;
+  const url = safeAssetUrl(asset.preview.url);
+  if (!url) return undefined;
+  const parsed = new URL(url);
+  return parsed.origin === 'https://animata.design' && parsed.pathname === '/preview/iframe'
+    ? url
+    : undefined;
+}
+
+function LivePreview({
+  asset,
+  detail,
+  src,
+  external = false,
+}: {
+  asset: CollectionAssetPreview;
+  detail: boolean;
+  src: string;
+  external?: boolean;
+}) {
   const viewport = useRef<HTMLDivElement>(null);
   const frame = useRef<HTMLIFrameElement>(null);
   const [visible, setVisible] = useState(detail);
@@ -12,7 +32,6 @@ function LivePreview({ asset, detail }: { asset: CollectionAssetPreview; detail:
   const [theme, setTheme] = useState(() =>
     document.documentElement.classList.contains('light') ? 'light' : 'dark',
   );
-  const [initialTheme] = useState(theme);
   useEffect(() => {
     const element = viewport.current;
     if (!element) return;
@@ -43,6 +62,7 @@ function LivePreview({ asset, detail }: { asset: CollectionAssetPreview; detail:
     frame.current?.contentWindow?.postMessage({ type: 'uixo-preview-theme', theme }, '*');
   }, [theme]);
   useEffect(() => {
+    if (external) return;
     const receive = (event: MessageEvent) => {
       if (
         event.source !== frame.current?.contentWindow ||
@@ -55,7 +75,7 @@ function LivePreview({ asset, detail }: { asset: CollectionAssetPreview; detail:
     };
     window.addEventListener('message', receive);
     return () => window.removeEventListener('message', receive);
-  }, [asset.id]);
+  }, [asset.id, external]);
   useEffect(() => {
     if (!visible || status !== 'loading') return;
     // A failed entry script cannot post an error back to the parent.
@@ -70,7 +90,7 @@ function LivePreview({ asset, detail }: { asset: CollectionAssetPreview; detail:
         <iframe
           ref={frame}
           title={`Live ${asset.name} demo`}
-          src={`/live-demos/index.html?id=${encodeURIComponent(asset.id)}&theme=${initialTheme}`}
+          src={src}
           sandbox="allow-scripts"
           referrerPolicy="no-referrer"
           style={{
@@ -80,9 +100,11 @@ function LivePreview({ asset, detail }: { asset: CollectionAssetPreview; detail:
               ? {}
               : { width: 480, height: size.height / scale, transform: `scale(${scale})` }),
           }}
-          onLoad={() =>
-            frame.current?.contentWindow?.postMessage({ type: 'uixo-preview-theme', theme }, '*')
-          }
+          onLoad={() => {
+            if (external) setStatus('ready');
+            else
+              frame.current?.contentWindow?.postMessage({ type: 'uixo-preview-theme', theme }, '*');
+          }}
         />
       )}
       {visible && status === 'loading' && (
@@ -113,11 +135,13 @@ export function AssetPreview({
 }) {
   const [failedUrl, setFailedUrl] = useState('');
   const live = asset.kind === 'component' && Object.hasOwn(demos, asset.id);
+  const embedUrl = officialEmbedUrl(asset);
+  const livePreview = live || Boolean(embedUrl);
   const imageUrl = asset.kind === 'icon' ? safeAssetUrl(asset.preview?.url) : undefined;
   const showImage = imageUrl && failedUrl !== imageUrl;
   return (
     <div
-      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${live ? 'is-live-component' : ''} ${asset.kind === 'icon-pack' ? 'is-icon-pack' : ''}`}
+      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${livePreview ? 'is-live-component' : ''} ${asset.kind === 'icon-pack' ? 'is-icon-pack' : ''}`}
     >
       {asset.kind === 'icon-pack' ? (
         <div className="asset-library-no-preview">
@@ -128,7 +152,16 @@ export function AssetPreview({
           </a>
         </div>
       ) : live ? (
-        <LivePreview key={asset.id} asset={asset} detail={detail} />
+        <LivePreview
+          key={asset.id}
+          asset={asset}
+          detail={detail}
+          src={`/live-demos/index.html?id=${encodeURIComponent(asset.id)}&theme=${
+            document.documentElement.classList.contains('light') ? 'light' : 'dark'
+          }`}
+        />
+      ) : embedUrl ? (
+        <LivePreview key={asset.id} asset={asset} detail={detail} src={embedUrl} external />
       ) : showImage ? (
         <img
           src={imageUrl}
@@ -147,7 +180,7 @@ export function AssetPreview({
       <small>
         {asset.kind === 'icon-pack'
           ? 'Icon library · Official source'
-          : live
+          : live || embedUrl
             ? 'Live demo · Try it'
             : showImage
               ? 'Original GitHub SVG'

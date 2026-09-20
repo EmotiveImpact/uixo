@@ -107,4 +107,27 @@ describe('AssetPreview', () => {
     );
     expect(container.querySelector('img')).toBeNull();
   });
+
+  it('embeds a verified provider Storybook demo instead of substituting an image', () => {
+    const { container } = render(
+      <AssetPreview
+        asset={asset({
+          id: 'animata/button-ripple-button',
+          providerId: 'animata',
+          slug: 'button-ripple-button',
+          name: 'Ripple Button',
+          preview: {
+            kind: 'embed',
+            url: 'https://animata.design/preview/iframe?id=button-ripple-button--primary&viewMode=story',
+            label: 'Official Animata demo',
+          },
+        })}
+      />,
+    );
+
+    const frame = screen.getByTitle('Live Ripple Button demo');
+    expect(frame.getAttribute('src')).toContain('animata.design/preview/iframe');
+    expect(frame.getAttribute('sandbox')).toBe('allow-scripts');
+    expect(container.querySelector('img')).toBeNull();
+  });
 });

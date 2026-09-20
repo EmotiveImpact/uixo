@@ -8,7 +8,9 @@ import {
   licenceFromText,
   parseJsonRegistry,
   PROVIDERS,
+  storybookComponentAsset,
 } from './providers.ts';
+import { readAnimataSnapshot } from './animata.ts';
 import { buttonGalleryAsset } from './button-gallery.ts';
 import type { Registry } from './service.ts';
 
@@ -40,6 +42,24 @@ export async function capturedAssets(): Promise<Asset[]> {
       for (const item of snapshot.items)
         assets.push(
           buttonGalleryAsset(item, provider, snapshot.ref, snapshot.observedAt, guidance),
+        );
+      continue;
+    }
+    if (provider.adapter === 'github-storybook') {
+      const snapshot = await readAnimataSnapshot();
+      const body = await readFile(
+        new URL(`../data/registry/licences/${provider.id}.txt`, import.meta.url),
+        'utf8',
+      );
+      const licence = licenceFromText(
+        provider,
+        body,
+        `https://github.com/${provider.repo}/blob/${snapshot.ref}/${provider.licencePath}`,
+        snapshot.observedAt,
+      );
+      for (const item of snapshot.items)
+        assets.push(
+          storybookComponentAsset(item, provider, licence, snapshot.ref, snapshot.observedAt),
         );
       continue;
     }

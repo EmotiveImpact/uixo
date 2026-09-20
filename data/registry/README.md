@@ -13,11 +13,13 @@ copy of the component code and not proof that a component works in every project
 | Heroicons | 13 | legacy mutable `master` capture | MIT |
 | Magic UI | 75 | `52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1` | MIT |
 | Motion Primitives | 33 | `40f59b61e567712aa8329c7dc8c2ced763054c34` | MIT |
+| Animata | 200 | `36674e4e9cfdc0f237693d8b736a2bf41065ca1d` | MIT |
 
-The two JSON files in `snapshots/` are unmodified official registries captured from immutable
-GitHub commits. `captured.json` records their source URLs, refs and observation dates. The
-normaliser accepts component records only; examples, styles and library helpers stay out of the
-public asset catalogue.
+The JSON snapshots are captured from immutable GitHub commits. The Animata snapshot additionally
+maps every published file to an entry in the provider's public Storybook index. `captured.json`
+records source URLs, refs and observation dates for registry-backed providers. The normaliser
+accepts component records only; examples, styles and library helpers stay out of the public asset
+catalogue.
 
 ## Refreshing a provider
 

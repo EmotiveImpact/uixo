@@ -32,12 +32,12 @@ test('migration and captured-source seed are repeatable; counts reflect actual r
     await migrate(db);
     const first = await seedCaptured(registry),
       second = await seedCaptured(registry);
-    assert.equal(first.inserted, 264);
+    assert.equal(first.inserted, 464);
     assert.equal(second.inserted, 0);
-    assert.equal((await registry.stats()).assets, 264);
-    assert.equal((await registry.providers()).length, 6);
+    assert.equal((await registry.stats()).assets, 464);
+    assert.equal((await registry.providers()).length, 7);
     const inventory = await registry.inventory();
-    assert.equal(inventory.total, 264);
+    assert.equal(inventory.total, 464);
     assert.ok(inventory.kinds.find((entry) => entry.id === 'component')!.count > 0);
     assert.equal(
       inventory.kinds.find((entry) => entry.id === 'font'),
@@ -360,6 +360,7 @@ test('captured React registries retain pinned source, licence and acquisition ev
     components.every(
       (asset) =>
         (asset.preview?.kind === 'image' && asset.preview.url) ||
+        (asset.providerId === 'animata' && asset.preview?.kind === 'embed') ||
         asset.providerId === 'simply-buttons' ||
         ['switch', 'table', 'tabs', 'textarea', 'toggle', 'toggle-group', 'tooltip'].includes(
           asset.slug,
@@ -448,6 +449,30 @@ test('generic GitHub registry indexing pins the discovered revision', async () =
   assert.equal(indexed.assets.length, 1);
   assert.equal(indexed.assets[0].id, 'magic-ui/verified-card');
   assert.equal(indexed.assets[0].variants[0].sourceRef, ref);
+});
+test('Animata indexing uses the reviewed Storybook snapshot and paginates without a source crawl', async () => {
+  const provider = PROVIDERS.find((entry) => entry.id === 'animata')!;
+  const budget = new FetchBudget({
+    fetchImpl: async (input) => {
+      const url = String(input);
+      if (url.endsWith('/LICENSE.md'))
+        return new Response(
+          'Permission is hereby granted, free of charge. Copyright notice and this permission notice.',
+        );
+      throw new Error(`Unexpected Animata fetch: ${url}`);
+    },
+  });
+  const first = await indexPage(provider.id, {}, budget);
+  const second = await indexPage(provider.id, { offset: 200 }, budget);
+  assert.equal(first.total, 200);
+  assert.equal(first.assets.length, 200);
+  assert.equal(first.nextOffset, null);
+  assert.equal(second.assets.length, 0);
+  assert.ok(first.assets.every((asset) => asset.preview?.kind === 'embed'));
+  await assert.rejects(
+    indexPage(provider.id, { sourceRef: 'a'.repeat(40) }, budget),
+    /reviewed, Storybook-verified source snapshot/,
+  );
 });
 test('scoped token comparison fails closed and rejects short secrets', () => {
   const token = 'x'.repeat(32);
@@ -546,7 +571,7 @@ test('discovery lists icon packs, retains legacy saved icons and filters compone
       'Exercise existing saved icon compatibility.',
     );
     const all = await registry.search({ limit: 48 });
-    assert.equal(all.total, 264);
+    assert.equal(all.total, 464);
     const packs = await registry.search({ kind: 'icon' });
     assert.equal(packs.total, 2);
     assert.ok(packs.items.every((asset) => asset.kind === 'icon-pack'));
@@ -622,4 +647,21 @@ test('Simply Buttons keeps original provenance and does not invent licence permi
   }
   assert.ok(assets.some((asset) => asset.variants[0].dependencies.includes('three')));
   assert.ok(assets.some((asset) => asset.sourceUrl.endsWith('ContextWindowStatusButton.tsx')));
+});
+
+test('Animata snapshot only publishes source-pinned components with official live stories', async () => {
+  const assets = (await capturedAssets()).filter((asset) => asset.providerId === 'animata');
+  assert.equal(assets.length, 200);
+  assert.ok(assets.every((asset) => asset.kind === 'component'));
+  assert.ok(assets.every((asset) => asset.preview?.kind === 'embed'));
+  assert.ok(
+    assets.every((asset) =>
+      asset.preview?.url.startsWith('https://animata.design/preview/iframe?id='),
+    ),
+  );
+  assert.ok(
+    assets.every(
+      (asset) => asset.variants[0].sourceRef === '36674e4e9cfdc0f237693d8b736a2bf41065ca1d',
+    ),
+  );
 });

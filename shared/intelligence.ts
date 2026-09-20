@@ -66,10 +66,11 @@ export type CollectionRecord = CollectionInput & {
 };
 export type CollectionAssetPreview = {
   id: string;
+  providerId: string;
   name: string;
   kind: string;
   sourceUrl: string;
-  preview: { kind: string; url?: string; label: string } | null;
+  preview: { kind: 'image' | 'embed'; url?: string; label: string } | null;
 };
 export type PublicCollectionItem = CollectionItem & {
   name: string;

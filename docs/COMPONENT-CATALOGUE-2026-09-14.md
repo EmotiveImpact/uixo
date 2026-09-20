@@ -3,7 +3,8 @@
 ## Implemented
 
 - Seven additional shadcn components, using original demos at commit `2b3e6d4f8d9161fe5c19340dc383aade392012dd`: switch, table, tabs, textarea, toggle, toggle-group, tooltip.
-- 262 component entries: 53 shadcn, 68 Magic UI, 33 Motion Primitives, and all 108 Simply Buttons catalogue entries. Simply Buttons is pinned to `d76ed2a67cc2fc7fbfa14d62d0704668d20e415d`; its original React previews, CSS, fonts, media and shader dependencies are retained without rewriting them.
+- 462 component entries: 53 shadcn, 68 Magic UI, 33 Motion Primitives, 108 Simply Buttons, and 200 Animata entries. Simply Buttons is pinned to `d76ed2a67cc2fc7fbfa14d62d0704668d20e415d`; its original React previews, CSS, fonts, media and shader dependencies are retained without rewriting them.
+- Animata is pinned to `36674e4e9cfdc0f237693d8b736a2bf41065ca1d`. Every listed record maps to the provider's official Storybook story and uses that original live frame in UIXO. Three source files without a published Storybook story are intentionally withheld.
 - 568 retained upstream files, checked against SHA256 source locks. Existing original licences remain included. New demos use the same sandboxed, viewport-mounted live renderer.
 - Two icon packs, Lucide and Heroicons. Pack cards link to the official library and offer a React package variant in details. No invented pack artwork and no thousands-of-glyph import.
 - Legacy individual icon rows are retained for saved lists and detail links. They are excluded from normal catalogue search and public counts. Old `kind=icon` filter URLs resolve to packs.
@@ -24,11 +25,12 @@
 - Motion Primitives: 33/33 official registry components ingested.
 - Magic UI: 68/68 source-backed official registry components ingested. Seven additional manifest names are withheld because no source file exists for them at the pinned commit; publishing them would create broken records.
 - Simply Buttons: 108/108 entries in its pinned source catalogue ingested.
+- Animata: 200/203 source components with official Storybook stories ingested. Three unpublished-demo files are withheld until the provider exposes runnable stories.
 - shadcn/ui: 53 source-backed catalogue entries currently published. Its pinned internal registry also contains deprecated or support-only records; those remain outside this three-provider completion pass pending a separate public-component audit.
 
 ## Release
 
-Published on 14 September 2026 at https://uixo-brown.vercel.app. The current catalogue contains 262 components, two icon packs and six providers. Simply Buttons contributes all 108 entries from its pinned source catalogue.
+The next published catalogue will contain 462 components, two icon packs and seven providers. Animata contributes 200 source-pinned components from its official Storybook-backed catalogue.
 
 Production acceptance requires the Vercel deployment to reach READY, the reviewed snapshot to be synced to Neon, and the public API and browser to return the same counts. Source/category filtering, keyword search, original source links and live preview frames are checked after publication.
 

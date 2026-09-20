@@ -21,7 +21,7 @@ export type AssetRecord = {
     observedAt: string;
     reference: string | null;
   }[];
-  preview: { kind: string; url?: string; label: string } | null;
+  preview: { kind: 'image' | 'embed'; url?: string; label: string } | null;
   licence: {
     expression: string;
     commercial: string;

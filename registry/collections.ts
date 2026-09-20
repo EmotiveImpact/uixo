@@ -83,6 +83,7 @@ async function targets(registry: Registry, collections: CollectionInput[]) {
                   licenceExpression: asset.licence.expression,
                   asset: {
                     id: asset.id,
+                    providerId: asset.providerId,
                     name: asset.name,
                     kind: asset.kind,
                     sourceUrl: asset.sourceUrl,

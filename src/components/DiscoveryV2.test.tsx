@@ -59,6 +59,7 @@ const collection: PublicCollection = {
       licenceExpression: 'MIT',
       asset: {
         id: 'shadcn/sidebar',
+        providerId: 'shadcn',
         name: 'Sidebar',
         kind: 'component',
         sourceUrl: 'https://ui.shadcn.com/docs/components/sidebar',
