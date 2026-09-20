@@ -1,8 +1,9 @@
 name: Provider ingestion evidence
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  push:
+    branches:
+      - feat/provider-ingestion-approved-wave
     paths:
       - 'tools/provider_ingestion/**'
       - 'tests/provider_ingestion/**'
@@ -13,12 +14,12 @@ permissions:
   contents: read
 
 concurrency:
-  group: provider-ingestion-${{ github.event.pull_request.number }}
+  group: provider-ingestion-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
   capture:
-    if: github.repository == 'EmotiveImpact/uixo' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feat/provider-ingestion-approved-wave'
+    if: github.repository == 'EmotiveImpact/uixo' && github.ref == 'refs/heads/feat/provider-ingestion-approved-wave'
     name: Capture unpublished source evidence
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -28,7 +29,7 @@ jobs:
       - name: Check out the exact ingestion head
         uses: actions/checkout@v7
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.sha }}
           persist-credentials: true
 
       - name: Use Python 3.12
