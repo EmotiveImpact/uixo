@@ -1,0 +1,72 @@
+name: Provider ingestion review
+
+on:
+  push:
+    branches:
+      - feat/provider-ingestion-approved-wave
+    paths:
+      - '.github/workflows/provider-ingestion-review.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  review-material:
+    if: github.repository == 'EmotiveImpact/uixo' && github.ref == 'refs/heads/feat/provider-ingestion-approved-wave'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare source-only review archive and exact Spectrum diagnostics
+        run: |
+          mkdir -p test-results/provider-review
+          python - <<'PY'
+          import json, re, subprocess, zipfile
+          from pathlib import Path
+          from tools.provider_ingestion.capture import get, unpack_archive, load_queue
+          from tools.provider_ingestion.core import strict_json, sha256
+          out = Path('test-results/provider-review')
+          report = {'uixoCommit': subprocess.check_output(['git','rev-parse','HEAD']).decode().strip(), 'files': [], 'providers': []}
+          suffixes = {'.ts','.tsx','.js','.jsx','.mjs','.json','.css','.md','.mdx','.txt','.py','.html','.yml','.yaml','.sql'}
+          paths = subprocess.check_output(['git','ls-files','-z']).decode().split('\0')
+          with zipfile.ZipFile(out/'source-review.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for name in paths:
+                  p=Path(name)
+                  if not name or p.is_symlink() or p.name.startswith('.env') or not p.is_file():
+                      continue
+                  if p.suffix not in suffixes and p.name not in {'.npmrc','.prettierignore','.gitignore'}:
+                      continue
+                  b=p.read_bytes()
+                  b.decode('utf-8')
+                  z.writestr('uixo/'+name,b)
+                  report['files'].append({'path':'uixo/'+name,'sha256':sha256(b)})
+              for p in load_queue():
+                  if p.id not in {'kibo-ui','dice-ui','spectrum-ui'}:
+                      continue
+                  files=unpack_archive(get(f'https://codeload.github.com/{p.repository}/tar.gz/{p.ref}',200_000_000),p)
+                  if p.id=='spectrum-ui':
+                      items=strict_json(files['registry.json'])['items']
+                      bad=[{'name':x.get('name'),'type':x.get('type'),'paths':[f if isinstance(f,str) else f.get('path') for f in x.get('files',[])]} for x in items if x.get('type') in {'registry:ui','registry:component'} and not re.fullmatch(r'[a-z0-9][a-z0-9-]{0,149}',x.get('name',''))]
+                      report['spectrumInvalidNames']=bad
+                      report['spectrumInventoryCounts']={t:sum(x.get('type')==t for x in items) for t in sorted({x.get('type') for x in items})}
+                      # Rights review is unresolved. Do not export Spectrum component code.
+                      z.writestr('review/spectrum-license.txt',files['LICENSE'])
+                      continue
+                  # Only reviewed permissive-source text. No fonts, binaries, runtime credentials or installed packages.
+                  for name,b in files.items():
+                      b.decode('utf-8')
+                      z.writestr('upstream/'+p.id+'/'+name,b)
+                  report['providers'].append({'id':p.id,'repo':p.repository,'ref':p.ref,'files':len(files)})
+          (out/'report.json').write_text(json.dumps(report,indent=2)+'\n')
+          print(json.dumps({k:v for k,v in report.items() if k!='files'},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: provider-source-review-${{ github.run_id }}
+          path: test-results/provider-review
+          retention-days: 7
