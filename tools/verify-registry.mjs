@@ -6,6 +6,7 @@ const suites = [
     [
       'tests/registry/core.node.ts',
       'tests/registry/kibo.node.ts',
+      'tests/registry/dependency-notices.node.ts',
       'tests/registry/http.node.ts',
       'tests/registry/intelligence.node.ts',
       'tests/registry/discovery.node.ts',

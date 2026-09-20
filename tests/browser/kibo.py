@@ -17,7 +17,7 @@ CSP = "default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; 
 local = urlparse(WEB).hostname in ('127.0.0.1', 'localhost')
 results = []
 with sync_playwright() as p:
-    browser = p.chromium.launch()
+    browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or None)
     context = browser.new_context()
     if local:
         def deployment_headers(route):
