@@ -58,16 +58,21 @@ export type Provider = {
   name: string;
   url: string;
   repo: string;
-  branch: 'main' | 'master';
+  branch: 'main' | 'master' | 'v3';
   licencePath: string;
   adapter:
     | 'github-icons'
     | 'shadcn-registry'
     | 'github-json-registry'
     | 'github-storybook'
-    | 'reviewed-gallery';
+    | 'reviewed-gallery'
+    | 'reviewed-snapshot';
   registryPath?: string;
   registryBaseUrl?: string;
+  /** Exact reviewed upstream commit used by source-controlled provider snapshots. */
+  sourceRef?: string;
+  /** Repository-relative immutable reviewed snapshot path. */
+  snapshotPath?: string;
   /** Repository prefix applied to install-registry file paths before linking source. */
   sourceRoot?: string;
   /** Manifest entries that are not backed by a file at the same pinned source revision. */
