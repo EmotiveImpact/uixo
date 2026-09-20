@@ -95,9 +95,7 @@ export function LandingPage({
           </a>
 
           <span className="landing-links">
-            <a href={hrefs.browse} onClick={internal(onBrowse)}>
-              Discover
-            </a>
+            <a href="/">Discover</a>
             <a href={hrefs.assets} onClick={internal(onAssets)}>
               Components
             </a>
