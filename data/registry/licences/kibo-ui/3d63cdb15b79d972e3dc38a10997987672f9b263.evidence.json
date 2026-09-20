@@ -1,0 +1,10 @@
+{
+  "providerId": "kibo-ui",
+  "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+  "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/license.md",
+  "licencePath": "license.md",
+  "retainedPath": "data/registry/licences/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263.txt",
+  "gitBlobSha": "e01f0f824a42e798cf03032f6f0f1e0023ae7f12",
+  "sha256": "1fe9198b595ddadef7e2d99e3e1698c036db61c81e91c7b42df90d59f563b2ba",
+  "publicationApproved": false
+}
