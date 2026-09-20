@@ -57,8 +57,8 @@ export function TopBar({
       sidebar={{
         expanded: sidebar.isMobile ? sidebar.openMobile : sidebar.open,
         toggle: sidebar.toggleSidebar,
-        triggerRef: sidebar.triggerRef,
       }}
+      sidebarTriggerRef={sidebar.triggerRef}
       onSearch={() =>
         window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))
       }

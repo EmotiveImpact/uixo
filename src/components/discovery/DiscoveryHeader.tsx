@@ -11,8 +11,8 @@ type Props = {
   sidebar?: {
     expanded: boolean;
     toggle: () => void;
-    triggerRef?: RefObject<HTMLButtonElement | null>;
   };
+  sidebarTriggerRef?: RefObject<HTMLButtonElement | null>;
   adminAction?: ReactNode;
 };
 
@@ -32,6 +32,7 @@ export function DiscoveryHeader({
   account,
   onSearch,
   sidebar,
+  sidebarTriggerRef,
   adminAction,
 }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -107,7 +108,7 @@ export function DiscoveryHeader({
           {account}
           {sidebar && (
             <button
-              ref={sidebar.triggerRef}
+              ref={sidebarTriggerRef}
               className="header-icon discovery-sidebar-trigger"
               aria-label="Open navigation"
               aria-expanded={sidebar.expanded}
