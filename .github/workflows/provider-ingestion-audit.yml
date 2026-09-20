@@ -1,0 +1,46 @@
+name: Provider ingestion audit inputs
+
+on:
+  push:
+    branches:
+      - 'astra/provider-ingestion-2026-09-20'
+    paths:
+      - '.github/workflows/provider-ingestion-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out the proposed UIXO revision
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          path: uixo
+      - name: Check out the exact Kibo audit revision without running upstream code
+        uses: actions/checkout@v7
+        with:
+          repository: shadcnblocks/kibo
+          ref: 3d63cdb15b79d972e3dc38a10997987672f9b263
+          persist-credentials: false
+          path: kibo
+      - name: Retain only tracked, immutable source inputs
+        run: |
+          set -eu
+          mkdir evidence
+          git -C uixo rev-parse HEAD > evidence/uixo.commit.txt
+          git -C kibo rev-parse HEAD > evidence/kibo.commit.txt
+          test "$(cat evidence/kibo.commit.txt)" = 3d63cdb15b79d972e3dc38a10997987672f9b263
+          git -C uixo archive --format=tar.gz --output="$GITHUB_WORKSPACE/evidence/uixo-source.tar.gz" HEAD
+          git -C kibo archive --format=tar.gz --output="$GITHUB_WORKSPACE/evidence/kibo-source.tar.gz" HEAD
+          sha256sum evidence/*.tar.gz > evidence/SHA256SUMS
+      - name: Retain reproducible audit inputs, not approval or publication
+        uses: actions/upload-artifact@v4
+        with:
+          name: provider-audit-inputs-${{ github.sha }}
+          path: evidence
+          retention-days: 7
