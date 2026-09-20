@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
 import { componentCategory } from '../shared/component-categories.ts';
 import { type Asset, type Licence, type Provider, RegistryError, record, text } from './domain.ts';
 import { FetchBudget } from './fetcher.ts';
@@ -117,6 +118,58 @@ export const PROVIDERS: Provider[] = [
     rationale:
       'Official open-source React component collection with an MIT licence, pinned upstream source files, and provider-hosted Storybook demos for each catalogued component.',
   },
+  {
+    id: 'uiable',
+    name: 'UIAble',
+    url: 'https://uiable.com/',
+    repo: 'codedthemes/uiable',
+    branch: 'master',
+    licencePath: 'LICENSE',
+    adapter: 'reviewed-snapshot',
+    registryBaseUrl: 'https://uiable.com/r/',
+    sourceRef: '34e78586c904091059deb63412ae330b2757e923',
+    snapshotPath:
+      'data/registry/snapshots/ingestion/uiable/34e78586c904091059deb63412ae330b2757e923/staged.json',
+    css: 'tailwind',
+    approved: true,
+    selectedAt: '2026-09-21T00:00:00.000Z',
+    rationale:
+      'First-party MIT component registry pinned to an immutable commit. UIXO uses each component\'s exact source path, declared dependencies, official registry install URL and exact first-party isolated preview route.',
+  },
+  {
+    id: 'flowbite-react',
+    name: 'Flowbite React',
+    url: 'https://flowbite-react.com/',
+    repo: 'themesberg/flowbite-react',
+    branch: 'main',
+    licencePath: 'LICENSE',
+    adapter: 'reviewed-snapshot',
+    sourceRef: '85319bd067822f7aa9670688780aeb58cc187aa5',
+    snapshotPath:
+      'data/registry/snapshots/ingestion/flowbite-react/85319bd067822f7aa9670688780aeb58cc187aa5/staged.json',
+    css: 'tailwind',
+    approved: true,
+    selectedAt: '2026-09-21T00:00:00.000Z',
+    rationale:
+      'Official MIT React package pinned to an immutable commit. UIXO publishes only components with a unique first-party isolated example route and retains package peer-dependency evidence.',
+  },
+  {
+    id: 'heroui-web',
+    name: 'HeroUI Web',
+    url: 'https://www.heroui.com/',
+    repo: 'heroui-inc/heroui',
+    branch: 'v3',
+    licencePath: 'LICENSE',
+    adapter: 'reviewed-snapshot',
+    sourceRef: 'ac71b5f644803b2107c878908e64f100d6a7d443',
+    snapshotPath:
+      'data/registry/snapshots/ingestion/heroui-web/ac71b5f644803b2107c878908e64f100d6a7d443/staged.json',
+    css: 'tailwind',
+    approved: true,
+    selectedAt: '2026-09-21T00:00:00.000Z',
+    rationale:
+      'Official HeroUI v3 web package pinned after the documented Apache-2.0 relicensing. Preview IDs are derived from the retained pinned Storybook source rather than guessed from component names.',
+  },
 ];
 export function licenceFromText(
   provider: Provider,
@@ -133,18 +186,24 @@ export function licenceFromText(
   const isc =
     /permission to use, copy, modify, and\/or distribute/i.test(body) &&
     /for any\s+purpose with or without fee/i.test(body);
-  const recognised = !restricted && (mit || isc);
+  const apache =
+    /Apache License\s+Version 2\.0/i.test(body) &&
+    /Grant of Copyright License/i.test(body) &&
+    /Redistribution/i.test(body);
+  const recognised = !restricted && (mit || isc || apache);
   return {
     id: `${provider.id}-${createHash('sha256').update(body).digest('hex').slice(0, 16)}`,
     expression: restricted
       ? 'Restricted / review required'
       : mit && isc
         ? 'ISC AND MIT (inherited icons)'
-        : mit
-          ? 'MIT'
-          : isc
-            ? 'ISC'
-            : 'Unknown',
+        : apache
+          ? 'Apache-2.0'
+          : mit
+            ? 'MIT'
+            : isc
+              ? 'ISC'
+              : 'Unknown',
     sourceUrl,
     text: body,
     commercial: recognised ? 'allowed' : 'unknown',
@@ -608,6 +667,341 @@ export function iconPackAsset(
     ],
   };
 }
+
+type ReviewedSnapshotItem = {
+  id: string;
+  providerId: string;
+  slug: string;
+  name: string;
+  description: string | null;
+  kind: 'component';
+  platform: 'web';
+  categorySuggestion: string;
+  providerTags: string[];
+  sourceRef: string;
+  sourceUrl: string;
+  sourcePath: string;
+  missingSourceFiles: string[];
+  dependencies: string[] | null;
+  registryDependencies: string[] | null;
+  inventoryEvidence: { path: string; url: string };
+  upstreamMetadata: Record<string, unknown>;
+  preview: null;
+  status: 'unpublished';
+};
+
+type ReviewedSnapshot = {
+  providerId: string;
+  sourceRef: string;
+  observedAt: string;
+  inventoryCount: number;
+  items: ReviewedSnapshotItem[];
+};
+
+const FLOWBITE_PREVIEWS: Record<string, string> = {
+  accordion: 'accordion.root',
+  alert: 'alert.root',
+  avatar: 'avatar.root',
+  badge: 'badge.root',
+  banner: 'banner.root',
+  blockquote: 'blockquote.root',
+  breadcrumb: 'breadcrumb.root',
+  button: 'button.root',
+  'button-group': 'buttonGroup.root',
+  card: 'card.root',
+  carousel: 'carousel.root',
+  checkbox: 'forms.checkbox',
+  clipboard: 'clipboard.root',
+  datepicker: 'datepicker.root',
+  drawer: 'drawer.root',
+  dropdown: 'dropdown.root',
+  'file-input': 'fileInput.root',
+  'floating-label': 'floatingLabel.root',
+  footer: 'footer.root',
+  hr: 'hr.root',
+  'helper-text': 'forms.helperText',
+  kbd: 'kbd.root',
+  label: 'forms.root',
+  list: 'list.root',
+  'list-group': 'listGroup.root',
+  'mega-menu': 'megaMenu.root',
+  modal: 'modal.root',
+  navbar: 'navbar.root',
+  pagination: 'pagination.root',
+  popover: 'popover.root',
+  progress: 'progress.root',
+  radio: 'forms.radioButton',
+  'range-slider': 'forms.rangeSlider',
+  rating: 'rating.root',
+  select: 'forms.select',
+  sidebar: 'sidebar.root',
+  spinner: 'spinner.root',
+  table: 'table.root',
+  tabs: 'tabs.root',
+  'text-input': 'forms.inputSizing',
+  textarea: 'forms.textarea',
+  timeline: 'timeline.root',
+  toast: 'toast.root',
+  'toggle-switch': 'forms.toggleSwitch',
+  tooltip: 'tooltip.root',
+};
+
+function reviewedStringArray(value: unknown, required: boolean): string[] {
+  if (value === null || value === undefined) {
+    if (required) throw new RegistryError('PROVIDER_FORMAT', 'Reviewed dependency evidence is incomplete.', 502);
+    return [];
+  }
+  if (!Array.isArray(value) || value.length > 80 || value.some((entry) => typeof entry !== 'string'))
+    throw new RegistryError('PROVIDER_FORMAT', 'Reviewed dependency evidence is invalid.', 502);
+  return [...new Set(value as string[])];
+}
+
+function reviewedPeerDependencies(item: ReviewedSnapshotItem): Record<string, string> {
+  const metadata = record(item.upstreamMetadata);
+  const pkg = metadata.package ? record(metadata.package) : {};
+  const peers = pkg.peerDependencies ? record(pkg.peerDependencies) : {};
+  if (Object.keys(peers).length > 30)
+    throw new RegistryError('PROVIDER_FORMAT', 'Reviewed package has too many peer dependencies.', 502);
+  return Object.fromEntries(
+    Object.entries(peers).map(([name, range]) => [text(name, 100), text(range, 200)]),
+  );
+}
+
+function uiablePreview(sourcePath: string): string {
+  const prefix = 'src/components/uiable/';
+  if (!sourcePath.startsWith(prefix) || !/\.(tsx|jsx)$/.test(sourcePath))
+    throw new RegistryError('PROVIDER_FORMAT', 'UIAble source path cannot map to its isolated preview.', 502);
+  const parts = sourcePath
+    .slice(prefix.length)
+    .replace(/\.(tsx|jsx)$/, '')
+    .split('/');
+  if (parts.length >= 2 && parts.at(-1) === parts.at(-2)) parts.pop();
+  if (!parts.length || parts.some((part) => !/^[a-z0-9-]+$/.test(part)))
+    throw new RegistryError('PROVIDER_FORMAT', 'UIAble preview path is invalid.', 502);
+  return `https://uiable.com/preview/${parts.join('/')}`;
+}
+
+function storybookIdPart(value: string): string {
+  const id = value
+    .trim()
+    .toLowerCase()
+    .replace(/[\\/\s_]+/g, '-')
+    .replace(/[^a-z0-9-]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+  if (!id) throw new RegistryError('PROVIDER_FORMAT', 'HeroUI Storybook identifier is empty.', 502);
+  return id;
+}
+
+async function heroUiPreview(provider: Provider, item: ReviewedSnapshotItem): Promise<string> {
+  if (!provider.snapshotPath) throw new RegistryError('PROVIDER_FORMAT', 'HeroUI snapshot path is missing.', 502);
+  const metadata = record(item.upstreamMetadata);
+  const storyPath = text(metadata.storyPath, 500);
+  if (!/^packages\/react\/src\/components\/[a-z0-9-]+\/[a-z0-9-]+\.stories\.tsx$/.test(storyPath))
+    throw new RegistryError('PROVIDER_FORMAT', 'HeroUI story path is outside the reviewed component tree.', 502);
+  const root = provider.snapshotPath.replace(/\/staged\.json$/, '');
+  const story = await readFile(new URL(`../${root}/upstream/${storyPath}`, import.meta.url), 'utf8');
+  const title = /\btitle:\s*["'`]([^"'`]+)["'`]/.exec(story)?.[1];
+  const exports = [...story.matchAll(/\bexport\s+const\s+([A-Za-z][A-Za-z0-9_]*)\b/g)].map(
+    (match) => match[1],
+  );
+  const storyName = exports.includes('Default') ? 'Default' : exports[0];
+  if (!title || !storyName)
+    throw new RegistryError('PROVIDER_FORMAT', 'HeroUI story lacks a static title or exported story.', 502);
+  const id = `${storybookIdPart(title)}--${storybookIdPart(storyName)}`;
+  return `https://storybook-v3.heroui.com/iframe.html?id=${encodeURIComponent(id)}&viewMode=story`;
+}
+
+async function reviewedPreview(provider: Provider, item: ReviewedSnapshotItem): Promise<string | null> {
+  if (provider.id === 'uiable') return uiablePreview(item.sourcePath);
+  if (provider.id === 'flowbite-react') {
+    const example = FLOWBITE_PREVIEWS[item.slug];
+    return example ? `https://flowbite-react.com/examples/${example}` : null;
+  }
+  if (provider.id === 'heroui-web') return heroUiPreview(provider, item);
+  throw new RegistryError('PROVIDER_FORMAT', 'No reviewed preview policy exists for this provider.', 502);
+}
+
+async function readReviewedSnapshot(provider: Provider): Promise<ReviewedSnapshot> {
+  if (!provider.snapshotPath || !provider.sourceRef || !/^[a-f0-9]{40}$/.test(provider.sourceRef))
+    throw new RegistryError('PROVIDER_FORMAT', 'Reviewed provider snapshot configuration is incomplete.', 502);
+  const value = record(
+    JSON.parse(await readFile(new URL(`../${provider.snapshotPath}`, import.meta.url), 'utf8')),
+  );
+  if (value.providerId !== provider.id || value.sourceRef !== provider.sourceRef)
+    throw new RegistryError('PROVIDER_FORMAT', 'Reviewed snapshot identity does not match provider configuration.', 502);
+  if (!Array.isArray(value.items) || !value.items.length || value.items.length > 1200)
+    throw new RegistryError('PROVIDER_FORMAT', 'Reviewed snapshot item bounds changed.', 502);
+  if (Number(value.inventoryCount) !== value.items.length)
+    throw new RegistryError('PROVIDER_FORMAT', 'Reviewed snapshot inventory count does not match its items.', 502);
+  const ids = new Set<string>();
+  const items = value.items.map((entry): ReviewedSnapshotItem => {
+    const item = record(entry);
+    const slug = text(item.slug, 150);
+    const id = text(item.id, 320);
+    if (item.providerId !== provider.id || id !== `${provider.id}/${slug}` || ids.has(id))
+      throw new RegistryError('PROVIDER_FORMAT', 'Reviewed snapshot asset identity is invalid or duplicated.', 502);
+    ids.add(id);
+    if (item.sourceRef !== provider.sourceRef || item.status !== 'unpublished' || item.preview !== null)
+      throw new RegistryError('PROVIDER_FORMAT', 'Reviewed source capture was mutated after evidence collection.', 502);
+    if (!Array.isArray(item.missingSourceFiles) || item.missingSourceFiles.length)
+      throw new RegistryError('PROVIDER_FORMAT', 'Reviewed component has missing source files.', 502);
+    const inventoryEvidence = record(item.inventoryEvidence);
+    const upstreamMetadata = record(item.upstreamMetadata);
+    return {
+      id,
+      providerId: provider.id,
+      slug,
+      name: text(item.name, 150),
+      description: item.description ? text(item.description, 1600) : null,
+      kind: 'component',
+      platform: 'web',
+      categorySuggestion: item.categorySuggestion ? text(item.categorySuggestion, 80) : componentCategory(slug),
+      providerTags: reviewedStringArray(item.providerTags ?? [], false),
+      sourceRef: provider.sourceRef!,
+      sourceUrl: text(item.sourceUrl, 2048),
+      sourcePath: text(item.sourcePath, 500),
+      missingSourceFiles: [],
+      dependencies: item.dependencies === null ? null : reviewedStringArray(item.dependencies, false),
+      registryDependencies:
+        item.registryDependencies === null ? null : reviewedStringArray(item.registryDependencies, false),
+      inventoryEvidence: {
+        path: text(inventoryEvidence.path, 500),
+        url: text(inventoryEvidence.url, 2048),
+      },
+      upstreamMetadata,
+      preview: null,
+      status: 'unpublished',
+    };
+  });
+  return {
+    providerId: provider.id,
+    sourceRef: provider.sourceRef,
+    observedAt: text(value.observedAt, 50),
+    inventoryCount: Number(value.inventoryCount),
+    items,
+  };
+}
+
+export async function reviewedSnapshotAssets(provider: Provider): Promise<Asset[]> {
+  if (provider.adapter !== 'reviewed-snapshot' || !provider.sourceRef)
+    throw new RegistryError('PROVIDER_FORMAT', 'Expected a reviewed snapshot provider.', 502);
+  const snapshot = await readReviewedSnapshot(provider);
+  const body = await readFile(
+    new URL(`../data/registry/licences/${provider.id}/${provider.sourceRef}.txt`, import.meta.url),
+    'utf8',
+  );
+  const licence = licenceFromText(
+    provider,
+    body,
+    `https://github.com/${provider.repo}/blob/${provider.sourceRef}/${provider.licencePath}`,
+    snapshot.observedAt,
+  );
+  if (licence.commercial !== 'allowed' || licence.redistribution !== 'allowed')
+    throw new RegistryError('PROVIDER_FORMAT', 'Reviewed provider licence is not publishable.', 502);
+  if (provider.id === 'heroui-web')
+    licence.note +=
+      ' HeroUI v3 release notes document the April 2026 relicensing to Apache-2.0; the retained repository root is the controlling reviewed licence evidence for this pinned source revision.';
+
+  const assets: Asset[] = [];
+  for (const item of snapshot.items) {
+    const previewUrl = await reviewedPreview(provider, item);
+    if (!previewUrl) continue;
+    const packageProvider = provider.id === 'flowbite-react' || provider.id === 'heroui-web';
+    const dependencies = packageProvider
+      ? []
+      : reviewedStringArray(item.dependencies, true);
+    const registryDependencies = packageProvider
+      ? []
+      : reviewedStringArray(item.registryDependencies, true);
+    const packageName =
+      provider.id === 'flowbite-react'
+        ? 'flowbite-react'
+        : provider.id === 'heroui-web'
+          ? '@heroui/react'
+          : undefined;
+    const acquisition =
+      provider.id === 'uiable'
+        ? {
+            kind: 'registry' as const,
+            url: `https://uiable.com/r/${encodeURIComponent(item.slug)}.json`,
+          }
+        : {
+            kind: 'package' as const,
+            packageName: packageName!,
+            url: provider.url,
+          };
+    const category = componentCategory(item.slug);
+    assets.push({
+      id: item.id,
+      providerId: provider.id,
+      slug: item.slug,
+      name: item.name,
+      description:
+        item.description ??
+        `${item.name} from ${provider.name}. Inspect the pinned upstream source and installation evidence before use.`,
+      kind: 'component',
+      category,
+      tags: [
+        'interface',
+        'react',
+        'tailwind',
+        category,
+        ...item.providerTags.map((tag) => tag.toLowerCase()),
+      ],
+      price: 'free',
+      sourceUrl: item.sourceUrl,
+      licence: { ...licence },
+      variants: [
+        {
+          id: `${item.id}/react`,
+          framework: 'react',
+          format: item.sourcePath.endsWith('.jsx') ? 'jsx' : 'tsx',
+          css: provider.css ?? null,
+          dependencies,
+          registryDependencies,
+          peerDependencies: packageProvider ? reviewedPeerDependencies(item) : {},
+          sourceRef: provider.sourceRef,
+          acquisition,
+        },
+      ],
+      evidence: [
+        {
+          field: 'pinned upstream component source',
+          url: item.sourceUrl,
+          reference: provider.sourceRef,
+          observedAt: snapshot.observedAt,
+          method: 'inspected',
+        },
+        {
+          field: 'component inventory and installation metadata',
+          url: item.inventoryEvidence.url,
+          reference: provider.sourceRef,
+          observedAt: snapshot.observedAt,
+          method: 'declared',
+        },
+        {
+          field: 'official isolated component preview',
+          url: previewUrl,
+          reference: provider.sourceRef,
+          observedAt: snapshot.observedAt,
+          method: 'declared',
+        },
+      ],
+      verifiedAt: snapshot.observedAt,
+      preview: {
+        kind: 'embed',
+        url: previewUrl,
+        label: `Official live ${provider.name} component demonstration.`,
+      },
+      editorialPick: false,
+    });
+  }
+  if (!assets.length)
+    throw new RegistryError('PROVIDER_FORMAT', 'Reviewed provider has no truthfully previewable components.', 502);
+  return assets.sort((a, b) => a.id.localeCompare(b.id));
+}
+
 export type IndexPage = {
   assets: Asset[];
   nextOffset: number | null;
@@ -629,6 +1023,24 @@ export async function indexPage(
       'This gallery is ingested in source-reviewed batches with matching live demos. Update its pinned snapshot and verify before publishing.',
       409,
     );
+  if (provider.adapter === 'reviewed-snapshot') {
+    const all = await reviewedSnapshotAssets(provider);
+    if (options.sourceRef && options.sourceRef !== provider.sourceRef)
+      throw new RegistryError(
+        'SOURCE_REVIEW_REQUIRED',
+        'This provider can only be indexed from its reviewed immutable source snapshot.',
+        409,
+      );
+    const assets = all.slice(options.offset ?? 0, (options.offset ?? 0) + 200);
+    const offset = options.offset ?? 0;
+    return {
+      assets,
+      total: all.length,
+      offset,
+      nextOffset: offset + assets.length < all.length ? offset + assets.length : null,
+      sourceRef: provider.sourceRef!,
+    };
+  }
   const offset = options.offset ?? 0;
   if (!Number.isSafeInteger(offset) || offset < 0 || offset > 100000)
     throw new RegistryError('INVALID_INPUT', 'Invalid provider offset.');
