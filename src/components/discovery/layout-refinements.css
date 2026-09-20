@@ -19,7 +19,7 @@
   gap: 32px;
 }
 .filter-section button {
-  font-size: 12px;
+  font-size: 13px;
 }
 .filter-section button small {
   font-size: 10px;
@@ -28,7 +28,7 @@
   font-size: 15px;
 }
 .uixo-shell .asset-library-card-body > small {
-  font-size: 11px;
+  font-size: 12px;
 }
 .uixo-shell .asset-library-tags span {
   font-size: 10px;
@@ -75,5 +75,170 @@
     width: 36px;
     padding: 0;
     justify-content: center;
+  }
+}
+
+/* The original spaced UIXO wordmark is the identity, not a condensed display logo. */
+.discovery-wordmark.brand {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+.uixo-shell .asset-library-tags span {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border: 1px solid var(--uixo-line);
+  border-radius: 999px;
+  background: transparent;
+}
+/* A search field already exists below the header. Keep the header action compact. */
+.header-search span,
+.header-search kbd {
+  display: none;
+}
+.header-search {
+  width: 36px;
+  padding: 0;
+  justify-content: center;
+}
+
+/* Earlier brand typography, with the approved prototype card construction. */
+.discovery-wordmark {
+  flex-shrink: 0;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: var(--foreground);
+  text-decoration: none;
+  line-height: 1;
+}
+.discovery-navigation a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 13px;
+  font-weight: 450;
+  text-decoration: none;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+}
+.uixo-shell .heading h1 {
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+.uixo-shell .heading p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 680px;
+}
+.uixo-shell .search-wrap input {
+  font-size: 14px;
+}
+.hero-copy h1 {
+  font-size: clamp(66px, 6.7vw, 102px);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+  font-weight: 500;
+  margin: 0;
+  color: var(--foreground);
+}
+.uixo-shell .asset-library-card,
+.uixo-shell .website-grid > article {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--uixo-line);
+  border-radius: 16px;
+  background: var(--uixo-surface);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.04);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.uixo-shell .asset-library-card .asset-library-preview {
+  aspect-ratio: 1.46;
+  min-height: 0;
+  height: auto;
+  border: 0;
+  border-bottom: 1px solid var(--uixo-line);
+  border-radius: 0;
+  background: var(--background);
+  box-shadow: none;
+  padding: 0;
+}
+.uixo-shell .asset-library-card:hover .asset-library-preview {
+  transform: none;
+}
+.uixo-shell .asset-library-card:hover,
+.uixo-shell .website-grid > article:hover {
+  border-color: color-mix(in srgb, var(--foreground) 20%, transparent);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 0.1);
+}
+.asset-card-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.uixo-shell .website-grid .preview-link {
+  aspect-ratio: 1.46;
+  border: 0;
+  border-bottom: 1px solid var(--uixo-line);
+  border-radius: 0;
+}
+.uixo-shell .website-grid .card-heading {
+  margin: 14px 14px 6px;
+}
+.uixo-shell .website-grid .card-description,
+.uixo-shell .website-grid .metadata,
+.uixo-shell .website-grid .resource-tags {
+  margin-left: 14px;
+  margin-right: 14px;
+}
+.uixo-shell .website-grid .resource-tags {
+  margin-bottom: 14px;
+}
+.uixo-shell .asset-library-card-body {
+  padding: 14px;
+}
+.uixo-shell .asset-library-card h2 {
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 0;
+  min-width: 0;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+.uixo-shell .asset-library-save {
+  position: relative;
+  inset: auto;
+  flex-shrink: 0;
+  padding: 0;
+  height: 32px;
+  width: 32px;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  color: var(--muted-foreground);
+}
+@media (max-width: 500px) {
+  .hero-copy h1 {
+    font-size: 54px;
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+  .uixo-shell .asset-library-card .asset-library-preview {
+    aspect-ratio: 1.46;
+  }
+  .uixo-shell .asset-library-save {
+    inset: auto;
   }
 }

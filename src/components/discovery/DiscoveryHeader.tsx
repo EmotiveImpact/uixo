@@ -68,13 +68,12 @@ export function DiscoveryHeader({
     <header className="discovery-header">
       <div className="discovery-header-inner">
         <a
-          className="discovery-wordmark"
+          className="brand discovery-wordmark"
           aria-label="UIXO home"
           href="/"
           onClick={(e) => navigate(e, '/')}
         >
           UIXO
-          <span className="wordmark-dot" aria-hidden="true" />
         </a>
         <nav className="discovery-navigation" aria-label="Main navigation">
           {destinations.map((item) => (

@@ -383,21 +383,36 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                 <article className="asset-library-card" key={asset.id}>
                   <AssetPreview asset={asset} />
                   <div className="asset-library-card-body">
-                    <h2>
-                      <a
-                        className="asset-library-card-link"
-                        href={assetHref({ ...query, id: asset.id })}
-                        onClick={(event) => {
-                          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
-                            return;
-                          event.preventDefault();
-                          navigate({ id: asset.id });
-                        }}
-                        aria-label={`Inspect ${asset.name} from ${nameOf(asset.providerId)}`}
+                    <div className="asset-card-heading">
+                      <h2>
+                        <a
+                          className="asset-library-card-link"
+                          href={assetHref({ ...query, id: asset.id })}
+                          onClick={(event) => {
+                            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+                              return;
+                            event.preventDefault();
+                            navigate({ id: asset.id });
+                          }}
+                          aria-label={`Inspect ${asset.name} from ${nameOf(asset.providerId)}`}
+                        >
+                          {asset.name}
+                        </a>
+                      </h2>
+                      <button
+                        className="asset-library-save"
+                        aria-label={
+                          saved.includes(asset.id) ? `Unsave ${asset.name}` : `Save ${asset.name}`
+                        }
+                        aria-pressed={saved.includes(asset.id)}
+                        onClick={() => toggleSave(asset.id)}
                       >
-                        {asset.name}
-                      </a>
-                    </h2>
+                        <Bookmark
+                          size={16}
+                          fill={saved.includes(asset.id) ? 'currentColor' : 'none'}
+                        />
+                      </button>
+                    </div>
                     <small>
                       {nameOf(asset.providerId)} ·{' '}
                       {asset.kind === 'icon-pack' ? 'Icon pack' : asset.kind}
@@ -409,16 +424,6 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                       <span>{asset.licence.expression}</span>
                     </div>
                   </div>
-                  <button
-                    className="asset-library-save"
-                    aria-label={
-                      saved.includes(asset.id) ? `Unsave ${asset.name}` : `Save ${asset.name}`
-                    }
-                    aria-pressed={saved.includes(asset.id)}
-                    onClick={() => toggleSave(asset.id)}
-                  >
-                    <Bookmark size={16} fill={saved.includes(asset.id) ? 'currentColor' : 'none'} />
-                  </button>
                 </article>
               ))}
             </div>

@@ -67,7 +67,12 @@ with sync_playwright() as p:
                         assert geometry['scrollWidth'] <= width + 1, (view, width, geometry)
                         header = page.locator('.discovery-header').bounding_box()
                         assert header and abs(header['x']) < 1 and abs(header['width'] - width) < 1, header
+                        wordmark = page.locator('.discovery-wordmark').evaluate('el => ({weight: getComputedStyle(el).fontWeight, spacing: getComputedStyle(el).letterSpacing, font: getComputedStyle(el).fontFamily})')
+                        assert wordmark['weight'] == '500' and wordmark['spacing'] == '5px', wordmark
+                        assert 'Inter' in wordmark['font'], wordmark
                         if view == 'components':
+                            card_style = page.locator('.asset-library-card').first.evaluate('el => ({border: getComputedStyle(el).borderTopWidth, radius: getComputedStyle(el).borderRadius, padding: getComputedStyle(el.querySelector(".asset-library-card-body")).padding})')
+                            assert card_style == {'border': '1px', 'radius': '16px', 'padding': '14px'}, card_style
                             first = page.locator('.asset-library-card').first.bounding_box()
                             assert first and first['y'] < (500 if width == 390 else 410), first
                             assert page.locator('.discovery-featured').count() == 0

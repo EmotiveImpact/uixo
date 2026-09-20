@@ -8,6 +8,14 @@ afterEach(() => {
 });
 
 describe('Discovery header', () => {
+  it('restores the original plain spaced wordmark without a replacement symbol', () => {
+    render(<DiscoveryHeader active="discover" light={false} onToggleTheme={vi.fn()} />);
+    const wordmark = screen.getByRole('link', { name: 'UIXO home' });
+    expect(wordmark.textContent?.trim()).toBe('UIXO');
+    expect(wordmark.classList.contains('brand')).toBe(true);
+    expect(wordmark.querySelector('svg, .wordmark-dot')).toBeNull();
+  });
+
   it('links Templates to the actual resource directory and marks it selected', () => {
     window.history.replaceState(null, '', '/category/templates');
     render(<DiscoveryHeader active="resources" light={false} onToggleTheme={vi.fn()} />);
