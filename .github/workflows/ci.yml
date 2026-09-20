@@ -7,6 +7,7 @@ on:
       - main
       - 'astra/**'
       - 'codex/**'
+      - feat/provider-ingestion-approved-wave
 
 permissions:
   contents: read
@@ -34,6 +35,9 @@ jobs:
           cache-dependency-path: |
             package-lock.json
             registry/package-lock.json
+
+      - name: Test source evidence staging
+        run: python -m unittest discover -s tests/provider_ingestion -v
 
       - name: Install locked application dependencies
         run: npm ci
