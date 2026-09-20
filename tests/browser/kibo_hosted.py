@@ -68,7 +68,6 @@ with sync_playwright() as p:
                 context = browser.new_context(viewport={'width': width, 'height': 950}, color_scheme=theme)
                 page = context.new_page()
                 page.on('pageerror', lambda error: errors.append(str(error)))
-                # Observe, do not mock, the actual application requests.
                 page.on('request', lambda r: mutations.append({'method': r.method, 'url': r.url})
                         if r.method not in ('GET', 'HEAD', 'OPTIONS') and '/api/' in r.url and 'action=resolve' not in r.url else None)
                 page.goto(WEB + '/browse/assets?provider=kibo-ui', wait_until='domcontentloaded')
@@ -87,7 +86,7 @@ with sync_playwright() as p:
                     expect(frame.locator('html')).to_have_attribute('data-preview-ready', 'true')
                     expect(frame.locator('html')).to_have_attribute('data-source-ref', SNAPSHOT['ref'])
                     expect(frame.locator('html')).to_have_attribute('data-theme', theme)
-                    expect(frame.locator('.demo-stage')).not_to_be_empty()
+                    expect(frame.locator('.demo-stage > *').first).to_be_visible()
                     card.get_by_role('link', name=f"Inspect {item['name']} from Kibo UI", exact=True).click()
                     dialog = page.get_by_role('dialog', name=item['name'], exact=True)
                     expect(dialog).to_be_visible()
@@ -104,7 +103,6 @@ with sync_playwright() as p:
                     page.screenshot(path=str(OUTPUT / f'{slug}-{width}-{theme}.png'))
                     results.append({'slug': slug, 'width': width, 'theme': theme, 'card': 'real component', 'detail': 'real component', 'sourceRef': SNAPSHOT['ref'], 'installGuidance': 'upstream URL', 'passed': True})
                     dialog.get_by_role('button', name='Close asset details').click()
-                # Exercise the real host theme control, not an injected class or mocked event.
                 other = 'dark' if theme == 'light' else 'light'
                 page.get_by_role('button', name=f'Switch to {other} theme', exact=True).click()
                 expect(page.locator('html')).to_have_class(re.compile(r'\b' + other + r'\b'))
