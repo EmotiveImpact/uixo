@@ -126,6 +126,9 @@
   color: var(--muted-foreground);
   white-space: nowrap;
 }
+.uixo-shell .heading {
+  margin-bottom: 20px;
+}
 .uixo-shell .heading h1 {
   font-size: clamp(30px, 3vw, 42px);
   font-weight: 500;
@@ -136,7 +139,7 @@
   margin: 10px 0 0;
   font-size: 14px;
   line-height: 1.6;
-  max-width: 680px;
+  max-width: 850px;
 }
 .uixo-shell .search-wrap input {
   font-size: 14px;
@@ -180,6 +183,13 @@
 .uixo-shell .website-grid > article:hover {
   border-color: color-mix(in srgb, var(--foreground) 20%, transparent);
   box-shadow: 0 12px 30px rgb(0 0 0 / 0.1);
+}
+.uixo-shell .asset-library-card:focus-within,
+.uixo-shell .website-grid > article:focus-within {
+  border-color: var(--uixo-accent);
+}
+.uixo-shell .website-grid .preview-link:focus-visible {
+  outline-offset: -3px;
 }
 .asset-card-heading {
   display: flex;
