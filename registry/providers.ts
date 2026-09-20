@@ -134,7 +134,7 @@ export const PROVIDERS: Provider[] = [
     approved: true,
     selectedAt: '2026-09-21T00:00:00.000Z',
     rationale:
-      'First-party MIT component registry pinned to an immutable commit. UIXO uses each component\'s exact source path, declared dependencies, official registry install URL and exact first-party isolated preview route.',
+      "First-party MIT component registry pinned to an immutable commit. UIXO uses each component's exact source path, declared dependencies, official registry install URL and exact first-party isolated preview route.",
   },
   {
     id: 'flowbite-react',
@@ -748,10 +748,19 @@ const FLOWBITE_PREVIEWS: Record<string, string> = {
 
 function reviewedStringArray(value: unknown, required: boolean): string[] {
   if (value === null || value === undefined) {
-    if (required) throw new RegistryError('PROVIDER_FORMAT', 'Reviewed dependency evidence is incomplete.', 502);
+    if (required)
+      throw new RegistryError(
+        'PROVIDER_FORMAT',
+        'Reviewed dependency evidence is incomplete.',
+        502,
+      );
     return [];
   }
-  if (!Array.isArray(value) || value.length > 80 || value.some((entry) => typeof entry !== 'string'))
+  if (
+    !Array.isArray(value) ||
+    value.length > 80 ||
+    value.some((entry) => typeof entry !== 'string')
+  )
     throw new RegistryError('PROVIDER_FORMAT', 'Reviewed dependency evidence is invalid.', 502);
   return [...new Set(value as string[])];
 }
@@ -761,7 +770,11 @@ function reviewedPeerDependencies(item: ReviewedSnapshotItem): Record<string, st
   const pkg = metadata.package ? record(metadata.package) : {};
   const peers = pkg.peerDependencies ? record(pkg.peerDependencies) : {};
   if (Object.keys(peers).length > 30)
-    throw new RegistryError('PROVIDER_FORMAT', 'Reviewed package has too many peer dependencies.', 502);
+    throw new RegistryError(
+      'PROVIDER_FORMAT',
+      'Reviewed package has too many peer dependencies.',
+      502,
+    );
   return Object.fromEntries(
     Object.entries(peers).map(([name, range]) => [text(name, 100), text(range, 200)]),
   );
@@ -770,7 +783,11 @@ function reviewedPeerDependencies(item: ReviewedSnapshotItem): Record<string, st
 function uiablePreview(sourcePath: string): string {
   const prefix = 'src/components/uiable/';
   if (!sourcePath.startsWith(prefix) || !/\.(tsx|jsx)$/.test(sourcePath))
-    throw new RegistryError('PROVIDER_FORMAT', 'UIAble source path cannot map to its isolated preview.', 502);
+    throw new RegistryError(
+      'PROVIDER_FORMAT',
+      'UIAble source path cannot map to its isolated preview.',
+      502,
+    );
   const parts = sourcePath
     .slice(prefix.length)
     .replace(/\.(tsx|jsx)$/, '')
@@ -794,58 +811,105 @@ function storybookIdPart(value: string): string {
 }
 
 async function heroUiPreview(provider: Provider, item: ReviewedSnapshotItem): Promise<string> {
-  if (!provider.snapshotPath) throw new RegistryError('PROVIDER_FORMAT', 'HeroUI snapshot path is missing.', 502);
+  if (!provider.snapshotPath)
+    throw new RegistryError('PROVIDER_FORMAT', 'HeroUI snapshot path is missing.', 502);
   const metadata = record(item.upstreamMetadata);
   const storyPath = text(metadata.storyPath, 500);
   if (!/^packages\/react\/src\/components\/[a-z0-9-]+\/[a-z0-9-]+\.stories\.tsx$/.test(storyPath))
-    throw new RegistryError('PROVIDER_FORMAT', 'HeroUI story path is outside the reviewed component tree.', 502);
+    throw new RegistryError(
+      'PROVIDER_FORMAT',
+      'HeroUI story path is outside the reviewed component tree.',
+      502,
+    );
   const root = provider.snapshotPath.replace(/\/staged\.json$/, '');
-  const story = await readFile(new URL(`../${root}/upstream/${storyPath}`, import.meta.url), 'utf8');
+  const story = await readFile(
+    new URL(`../${root}/upstream/${storyPath}`, import.meta.url),
+    'utf8',
+  );
   const title = /\btitle:\s*["'`]([^"'`]+)["'`]/.exec(story)?.[1];
   const exports = [...story.matchAll(/\bexport\s+const\s+([A-Za-z][A-Za-z0-9_]*)\b/g)].map(
     (match) => match[1],
   );
   const storyName = exports.includes('Default') ? 'Default' : exports[0];
   if (!title || !storyName)
-    throw new RegistryError('PROVIDER_FORMAT', 'HeroUI story lacks a static title or exported story.', 502);
+    throw new RegistryError(
+      'PROVIDER_FORMAT',
+      'HeroUI story lacks a static title or exported story.',
+      502,
+    );
   const id = `${storybookIdPart(title)}--${storybookIdPart(storyName)}`;
   return `https://storybook-v3.heroui.com/iframe.html?id=${encodeURIComponent(id)}&viewMode=story`;
 }
 
-async function reviewedPreview(provider: Provider, item: ReviewedSnapshotItem): Promise<string | null> {
+async function reviewedPreview(
+  provider: Provider,
+  item: ReviewedSnapshotItem,
+): Promise<string | null> {
   if (provider.id === 'uiable') return uiablePreview(item.sourcePath);
   if (provider.id === 'flowbite-react') {
     const example = FLOWBITE_PREVIEWS[item.slug];
     return example ? `https://flowbite-react.com/examples/${example}` : null;
   }
   if (provider.id === 'heroui-web') return heroUiPreview(provider, item);
-  throw new RegistryError('PROVIDER_FORMAT', 'No reviewed preview policy exists for this provider.', 502);
+  throw new RegistryError(
+    'PROVIDER_FORMAT',
+    'No reviewed preview policy exists for this provider.',
+    502,
+  );
 }
 
 async function readReviewedSnapshot(provider: Provider): Promise<ReviewedSnapshot> {
   if (!provider.snapshotPath || !provider.sourceRef || !/^[a-f0-9]{40}$/.test(provider.sourceRef))
-    throw new RegistryError('PROVIDER_FORMAT', 'Reviewed provider snapshot configuration is incomplete.', 502);
+    throw new RegistryError(
+      'PROVIDER_FORMAT',
+      'Reviewed provider snapshot configuration is incomplete.',
+      502,
+    );
   const value = record(
     JSON.parse(await readFile(new URL(`../${provider.snapshotPath}`, import.meta.url), 'utf8')),
   );
   if (value.providerId !== provider.id || value.sourceRef !== provider.sourceRef)
-    throw new RegistryError('PROVIDER_FORMAT', 'Reviewed snapshot identity does not match provider configuration.', 502);
+    throw new RegistryError(
+      'PROVIDER_FORMAT',
+      'Reviewed snapshot identity does not match provider configuration.',
+      502,
+    );
   if (!Array.isArray(value.items) || !value.items.length || value.items.length > 1200)
     throw new RegistryError('PROVIDER_FORMAT', 'Reviewed snapshot item bounds changed.', 502);
   if (Number(value.inventoryCount) !== value.items.length)
-    throw new RegistryError('PROVIDER_FORMAT', 'Reviewed snapshot inventory count does not match its items.', 502);
+    throw new RegistryError(
+      'PROVIDER_FORMAT',
+      'Reviewed snapshot inventory count does not match its items.',
+      502,
+    );
   const ids = new Set<string>();
   const items = value.items.map((entry): ReviewedSnapshotItem => {
     const item = record(entry);
     const slug = text(item.slug, 150);
     const id = text(item.id, 320);
     if (item.providerId !== provider.id || id !== `${provider.id}/${slug}` || ids.has(id))
-      throw new RegistryError('PROVIDER_FORMAT', 'Reviewed snapshot asset identity is invalid or duplicated.', 502);
+      throw new RegistryError(
+        'PROVIDER_FORMAT',
+        'Reviewed snapshot asset identity is invalid or duplicated.',
+        502,
+      );
     ids.add(id);
-    if (item.sourceRef !== provider.sourceRef || item.status !== 'unpublished' || item.preview !== null)
-      throw new RegistryError('PROVIDER_FORMAT', 'Reviewed source capture was mutated after evidence collection.', 502);
+    if (
+      item.sourceRef !== provider.sourceRef ||
+      item.status !== 'unpublished' ||
+      item.preview !== null
+    )
+      throw new RegistryError(
+        'PROVIDER_FORMAT',
+        'Reviewed source capture was mutated after evidence collection.',
+        502,
+      );
     if (!Array.isArray(item.missingSourceFiles) || item.missingSourceFiles.length)
-      throw new RegistryError('PROVIDER_FORMAT', 'Reviewed component has missing source files.', 502);
+      throw new RegistryError(
+        'PROVIDER_FORMAT',
+        'Reviewed component has missing source files.',
+        502,
+      );
     const inventoryEvidence = record(item.inventoryEvidence);
     const upstreamMetadata = record(item.upstreamMetadata);
     return {
@@ -856,15 +920,20 @@ async function readReviewedSnapshot(provider: Provider): Promise<ReviewedSnapsho
       description: item.description ? text(item.description, 1600) : null,
       kind: 'component',
       platform: 'web',
-      categorySuggestion: item.categorySuggestion ? text(item.categorySuggestion, 80) : componentCategory(slug),
+      categorySuggestion: item.categorySuggestion
+        ? text(item.categorySuggestion, 80)
+        : componentCategory(slug),
       providerTags: reviewedStringArray(item.providerTags ?? [], false),
       sourceRef: provider.sourceRef!,
       sourceUrl: text(item.sourceUrl, 2048),
       sourcePath: text(item.sourcePath, 500),
       missingSourceFiles: [],
-      dependencies: item.dependencies === null ? null : reviewedStringArray(item.dependencies, false),
+      dependencies:
+        item.dependencies === null ? null : reviewedStringArray(item.dependencies, false),
       registryDependencies:
-        item.registryDependencies === null ? null : reviewedStringArray(item.registryDependencies, false),
+        item.registryDependencies === null
+          ? null
+          : reviewedStringArray(item.registryDependencies, false),
       inventoryEvidence: {
         path: text(inventoryEvidence.path, 500),
         url: text(inventoryEvidence.url, 2048),
@@ -898,7 +967,11 @@ export async function reviewedSnapshotAssets(provider: Provider): Promise<Asset[
     snapshot.observedAt,
   );
   if (licence.commercial !== 'allowed' || licence.redistribution !== 'allowed')
-    throw new RegistryError('PROVIDER_FORMAT', 'Reviewed provider licence is not publishable.', 502);
+    throw new RegistryError(
+      'PROVIDER_FORMAT',
+      'Reviewed provider licence is not publishable.',
+      502,
+    );
   if (provider.id === 'heroui-web')
     licence.note +=
       ' HeroUI v3 release notes document the April 2026 relicensing to Apache-2.0; the retained repository root is the controlling reviewed licence evidence for this pinned source revision.';
@@ -908,9 +981,7 @@ export async function reviewedSnapshotAssets(provider: Provider): Promise<Asset[
     const previewUrl = await reviewedPreview(provider, item);
     if (!previewUrl) continue;
     const packageProvider = provider.id === 'flowbite-react' || provider.id === 'heroui-web';
-    const dependencies = packageProvider
-      ? []
-      : reviewedStringArray(item.dependencies, true);
+    const dependencies = packageProvider ? [] : reviewedStringArray(item.dependencies, true);
     const registryDependencies = packageProvider
       ? []
       : reviewedStringArray(item.registryDependencies, true);
@@ -998,7 +1069,11 @@ export async function reviewedSnapshotAssets(provider: Provider): Promise<Asset[
     });
   }
   if (!assets.length)
-    throw new RegistryError('PROVIDER_FORMAT', 'Reviewed provider has no truthfully previewable components.', 502);
+    throw new RegistryError(
+      'PROVIDER_FORMAT',
+      'Reviewed provider has no truthfully previewable components.',
+      502,
+    );
   return assets.sort((a, b) => a.id.localeCompare(b.id));
 }
 

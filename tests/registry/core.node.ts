@@ -666,7 +666,6 @@ test('Animata snapshot only publishes source-pinned components with official liv
   );
 });
 
-
 test('reviewed provider snapshots publish only truthfully previewable pinned web assets', async () => {
   const assets = await capturedAssets();
   const uiable = assets.filter((asset) => asset.providerId === 'uiable');
