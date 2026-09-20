@@ -15,7 +15,7 @@
     "stars": null,
     "why": "Dashboard UI matched to Figma kit",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Ant Design",
@@ -50,7 +50,7 @@
     "stars": 11000,
     "why": "Mobile-first Ant Design React blocks",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Astryx",
@@ -85,7 +85,7 @@
     "stars": 1700,
     "why": "Design system on styled-components",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Base Web (Uber)",
@@ -103,7 +103,7 @@
     "stars": 8600,
     "why": "Uber Base design language React library",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Blueprint",
@@ -120,7 +120,7 @@
     "stars": 20000,
     "why": "Palantir desktop-oriented React toolkit",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Bumbag UI",
@@ -137,7 +137,7 @@
     "stars": 1000,
     "why": "Themeable React UI (legacy)",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Carbon Design System",
@@ -173,7 +173,7 @@
     "stars": 40615,
     "why": "Accessible modular React component system",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "ChatUI",
@@ -190,7 +190,7 @@
     "stars": 2500,
     "why": "Alibaba conversational UI React library",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "CoreUI React",
@@ -209,7 +209,7 @@
     "stars": 650,
     "why": "CoreUI React admin components",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Create UI",
@@ -228,7 +228,7 @@
     "stars": null,
     "why": "Figma-synced React design system free to start",
     "source": "x",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "daisyUI",
@@ -265,7 +265,7 @@
     "stars": 2000,
     "why": "Responsive Theme UI for React Native",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Elastic UI (EUI)",
@@ -282,7 +282,7 @@
     "stars": 6000,
     "why": "Elastic UI Framework for React",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Evergreen",
@@ -299,7 +299,7 @@
     "stars": 12000,
     "why": "Segment Evergreen React UI framework",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Flowbite",
@@ -336,7 +336,7 @@
     "stars": 1800,
     "why": "Flowbite components for React + Tailwind",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Fluent UI",
@@ -353,7 +353,7 @@
     "stars": 18000,
     "why": "Microsoft Fluent React design system",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Geist UI",
@@ -370,7 +370,7 @@
     "stars": 4200,
     "why": "Vercel-inspired React design system",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Gestalt",
@@ -387,7 +387,7 @@
     "stars": 4200,
     "why": "Pinterest React design language",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "gluestack-ui",
@@ -407,7 +407,7 @@
     "stars": 5021,
     "why": "Universal copy-paste React/RN Tailwind components",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Grommet",
@@ -424,7 +424,7 @@
     "stars": 8300,
     "why": "Accessible modular React UI framework",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "HeroUI (ex-NextUI)",
@@ -533,7 +533,7 @@
     "stars": 98991,
     "why": "Mature Material Design React system with optional MUI X paid layers",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Native Bloom",
@@ -569,7 +569,7 @@
     "stars": 20000,
     "why": "Cross-platform component library (gluestack lineage)",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "NextUI (legacy archive)",
@@ -587,7 +587,7 @@
     "stars": 20000,
     "why": "Predecessor brand of HeroUI; still referenced",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "OpenDesign",
@@ -603,7 +603,7 @@
     ],
     "kind": "ui-library",
     "stars": null,
-    "why": "Open-source vibe design workspace & Claude Design alternative \u2014 build prototypes, landing pages, dashboards, slides & HT",
+    "why": "Open-source vibe design workspace & Claude Design alternative — build prototypes, landing pages, dashboards, slides & HT",
     "source": "existing-uixo",
     "already_in_candidates": true
   },
@@ -639,7 +639,7 @@
     "stars": 1400,
     "why": "Kiwi.com Orbit React design system",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Park UI",
@@ -658,7 +658,7 @@
     "stars": 2345,
     "why": "Ark + Panda CSS multi-framework styled components",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Pivotal UI",
@@ -675,7 +675,7 @@
     "stars": 640,
     "why": "Pivotal design system React",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Primer React",
@@ -692,7 +692,7 @@
     "stars": 3000,
     "why": "GitHub Primer design system for React",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "PrimeReact",
@@ -710,7 +710,7 @@
     "stars": 7000,
     "why": "Large complete React UI suite with themes",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Radix Themes",
@@ -728,7 +728,7 @@
     "stars": 5000,
     "why": "Pre-styled Radix design system",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React Admin",
@@ -747,7 +747,7 @@
     "stars": 25000,
     "why": "BaaS-style admin framework on React",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React Bootstrap",
@@ -765,7 +765,7 @@
     "stars": 22000,
     "why": "Bootstrap components as React",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React Bulma Components",
@@ -783,7 +783,7 @@
     "stars": 1200,
     "why": "React components for Bulma",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React Foundation",
@@ -801,7 +801,7 @@
     "stars": 600,
     "why": "Foundation as React components",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React Native Paper",
@@ -819,7 +819,7 @@
     "stars": 12000,
     "why": "Material Design for React Native",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React Suite",
@@ -836,7 +836,7 @@
     "stars": 8200,
     "why": "Suite of enterprise React components",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Reactstrap",
@@ -854,7 +854,7 @@
     "stars": 11000,
     "why": "Simple React Bootstrap 5 components",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Reshaped",
@@ -889,7 +889,7 @@
     "stars": 3000,
     "why": "Shopify type-enforced style system for RN",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Ring UI",
@@ -906,7 +906,7 @@
     "stars": 3600,
     "why": "JetBrains Web UI React components",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Rive",
@@ -957,7 +957,7 @@
     "stars": 13000,
     "why": "Official Semantic-UI React integration",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Semi Design",
@@ -974,7 +974,7 @@
     "stars": 8000,
     "why": "ByteDance modern comprehensive React design system",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Shards React",
@@ -992,7 +992,7 @@
     "stars": 760,
     "why": "Shards React design system",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Shards UI",
@@ -1010,7 +1010,7 @@
     "stars": null,
     "why": "Modern React design system (classic Shards)",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Shineout",
@@ -1027,7 +1027,7 @@
     "stars": 910,
     "why": "React component library from Shein",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Shopify Polaris",
@@ -1044,7 +1044,7 @@
     "stars": 5700,
     "why": "Shopify admin React design system",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Supabase UI (legacy)",
@@ -1061,7 +1061,7 @@
     "stars": 1500,
     "why": "Legacy Supabase React UI (archived reference)",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Tabler React",
@@ -1080,7 +1080,7 @@
     "stars": 2300,
     "why": "React bindings for Tabler dashboard UI",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Tamagui",
@@ -1098,7 +1098,7 @@
     "stars": 12000,
     "why": "Universal style system + UI kit for React/RN",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Theme UI",
@@ -1116,7 +1116,7 @@
     "stars": 5200,
     "why": "Constraint-based themeable React styling + components",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Tremor",
@@ -1153,7 +1153,7 @@
     "stars": 64,
     "why": "Typed Bulma React components",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Untitled UI React",
@@ -1172,7 +1172,7 @@
     "stars": null,
     "why": "Figma-matched React library with free tier",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Ariakit",
@@ -1189,7 +1189,7 @@
     "stars": 7700,
     "why": "Accessible headless React toolkit (ex-Reakit)",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Ark UI",
@@ -1210,7 +1210,7 @@
     "stars": 4000,
     "why": "Headless multi-framework UI on Zag state machines",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Base UI",
@@ -1246,7 +1246,7 @@
     "stars": 25000,
     "why": "Tailwind Labs unstyled accessible components",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React Aria Components",
@@ -1282,7 +1282,7 @@
     "stars": 24000,
     "why": "Headless data table/grid for React",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "cmdk",
@@ -1299,7 +1299,7 @@
     "stars": 10000,
     "why": "Fast command menu React component",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "CVA (class-variance-authority)",
@@ -1317,7 +1317,7 @@
     "stars": 5000,
     "why": "Component variant API used across shadcn ecosystem",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Downshift",
@@ -1334,7 +1334,7 @@
     "stars": 12000,
     "why": "WAI-ARIA combobox/select primitives",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Floating UI React",
@@ -1351,7 +1351,7 @@
     "stars": 30000,
     "why": "Positioning library for tooltips/popovers",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Panda CSS",
@@ -1369,7 +1369,7 @@
     "stars": 5000,
     "why": "CSS-in-JS build-time engine used by Park UI",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Radix Primitives",
@@ -1386,7 +1386,7 @@
     "stars": 15000,
     "why": "Unstyled accessible primitives powering shadcn",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Reach UI",
@@ -1403,7 +1403,7 @@
     "stars": 6000,
     "why": "Accessible React component foundation (archived legacy)",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React UseGesture",
@@ -1420,7 +1420,7 @@
     "stars": 8000,
     "why": "Gesture hooks for React",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Rebass",
@@ -1438,7 +1438,7 @@
     "stars": 7900,
     "why": "Primitive React UI components (legacy but influential)",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "tailwind-variants",
@@ -1456,7 +1456,7 @@
     "stars": 2000,
     "why": "TV helper for Tailwind component variants",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Vaul",
@@ -1474,7 +1474,7 @@
     "stars": 5000,
     "why": "Drawer component for React (shadcn drawer)",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "visx",
@@ -1492,7 +1492,7 @@
     "stars": 19000,
     "why": "Airbnb low-level React visualization primitives",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Zag.js",
@@ -1510,7 +1510,7 @@
     "stars": 4000,
     "why": "UI state machines underpinning Ark/Chakra",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "21st.dev",
@@ -1585,7 +1585,7 @@
     "stars": null,
     "why": "Curated index of shadcn registries and resources",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "coss UI",
@@ -1699,7 +1699,7 @@
     "stars": null,
     "why": "Obra community edition shadcn UI kit",
     "source": "x",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Origin UI",
@@ -1736,7 +1736,7 @@
     "stars": null,
     "why": "Explorer indexing ~79 registries / 27k components",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "ReUI",
@@ -1789,7 +1789,7 @@
     ],
     "kind": "shadcn-registry",
     "stars": null,
-    "why": "Agent-first linter for Tailwind design systems \u2014 verify component/theme rules",
+    "why": "Agent-first linter for Tailwind design systems — verify component/theme rules",
     "source": "existing-uixo",
     "already_in_candidates": true
   },
@@ -1888,7 +1888,7 @@
     "stars": 7,
     "why": "Daily-updated directory of 500+ GitHub shadcn registries",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "UIable",
@@ -2069,7 +2069,7 @@
     "stars": 8000,
     "why": "Zero-config animation for React lists",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "BadtzUI",
@@ -2145,7 +2145,7 @@
     "stars": 495,
     "why": "Animation-rich Radix/shadcn component blocks",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Great UI",
@@ -2345,7 +2345,7 @@
     "stars": 2000,
     "why": "Animated number component for React",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Oil Motion",
@@ -2454,7 +2454,7 @@
     "stars": 28000,
     "why": "Spring-physics React animation library",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Transitions.dev",
@@ -2490,7 +2490,7 @@
     "stars": 12000,
     "why": "Enterprise data grid (community MIT core)",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "AICSS",
@@ -2523,7 +2523,7 @@
     ],
     "kind": "component-pack",
     "stars": null,
-    "why": "Copy-paste animated activity orbs for agent UIs \u2014 discrete DOM/CSS indicators without blocking the thread",
+    "why": "Copy-paste animated activity orbs for agent UIs — discrete DOM/CSS indicators without blocking the thread",
     "source": "existing-uixo",
     "already_in_candidates": true
   },
@@ -2557,7 +2557,7 @@
     ],
     "kind": "component-pack",
     "stars": null,
-    "why": "Animated border beam React component on Libraries.dev \u2014 Red paste add.",
+    "why": "Animated border beam React component on Libraries.dev — Red paste add.",
     "source": "existing-uixo",
     "already_in_candidates": true
   },
@@ -2714,7 +2714,7 @@
     ],
     "kind": "component-pack",
     "stars": null,
-    "why": "90 pure-CSS text animations (gradient, glitch, typewriter, neon) \u2014 click to copy, no JS",
+    "why": "90 pure-CSS text animations (gradient, glitch, typewriter, neon) — click to copy, no JS",
     "source": "existing-uixo",
     "already_in_candidates": true
   },
@@ -2785,7 +2785,7 @@
     "stars": 5000,
     "why": "Carousel library with React wrapper",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Empty States",
@@ -2800,7 +2800,7 @@
     ],
     "kind": "component-pack",
     "stars": null,
-    "why": "25 animated empty-state blocks for React \u2014 Spectrum UI + shadcn/Motion, one CLI command",
+    "why": "25 animated empty-state blocks for React — Spectrum UI + shadcn/Motion, one CLI command",
     "source": "existing-uixo",
     "already_in_candidates": true
   },
@@ -2855,7 +2855,7 @@
     "stars": 3500,
     "why": "High-performance canvas React data grid",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Gradient Buttons",
@@ -2870,7 +2870,7 @@
     ],
     "kind": "component-pack",
     "stars": null,
-    "why": "Hundreds of CSS gradient buttons \u2014 one-click copy to clipboard",
+    "why": "Hundreds of CSS gradient buttons — one-click copy to clipboard",
     "source": "existing-uixo",
     "already_in_candidates": true
   },
@@ -2957,7 +2957,7 @@
     ],
     "kind": "component-pack",
     "stars": null,
-    "why": "Thought-orb loading indicators for AI interfaces \u2014 npm thinking-orbs",
+    "why": "Thought-orb loading indicators for AI interfaces — npm thinking-orbs",
     "source": "existing-uixo",
     "already_in_candidates": true
   },
@@ -2991,7 +2991,7 @@
     ],
     "kind": "component-pack",
     "stars": null,
-    "why": "Generate SwiftUI Metal shaders (progress bars etc.) via sliders \u2014 real .metal out",
+    "why": "Generate SwiftUI Metal shaders (progress bars etc.) via sliders — real .metal out",
     "source": "existing-uixo",
     "already_in_candidates": true
   },
@@ -3029,7 +3029,7 @@
     "stars": 3900,
     "why": "MUI data grid with free community tier",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Nivo",
@@ -3047,7 +3047,7 @@
     "stars": 13000,
     "why": "Rich React dataviz components",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "ObsidianUI",
@@ -3133,7 +3133,7 @@
     "stars": 6700,
     "why": "Feature-rich React data grid",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React DatePicker",
@@ -3150,7 +3150,7 @@
     "stars": 7900,
     "why": "Reusable React datepicker",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React Day Picker",
@@ -3167,7 +3167,7 @@
     "stars": 6000,
     "why": "Flexible date picker for React",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React Flow",
@@ -3185,7 +3185,7 @@
     "stars": 25000,
     "why": "Node-based diagrams and flow UIs",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React Hot Toast",
@@ -3202,7 +3202,7 @@
     "stars": 9300,
     "why": "Minimal React toast notifications",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React Select",
@@ -3219,7 +3219,7 @@
     "stars": 27000,
     "why": "Flexible select input for React",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React Toastify",
@@ -3236,7 +3236,7 @@
     "stars": 12000,
     "why": "Popular React notification system",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Reacticx",
@@ -3271,7 +3271,7 @@
     "stars": 23000,
     "why": "Composable React chart library",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Rubik (Sachi)",
@@ -3374,7 +3374,7 @@
     "stars": 9000,
     "why": "Opinionated toast component used with shadcn",
     "source": "web",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Spectrum Charts",
@@ -3461,7 +3461,7 @@
     "stars": null,
     "why": "3D React UI components",
     "source": "existing-uixo",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Three UI",
@@ -3634,7 +3634,7 @@
     "stars": 11000,
     "why": "Composable React data viz",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "WandPress",
@@ -4069,7 +4069,7 @@
     "stars": 15000,
     "why": "Fork of Feather; first-class React icon package",
     "source": "existing-uixo",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Morphicons",
@@ -4158,7 +4158,7 @@
     ],
     "kind": "icons-react",
     "stars": 2000,
-    "why": "Crisp 15\u00d715 icons for Radix/React",
+    "why": "Crisp 15×15 icons for Radix/React",
     "source": "existing-uixo",
     "already_in_candidates": true
   },
@@ -4179,7 +4179,7 @@
     "stars": null,
     "why": "Official Font Awesome React components",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "React Icons",
@@ -4197,7 +4197,7 @@
     "stars": 11000,
     "why": "Popular icons pack as React components",
     "source": "awesome",
-    "already_in_candidates": false
+    "already_in_candidates": true
   },
   {
     "name": "Remix Icon",

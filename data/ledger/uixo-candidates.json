@@ -1,26 +1,26 @@
 {
   "updated": "2026-09-20",
-  "updated_note": "Red paste 30-site list + 4 X posts (VullnetAdemaj, neropursue, cabralorenzo, Abmankendrick) — +7 NEW",
+  "updated_note": "OSS React UI libraries census ingest — +92 NEW (1 URL-deduped)",
   "counts_by_category": {
     "Inspiration": 117,
-    "Components": 66,
-    "Templates": 50,
-    "UI libraries": 50,
-    "Icons": 40,
+    "Components": 90,
+    "UI libraries": 116,
     "Marketplace": 24,
     "Backgrounds": 15,
-    "Illustrations": 13,
     "Fonts": 12,
+    "Icons": 42,
+    "Illustrations": 13,
+    "Templates": 50,
     "Mockups": 10
   },
   "totals": {
-    "candidates": 397,
-    "needs_review": 319,
-    "new_this_run": 7,
-    "already_present": 25,
+    "candidates": 489,
+    "needs_review": 411,
+    "new_this_run": 92,
+    "already_present": 1,
     "skipped_dupes_existing_site": 0,
-    "image_captured": 387,
-    "image_og_captured": 9,
+    "image_captured": 450,
+    "image_og_captured": 38,
     "image_blocked": 1,
     "image_pending": 0
   },
@@ -207,6 +207,11 @@
       "url": "https://uiable.com",
       "reason": "already candidate (uiable)",
       "ingest_batch": "codestirring-steal-taste-sep19"
+    },
+    {
+      "title": "Lucide React",
+      "url": "https://lucide.dev",
+      "reason": "already live (lucide)"
     }
   ],
   "skipped_other": [
@@ -10927,13 +10932,2548 @@
       ],
       "addedOrder": 407,
       "image_method": "screenshot"
+    },
+    {
+      "id": "alignui",
+      "name": "AlignUI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "alignui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://alignui.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Dashboard UI matched to Figma kit",
+      "addedOrder": 408,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "ant-design-mobile",
+      "name": "Ant Design Mobile",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "ant-design",
+      "formats": [
+        "React"
+      ],
+      "url": "https://mobile.ant.design",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Mobile-first Ant Design React blocks",
+      "addedOrder": 409,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/ant-design/ant-design-mobile",
+      "license": "MIT",
+      "stars": 11000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "atomize",
+      "name": "Atomize",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "styled-components"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "proksh",
+      "formats": [
+        "React"
+      ],
+      "url": "https://atomizecode.com",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Design system on styled-components",
+      "addedOrder": 410,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/proksh/atomize",
+      "license": "MIT",
+      "stars": 1700,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fatomizecode.com%2Flaunch.png"
+    },
+    {
+      "id": "base-web",
+      "name": "Base Web (Uber)",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Styletron"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "uber",
+      "formats": [
+        "React"
+      ],
+      "url": "https://baseweb.design",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Uber Base design language React library",
+      "addedOrder": 411,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/uber/baseweb",
+      "license": "MIT",
+      "stars": 8600,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "blueprint",
+      "name": "Blueprint",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "palantir",
+      "formats": [
+        "React"
+      ],
+      "url": "https://blueprintjs.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Palantir desktop-oriented React toolkit",
+      "addedOrder": 412,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/palantir/blueprint",
+      "license": "Apache-2.0",
+      "stars": 20000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "bumbag-ui",
+      "name": "Bumbag UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "jxom",
+      "formats": [
+        "React"
+      ],
+      "url": "https://bumbag.style",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Themeable React UI (legacy)",
+      "addedOrder": 413,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/jxom/bumbag-ui",
+      "license": "MIT",
+      "stars": 1000,
+      "image_method": "screenshot-github"
+    },
+    {
+      "id": "chakra-ui",
+      "name": "Chakra UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Emotion",
+        "Ark"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "chakra-ui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://chakra-ui.com",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Accessible modular React component system",
+      "addedOrder": 414,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/chakra-ui/chakra-ui",
+      "license": "MIT",
+      "stars": 40615,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fnext.chakra-ui.com%2Fog-image"
+    },
+    {
+      "id": "chatui",
+      "name": "ChatUI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "alibaba",
+      "formats": [
+        "React"
+      ],
+      "url": "https://chatui.io",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Alibaba conversational UI React library",
+      "addedOrder": 415,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/alibaba/ChatUI",
+      "license": "MIT",
+      "stars": 2500,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "coreui-react",
+      "name": "CoreUI React",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Bootstrap"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "coreui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://coreui.io/react",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "CoreUI React admin components",
+      "addedOrder": 416,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/coreui/coreui-react",
+      "license": "MIT",
+      "stars": 650,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "create-ui",
+      "name": "Create UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Figma"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "createui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://createui.co",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Figma-synced React design system free to start",
+      "addedOrder": 417,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "dripsy",
+      "name": "Dripsy",
+      "category": "UI libraries",
+      "subcategory": "React Native",
+      "tags": [
+        "React Native",
+        "Theme UI"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "nandorojo",
+      "formats": [
+        "React",
+        "React Native"
+      ],
+      "url": "https://www.dripsy.xyz",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Responsive Theme UI for React Native",
+      "addedOrder": 418,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/nandorojo/dripsy",
+      "license": "MIT",
+      "stars": 2000,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fdripsy.xyz%2Fog.png"
+    },
+    {
+      "id": "elastic-ui",
+      "name": "Elastic UI (EUI)",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "elastic",
+      "formats": [
+        "React"
+      ],
+      "url": "https://eui.elastic.co",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Elastic UI Framework for React",
+      "addedOrder": 419,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/elastic/eui",
+      "license": "other",
+      "stars": 6000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "evergreen",
+      "name": "Evergreen",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "segmentio",
+      "formats": [
+        "React"
+      ],
+      "url": "https://evergreen.segment.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Segment Evergreen React UI framework",
+      "addedOrder": 420,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/segmentio/evergreen",
+      "license": "MIT",
+      "stars": 12000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "flowbite-react",
+      "name": "Flowbite React",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Tailwind",
+        "Flowbite"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "themesberg",
+      "formats": [
+        "React"
+      ],
+      "url": "https://flowbite-react.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Flowbite components for React + Tailwind",
+      "addedOrder": 421,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/themesberg/flowbite-react",
+      "license": "MIT",
+      "stars": 1800,
+      "image_method": "screenshot-alt:https://flowbite.com/docs/getting-started/react/"
+    },
+    {
+      "id": "fluent-ui",
+      "name": "Fluent UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "microsoft",
+      "formats": [
+        "React"
+      ],
+      "url": "https://react.fluentui.dev",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Microsoft Fluent React design system",
+      "addedOrder": 422,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/microsoft/fluentui",
+      "license": "MIT",
+      "stars": 18000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "geist-ui",
+      "name": "Geist UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "geist-org",
+      "formats": [
+        "React"
+      ],
+      "url": "https://geist-ui.dev",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Vercel-inspired React design system",
+      "addedOrder": 423,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/geist-org/geist-ui",
+      "license": "MIT",
+      "stars": 4200,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "gestalt",
+      "name": "Gestalt",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "pinterest",
+      "formats": [
+        "React"
+      ],
+      "url": "https://gestalt.pinterest.systems",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Pinterest React design language",
+      "addedOrder": 424,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/pinterest/gestalt",
+      "license": "Apache-2.0",
+      "stars": 4200,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "gluestack-ui",
+      "name": "gluestack-ui",
+      "category": "UI libraries",
+      "subcategory": "React Native",
+      "tags": [
+        "React Native",
+        "NativeWind",
+        "Tailwind"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "gluestack",
+      "formats": [
+        "React",
+        "React Native"
+      ],
+      "url": "https://gluestack.io",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Universal copy-paste React/RN Tailwind components",
+      "addedOrder": 425,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/gluestack/gluestack-ui",
+      "license": "MIT",
+      "stars": 5021,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fgluestack.io%2Fimages%2Fog-im"
+    },
+    {
+      "id": "grommet",
+      "name": "Grommet",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "grommet",
+      "formats": [
+        "React"
+      ],
+      "url": "https://v2.grommet.io",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Accessible modular React UI framework",
+      "addedOrder": 426,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/grommet/grommet",
+      "license": "Apache-2.0",
+      "stars": 8300,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "material-ui",
+      "name": "Material UI (MUI)",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Emotion",
+        "Material Design"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "mui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://mui.com/material-ui/",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Mature Material Design React system with optional MUI X paid layers",
+      "addedOrder": 427,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/mui/material-ui",
+      "license": "MIT",
+      "stars": 98991,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "nativebase",
+      "name": "NativeBase",
+      "category": "UI libraries",
+      "subcategory": "React Native",
+      "tags": [
+        "React Native"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "GeekyAnts",
+      "formats": [
+        "React",
+        "React Native"
+      ],
+      "url": "https://nativebase.io",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Cross-platform component library (gluestack lineage)",
+      "addedOrder": 428,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/GeekyAnts/NativeBase",
+      "license": "MIT",
+      "stars": 20000,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fnativebase.io%2Fimg%2Fnativeb"
+    },
+    {
+      "id": "nextui",
+      "name": "NextUI (legacy archive)",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Tailwind"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "nextui-org",
+      "formats": [
+        "React"
+      ],
+      "url": "https://nextui.org",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Predecessor brand of HeroUI; still referenced",
+      "addedOrder": 429,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/nextui-org/nextui",
+      "license": "MIT",
+      "stars": 20000,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fheroui.com%2Fimages%2Ftwitter"
+    },
+    {
+      "id": "orbit",
+      "name": "Orbit",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "kiwicom",
+      "formats": [
+        "React"
+      ],
+      "url": "https://orbit.kiwi",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Kiwi.com Orbit React design system",
+      "addedOrder": 430,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/kiwicom/orbit",
+      "license": "MIT",
+      "stars": 1400,
+      "image_method": "thumio"
+    },
+    {
+      "id": "park-ui",
+      "name": "Park UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Ark",
+        "Panda CSS"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "chakra-ui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://park-ui.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Ark + Panda CSS multi-framework styled components",
+      "addedOrder": 431,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/chakra-ui/park-ui",
+      "license": "MIT",
+      "stars": 2345,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "pivotal-ui",
+      "name": "Pivotal UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "pivotal-cf",
+      "formats": [
+        "React"
+      ],
+      "url": "https://styleguide.pivotal.io",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Pivotal design system React",
+      "addedOrder": 432,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/pivotal-cf/pivotal-ui",
+      "license": "MIT",
+      "stars": 640,
+      "image_method": "thumio"
+    },
+    {
+      "id": "primer-react",
+      "name": "Primer React",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "primer",
+      "formats": [
+        "React"
+      ],
+      "url": "https://primer.style/react",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "GitHub Primer design system for React",
+      "addedOrder": 433,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/primer/react",
+      "license": "MIT",
+      "stars": 3000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "primereact",
+      "name": "PrimeReact",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "primefaces",
+      "formats": [
+        "React"
+      ],
+      "url": "https://primereact.org",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Large complete React UI suite with themes",
+      "addedOrder": 434,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/primefaces/primereact",
+      "license": "MIT",
+      "stars": 7000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "radix-themes",
+      "name": "Radix Themes",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Radix"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "radix-ui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://www.radix-ui.com/themes",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Pre-styled Radix design system",
+      "addedOrder": 435,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/radix-ui/themes",
+      "license": "MIT",
+      "stars": 5000,
+      "image_method": "thumio"
+    },
+    {
+      "id": "react-admin",
+      "name": "React Admin",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "MUI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "marmelab",
+      "formats": [
+        "React"
+      ],
+      "url": "https://marmelab.com/react-admin",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "BaaS-style admin framework on React",
+      "addedOrder": 436,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/marmelab/react-admin",
+      "license": "MIT",
+      "stars": 25000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "react-bootstrap",
+      "name": "React Bootstrap",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Bootstrap"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "react-bootstrap",
+      "formats": [
+        "React"
+      ],
+      "url": "https://react-bootstrap.github.io",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Bootstrap components as React",
+      "addedOrder": 437,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/react-bootstrap/react-bootstrap",
+      "license": "MIT",
+      "stars": 22000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "react-bulma",
+      "name": "React Bulma Components",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Bulma"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "couds",
+      "formats": [
+        "React"
+      ],
+      "url": "https://github.com/couds/react-bulma-components",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "React components for Bulma",
+      "addedOrder": 438,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/couds/react-bulma-components",
+      "license": "MIT",
+      "stars": 1200,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "react-foundation",
+      "name": "React Foundation",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Foundation"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "digiaonline",
+      "formats": [
+        "React"
+      ],
+      "url": "https://react.foundation",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Foundation as React components",
+      "addedOrder": 439,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/digiaonline/react-foundation",
+      "license": "MIT",
+      "stars": 600,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Freact.foundation%2Fopengraph-"
+    },
+    {
+      "id": "react-native-paper",
+      "name": "React Native Paper",
+      "category": "UI libraries",
+      "subcategory": "React Native",
+      "tags": [
+        "React Native",
+        "Material"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "callstack",
+      "formats": [
+        "React",
+        "React Native"
+      ],
+      "url": "https://reactnativepaper.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Material Design for React Native",
+      "addedOrder": 440,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/callstack/react-native-paper",
+      "license": "MIT",
+      "stars": 12000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "react-suite",
+      "name": "React Suite",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "rsuite",
+      "formats": [
+        "React"
+      ],
+      "url": "https://rsuitejs.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Suite of enterprise React components",
+      "addedOrder": 441,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/rsuite/rsuite",
+      "license": "MIT",
+      "stars": 8200,
+      "image_method": "screenshot-github"
+    },
+    {
+      "id": "reactstrap",
+      "name": "Reactstrap",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Bootstrap"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "reactstrap",
+      "formats": [
+        "React"
+      ],
+      "url": "https://reactstrap.github.io",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Simple React Bootstrap 5 components",
+      "addedOrder": 442,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/reactstrap/reactstrap",
+      "license": "MIT",
+      "stars": 11000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "restyle",
+      "name": "Restyle",
+      "category": "UI libraries",
+      "subcategory": "React Native",
+      "tags": [
+        "React Native"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Shopify",
+      "formats": [
+        "React",
+        "React Native"
+      ],
+      "url": "https://github.com/Shopify/restyle",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Shopify type-enforced style system for RN",
+      "addedOrder": 443,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/Shopify/restyle",
+      "license": "MIT",
+      "stars": 3000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "ring-ui",
+      "name": "Ring UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "JetBrains",
+      "formats": [
+        "React"
+      ],
+      "url": "https://jetbrains.github.io/ring-ui",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "JetBrains Web UI React components",
+      "addedOrder": 444,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/JetBrains/ring-ui",
+      "license": "Apache-2.0",
+      "stars": 3600,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "semantic-ui-react",
+      "name": "Semantic UI React",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "Semantic-Org",
+      "formats": [
+        "React"
+      ],
+      "url": "https://react.semantic-ui.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Official Semantic-UI React integration",
+      "addedOrder": 445,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/Semantic-Org/Semantic-UI-React",
+      "license": "MIT",
+      "stars": 13000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "semi-design",
+      "name": "Semi Design",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "DouyinFE",
+      "formats": [
+        "React"
+      ],
+      "url": "https://semi.design",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "ByteDance modern comprehensive React design system",
+      "addedOrder": 446,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/DouyinFE/semi-design",
+      "license": "MIT",
+      "stars": 8000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "shards-react",
+      "name": "Shards React",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Bootstrap"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "DesignRevision",
+      "formats": [
+        "React"
+      ],
+      "url": "https://designrevision.com/docs/shards-react",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Shards React design system",
+      "addedOrder": 447,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/DesignRevision/shards-react",
+      "license": "MIT",
+      "stars": 760,
+      "image_method": "screenshot-github"
+    },
+    {
+      "id": "shards-ui",
+      "name": "Shards UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Bootstrap"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "designrevision",
+      "formats": [
+        "React"
+      ],
+      "url": "https://designrevision.com/downloads/shards",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Modern React design system (classic Shards)",
+      "addedOrder": 448,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "shineout",
+      "name": "Shineout",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "sheinsight",
+      "formats": [
+        "React"
+      ],
+      "url": "https://shine.wiki",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "React component library from Shein",
+      "addedOrder": 449,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/sheinsight/shineout",
+      "license": "MIT",
+      "stars": 910,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "polaris",
+      "name": "Shopify Polaris",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "Shopify",
+      "formats": [
+        "React"
+      ],
+      "url": "https://polaris.shopify.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Shopify admin React design system",
+      "addedOrder": 450,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/Shopify/polaris",
+      "license": "MIT",
+      "stars": 5700,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "supabase-ui",
+      "name": "Supabase UI (legacy)",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "supabase",
+      "formats": [
+        "React"
+      ],
+      "url": "https://ui.supabase.com",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Legacy Supabase React UI (archived reference)",
+      "addedOrder": 451,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/supabase/ui",
+      "license": "MIT",
+      "stars": 1500,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fsupabase.com%2Flibrary%2Fimg%"
+    },
+    {
+      "id": "tabler-react",
+      "name": "Tabler React",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Bootstrap",
+        "Tabler"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "tabler",
+      "formats": [
+        "React"
+      ],
+      "url": "https://github.com/tabler/tabler-react",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "React bindings for Tabler dashboard UI",
+      "addedOrder": 452,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/tabler/tabler-react",
+      "license": "MIT",
+      "stars": 2300,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "tamagui",
+      "name": "Tamagui",
+      "category": "UI libraries",
+      "subcategory": "React Native",
+      "tags": [
+        "React Native"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "tamagui",
+      "formats": [
+        "React",
+        "React Native"
+      ],
+      "url": "https://tamagui.dev",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Universal style system + UI kit for React/RN",
+      "addedOrder": 453,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/tamagui/tamagui",
+      "license": "MIT",
+      "stars": 12000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "theme-ui",
+      "name": "Theme UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Emotion"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "system-ui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://theme-ui.com",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Constraint-based themeable React styling + components",
+      "addedOrder": 454,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/system-ui/theme-ui",
+      "license": "MIT",
+      "stars": 5200,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Ftheme-ui.com%2Fcard.png"
+    },
+    {
+      "id": "trunx",
+      "name": "Trunx",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Bulma"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "fibo",
+      "formats": [
+        "React"
+      ],
+      "url": "https://github.com/fibo/trunx",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Typed Bulma React components",
+      "addedOrder": 455,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "repo": "https://github.com/fibo/trunx",
+      "license": "MIT",
+      "stars": 64,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "untitled-ui-react",
+      "name": "Untitled UI React",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Tailwind"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "untitledui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://www.untitledui.com/react",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Figma-matched React library with free tier",
+      "addedOrder": 456,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "ui-library",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "ariakit",
+      "name": "Ariakit",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Headless"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "ariakit",
+      "formats": [
+        "React"
+      ],
+      "url": "https://ariakit.org",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Accessible headless React toolkit (ex-Reakit)",
+      "addedOrder": 457,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "headless",
+      "repo": "https://github.com/ariakit/ariakit",
+      "license": "MIT",
+      "stars": 7700,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fariakit.com%2Fthumbnail.png"
+    },
+    {
+      "id": "ark-ui",
+      "name": "Ark UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Solid",
+        "Vue",
+        "Svelte",
+        "Zag",
+        "Headless"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "chakra-ui",
+      "formats": [
+        "React",
+        "Solid",
+        "Vue",
+        "Svelte"
+      ],
+      "url": "https://ark-ui.com",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Headless multi-framework UI on Zag state machines",
+      "addedOrder": 458,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "headless",
+      "repo": "https://github.com/chakra-ui/ark",
+      "license": "MIT",
+      "stars": 4000,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fark-ui.com%2Fog-image.png"
+    },
+    {
+      "id": "headless-ui",
+      "name": "Headless UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Vue",
+        "Tailwind",
+        "Headless"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "tailwindlabs",
+      "formats": [
+        "React",
+        "Vue"
+      ],
+      "url": "https://headlessui.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Tailwind Labs unstyled accessible components",
+      "addedOrder": 459,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "headless",
+      "repo": "https://github.com/tailwindlabs/headlessui",
+      "license": "MIT",
+      "stars": 25000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "tanstack-table",
+      "name": "TanStack Table",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Headless"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "TanStack",
+      "formats": [
+        "React"
+      ],
+      "url": "https://tanstack.com/table",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Headless data table/grid for React",
+      "addedOrder": 460,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "headless",
+      "repo": "https://github.com/TanStack/table",
+      "license": "MIT",
+      "stars": 24000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "cmdk",
+      "name": "cmdk",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Primitives"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "pacocoursey",
+      "formats": [
+        "React"
+      ],
+      "url": "https://cmdk.paco.me",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Fast command menu React component",
+      "addedOrder": 461,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "primitives",
+      "repo": "https://github.com/pacocoursey/cmdk",
+      "license": "MIT",
+      "stars": 10000,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Frepository-images.githubuserc"
+    },
+    {
+      "id": "cva",
+      "name": "CVA (class-variance-authority)",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Tailwind",
+        "Primitives"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "joe-bell",
+      "formats": [
+        "React"
+      ],
+      "url": "https://cva.style",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Component variant API used across shadcn ecosystem",
+      "addedOrder": 462,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "primitives",
+      "repo": "https://github.com/joe-bell/cva",
+      "license": "Apache-2.0",
+      "stars": 5000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "downshift",
+      "name": "Downshift",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Primitives"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "downshift-js",
+      "formats": [
+        "React"
+      ],
+      "url": "https://www.downshift-js.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "WAI-ARIA combobox/select primitives",
+      "addedOrder": 463,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "primitives",
+      "repo": "https://github.com/downshift-js/downshift",
+      "license": "MIT",
+      "stars": 12000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "floating-ui",
+      "name": "Floating UI React",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Primitives"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "floating-ui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://floating-ui.com/docs/react",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Positioning library for tooltips/popovers",
+      "addedOrder": 464,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "primitives",
+      "repo": "https://github.com/floating-ui/floating-ui",
+      "license": "MIT",
+      "stars": 30000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "panda-css",
+      "name": "Panda CSS",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "CSS",
+        "Primitives"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "chakra-ui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://panda-css.com",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "CSS-in-JS build-time engine used by Park UI",
+      "addedOrder": 465,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "primitives",
+      "repo": "https://github.com/chakra-ui/panda",
+      "license": "MIT",
+      "stars": 5000,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fpanda-css.com%2Fog"
+    },
+    {
+      "id": "radix-primitives",
+      "name": "Radix Primitives",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Primitives"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "radix-ui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://www.radix-ui.com/primitives",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Unstyled accessible primitives powering shadcn",
+      "addedOrder": 466,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "primitives",
+      "repo": "https://github.com/radix-ui/primitives",
+      "license": "MIT",
+      "stars": 15000,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fradix-ui.com%2Fprimitives%2Fo"
+    },
+    {
+      "id": "reach-ui",
+      "name": "Reach UI",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Primitives"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "reach",
+      "formats": [
+        "React"
+      ],
+      "url": "https://reach.tech",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Accessible React component foundation (archived legacy)",
+      "addedOrder": 467,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "primitives",
+      "repo": "https://github.com/reach/reach-ui",
+      "license": "MIT",
+      "stars": 6000,
+      "image_method": "screenshot-alt:https://github.com/reach/reach-ui"
+    },
+    {
+      "id": "react-use-gesture",
+      "name": "React UseGesture",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Primitives"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "pmndrs",
+      "formats": [
+        "React"
+      ],
+      "url": "https://use-gesture.netlify.app",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Gesture hooks for React",
+      "addedOrder": 468,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "primitives",
+      "repo": "https://github.com/pmndrs/use-gesture",
+      "license": "MIT",
+      "stars": 8000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "rebass",
+      "name": "Rebass",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "styled-system",
+        "Primitives"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "rebassjs",
+      "formats": [
+        "React"
+      ],
+      "url": "https://rebassjs.org",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Primitive React UI components (legacy but influential)",
+      "addedOrder": 469,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "primitives",
+      "repo": "https://github.com/rebassjs/rebass",
+      "license": "MIT",
+      "stars": 7900,
+      "image_method": "screenshot-alt:https://github.com/rebassjs/rebass"
+    },
+    {
+      "id": "tailwind-variants",
+      "name": "tailwind-variants",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Tailwind",
+        "Primitives"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "nextui-org",
+      "formats": [
+        "React"
+      ],
+      "url": "https://www.tailwind-variants.org",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "TV helper for Tailwind component variants",
+      "addedOrder": 470,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "primitives",
+      "repo": "https://github.com/nextui-org/tailwind-variants",
+      "license": "MIT",
+      "stars": 2000,
+      "image_method": "screenshot-alt:https://github.com/nextui-org/tailwind-variants"
+    },
+    {
+      "id": "vaul",
+      "name": "Vaul",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Radix",
+        "Primitives"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "emilkowalski",
+      "formats": [
+        "React"
+      ],
+      "url": "https://vaul.emilkowal.ski",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Drawer component for React (shadcn drawer)",
+      "addedOrder": 471,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "primitives",
+      "repo": "https://github.com/emilkowalski/vaul",
+      "license": "MIT",
+      "stars": 5000,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fvaul.emilkowal.ski%2Fopengrap"
+    },
+    {
+      "id": "visx",
+      "name": "visx",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "D3",
+        "Primitives"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "airbnb",
+      "formats": [
+        "React"
+      ],
+      "url": "https://airbnb.io/visx",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Airbnb low-level React visualization primitives",
+      "addedOrder": 472,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "primitives",
+      "repo": "https://github.com/airbnb/visx",
+      "license": "MIT",
+      "stars": 19000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "zag",
+      "name": "Zag.js",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "Framework-agnostic",
+        "React bindings",
+        "Primitives"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "chakra-ui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://zagjs.com",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "UI state machines underpinning Ark/Chakra",
+      "addedOrder": 473,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "primitives",
+      "repo": "https://github.com/chakra-ui/zag",
+      "license": "MIT",
+      "stars": 4000,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fzagjs.com%2Fopen-graph%2Fwebs"
+    },
+    {
+      "id": "awesome-shadcn-ui",
+      "name": "awesome-shadcn-ui",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [
+        "shadcn"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "birobirobiro",
+      "formats": [
+        "React"
+      ],
+      "url": "https://github.com/birobirobiro/awesome-shadcn-ui",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Curated index of shadcn registries and resources",
+      "addedOrder": 474,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "shadcn-registry",
+      "repo": "https://github.com/birobirobiro/awesome-shadcn-ui",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "obra-shadcn",
+      "name": "Obra shadcn kit",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [
+        "shadcn"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "obra",
+      "formats": [
+        "React"
+      ],
+      "url": "https://obra.studio",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Obra community edition shadcn UI kit",
+      "addedOrder": 475,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "shadcn-registry",
+      "image_method": "screenshot-alt:https://obra.studio"
+    },
+    {
+      "id": "registry-directory",
+      "name": "registry.directory",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [
+        "shadcn"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "rbadillap",
+      "formats": [
+        "React"
+      ],
+      "url": "https://registry.directory",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Explorer indexing ~79 registries / 27k components",
+      "addedOrder": 476,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "shadcn-registry",
+      "repo": "https://github.com/rbadillap/registry.directory",
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fregistry.directory%2Fopengrap"
+    },
+    {
+      "id": "ui-registries",
+      "name": "UI Registries",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [
+        "shadcn"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "ethan-krich",
+      "formats": [
+        "React"
+      ],
+      "url": "https://ui-registries.vercel.app",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Daily-updated directory of 500+ GitHub shadcn registries",
+      "addedOrder": 477,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "shadcn-registry",
+      "repo": "https://github.com/ethan-krich/ui-registries",
+      "license": "MIT",
+      "stars": 7,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fui-registries.vercel.app%2Fop"
+    },
+    {
+      "id": "auto-animate",
+      "name": "AutoAnimate",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "Animation"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "formkit",
+      "formats": [
+        "React"
+      ],
+      "url": "https://auto-animate.formkit.com",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Zero-config animation for React lists",
+      "addedOrder": 478,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "animated",
+      "repo": "https://github.com/formkit/auto-animate",
+      "license": "MIT",
+      "stars": 8000,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fcdn.formk.it%2Fweb-assets%2Fa"
+    },
+    {
+      "id": "farm-ui",
+      "name": "Farm UI",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "Radix",
+        "shadcn",
+        "Motion",
+        "Animation"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Kinfe123",
+      "formats": [
+        "React"
+      ],
+      "url": "https://farmui.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Animation-rich Radix/shadcn component blocks",
+      "addedOrder": 479,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "animated",
+      "repo": "https://github.com/Kinfe123/farm-ui",
+      "stars": 495,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "number-flow",
+      "name": "Number Flow",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "Animation"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "barvian",
+      "formats": [
+        "React"
+      ],
+      "url": "https://number-flow.barvian.me",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Animated number component for React",
+      "addedOrder": 480,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "animated",
+      "repo": "https://github.com/barvian/number-flow",
+      "license": "MIT",
+      "stars": 2000,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fnumber-flow.barvian.me%2F_ast"
+    },
+    {
+      "id": "react-spring",
+      "name": "React Spring",
+      "category": "Components",
+      "subcategory": "Animation",
+      "tags": [
+        "Animation"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "pmndrs",
+      "formats": [
+        "React"
+      ],
+      "url": "https://www.react-spring.dev",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Spring-physics React animation library",
+      "addedOrder": 481,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "animated",
+      "repo": "https://github.com/pmndrs/react-spring",
+      "license": "MIT",
+      "stars": 28000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "ag-grid",
+      "name": "AG Grid Community",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "ag-grid",
+      "formats": [
+        "React"
+      ],
+      "url": "https://www.ag-grid.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Enterprise data grid (community MIT core)",
+      "addedOrder": 482,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/ag-grid/ag-grid",
+      "license": "MIT",
+      "stars": 12000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "embla-carousel",
+      "name": "Embla Carousel React",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "davidcetinkaya",
+      "formats": [
+        "React"
+      ],
+      "url": "https://www.embla-carousel.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Carousel library with React wrapper",
+      "addedOrder": 483,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/davidcetinkaya/embla-carousel",
+      "license": "MIT",
+      "stars": 5000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "glide-data-grid",
+      "name": "Glide Data Grid",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "glideapps",
+      "formats": [
+        "React"
+      ],
+      "url": "https://grid.glideapps.com",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "High-performance canvas React data grid",
+      "addedOrder": 484,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/glideapps/glide-data-grid",
+      "license": "MIT",
+      "stars": 3500,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fgrid.glideapps.com%2Fglide-da"
+    },
+    {
+      "id": "mui-x-data-grid",
+      "name": "MUI X Data Grid (community)",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [
+        "MUI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "mui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://mui.com/x/react-data-grid/",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "MUI data grid with free community tier",
+      "addedOrder": 485,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/mui/mui-x",
+      "license": "MIT",
+      "stars": 3900,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "nivo",
+      "name": "Nivo",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [
+        "D3"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "plouc",
+      "formats": [
+        "React"
+      ],
+      "url": "https://nivo.rocks",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Rich React dataviz components",
+      "addedOrder": 486,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/plouc/nivo",
+      "license": "MIT",
+      "stars": 13000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "react-data-grid",
+      "name": "React Data Grid",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "adazzle",
+      "formats": [
+        "React"
+      ],
+      "url": "https://github.com/adazzle/react-data-grid",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Feature-rich React data grid",
+      "addedOrder": 487,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/adazzle/react-data-grid",
+      "license": "MIT",
+      "stars": 6700,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "react-datepicker",
+      "name": "React DatePicker",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "Hacker0x01",
+      "formats": [
+        "React"
+      ],
+      "url": "https://reactdatepicker.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Reusable React datepicker",
+      "addedOrder": 488,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/Hacker0x01/react-datepicker",
+      "license": "MIT",
+      "stars": 7900,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "react-day-picker",
+      "name": "React Day Picker",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "gpbl",
+      "formats": [
+        "React"
+      ],
+      "url": "https://daypicker.dev",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Flexible date picker for React",
+      "addedOrder": 489,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/gpbl/react-day-picker",
+      "license": "MIT",
+      "stars": 6000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "react-flow",
+      "name": "React Flow",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "xyflow",
+      "formats": [
+        "React"
+      ],
+      "url": "https://reactflow.dev",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Node-based diagrams and flow UIs",
+      "addedOrder": 490,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/xyflow/xyflow",
+      "license": "MIT",
+      "stars": 25000,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Freactflow.dev%2Fopengraph-ima"
+    },
+    {
+      "id": "react-hot-toast",
+      "name": "React Hot Toast",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "timolins",
+      "formats": [
+        "React"
+      ],
+      "url": "https://react-hot-toast.com",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Minimal React toast notifications",
+      "addedOrder": 491,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/timolins/react-hot-toast",
+      "license": "MIT",
+      "stars": 9300,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Freact-hot-toast.com%2Fsocial-"
+    },
+    {
+      "id": "react-select",
+      "name": "React Select",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "JedWatson",
+      "formats": [
+        "React"
+      ],
+      "url": "https://react-select.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Flexible select input for React",
+      "addedOrder": 492,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/JedWatson/react-select",
+      "license": "MIT",
+      "stars": 27000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "react-toastify",
+      "name": "React Toastify",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "fkhadra",
+      "formats": [
+        "React"
+      ],
+      "url": "https://fkhadra.github.io/react-toastify",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Popular React notification system",
+      "addedOrder": 493,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/fkhadra/react-toastify",
+      "license": "MIT",
+      "stars": 12000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "recharts",
+      "name": "Recharts",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [
+        "D3"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "recharts",
+      "formats": [
+        "React"
+      ],
+      "url": "https://recharts.org",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Composable React chart library",
+      "addedOrder": 494,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/recharts/recharts",
+      "license": "MIT",
+      "stars": 23000,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "sonner",
+      "name": "Sonner",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "emilkowalski",
+      "formats": [
+        "React"
+      ],
+      "url": "https://sonner.emilkowal.ski",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Opinionated toast component used with shadcn",
+      "addedOrder": 495,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/emilkowalski/sonner",
+      "license": "MIT",
+      "stars": 9000,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fsonner.emilkowal.ski%2Fopengr"
+    },
+    {
+      "id": "three-ui",
+      "name": "Three UI",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [
+        "Three.js"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "threeui",
+      "formats": [
+        "React"
+      ],
+      "url": "https://threeui.com",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "3D React UI components",
+      "addedOrder": 496,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fublctyddhtbgaersvxxb.supabase"
+    },
+    {
+      "id": "victory",
+      "name": "Victory",
+      "category": "Components",
+      "subcategory": "React",
+      "tags": [],
+      "access": [
+        "Free"
+      ],
+      "creator": "FormidableLabs",
+      "formats": [
+        "React"
+      ],
+      "url": "https://commerce.nearform.com/open-source/victory",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "source": "oss-census",
+      "why": "Composable React data viz",
+      "addedOrder": 497,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "component-pack",
+      "repo": "https://github.com/FormidableLabs/victory",
+      "license": "MIT",
+      "stars": 11000,
+      "image_method": "og:https://cardyb.bsky.app/v1/image?url=https%3A%2F%2Fcommerce.nearform.com%2Fopen-"
+    },
+    {
+      "id": "react-fontawesome",
+      "name": "React Font Awesome",
+      "category": "Icons",
+      "subcategory": "Vector",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "FortAwesome",
+      "formats": [
+        "React"
+      ],
+      "url": "https://fontawesome.com",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Official Font Awesome React components",
+      "addedOrder": 498,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "icons-react",
+      "repo": "https://github.com/FortAwesome/react-fontawesome",
+      "license": "other",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "react-icons",
+      "name": "React Icons",
+      "category": "Icons",
+      "subcategory": "Vector",
+      "tags": [
+        "Icons"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "react-icons",
+      "formats": [
+        "React"
+      ],
+      "url": "https://react-icons.github.io/react-icons",
+      "needs_review": true,
+      "image_status": "captured",
+      "source": "oss-census",
+      "why": "Popular icons pack as React components",
+      "addedOrder": 499,
+      "ingest_batch": "oss-react-census-2026-09-20",
+      "census_kind": "icons-react",
+      "repo": "https://github.com/react-icons/react-icons",
+      "license": "MIT",
+      "stars": 11000,
+      "image_method": "screenshot"
     }
   ],
   "image_capture": {
-    "captured": 387,
-    "og-captured": 9,
+    "captured": 450,
+    "og-captured": 38,
     "blocked": 1,
-    "pending": 0
+    "pending": 0,
+    "at": "2026-09-20T09:44:30.349Z"
   },
   "paste_ingest": {
     "added_ids": [
@@ -11359,5 +13899,122 @@
       "closeit.fast"
     ],
     "note": "Abmankendrick post had no destination URL (video-only UI Skills). designmd.ai + .me/.supply/.co already present. cabralorenzo added to watchlist discovery."
+  },
+  "oss_react_census_ingest_sep20": {
+    "date": "2026-09-20",
+    "batch": "oss-react-census-2026-09-20",
+    "new_ids": [
+      "alignui",
+      "ant-design-mobile",
+      "atomize",
+      "base-web",
+      "blueprint",
+      "bumbag-ui",
+      "chakra-ui",
+      "chatui",
+      "coreui-react",
+      "create-ui",
+      "dripsy",
+      "elastic-ui",
+      "evergreen",
+      "flowbite-react",
+      "fluent-ui",
+      "geist-ui",
+      "gestalt",
+      "gluestack-ui",
+      "grommet",
+      "material-ui",
+      "nativebase",
+      "nextui",
+      "orbit",
+      "park-ui",
+      "pivotal-ui",
+      "primer-react",
+      "primereact",
+      "radix-themes",
+      "react-admin",
+      "react-bootstrap",
+      "react-bulma",
+      "react-foundation",
+      "react-native-paper",
+      "react-suite",
+      "reactstrap",
+      "restyle",
+      "ring-ui",
+      "semantic-ui-react",
+      "semi-design",
+      "shards-react",
+      "shards-ui",
+      "shineout",
+      "polaris",
+      "supabase-ui",
+      "tabler-react",
+      "tamagui",
+      "theme-ui",
+      "trunx",
+      "untitled-ui-react",
+      "ariakit",
+      "ark-ui",
+      "headless-ui",
+      "tanstack-table",
+      "cmdk",
+      "cva",
+      "downshift",
+      "floating-ui",
+      "panda-css",
+      "radix-primitives",
+      "reach-ui",
+      "react-use-gesture",
+      "rebass",
+      "tailwind-variants",
+      "vaul",
+      "visx",
+      "zag",
+      "awesome-shadcn-ui",
+      "obra-shadcn",
+      "registry-directory",
+      "ui-registries",
+      "auto-animate",
+      "farm-ui",
+      "number-flow",
+      "react-spring",
+      "ag-grid",
+      "embla-carousel",
+      "glide-data-grid",
+      "mui-x-data-grid",
+      "nivo",
+      "react-data-grid",
+      "react-datepicker",
+      "react-day-picker",
+      "react-flow",
+      "react-hot-toast",
+      "react-select",
+      "react-toastify",
+      "recharts",
+      "sonner",
+      "three-ui",
+      "victory",
+      "react-fontawesome",
+      "react-icons"
+    ],
+    "skipped_dupes": [
+      {
+        "name": "Lucide React",
+        "url": "https://lucide.dev",
+        "reason": "url-dupe",
+        "hits": [
+          {
+            "field": "url",
+            "key": "lucide.dev",
+            "where": "live",
+            "id": "lucide",
+            "name": "Lucide"
+          }
+        ]
+      }
+    ],
+    "source_ledger": "data/ledger/oss-react-ui-libraries.json",
+    "before_total": 397,
+    "after_total": 489
   }
 }
