@@ -51,17 +51,40 @@ jobs:
           tail -n 14 test-results/intelligence/application.log
 
       - name: Build and verify registry, MCP and previews
+        id: build
         run: |
           mkdir -p test-results/intelligence
           npm run build > test-results/intelligence/build.log 2>&1 || { tail -n 150 test-results/intelligence/build.log; exit 1; }
           grep -E '# tests|# pass|# fail|Verified|prerendered' test-results/intelligence/build.log
 
+      - name: Explicit typecheck
+        run: npm run typecheck
+
       - name: Install isolated browser test tools
+        id: browser-tools
         run: |
           python -m pip install -r tests/browser/requirements.txt
           python -m playwright install --with-deps chromium
 
+      - name: Public prototype layout and interaction acceptance
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.browser-tools.outcome == 'success' }}
+        run: |
+          set -o pipefail
+          mkdir -p test-results/redesign
+          node --experimental-strip-types tools/registry-dev.ts --memory > test-results/redesign/registry.log 2>&1 &
+          REGISTRY_PID=$!
+          npm run dev > test-results/redesign/vite.log 2>&1 &
+          VITE_PID=$!
+          trap 'kill "$REGISTRY_PID" "$VITE_PID" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent 'http://localhost:4175/api/registry?action=status' > /dev/null && curl --fail --silent 'http://localhost:3000' > /dev/null; then break; fi
+            sleep 1
+          done
+          python tests/browser/redesign.py > test-results/redesign/browser.log 2>&1 || { cat test-results/redesign/browser.log; exit 1; }
+          cat test-results/redesign/browser.log
+
       - name: Browser and network acceptance with an isolated registry
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.browser-tools.outcome == 'success' }}
         run: |
           set -o pipefail
           mkdir -p test-results/intelligence
@@ -88,5 +111,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: intelligence-browser-${{ github.run_id }}
-          path: test-results/intelligence
+          path: |
+            test-results/intelligence
+            test-results/redesign
           retention-days: 7

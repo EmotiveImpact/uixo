@@ -23,11 +23,14 @@ with sync_playwright() as p:
             for view, route in [('home', '/'), ('components', '/browse/assets'), ('resources', '/browse'), ('detail', '/browse/assets?id=shadcn%2Fbutton')]:
                 page.goto(WEB + route, wait_until='domcontentloaded')
                 page.wait_for_timeout(2500)
+                page.screenshot(path=str(OUT / f'{view}-{theme}-{width}.png'), full_page=False)
                 if view in ['components', 'detail']:
                     expect(page.locator('.asset-library-card').first).to_be_visible()
                     expect(page.locator('.asset-live-viewport[data-preview-state="ready"]').first).to_be_visible(timeout=20000)
                 expect(page.locator('html')).to_have_class(theme)
-                assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), (view, width, 'page overflow')
+                geometry = page.evaluate('''() => ({width: innerWidth, scrollWidth: document.documentElement.scrollWidth, overflowing: [...document.querySelectorAll('body *')].map(el => ({tag:el.tagName, cls:typeof el.className === 'string' ? el.className : '', rect:el.getBoundingClientRect().toJSON()})).filter(x => x.rect.right > innerWidth + 1 || x.rect.left < -1).slice(0,30)})''')
+                (OUT / f'{view}-{theme}-{width}-geometry.json').write_text(json.dumps(geometry, indent=2))
+                assert geometry['scrollWidth'] <= width + 1, (view, width, geometry)
                 header = page.locator('.discovery-header').bounding_box()
                 assert header and abs(header['x']) < 1 and abs(header['width'] - width) < 1, header
                 if view == 'home':
@@ -47,9 +50,7 @@ with sync_playwright() as p:
                     expect(page.get_by_role('dialog')).to_be_visible()
                     box = page.get_by_role('dialog').bounding_box()
                     assert box and box['width'] >= width * .9, box
-                page.screenshot(path=str(OUT / f'{view}-{theme}-{width}.png'), full_page=False)
                 results.append({'view': view, 'theme': theme, 'width': width, 'headerWidth': header['width'], 'overflow': False})
-            # Desktop and mobile use the same route/filter/save state, not a disconnected demo.
             page.goto(WEB + '/browse/assets', wait_until='domcontentloaded')
             expect(page.locator('.asset-library-card').first).to_be_visible()
             page.locator('.component-category-chips').get_by_role('button', name='Forms', exact=True).click()
@@ -65,6 +66,7 @@ with sync_playwright() as p:
                 expect(page.locator('[data-mobile="true"]')).to_be_visible()
                 page.keyboard.press('Escape')
                 expect(page.locator('[data-mobile="true"]')).to_be_hidden()
+                expect(page.get_by_role('button', name='Open navigation', exact=True)).to_be_focused()
             page.goto(WEB + '/', wait_until='domcontentloaded')
             page.get_by_role('searchbox', name='Search components', exact=True).fill('button')
             page.locator('.hero-search').get_by_role('button').click()

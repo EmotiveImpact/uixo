@@ -162,7 +162,13 @@ export function CatalogueSidebar(props: AppSidebarProps) {
         )}
         <div className="filter-section filter-explore">
           <h2>Your workspace</h2>
-          <button onClick={() => props.onShowSavedAssets?.()}>
+          <button
+            onClick={() =>
+              props.onShowSavedAssets
+                ? props.onShowSavedAssets()
+                : navigateInApp('/browse/assets?view=saved')
+            }
+          >
             <Bookmark size={15} />
             <span>Saved assets</span>
             <small>{props.savedAssetCount || ''}</small>

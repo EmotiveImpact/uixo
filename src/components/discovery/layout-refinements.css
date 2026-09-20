@@ -1,0 +1,12 @@
+/* Contain the decorative orbit within its canvas, not the whole page. */
+.hero-stage {
+  overflow: clip;
+  overflow-clip-margin: 24px;
+}
+.hero-orbit {
+  inset: 45px 40px 50px 50px;
+}
+/* Preserve the real screenshot at native scale inside the small hero tile. */
+.hero-component-4 img {
+  object-fit: none;
+}

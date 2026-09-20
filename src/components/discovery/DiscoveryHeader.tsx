@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode, type RefObject } from 'react';
 import { ArrowUpRight, Bookmark, Menu, Moon, PanelLeft, Search, Sun, X } from 'lucide-react';
 import { navigateInApp } from '../../lib/navigation';
 
@@ -8,7 +8,11 @@ type Props = {
   onToggleTheme: () => void;
   account?: ReactNode;
   onSearch?: () => void;
-  sidebar?: { expanded: boolean; toggle: () => void };
+  sidebar?: {
+    expanded: boolean;
+    toggle: () => void;
+    triggerRef?: RefObject<HTMLButtonElement | null>;
+  };
   adminAction?: ReactNode;
 };
 
@@ -31,6 +35,14 @@ export function DiscoveryHeader({
   adminAction,
 }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    if (!menuOpen) return;
+    const close = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false);
+    };
+    window.addEventListener('keydown', close);
+    return () => window.removeEventListener('keydown', close);
+  }, [menuOpen]);
   const icons =
     active === 'components' &&
     new URLSearchParams(window.location.search).get('kind') === 'icon-pack';
@@ -95,6 +107,7 @@ export function DiscoveryHeader({
           {account}
           {sidebar && (
             <button
+              ref={sidebar.triggerRef}
               className="header-icon discovery-sidebar-trigger"
               aria-label="Open navigation"
               aria-expanded={sidebar.expanded}
