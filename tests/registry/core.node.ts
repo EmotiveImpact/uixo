@@ -665,3 +665,48 @@ test('Animata snapshot only publishes source-pinned components with official liv
     ),
   );
 });
+
+
+test('reviewed provider snapshots publish only truthfully previewable pinned web assets', async () => {
+  const assets = await capturedAssets();
+  const uiable = assets.filter((asset) => asset.providerId === 'uiable');
+  const flowbite = assets.filter((asset) => asset.providerId === 'flowbite-react');
+  const heroui = assets.filter((asset) => asset.providerId === 'heroui-web');
+
+  assert.equal(uiable.length, 707);
+  assert.equal(flowbite.length, 45);
+  assert.equal(heroui.length, 68);
+
+  assert.ok(
+    uiable.every(
+      (asset) =>
+        asset.preview?.kind === 'embed' &&
+        asset.preview.url.startsWith('https://uiable.com/preview/') &&
+        asset.variants[0].acquisition.kind === 'registry' &&
+        asset.variants[0].acquisition.url === `https://uiable.com/r/${asset.slug}.json` &&
+        asset.variants[0].sourceRef === '34e78586c904091059deb63412ae330b2757e923',
+    ),
+  );
+  assert.ok(
+    flowbite.every(
+      (asset) =>
+        asset.preview?.kind === 'embed' &&
+        asset.preview.url.startsWith('https://flowbite-react.com/examples/') &&
+        asset.variants[0].acquisition.kind === 'package' &&
+        asset.variants[0].acquisition.packageName === 'flowbite-react' &&
+        asset.variants[0].sourceRef === '85319bd067822f7aa9670688780aeb58cc187aa5',
+    ),
+  );
+  assert.ok(!flowbite.some((asset) => asset.slug === 'dark-theme-toggle'));
+  assert.ok(
+    heroui.every(
+      (asset) =>
+        asset.preview?.kind === 'embed' &&
+        asset.preview.url.startsWith('https://storybook-v3.heroui.com/iframe.html?id=') &&
+        asset.licence.expression === 'Apache-2.0' &&
+        asset.variants[0].acquisition.packageName === '@heroui/react' &&
+        asset.variants[0].sourceRef === 'ac71b5f644803b2107c878908e64f100d6a7d443',
+    ),
+  );
+  assert.equal(new Set([...uiable, ...flowbite, ...heroui].map((asset) => asset.id)).size, 820);
+});
