@@ -203,7 +203,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
               {entry === 'assets'
                 ? 'All assets'
                 : entry === 'sources'
-                  ? 'Indexed sources'
+                  ? 'UI libraries'
                   : entry === 'collections'
                     ? 'Collections'
                     : `Saved (${saved.length})`}
@@ -243,21 +243,16 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
       )}
       <p className="asset-library-status">
         {status
-          ? status.readOnly
-            ? 'Read-only evaluation catalogue. Browsing works; publishing and indexing need a persistent database.'
-            : 'Connected to the persistent registry.'
-          : 'Checking registry connection…'}{' '}
-        {status && (
-          <span>
-            {status.stats.assets} published assets · {status.stats.providers} indexed sources
-          </span>
-        )}
+          ? `${status.stats.assets} assets · ${status.stats.providers} sources${
+              status.readOnly ? ' · Browse-only preview' : ''
+            }`
+          : 'Loading catalogue…'}
       </p>
       {view === 'sources' ? (
         <div className="asset-library-source-grid">
           {providers.map((p) => (
             <article key={p.id}>
-              <small>Indexed source</small>
+              <small>UI library</small>
               <h2>{p.name}</h2>
               <p>{p.rationale}</p>
               <button onClick={() => navigate({ provider: p.id }, true)}>
