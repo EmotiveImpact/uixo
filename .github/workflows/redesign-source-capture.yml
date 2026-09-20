@@ -8,17 +8,26 @@ permissions:
 jobs:
   capture:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v7
         with:
           persist-credentials: false
-      - run: |
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+      - name: Prepare exact locked dependencies and real preview output
+        run: |
           mkdir handoff
+          export npm_config_cache="$RUNNER_TEMP/visual-cache"
+          npm ci --ignore-scripts
+          npm run demos:build
+          npm run registry:deps
+          tar -czf handoff/live-demos.tar.gz public/live-demos
+          tar -C "$npm_config_cache" -czf handoff/npm-cache.tar.gz _cacache
           git rev-parse HEAD > handoff/commit.txt
-          git archive --format=tar.gz --output=handoff/source.tar.gz HEAD
       - uses: actions/upload-artifact@v4
         with:
-          name: redesign-source
+          name: redesign-runtime
           path: handoff
           retention-days: 3
