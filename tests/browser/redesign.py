@@ -18,7 +18,8 @@ with sync_playwright() as p:
         for width in [1440, 390]:
             ctx = browser.new_context(viewport={'width': width, 'height': 1050 if width == 1440 else 844}, color_scheme=theme)
             ctx.route('**/api/auth/**', lambda r: r.fulfill(body='null', content_type='application/json'))
-            ctx.add_init_script(f"localStorage.setItem('uixo-theme', JSON.stringify('{theme}'))")
+            # Context scripts also run in child frames. Do not inject parent storage access there.
+            ctx.add_init_script(f"if (window === window.top) localStorage.setItem('uixo-theme', JSON.stringify('{theme}'))")
             page = ctx.new_page()
             errors = []
             page.on('pageerror', lambda error: errors.append(str(error)))
