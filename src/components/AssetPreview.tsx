@@ -18,20 +18,24 @@ function LivePreview({
   detail,
   src,
   external = false,
+  fallbackImageUrl,
 }: {
   asset: CollectionAssetPreview;
   detail: boolean;
   src: string;
   external?: boolean;
+  fallbackImageUrl?: string;
 }) {
   const viewport = useRef<HTMLDivElement>(null);
   const frame = useRef<HTMLIFrameElement>(null);
   const [visible, setVisible] = useState(detail);
   const [size, setSize] = useState({ width: 480, height: 330 });
-  const [status, setStatus] = useState('loading');
+  const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
+  const [fallbackFailed, setFallbackFailed] = useState(false);
   const [theme, setTheme] = useState(() =>
     document.documentElement.classList.contains('light') ? 'light' : 'dark',
   );
+
   useEffect(() => {
     const element = viewport.current;
     if (!element) return;
@@ -58,9 +62,11 @@ function LivePreview({
       observer.disconnect();
     };
   }, [detail]);
+
   useEffect(() => {
     frame.current?.contentWindow?.postMessage({ type: 'uixo-preview-theme', theme }, '*');
   }, [theme]);
+
   useEffect(() => {
     if (external) return;
     const receive = (event: MessageEvent) => {
@@ -76,17 +82,23 @@ function LivePreview({
     window.addEventListener('message', receive);
     return () => window.removeEventListener('message', receive);
   }, [asset.id, external]);
+
   useEffect(() => {
     if (!visible || status !== 'loading') return;
-    // A failed entry script cannot post an error back to the parent.
-    const timeout = window.setTimeout(() => setStatus('error'), 20000);
+    const timeout = window.setTimeout(() => setStatus('error'), 12000);
     return () => window.clearTimeout(timeout);
   }, [visible, status]);
+
   const scale = detail ? 1 : size.width / 480;
   const demo = demos[asset.id as keyof typeof demos];
+  const showFallbackImage = status === 'error' && fallbackImageUrl && !fallbackFailed;
+
   return (
-    <div ref={viewport} className={`asset-live-viewport ${detail ? 'is-detail' : ''}`}>
-      {visible && (
+    <div
+      ref={viewport}
+      className={`asset-live-viewport ${detail ? 'is-detail' : ''} ${showFallbackImage ? 'has-captured-fallback' : ''}`}
+    >
+      {visible && status !== 'error' && (
         <iframe
           ref={frame}
           title={`Live ${asset.name} demo`}
@@ -109,17 +121,25 @@ function LivePreview({
       )}
       {visible && status === 'loading' && (
         <span className="asset-live-loading" role="status">
-          Loading live demo…
+          Loading preview…
         </span>
       )}
-      {status === 'error' && (
+      {showFallbackImage && (
+        <img
+          className="asset-preview-fallback-image"
+          src={fallbackImageUrl}
+          alt={`${asset.name} captured component preview`}
+          onError={() => setFallbackFailed(true)}
+        />
+      )}
+      {status === 'error' && (!fallbackImageUrl || fallbackFailed) && (
         <a
           className="asset-live-fallback"
-          href={demo.sourceUrl}
+          href={safeAssetUrl(demo?.sourceUrl ?? asset.sourceUrl)}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Open original live demo ↗
+          Open original source ↗
         </a>
       )}
     </div>
@@ -136,12 +156,14 @@ export function AssetPreview({
   const [failedUrl, setFailedUrl] = useState('');
   const live = asset.kind === 'component' && Object.hasOwn(demos, asset.id);
   const embedUrl = officialEmbedUrl(asset);
-  const livePreview = live || Boolean(embedUrl);
-  const imageUrl = asset.kind === 'icon' ? safeAssetUrl(asset.preview?.url) : undefined;
+  const imageUrl =
+    asset.preview?.kind === 'image' ? safeAssetUrl(asset.preview.url) : undefined;
   const showImage = imageUrl && failedUrl !== imageUrl;
+  const livePreview = live || Boolean(embedUrl);
+
   return (
     <div
-      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${livePreview ? 'is-live-component' : ''} ${asset.kind === 'icon-pack' ? 'is-icon-pack' : ''}`}
+      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${livePreview ? 'is-live-component' : ''} ${asset.kind === 'icon-pack' ? 'is-icon-pack' : ''} ${!livePreview && showImage && asset.kind === 'component' ? 'is-component-capture' : ''}`}
     >
       {asset.kind === 'icon-pack' ? (
         <div className="asset-library-no-preview">
@@ -159,19 +181,31 @@ export function AssetPreview({
           src={`/live-demos/index.html?id=${encodeURIComponent(asset.id)}&theme=${
             document.documentElement.classList.contains('light') ? 'light' : 'dark'
           }`}
+          fallbackImageUrl={imageUrl}
         />
       ) : embedUrl ? (
-        <LivePreview key={asset.id} asset={asset} detail={detail} src={embedUrl} external />
+        <LivePreview
+          key={asset.id}
+          asset={asset}
+          detail={detail}
+          src={embedUrl}
+          external
+          fallbackImageUrl={imageUrl}
+        />
       ) : showImage ? (
         <img
           src={imageUrl}
           loading="lazy"
-          alt={`${asset.name} original SVG`}
+          alt={
+            asset.kind === 'component'
+              ? `${asset.name} captured component preview`
+              : `${asset.name} original preview`
+          }
           onError={() => setFailedUrl(imageUrl)}
         />
       ) : (
         <div className="asset-library-no-preview">
-          <strong>Live preview unavailable</strong>
+          <strong>Preview unavailable</strong>
           <a href={safeAssetUrl(asset.sourceUrl)} target="_blank" rel="noopener noreferrer">
             Open original source ↗
           </a>
@@ -181,10 +215,14 @@ export function AssetPreview({
         {asset.kind === 'icon-pack'
           ? 'Icon library · Official source'
           : live || embedUrl
-            ? 'Live demo · Try it'
+            ? imageUrl
+              ? 'Live preview · Captured fallback'
+              : 'Live preview'
             : showImage
-              ? 'Original GitHub SVG'
-              : 'No live demo available'}
+              ? asset.kind === 'component'
+                ? 'Captured render'
+                : 'Original preview'
+              : 'Source only'}
       </small>
     </div>
   );
