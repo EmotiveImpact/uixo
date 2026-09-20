@@ -11,6 +11,7 @@ if (
     'migrate',
     'seed',
     'sync',
+    'sync-provider',
     'index',
     'collections-seed',
     'readiness',
@@ -18,7 +19,7 @@ if (
   ].includes(command)
 )
   throw new Error(
-    'Usage: registry-db.ts migrate|seed|sync|index|collections-seed|readiness|collections-publish-new [provider-id]',
+    'Usage: registry-db.ts migrate|seed|sync|sync-provider|index|collections-seed|readiness|collections-publish-new [provider-id]',
   );
 if (process.env.UIXO_DATABASE_URL && !process.argv.includes('--allow-remote'))
   throw new Error(
@@ -47,6 +48,10 @@ try {
     console.log(JSON.stringify(await seedCollectionDrafts(registry)));
   if (command === 'seed') console.log(JSON.stringify(await seedCaptured(registry)));
   if (command === 'sync') console.log(JSON.stringify(await syncCaptured(registry)));
+  if (command === 'sync-provider') {
+    if (!provider) throw new Error('Provider ID required.');
+    console.log(JSON.stringify(await syncCaptured(registry, new Set([provider]))));
+  }
   if (command === 'index') {
     if (!provider) throw new Error('Provider ID required.');
     const job = await enqueue(registry, provider);
