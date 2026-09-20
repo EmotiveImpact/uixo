@@ -68,7 +68,7 @@ test('intelligence migration is repeatable and leaves existing registry rows unc
   const { db, registry } = await setup();
   try {
     await migrate(db);
-    assert.equal((await registry.stats()).assets, 264);
+    assert.equal((await registry.stats()).assets, 464);
     assert.equal((await listCollections(registry)).total, 0);
   } finally {
     await db.close();
@@ -116,8 +116,8 @@ test('coverage totals reflect published assets, real media and approved sources'
   const { db, registry } = await setup();
   try {
     const report = await coverage(registry);
-    assert.equal(report.metrics.total, 264);
-    assert.equal(report.sources.length, 6);
+    assert.equal(report.metrics.total, 464);
+    assert.equal(report.sources.length, 7);
     assert.equal(
       report.sources.reduce((n, p) => n + p.metrics.total, 0),
       report.metrics.total,
@@ -127,7 +127,7 @@ test('coverage totals reflect published assets, real media and approved sources'
     assert.ok(report.metrics.pinnedLiveDemos > 0);
     assert.equal(
       report.metrics.fresh + report.metrics.ageing + report.metrics.stale + report.metrics.unknown,
-      264,
+      464,
     );
     await registry.putProvider({ ...PROVIDERS[0], approved: false });
     const hidden = await coverage(registry);
@@ -136,6 +136,12 @@ test('coverage totals reflect published assets, real media and approved sources'
   } finally {
     await db.close();
   }
+});
+test('verified provider-hosted embeds are not counted as missing previews', async () => {
+  const animata = (await capturedAssets()).find((asset) => asset.providerId === 'animata')!;
+  const metrics = measureAsset(animata, { captures: {}, live: {} });
+  assert.equal(metrics.missingPreviews, 0);
+  assert.equal(metrics.upstreamImages, 0);
 });
 test('collection drafts are private and publishing is a distinct revision-checked action', async () => {
   const { db, registry } = await setup();

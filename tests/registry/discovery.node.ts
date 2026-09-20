@@ -41,7 +41,7 @@ test('release snapshot contains six real selections and remains idempotent', asy
     assert.equal(collection.items[0].providerName, 'shadcn/ui');
     assert.ok(collection.items[0].frameworks?.includes('react'));
     assert.ok(collection.items[0].licenceExpression);
-    assert.equal((await registry.stats()).assets, 264);
+    assert.equal((await registry.stats()).assets, 464);
     await assert.rejects(
       publishCollection(
         registry,
@@ -202,7 +202,7 @@ test('public source directory and private starter preparation keep their HTTP bo
   try {
     const sources = await api('source-directory');
     assert.equal(sources.status, 200);
-    assert.equal(sources.data.items.length, 6);
+    assert.equal(sources.data.items.length, 7);
     assert.ok(
       sources.data.items.every(
         (source: { metrics: { total: number }; upstreamStatus: string }) =>

@@ -106,7 +106,21 @@ export function measureAsset(asset: Asset, index: Media, now = Date.now()): Evid
   m.upstreamImages = Number(
     !captured && asset.preview?.kind === 'image' && Boolean(asset.preview.url),
   );
-  m.missingPreviews = Number(!captured && !pinnedLive && !m.upstreamImages);
+  const officialEmbed = (() => {
+    if (asset.providerId !== 'animata' || asset.preview?.kind !== 'embed') return false;
+    try {
+      const url = new URL(asset.preview.url);
+      return (
+        url.origin === 'https://animata.design' &&
+        url.pathname === '/preview/iframe' &&
+        Boolean(url.searchParams.get('id')) &&
+        asset.evidence.some((e) => e.field === 'official provider Storybook demonstration')
+      );
+    } catch {
+      return false;
+    }
+  })();
+  m.missingPreviews = Number(!captured && !pinnedLive && !m.upstreamImages && !officialEmbed);
   return m;
 }
 export async function coverage(registry: Registry, providerId?: string): Promise<CoverageReport> {
