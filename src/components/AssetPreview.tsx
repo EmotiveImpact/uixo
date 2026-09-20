@@ -76,8 +76,9 @@ function LivePreview({
         event.data.id !== asset.id
       )
         return;
-      if (event.data.status === 'ready' || event.data.status === 'error')
+      if (event.data.status === 'ready' || event.data.status === 'error') {
         setStatus(event.data.status);
+      }
     };
     window.addEventListener('message', receive);
     return () => window.removeEventListener('message', receive);
@@ -96,7 +97,9 @@ function LivePreview({
   return (
     <div
       ref={viewport}
-      className={`asset-live-viewport ${detail ? 'is-detail' : ''} ${showFallbackImage ? 'has-captured-fallback' : ''}`}
+      className={`asset-live-viewport ${detail ? 'is-detail' : ''} ${
+        showFallbackImage ? 'has-captured-fallback' : ''
+      }`}
     >
       {visible && status !== 'error' && (
         <iframe
@@ -163,7 +166,11 @@ export function AssetPreview({
 
   return (
     <div
-      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${livePreview ? 'is-live-component' : ''} ${asset.kind === 'icon-pack' ? 'is-icon-pack' : ''} ${!livePreview && showImage && asset.kind === 'component' ? 'is-component-capture' : ''}`}
+      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${
+        livePreview ? 'is-live-component' : ''
+      } ${asset.kind === 'icon-pack' ? 'is-icon-pack' : ''} ${
+        !livePreview && showImage && asset.kind === 'component' ? 'is-component-capture' : ''
+      }`}
     >
       {asset.kind === 'icon-pack' ? (
         <div className="asset-library-no-preview">
