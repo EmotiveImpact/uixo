@@ -76,7 +76,7 @@ export function TopBar({
                     navigateInApp(href);
                   }}
                 >
-                  {type.charAt(0).toUpperCase() + type.slice(1)}
+                  {type === 'websites' ? 'Resources' : type === 'assets' ? 'Components' : 'Collections'}
                 </a>
               );
             })}
