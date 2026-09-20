@@ -7,6 +7,7 @@ import {
   Plus,
   Shapes,
   Terminal,
+  Trash2,
   X,
 } from 'lucide-react';
 import type { AppSidebarProps } from '../AppSidebar';
@@ -21,6 +22,7 @@ import type { CatalogueInventory } from '../../lib/asset-library';
 import { categories, resources } from '../../data';
 import { categoryCount, populatedSubs } from '../../lib/filters';
 import { navigateInApp } from '../../lib/navigation';
+import { DEFAULT_LIST_ID } from '../../types';
 
 function AssetFilters(props: AppSidebarProps) {
   const { data } = useRegistryData<CatalogueInventory>('inventory');
@@ -173,7 +175,10 @@ export function CatalogueSidebar(props: AppSidebarProps) {
             <span>Saved assets</span>
             <small>{props.savedAssetCount || ''}</small>
           </button>
-          <button aria-label="Favourite websites" onClick={() => props.onChooseList('favourites')}>
+          <button
+            aria-label="Favourite websites"
+            onClick={() => props.onChooseList(DEFAULT_LIST_ID)}
+          >
             <Bookmark size={15} />
             <span>Saved resources</span>
           </button>
@@ -209,6 +214,32 @@ export function CatalogueSidebar(props: AppSidebarProps) {
             <ArrowUpRight size={12} />
           </button>
         </div>
+        {props.lists.some((list) => list.id !== DEFAULT_LIST_ID) && (
+          <div className="filter-section filter-custom-lists">
+            <h2>Your lists</h2>
+            {props.lists
+              .filter((list) => list.id !== DEFAULT_LIST_ID)
+              .map((list) => (
+                <div className="filter-list-row" key={list.id}>
+                  <button
+                    className={props.listId === list.id ? 'chosen' : ''}
+                    onClick={() => props.onChooseList(list.id)}
+                  >
+                    <Bookmark size={14} />
+                    <span>{list.name}</span>
+                    <small>{list.resourceIds.length}</small>
+                  </button>
+                  <button
+                    className="filter-list-delete"
+                    aria-label={`Delete list ${list.name}`}
+                    onClick={() => props.onDeleteList(list.id)}
+                  >
+                    <Trash2 size={13} />
+                  </button>
+                </div>
+              ))}
+          </div>
+        )}
         <button className="filter-submit" onClick={props.onSubmit}>
           <Plus size={15} /> Submit a resource
         </button>

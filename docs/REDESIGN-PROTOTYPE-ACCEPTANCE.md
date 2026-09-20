@@ -23,7 +23,11 @@ The homepage uses four existing retained screenshots, labelled as screenshots. T
 
 `tests/browser/redesign.py` covers homepage, component browse, resource browse and actual component detail at 1440 px and 390 px in both themes. It checks header width, first-grid position, four-column layout, genuine hero image loading, mobile navigation, query filters, saves surviving reload and homepage search. Screenshots are retained as normal CI artefacts.
 
-The complete local production build and 204 application tests passed before the final visual refinement. The first hosted screenshot pass exposed decorative hero overflow; the orbit was inset and its canvas now contains its decoration. Final acceptance is the subsequent normal CI result, not that first failing pass.
+The corrected application passes the local complete production build, formatting, lint, explicit typecheck and 209 application tests. The first hosted screenshot pass exposed decorative hero overflow; the orbit was inset and its canvas now contains its decoration. Browser acceptance uses GitHub Actions Chromium because the local managed browser blocks navigation. The final result is the latest normal CI run, not an earlier screenshot pass.
+
+The acceptance suite paces full-page navigation to respect the unchanged 180-request/minute public limit. It retains partial results and failure details rather than masking a missing catalogue as an empty result. Screenshots are taken after the component is ready, and detail checks inspect the foreground preview rather than an obscured background grid.
+
+Additional regression coverage checks clickable screenshot fallback, preserving filters when opening an asset, modified links, failed capture notices, the actual Templates directory destination and keyboard focus returning after closing the mobile menu. The homepage Ctrl/Cmd-K now focuses its real search field. Custom saved-resource lists remain reachable in the new sidebar.
 
 ## Release
 

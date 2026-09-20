@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { CollectionAssetPreview } from '../../shared/intelligence';
-import { safeAssetUrl } from '../lib/asset-library';
+import { assetHref, readAssetQuery, safeAssetUrl } from '../lib/asset-library';
+import { navigateInApp } from '../lib/navigation';
 import demos from '../../live-demos/manifest.json';
 
 function officialEmbedUrl(asset: CollectionAssetPreview): string | undefined {
@@ -128,14 +129,40 @@ function LivePreview({
           Loading live demo…
         </span>
       )}
-      {showFallbackImage && (
-        <img
-          className="asset-preview-fallback-image"
-          src={fallbackImageUrl}
-          alt={`${asset.name} captured component preview`}
-          onError={() => setFallbackFailed(true)}
-        />
-      )}
+      {showFallbackImage &&
+        (detail ? (
+          <img
+            className="asset-preview-fallback-image"
+            src={fallbackImageUrl}
+            alt={`${asset.name} captured component preview`}
+            onError={() => setFallbackFailed(true)}
+          />
+        ) : (
+          <a
+            className="asset-capture-link"
+            href={assetHref({ ...readAssetQuery(window.location.search), id: asset.id })}
+            aria-label={`Inspect ${asset.name} screenshot`}
+            onClick={(event) => {
+              if (
+                event.metaKey ||
+                event.ctrlKey ||
+                event.shiftKey ||
+                event.altKey ||
+                event.button !== 0
+              )
+                return;
+              event.preventDefault();
+              navigateInApp(event.currentTarget.href);
+            }}
+          >
+            <img
+              className="asset-preview-fallback-image"
+              src={fallbackImageUrl}
+              alt={`${asset.name} captured component preview`}
+              onError={() => setFallbackFailed(true)}
+            />
+          </a>
+        ))}
       {status === 'error' && (!fallbackImageUrl || fallbackFailed) && (
         <a
           className="asset-live-fallback"

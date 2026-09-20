@@ -10,3 +10,70 @@
 .hero-component-4 img {
   object-fit: none;
 }
+
+/* Final prototype polish: preserve the layout, make small labels comfortable to read. */
+.discovery-navigation {
+  gap: 23px;
+}
+.discovery-header-inner {
+  gap: 32px;
+}
+.filter-section button {
+  font-size: 12px;
+}
+.filter-section button small {
+  font-size: 10px;
+}
+.uixo-shell .asset-library-card h2 {
+  font-size: 15px;
+}
+.uixo-shell .asset-library-card-body > small {
+  font-size: 11px;
+}
+.uixo-shell .asset-library-tags span {
+  font-size: 10px;
+  padding: 4px 7px;
+}
+.asset-capture-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 1;
+}
+.asset-capture-link:focus-visible {
+  outline-offset: -4px;
+}
+.filter-list-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+.filter-list-row > button:first-child {
+  flex: 1;
+  min-width: 0;
+}
+.filter-list-row .filter-list-delete {
+  width: 32px;
+  min-height: 36px;
+  flex-shrink: 0;
+  justify-content: center;
+  padding: 0;
+}
+@media (max-width: 1150px) {
+  .discovery-header-inner {
+    gap: 22px;
+  }
+  .discovery-navigation {
+    gap: 18px;
+  }
+  .header-search span,
+  .header-search kbd {
+    display: none;
+  }
+  .header-search {
+    width: 36px;
+    padding: 0;
+    justify-content: center;
+  }
+}

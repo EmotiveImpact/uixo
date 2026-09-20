@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode, type RefObject } from 'react';
+import { useEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
 import { ArrowUpRight, Bookmark, Menu, Moon, PanelLeft, Search, Sun, X } from 'lucide-react';
 import { navigateInApp } from '../../lib/navigation';
 
@@ -21,6 +21,7 @@ const destinations = [
   { id: 'components', label: 'Components', href: '/browse/assets' },
   { id: 'resources', label: 'Resources', href: '/browse' },
   { id: 'icons', label: 'Icon packs', href: '/browse/assets?kind=icon-pack' },
+  { id: 'templates', label: 'Templates', href: '/category/templates' },
   { id: 'collections', label: 'Collections', href: '/collections' },
 ];
 
@@ -36,10 +37,14 @@ export function DiscoveryHeader({
   adminAction,
 }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuTrigger = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     if (!menuOpen) return;
     const close = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setMenuOpen(false);
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+        menuTrigger.current?.focus();
+      }
     };
     window.addEventListener('keydown', close);
     return () => window.removeEventListener('keydown', close);
@@ -47,7 +52,11 @@ export function DiscoveryHeader({
   const icons =
     active === 'components' &&
     new URLSearchParams(window.location.search).get('kind') === 'icon-pack';
-  const selected = icons ? 'icons' : active;
+  const selected = window.location.pathname.startsWith('/category/templates')
+    ? 'templates'
+    : icons
+      ? 'icons'
+      : active;
   const navigate = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0)
       return;
@@ -118,7 +127,9 @@ export function DiscoveryHeader({
             </button>
           )}
           <button
+            ref={menuTrigger}
             className="header-icon discovery-menu-trigger"
+            aria-controls="discovery-mobile-navigation"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -128,7 +139,11 @@ export function DiscoveryHeader({
         </div>
       </div>
       {menuOpen && (
-        <nav className="discovery-mobile-menu" aria-label="Mobile navigation">
+        <nav
+          id="discovery-mobile-navigation"
+          className="discovery-mobile-menu"
+          aria-label="Mobile navigation"
+        >
           {destinations.map((item) => (
             <a
               key={item.id}

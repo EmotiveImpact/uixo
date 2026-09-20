@@ -1,4 +1,4 @@
-import { act, cleanup, render, screen } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { AssetRecord } from '../lib/asset-library';
 import { AssetPreview } from './AssetPreview';
@@ -56,6 +56,7 @@ beforeEach(() => {
 
 afterEach(() => {
   cleanup();
+  window.history.replaceState(null, '', '/');
   vi.useRealTimers();
   vi.unstubAllGlobals();
 });
@@ -131,5 +132,46 @@ describe('AssetPreview', () => {
     expect(frame.getAttribute('src')).toContain('animata.design/preview/iframe');
     expect(frame.getAttribute('sandbox')).toBe('allow-scripts');
     expect(container.querySelector('img')).toBeNull();
+  });
+});
+
+describe('Screenshot fallback interactions', () => {
+  it('opens the exact asset from its capture and preserves the current filters', () => {
+    vi.useFakeTimers();
+    window.history.replaceState(null, '', '/browse/assets?category=forms&provider=shadcn');
+    render(<AssetPreview asset={asset({})} />);
+    act(() => vi.advanceTimersByTime(20000));
+    const link = screen.getByRole('link', { name: 'Inspect Alert screenshot' });
+    expect(link.getAttribute('href')).toContain('id=shadcn%2Falert');
+    expect(screen.getByText('Screenshot · Live unavailable')).toBeTruthy();
+    fireEvent.click(link);
+    const query = new URLSearchParams(window.location.search);
+    expect(query.get('id')).toBe('shadcn/alert');
+    expect(query.get('provider')).toBe('shadcn');
+    expect(query.get('category')).toBe('forms');
+  });
+
+  it('does not intercept modified screenshot links or claim a failed image is live', () => {
+    vi.useFakeTimers();
+    window.history.replaceState(null, '', '/browse/assets');
+    render(<AssetPreview asset={asset({})} />);
+    act(() => vi.advanceTimersByTime(20000));
+    fireEvent.click(screen.getByRole('link', { name: 'Inspect Alert screenshot' }), {
+      ctrlKey: true,
+    });
+    expect(window.location.search).toBe('');
+    fireEvent.error(screen.getByAltText('Alert captured component preview'));
+    expect(screen.getByRole('link', { name: /Open original source/ })).toBeTruthy();
+    expect(screen.queryByText('Live · Try it')).toBeNull();
+    expect(screen.queryByRole('link', { name: 'Inspect Alert screenshot' })).toBeNull();
+  });
+
+  it('shows the original source rather than an invented image when no capture exists', () => {
+    vi.useFakeTimers();
+    render(<AssetPreview asset={asset({ preview: null })} />);
+    act(() => vi.advanceTimersByTime(20000));
+    expect(screen.queryByRole('img')).toBeNull();
+    expect(screen.getByText('Preview unavailable')).toBeTruthy();
+    expect(screen.getByRole('link', { name: /Open original source/ })).toBeTruthy();
   });
 });

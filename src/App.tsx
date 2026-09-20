@@ -79,13 +79,21 @@ export function App() {
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       if (event.key.toLowerCase() === 'k' && (event.metaKey || event.ctrlKey)) {
+        if (route.landing) {
+          const input = document.getElementById('hero-component-search');
+          if (input instanceof HTMLInputElement && !modal) {
+            event.preventDefault();
+            input.focus();
+          }
+          return;
+        }
         event.preventDefault();
         setPaletteOpen((current) => !current);
       }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, []);
+  }, [route.landing, modal]);
 
   const activeList = lists.find((entry) => entry.id === route.listId) ?? null;
   const activeCollection = collections.find((entry) => entry.slug === route.collectionSlug) ?? null;

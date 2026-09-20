@@ -107,6 +107,7 @@ export function LandingPage({
               <Search size={19} />
               <input
                 ref={searchRef}
+                id="hero-component-search"
                 type="search"
                 aria-label="Search components"
                 maxLength={300}
