@@ -61,14 +61,15 @@ afterEach(() => {
 });
 
 describe('AssetPreview', () => {
-  it('offers the original source when the frame never starts, and recovers on ready', () => {
+  it('falls back to the captured render when live preview fails, and recovers on ready', () => {
     vi.useFakeTimers();
     render(<AssetPreview asset={asset({})} />);
     const frame = screen.getByTitle('Live Alert demo') as HTMLIFrameElement;
     expect(frame.style.visibility).toBe('hidden');
     expect(screen.getByRole('status').textContent).toContain('Loading live demo');
     act(() => vi.advanceTimersByTime(20000));
-    expect(screen.getByRole('link', { name: /Open original live demo/ })).toBeTruthy();
+    expect(screen.getByAltText('Alert captured component preview')).toBeTruthy();
+    expect(frame.style.visibility).toBe('hidden');
     act(() => {
       window.dispatchEvent(
         new MessageEvent('message', {
@@ -78,7 +79,7 @@ describe('AssetPreview', () => {
       );
     });
     expect(frame.style.visibility).toBe('visible');
-    expect(screen.queryByRole('link', { name: /Open original live demo/ })).toBeNull();
+    expect(screen.queryByAltText('Alert captured component preview')).toBeNull();
   });
 
   it('prefers a reviewed live component over its static capture', () => {
