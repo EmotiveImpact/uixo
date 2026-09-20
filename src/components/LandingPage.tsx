@@ -57,7 +57,11 @@ function FeatureCard({
       </a>
       <div className="landing-product-copy">
         <div>
-          <a className="landing-name" href={href} onClick={internal(() => onOpen(resource.id))}>
+          <a
+            className="landing-name"
+            href={href}
+            onClick={internal(() => onOpen(resource.id))}
+          >
             {resource.name}
           </a>
           <p className="landing-meta">
@@ -137,7 +141,11 @@ export function LandingPage({
               from the world’s best creators — built for designers, developers and AI.
             </p>
 
-            <a className="landing-search-cta" href={hrefs.assets} onClick={internal(onAssets)}>
+            <a
+              className="landing-search-cta"
+              href={hrefs.assets}
+              onClick={internal(onAssets)}
+            >
               <Search size={17} />
               <span>Search components, libraries, icons and templates…</span>
               <kbd>⌘ K</kbd>
@@ -185,7 +193,10 @@ export function LandingPage({
           </div>
         </header>
 
-        <section className="landing-section landing-discovery-strip" aria-labelledby="landing-featured">
+        <section
+          className="landing-section landing-discovery-strip"
+          aria-labelledby="landing-featured"
+        >
           <div className="landing-tabs" role="presentation">
             <span className="selected">Curated</span>
             <span>New</span>
