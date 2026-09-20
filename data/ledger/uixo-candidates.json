@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-19",
-  "updated_note": "codestirring Steal some taste paste: +1 candidate (interior)",
+  "updated": "2026-09-20",
+  "updated_note": "Red paste 30-site list + 4 X posts (VullnetAdemaj, neropursue, cabralorenzo, Abmankendrick) — +7 NEW",
   "counts_by_category": {
-    "Inspiration": 116,
-    "Components": 64,
-    "Templates": 48,
+    "Inspiration": 117,
+    "Components": 66,
+    "Templates": 50,
     "UI libraries": 50,
     "Icons": 40,
-    "Marketplace": 23,
+    "Marketplace": 24,
     "Backgrounds": 15,
+    "Illustrations": 13,
     "Fonts": 12,
-    "Illustrations": 12,
     "Mockups": 10
   },
   "totals": {
-    "candidates": 390,
-    "needs_review": 312,
-    "new_this_run": 1,
-    "already_present": 6,
+    "candidates": 397,
+    "needs_review": 319,
+    "new_this_run": 7,
+    "already_present": 25,
     "skipped_dupes_existing_site": 0,
-    "image_captured": 382,
-    "image_og_captured": 7,
+    "image_captured": 387,
+    "image_og_captured": 9,
     "image_blocked": 1,
     "image_pending": 0
   },
@@ -10711,14 +10711,229 @@
       ],
       "addedOrder": 400,
       "image_method": "screenshot"
+    },
+    {
+      "id": "scrolltide",
+      "name": "Scrolltide",
+      "category": "Templates",
+      "subcategory": "AI prompts",
+      "tags": [
+        "Scroll",
+        "Prompts",
+        "Templates",
+        "Cinematic",
+        "AI"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "formats": [
+        "Web"
+      ],
+      "url": "https://scrolltide.co",
+      "why": "Cinematic website prompts & templates — copy a prompt, paste into AI, launch a site that moves",
+      "creator": "scrolltide.co",
+      "source": "Red paste 2026-09-20 numbered 30-site UI list (+ 4 X posts)",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "ingest_batch": "red-paste-30list-sep20",
+      "harvest_posts": [],
+      "addedOrder": 401,
+      "image_method": "og",
+      "image_note": "screenshot 403 Cloudflare; thum.io fallback"
+    },
+    {
+      "id": "openmotion",
+      "name": "OpenMotion",
+      "category": "Templates",
+      "subcategory": "Motion",
+      "tags": [
+        "Motion",
+        "Video",
+        "Prompts",
+        "AI",
+        "Canvas"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "formats": [
+        "Web"
+      ],
+      "url": "https://openmotion.design",
+      "why": "Build launch videos from a prompt — editable motion scenes with canvas + timeline",
+      "creator": "openmotion.design",
+      "source": "Red paste 2026-09-20 numbered 30-site UI list (+ 4 X posts)",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "red-paste-30list-sep20",
+      "harvest_posts": [],
+      "addedOrder": 402,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "text-effects-colorion",
+      "name": "CSS Text Effects",
+      "category": "Components",
+      "subcategory": "Text",
+      "tags": [
+        "CSS",
+        "Text",
+        "Animation",
+        "Copy-paste",
+        "Free",
+        "MIT"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "CSS",
+        "Web"
+      ],
+      "url": "https://text-effects.colorion.co",
+      "why": "90 pure-CSS text animations (gradient, glitch, typewriter, neon) — click to copy, no JS",
+      "creator": "Colorion",
+      "source": "Red paste 2026-09-20 numbered 30-site UI list (+ 4 X posts)",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "red-paste-30list-sep20",
+      "harvest_posts": [],
+      "addedOrder": 403,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "gradient-buttons-colorion",
+      "name": "Gradient Buttons",
+      "category": "Components",
+      "subcategory": "Buttons",
+      "tags": [
+        "CSS",
+        "Buttons",
+        "Gradients",
+        "Copy-paste",
+        "Free"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "CSS",
+        "Web"
+      ],
+      "url": "https://gradientbuttons.colorion.co",
+      "why": "Hundreds of CSS gradient buttons — one-click copy to clipboard",
+      "creator": "Colorion",
+      "source": "Red paste 2026-09-20 numbered 30-site UI list (+ 4 X posts)",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "red-paste-30list-sep20",
+      "harvest_posts": [],
+      "addedOrder": 404,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "kitbitz",
+      "name": "Kitbitz",
+      "category": "Illustrations",
+      "subcategory": "Hand-drawn",
+      "tags": [
+        "Illustrations",
+        "SVG",
+        "PNG",
+        "Figma",
+        "Free",
+        "MCP"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "SVG",
+        "PNG",
+        "Figma"
+      ],
+      "url": "https://kitbitz.art",
+      "why": "2,000+ free hand-drawn illustrations — SVG/PNG, Figma kits, plugin, MCP",
+      "creator": "kitbitz.art",
+      "source": "Red paste 2026-09-20 numbered 30-site UI list (+ 4 X posts)",
+      "needs_review": true,
+      "image_status": "og-captured",
+      "ingest_batch": "red-paste-30list-sep20",
+      "harvest_posts": [],
+      "addedOrder": 405,
+      "image_method": "og",
+      "image_note": "screenshot 403 Cloudflare; huntscreens shot fallback"
+    },
+    {
+      "id": "landdding",
+      "name": "Landdding",
+      "category": "Inspiration",
+      "subcategory": "Galleries",
+      "tags": [
+        "Landing pages",
+        "Gallery",
+        "Web design",
+        "Upvotes"
+      ],
+      "access": [
+        "Free"
+      ],
+      "formats": [
+        "Web"
+      ],
+      "url": "https://landdding.com",
+      "why": "Daily inspirational new website / landing designs with community upvotes",
+      "creator": "landdding.com",
+      "source": "X harvest @VullnetAdemaj/status/2101327936867442960",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "red-paste-30list-sep20",
+      "harvest_posts": [
+        "https://x.com/VullnetAdemaj/status/2101327936867442960"
+      ],
+      "addedOrder": 406,
+      "image_method": "screenshot"
+    },
+    {
+      "id": "closeit-fast",
+      "name": "closeit.fast",
+      "category": "Marketplace",
+      "subcategory": "Tools",
+      "tags": [
+        "E-sign",
+        "Documents",
+        "PDF",
+        "Tool"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "formats": [
+        "Web"
+      ],
+      "url": "https://closeit.fast",
+      "why": "E-sign docs tool from Vullnet list (edge of UIXO scope — needs_review)",
+      "creator": "closeit.fast",
+      "source": "X harvest @VullnetAdemaj/status/2101327936867442960",
+      "needs_review": true,
+      "image_status": "captured",
+      "ingest_batch": "red-paste-30list-sep20",
+      "harvest_posts": [
+        "https://x.com/VullnetAdemaj/status/2101327936867442960"
+      ],
+      "addedOrder": 407,
+      "image_method": "screenshot"
     }
   ],
   "image_capture": {
-    "captured": 382,
-    "og-captured": 7,
+    "captured": 387,
+    "og-captured": 9,
     "blocked": 1,
-    "pending": 0,
-    "at": "2026-09-19T17:06:44.774Z"
+    "pending": 0
   },
   "paste_ingest": {
     "added_ids": [
@@ -11119,5 +11334,30 @@
       "uiable"
     ],
     "at": "2026-09-19T18:06:30.628435+01:00"
+  },
+  "red_paste_30list_ingest_sep20": {
+    "date": "2026-09-20",
+    "batch": "red-paste-30list-sep20",
+    "new_ids": [
+      "scrolltide",
+      "openmotion",
+      "text-effects-colorion",
+      "gradient-buttons-colorion",
+      "kitbitz",
+      "landdding",
+      "closeit-fast"
+    ],
+    "posts": [
+      "https://x.com/VullnetAdemaj/status/2101327936867442960",
+      "https://x.com/neropursue/status/2101227484775625018",
+      "https://x.com/cabralorenzo/status/2101209066685026789",
+      "https://x.com/Abmankendrick/status/2101256670236025105"
+    ],
+    "list_count": 30,
+    "extras_from_posts": [
+      "landdding.com",
+      "closeit.fast"
+    ],
+    "note": "Abmankendrick post had no destination URL (video-only UI Skills). designmd.ai + .me/.supply/.co already present. cabralorenzo added to watchlist discovery."
   }
 }
