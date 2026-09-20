@@ -130,4 +130,35 @@ describe('AssetPreview', () => {
     expect(frame.getAttribute('sandbox')).toBe('allow-scripts');
     expect(container.querySelector('img')).toBeNull();
   });
+  it('uses only the exact reviewed Kibo preview and refuses replacement URLs', () => {
+    const original = asset({
+      id: 'kibo-ui/announcement',
+      providerId: 'kibo-ui',
+      slug: 'announcement',
+      name: 'Announcement',
+      preview: {
+        kind: 'embed',
+        url: 'https://uixo-brown.vercel.app/provider-demos/kibo-ui/index.html?id=announcement',
+        label: 'Original source',
+      },
+    });
+    const { container, rerender } = render(<AssetPreview asset={original} />);
+    expect(screen.getByTitle('Live Announcement demo').getAttribute('src')).toContain(
+      '/provider-demos/kibo-ui/index.html?id=announcement',
+    );
+    expect(screen.getByTitle('Live Announcement demo').getAttribute('sandbox')).toBe(
+      'allow-scripts',
+    );
+    expect(container.querySelector('img')).toBeNull();
+    rerender(
+      <AssetPreview
+        asset={{
+          ...original,
+          preview: { kind: 'embed', url: 'https://evil.example/demo', label: 'Not reviewed' },
+        }}
+      />,
+    );
+    expect(container.querySelector('iframe')).toBeNull();
+    expect(screen.getByText('Live preview unavailable')).toBeTruthy();
+  });
 });

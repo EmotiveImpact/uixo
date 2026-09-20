@@ -1,3 +1,5 @@
+import { KIBO_REVIEWED_COMPONENTS } from './reviewed-previews.ts';
+
 /** UIXO editorial taxonomy, independent of provider naming and package structure. */
 export const COMPONENT_CATEGORIES = [
   { id: 'buttons', label: 'Buttons' },
@@ -13,7 +15,9 @@ export const COMPONENT_CATEGORIES = [
   { id: 'motion', label: 'Motion' },
   { id: 'other', label: 'Other' },
 ] as const;
-export function componentCategory(slug: string): string {
+export function componentCategory(slug: string, providerId = ''): string {
+  if (providerId === 'kibo-ui' && Object.hasOwn(KIBO_REVIEWED_COMPONENTS, slug))
+    return KIBO_REVIEWED_COMPONENTS[slug as keyof typeof KIBO_REVIEWED_COMPONENTS];
   if (['infinite-slider', 'progressive-blur'].includes(slug)) return 'layout';
   const rules: [string, RegExp][] = [
     ['buttons', /button|toggle|dock/],

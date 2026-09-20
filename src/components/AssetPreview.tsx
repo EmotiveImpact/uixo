@@ -1,3 +1,4 @@
+import { reviewedPreviewPath } from '../../shared/reviewed-previews';
 import { useEffect, useRef, useState } from 'react';
 import type { CollectionAssetPreview } from '../../shared/intelligence';
 import { safeAssetUrl } from '../lib/asset-library';
@@ -115,7 +116,7 @@ function LivePreview({
       {status === 'error' && (
         <a
           className="asset-live-fallback"
-          href={demo.sourceUrl}
+          href={safeAssetUrl(demo?.sourceUrl ?? asset.sourceUrl)}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -135,8 +136,9 @@ export function AssetPreview({
 }) {
   const [failedUrl, setFailedUrl] = useState('');
   const live = asset.kind === 'component' && Object.hasOwn(demos, asset.id);
+  const reviewed = reviewedPreviewPath(asset);
   const embedUrl = officialEmbedUrl(asset);
-  const livePreview = live || Boolean(embedUrl);
+  const livePreview = live || Boolean(reviewed) || Boolean(embedUrl);
   const imageUrl = asset.kind === 'icon' ? safeAssetUrl(asset.preview?.url) : undefined;
   const showImage = imageUrl && failedUrl !== imageUrl;
   return (
@@ -160,6 +162,13 @@ export function AssetPreview({
             document.documentElement.classList.contains('light') ? 'light' : 'dark'
           }`}
         />
+      ) : reviewed ? (
+        <LivePreview
+          key={asset.id}
+          asset={asset}
+          detail={detail}
+          src={`${reviewed}&theme=${document.documentElement.classList.contains('light') ? 'light' : 'dark'}`}
+        />
       ) : embedUrl ? (
         <LivePreview key={asset.id} asset={asset} detail={detail} src={embedUrl} external />
       ) : showImage ? (
@@ -180,7 +189,7 @@ export function AssetPreview({
       <small>
         {asset.kind === 'icon-pack'
           ? 'Icon library · Official source'
-          : live || embedUrl
+          : live || reviewed || embedUrl
             ? 'Live demo · Try it'
             : showImage
               ? 'Original GitHub SVG'

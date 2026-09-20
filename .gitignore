@@ -19,3 +19,10 @@ dist/
 # Generated browser acceptance evidence
 test-results/
 __pycache__/
+
+# Materialised only from the immutable, hash-verified reviewed source snapshot.
+provider-demos/kibo-ui/vendor/
+provider-demos/kibo-ui/upstream-theme.css
+provider-demos/kibo-ui/LICENSE.upstream.txt
+provider-demos/kibo-ui/node_modules/
+public/provider-demos/

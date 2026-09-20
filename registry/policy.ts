@@ -1,3 +1,4 @@
+import { KIBO_REVIEWED_COMPONENTS } from '../shared/reviewed-previews.ts';
 import { timingSafeEqual } from 'node:crypto';
 import { type Asset, type Variant, RegistryError, record, strings, text } from './domain.ts';
 
@@ -67,10 +68,21 @@ export function resolveAsset(asset: Asset, variantId?: string) {
   const url = new URL(acquisition.url);
   if (acquisition.kind === 'registry') {
     const registrySources: Record<string, { origin: string; path: string }> = {
+      'kibo-ui': { origin: 'https://www.kibo-ui.com', path: '/r/' },
       shadcn: { origin: 'https://ui.shadcn.com', path: '/r/' },
       'magic-ui': { origin: 'https://magicui.design', path: '/r/' },
       'motion-primitives': { origin: 'https://motion-primitives.com', path: '/c/' },
     };
+    if (
+      asset.providerId === 'kibo-ui' &&
+      (!Object.hasOwn(KIBO_REVIEWED_COMPONENTS, asset.slug) ||
+        acquisition.url !== `https://www.kibo-ui.com/r/${asset.slug}.json`)
+    )
+      throw new RegistryError(
+        'UNTRUSTED_SOURCE',
+        'Kibo acquisition must match the exact reviewed component URL.',
+        403,
+      );
     const source = registrySources[asset.providerId];
     if (!source || url.origin !== source.origin || !url.pathname.startsWith(source.path))
       throw new RegistryError(
