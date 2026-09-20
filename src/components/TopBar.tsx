@@ -76,7 +76,11 @@ export function TopBar({
                     navigateInApp(href);
                   }}
                 >
-                  {type === 'websites' ? 'Resources' : type === 'assets' ? 'Components' : 'Collections'}
+                  {type === 'websites'
+                    ? 'Resources'
+                    : type === 'assets'
+                      ? 'Components'
+                      : 'Collections'}
                 </a>
               );
             })}

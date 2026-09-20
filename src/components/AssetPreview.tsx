@@ -159,8 +159,7 @@ export function AssetPreview({
   const [failedUrl, setFailedUrl] = useState('');
   const live = asset.kind === 'component' && Object.hasOwn(demos, asset.id);
   const embedUrl = officialEmbedUrl(asset);
-  const imageUrl =
-    asset.preview?.kind === 'image' ? safeAssetUrl(asset.preview.url) : undefined;
+  const imageUrl = asset.preview?.kind === 'image' ? safeAssetUrl(asset.preview.url) : undefined;
   const showImage = imageUrl && failedUrl !== imageUrl;
   const livePreview = live || Boolean(embedUrl);
 
