@@ -1,14 +1,22 @@
 import React, { Component, Suspense, lazy, useEffect, type ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { KIBO_REVIEWED_COMPONENTS } from '../../shared/reviewed-previews';
+import { KIBO_PREVIEW_REF, KIBO_REVIEWED_COMPONENTS } from '../../shared/reviewed-previews';
 import './styles.css';
 
 const examples = import.meta.glob('./vendor/apps/docs/examples/*.tsx');
 const params = new URLSearchParams(location.search);
 const slug = params.get('id') ?? '';
 const id = `kibo-ui/${slug}`;
-const notify = (status: 'ready' | 'error') =>
+let failed = false;
+document.documentElement.dataset.sourceRef = KIBO_PREVIEW_REF;
+function notify(status: 'ready' | 'error') {
+  if (status === 'error') {
+    failed = true;
+    delete document.documentElement.dataset.previewReady;
+  }
+  if (status === 'ready' && failed) return;
   parent.postMessage({ type: 'uixo-preview-status', id, status }, '*');
+}
 function setTheme(theme: unknown) {
   if (theme !== 'light' && theme !== 'dark') return;
   document.documentElement.classList.toggle('dark', theme === 'dark');
@@ -41,6 +49,7 @@ class Boundary extends Component<{ children: ReactNode }, { failed: boolean }> {
 function Ready() {
   useEffect(() => {
     const timer = requestAnimationFrame(() => {
+      if (failed) return;
       document.documentElement.dataset.previewReady = 'true';
       notify('ready');
     });

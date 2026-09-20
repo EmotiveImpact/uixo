@@ -1,6 +1,7 @@
 import { act, cleanup, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { AssetRecord } from '../lib/asset-library';
+import { KIBO_PREVIEW_REF } from '../../shared/reviewed-previews';
 import { AssetPreview } from './AssetPreview';
 
 class ResizeObserverStub {
@@ -136,6 +137,17 @@ describe('AssetPreview', () => {
       providerId: 'kibo-ui',
       slug: 'announcement',
       name: 'Announcement',
+      sourceUrl: `https://github.com/shadcnblocks/kibo/blob/${KIBO_PREVIEW_REF}/packages/announcement/index.tsx`,
+      variants: [
+        {
+          id: 'kibo-ui/announcement/react',
+          framework: 'react',
+          format: 'tsx',
+          dependencies: [],
+          css: 'tailwind',
+          sourceRef: KIBO_PREVIEW_REF,
+        },
+      ],
       preview: {
         kind: 'embed',
         url: 'https://uixo-brown.vercel.app/provider-demos/kibo-ui/index.html?id=announcement',
@@ -150,6 +162,13 @@ describe('AssetPreview', () => {
       'allow-scripts',
     );
     expect(container.querySelector('img')).toBeNull();
+    for (const sourceUrl of [
+      original.sourceUrl.replace(KIBO_PREVIEW_REF, 'a'.repeat(40)),
+      'https://unreviewed.example/source',
+    ]) {
+      rerender(<AssetPreview asset={{ ...original, sourceUrl }} />);
+      expect(container.querySelector('iframe')).toBeNull();
+    }
     rerender(
       <AssetPreview
         asset={{

@@ -1,3 +1,4 @@
+import { reviewedPreviewPath } from '../../shared/reviewed-previews.ts';
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { capturedAssets } from '../../registry/bootstrap.ts';
@@ -18,6 +19,20 @@ test('coverage recognises only the ten reviewed source-pinned local demonstratio
     const changed = structuredClone(asset);
     changed.variants[0].sourceRef = 'a'.repeat(40);
     assert.equal(measureAsset(changed, index).pinnedLiveDemos, 0);
+    assert.equal(reviewedPreviewPath(changed), undefined);
+    assert.equal(
+      reviewedPreviewPath({ ...asset, sourceUrl: 'https://example.com/unreviewed' }),
+      undefined,
+    );
+    // Collection summaries do not carry variants but must still name the exact pinned source.
+    const summary = {
+      id: asset.id,
+      providerId: asset.providerId,
+      kind: asset.kind,
+      sourceUrl: asset.sourceUrl,
+      preview: asset.preview,
+    };
+    assert.equal(reviewedPreviewPath(summary), reviewedPreviewPath(asset));
     changed.preview!.url = 'https://unreviewed.test/frame';
     assert.equal(measureAsset(changed, index).missingPreviews, 1);
   }

@@ -47,6 +47,7 @@ with sync_playwright() as p:
                     frame = page.frame_locator('iframe[title="reviewed"]')
                     expect(frame.locator('html')).to_have_attribute('data-preview-ready', 'true', timeout=20000)
                     expect(frame.locator('html')).to_have_attribute('data-theme', theme)
+                    expect(frame.locator('html')).to_have_attribute('data-source-ref', SNAPSHOT['ref'])
                     expect(frame.locator('[role="alert"]')).to_have_count(0)
                     expect(frame.locator('.demo-stage')).not_to_be_empty()
                     check = 'visible original example'
@@ -61,9 +62,9 @@ with sync_playwright() as p:
                         page.locator('iframe').evaluate('(f) => f.src = f.src')
                         expect(frame.get_by_text('Important message')).to_be_visible()
                     elif slug == 'combobox':
-                        frame.get_by_role('combobox').click()
+                        frame.get_by_role('button', name='Select framework...', exact=True).click()
                         frame.get_by_role('option', name='Vite', exact=True).click()
-                        expect(frame.get_by_role('combobox')).to_contain_text('Vite')
+                        expect(frame.get_by_role('button', name='Vite', exact=True)).to_be_visible()
                         check = 'open and select Vite'
                     elif slug == 'dialog-stack':
                         frame.get_by_role('button', name='Show me', exact=True).click()
@@ -75,7 +76,8 @@ with sync_playwright() as p:
                         rating = frame.get_by_role('radiogroup', name='Rating')
                         expect(rating.locator('button')).to_have_count(5)
                         rating.locator('button').last.click()
-                        check = 'click fifth star'
+                        expect(rating.locator('button').last).to_have_attribute('tabindex', '0')
+                        check = 'select and retain fifth star'
                     elif slug == 'relative-time':
                         for label in ('EST', 'GMT', 'JST'):
                             expect(frame.get_by_text(label, exact=True)).to_be_visible()
@@ -85,7 +87,7 @@ with sync_playwright() as p:
                     elif slug == 'tags':
                         frame.get_by_role('combobox').click()
                         frame.get_by_role('option', name='React', exact=True).click()
-                        expect(frame.get_by_text('React', exact=True).first).to_be_visible()
+                        expect(frame.locator('button[role=combobox]')).to_contain_text('React')
                         check = 'select React tag'
                     elif slug == 'theme-switcher':
                         frame.get_by_role('button', name='Dark theme').click()
@@ -105,8 +107,12 @@ with sync_playwright() as p:
                     expect(frame.locator('html')).to_have_attribute('data-theme', theme)
                     page.screenshot(path=str(OUTPUT / f'{slug}-{width}-{theme}.png'))
                     results.append({'slug': slug, 'width': width, 'theme': theme, 'interaction': check, 'passed': True})
-        assert len(results) == 40
+    except Exception as error:
+        page.screenshot(path=str(OUTPUT / 'failure.png'))
+        (OUTPUT / 'failure.json').write_text(json.dumps({'error': str(error), 'slug': slug, 'width': width, 'theme': theme, 'frameUrls': [f.url for f in page.frames], 'frameText': [f.locator('body').inner_text(timeout=2000)[:5000] for f in page.frames]}, indent=2))
+        raise
     finally:
         (OUTPUT / 'results.json').write_text(json.dumps({'baseUrl': WEB, 'sourceRef': SNAPSHOT['ref'], 'localDeploymentHeadersEmulated': local, 'productionDatabaseWrite': False, 'checks': results, 'errors': errors}, indent=2))
         browser.close()
+assert len(results) == 40
 print(json.dumps({'passed': len(results), 'sourceRef': SNAPSHOT['ref'], 'baseUrl': WEB, 'localDeploymentHeadersEmulated': local}))
