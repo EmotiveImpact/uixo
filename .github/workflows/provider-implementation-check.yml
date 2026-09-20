@@ -1,0 +1,125 @@
+name: Apply and validate reviewed Kibo implementation
+
+on:
+  push:
+    branches: ['astra/provider-ingestion-2026-09-20']
+    paths:
+      - '.github/workflows/provider-implementation-check.yml'
+      - 'ops/provider-audit-patch/**'
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    if: github.repository == 'EmotiveImpact/uixo' && github.ref == 'refs/heads/astra/provider-ingestion-2026-09-20'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      npm_config_cache: ${{ runner.temp }}/uixo-verified-npm-cache
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Capture transfer bytes before accepting any change
+        run: |
+          mkdir -p handoff
+          cat ops/provider-audit-patch/{0,1,2,3,4}.b64 > handoff/transfer.b64
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-transfer-${{ github.sha }}
+          path: handoff/transfer.b64
+          retention-days: 3
+      - name: Verify the exact locally tested implementation patch
+        run: |
+          python - <<'PY'
+          import base64, gzip, hashlib, json
+          from pathlib import Path
+          text = Path('handoff/transfer.b64').read_text()
+          repair = Path('ops/provider-audit-patch/repairs.json')
+          if repair.exists():
+              for item in json.loads(repair.read_text()):
+                  assert text[item['start']:item['end']] == item['old'], 'Unexpected transfer bytes'
+              for item in sorted(json.loads(repair.read_text()), key=lambda item: item['start'], reverse=True):
+                  text = text[:item['start']] + item['new'] + text[item['end']:]
+          compressed = base64.b64decode(text, validate=True)
+          assert len(compressed) < 100000, 'Transfer budget exceeded'
+          patch = gzip.decompress(compressed)
+          assert len(patch) == 121746, 'Patch size mismatch'
+          assert hashlib.sha256(patch).hexdigest() == '597010c957378da1bf232015943098da9fab214f500780b45c397b29eab8d410', 'Patch integrity mismatch'
+          Path('handoff/implementation.patch').write_bytes(patch)
+          PY
+          git apply --check handoff/implementation.patch
+          git apply --index handoff/implementation.patch
+      - name: Install tools and generate only the new isolated dependency lock
+        run: |
+          npm ci --ignore-scripts
+          npm install --package-lock-only --prefix provider-demos/kibo-ui --ignore-scripts
+          git diff --name-only --diff-filter=ACMR -z HEAD | xargs -0 npx prettier --write --ignore-unknown
+      - name: Commit implementation to the same PR branch, never main
+        run: |
+          set -eu
+          git fetch origin astra/provider-ingestion-2026-09-20
+          test "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"
+          git rm -r ops/provider-audit-patch .github/workflows/provider-implementation-check.yml
+          git add -u
+          git add provider-demos/kibo-ui/package-lock.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'feat(registry): add ten source-pinned Kibo components with additive sync and truthful previews'
+          git push origin HEAD:refs/heads/astra/provider-ingestion-2026-09-20
+          git rev-parse HEAD > handoff/implementation.commit.txt
+      - name: Run every validation command and retain individual results
+        id: checks
+        run: |
+          set +e
+          check() {
+            name="$1"; shift
+            "$@" > "handoff/$name.log" 2>&1
+            result=$?
+            printf '%s=%s\n' "$name" "$result" | tee -a handoff/results.txt
+          }
+          check format npm run format:check
+          check lint npm run lint
+          check typecheck npm run typecheck
+          check unit npm test -- --run
+          check build npm run build
+          check registry npm run registry:test
+          echo 'Completed all requested command attempts.'
+      - name: Install browser verification tools
+        run: |
+          python -m pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+      - name: Exercise real built examples in four display modes
+        run: |
+          npm run registry:dev -- --memory > handoff/registry-server.log 2>&1 &
+          npm run preview -- --host 127.0.0.1 --port 3000 > handoff/preview-server.log 2>&1 &
+          for attempt in $(seq 1 30); do curl -fsS http://127.0.0.1:3000/provider-demos/kibo-ui/index.html >/dev/null && break; sleep 1; done
+          set +e
+          python tests/browser/kibo.py > handoff/kibo-browser.log 2>&1
+          result=$?
+          printf 'browser=%s\n' "$result" | tee -a handoff/results.txt
+      - name: Retain reproducible source, built previews and offline dependency cache
+        if: always()
+        run: |
+          git archive --format=tar.gz --output="$PWD/handoff/reviewed-source.tar.gz" HEAD
+          if test -d dist; then tar -czf handoff/dist.tar.gz dist; fi
+          if test -d "$npm_config_cache/_cacache"; then tar -C "$npm_config_cache" -czf handoff/npm-cache.tar.gz _cacache; fi
+          cp "$(command -v node)" handoff/node-22
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reviewed-kibo-validation-${{ github.sha }}
+          path: |
+            handoff
+            test-results/intelligence/kibo
+          retention-days: 7
+      - name: Require all checks to pass
+        run: |
+          test -f handoff/implementation.commit.txt
+          test "$(grep -c '=0$' handoff/results.txt)" = 7
+          test "$(wc -l < handoff/results.txt)" = 7
