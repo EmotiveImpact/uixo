@@ -69,7 +69,9 @@ describe('AssetPreview', () => {
     expect(frame.style.visibility).toBe('hidden');
     expect(screen.getByRole('status').textContent).toContain('Loading live demo');
     act(() => vi.advanceTimersByTime(20000));
-    expect(screen.getByRole('link', { name: /Open original live demo/ })).toBeTruthy();
+    expect(screen.getByRole('link', { name: /Open original source/ })).toBeTruthy();
+    expect(screen.getByText('Preview could not load')).toBeTruthy();
+    expect(screen.queryByText('Live demo · Try it')).toBeNull();
     act(() => {
       window.dispatchEvent(
         new MessageEvent('message', {
@@ -79,14 +81,15 @@ describe('AssetPreview', () => {
       );
     });
     expect(frame.style.visibility).toBe('visible');
-    expect(screen.queryByRole('link', { name: /Open original live demo/ })).toBeNull();
+    expect(screen.getByText('Live demo · Try it')).toBeTruthy();
+    expect(screen.queryByRole('link', { name: /Open original source/ })).toBeNull();
   });
 
   it('prefers a reviewed live component over its static capture', () => {
     const { container } = render(<AssetPreview asset={asset({})} />);
 
     expect(screen.getByTitle('Live Alert demo').getAttribute('sandbox')).toBe('allow-scripts');
-    expect(screen.getByText(/^Live demo/)).toBeTruthy();
+    expect(screen.getByText('Loading original demo')).toBeTruthy();
     expect(container.querySelector('img')).toBeNull();
     expect(container.querySelector('.is-live-component')).toBeTruthy();
   });

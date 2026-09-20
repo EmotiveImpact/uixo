@@ -4,6 +4,8 @@ import type { CollectionAssetPreview } from '../../shared/intelligence';
 import { safeAssetUrl } from '../lib/asset-library';
 import demos from '../../live-demos/manifest.json';
 
+type PreviewStatus = 'loading' | 'ready' | 'error';
+
 function officialEmbedUrl(asset: CollectionAssetPreview): string | undefined {
   if (asset.providerId !== 'animata' || asset.preview?.kind !== 'embed') return undefined;
   const url = safeAssetUrl(asset.preview.url);
@@ -19,17 +21,20 @@ function LivePreview({
   detail,
   src,
   external = false,
+  onStatusChange,
 }: {
   asset: CollectionAssetPreview;
   detail: boolean;
   src: string;
   external?: boolean;
+  onStatusChange: (status: PreviewStatus) => void;
 }) {
   const viewport = useRef<HTMLDivElement>(null);
   const frame = useRef<HTMLIFrameElement>(null);
   const [visible, setVisible] = useState(detail);
   const [size, setSize] = useState({ width: 480, height: 330 });
-  const [status, setStatus] = useState('loading');
+  const [status, setStatus] = useState<PreviewStatus>('loading');
+  useEffect(() => onStatusChange(status), [status, onStatusChange]);
   const [theme, setTheme] = useState(() =>
     document.documentElement.classList.contains('light') ? 'light' : 'dark',
   );
@@ -120,7 +125,7 @@ function LivePreview({
           target="_blank"
           rel="noopener noreferrer"
         >
-          Open original live demo ↗
+          Open original source ↗
         </a>
       )}
     </div>
@@ -135,6 +140,7 @@ export function AssetPreview({
   detail?: boolean;
 }) {
   const [failedUrl, setFailedUrl] = useState('');
+  const [liveStatus, setLiveStatus] = useState<PreviewStatus>('loading');
   const live = asset.kind === 'component' && Object.hasOwn(demos, asset.id);
   const reviewed = reviewedPreviewPath(asset);
   const embedUrl = officialEmbedUrl(asset);
@@ -158,6 +164,7 @@ export function AssetPreview({
           key={asset.id}
           asset={asset}
           detail={detail}
+          onStatusChange={setLiveStatus}
           src={`/live-demos/index.html?id=${encodeURIComponent(asset.id)}&theme=${
             document.documentElement.classList.contains('light') ? 'light' : 'dark'
           }`}
@@ -167,10 +174,18 @@ export function AssetPreview({
           key={asset.id}
           asset={asset}
           detail={detail}
+          onStatusChange={setLiveStatus}
           src={`${reviewed}&theme=${document.documentElement.classList.contains('light') ? 'light' : 'dark'}`}
         />
       ) : embedUrl ? (
-        <LivePreview key={asset.id} asset={asset} detail={detail} src={embedUrl} external />
+        <LivePreview
+          key={asset.id}
+          asset={asset}
+          detail={detail}
+          onStatusChange={setLiveStatus}
+          src={embedUrl}
+          external
+        />
       ) : showImage ? (
         <img
           src={imageUrl}
@@ -190,7 +205,11 @@ export function AssetPreview({
         {asset.kind === 'icon-pack'
           ? 'Icon library · Official source'
           : live || reviewed || embedUrl
-            ? 'Live demo · Try it'
+            ? liveStatus === 'error'
+              ? 'Preview could not load'
+              : liveStatus === 'ready'
+                ? 'Live demo · Try it'
+                : 'Loading original demo'
             : showImage
               ? 'Original GitHub SVG'
               : 'No live demo available'}
