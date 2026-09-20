@@ -9,6 +9,7 @@ import {
   licenceFromText,
   parseJsonRegistry,
   PROVIDERS,
+  reviewedSnapshotAssets,
   storybookComponentAsset,
 } from './providers.ts';
 import { readAnimataSnapshot } from './animata.ts';
@@ -56,6 +57,10 @@ export async function capturedAssets(): Promise<Asset[]> {
         assets.push(
           buttonGalleryAsset(item, provider, snapshot.ref, snapshot.observedAt, guidance),
         );
+      continue;
+    }
+    if (provider.adapter === 'reviewed-snapshot') {
+      assets.push(...(await reviewedSnapshotAssets(provider)));
       continue;
     }
     if (provider.adapter === 'github-storybook') {
