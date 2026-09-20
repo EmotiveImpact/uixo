@@ -1,0 +1,30 @@
+name: Redesign review inputs
+
+on:
+  push:
+    branches: ['astra/visual-redesign-ui8-2026-09-20']
+    paths: ['.github/workflows/redesign-review-inputs.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Retain tracked source and local Git history only
+        run: |
+          mkdir -p "$RUNNER_TEMP/redesign-inputs"
+          git archive --format=tar.gz --output="$RUNNER_TEMP/redesign-inputs/source.tar.gz" HEAD
+          git bundle create "$RUNNER_TEMP/redesign-inputs/source.bundle" HEAD
+          git rev-parse HEAD > "$RUNNER_TEMP/redesign-inputs/commit.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: redesign-review-inputs
+          path: ${{ runner.temp }}/redesign-inputs
+          retention-days: 3
