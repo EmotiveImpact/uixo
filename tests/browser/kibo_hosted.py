@@ -9,6 +9,7 @@ import os
 import re
 import time
 from pathlib import Path
+from urllib.parse import urlparse, parse_qs
 from playwright.sync_api import sync_playwright, expect
 
 WEB = 'https://uixo-git-astra-provider-dd32cd-emotiveimpact-gmailcoms-projects.vercel.app'
@@ -26,12 +27,27 @@ page = None
 
 with sync_playwright() as p:
     browser = p.chromium.launch()
-    request = p.request.new_context(timeout=20000)
+    auth = browser.new_context()
     try:
+        share_file = os.environ.get('UIXO_PREVIEW_SHARE_FILE')
+        if share_file:
+            share = Path(share_file).read_text().strip()
+            parsed = urlparse(share)
+            if parsed.scheme + '://' + parsed.netloc != WEB or parsed.path != '/' or parsed.fragment or set(parse_qs(parsed.query)) != {'_vercel_share'}:
+                raise ValueError('Only a scoped Vercel share link for this preview is accepted.')
+            bootstrap = auth.new_page()
+            try:
+                bootstrap.goto(share, wait_until='networkidle', timeout=45000)
+            except Exception:
+                raise RuntimeError('Could not establish the authorised preview session.') from None
+            finally:
+                bootstrap.close()
+            del share
+        request = auth.request
         # Wait only for this commit, never accept the previous deployment's green result.
         for attempt in range(60):
-            response = request.get(WEB + '/api/registry?action=status')
-            if response.status in (401, 403):
+            response = request.get(WEB + '/api/registry?action=status', timeout=20000)
+            if response.status in (401, 403) or urlparse(response.url).netloc != urlparse(WEB).netloc:
                 raise AssertionError('Hosted preview requires authentication; no acceptance claimed.')
             if response.ok and 'application/json' in response.headers.get('content-type', ''):
                 status = response.json()
@@ -53,7 +69,12 @@ with sync_playwright() as p:
             csp = demo.headers.get('content-security-policy', '')
             for rule in ("default-src 'none'", "connect-src 'none'", "frame-src 'none'", "form-action 'none'", "base-uri 'none'"):
                 assert rule in csp, csp
-            asset = by_slug[item['slug']]
+            summary = by_slug[item['slug']]
+            # Search intentionally omits full licence text. Inspect its real detail endpoint.
+            detail = request.get(WEB + '/api/registry?action=asset&id=' + summary['id'])
+            assert detail.ok, detail.status
+            asset = detail.json()
+            assert asset['id'] == summary['id']
             assert asset['sourceUrl'] == f"https://github.com/shadcnblocks/kibo/blob/{SNAPSHOT['ref']}/{item['sourcePath']}"
             assert all(v['sourceRef'] == SNAPSHOT['ref'] for v in asset['variants'])
             assert asset['preview']['kind'] == 'embed'
@@ -65,7 +86,8 @@ with sync_playwright() as p:
             assert asset['licence']['text'].strip() == evidence.decode().strip()
         for width in (1440, 390):
             for theme in ('light', 'dark'):
-                context = browser.new_context(viewport={'width': width, 'height': 950}, color_scheme=theme)
+                # Retain the Vercel session cookies, not UIXO theme/local-storage preferences.
+                context = browser.new_context(viewport={'width': width, 'height': 950}, color_scheme=theme, storage_state={'cookies': auth.cookies(), 'origins': []})
                 page = context.new_page()
                 page.on('pageerror', lambda error: errors.append(str(error)))
                 page.on('request', lambda r: mutations.append({'method': r.method, 'url': r.url})
@@ -97,9 +119,22 @@ with sync_playwright() as p:
                     expect(dialog.locator(f'code[title="{SNAPSHOT["ref"]}"]')).to_have_count(1)
                     expect(dialog.locator('.asset-command pre')).to_contain_text(item['registryUrl'], timeout=10000)
                     expect(dialog.locator('[role=alert]')).to_have_count(0)
+                    if slug == 'combobox':
+                        detail_frame.get_by_role('button', name='Select framework...', exact=True).click()
+                        detail_frame.get_by_role('option', name='Vite', exact=True).click()
+                        expect(detail_frame.get_by_role('button', name='Vite', exact=True)).to_have_attribute('aria-expanded', 'false')
+                        expect(detail_frame.get_by_role('option')).to_have_count(0)
+                    if slug == 'dialog-stack':
+                        detail_frame.get_by_role('button', name='Show me', exact=True).click()
+                        detail_frame.get_by_role('button', name='Next', exact=True).first.click()
+                        active = detail_frame.locator('div.shadow-lg').filter(has=detail_frame.get_by_text("I'm the second dialog", exact=True))
+                        expect(active).to_have_css('position', 'relative')
+                        expect(active).to_have_css('opacity', '1')
+                        expect(active.locator(':scope > div')).to_have_css('opacity', '1')
                     bounds = dialog.locator('iframe').bounding_box()
                     assert bounds and bounds['width'] > 100 and bounds['height'] > 100, bounds
                     assert not page.evaluate('document.documentElement.scrollWidth > innerWidth + 1')
+                    page.wait_for_timeout(350)
                     page.screenshot(path=str(OUTPUT / f'{slug}-{width}-{theme}.png'))
                     results.append({'slug': slug, 'width': width, 'theme': theme, 'card': 'real component', 'detail': 'real component', 'sourceRef': SNAPSHOT['ref'], 'installGuidance': 'upstream URL', 'passed': True})
                     dialog.get_by_role('button', name='Close asset details').click()
@@ -112,15 +147,15 @@ with sync_playwright() as p:
                 context.close()
         assert len(results) == 40 and not errors and not mutations, {'checks': len(results), 'errors': errors, 'mutations': mutations}
     except Exception as error:
-        failure = {'error': str(error)}
+        failure = {'error': re.sub(r'_vercel_share=[^&\s\"\']+', '_vercel_share=REDACTED', str(error))}
         if page and not page.is_closed():
             page.screenshot(path=str(OUTPUT / 'failure.png'))
-            failure['url'] = page.url
+            failure['url'] = page.url.split('?_vercel_share=')[0]
             failure['body'] = page.locator('body').inner_text(timeout=2000)[:10000]
         (OUTPUT / 'failure.json').write_text(json.dumps(failure, indent=2))
         raise
     finally:
         (OUTPUT / 'results.json').write_text(json.dumps({'baseUrl': WEB, 'expectedBuild': EXPECTED_BUILD, 'status': status, 'sourceRef': SNAPSHOT['ref'], 'productionDatabaseWrite': False, 'localDeploymentHeadersEmulated': False, 'checks': results, 'errors': errors, 'unexpectedMutationRequests': mutations}, indent=2))
-        request.dispose()
+        auth.close()
         browser.close()
 print(json.dumps({'hostedChecksPassed': len(results), 'build': EXPECTED_BUILD, 'sourceRef': SNAPSHOT['ref']}))
