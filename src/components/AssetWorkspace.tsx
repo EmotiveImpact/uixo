@@ -133,7 +133,7 @@ export function AssetWorkspace() {
   const title =
     titles[query.view] ||
     (query.view === 'sources'
-      ? 'Indexed sources'
+      ? 'UI libraries'
       : query.view === 'saved'
         ? 'Saved assets'
         : COMPONENT_CATEGORIES.find((entry) => entry.id === query.category)?.label ||
@@ -236,7 +236,7 @@ export function AssetWorkspace() {
               ? 'Source-backed selections and evidence from the UIXO registry.'
               : utility
                 ? 'One library. Your workflow.'
-                : 'Live components and icon packs, with the source left intact. Find it, understand it, make it yours.'
+                : 'Components and icon packs from trusted sources. Preview them, inspect the details, and go straight to the original.'
           }
           canClear={hasFilters}
           onClear={() => navigate({ view: query.view }, true)}
@@ -311,7 +311,6 @@ export function AssetWorkspace() {
             }
           />
         )}
-        <p className="dv2-release-label">DISCOVERY V2 · SOURCE-BACKED ASSET REGISTRY</p>
         <SiteFooter count={null} assets>
           <nav aria-label="Asset workspace links">
             <a href="/browse/assets?view=collections">Asset collections</a>
