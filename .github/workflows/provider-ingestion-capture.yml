@@ -1,0 +1,108 @@
+name: Provider ingestion evidence
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'tools/provider_ingestion/**'
+      - 'tests/provider_ingestion/**'
+      - 'docs/PROVIDER-INGESTION-QUEUE.md'
+      - '.github/workflows/provider-ingestion-capture.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: provider-ingestion-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    if: github.repository == 'EmotiveImpact/uixo' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feat/provider-ingestion-approved-wave'
+    name: Capture unpublished source evidence
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - name: Check out the exact ingestion head
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: true
+
+      - name: Use Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Test publication-free inventory readers
+        run: |
+          mkdir -p test-results/provider-ingestion
+          python -m unittest discover -s tests/provider_ingestion -v > test-results/provider-ingestion/tests.log 2>&1
+          tail -n 6 test-results/provider-ingestion/tests.log
+          python -m compileall -q tools/provider_ingestion tests/provider_ingestion
+          python -m tools.provider_ingestion.capture --plan --all > test-results/provider-ingestion/plan.json
+
+      - name: Capture each pinned provider sequentially
+        id: capture
+        run: |
+          set +e
+          python -m tools.provider_ingestion.capture --capture --all | tee test-results/provider-ingestion/capture.jsonl
+          RESULT=${PIPESTATUS[0]}
+          echo "exit_code=$RESULT" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Verify repeat capture is a no-op for every successful snapshot
+        run: |
+          python - <<'PY' | tee test-results/provider-ingestion/repeat.jsonl
+          import json
+          from pathlib import Path
+          from tools.provider_ingestion.capture import capture, load_queue
+          root = Path.cwd()
+          for provider in load_queue():
+              target = root / 'data/registry/snapshots/ingestion' / provider.id / provider.ref / 'staged.json'
+              if not target.exists():
+                  continue
+              result = capture(provider, root)
+              assert result['status'] == 'unchanged' and result['published'] == 0
+              print(json.dumps(result))
+          PY
+
+      - name: Commit evidence only to the existing ingestion branch
+        run: |
+          test "$GITHUB_REPOSITORY" = 'EmotiveImpact/uixo'
+          if test -d data/registry/snapshots/ingestion; then
+            git add -- data/registry/snapshots/ingestion
+          fi
+          git add -- data/registry/licences
+          if git diff --cached --quiet; then
+            echo 'No evidence changes; existing snapshots preserved.'
+            exit 0
+          fi
+          python - <<'PY'
+          import subprocess
+          paths = subprocess.check_output(['git', 'diff', '--cached', '--name-only', '-z']).decode().split('\0')
+          assert all(not path or path.startswith(('data/registry/snapshots/ingestion/', 'data/registry/licences/')) for path in paths)
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'data: capture pinned unpublished provider inventories and licence evidence'
+          git push origin 'HEAD:refs/heads/feat/provider-ingestion-approved-wave'
+
+      - name: Retain source capture evidence and failure logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: provider-ingestion-${{ github.run_id }}
+          path: |
+            test-results/provider-ingestion
+            data/registry/snapshots/ingestion
+            data/registry/licences
+          retention-days: 14
+
+      - name: Report unresolved capture failures
+        if: steps.capture.outputs.exit_code != '' && steps.capture.outputs.exit_code != '0'
+        run: |
+          echo 'At least one upstream capture failed. Successful snapshots remain unpublished; inspect capture.jsonl.'
+          exit 1
