@@ -1,0 +1,112 @@
+name: Apply approved prototype layouts
+on:
+  push:
+    branches: ['astra/visual-redesign-ui8-2026-09-20']
+    paths:
+      - '.github/workflows/redesign-layout-apply.yml'
+      - 'ops/redesign-layout-transfer/**'
+permissions:
+  contents: write
+jobs:
+  layout:
+    if: github.repository == 'EmotiveImpact/uixo' && github.ref == 'refs/heads/astra/visual-redesign-ui8-2026-09-20'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Verify and apply the exact locally built layout source
+        run: |
+          mkdir -p handoff
+          python - <<'PY'
+          import base64, hashlib, json, lzma
+          from pathlib import Path
+          text = ''.join(Path(f'ops/redesign-layout-transfer/{i}.b64').read_text() for i in range(4))
+          data = lzma.decompress(base64.b64decode(text, validate=True))
+          assert hashlib.sha256(data).hexdigest() == 'd7e36ddf2d7a5fba65376520caef46176530e7fea6e4194f40ac565ce6f14cc9'
+          items = json.loads(data)
+          assert len(items) == 16
+          for item in items:
+              path = Path(item['path'])
+              assert not path.is_absolute() and '..' not in path.parts
+              assert str(path).startswith(('src/', 'tests/browser/'))
+              before = path.read_bytes() if path.exists() else b''
+              assert hashlib.sha256(before).hexdigest() == item['before'], str(path)
+              lines = before.decode().splitlines(keepends=True)
+              for start, end, replacement in sorted(item['edits'], key=lambda row: row[0], reverse=True):
+                  lines[start:end] = replacement.splitlines(keepends=True)
+              path.parent.mkdir(parents=True, exist_ok=True)
+              path.write_text(''.join(lines))
+          Path('handoff/edits.json').write_bytes(data)
+          PY
+          npm ci --ignore-scripts
+          python - <<'PY'
+          import json, subprocess, hashlib
+          from pathlib import Path
+          items = json.loads(Path('handoff/edits.json').read_text())
+          paths = [x['path'] for x in items if not x['path'].endswith('.py')]
+          subprocess.run(['npx', 'prettier', '--write', *paths], check=True)
+          for item in items:
+              assert hashlib.sha256(Path(item['path']).read_bytes()).hexdigest() == item['after'], item['path']
+          PY
+      - name: Commit ordinary source to the existing PR branch only
+        run: |
+          git fetch origin astra/visual-redesign-ui8-2026-09-20
+          test "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"
+          git add src tests/browser
+          git rm -r ops/redesign-layout-transfer
+          test -z "$(git diff --cached --name-only -- .github/workflows)"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'feat(ui): implement approved prototype layouts in the real application'
+          git push origin HEAD:refs/heads/astra/visual-redesign-ui8-2026-09-20
+          git rev-parse HEAD > handoff/implementation.commit.txt
+      - name: Production build with retained real component previews
+        run: npm run build > handoff/build.log 2>&1 || { tail -n 100 handoff/build.log; exit 1; }
+      - name: Browser tools
+        run: |
+          python -m pip install -r tests/browser/requirements.txt
+          python -m playwright install --with-deps chromium
+      - name: Actual light and dark pages and interactions
+        run: |
+          node --experimental-strip-types tools/registry-dev.ts --memory --dev-curator > handoff/registry.log 2>&1 &
+          npm run dev > handoff/vite.log 2>&1 &
+          for n in $(seq 1 45); do curl -fsS http://localhost:3000 >/dev/null && curl -fsS 'http://localhost:4175/api/registry?action=status' >/dev/null && break; sleep 1; done
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          out = Path('test-results/redesign'); out.mkdir(parents=True, exist_ok=True)
+          with sync_playwright() as p:
+              b = p.chromium.launch()
+              for theme in ['dark', 'light']:
+                  for width in [1440, 390]:
+                      ctx = b.new_context(viewport={'width':width,'height':1050 if width == 1440 else 844}, color_scheme=theme)
+                      ctx.route('**/api/auth/**', lambda r: r.fulfill(body='null', content_type='application/json'))
+                      ctx.add_init_script(f"localStorage.setItem('uixo-theme', JSON.stringify('{theme}'))")
+                      pg = ctx.new_page()
+                      for name, route in [('home','/'),('components','/browse/assets'),('resources','/browse'),('detail','/browse/assets?id=shadcn%2Fbutton')]:
+                          pg.goto('http://localhost:3000'+route, wait_until='domcontentloaded')
+                          pg.wait_for_timeout(3500)
+                          pg.screenshot(path=str(out/f'visual-{name}-{theme}-{width}.png'), full_page=False)
+                      ctx.close()
+              b.close()
+          PY
+          python tests/browser/redesign.py > handoff/browser.log 2>&1 || { cat handoff/browser.log; exit 1; }
+      - name: Retain source and visual evidence
+        if: always()
+        run: git archive --format=tar.gz --output=handoff/reviewed-source.tar.gz HEAD
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prototype-layout-evidence
+          path: |
+            handoff
+            test-results/redesign
+          retention-days: 7
