@@ -32,15 +32,15 @@ describe('LandingPage catalogue navigation', () => {
     );
 
     const navigation = screen.getByRole('navigation', { name: 'Main navigation' });
-    const websites = navigation.querySelector('a[href="/browse"]');
-    const assets = navigation.querySelector('a[href="/browse/assets"]');
+    const resources = navigation.querySelector('a[href="/browse"]');
+    const components = navigation.querySelector('a[href="/browse/assets"]');
     const collections = navigation.querySelector('a[href="/collections"]');
 
-    expect(websites?.textContent).toBe('Websites');
-    expect(assets?.textContent).toBe('Assets');
+    expect(resources?.textContent).toBe('Resources');
+    expect(components?.textContent).toBe('Components');
     expect(collections?.textContent).toBe('Collections');
 
-    fireEvent.click(assets!);
+    fireEvent.click(components!);
     expect(onAssets).toHaveBeenCalledOnce();
   });
 });
