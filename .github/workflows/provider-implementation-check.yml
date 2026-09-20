@@ -15,8 +15,6 @@ jobs:
     if: github.repository == 'EmotiveImpact/uixo' && github.ref == 'refs/heads/astra/provider-ingestion-2026-09-20'
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    env:
-      npm_config_cache: ${{ runner.temp }}/uixo-verified-npm-cache
     steps:
       - uses: actions/checkout@v7
         with:
@@ -27,6 +25,7 @@ jobs:
           node-version: '22'
       - name: Capture transfer bytes before accepting any change
         run: |
+          echo "npm_config_cache=$RUNNER_TEMP/uixo-verified-npm-cache" >> "$GITHUB_ENV"
           mkdir -p handoff
           cat ops/provider-audit-patch/{0,1,2,3,4}.b64 > handoff/transfer.b64
       - uses: actions/upload-artifact@v4
@@ -74,7 +73,6 @@ jobs:
           git push origin HEAD:refs/heads/astra/provider-ingestion-2026-09-20
           git rev-parse HEAD > handoff/implementation.commit.txt
       - name: Run every validation command and retain individual results
-        id: checks
         run: |
           set +e
           check() {
