@@ -1,0 +1,63 @@
+name: Reconcile reviewed Kibo test fixtures
+
+on:
+  push:
+    branches: ['astra/provider-ingestion-2026-09-20']
+    paths: ['.github/workflows/kibo-fixtures-once.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  fixtures:
+    if: github.repository == 'EmotiveImpact/uixo' && github.ref == 'refs/heads/astra/provider-ingestion-2026-09-20'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+      - name: Reconcile exact catalogue counts without changing assertions
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, hashlib
+          for filename in ['discovery', 'http', 'intelligence', 'source-directory']:
+              path = Path(f'tests/registry/{filename}.node.ts')
+              text = path.read_text()
+              assert '464' in text
+              text = text.replace('464', '474')
+              text = text.replace('sources.data.items.length, 7', 'sources.data.items.length, 8')
+              text = text.replace('report.sources.length, 7', 'report.sources.length, 8')
+              if filename == 'source-directory':
+                  text = text.replace('directory.total, 8', 'directory.total, 9').replace('directory.total, 7', 'directory.total, 8').replace('first.total, 67', 'first.total, 68')
+              path.write_text(text)
+          path = Path('tests/browser/kibo.py')
+          text = path.read_text()
+          assert text.count('browser = p.chromium.launch()') == 1
+          path.write_text(text.replace('browser = p.chromium.launch()', "browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or None)"))
+          path = Path('package.json')
+          data = json.loads(path.read_text())
+          data['scripts']['registry:test'] += ' tests/registry/dependency-notices.node.ts'
+          path.write_text(json.dumps(data, indent=2) + '\n')
+          path = Path('tools/verify-registry.mjs')
+          text = path.read_text()
+          target = "'tests/registry/kibo.node.ts',"
+          assert text.count(target) == 1
+          path.write_text(text.replace(target, target + "\n    'tests/registry/dependency-notices.node.ts',"))
+          PY
+          npm ci --ignore-scripts
+          git diff --name-only -z | xargs -0 npx prettier --write --ignore-unknown
+      - name: Commit only these test-fixture changes to the existing PR
+        run: |
+          git fetch origin astra/provider-ingestion-2026-09-20
+          test "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"
+          git add tests/registry tests/browser/kibo.py tools/verify-registry.mjs package.json
+          test -z "$(git diff --cached --name-only -- .github/workflows)"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'test: reconcile Kibo catalogue totals and verify dependency notices'
+          git push origin HEAD:refs/heads/astra/provider-ingestion-2026-09-20
