@@ -163,7 +163,7 @@ a substitute for independently verifying the Vercel/Neon mapping.
 
 ```sh
 npm run registry:sync-reviewed -- kibo-ui --allow-remote
-# After inspecting the dry run and recording UIXO_OPERATOR_ID / UIXO_EDITORIAL_REASON:
+# After inspecting the dry run and recording UIXO_OPERATOR_ID / UIXO_REVIEW_REASON:
 npm run registry:sync-reviewed -- kibo-ui --allow-remote --apply
 ```
 
