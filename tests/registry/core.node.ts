@@ -32,12 +32,12 @@ test('migration and captured-source seed are repeatable; counts reflect actual r
     await migrate(db);
     const first = await seedCaptured(registry),
       second = await seedCaptured(registry);
-    assert.equal(first.inserted, 464);
+    assert.equal(first.inserted, 1284);
     assert.equal(second.inserted, 0);
-    assert.equal((await registry.stats()).assets, 464);
-    assert.equal((await registry.providers()).length, 7);
+    assert.equal((await registry.stats()).assets, 1284);
+    assert.equal((await registry.providers()).length, 10);
     const inventory = await registry.inventory();
-    assert.equal(inventory.total, 464);
+    assert.equal(inventory.total, 1284);
     assert.ok(inventory.kinds.find((entry) => entry.id === 'component')!.count > 0);
     assert.equal(
       inventory.kinds.find((entry) => entry.id === 'font'),
@@ -571,7 +571,7 @@ test('discovery lists icon packs, retains legacy saved icons and filters compone
       'Exercise existing saved icon compatibility.',
     );
     const all = await registry.search({ limit: 48 });
-    assert.equal(all.total, 464);
+    assert.equal(all.total, 1284);
     const packs = await registry.search({ kind: 'icon' });
     assert.equal(packs.total, 2);
     assert.ok(packs.items.every((asset) => asset.kind === 'icon-pack'));
