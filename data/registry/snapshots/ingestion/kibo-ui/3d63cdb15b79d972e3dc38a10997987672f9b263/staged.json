@@ -1,0 +1,2998 @@
+{
+  "actualPublishedCount": 0,
+  "archiveSha256": "a7dcc987c30a2fde980a120408890384e6a274136cc3f5fdd7d558a0a4aa9717",
+  "branch": "main",
+  "excludedCount": 4,
+  "exclusions": [
+    {
+      "name": "patterns",
+      "reason": "Patterns, shared primitives or tooling, not an individual Kibo component"
+    },
+    {
+      "name": "shadcn-ui",
+      "reason": "Patterns, shared primitives or tooling, not an individual Kibo component"
+    },
+    {
+      "name": "typescript-config",
+      "reason": "Patterns, shared primitives or tooling, not an individual Kibo component"
+    },
+    {
+      "name": "typography",
+      "reason": "No standalone TSX source; style-only packages stay out"
+    }
+  ],
+  "installationStrategy": "Use retained upstream evidence. No installation command is approved by this capture.",
+  "inventoryCount": 40,
+  "items": [
+    {
+      "categorySuggestion": "other",
+      "dependencies": [],
+      "dependencyEvidenceComplete": false,
+      "description": "A compound badge designed to display an announcement.",
+      "id": "kibo-ui/announcement",
+      "inventoryEvidence": {
+        "path": "packages/announcement/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/announcement/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Announcement",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "announcement",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "ddb6132e50e9e0145b4e212d307a565092efc6bb",
+          "path": "packages/announcement/index.tsx",
+          "sha256": "9c947617e73e8369e7b4cc5b4e11cd16c8e2278d14701b687999de657782d405",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/announcement/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/announcement/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/announcement/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A compound badge designed to display an announcement.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "react": "^19.2.1",
+            "react-dom": "^19.2.1"
+          },
+          "description": "A compound badge designed to display an announcement.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/announcement",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "media",
+      "dependencies": [],
+      "dependencyEvidenceComplete": false,
+      "description": "Avatar Stack is a component that allows you to stack and overlap avatars.",
+      "id": "kibo-ui/avatar-stack",
+      "inventoryEvidence": {
+        "path": "packages/avatar-stack/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/avatar-stack/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Avatar Stack",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "avatar-stack",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "5e8cd237f5ff6edd4e1e310655799bbf1ade2030",
+          "path": "packages/avatar-stack/index.tsx",
+          "sha256": "c477191e2ac7d8e7179879e51d4ce10bdfe4ea957e3d44b450d898308327357e",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/avatar-stack/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/avatar-stack/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/avatar-stack/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "Avatar Stack is a component that allows you to stack and overlap avatars.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "Avatar Stack is a component that allows you to stack and overlap avatars.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/avatar-stack",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "A banner is a full-width component that can be used to show a message and action to the user.",
+      "id": "kibo-ui/banner",
+      "inventoryEvidence": {
+        "path": "packages/banner/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/banner/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Banner",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "banner",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "bc1b91667be715a03275e8a67cf5970256b3486b",
+          "path": "packages/banner/index.tsx",
+          "sha256": "36f49256459e45ae6816730b1619878253656d9e98221b6b106323681ed5f26b",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/banner/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/banner/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/banner/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@radix-ui/react-use-controllable-state",
+          "lucide-react"
+        ],
+        "description": "A banner is a full-width component that can be used to show a message and action to the user.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@radix-ui/react-use-controllable-state": "^1.2.2",
+            "@repo/shadcn-ui": "workspace:*",
+            "lucide-react": "^0.545.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A banner is a full-width component that can be used to show a message and action to the user.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/banner",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [
+        "date-fns",
+        "jotai",
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "The calendar view displays features on a grid calendar. Specifically it shows the end date of each feature, and groups features by day.",
+      "id": "kibo-ui/calendar",
+      "inventoryEvidence": {
+        "path": "packages/calendar/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/calendar/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Calendar",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "calendar",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "c21b314621ccc380ea51e0df8e88b6d9daa4068a",
+          "path": "packages/calendar/index.tsx",
+          "sha256": "e5ae166bf9627e7847924c913c0240a16b3a0199ddb55713cec39d79ecae858d",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/calendar/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/calendar/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/calendar/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "date-fns",
+          "jotai",
+          "lucide-react"
+        ],
+        "description": "The calendar view displays features on a grid calendar. Specifically it shows the end date of each feature, and groups features by day.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "date-fns": "^4.1.0",
+            "jotai": "^2.15.0",
+            "lucide-react": "^0.545.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "The calendar view displays features on a grid calendar. Specifically it shows the end date of each feature, and groups features by day.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/calendar",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [
+        "lucide-react",
+        "radix-ui"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "Choiceboxes are a great way to show radio or checkbox options with a card style.",
+      "id": "kibo-ui/choicebox",
+      "inventoryEvidence": {
+        "path": "packages/choicebox/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/choicebox/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Choicebox",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "choicebox",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "75e0fa10e4eda4c2b552d37eec6a4c082f2587c9",
+          "path": "packages/choicebox/index.tsx",
+          "sha256": "4795f41f7db23cd2d059d3344a4c0662e6c039a3c9424791aaef741ade9f992f",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/choicebox/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/choicebox/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/choicebox/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "radix-ui"
+        ],
+        "description": "Choiceboxes are a great way to show radio or checkbox options with a card style.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "lucide-react": "^0.545.0",
+            "radix-ui": "^1.4.3",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "Choiceboxes are a great way to show radio or checkbox options with a card style.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/choicebox",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "@shikijs/transformers",
+        "lucide-react",
+        "react-icons",
+        "shiki"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "Provides syntax highlighting, line numbers, and copy to clipboard functionality for code blocks.",
+      "id": "kibo-ui/code-block",
+      "inventoryEvidence": {
+        "path": "packages/code-block/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/code-block/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Code Block",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "code-block",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "7d885887b429f23ac3f38466cb45c4904424b2b6",
+          "path": "packages/code-block/index.tsx",
+          "sha256": "e2686aaf1bba4197d4a4d2f30a505ef24955bbda8cba85d5eea70074614039b2",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/code-block/index.tsx"
+        },
+        {
+          "gitBlobSha": "57904af1c3b4878377c29942eb89e4ed5407dbc6",
+          "path": "packages/code-block/server.tsx",
+          "sha256": "06abf80b5281e162b4a9b817b59887cc190b0f20c06f7d506bdff1afeeacc92d",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/code-block/server.tsx"
+        }
+      ],
+      "sourcePath": "packages/code-block/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/code-block/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@radix-ui/react-use-controllable-state",
+          "@shikijs/transformers",
+          "lucide-react",
+          "react-icons",
+          "shiki"
+        ],
+        "description": "Provides syntax highlighting, line numbers, and copy to clipboard functionality for code blocks.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@radix-ui/react-use-controllable-state": "^1.2.2",
+            "@repo/shadcn-ui": "workspace:*",
+            "@shikijs/transformers": "^3.13.0",
+            "lucide-react": "^0.545.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0",
+            "react-icons": "^5.5.0",
+            "shiki": "3.13.0"
+          },
+          "description": "Provides syntax highlighting, line numbers, and copy to clipboard functionality for code blocks.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/code-block",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [
+        "color",
+        "lucide-react",
+        "radix-ui"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "Allows users to select a color. Modeled after the color picker in Figma.",
+      "id": "kibo-ui/color-picker",
+      "inventoryEvidence": {
+        "path": "packages/color-picker/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/color-picker/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Color Picker",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "color-picker",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "818fd5ab9df046fa9633ab1af234eba0aae12f5e",
+          "path": "packages/color-picker/index.tsx",
+          "sha256": "a5a1463d49c3ce62f3e8e3ba50bd13e64d3b638e63ea4e68261e591166707595",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/color-picker/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/color-picker/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/color-picker/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "color",
+          "lucide-react",
+          "radix-ui"
+        ],
+        "description": "Allows users to select a color. Modeled after the color picker in Figma.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "color": "^5.0.2",
+            "lucide-react": "^0.545.0",
+            "radix-ui": "^1.4.3",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "Allows users to select a color. Modeled after the color picker in Figma.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/color": "^4.2.0",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/color-picker",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "Autocomplete input and command palette with a list of suggestions.",
+      "id": "kibo-ui/combobox",
+      "inventoryEvidence": {
+        "path": "packages/combobox/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/combobox/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Combobox",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "combobox",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "5487202dd019d5c1512fa6785f4ba0739904f9b6",
+          "path": "packages/combobox/index.tsx",
+          "sha256": "ad7e6aeeb6e7a6505878cdfe701e169a82c592101ee06f2c833362aa0eee68b8",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/combobox/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/combobox/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/combobox/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@radix-ui/react-use-controllable-state",
+          "lucide-react"
+        ],
+        "description": "Autocomplete input and command palette with a list of suggestions.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@radix-ui/react-use-controllable-state": "^1.2.2",
+            "@repo/shadcn-ui": "workspace:*",
+            "lucide-react": "^0.545.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "Autocomplete input and command palette with a list of suggestions.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/combobox",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "A slider-based component for comparing two items in an overlay.",
+      "id": "kibo-ui/comparison",
+      "inventoryEvidence": {
+        "path": "packages/comparison/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/comparison/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Comparison",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "comparison",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "3fbb0224aca0f988208ddd18b2a99d5fe16f2be9",
+          "path": "packages/comparison/index.tsx",
+          "sha256": "6136ee133cffcca85f79174c5ebd8ca0a66f78f67d5f8c0a4df06b7d671bbb0a",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/comparison/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/comparison/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/comparison/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ],
+        "description": "A slider-based component for comparing two items in an overlay.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "lucide-react": "^0.545.0",
+            "motion": "^12.23.24",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A slider-based component for comparing two items in an overlay.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/comparison",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "date-fns"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "A GitHub-style contribution graph component that displays activity levels over time.",
+      "id": "kibo-ui/contribution-graph",
+      "inventoryEvidence": {
+        "path": "packages/contribution-graph/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/contribution-graph/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Contribution Graph",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "contribution-graph",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "8b197ecbd822428d1853a1fc0a8903997cc87924",
+          "path": "packages/contribution-graph/index.tsx",
+          "sha256": "a7461e71054d1c326ac2c5d2d613a21284c5dd933e05719a9e563f1ed6c0b900",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/contribution-graph/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/contribution-graph/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/contribution-graph/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "date-fns"
+        ],
+        "description": "A GitHub-style contribution graph component that displays activity levels over time.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "date-fns": "^4.1.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A GitHub-style contribution graph component that displays activity levels over time.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/contribution-graph",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "react-svg-credit-card-payment-icons"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "Credit card components for displaying and validating credit card information.",
+      "id": "kibo-ui/credit-card",
+      "inventoryEvidence": {
+        "path": "packages/credit-card/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/credit-card/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Credit Card",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "credit-card",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "641898c7f342ac09475e306eb75fe6b00ad2ee76",
+          "path": "packages/credit-card/index.tsx",
+          "sha256": "b272f3dc47c5ac7866f218c415e750d8b7c4a2affbabd881d7b7b18823925520",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/credit-card/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/credit-card/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/credit-card/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "react-svg-credit-card-payment-icons"
+        ],
+        "description": "Credit card components for displaying and validating credit card information.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0",
+            "react-svg-credit-card-payment-icons": "^4.2.1"
+          },
+          "description": "Credit card components for displaying and validating credit card information.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/credit-card",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "motion",
+      "dependencies": [],
+      "dependencyEvidenceComplete": false,
+      "description": "A cursor component, great for realtime interactive applications.",
+      "id": "kibo-ui/cursor",
+      "inventoryEvidence": {
+        "path": "packages/cursor/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/cursor/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Cursor",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "cursor",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "8533eb87cd3b0cf5b999356cbff9f1d4814d30c5",
+          "path": "packages/cursor/index.tsx",
+          "sha256": "9d7f0e233bc595c54ced7a3aba9c87f27a536453de3359df8f1cbf3fe313e574",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/cursor/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/cursor/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/cursor/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A cursor component, great for realtime interactive applications.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A cursor component, great for realtime interactive applications.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/cursor",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "A Tinder-like swipeable card stack component with smooth animations.",
+      "id": "kibo-ui/deck",
+      "inventoryEvidence": {
+        "path": "packages/deck/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/deck/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Deck",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "deck",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "5f22ebe828d9bbb3396185618b46430699623fb4",
+          "path": "packages/deck/index.tsx",
+          "sha256": "6dab9851efadfffb1a7cad246e8640d0dc3f3d84f10c373e92a19c16a9d4e98d",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/deck/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/deck/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/deck/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@radix-ui/react-use-controllable-state",
+          "lucide-react",
+          "motion"
+        ],
+        "description": "A Tinder-like swipeable card stack component with smooth animations.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@radix-ui/react-use-controllable-state": "^1.2.2",
+            "@repo/shadcn-ui": "workspace:*",
+            "lucide-react": "^0.545.0",
+            "motion": "^12.23.24",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A Tinder-like swipeable card stack component with smooth animations.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/deck",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "radix-ui"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "Composable stacked dialogs, useful for creating a wizard, nested form or multi-step process. It provides a consistent layout and styling for each dialog, and includes navigation component.",
+      "id": "kibo-ui/dialog-stack",
+      "inventoryEvidence": {
+        "path": "packages/dialog-stack/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/dialog-stack/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Dialog Stack",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "dialog-stack",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "61061cb13fd30976d4b0de9855035fba7722c9b0",
+          "path": "packages/dialog-stack/index.tsx",
+          "sha256": "ea301d2cca14c8104499e7fc52ffb9a692b23b261ad51eb00793c363da98bef6",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/dialog-stack/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/dialog-stack/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/dialog-stack/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@radix-ui/react-use-controllable-state",
+          "radix-ui"
+        ],
+        "description": "Composable stacked dialogs, useful for creating a wizard, nested form or multi-step process. It provides a consistent layout and styling for each dialog, and includes navigation component.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@radix-ui/react-use-controllable-state": "^1.2.2",
+            "@repo/shadcn-ui": "workspace:*",
+            "radix-ui": "^1.4.3",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "Composable stacked dialogs, useful for creating a wizard, nested form or multi-step process. It provides a consistent layout and styling for each dialog, and includes navigation component.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/dialog-stack",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "lucide-react",
+        "react-dropzone"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "Allows users to drag-and-drop files into a container to upload or process them.",
+      "id": "kibo-ui/dropzone",
+      "inventoryEvidence": {
+        "path": "packages/dropzone/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/dropzone/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Dropzone",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "dropzone",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "4633adc6ea60d0c624ac1147c028251e13e28e78",
+          "path": "packages/dropzone/index.tsx",
+          "sha256": "87bcb4740b9789243cae072c60bb4fa38b968040be6817635f6410694f22d5a3",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/dropzone/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/dropzone/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/dropzone/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "react-dropzone"
+        ],
+        "description": "Allows users to drag-and-drop files into a container to upload or process them.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "lucide-react": "^0.545.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0",
+            "react-dropzone": "^14.3.8"
+          },
+          "description": "Allows users to drag-and-drop files into a container to upload or process them.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/dropzone",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "@floating-ui/dom",
+        "@tiptap/core",
+        "@tiptap/extension-code-block-lowlight",
+        "@tiptap/extension-list",
+        "@tiptap/extension-subscript",
+        "@tiptap/extension-superscript",
+        "@tiptap/extension-table",
+        "@tiptap/extension-text-style",
+        "@tiptap/extension-typography",
+        "@tiptap/extensions",
+        "@tiptap/pm",
+        "@tiptap/react",
+        "@tiptap/starter-kit",
+        "@tiptap/suggestion",
+        "fuse.js",
+        "lowlight",
+        "lucide-react",
+        "tippy.js"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "The Editor component is a powerful and flexible text editor that allows you to create and edit rich text content.",
+      "id": "kibo-ui/editor",
+      "inventoryEvidence": {
+        "path": "packages/editor/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/editor/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Editor",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "editor",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "83708fe3ff2490dd0f2bafe6c53ca32072d5f622",
+          "path": "packages/editor/index.tsx",
+          "sha256": "89e7783415ef02bd7bfbf89e5a60b7bf14c9751a10055092fe6455af66cefe95",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/editor/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/editor/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/editor/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@floating-ui/dom",
+          "@tiptap/core",
+          "@tiptap/extension-code-block-lowlight",
+          "@tiptap/extension-list",
+          "@tiptap/extension-subscript",
+          "@tiptap/extension-superscript",
+          "@tiptap/extension-table",
+          "@tiptap/extension-text-style",
+          "@tiptap/extension-typography",
+          "@tiptap/extensions",
+          "@tiptap/pm",
+          "@tiptap/react",
+          "@tiptap/starter-kit",
+          "@tiptap/suggestion",
+          "fuse.js",
+          "lowlight",
+          "lucide-react",
+          "tippy.js"
+        ],
+        "description": "The Editor component is a powerful and flexible text editor that allows you to create and edit rich text content.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@floating-ui/dom": "^1.7.4",
+            "@repo/shadcn-ui": "workspace:*",
+            "@tiptap/core": "^3.6.6",
+            "@tiptap/extension-code-block-lowlight": "^3.6.6",
+            "@tiptap/extension-list": "^3.6.6",
+            "@tiptap/extension-subscript": "^3.6.6",
+            "@tiptap/extension-superscript": "^3.6.6",
+            "@tiptap/extension-table": "^3.6.6",
+            "@tiptap/extension-text-style": "^3.6.6",
+            "@tiptap/extension-typography": "^3.6.6",
+            "@tiptap/extensions": "^3.6.6",
+            "@tiptap/pm": "^3.6.6",
+            "@tiptap/react": "^3.6.6",
+            "@tiptap/starter-kit": "^3.6.6",
+            "@tiptap/suggestion": "^3.6.6",
+            "fuse.js": "^7.1.0",
+            "lowlight": "^3.3.0",
+            "lucide-react": "^0.545.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0",
+            "tippy.js": "^6.3.7"
+          },
+          "description": "The Editor component is a powerful and flexible text editor that allows you to create and edit rich text content.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/editor",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/modifiers",
+        "@uidotdev/usehooks",
+        "date-fns",
+        "jotai",
+        "lodash.throttle",
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "The Gantt chart is a powerful tool for visualizing project schedules and tracking the progress of tasks. It provides a clear, hierarchical view of tasks, allowing you to easily identify manage project timelines.",
+      "id": "kibo-ui/gantt",
+      "inventoryEvidence": {
+        "path": "packages/gantt/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/gantt/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Gantt",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "gantt",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "d8799e94f76b1bf1e9737461225eb00c3d573604",
+          "path": "packages/gantt/index.tsx",
+          "sha256": "ff06b4de80b119f88633f8e885a3067d4db8c3dc3a192d253de750adecec69fc",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/gantt/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/gantt/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/gantt/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@dnd-kit/core",
+          "@dnd-kit/modifiers",
+          "@uidotdev/usehooks",
+          "date-fns",
+          "jotai",
+          "lodash.throttle",
+          "lucide-react"
+        ],
+        "description": "The Gantt chart is a powerful tool for visualizing project schedules and tracking the progress of tasks. It provides a clear, hierarchical view of tasks, allowing you to easily identify manage project timelines.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@dnd-kit/core": "^6.3.1",
+            "@dnd-kit/modifiers": "^9.0.0",
+            "@repo/shadcn-ui": "workspace:*",
+            "@uidotdev/usehooks": "^2.4.1",
+            "date-fns": "^4.1.0",
+            "jotai": "^2.15.0",
+            "lodash.throttle": "^4.1.1",
+            "lucide-react": "^0.545.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "The Gantt chart is a powerful tool for visualizing project schedules and tracking the progress of tasks. It provides a clear, hierarchical view of tasks, allowing you to easily identify manage project timelines.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/lodash.throttle": "^4.1.9",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/gantt",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [],
+      "dependencyEvidenceComplete": false,
+      "description": "A component that shows a preview of a URL when hovering over a link.",
+      "id": "kibo-ui/glimpse",
+      "inventoryEvidence": {
+        "path": "packages/glimpse/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/glimpse/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Glimpse",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "glimpse",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "fe4401ae5819b40a6c1a90fdf0352b61e2ed860c",
+          "path": "packages/glimpse/index.tsx",
+          "sha256": "551d29b40b0a741f73e6676502dd659b851c57464aa921c136f822500b34e240",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/glimpse/index.tsx"
+        },
+        {
+          "gitBlobSha": "3447889da96259ee945267f9ec75335f42c8c065",
+          "path": "packages/glimpse/server.tsx",
+          "sha256": "f577d536796b2ad0872d452805020531b0453617118f880be70c198bd247a4a5",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/glimpse/server.tsx"
+        }
+      ],
+      "sourcePath": "packages/glimpse/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/glimpse/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A component that shows a preview of a URL when hovering over a link.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A component that shows a preview of a URL when hovering over a link.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/glimpse",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "media",
+      "dependencies": [
+        "lucide-react",
+        "radix-ui",
+        "react-image-crop"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "Helps you crop images to a specific size or aspect ratio.",
+      "id": "kibo-ui/image-crop",
+      "inventoryEvidence": {
+        "path": "packages/image-crop/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/image-crop/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Image Crop",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "image-crop",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "6ebd17bd2d4711034cc6c4f047524dfd11567e94",
+          "path": "packages/image-crop/index.tsx",
+          "sha256": "0efb8c4ccf255b58a3635679c32c559e715ff9e52dcff1438afe21677a740f21",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/image-crop/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/image-crop/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/image-crop/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "radix-ui",
+          "react-image-crop"
+        ],
+        "description": "Helps you crop images to a specific size or aspect ratio.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "lucide-react": "^0.545.0",
+            "radix-ui": "^1.4.3",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0",
+            "react-image-crop": "^11.0.10"
+          },
+          "description": "Helps you crop images to a specific size or aspect ratio.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/image-crop",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "media",
+      "dependencies": [
+        "react-medium-image-zoom"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "Image zoom is a component that allows you to zoom in on an image.",
+      "id": "kibo-ui/image-zoom",
+      "inventoryEvidence": {
+        "path": "packages/image-zoom/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/image-zoom/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Image Zoom",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "image-zoom",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "87c923114ea33b5c4f1580343eb0c2ee5bc81294",
+          "path": "packages/image-zoom/index.tsx",
+          "sha256": "e8cb594ba839d8239426ba3d69d4940faa3f2fa083f5a6632665452610278924",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/image-zoom/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/image-zoom/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/image-zoom/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "react-medium-image-zoom"
+        ],
+        "description": "Image zoom is a component that allows you to zoom in on an image.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0",
+            "react-medium-image-zoom": "^5.4.0"
+          },
+          "description": "Image zoom is a component that allows you to zoom in on an image.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/image-zoom",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities",
+        "tunnel-rat"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "A kanban board is a visual tool that helps you manage and visualize your work. It is a board with columns, and each column represents a status, e.g. \"Backlog\", \"In Progress\", \"Done\".",
+      "id": "kibo-ui/kanban",
+      "inventoryEvidence": {
+        "path": "packages/kanban/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/kanban/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Kanban",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "kanban",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "f36f8b933926c99bb9a7b6ce0839a1917745b9bf",
+          "path": "packages/kanban/index.tsx",
+          "sha256": "b309faba8ef25135ff9ef77d39f91f309a686dc2f7895166f9449bf0cc107cdf",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/kanban/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/kanban/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/kanban/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@dnd-kit/core",
+          "@dnd-kit/sortable",
+          "@dnd-kit/utilities",
+          "tunnel-rat"
+        ],
+        "description": "A kanban board is a visual tool that helps you manage and visualize your work. It is a board with columns, and each column represents a status, e.g. \"Backlog\", \"In Progress\", \"Done\".",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@dnd-kit/core": "^6.3.1",
+            "@dnd-kit/sortable": "^10.0.0",
+            "@dnd-kit/utilities": "^3.2.2",
+            "@repo/shadcn-ui": "workspace:*",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0",
+            "tunnel-rat": "^0.1.2"
+          },
+          "description": "A kanban board is a visual tool that helps you manage and visualize your work. It is a board with columns, and each column represents a status, e.g. \"Backlog\", \"In Progress\", \"Done\".",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/kanban",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/modifiers"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "List views are a great way to show a list of tasks grouped by status and ranked by priority.",
+      "id": "kibo-ui/list",
+      "inventoryEvidence": {
+        "path": "packages/list/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/list/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "List",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "list",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "fa4819def2fa3d8add57e4043f72eaa5f536f9e5",
+          "path": "packages/list/index.tsx",
+          "sha256": "b248fa198ffab14c7302a733dff7e2893119c0aa8c8ab10640c48d2ee7533789",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/list/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/list/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/list/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@dnd-kit/core",
+          "@dnd-kit/modifiers"
+        ],
+        "description": "List views are a great way to show a list of tasks grouped by status and ranked by priority.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@dnd-kit/core": "^6.3.1",
+            "@dnd-kit/modifiers": "^9.0.0",
+            "@repo/shadcn-ui": "workspace:*",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "List views are a great way to show a list of tasks grouped by status and ranked by priority.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/list",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "react-fast-marquee"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "Marquees are a great way to show a list of items in a horizontal scrolling motion.",
+      "id": "kibo-ui/marquee",
+      "inventoryEvidence": {
+        "path": "packages/marquee/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/marquee/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Marquee",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "marquee",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "b4d52aa24357c68647669574384e0099002fe94a",
+          "path": "packages/marquee/index.tsx",
+          "sha256": "8cb49686ee8dda1d9e29a813f6643abcf46f39a405f400a5c452ba8b8f45eab7",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/marquee/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/marquee/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/marquee/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "react-fast-marquee"
+        ],
+        "description": "Marquees are a great way to show a list of items in a horizontal scrolling motion.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0",
+            "react-fast-marquee": "^1.6.5"
+          },
+          "description": "Marquees are a great way to show a list of items in a horizontal scrolling motion.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/marquee",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "date-fns",
+        "lucide-react",
+        "radix-ui"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "A composable mini calendar component for picking dates close to today.",
+      "id": "kibo-ui/mini-calendar",
+      "inventoryEvidence": {
+        "path": "packages/mini-calendar/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/mini-calendar/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Mini Calendar",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "mini-calendar",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "75d6290e99d1460c5de1f46c0d18a8b45ffabe48",
+          "path": "packages/mini-calendar/index.tsx",
+          "sha256": "ba9ec08c947aaa9e7d375e3ef6c82352effd2fcd17aa3ada463260355a5ec7f2",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/mini-calendar/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/mini-calendar/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/mini-calendar/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@radix-ui/react-use-controllable-state",
+          "date-fns",
+          "lucide-react",
+          "radix-ui"
+        ],
+        "description": "A composable mini calendar component for picking dates close to today.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@radix-ui/react-use-controllable-state": "^1.2.2",
+            "@repo/shadcn-ui": "workspace:*",
+            "date-fns": "^4.1.0",
+            "lucide-react": "^0.545.0",
+            "radix-ui": "^1.4.3",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A composable mini calendar component for picking dates close to today.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/mini-calendar",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "A flexible badge component designed for a variety of use cases.",
+      "id": "kibo-ui/pill",
+      "inventoryEvidence": {
+        "path": "packages/pill/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/pill/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Pill",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "pill",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "afcfd43e0b4f87aaf59c4747787ee43b740f014c",
+          "path": "packages/pill/index.tsx",
+          "sha256": "47ab8c4460d2c394fcd31ca9e7d7045dfa7143f1cf741e121e8a691adb160f5c",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/pill/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/pill/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/pill/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react"
+        ],
+        "description": "A flexible badge component designed for a variety of use cases.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "lucide-react": "^0.545.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A flexible badge component designed for a variety of use cases.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/pill",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "culori",
+        "qrcode"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "QR Code is a component that generates a QR code from a string.",
+      "id": "kibo-ui/qr-code",
+      "inventoryEvidence": {
+        "path": "packages/qr-code/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/qr-code/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Qr Code",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "qr-code",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "2d51e1ae3d5163a1e53f4c17394ddd87d14a86e7",
+          "path": "packages/qr-code/index.tsx",
+          "sha256": "457ff60279903676499271a15ac51f3305ae6286d31408786f19ce12acefd1a6",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/qr-code/index.tsx"
+        },
+        {
+          "gitBlobSha": "fb3bf6c0a09fff1758df3bed4faedecbe1f4a2c4",
+          "path": "packages/qr-code/server.tsx",
+          "sha256": "bfd86fba5ca902aae8d2893fbe0749b07425fd09e548e69e1d047121e32086dc",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/qr-code/server.tsx"
+        }
+      ],
+      "sourcePath": "packages/qr-code/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/qr-code/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "culori",
+          "qrcode"
+        ],
+        "description": "QR Code is a component that generates a QR code from a string.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "culori": "^4.0.2",
+            "qrcode": "^1.5.4",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "QR Code is a component that generates a QR code from a string.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/culori": "^4.0.1",
+            "@types/qrcode": "^1.5.5",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/qr-code",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "A star rating component with keyboard navigation and hover effects.",
+      "id": "kibo-ui/rating",
+      "inventoryEvidence": {
+        "path": "packages/rating/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/rating/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Rating",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "rating",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "739dce2ae28c54500e0667aa81bba59055a7a7db",
+          "path": "packages/rating/index.tsx",
+          "sha256": "a8f5323b63a9139abc7f94374dfe25136a0d2dd69daa0f2caad9251cb5f2819a",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/rating/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/rating/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/rating/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@radix-ui/react-use-controllable-state",
+          "lucide-react"
+        ],
+        "description": "A star rating component with keyboard navigation and hover effects.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@radix-ui/react-use-controllable-state": "^1.2.2",
+            "@repo/shadcn-ui": "workspace:*",
+            "lucide-react": "^0.545.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A star rating component with keyboard navigation and hover effects.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/rating",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "media",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "A composable Reel component that looks like Instagram Stories - a full-height, 9:16 aspect ratio container with video playback and progress indicators.",
+      "id": "kibo-ui/reel",
+      "inventoryEvidence": {
+        "path": "packages/reel/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/reel/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Reel",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "reel",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "94ca46d8d6e8cbbdb98820ef3593b505b9a5fe8f",
+          "path": "packages/reel/index.tsx",
+          "sha256": "ff960605fad781e21cbe8b46f14631cb101d5b9b88d927bb025aa6fd9c5302b8",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/reel/index.tsx"
+        },
+        {
+          "gitBlobSha": "8c2c47456c151b947d1360cfb7df8ff941f010f6",
+          "path": "packages/reel/reel-controlled.tsx",
+          "sha256": "60ae28b2e22615f9003fa34fba12462872f61b3307fc6d4c2872bc5eb886aec9",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/reel/reel-controlled.tsx"
+        }
+      ],
+      "sourcePath": "packages/reel/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/reel/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@radix-ui/react-use-controllable-state",
+          "lucide-react",
+          "motion"
+        ],
+        "description": "A composable Reel component that looks like Instagram Stories - a full-height, 9:16 aspect ratio container with video playback and progress indicators.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@radix-ui/react-use-controllable-state": "^1.2.2",
+            "@repo/shadcn-ui": "workspace:*",
+            "lucide-react": "^0.545.0",
+            "motion": "^12.23.24",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A composable Reel component that looks like Instagram Stories - a full-height, 9:16 aspect ratio container with video playback and progress indicators.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/reel",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "A component that displays time in various timezones.",
+      "id": "kibo-ui/relative-time",
+      "inventoryEvidence": {
+        "path": "packages/relative-time/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/relative-time/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Relative Time",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "relative-time",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "c906c8a31457ecf1d27d28e9aff839ddc4d8a20b",
+          "path": "packages/relative-time/index.tsx",
+          "sha256": "97de2ca519b61e7088f5062f13eb8b01f5aeafcb9ce6b81b142f0d0b9c854597",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/relative-time/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/relative-time/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/relative-time/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@radix-ui/react-use-controllable-state"
+        ],
+        "description": "A component that displays time in various timezones.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@radix-ui/react-use-controllable-state": "^1.2.2",
+            "@repo/shadcn-ui": "workspace:*",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A component that displays time in various timezones.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/relative-time",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "@codesandbox/sandpack-react"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "The sandbox component allows you to preview and test components in a sandboxed environment.",
+      "id": "kibo-ui/sandbox",
+      "inventoryEvidence": {
+        "path": "packages/sandbox/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/sandbox/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Sandbox",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "sandbox",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "b16183bd30f1d854fbfe0859396da983532f176f",
+          "path": "packages/sandbox/index.tsx",
+          "sha256": "4a9ee56553d1e1794ec864c112b1e9b43bfff849fac7c75aba85197834be3e0f",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/sandbox/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/sandbox/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/sandbox/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@codesandbox/sandpack-react"
+        ],
+        "description": "The sandbox component allows you to preview and test components in a sandboxed environment.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@codesandbox/sandpack-react": "^2.20.0",
+            "@repo/shadcn-ui": "workspace:*",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "The sandbox component allows you to preview and test components in a sandboxed environment.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/sandbox",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "Snippet is a component that allows you to display and copy code in a tabbed interface.",
+      "id": "kibo-ui/snippet",
+      "inventoryEvidence": {
+        "path": "packages/snippet/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/snippet/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Snippet",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "snippet",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "903e0cc0010228f36cc160e0746a4fb60b7bdcda",
+          "path": "packages/snippet/index.tsx",
+          "sha256": "e33286b7ead323f457fabff91b545759156f6abbf37d80a183d3b290a29c89d5",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/snippet/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/snippet/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/snippet/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react"
+        ],
+        "description": "Snippet is a component that allows you to display and copy code in a tabbed interface.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "lucide-react": "^0.545.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "Snippet is a component that allows you to display and copy code in a tabbed interface.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/snippet",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "feedback",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "A spinner is a visual indicator that shows progress or activity.",
+      "id": "kibo-ui/spinner",
+      "inventoryEvidence": {
+        "path": "packages/spinner/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/spinner/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Spinner",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "spinner",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "3fc2e7c36f6962f2b91762073633d83ab18edf9d",
+          "path": "packages/spinner/index.tsx",
+          "sha256": "e46e2a2cd9dbdfef28d31b5321b770e022b8cd68ed331a290387bf8a861c411f",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/spinner/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/spinner/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/spinner/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react"
+        ],
+        "description": "A spinner is a visual indicator that shows progress or activity.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "lucide-react": "^0.545.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A spinner is a visual indicator that shows progress or activity.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/spinner",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "feedback",
+      "dependencies": [],
+      "dependencyEvidenceComplete": false,
+      "description": "Status components are used to display the uptime of a service.",
+      "id": "kibo-ui/status",
+      "inventoryEvidence": {
+        "path": "packages/status/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/status/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Status",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "status",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "982f844377dcb23b60dcd29e9f646d1a85891564",
+          "path": "packages/status/index.tsx",
+          "sha256": "6794dcc818f3b8902429cf80ba4ff8983e69df5d09ebbf81560b28043ff64916",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/status/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/status/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/status/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "Status components are used to display the uptime of a service.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "Status components are used to display the uptime of a service.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/status",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "media",
+      "dependencies": [],
+      "dependencyEvidenceComplete": false,
+      "description": "A composable Stories component - a carousel of individual video cards like you'd see on Facebook.",
+      "id": "kibo-ui/stories",
+      "inventoryEvidence": {
+        "path": "packages/stories/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/stories/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Stories",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "stories",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "28d77a43594dcbcff90afffdc85eeca8d331495a",
+          "path": "packages/stories/index.tsx",
+          "sha256": "0af11f95232346b167f45599f831aac01a66236df9c228ffb250ff7c7622228e",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/stories/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/stories/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/stories/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A composable Stories component - a carousel of individual video cards like you'd see on Facebook.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A composable Stories component - a carousel of individual video cards like you'd see on Facebook.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/stories",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "@tanstack/react-table",
+        "jotai",
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "Table views are used to display data in a tabular format. They are useful for displaying large amounts of data in a structured way.",
+      "id": "kibo-ui/table",
+      "inventoryEvidence": {
+        "path": "packages/table/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/table/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Table",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "table",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "e582250227211c88e9ce0676434f5f780801f0a5",
+          "path": "packages/table/index.tsx",
+          "sha256": "33e842bfb0f63bf5af65d5ce56b79b3b60c428c2989e9c9e8b43919082cfe9b8",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/table/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/table/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/table/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@tanstack/react-table",
+          "jotai",
+          "lucide-react"
+        ],
+        "description": "Table views are used to display data in a tabular format. They are useful for displaying large amounts of data in a structured way.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "@tanstack/react-table": "^8.21.3",
+            "jotai": "^2.15.0",
+            "lucide-react": "^0.545.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "Table views are used to display data in a tabular format. They are useful for displaying large amounts of data in a structured way.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/table",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "Tags are a way to apply multiple labels to an item.",
+      "id": "kibo-ui/tags",
+      "inventoryEvidence": {
+        "path": "packages/tags/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/tags/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Tags",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "tags",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "951c5352791ccf44ece6dbca63465ed142fb06f0",
+          "path": "packages/tags/index.tsx",
+          "sha256": "19443b2c142d595f87c87640d0bbd86497014426f8e16d06843eee9ec9e453ba",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/tags/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/tags/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/tags/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react"
+        ],
+        "description": "Tags are a way to apply multiple labels to an item.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "lucide-react": "^0.545.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "Tags are a way to apply multiple labels to an item.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/tags",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "A component to switch between light, dark and system theme.",
+      "id": "kibo-ui/theme-switcher",
+      "inventoryEvidence": {
+        "path": "packages/theme-switcher/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/theme-switcher/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Theme Switcher",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "theme-switcher",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "3c7ded6e938bffe279354b60bf141ccc5cab4169",
+          "path": "packages/theme-switcher/index.tsx",
+          "sha256": "435c5ba0416e808dc4258353c26e34cd34c5c807bd13f2354db9bd144aac4017",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/theme-switcher/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/theme-switcher/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/theme-switcher/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@radix-ui/react-use-controllable-state",
+          "lucide-react",
+          "motion"
+        ],
+        "description": "A component to switch between light, dark and system theme.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@radix-ui/react-use-controllable-state": "^1.2.2",
+            "@repo/shadcn-ui": "workspace:*",
+            "lucide-react": "^0.545.0",
+            "motion": "^12.23.24",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A component to switch between light, dark and system theme.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/theme-switcher",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [],
+      "dependencyEvidenceComplete": false,
+      "description": "A composable finance ticker for displaying symbols, prices and changes.",
+      "id": "kibo-ui/ticker",
+      "inventoryEvidence": {
+        "path": "packages/ticker/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/ticker/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Ticker",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "ticker",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "827d2c1818370d4b74541b174380497c2f9dbc88",
+          "path": "packages/ticker/index.tsx",
+          "sha256": "3085d61da960c1196ee0fe5aa37abc9d61e8270c4f95c94fa84d96f0a3d8e5d6",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/ticker/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/ticker/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/ticker/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A composable finance ticker for displaying symbols, prices and changes.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A composable finance ticker for displaying symbols, prices and changes.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/ticker",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "A composable tree component with animated expand/collapse and customizable nodes.",
+      "id": "kibo-ui/tree",
+      "inventoryEvidence": {
+        "path": "packages/tree/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/tree/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Tree",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "tree",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "7e7710b878476a7da63a986c61d271930cf64547",
+          "path": "packages/tree/index.tsx",
+          "sha256": "c382566776463e3e72a00f89e4e14ed928c54f6db82801d84d5d4d623b4acb9d",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/tree/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/tree/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/tree/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion",
+          "lucide-react"
+        ],
+        "description": "A composable tree component with animated expand/collapse and customizable nodes.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "lucide-react": "^0.545.0",
+            "motion": "^12.23.24",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A composable tree component with animated expand/collapse and customizable nodes.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/tree",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    },
+    {
+      "categorySuggestion": "media",
+      "dependencies": [
+        "media-chrome"
+      ],
+      "dependencyEvidenceComplete": false,
+      "description": "A composable, shadcn/ui styled video player component that uses the media-chrome library.",
+      "id": "kibo-ui/video-player",
+      "inventoryEvidence": {
+        "path": "packages/video-player/package.json",
+        "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/video-player/package.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Video Player",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kibo-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "video-player",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "f369135455f9ae48374e67fbbe8660fb26f6b622",
+          "path": "packages/video-player/index.tsx",
+          "sha256": "7d18004aaafb52c1b7c18606010da3876bcebbed3c638d732ff72210f077cd36",
+          "url": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/video-player/index.tsx"
+        }
+      ],
+      "sourcePath": "packages/video-player/index.tsx",
+      "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/video-player/index.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "media-chrome"
+        ],
+        "description": "A composable, shadcn/ui styled video player component that uses the media-chrome library.",
+        "installationNote": "Registry dependency resolution remains to be reviewed against the retained upstream getPackage implementation.",
+        "package": {
+          "dependencies": {
+            "@repo/shadcn-ui": "workspace:*",
+            "media-chrome": "^4.14.0",
+            "react": "^19.2.0",
+            "react-dom": "^19.2.0"
+          },
+          "description": "A composable, shadcn/ui styled video player component that uses the media-chrome library.",
+          "devDependencies": {
+            "@repo/typescript-config": "workspace:*",
+            "@types/react": "^19.2.14",
+            "@types/react-dom": "^19.2.3",
+            "typescript": "^5.9.3"
+          },
+          "name": "@repo/video-player",
+          "private": true,
+          "version": "0.0.0"
+        },
+        "registryDependencies": null
+      }
+    }
+  ],
+  "licence": {
+    "additionalLicencePaths": [
+      "license.md"
+    ],
+    "expression": "MIT",
+    "gitBlobSha": "e01f0f824a42e798cf03032f6f0f1e0023ae7f12",
+    "note": "Root-text assessment only. Additional terms, inherited notices, third-party assets and preview permissions require separate review.",
+    "path": "license.md",
+    "publicationApproved": false,
+    "rootTextCommercialUse": "allowed",
+    "rootTextRedistribution": "allowed",
+    "sha256": "1fe9198b595ddadef7e2d99e3e1698c036db61c81e91c7b42df90d59f563b2ba",
+    "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/license.md"
+  },
+  "name": "Kibo UI",
+  "observedAt": "2026-09-20T22:00:44.391864Z",
+  "previewStrategy": "Unapproved. Prefer official isolated demos; otherwise render pinned source. Never fabricate a preview.",
+  "providerId": "kibo-ui",
+  "publicationApproved": false,
+  "repository": "shadcnblocks/kibo",
+  "retainedEvidence": [
+    {
+      "path": "data/registry/licences/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263.txt",
+      "sha256": "1fe9198b595ddadef7e2d99e3e1698c036db61c81e91c7b42df90d59f563b2ba"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/README.md",
+      "sha256": "731a50345f23d9b6b8dc8c8a5d7f9d4ee533a3e9b8ebc806c017c85767f2955f"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/apps/docs/lib/package.ts",
+      "sha256": "457f6fa1a0dd93a797afa7fe284eaf65ab2b93bb082849a087de7a641f1f8b67"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/announcement/package.json",
+      "sha256": "e90b3957986ec46ed0ccfd8262c69653123993b629b673445c69a972fb28a69a"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/avatar-stack/package.json",
+      "sha256": "d52461f35c9a666ec37b30a828217fcb0b25111948aeb23b77e91187da6a9676"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/banner/package.json",
+      "sha256": "70208d545183d450a5610e7cb88dfe6373832fad6bc00c9cd23377365d03ad96"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/calendar/package.json",
+      "sha256": "0dbca6957006cb7542b65cccf5c4eea564c97fae664c18e0547e7de88416c3fb"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/choicebox/package.json",
+      "sha256": "73e8ab2924412c6ad3a3d63e1e0d3f01c45860130b60e8430828e4302faea7bc"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/code-block/package.json",
+      "sha256": "4c2d3ab9483f7502dd73bd6fc396df7bac3026be301ab6079554a5f8b6949ab9"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/color-picker/package.json",
+      "sha256": "ee68863646ea6fc0042b0c4e2085f78fe24a3e68de3b7448b0d6641458bae803"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/combobox/package.json",
+      "sha256": "2dadb014daef106149d8843aaefaa2f07135f6f4a166c521145a67a931716b4f"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/comparison/package.json",
+      "sha256": "7d3e95ee680bee3058653b7cf4df8faabe2779f890c43887caaa8958f19db4a1"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/contribution-graph/package.json",
+      "sha256": "b3a46449b4d5a2299596ebeb43d1e3b58e2feae68c6b72a8eeeab94ccacbd388"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/credit-card/package.json",
+      "sha256": "d7dfe39a3dee8a323f5b4af6b46a81ee344d4874ae53f457481b0f50a1cfa281"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/cursor/package.json",
+      "sha256": "e761f2360e480d7c9c8ebb599879e3b37e0bd77b247cde7e0380eb9d02f80b10"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/deck/package.json",
+      "sha256": "a13ad628daf0d95d783eca8780778cd12e9ef343ef4a95bc8e1cc26a84fa00f0"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/dialog-stack/package.json",
+      "sha256": "2ccbba31c0259959a1bf9b12ec2a41731caff5a87e1e53581b4bd2604c273b3b"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/dropzone/package.json",
+      "sha256": "0529645e2ff3acb3a7ea62c7719c357c3328ac6d10148114bd1491b98cc8cfb9"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/editor/package.json",
+      "sha256": "66275a44ae725a3a7cd11042fbf0692b85e6f4fee28849181b8fdca10a78fe0a"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/gantt/package.json",
+      "sha256": "6c64a0381d1bda69e944d24598f275d77e10136329d025f489d579bc5c00a925"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/glimpse/package.json",
+      "sha256": "f2011b590bf4605b7ffd576fe2f4391333fa0cc5b84fcbaba1f9e091bd151c22"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/image-crop/package.json",
+      "sha256": "42f1a599a9ced4622688990aa253ad12c6570395222aee3eaf13cee55239b15c"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/image-zoom/package.json",
+      "sha256": "4cf8a53f24cdfee8a6f72414cfe1d3e03ed841423cbd8edfef8c13435d54e756"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/kanban/package.json",
+      "sha256": "a3da67aa8fbeac512107771d4884888bd86212a55721704e566b2cb18d3de88b"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/list/package.json",
+      "sha256": "89cb8349943bbac74d49b44f45dcc5ad59d0a506e5facbfe489bb68098895e2c"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/marquee/package.json",
+      "sha256": "b785a93752ddbc12e00a04d167f121c3ce9de09438b638b1da74c9a24c72249a"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/mini-calendar/package.json",
+      "sha256": "b706d74285081ad5bf48804dd622cc830fdf700dfecb7fae553bf09189456ba4"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/pill/package.json",
+      "sha256": "b8f857745d289d32a094fe5a8a10f821dd8b4ec8154f0ba494730acd1c3a83be"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/qr-code/package.json",
+      "sha256": "a065bdf26b28bef798a1a5a059e7a8bcd525699f6e10eb13624a90cd873d3e58"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/rating/package.json",
+      "sha256": "f83ff5a62e6a8c479e7246565f7c68edd3475607d20a79ac29a34c3cb6b3584a"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/reel/package.json",
+      "sha256": "c1b03f6e5930c8eb8dfd1cf78179ddbac4143a7d757ea41bbf8c5a4672c6228b"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/relative-time/package.json",
+      "sha256": "6af0ba0892e1d21aa3e771b4a7c8f495e2cb38374d0a9420638e0e91cb62cef5"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/sandbox/package.json",
+      "sha256": "464aa55195f7657d37980169e9f97f8e85c284f05e46acd809fbfdc940b52884"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/snippet/package.json",
+      "sha256": "799f1067879db99a2e4bba70dc49075ccdf1c9f37de822555d0d6e1426c9dbe7"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/spinner/package.json",
+      "sha256": "39b5fb109d450cb6ca20566a3b548fd75d7f13e64b33a0a8e27076f9c78b4394"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/status/package.json",
+      "sha256": "b7768cbacd3488a74e1b17f0f7e397f0d6637b7a1d2c117c3ed1c7670ab73593"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/stories/package.json",
+      "sha256": "3080b1220b9054e9f0e329307ef2a051c5d20abf6fe93b2dfc5b6e484fd32505"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/table/package.json",
+      "sha256": "d1e0cd9a13196639a8888a11fa20423867df9c4ad89f4d9aef9d6467c56a8097"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/tags/package.json",
+      "sha256": "41cc110f30b92ff1c06ddd352fbcc86c960f1772e658599bea06aea7d1db2681"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/theme-switcher/package.json",
+      "sha256": "21971a389db8297c30e33e7720cb7f27718022a66a32a8cf428b913ca5e69f35"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/ticker/package.json",
+      "sha256": "2cf62bc03e9d470bd2615a3760155e30458bd6a58364719b51ed38acd5b13671"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/tree/package.json",
+      "sha256": "e592d9ebf52ddb0d09d42fef1a20fca0eec0dfbadd44866cde8e0bc954564587"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/typography/package.json",
+      "sha256": "558a3c27c32930f2c445bdd6032cdb36b006294a2678db917d90f1608324b2ab"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kibo-ui/3d63cdb15b79d972e3dc38a10997987672f9b263/upstream/packages/video-player/package.json",
+      "sha256": "a1e7f53faf3772f5157ff3370c2c4b1d504d1435787b1885de5fcedf4e181743"
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceRef": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+  "status": "captured-unpublished",
+  "unresolvedRisks": [
+    "Official first-party identity needs signed-off website/repository evidence.",
+    "No actual component preview has passed browser acceptance.",
+    "Installation and transitive dependency evidence must be reviewed before publication.",
+    "Production project, Neon branch/database/endpoint and post-merge deployment acceptance remain unverified."
+  ],
+  "website": "https://www.kibo-ui.com/"
+}

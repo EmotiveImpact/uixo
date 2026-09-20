@@ -1,0 +1,4266 @@
+{
+  "actualPublishedCount": 0,
+  "archiveSha256": "bcedc5065fec770c65b3ef633cfb7c365a907426dbf97dfa66a0bd6412d54dac",
+  "branch": "main",
+  "excludedCount": 65,
+  "exclusions": [
+    {
+      "name": "chapter-intro",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "game-progress",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "dialogue",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "friend-list",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "login-form",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "login-form-2",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "login-form-with-image",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "login-page",
+      "reason": "Out of individual web-component scope: registry:page"
+    },
+    {
+      "name": "chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "chart-bar",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "chart-area-step",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "main-menu",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "pause-menu",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "game-over",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "audio-settings",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "sidebar",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "difficulty-select",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "leaderboard",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "player-profile-card",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "quest-log",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "save-slots",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "dashboard-01",
+      "reason": "Out of individual web-component scope: registry:page"
+    },
+    {
+      "name": "character-sheet",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "victory-screen",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "loading-screen",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "hero1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "hero2",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "feature1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "hero3",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "feature2",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "feature3",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "pricing1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "pricing2",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "faq1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "faq2",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "faq3",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "social-proof1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "social-proof2",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "social-proof3",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "timeline1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "timeline2",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "timeline3",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "cta1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "cta2",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "footer1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "team1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "team2",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "team3",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "advanced1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "advanced2",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "advanced3",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "game-hero1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "game-roadmap1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "game-hero2",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "game-cta1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "game-features1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "game-team1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "game-faq1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "not-found1",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "not-found2",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "not-found3",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "not-found-crate-pusher",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "not-found-brick-breaker",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "portal-transition",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "duel-block",
+      "reason": "Out of individual web-component scope: registry:block"
+    }
+  ],
+  "installationStrategy": "Use retained upstream evidence. No installation command is approved by this capture.",
+  "inventoryCount": 56,
+  "items": [
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit button component",
+      "id": "8bitcn-ui/button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "34ff4413e916aeca181a32e6b66294f32361ab11",
+          "path": "components/ui/8bit/button.tsx",
+          "sha256": "6a1e6ec841b43c6b1d745c6b5171e8186f5e3eadd864cc8cc60a7c68cd6cd233",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/button.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/button.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit button component",
+        "files": [
+          {
+            "path": "components/ui/8bit/button.tsx",
+            "target": "components/ui/8bit/button.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "button",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "8-bit Button",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "Groups multiple 8-bit buttons together inside a shared retro pixelated border.",
+      "id": "8bitcn-ui/button-group",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Button Group",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button",
+        "button-group",
+        "separator"
+      ],
+      "slug": "button-group",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "9f22b9b676f212c53be41d647b18a5f715242f5f",
+          "path": "components/ui/8bit/button-group.tsx",
+          "sha256": "1ec25638bd171c861d2eaa21b37ab361f8850bd127642ca43c46a2b28f352535",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/button-group.tsx"
+        },
+        {
+          "gitBlobSha": "34ff4413e916aeca181a32e6b66294f32361ab11",
+          "path": "components/ui/8bit/button.tsx",
+          "sha256": "6a1e6ec841b43c6b1d745c6b5171e8186f5e3eadd864cc8cc60a7c68cd6cd233",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/button.tsx"
+        },
+        {
+          "gitBlobSha": "fab271dd265f0f13838eb27c039a3bc13f49c2b8",
+          "path": "components/ui/8bit/separator.tsx",
+          "sha256": "43b56bade6518740d0fc5e1e7534b9382b3c937b7ee380ea8f560a5118cea3cd",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/separator.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/button-group.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/button-group.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "Groups multiple 8-bit buttons together inside a shared retro pixelated border.",
+        "files": [
+          {
+            "path": "components/ui/8bit/button-group.tsx",
+            "target": "components/ui/8bit/button-group.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/button.tsx",
+            "target": "components/ui/8bit/button.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/separator.tsx",
+            "target": "components/ui/8bit/separator.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "button-group",
+        "registryDependencies": [
+          "button",
+          "button-group",
+          "separator"
+        ],
+        "title": "8-bit Button Group",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit input component",
+      "id": "8bitcn-ui/input",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Input",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "input"
+      ],
+      "slug": "input",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "42f1b809daa6fcf76c671f4749e61eed02a99278",
+          "path": "components/ui/8bit/input.tsx",
+          "sha256": "22a3f9ea0b8091bbd8eba15be35ff5be7159167d15b8b235cfd5755230bc8e9d",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/input.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/input.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/input.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit input component",
+        "files": [
+          {
+            "path": "components/ui/8bit/input.tsx",
+            "target": "components/ui/8bit/input.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "input",
+        "registryDependencies": [
+          "input"
+        ],
+        "title": "8-bit Input",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "feedback",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit toast component",
+      "id": "8bitcn-ui/toast",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Toast",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "sonner"
+      ],
+      "slug": "toast",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "80803ab3d4a82eb97c99ecef8241f9abcc74bca9",
+          "path": "components/ui/8bit/toast.tsx",
+          "sha256": "a84152822130af220d01fcedbb6c151891ea939eeb0b8abe81331dbf2d1f48ef",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/toast.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/toast.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/toast.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit toast component",
+        "files": [
+          {
+            "path": "components/ui/8bit/toast.tsx",
+            "target": "components/ui/8bit/toast.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "toast",
+        "registryDependencies": [
+          "sonner"
+        ],
+        "title": "8-bit Toast",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit input-otp component",
+      "id": "8bitcn-ui/input-otp",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Input-OTP",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "input-otp"
+      ],
+      "slug": "input-otp",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "97592442991f7a6d99e8127eccbfc954939fdecf",
+          "path": "components/ui/8bit/input-otp.tsx",
+          "sha256": "419d16397c953d594cb44dd7fb06e5b87ba41ac0b71ef24e67961239efa1d49d",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/input-otp.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/input-otp.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/input-otp.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit input-otp component",
+        "files": [
+          {
+            "path": "components/ui/8bit/input-otp.tsx",
+            "target": "components/ui/8bit/input-otp.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "input-otp",
+        "registryDependencies": [
+          "input-otp"
+        ],
+        "title": "8-bit Input-OTP",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit badge component",
+      "id": "8bitcn-ui/badge",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Badge",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "badge"
+      ],
+      "slug": "badge",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "b7cef835f28b8b4a8d1f93a8795a93bb9618dd20",
+          "path": "components/ui/8bit/badge.tsx",
+          "sha256": "9daccc748e9f398ef52696f88890ea4b4430b8798cb6cf62907240f5c3fa880e",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/badge.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/badge.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/badge.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit badge component",
+        "files": [
+          {
+            "path": "components/ui/8bit/badge.tsx",
+            "target": "components/ui/8bit/badge.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "badge",
+        "registryDependencies": [
+          "badge"
+        ],
+        "title": "8-bit Badge",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit textarea component",
+      "id": "8bitcn-ui/textarea",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Textarea",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "textarea"
+      ],
+      "slug": "textarea",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "a87a659c90e684f07df2287a4e72f4b21b8f7941",
+          "path": "components/ui/8bit/textarea.tsx",
+          "sha256": "76cf9df8bfcf4b4bf26cb47980b9c4395bf578c1ccccbb415c9a7cf675d213f7",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/textarea.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/textarea.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/textarea.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit textarea component",
+        "files": [
+          {
+            "path": "components/ui/8bit/textarea.tsx",
+            "target": "components/ui/8bit/textarea.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "textarea",
+        "registryDependencies": [
+          "textarea"
+        ],
+        "title": "8-bit Textarea",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit calendar component",
+      "id": "8bitcn-ui/calendar",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Calendar",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "calendar"
+      ],
+      "slug": "calendar",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "73d4e0b5aa4b2dc65000ff3853ab4e2599476b33",
+          "path": "components/ui/8bit/calendar.tsx",
+          "sha256": "371a023f2622bc76084ffed08b3355f1118613f98736f5ba00ff0ab5d114a52b",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/calendar.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/calendar.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/calendar.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit calendar component",
+        "files": [
+          {
+            "path": "components/ui/8bit/calendar.tsx",
+            "target": "components/ui/8bit/calendar.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "calendar",
+        "registryDependencies": [
+          "calendar"
+        ],
+        "title": "8-bit Calendar",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [
+        "date-fns"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit date picker component",
+      "id": "8bitcn-ui/date-picker",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Date Picker",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button",
+        "calendar",
+        "popover",
+        "select"
+      ],
+      "slug": "date-picker",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "f17ea05b45efd0180954320400e8b2185ef21443",
+          "path": "components/examples/date-picker.tsx",
+          "sha256": "eec785af5a5c0212b303528a48636fdf9889e9c7d91f0c0bbbe732c5cf73f63f",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/examples/date-picker.tsx"
+        },
+        {
+          "gitBlobSha": "34ff4413e916aeca181a32e6b66294f32361ab11",
+          "path": "components/ui/8bit/button.tsx",
+          "sha256": "6a1e6ec841b43c6b1d745c6b5171e8186f5e3eadd864cc8cc60a7c68cd6cd233",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/button.tsx"
+        },
+        {
+          "gitBlobSha": "73d4e0b5aa4b2dc65000ff3853ab4e2599476b33",
+          "path": "components/ui/8bit/calendar.tsx",
+          "sha256": "371a023f2622bc76084ffed08b3355f1118613f98736f5ba00ff0ab5d114a52b",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/calendar.tsx"
+        },
+        {
+          "gitBlobSha": "df234241c63c2355918c7cc123792512487a29c4",
+          "path": "components/ui/8bit/popover.tsx",
+          "sha256": "43cb98cc5b16e1ea29ae70033e64991f02336877338b7df05befdd2a686965b2",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/popover.tsx"
+        },
+        {
+          "gitBlobSha": "eefdf68f87b6b9acb3eb4b8b1928e35a63cf9627",
+          "path": "components/ui/8bit/select.tsx",
+          "sha256": "78745d196f74e8df03c850d78fbd4a3f07091051b670f305ce7d491e44536870",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/select.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/examples/date-picker.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/examples/date-picker.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "date-fns"
+        ],
+        "description": "A simple 8-bit date picker component",
+        "files": [
+          {
+            "path": "components/examples/date-picker.tsx",
+            "target": "components/ui/8bit/date-picker.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/button.tsx",
+            "target": "components/ui/8bit/button.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/calendar.tsx",
+            "target": "components/ui/8bit/calendar.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/popover.tsx",
+            "target": "components/ui/8bit/popover.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/select.tsx",
+            "target": "components/ui/8bit/select.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "date-picker",
+        "registryDependencies": [
+          "button",
+          "calendar",
+          "popover",
+          "select"
+        ],
+        "title": "8-bit Date Picker",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit card component",
+      "id": "8bitcn-ui/card",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Card",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "slug": "card",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "f41d6b15620db809200b5b62dc6d1a7ad0a80dc4",
+          "path": "components/ui/8bit/card.tsx",
+          "sha256": "ed2f6391e2d6289fbb831195b68a2e5c8b84aa88c42872f5949922b041a7a86f",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/card.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/card.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/card.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit card component",
+        "files": [
+          {
+            "path": "components/ui/8bit/card.tsx",
+            "target": "components/ui/8bit/card.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "card",
+        "registryDependencies": [
+          "card"
+        ],
+        "title": "8-bit Card",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "media",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit carousel component",
+      "id": "8bitcn-ui/carousel",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Card",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "carousel"
+      ],
+      "slug": "carousel",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "c26171820954bfd976f4cf2907d47d63db7d8f0d",
+          "path": "components/ui/8bit/carousel.tsx",
+          "sha256": "3ddf76ab0b3fb46cb88bc48caa11e7eb42d72d0ea5caf04df46757a1090a648d",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/carousel.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/carousel.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/carousel.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit carousel component",
+        "files": [
+          {
+            "path": "components/ui/8bit/carousel.tsx",
+            "target": "components/ui/8bit/carousel.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "carousel",
+        "registryDependencies": [
+          "carousel"
+        ],
+        "title": "8-bit Card",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit dialog component",
+      "id": "8bitcn-ui/dialog",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Dialog",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "dialog"
+      ],
+      "slug": "dialog",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "f2192a7767e984ffb248b5fb12975927e50276c7",
+          "path": "components/ui/8bit/dialog.tsx",
+          "sha256": "e7e6a6eb2b25377707c93665779ce7911f0324532f259eaee2901b688128f664",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/dialog.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/dialog.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/dialog.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit dialog component",
+        "files": [
+          {
+            "path": "components/ui/8bit/dialog.tsx",
+            "target": "components/ui/8bit/dialog.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "dialog",
+        "registryDependencies": [
+          "dialog"
+        ],
+        "title": "8-bit Dialog",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit dropdown-menu component",
+      "id": "8bitcn-ui/dropdown-menu",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Dropdown Menu",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
+      ],
+      "slug": "dropdown-menu",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "79a64f5a0eba4a5e2dbd17f725bce1e95f1fb220",
+          "path": "components/ui/8bit/dropdown-menu.tsx",
+          "sha256": "1ef1933f3ec2cee1e9e37ffc0f68e24f19b2081282169c40f8dd364614b7dbf2",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/dropdown-menu.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/dropdown-menu.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/dropdown-menu.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit dropdown-menu component",
+        "files": [
+          {
+            "path": "components/ui/8bit/dropdown-menu.tsx",
+            "target": "components/ui/8bit/dropdown-menu.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "dropdown-menu",
+        "registryDependencies": [
+          "dropdown-menu"
+        ],
+        "title": "8-bit Dropdown Menu",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit hover card component",
+      "id": "8bitcn-ui/hover-card",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Hover Card",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "hover-card"
+      ],
+      "slug": "hover-card",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "3aaec0357ab4b3a6dab66c669b0249d5d2b48c16",
+          "path": "components/ui/8bit/hover-card.tsx",
+          "sha256": "4890529044346a9ca98ae0e76cc27d0e06479f7f9c65ae5c99765b7b5ab93095",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/hover-card.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/hover-card.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/hover-card.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit hover card component",
+        "files": [
+          {
+            "path": "components/ui/8bit/hover-card.tsx",
+            "target": "components/ui/8bit/hover-card.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "hover-card",
+        "registryDependencies": [
+          "hover-card"
+        ],
+        "title": "8-bit Hover Card",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit popover component",
+      "id": "8bitcn-ui/popover",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Popover",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "popover"
+      ],
+      "slug": "popover",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "df234241c63c2355918c7cc123792512487a29c4",
+          "path": "components/ui/8bit/popover.tsx",
+          "sha256": "43cb98cc5b16e1ea29ae70033e64991f02336877338b7df05befdd2a686965b2",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/popover.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/popover.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/popover.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit popover component",
+        "files": [
+          {
+            "path": "components/ui/8bit/popover.tsx",
+            "target": "components/ui/8bit/popover.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "popover",
+        "registryDependencies": [
+          "popover"
+        ],
+        "title": "8-bit Popover",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "Accessible resizable panel groups and layouts with keyboard support.",
+      "id": "8bitcn-ui/resizable",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Resizable Panel",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "resizable",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "519838b15414dfd501a73fc9a0051d4a72448c23",
+          "path": "components/ui/8bit/resizable.tsx",
+          "sha256": "861cc8eb2b2e8ab3df218c42b64dd966dea9fc7c4ef60f046e9089c0d0c4d6d1",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/resizable.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/resizable.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/resizable.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "Accessible resizable panel groups and layouts with keyboard support.",
+        "files": [
+          {
+            "path": "components/ui/8bit/resizable.tsx",
+            "target": "components/ui/8bit/resizable.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "resizable",
+        "registryDependencies": [],
+        "title": "8-bit Resizable Panel",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit select component",
+      "id": "8bitcn-ui/select",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Select",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "select"
+      ],
+      "slug": "select",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "eefdf68f87b6b9acb3eb4b8b1928e35a63cf9627",
+          "path": "components/ui/8bit/select.tsx",
+          "sha256": "78745d196f74e8df03c850d78fbd4a3f07091051b670f305ce7d491e44536870",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/select.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/select.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/select.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit select component",
+        "files": [
+          {
+            "path": "components/ui/8bit/select.tsx",
+            "target": "components/ui/8bit/select.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "select",
+        "registryDependencies": [
+          "select"
+        ],
+        "title": "8-bit Select",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit sheet component",
+      "id": "8bitcn-ui/sheet",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit sheet",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "sheet"
+      ],
+      "slug": "sheet",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "d38933016f6dbbd744e98fc0f9d73d7cecd26b4d",
+          "path": "components/ui/8bit/sheet.tsx",
+          "sha256": "8d650c7b0fcfae242bd10f653fe2edb5e8a1275446b09c87897ff58535773dcd",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/sheet.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/sheet.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/sheet.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit sheet component",
+        "files": [
+          {
+            "path": "components/ui/8bit/sheet.tsx",
+            "target": "components/ui/8bit/sheet.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "sheet",
+        "registryDependencies": [
+          "sheet"
+        ],
+        "title": "8-bit sheet",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit label component",
+      "id": "8bitcn-ui/label",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Label",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "label"
+      ],
+      "slug": "label",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "3449fd65cfcac47cf7d8aaa417621af3467a6359",
+          "path": "components/ui/8bit/label.tsx",
+          "sha256": "0ff22c6b05967530e8b002b10c5b97edcd0524c0a8c316750ed79c4082e2d184",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/label.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/label.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/label.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit label component",
+        "files": [
+          {
+            "path": "components/ui/8bit/label.tsx",
+            "target": "components/ui/8bit/label.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "label",
+        "registryDependencies": [
+          "label"
+        ],
+        "title": "8-bit Label",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit checkbox component",
+      "id": "8bitcn-ui/checkbox",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Checkbox",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "slug": "checkbox",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "4449472a5309e569acda7dadc5fea952d0670b5e",
+          "path": "components/ui/8bit/checkbox.tsx",
+          "sha256": "532ad9bd310277050adcb497a60de7ed7c9c4eabefb63599ed8540401e2d9347",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/checkbox.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/checkbox.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/checkbox.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit checkbox component",
+        "files": [
+          {
+            "path": "components/ui/8bit/checkbox.tsx",
+            "target": "components/ui/8bit/checkbox.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "checkbox",
+        "registryDependencies": [
+          "checkbox"
+        ],
+        "title": "8-bit Checkbox",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "@radix-ui/react-scroll-area"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit Scroll Area component",
+      "id": "8bitcn-ui/scroll-area",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Scroll Area",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "scroll-area",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "fa1aec9f472aff404402555da08805d13c517010",
+          "path": "components/ui/8bit/scroll-area.tsx",
+          "sha256": "61edce42ff957900979c7e58de9d57919ea96b1ba9e7245204e3e7548d8130b1",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/scroll-area.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/scroll-area.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/scroll-area.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@radix-ui/react-scroll-area"
+        ],
+        "description": "A simple 8-bit Scroll Area component",
+        "files": [
+          {
+            "path": "components/ui/8bit/scroll-area.tsx",
+            "target": "components/ui/8bit/scroll-area.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "scroll-area",
+        "registryDependencies": [],
+        "title": "8-bit Scroll Area",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit switch component",
+      "id": "8bitcn-ui/switch",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Switch",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "switch"
+      ],
+      "slug": "switch",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "01543acd5dac1564f8ea8ee3ca214588fcd43832",
+          "path": "components/ui/8bit/switch.tsx",
+          "sha256": "5c91c12522a22af5915828e0f4b4c20d638815d7354e3c34e873363082c91cad",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/switch.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/switch.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/switch.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit switch component",
+        "files": [
+          {
+            "path": "components/ui/8bit/switch.tsx",
+            "target": "components/ui/8bit/switch.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "switch",
+        "registryDependencies": [
+          "switch"
+        ],
+        "title": "8-bit Switch",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "feedback",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit switch component",
+      "id": "8bitcn-ui/alert",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Alert",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "alert"
+      ],
+      "slug": "alert",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "0ba4e3f113156cd776ea3f1c81d5270bdc7fdea6",
+          "path": "components/ui/8bit/alert.tsx",
+          "sha256": "5e554d53bd0780284891ef9600618341c2ce9581adafd1ece0377afc007910ae",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/alert.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/alert.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/alert.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit switch component",
+        "files": [
+          {
+            "path": "components/ui/8bit/alert.tsx",
+            "target": "components/ui/8bit/alert.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "alert",
+        "registryDependencies": [
+          "alert"
+        ],
+        "title": "8-bit Alert",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit Alert Dialog component",
+      "id": "8bitcn-ui/alert-dialog",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Alert Dialog",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "alert-dialog"
+      ],
+      "slug": "alert-dialog",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "ad8eb8a6bf5acc1e0bb14d2dafdef65ce0b73abc",
+          "path": "components/ui/8bit/alert-dialog.tsx",
+          "sha256": "ec9d09d7e9860505e34dcc7f61f23864283ad3d82bfd1583efed5a56c4f144f5",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/alert-dialog.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/alert-dialog.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/alert-dialog.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit Alert Dialog component",
+        "files": [
+          {
+            "path": "components/ui/8bit/alert-dialog.tsx",
+            "target": "components/ui/8bit/alert-dialog.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "alert-dialog",
+        "registryDependencies": [
+          "alert-dialog"
+        ],
+        "title": "8-bit Alert Dialog",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit tooltip component",
+      "id": "8bitcn-ui/tooltip",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Tooltip",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "slug": "tooltip",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "a275a0daa1941a4c99cd0460b56f2b0be2efd1cd",
+          "path": "components/ui/8bit/tooltip.tsx",
+          "sha256": "9757c86919891b30c464693bffa4a2fec1c6ed05ed17c36835c5985ddf73be5b",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/tooltip.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/tooltip.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/tooltip.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit tooltip component",
+        "files": [
+          {
+            "path": "components/ui/8bit/tooltip.tsx",
+            "target": "components/ui/8bit/tooltip.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "tooltip",
+        "registryDependencies": [
+          "tooltip"
+        ],
+        "title": "8-bit Tooltip",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "media",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit avatar component",
+      "id": "8bitcn-ui/avatar",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Avatar",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "avatar"
+      ],
+      "slug": "avatar",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "81cc6056c8d877b969b959f26ea6511acec37988",
+          "path": "components/ui/8bit/avatar.tsx",
+          "sha256": "55c41bc98b42b8923834a90a8efcfec520462d0b821339f5e8e14df831bdc10b",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/avatar.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/avatar.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/avatar.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit avatar component",
+        "files": [
+          {
+            "path": "components/ui/8bit/avatar.tsx",
+            "target": "components/ui/8bit/avatar.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "avatar",
+        "registryDependencies": [
+          "avatar"
+        ],
+        "title": "8-bit Avatar",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "feedback",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit skeleton component",
+      "id": "8bitcn-ui/skeleton",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Skeleton",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "slug": "skeleton",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "8ec3976e4b05312407e61e50444d249df67978ca",
+          "path": "components/ui/8bit/skeleton.tsx",
+          "sha256": "e278b1e38972227a9be330905f15350aa834abea8ee911d2e3a2215c17a9c875",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/skeleton.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/skeleton.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/skeleton.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit skeleton component",
+        "files": [
+          {
+            "path": "components/ui/8bit/skeleton.tsx",
+            "target": "components/ui/8bit/skeleton.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "skeleton",
+        "registryDependencies": [
+          "skeleton"
+        ],
+        "title": "8-bit Skeleton",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit breadcrumb component",
+      "id": "8bitcn-ui/breadcrumb",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Breadcrumb",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "breadcrumb"
+      ],
+      "slug": "breadcrumb",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "b48cf52e680ea5d7b57e6ae2f1c2dad8aaed5c08",
+          "path": "components/ui/8bit/breadcrumb.tsx",
+          "sha256": "2ab4c8d4f1f7db1ff6c20abd6557186e494b1becf746c49644d80b1c53e52621",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/breadcrumb.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/breadcrumb.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/breadcrumb.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit breadcrumb component",
+        "files": [
+          {
+            "path": "components/ui/8bit/breadcrumb.tsx",
+            "target": "components/ui/8bit/breadcrumb.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "breadcrumb",
+        "registryDependencies": [
+          "breadcrumb"
+        ],
+        "title": "8-bit Breadcrumb",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit collapsible component",
+      "id": "8bitcn-ui/collapsible",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Collapsible",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "slug": "collapsible",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "9c88b98c74fa0d4d93a874ba247b17ccadc57459",
+          "path": "components/ui/8bit/collapsible.tsx",
+          "sha256": "a412c402b368f6b577a0db83acb843b3863da0d225087e786f73ff491196a0e0",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/collapsible.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/collapsible.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/collapsible.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit collapsible component",
+        "files": [
+          {
+            "path": "components/ui/8bit/collapsible.tsx",
+            "target": "components/ui/8bit/collapsible.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "collapsible",
+        "registryDependencies": [
+          "collapsible"
+        ],
+        "title": "8-bit Collapsible",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "feedback",
+      "dependencies": [
+        "@radix-ui/react-progress"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit progress component",
+      "id": "8bitcn-ui/progress",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Progress",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "progress",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "5bf44dad473c3ce85c17d455c5e4e1722ab5da4e",
+          "path": "components/ui/8bit/progress.tsx",
+          "sha256": "17228ed1ef1e7582907392d885a8e610a716dd2777aef356060ed43ca93f1bf9",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/progress.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/progress.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/progress.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@radix-ui/react-progress"
+        ],
+        "description": "A simple 8-bit progress component",
+        "files": [
+          {
+            "path": "components/ui/8bit/progress.tsx",
+            "target": "components/ui/8bit/progress.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "progress",
+        "registryDependencies": [],
+        "title": "8-bit Progress",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A retro-styled enemy health display component with health bar, name, and level",
+      "id": "8bitcn-ui/enemy-health-display",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Enemy Health Display",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "enemy-health-display",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "ac89d1f6a64dd0fb1de511c65e6cac43a0a20b2b",
+          "path": "components/ui/8bit/enemy-health-display.tsx",
+          "sha256": "eb09e8818b3689ff05aedf8a289d304f19a026ad2cab99b944bbda3b169052dd",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/enemy-health-display.tsx"
+        },
+        {
+          "gitBlobSha": "e6203e2ab43a0657f4b67f28f10a29f26e2d0a80",
+          "path": "components/ui/8bit/health-bar.tsx",
+          "sha256": "25f8a639bb54122e36b84565b73ef1f262275cddd5924077e300d23232a307cd",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/health-bar.tsx"
+        },
+        {
+          "gitBlobSha": "5bf44dad473c3ce85c17d455c5e4e1722ab5da4e",
+          "path": "components/ui/8bit/progress.tsx",
+          "sha256": "17228ed1ef1e7582907392d885a8e610a716dd2777aef356060ed43ca93f1bf9",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/progress.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/enemy-health-display.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/enemy-health-display.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A retro-styled enemy health display component with health bar, name, and level",
+        "files": [
+          {
+            "path": "components/ui/8bit/enemy-health-display.tsx",
+            "target": "components/ui/8bit/enemy-health-display.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/health-bar.tsx",
+            "target": "components/ui/8bit/health-bar.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/progress.tsx",
+            "target": "components/ui/8bit/progress.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "enemy-health-display",
+        "registryDependencies": [],
+        "title": "8-bit Enemy Health Display",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit health bar component",
+      "id": "8bitcn-ui/health-bar",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Health Bar",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "progress"
+      ],
+      "slug": "health-bar",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "e6203e2ab43a0657f4b67f28f10a29f26e2d0a80",
+          "path": "components/ui/8bit/health-bar.tsx",
+          "sha256": "25f8a639bb54122e36b84565b73ef1f262275cddd5924077e300d23232a307cd",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/health-bar.tsx"
+        },
+        {
+          "gitBlobSha": "5bf44dad473c3ce85c17d455c5e4e1722ab5da4e",
+          "path": "components/ui/8bit/progress.tsx",
+          "sha256": "17228ed1ef1e7582907392d885a8e610a716dd2777aef356060ed43ca93f1bf9",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/progress.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/health-bar.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/health-bar.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit health bar component",
+        "files": [
+          {
+            "path": "components/ui/8bit/health-bar.tsx",
+            "target": "components/ui/8bit/health-bar.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/progress.tsx",
+            "target": "components/ui/8bit/progress.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "health-bar",
+        "registryDependencies": [
+          "progress"
+        ],
+        "title": "8-bit Health Bar",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit mana bar component",
+      "id": "8bitcn-ui/mana-bar",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Mana Bar",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "mana-bar",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "7e61f455dbca9121e9943ba64f90d2270fd1bd92",
+          "path": "components/ui/8bit/mana-bar.tsx",
+          "sha256": "d0af0c1e51e6b35d17e28b35e3ee08befff9d7354f9f9c74d610ff254f586261",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/mana-bar.tsx"
+        },
+        {
+          "gitBlobSha": "5bf44dad473c3ce85c17d455c5e4e1722ab5da4e",
+          "path": "components/ui/8bit/progress.tsx",
+          "sha256": "17228ed1ef1e7582907392d885a8e610a716dd2777aef356060ed43ca93f1bf9",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/progress.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/mana-bar.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/mana-bar.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit mana bar component",
+        "files": [
+          {
+            "path": "components/ui/8bit/mana-bar.tsx",
+            "target": "components/ui/8bit/mana-bar.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/progress.tsx",
+            "target": "components/ui/8bit/progress.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "mana-bar",
+        "registryDependencies": [],
+        "title": "8-bit Mana Bar",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit XP bar component with level up animation",
+      "id": "8bitcn-ui/xp-bar",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit XP Bar",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "xp-bar",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "4eeee0a089ae195e2df21ad3288bce192c4d82b5",
+          "path": "components/ui/8bit/xp-bar.tsx",
+          "sha256": "496dec0b8b4bc60716e79ec096ac6512de0c1c8d4771aac529f747a9f33b0608",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/xp-bar.tsx"
+        },
+        {
+          "gitBlobSha": "5bf44dad473c3ce85c17d455c5e4e1722ab5da4e",
+          "path": "components/ui/8bit/progress.tsx",
+          "sha256": "17228ed1ef1e7582907392d885a8e610a716dd2777aef356060ed43ca93f1bf9",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/progress.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/xp-bar.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/xp-bar.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit XP bar component with level up animation",
+        "files": [
+          {
+            "path": "components/ui/8bit/xp-bar.tsx",
+            "target": "components/ui/8bit/xp-bar.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/progress.tsx",
+            "target": "components/ui/8bit/progress.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "xp-bar",
+        "registryDependencies": [],
+        "title": "8-bit XP Bar",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "@radix-ui/react-avatar"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit profile card component",
+      "id": "8bitcn-ui/profile-card",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Profile Card",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "card",
+        "button",
+        "avatar",
+        "badge"
+      ],
+      "slug": "profile-card",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "f41d6b15620db809200b5b62dc6d1a7ad0a80dc4",
+          "path": "components/ui/8bit/card.tsx",
+          "sha256": "ed2f6391e2d6289fbb831195b68a2e5c8b84aa88c42872f5949922b041a7a86f",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/card.tsx"
+        },
+        {
+          "gitBlobSha": "34ff4413e916aeca181a32e6b66294f32361ab11",
+          "path": "components/ui/8bit/button.tsx",
+          "sha256": "6a1e6ec841b43c6b1d745c6b5171e8186f5e3eadd864cc8cc60a7c68cd6cd233",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/button.tsx"
+        },
+        {
+          "gitBlobSha": "81cc6056c8d877b969b959f26ea6511acec37988",
+          "path": "components/ui/8bit/avatar.tsx",
+          "sha256": "55c41bc98b42b8923834a90a8efcfec520462d0b821339f5e8e14df831bdc10b",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/avatar.tsx"
+        },
+        {
+          "gitBlobSha": "b7cef835f28b8b4a8d1f93a8795a93bb9618dd20",
+          "path": "components/ui/8bit/badge.tsx",
+          "sha256": "9daccc748e9f398ef52696f88890ea4b4430b8798cb6cf62907240f5c3fa880e",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/badge.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/card.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/card.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@radix-ui/react-avatar"
+        ],
+        "description": "A simple 8-bit profile card component",
+        "files": [
+          {
+            "path": "components/ui/8bit/card.tsx",
+            "target": "components/ui/8bit/card.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/button.tsx",
+            "target": "components/ui/8bit/button.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/avatar.tsx",
+            "target": "components/ui/8bit/avatar.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/badge.tsx",
+            "target": "components/ui/8bit/badge.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "profile-card",
+        "registryDependencies": [
+          "card",
+          "button",
+          "avatar",
+          "badge"
+        ],
+        "title": "8-bit Profile Card",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit slider component",
+      "id": "8bitcn-ui/slider",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Slider",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "slider"
+      ],
+      "slug": "slider",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "6e6342a94595ef7cbe8379fba860acbe59888f27",
+          "path": "components/ui/8bit/slider.tsx",
+          "sha256": "f88591b1804bb508faad2bd862bb20683491a60a5b606eadebadcd2c8dff0b47",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/slider.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/slider.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/slider.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit slider component",
+        "files": [
+          {
+            "path": "components/ui/8bit/slider.tsx",
+            "target": "components/ui/8bit/slider.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "slider",
+        "registryDependencies": [
+          "slider"
+        ],
+        "title": "8-bit Slider",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit context menu component",
+      "id": "8bitcn-ui/context-menu",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Context Menu",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "context-menu",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "1617510bcf4e8f99494383a7e2d5e34e48234c0c",
+          "path": "components/ui/8bit/context-menu.tsx",
+          "sha256": "7c52b58bea20acbf5e652a1a88a874aee535aee18927ef92040c32a2b9f838a8",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/context-menu.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/context-menu.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/context-menu.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit context menu component",
+        "files": [
+          {
+            "path": "components/ui/8bit/context-menu.tsx",
+            "target": "components/ui/8bit/context-menu.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "context-menu",
+        "registryDependencies": [],
+        "title": "8-bit Context Menu",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit menu bar component",
+      "id": "8bitcn-ui/menubar",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Menu Bar",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "menubar",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "4567cb189e15cfb54e5969891dad275d10ae20bf",
+          "path": "components/ui/8bit/menubar.tsx",
+          "sha256": "31e8abc0c267981dd94d3e14466715c238ac850aed98eb325b76a7e209243582",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/menubar.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/menubar.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/menubar.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit menu bar component",
+        "files": [
+          {
+            "path": "components/ui/8bit/menubar.tsx",
+            "target": "components/ui/8bit/menubar.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "menubar",
+        "registryDependencies": [],
+        "title": "8-bit Menu Bar",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit toggle component",
+      "id": "8bitcn-ui/toggle",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Toggle",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "toggle"
+      ],
+      "slug": "toggle",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "06ec5a3633eec5e3078e1b6d5fb3fbba6430c0e6",
+          "path": "components/ui/8bit/toggle.tsx",
+          "sha256": "78f5760f3c3a32c9aeaef03214ac292d3ef98194e004aee0aec3d3f49aa73128",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/toggle.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/toggle.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/toggle.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit toggle component",
+        "files": [
+          {
+            "path": "components/ui/8bit/toggle.tsx",
+            "target": "components/ui/8bit/toggle.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "toggle",
+        "registryDependencies": [
+          "toggle"
+        ],
+        "title": "8-bit Toggle",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit table component",
+      "id": "8bitcn-ui/table",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Table",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "table"
+      ],
+      "slug": "table",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "5fc444a07ddf42234221e17d9f0b0534c4d0aa03",
+          "path": "components/ui/8bit/table.tsx",
+          "sha256": "a067a30b56bdaa919762295678bbeae7e8fec325dc6a2e7a4a86eda1686862a3",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/table.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/table.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/table.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit table component",
+        "files": [
+          {
+            "path": "components/ui/8bit/table.tsx",
+            "target": "components/ui/8bit/table.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "table",
+        "registryDependencies": [
+          "table"
+        ],
+        "title": "8-bit Table",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit tabs component",
+      "id": "8bitcn-ui/tabs",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Tabs",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "tabs"
+      ],
+      "slug": "tabs",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "53a219fac515a0f6d557d52cacfeb1c9fb83aac4",
+          "path": "components/ui/8bit/tabs.tsx",
+          "sha256": "59856df23e6f1941935a5f30c8855c7db67f8c448145cd989bad992cf305f4df",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/tabs.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/tabs.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/tabs.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit tabs component",
+        "files": [
+          {
+            "path": "components/ui/8bit/tabs.tsx",
+            "target": "components/ui/8bit/tabs.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "tabs",
+        "registryDependencies": [
+          "tabs"
+        ],
+        "title": "8-bit Tabs",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit combo box component",
+      "id": "8bitcn-ui/combo-box",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Combo Box",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "command",
+        "popover",
+        "button"
+      ],
+      "slug": "combo-box",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "34ff4413e916aeca181a32e6b66294f32361ab11",
+          "path": "components/ui/8bit/button.tsx",
+          "sha256": "6a1e6ec841b43c6b1d745c6b5171e8186f5e3eadd864cc8cc60a7c68cd6cd233",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/button.tsx"
+        },
+        {
+          "gitBlobSha": "df234241c63c2355918c7cc123792512487a29c4",
+          "path": "components/ui/8bit/popover.tsx",
+          "sha256": "43cb98cc5b16e1ea29ae70033e64991f02336877338b7df05befdd2a686965b2",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/popover.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/button.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit combo box component",
+        "files": [
+          {
+            "path": "components/ui/8bit/button.tsx",
+            "target": "components/ui/8bit/button.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/popover.tsx",
+            "target": "components/ui/8bit/popover.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "combo-box",
+        "registryDependencies": [
+          "command",
+          "popover",
+          "button"
+        ],
+        "title": "8-bit Combo Box",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit command component",
+      "id": "8bitcn-ui/command",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Command",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "command"
+      ],
+      "slug": "command",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "09153010f33fef89571aeadf2aba0e29f60b289d",
+          "path": "components/ui/8bit/command.tsx",
+          "sha256": "5a89f0d1b48ece17fb7b2adf31eadf78d4b6476f994b7b26299569bdbacb2d80",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/command.tsx"
+        },
+        {
+          "gitBlobSha": "fab271dd265f0f13838eb27c039a3bc13f49c2b8",
+          "path": "components/ui/8bit/separator.tsx",
+          "sha256": "43b56bade6518740d0fc5e1e7534b9382b3c937b7ee380ea8f560a5118cea3cd",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/separator.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/command.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/command.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit command component",
+        "files": [
+          {
+            "path": "components/ui/8bit/command.tsx",
+            "target": "components/ui/8bit/command.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/separator.tsx",
+            "target": "components/ui/8bit/separator.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "command",
+        "registryDependencies": [
+          "command"
+        ],
+        "title": "8-bit Command",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "@radix-ui/react-separator"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit separator component",
+      "id": "8bitcn-ui/separator",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Separator",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "separator",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "fab271dd265f0f13838eb27c039a3bc13f49c2b8",
+          "path": "components/ui/8bit/separator.tsx",
+          "sha256": "43b56bade6518740d0fc5e1e7534b9382b3c937b7ee380ea8f560a5118cea3cd",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/separator.tsx"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/separator.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/separator.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "@radix-ui/react-separator"
+        ],
+        "description": "A simple 8-bit separator component",
+        "files": [
+          {
+            "path": "components/ui/8bit/separator.tsx",
+            "target": "components/ui/8bit/separator.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "separator",
+        "registryDependencies": [],
+        "title": "8-bit Separator",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit radio group component",
+      "id": "8bitcn-ui/radio-group",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Radio Group",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "radio-group"
+      ],
+      "slug": "radio-group",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "186e50260a13283c890bac5df9a323c6591fa121",
+          "path": "components/ui/8bit/radio-group.tsx",
+          "sha256": "1f1e30bd347debdcf9b43f431c3d791db0bbb404890e7cf76ae4b3558a23b0eb",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/radio-group.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/radio-group.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/radio-group.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit radio group component",
+        "files": [
+          {
+            "path": "components/ui/8bit/radio-group.tsx",
+            "target": "components/ui/8bit/radio-group.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "radio-group",
+        "registryDependencies": [
+          "radio-group"
+        ],
+        "title": "8-bit Radio Group",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit pagination component",
+      "id": "8bitcn-ui/pagination",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Pagination",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "pagination"
+      ],
+      "slug": "pagination",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "678f19d071593e6df9dbefce11aac6ddd25c7491",
+          "path": "components/ui/8bit/pagination.tsx",
+          "sha256": "4807123957d7a8be20c0df78bb8e84d2422a8864034400050efaee15bd734731",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/pagination.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/pagination.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/pagination.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit pagination component",
+        "files": [
+          {
+            "path": "components/ui/8bit/pagination.tsx",
+            "target": "components/ui/8bit/pagination.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "pagination",
+        "registryDependencies": [
+          "pagination"
+        ],
+        "title": "8-bit Pagination",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit toggle group component",
+      "id": "8bitcn-ui/toggle-group",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Toggle Group",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "toggle-group"
+      ],
+      "slug": "toggle-group",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "5fc04f485ec9fe6cdb229fd048028d8989116b61",
+          "path": "components/ui/8bit/toggle-group.tsx",
+          "sha256": "75f8c74cc0fca5862298eaef5f21eed7daa4ec047287a896ff43e42aded1864b",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/toggle-group.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/toggle-group.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/toggle-group.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit toggle group component",
+        "files": [
+          {
+            "path": "components/ui/8bit/toggle-group.tsx",
+            "target": "components/ui/8bit/toggle-group.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "toggle-group",
+        "registryDependencies": [
+          "toggle-group"
+        ],
+        "title": "8-bit Toggle Group",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit accordion component",
+      "id": "8bitcn-ui/accordion",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Accordion",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "accordion"
+      ],
+      "slug": "accordion",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "44985c8f690b7cc4d80a31f134bf7b0513e68713",
+          "path": "components/ui/8bit/accordion.tsx",
+          "sha256": "5683a5f960962a510d1b0af7f2fa7535fa4aa3feb68fccb5714dce280c01a0dd",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/accordion.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/accordion.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/accordion.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit accordion component",
+        "files": [
+          {
+            "path": "components/ui/8bit/accordion.tsx",
+            "target": "components/ui/8bit/accordion.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "accordion",
+        "registryDependencies": [
+          "accordion"
+        ],
+        "title": "8-bit Accordion",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit drawer component",
+      "id": "8bitcn-ui/drawer",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Drawer",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "drawer"
+      ],
+      "slug": "drawer",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "cef6a0b227d8cfe107a6375e1fd2b18bc46eb68c",
+          "path": "components/ui/8bit/drawer.tsx",
+          "sha256": "a0f603660af0bfd22b25bbfda231c60b46475ded7cb4a707a904351ea80bbf6a",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/drawer.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/drawer.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/drawer.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit drawer component",
+        "files": [
+          {
+            "path": "components/ui/8bit/drawer.tsx",
+            "target": "components/ui/8bit/drawer.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "drawer",
+        "registryDependencies": [
+          "drawer"
+        ],
+        "title": "8-bit Drawer",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit navigation menu component",
+      "id": "8bitcn-ui/navigation-menu",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Navigation Menu",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "navigation-menu"
+      ],
+      "slug": "navigation-menu",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "6a01a7312be5cbbbb6c0fdbd25f1cd803934ffd5",
+          "path": "components/ui/8bit/navigation-menu.tsx",
+          "sha256": "9d26170da0b03b0f9487e8b8063ee7da20ec8b90e2b0d82c5fef1d8212b4d3bc",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/navigation-menu.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/navigation-menu.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/navigation-menu.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit navigation menu component",
+        "files": [
+          {
+            "path": "components/ui/8bit/navigation-menu.tsx",
+            "target": "components/ui/8bit/navigation-menu.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "navigation-menu",
+        "registryDependencies": [
+          "navigation-menu"
+        ],
+        "title": "8-bit Navigation Menu",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [
+        "nuqs"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "A complete theme selector component with dropdown selection and code copy functionality. Includes theme context provider for managing active themes across the application.",
+      "id": "8bitcn-ui/theme-selector",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Theme Selector",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "select"
+      ],
+      "slug": "theme-selector",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "a660f7cef49f367a43624351ec8972907bf199cb",
+          "path": "components/select-theme-dropdown.tsx",
+          "sha256": "014fb109fc3985a5b7a656bafb97213958492c5442371dc7abe2bd5670a90b10",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/select-theme-dropdown.tsx"
+        },
+        {
+          "gitBlobSha": "78a096353d9b352e0f81812319c9d1352aa97b78",
+          "path": "components/active-theme.tsx",
+          "sha256": "dacbab420f96bd6f164743e07a30dd3b97db627c664c818f80c289e464df335e",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/active-theme.tsx"
+        },
+        {
+          "gitBlobSha": "a8b72de29cba19f4b430153b5cfb70d6f8995653",
+          "path": "lib/themes.ts",
+          "sha256": "cb19d5b72e88362279c26c70a33f3af11366b91a79e8305d4f9077f37506bac6",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/lib/themes.ts"
+        },
+        {
+          "gitBlobSha": "eefdf68f87b6b9acb3eb4b8b1928e35a63cf9627",
+          "path": "components/ui/8bit/select.tsx",
+          "sha256": "78745d196f74e8df03c850d78fbd4a3f07091051b670f305ce7d491e44536870",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/select.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        },
+        {
+          "gitBlobSha": "06321b5a1e8a79b233deac5e798659c421b53fcc",
+          "path": "app/retro-globals.css",
+          "sha256": "a92e652910af7e790ad5486cd34e8952c3615c661718425e6d609db1e5457b2c",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/app/retro-globals.css"
+        }
+      ],
+      "sourcePath": "components/select-theme-dropdown.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/select-theme-dropdown.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "nuqs"
+        ],
+        "description": "A complete theme selector component with dropdown selection and code copy functionality. Includes theme context provider for managing active themes across the application.",
+        "files": [
+          {
+            "path": "components/select-theme-dropdown.tsx",
+            "target": "components/select-theme-dropdown.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/active-theme.tsx",
+            "target": "components/active-theme.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "lib/themes.ts",
+            "target": "lib/themes.ts",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/select.tsx",
+            "target": "components/ui/8bit/select.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          },
+          {
+            "path": "app/retro-globals.css",
+            "target": "app/retro-globals.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "theme-selector",
+        "registryDependencies": [
+          "select"
+        ],
+        "title": "8-bit Theme Selector",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "feedback",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "Displays an 8-bit spinner component.",
+      "id": "8bitcn-ui/spinner",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Spinner",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "spinner",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "81c7e8f3cfa8e82fcb619bb2f0d02060828925ea",
+          "path": "components/ui/8bit/spinner.tsx",
+          "sha256": "c4ceb74e252bc30d1f9dd43d3ba7b3d514da478904850a275ed4001294dad5e4",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/spinner.tsx"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/spinner.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/spinner.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "Displays an 8-bit spinner component.",
+        "files": [
+          {
+            "path": "components/ui/8bit/spinner.tsx",
+            "target": "components/ui/8bit/spinner.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "spinner",
+        "registryDependencies": [],
+        "title": "8-bit Spinner",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "A simple 8-bit kbd component",
+      "id": "8bitcn-ui/kbd",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Kbd",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "kbd",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "15d00ff34e6639ade2a25d95d52ade3f33bee097",
+          "path": "components/ui/8bit/kbd.tsx",
+          "sha256": "83ee3b82669c38a712cf18360fc606889954780d8be48624844ca6d8fc796f8d",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/kbd.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/kbd.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/kbd.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "A simple 8-bit kbd component",
+        "files": [
+          {
+            "path": "components/ui/8bit/kbd.tsx",
+            "target": "components/ui/8bit/kbd.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "kbd",
+        "registryDependencies": [],
+        "title": "8-bit Kbd",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [
+        "next-themes"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "A retro-styled theme toggle component with pixel art sun and moon icons. Perfect for 8-bit themed applications that need a nostalgic theme switcher.",
+      "id": "8bitcn-ui/retro-mode-switcher",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Retro Mode Switcher",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "retro-mode-switcher",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "c9340391f248d364110c8aec5b436bef5ecd0938",
+          "path": "components/ui/retro-mode-switcher.tsx",
+          "sha256": "586e00f62c7de1e7e5c31c32f7a8d8fbe6d02f4f9b3384f98f0ad763423a9739",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/retro-mode-switcher.tsx"
+        },
+        {
+          "gitBlobSha": "34ff4413e916aeca181a32e6b66294f32361ab11",
+          "path": "components/ui/8bit/button.tsx",
+          "sha256": "6a1e6ec841b43c6b1d745c6b5171e8186f5e3eadd864cc8cc60a7c68cd6cd233",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/button.tsx"
+        },
+        {
+          "gitBlobSha": "2a1e342c2a2b1dcddf14894813f8f1680acdd055",
+          "path": "components/theme-provider.tsx",
+          "sha256": "1a794f8de13bf7719e6778151c3b4ef2294cc6d24789724a444a376f24005db6",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/theme-provider.tsx"
+        },
+        {
+          "gitBlobSha": "935f77eac177284a2448091a811af7e08c099e51",
+          "path": "components/ui/8bit/styles/retro.css",
+          "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/styles/retro.css"
+        }
+      ],
+      "sourcePath": "components/ui/retro-mode-switcher.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/retro-mode-switcher.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "next-themes"
+        ],
+        "description": "A retro-styled theme toggle component with pixel art sun and moon icons. Perfect for 8-bit themed applications that need a nostalgic theme switcher.",
+        "files": [
+          {
+            "path": "components/ui/retro-mode-switcher.tsx",
+            "target": "components/ui/retro-mode-switcher.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/button.tsx",
+            "target": "components/ui/8bit/button.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/theme-provider.tsx",
+            "target": "components/theme-provider.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/ui/8bit/styles/retro.css",
+            "target": "components/ui/8bit/styles/retro.css",
+            "type": "registry:component"
+          }
+        ],
+        "name": "retro-mode-switcher",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "8-bit Retro Mode Switcher",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "feedback",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "Displays an 8-bit empty component.",
+      "id": "8bitcn-ui/empty",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Empty",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "empty",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "d8715300ce1948d612e2e12ad7bd89609caebc6d",
+          "path": "components/ui/8bit/empty.tsx",
+          "sha256": "1454016b4884dc4f8db8c967d51d4876a1ca80adccb95006fd2f931b33799620",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/empty.tsx"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/empty.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/empty.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "Displays an 8-bit empty component.",
+        "files": [
+          {
+            "path": "components/ui/8bit/empty.tsx",
+            "target": "components/ui/8bit/empty.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "empty",
+        "registryDependencies": [],
+        "title": "8-bit Empty",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "Displays an 8-bit item component.",
+      "id": "8bitcn-ui/item",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "8-bit Item",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "8bitcn-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "separator"
+      ],
+      "slug": "item",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "646921528a857e4f5b296bd098ede753837edf0d",
+          "path": "components/ui/8bit/item.tsx",
+          "sha256": "e76407785b868ca589f9061722f77b0ef88ec45f49b8729a8168f80ff314aeb3",
+          "url": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/item.tsx"
+        }
+      ],
+      "sourcePath": "components/ui/8bit/item.tsx",
+      "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+      "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/components/ui/8bit/item.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "Displays an 8-bit item component.",
+        "files": [
+          {
+            "path": "components/ui/8bit/item.tsx",
+            "target": "components/ui/8bit/item.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "item",
+        "registryDependencies": [
+          "separator"
+        ],
+        "title": "8-bit Item",
+        "type": "registry:component"
+      }
+    }
+  ],
+  "licence": {
+    "additionalLicencePaths": [
+      "license.md"
+    ],
+    "expression": "MIT",
+    "gitBlobSha": "b12b8d8569eaf9cafeeab4794ec367f0f197598e",
+    "note": "Root-text assessment only. Additional terms, inherited notices, third-party assets and preview permissions require separate review.",
+    "path": "license.md",
+    "publicationApproved": false,
+    "rootTextCommercialUse": "allowed",
+    "rootTextRedistribution": "allowed",
+    "sha256": "1f7c401e999345dc159be2023cb7587d72e044f3e736b378dff8828a7060c31e",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/license.md"
+  },
+  "name": "8bitcn/ui",
+  "observedAt": "2026-09-20T22:01:04.269095Z",
+  "previewStrategy": "Unapproved. Prefer official isolated demos; otherwise render pinned source. Never fabricate a preview.",
+  "providerId": "8bitcn-ui",
+  "publicationApproved": false,
+  "repository": "TheOrcDev/8bitcn-ui",
+  "retainedEvidence": [
+    {
+      "path": "data/registry/licences/8bitcn-ui/898caa5932590ab8ff70f54e3c9aff5b5baa523c.txt",
+      "sha256": "1f7c401e999345dc159be2023cb7587d72e044f3e736b378dff8828a7060c31e"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/8bitcn-ui/898caa5932590ab8ff70f54e3c9aff5b5baa523c/upstream/README.md",
+      "sha256": "c5872a314b4d1a0ac30129f4380f39a972e06e5df206969ea31eb07cf474c1ca"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/8bitcn-ui/898caa5932590ab8ff70f54e3c9aff5b5baa523c/upstream/registry.json",
+      "sha256": "211582ec72737acfc3ac12e259554afeebf3a583ff2b07f498ad205f4d5a7543"
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceRef": "898caa5932590ab8ff70f54e3c9aff5b5baa523c",
+  "status": "captured-unpublished",
+  "unresolvedRisks": [
+    "Official first-party identity needs signed-off website/repository evidence.",
+    "No actual component preview has passed browser acceptance.",
+    "Installation and transitive dependency evidence must be reviewed before publication.",
+    "Production project, Neon branch/database/endpoint and post-merge deployment acceptance remain unverified."
+  ],
+  "website": "https://www.8bitcn.com/"
+}
