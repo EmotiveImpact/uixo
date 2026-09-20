@@ -59,14 +59,18 @@ jobs:
           npm ci --ignore-scripts
           npm install --package-lock-only --prefix provider-demos/kibo-ui --ignore-scripts
           git diff --name-only --diff-filter=ACMR -z HEAD | xargs -0 npx prettier --write --ignore-unknown
-      - name: Commit implementation to the same PR branch, never main
+      - name: Commit component source only to the same PR branch, never main
         run: |
           set -eu
           git fetch origin astra/provider-ingestion-2026-09-20
           test "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"
-          git rm -r ops/provider-audit-patch .github/workflows/provider-implementation-check.yml
+          # Workflow edits are handled separately by the authorised maintainer connection.
+          # The Actions token only pushes ordinary component, evidence and test files.
+          git restore --source="$GITHUB_SHA" --staged --worktree .github/workflows/ci.yml
+          git rm -r ops/provider-audit-patch
           git add -u
           git add provider-demos/kibo-ui/package-lock.json
+          test -z "$(git diff --cached --name-only -- .github/workflows)"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'feat(registry): add ten source-pinned Kibo components with additive sync and truthful previews'
