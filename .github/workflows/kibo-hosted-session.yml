@@ -1,4 +1,4 @@
-name: Authenticated Kibo preview acceptance
+name: Authenticated Kibo preview diagnostics
 
 on:
   push:
@@ -38,18 +38,18 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python tests/browser/preview_session.py
-      - name: Verify this exact deployment without catalogue mutations
+      - name: Inspect real frame requests without altering headers or component behaviour
         env:
           UIXO_EXPECTED_BUILD: ${{ github.sha }}
         run: |
           export UIXO_PREVIEW_SHARE_FILE="$RUNNER_TEMP/uixo-preview-session.txt"
-          python tests/browser/kibo_hosted.py
+          python tests/browser/kibo_network.py
       - name: Destroy the ephemeral session and private key
         if: always()
         run: rm -f "$RUNNER_TEMP/uixo-preview-private.pem" "$RUNNER_TEMP/uixo-preview-session.txt"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: kibo-hosted-acceptance-${{ github.run_id }}
+          name: kibo-hosted-diagnostics-${{ github.run_id }}
           path: test-results/intelligence/kibo-hosted
           retention-days: 7
