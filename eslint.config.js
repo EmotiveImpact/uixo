@@ -12,6 +12,7 @@ export default tseslint.config(
       'public/live-demos',
       'live-demos',
       'legacy',
+      'data/registry/snapshots/ingestion/**/upstream/**',
       'src/components/motion',
       'src/components/previews/shadcn/*.tsx',
       'src/lib/ease.ts',
