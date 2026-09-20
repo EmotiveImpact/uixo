@@ -82,6 +82,31 @@ test('verified preview sync repairs existing records and unpublishes source-less
     await db.close();
   }
 });
+
+test('provider-scoped sync is idempotent and does not touch unrelated providers', async () => {
+  const { db, registry } = await setup();
+  try {
+    const first = await syncCaptured(registry, new Set(['uiable']));
+    assert.equal(first.inserted, 707);
+    assert.equal(first.updated, 0);
+    assert.equal(first.unchanged, 0);
+    assert.equal((await registry.stats()).assets, 707);
+    assert.equal((await registry.providers()).length, 1);
+    assert.equal((await registry.search({ provider: 'uiable' })).total, 707);
+    assert.equal((await registry.search({ provider: 'shadcn' })).total, 0);
+
+    const second = await syncCaptured(registry, new Set(['uiable']));
+    assert.equal(second.inserted, 0);
+    assert.equal(second.updated, 0);
+    assert.equal(second.unchanged, 707);
+    assert.equal((await registry.stats()).assets, 707);
+
+    await assert.rejects(syncCaptured(registry, new Set(['not-approved'])), /unknown provider ID/);
+  } finally {
+    await db.close();
+  }
+});
+
 test('publication is a separate atomic review gate; edits do not replace live records', async () => {
   const { db, registry } = await setup();
   try {
