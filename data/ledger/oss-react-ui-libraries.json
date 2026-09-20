@@ -1,0 +1,4311 @@
+[
+  {
+    "name": "AlignUI",
+    "url": "https://alignui.com",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "Dashboard UI matched to Figma kit",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Ant Design",
+    "url": "https://ant.design",
+    "repo": "https://github.com/ant-design/ant-design",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "CSS-in-JS"
+    ],
+    "kind": "ui-library",
+    "stars": 99224,
+    "why": "Enterprise React UI with dense data components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Ant Design Mobile",
+    "url": "https://mobile.ant.design",
+    "repo": "https://github.com/ant-design/ant-design-mobile",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 11000,
+    "why": "Mobile-first Ant Design React blocks",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Astryx",
+    "url": "https://astryx.atmeta.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "Meta Astryx design system (beta)",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Atomize",
+    "url": "https://atomizecode.com",
+    "repo": "https://github.com/proksh/atomize",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "styled-components"
+    ],
+    "kind": "ui-library",
+    "stars": 1700,
+    "why": "Design system on styled-components",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Base Web (Uber)",
+    "url": "https://baseweb.design",
+    "repo": "https://github.com/uber/baseweb",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Styletron"
+    ],
+    "kind": "ui-library",
+    "stars": 8600,
+    "why": "Uber Base design language React library",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Blueprint",
+    "url": "https://blueprintjs.com",
+    "repo": "https://github.com/palantir/blueprint",
+    "access": [
+      "Free"
+    ],
+    "license": "Apache-2.0",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 20000,
+    "why": "Palantir desktop-oriented React toolkit",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Bumbag UI",
+    "url": "https://bumbag.style",
+    "repo": "https://github.com/jxom/bumbag-ui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 1000,
+    "why": "Themeable React UI (legacy)",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Carbon Design System",
+    "url": "https://carbondesignsystem.com",
+    "repo": "https://github.com/carbon-design-system/carbon",
+    "access": [
+      "Free"
+    ],
+    "license": "Apache-2.0",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 7500,
+    "why": "IBM Carbon React design system",
+    "source": "awesome",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Chakra UI",
+    "url": "https://chakra-ui.com",
+    "repo": "https://github.com/chakra-ui/chakra-ui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Emotion",
+      "Ark"
+    ],
+    "kind": "ui-library",
+    "stars": 40615,
+    "why": "Accessible modular React component system",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "ChatUI",
+    "url": "https://chatui.io",
+    "repo": "https://github.com/alibaba/ChatUI",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 2500,
+    "why": "Alibaba conversational UI React library",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "CoreUI React",
+    "url": "https://coreui.io/react",
+    "repo": "https://github.com/coreui/coreui-react",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Bootstrap"
+    ],
+    "kind": "ui-library",
+    "stars": 650,
+    "why": "CoreUI React admin components",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Create UI",
+    "url": "https://createui.co",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Figma"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "Figma-synced React design system free to start",
+    "source": "x",
+    "already_in_candidates": false
+  },
+  {
+    "name": "daisyUI",
+    "url": "https://daisyui.com",
+    "repo": "https://github.com/saadeghi/daisyui",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "MIT",
+    "stack": [
+      "Tailwind",
+      "React-compatible"
+    ],
+    "kind": "ui-library",
+    "stars": 35000,
+    "why": "Tailwind plugin component classes usable with React",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Dripsy",
+    "url": "https://www.dripsy.xyz",
+    "repo": "https://github.com/nandorojo/dripsy",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React Native",
+      "Theme UI"
+    ],
+    "kind": "ui-library",
+    "stars": 2000,
+    "why": "Responsive Theme UI for React Native",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Elastic UI (EUI)",
+    "url": "https://eui.elastic.co",
+    "repo": "https://github.com/elastic/eui",
+    "access": [
+      "Free"
+    ],
+    "license": "other",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 6000,
+    "why": "Elastic UI Framework for React",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Evergreen",
+    "url": "https://evergreen.segment.com",
+    "repo": "https://github.com/segmentio/evergreen",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 12000,
+    "why": "Segment Evergreen React UI framework",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Flowbite",
+    "url": "https://flowbite.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "From @DevItaliya22 list post",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Flowbite React",
+    "url": "https://flowbite-react.com",
+    "repo": "https://github.com/themesberg/flowbite-react",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Tailwind",
+      "Flowbite"
+    ],
+    "kind": "ui-library",
+    "stars": 1800,
+    "why": "Flowbite components for React + Tailwind",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Fluent UI",
+    "url": "https://react.fluentui.dev",
+    "repo": "https://github.com/microsoft/fluentui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 18000,
+    "why": "Microsoft Fluent React design system",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Geist UI",
+    "url": "https://geist-ui.dev",
+    "repo": "https://github.com/geist-org/geist-ui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 4200,
+    "why": "Vercel-inspired React design system",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Gestalt",
+    "url": "https://gestalt.pinterest.systems",
+    "repo": "https://github.com/pinterest/gestalt",
+    "access": [
+      "Free"
+    ],
+    "license": "Apache-2.0",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 4200,
+    "why": "Pinterest React design language",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "gluestack-ui",
+    "url": "https://gluestack.io",
+    "repo": "https://github.com/gluestack/gluestack-ui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "React Native",
+      "NativeWind",
+      "Tailwind"
+    ],
+    "kind": "ui-library",
+    "stars": 5021,
+    "why": "Universal copy-paste React/RN Tailwind components",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Grommet",
+    "url": "https://v2.grommet.io",
+    "repo": "https://github.com/grommet/grommet",
+    "access": [
+      "Free"
+    ],
+    "license": "Apache-2.0",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 8300,
+    "why": "Accessible modular React UI framework",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "HeroUI (ex-NextUI)",
+    "url": "https://heroui.com",
+    "repo": "https://github.com/heroui-inc/heroui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Tailwind",
+      "React Aria"
+    ],
+    "kind": "ui-library",
+    "stars": 25000,
+    "why": "Tailwind + React Aria modern styled React library",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "HeroUI Native",
+    "url": "https://heroui.com/en/docs/native/getting-started",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "Open-source UI component library",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "HeroUI Native",
+    "url": "https://heroui.com/en/docs/native",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "From @eddieeee0716 list post",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Kobra",
+    "url": "https://kobra.systems",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "Kobra React design system",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Mantine",
+    "url": "https://mantine.dev",
+    "repo": "https://github.com/mantinedev/mantine",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "CSS modules"
+    ],
+    "kind": "ui-library",
+    "stars": 28000,
+    "why": "100+ components + hooks batteries-included React toolkit",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Material UI (MUI)",
+    "url": "https://mui.com/material-ui/",
+    "repo": "https://github.com/mui/material-ui",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Emotion",
+      "Material Design"
+    ],
+    "kind": "ui-library",
+    "stars": 98991,
+    "why": "Mature Material Design React system with optional MUI X paid layers",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Native Bloom",
+    "url": "https://nativebloom.dev",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React Native"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "React Native UI kit",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "NativeBase",
+    "url": "https://nativebase.io",
+    "repo": "https://github.com/GeekyAnts/NativeBase",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React Native",
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 20000,
+    "why": "Cross-platform component library (gluestack lineage)",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "NextUI (legacy archive)",
+    "url": "https://nextui.org",
+    "repo": "https://github.com/nextui-org/nextui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Tailwind"
+    ],
+    "kind": "ui-library",
+    "stars": 20000,
+    "why": "Predecessor brand of HeroUI; still referenced",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "OpenDesign",
+    "url": "https://open-design.ai",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "Open-source vibe design workspace & Claude Design alternative \u2014 build prototypes, landing pages, dashboards, slides & HT",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "OpenUI",
+    "url": "https://www.openui.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "OpenUI React library",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Orbit",
+    "url": "https://orbit.kiwi",
+    "repo": "https://github.com/kiwicom/orbit",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 1400,
+    "why": "Kiwi.com Orbit React design system",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Park UI",
+    "url": "https://park-ui.com",
+    "repo": "https://github.com/chakra-ui/park-ui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Ark",
+      "Panda CSS"
+    ],
+    "kind": "ui-library",
+    "stars": 2345,
+    "why": "Ark + Panda CSS multi-framework styled components",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Pivotal UI",
+    "url": "https://styleguide.pivotal.io",
+    "repo": "https://github.com/pivotal-cf/pivotal-ui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 640,
+    "why": "Pivotal design system React",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Primer React",
+    "url": "https://primer.style/react",
+    "repo": "https://github.com/primer/react",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 3000,
+    "why": "GitHub Primer design system for React",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "PrimeReact",
+    "url": "https://primereact.org",
+    "repo": "https://github.com/primefaces/primereact",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 7000,
+    "why": "Large complete React UI suite with themes",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Radix Themes",
+    "url": "https://www.radix-ui.com/themes",
+    "repo": "https://github.com/radix-ui/themes",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Radix"
+    ],
+    "kind": "ui-library",
+    "stars": 5000,
+    "why": "Pre-styled Radix design system",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React Admin",
+    "url": "https://marmelab.com/react-admin",
+    "repo": "https://github.com/marmelab/react-admin",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "MUI"
+    ],
+    "kind": "ui-library",
+    "stars": 25000,
+    "why": "BaaS-style admin framework on React",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React Bootstrap",
+    "url": "https://react-bootstrap.github.io",
+    "repo": "https://github.com/react-bootstrap/react-bootstrap",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Bootstrap"
+    ],
+    "kind": "ui-library",
+    "stars": 22000,
+    "why": "Bootstrap components as React",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React Bulma Components",
+    "url": "https://github.com/couds/react-bulma-components",
+    "repo": "https://github.com/couds/react-bulma-components",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Bulma"
+    ],
+    "kind": "ui-library",
+    "stars": 1200,
+    "why": "React components for Bulma",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React Foundation",
+    "url": "https://react.foundation",
+    "repo": "https://github.com/digiaonline/react-foundation",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Foundation"
+    ],
+    "kind": "ui-library",
+    "stars": 600,
+    "why": "Foundation as React components",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React Native Paper",
+    "url": "https://reactnativepaper.com",
+    "repo": "https://github.com/callstack/react-native-paper",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React Native",
+      "Material"
+    ],
+    "kind": "ui-library",
+    "stars": 12000,
+    "why": "Material Design for React Native",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React Suite",
+    "url": "https://rsuitejs.com",
+    "repo": "https://github.com/rsuite/rsuite",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 8200,
+    "why": "Suite of enterprise React components",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Reactstrap",
+    "url": "https://reactstrap.github.io",
+    "repo": "https://github.com/reactstrap/reactstrap",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Bootstrap"
+    ],
+    "kind": "ui-library",
+    "stars": 11000,
+    "why": "Simple React Bootstrap 5 components",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Reshaped",
+    "url": "https://www.reshaped.so",
+    "repo": "https://github.com/formaat-design/reshaped",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "Neutral product UI React library with free OSS core",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Restyle",
+    "url": "https://github.com/Shopify/restyle",
+    "repo": "https://github.com/Shopify/restyle",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React Native"
+    ],
+    "kind": "ui-library",
+    "stars": 3000,
+    "why": "Shopify type-enforced style system for RN",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Ring UI",
+    "url": "https://jetbrains.github.io/ring-ui",
+    "repo": "https://github.com/JetBrains/ring-ui",
+    "access": [
+      "Free"
+    ],
+    "license": "Apache-2.0",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 3600,
+    "why": "JetBrains Web UI React components",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Rive",
+    "url": "https://rive.app",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "Behind Spotify Wrapped, Duolingo, and products reaching 2 billion users. Design, animate, and code in one place. Ship ev",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "RN Neo",
+    "url": "https://rn-neo.gs-rumana.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React Native"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "Neo React Native UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Semantic UI React",
+    "url": "https://react.semantic-ui.com",
+    "repo": "https://github.com/Semantic-Org/Semantic-UI-React",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 13000,
+    "why": "Official Semantic-UI React integration",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Semi Design",
+    "url": "https://semi.design",
+    "repo": "https://github.com/DouyinFE/semi-design",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 8000,
+    "why": "ByteDance modern comprehensive React design system",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Shards React",
+    "url": "https://designrevision.com/docs/shards-react",
+    "repo": "https://github.com/DesignRevision/shards-react",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Bootstrap"
+    ],
+    "kind": "ui-library",
+    "stars": 760,
+    "why": "Shards React design system",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Shards UI",
+    "url": "https://designrevision.com/downloads/shards",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Bootstrap"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "Modern React design system (classic Shards)",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Shineout",
+    "url": "https://shine.wiki",
+    "repo": "https://github.com/sheinsight/shineout",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 910,
+    "why": "React component library from Shein",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Shopify Polaris",
+    "url": "https://polaris.shopify.com",
+    "repo": "https://github.com/Shopify/polaris",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 5700,
+    "why": "Shopify admin React design system",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Supabase UI (legacy)",
+    "url": "https://ui.supabase.com",
+    "repo": "https://github.com/supabase/ui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "ui-library",
+    "stars": 1500,
+    "why": "Legacy Supabase React UI (archived reference)",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Tabler React",
+    "url": "https://github.com/tabler/tabler-react",
+    "repo": "https://github.com/tabler/tabler-react",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Bootstrap",
+      "Tabler"
+    ],
+    "kind": "ui-library",
+    "stars": 2300,
+    "why": "React bindings for Tabler dashboard UI",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Tamagui",
+    "url": "https://tamagui.dev",
+    "repo": "https://github.com/tamagui/tamagui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "React Native"
+    ],
+    "kind": "ui-library",
+    "stars": 12000,
+    "why": "Universal style system + UI kit for React/RN",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Theme UI",
+    "url": "https://theme-ui.com",
+    "repo": "https://github.com/system-ui/theme-ui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Emotion"
+    ],
+    "kind": "ui-library",
+    "stars": 5200,
+    "why": "Constraint-based themeable React styling + components",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Tremor",
+    "url": "https://www.tremor.so",
+    "repo": "https://github.com/tremorlabs/tremor",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "Apache-2.0",
+    "stack": [
+      "React",
+      "Tailwind"
+    ],
+    "kind": "ui-library",
+    "stars": 16000,
+    "why": "Dashboard charts and analytics React components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Trunx",
+    "url": "https://github.com/fibo/trunx",
+    "repo": "https://github.com/fibo/trunx",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Bulma"
+    ],
+    "kind": "ui-library",
+    "stars": 64,
+    "why": "Typed Bulma React components",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Untitled UI React",
+    "url": "https://www.untitledui.com/react",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Tailwind"
+    ],
+    "kind": "ui-library",
+    "stars": null,
+    "why": "Figma-matched React library with free tier",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Ariakit",
+    "url": "https://ariakit.org",
+    "repo": "https://github.com/ariakit/ariakit",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "headless",
+    "stars": 7700,
+    "why": "Accessible headless React toolkit (ex-Reakit)",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Ark UI",
+    "url": "https://ark-ui.com",
+    "repo": "https://github.com/chakra-ui/ark",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Solid",
+      "Vue",
+      "Svelte",
+      "Zag"
+    ],
+    "kind": "headless",
+    "stars": 4000,
+    "why": "Headless multi-framework UI on Zag state machines",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Base UI",
+    "url": "https://base-ui.com",
+    "repo": "https://github.com/mui/base-ui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "headless",
+    "stars": null,
+    "why": "MUI unstyled accessible primitives (Radix successor path)",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Headless UI",
+    "url": "https://headlessui.com",
+    "repo": "https://github.com/tailwindlabs/headlessui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Vue",
+      "Tailwind"
+    ],
+    "kind": "headless",
+    "stars": 25000,
+    "why": "Tailwind Labs unstyled accessible components",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React Aria Components",
+    "url": "https://react-spectrum.adobe.com/react-aria/",
+    "repo": "https://github.com/adobe/react-spectrum",
+    "access": [
+      "Free"
+    ],
+    "license": "Apache-2.0",
+    "stack": [
+      "React",
+      "React Aria"
+    ],
+    "kind": "headless",
+    "stars": 13000,
+    "why": "Adobe accessible unstyled React component primitives",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "TanStack Table",
+    "url": "https://tanstack.com/table",
+    "repo": "https://github.com/TanStack/table",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Headless"
+    ],
+    "kind": "headless",
+    "stars": 24000,
+    "why": "Headless data table/grid for React",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "cmdk",
+    "url": "https://cmdk.paco.me",
+    "repo": "https://github.com/pacocoursey/cmdk",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "primitives",
+    "stars": 10000,
+    "why": "Fast command menu React component",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "CVA (class-variance-authority)",
+    "url": "https://cva.style",
+    "repo": "https://github.com/joe-bell/cva",
+    "access": [
+      "Free"
+    ],
+    "license": "Apache-2.0",
+    "stack": [
+      "React",
+      "Tailwind"
+    ],
+    "kind": "primitives",
+    "stars": 5000,
+    "why": "Component variant API used across shadcn ecosystem",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Downshift",
+    "url": "https://www.downshift-js.com",
+    "repo": "https://github.com/downshift-js/downshift",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "primitives",
+    "stars": 12000,
+    "why": "WAI-ARIA combobox/select primitives",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Floating UI React",
+    "url": "https://floating-ui.com/docs/react",
+    "repo": "https://github.com/floating-ui/floating-ui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "primitives",
+    "stars": 30000,
+    "why": "Positioning library for tooltips/popovers",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Panda CSS",
+    "url": "https://panda-css.com",
+    "repo": "https://github.com/chakra-ui/panda",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "CSS",
+      "React"
+    ],
+    "kind": "primitives",
+    "stars": 5000,
+    "why": "CSS-in-JS build-time engine used by Park UI",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Radix Primitives",
+    "url": "https://www.radix-ui.com/primitives",
+    "repo": "https://github.com/radix-ui/primitives",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "primitives",
+    "stars": 15000,
+    "why": "Unstyled accessible primitives powering shadcn",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Reach UI",
+    "url": "https://reach.tech",
+    "repo": "https://github.com/reach/reach-ui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "primitives",
+    "stars": 6000,
+    "why": "Accessible React component foundation (archived legacy)",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React UseGesture",
+    "url": "https://use-gesture.netlify.app",
+    "repo": "https://github.com/pmndrs/use-gesture",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "primitives",
+    "stars": 8000,
+    "why": "Gesture hooks for React",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Rebass",
+    "url": "https://rebassjs.org",
+    "repo": "https://github.com/rebassjs/rebass",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "styled-system"
+    ],
+    "kind": "primitives",
+    "stars": 7900,
+    "why": "Primitive React UI components (legacy but influential)",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "tailwind-variants",
+    "url": "https://www.tailwind-variants.org",
+    "repo": "https://github.com/nextui-org/tailwind-variants",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Tailwind"
+    ],
+    "kind": "primitives",
+    "stars": 2000,
+    "why": "TV helper for Tailwind component variants",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Vaul",
+    "url": "https://vaul.emilkowal.ski",
+    "repo": "https://github.com/emilkowalski/vaul",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Radix"
+    ],
+    "kind": "primitives",
+    "stars": 5000,
+    "why": "Drawer component for React (shadcn drawer)",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "visx",
+    "url": "https://airbnb.io/visx",
+    "repo": "https://github.com/airbnb/visx",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "D3"
+    ],
+    "kind": "primitives",
+    "stars": 19000,
+    "why": "Airbnb low-level React visualization primitives",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Zag.js",
+    "url": "https://zagjs.com",
+    "repo": "https://github.com/chakra-ui/zag",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "Framework-agnostic",
+      "React bindings"
+    ],
+    "kind": "primitives",
+    "stars": 4000,
+    "why": "UI state machines underpinning Ark/Chakra",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "21st.dev",
+    "url": "https://21st.dev",
+    "repo": "https://github.com/21st-dev/magic",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "shadcn",
+      "Tailwind"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Community npm/registry for shadcn components + MCP",
+    "source": "web",
+    "already_in_candidates": true
+  },
+  {
+    "name": "8bitcn/ui",
+    "url": "https://8bitcn.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Tailwind",
+      "shadcn"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "8-bit themed shadcn-style components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "AI Elements",
+    "url": "https://elements.ai-sdk.dev",
+    "repo": "https://github.com/vercel/ai-elements",
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "AI SDK"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Vercel AI SDK chat/UI elements for React",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "awesome-shadcn-ui",
+    "url": "https://github.com/birobirobiro/awesome-shadcn-ui",
+    "repo": "https://github.com/birobirobiro/awesome-shadcn-ui",
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "shadcn"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Curated index of shadcn registries and resources",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "coss UI",
+    "url": "https://coss.com/ui",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Tailwind"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "coss React/Tailwind UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Dice UI",
+    "url": "https://diceui.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Tailwind",
+      "shadcn"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "shadcn-compatible component registry",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Easy UI",
+    "url": "https://easyui.site",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Tailwind"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Easy copy-paste React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Kibo UI",
+    "url": "https://kibo-ui.com",
+    "repo": "https://github.com/haydenbleasel/kibo",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Tailwind",
+      "shadcn"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Niche components filling shadcn gaps",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "mapcn",
+    "url": "https://mapcn.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "shadcn",
+      "Maps"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Copy-paste map components for React",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Obra shadcn kit",
+    "url": "https://www.obra.studio",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "shadcn"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Obra community edition shadcn UI kit",
+    "source": "x",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Origin UI",
+    "url": "https://originui.com",
+    "repo": "https://github.com/origin-space/originui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Tailwind",
+      "shadcn"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Large copy-paste Tailwind/React app UI catalog",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "registry.directory",
+    "url": "https://registry.directory",
+    "repo": "https://github.com/rbadillap/registry.directory",
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "shadcn"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Explorer indexing ~79 registries / 27k components",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "ReUI",
+    "url": "https://reui.io",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Tailwind",
+      "shadcn"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "shadcn ecosystem React UI kit",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "shadcn.io",
+    "url": "https://shadcn.io",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "shadcn"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Community shadcn resource hub",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "shadcn/lint",
+    "url": "https://github.com/shadcn-ui/lint",
+    "repo": "https://github.com/shadcn-ui/lint",
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Agent-first linter for Tailwind design systems \u2014 verify component/theme rules",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "shadcn/ui",
+    "url": "https://ui.shadcn.com",
+    "repo": "https://github.com/shadcn-ui/ui",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Tailwind",
+      "Radix",
+      "Base UI"
+    ],
+    "kind": "shadcn-registry",
+    "stars": 122593,
+    "why": "Copy-paste owned React components; de facto Tailwind UI standard",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "shadcnblocks",
+    "url": "https://www.shadcnblocks.com",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "shadcn",
+      "Tailwind"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Large shadcn blocks/templates marketplace with free samples",
+    "source": "x",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Tailark",
+    "url": "https://tailark.com",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "shadcn",
+      "Tailwind"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Marketing blocks on shadcn/ui",
+    "source": "web",
+    "already_in_candidates": true
+  },
+  {
+    "name": "TypeUI",
+    "url": "https://typeui.sh",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Tailwind"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Typed React UI components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "UI Registries",
+    "url": "https://ui-registries.vercel.app",
+    "repo": "https://github.com/ethan-krich/ui-registries",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "shadcn"
+    ],
+    "kind": "shadcn-registry",
+    "stars": 7,
+    "why": "Daily-updated directory of 500+ GitHub shadcn registries",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "UIable",
+    "url": "https://uiable.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "shadcn"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Open-source expansion on shadcn ecosystem",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Watermelon UI",
+    "url": "https://ui.watermelon.sh",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "shadcn"
+    ],
+    "kind": "shadcn-registry",
+    "stars": null,
+    "why": "Watermelon React/shadcn UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Aceternity UI",
+    "url": "https://ui.aceternity.com",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Tailwind",
+      "Motion"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Bold animated landing-page React/Tailwind components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Amicro",
+    "url": "https://amicro.vercel.app",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Micro-transitions and interaction React components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Animata",
+    "url": "https://animata.design",
+    "repo": "https://github.com/codse/animata",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Tailwind"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Copy-paste animated React UI snippets",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Animate UI",
+    "url": "https://animate-ui.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Motion"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Motion-first React animated component pack",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Anime.js",
+    "url": "https://animejs.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "A fast, multipurpose and lightweight JavaScript animation library",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "AnimMasterLib",
+    "url": "https://animmasterlib.dev",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "UI/design resource from @calbuldelis69 list post",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Annnimate",
+    "url": "https://annnimate.com",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Motion"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Animate React component library",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "AutoAnimate",
+    "url": "https://auto-animate.formkit.com",
+    "repo": "https://github.com/formkit/auto-animate",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "animated",
+    "stars": 8000,
+    "why": "Zero-config animation for React lists",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "BadtzUI",
+    "url": "https://badtz-ui.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Tailwind"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Animated React UI components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Cult UI",
+    "url": "https://www.cult-ui.com",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Tailwind",
+      "shadcn"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Cult aesthetic shadcn-style animated components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Fancy Components",
+    "url": "https://fancycomponents.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Creative fancy React UI components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Farm UI",
+    "url": "https://farmui.com",
+    "repo": "https://github.com/Kinfe123/farm-ui",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Radix",
+      "shadcn",
+      "Motion"
+    ],
+    "kind": "animated",
+    "stars": 495,
+    "why": "Animation-rich Radix/shadcn component blocks",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Great UI",
+    "url": "https://www.great-ui.com",
+    "repo": "https://github.com/Saurabh-2607/GreatUI",
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Tailwind",
+      "Motion"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Polished animated open-source React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Hover.dev",
+    "url": "https://hover.dev",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Interactive hover/micro-interaction components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Kinetics",
+    "url": "https://kinetics.colorion.co",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Motion"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "150+ motion effects with React code",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Liquid Glass",
+    "url": "https://glass.samasante.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Glass refraction React components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Magic UI",
+    "url": "https://magicui.design",
+    "repo": "https://github.com/magicuidesign/magicui",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Tailwind",
+      "Motion",
+      "shadcn"
+    ],
+    "kind": "animated",
+    "stars": 22041,
+    "why": "150+ animated marketing React components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Make It Animated",
+    "url": "https://makeitanimated.dev",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "React Native Animations",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "MicroInteractions UI",
+    "url": "https://microinteractionsui.com",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Micro-interaction React pack",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "MicroKit",
+    "url": "https://microkit.co",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Premium micro-interactions for buttons/inputs",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Motion (Framer Motion)",
+    "url": "https://motion.dev",
+    "repo": "https://github.com/motiondivision/motion",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Animation"
+    ],
+    "kind": "animated",
+    "stars": 25000,
+    "why": "Production React animation library",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Motion Primitives",
+    "url": "https://motion-primitives.com",
+    "repo": "https://github.com/ibelick/motion-primitives",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Motion"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Reusable motion interaction React primitives",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Number Flow",
+    "url": "https://number-flow.barvian.me",
+    "repo": "https://github.com/barvian/number-flow",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "animated",
+    "stars": 2000,
+    "why": "Animated number component for React",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Oil Motion",
+    "url": "https://github.com/oil-oil/oil-motion",
+    "repo": "https://github.com/oil-oil/oil-motion",
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Motion"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "OSS React motion component experiments",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "OpenMotion",
+    "url": "https://openmotion.design",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "AI product demos/animations (adjacent)",
+    "source": "x",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Origin Kit",
+    "url": "https://originkit.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Motion"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Free animated component library",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "React Bits",
+    "url": "https://reactbits.dev",
+    "repo": "https://github.com/DavidHDev/react-bits",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "MIT+Commons Clause",
+    "stack": [
+      "React",
+      "Tailwind",
+      "CSS"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "165+ animated interactive React components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "React Native Motion",
+    "url": "https://rnmotion.dev",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Beautiful animations for React Native and Expo.",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "React Spring",
+    "url": "https://www.react-spring.dev",
+    "repo": "https://github.com/pmndrs/react-spring",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Animation"
+    ],
+    "kind": "animated",
+    "stars": 28000,
+    "why": "Spring-physics React animation library",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Transitions.dev",
+    "url": "https://transitions.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "CSS"
+    ],
+    "kind": "animated",
+    "stars": null,
+    "why": "Essential UI transitions for apps/agents",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "AG Grid Community",
+    "url": "https://www.ag-grid.com",
+    "repo": "https://github.com/ag-grid/ag-grid",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": 12000,
+    "why": "Enterprise data grid (community MIT core)",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "AICSS",
+    "url": "https://www.aicss.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "CSS"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "AI CSS components/orbs",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "AICSS Orbs",
+    "url": "https://www.aicss.dev/components/orbs",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Copy-paste animated activity orbs for agent UIs \u2014 discrete DOM/CSS indicators without blocking the thread",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Babelize Elements",
+    "url": "https://elements.babelize.co",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Babelize React elements",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Beam (Libraries.dev)",
+    "url": "https://libraries.dev/beam",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Animated border beam React component on Libraries.dev \u2014 Red paste add.",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Beautiful UI",
+    "url": "https://beautifului.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "AI"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Primitives for AI-native chat/agent UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Bencho",
+    "url": "https://bencho.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Bencho React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "beui",
+    "url": "https://beui.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Minimal React UI kit",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Blocks.so",
+    "url": "https://blocks.so",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Tailwind"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Copy-paste React UI blocks",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "BoardUI",
+    "url": "https://boardui.com",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Board/kanban oriented React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Calligraph",
+    "url": "https://calligraph.raphaelsalaja.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Typography/calligraph React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Canvas UI",
+    "url": "https://canvasui.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Canvas-oriented React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Circle Loaders",
+    "url": "https://circleloaders.dominikakissi.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "SVG",
+      "CSS"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "24 monochrome SVG loaders (agent-status)",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "CSS Text Effects",
+    "url": "https://text-effects.colorion.co",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "90 pure-CSS text animations (gradient, glitch, typewriter, neon) \u2014 click to copy, no JS",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "CSS Toggles",
+    "url": "https://toggles.colorion.co",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "CSS",
+      "React-compatible"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Toggle switch CSS/React snippets",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Cuelume",
+    "url": "https://cuelume.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Cue/lume React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "DialKit",
+    "url": "https://dialkit.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Dial/knob React components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Embla Carousel React",
+    "url": "https://www.embla-carousel.com",
+    "repo": "https://github.com/davidcetinkaya/embla-carousel",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": 5000,
+    "why": "Carousel library with React wrapper",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Empty States",
+    "url": "https://ui.spectrumhq.in/blocks/empty-states",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "25 animated empty-state blocks for React \u2014 Spectrum UI + shadcn/Motion, one CLI command",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "EvilCharts",
+    "url": "https://evilcharts.com",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Charts"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Chart components for React",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Fluid Functionalism",
+    "url": "https://fluidfunctionalism.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Fluid functionalism UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Glide Data Grid",
+    "url": "https://grid.glideapps.com",
+    "repo": "https://github.com/glideapps/glide-data-grid",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": 3500,
+    "why": "High-performance canvas React data grid",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Gradient Buttons",
+    "url": "https://gradientbuttons.colorion.co",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Hundreds of CSS gradient buttons \u2014 one-click copy to clipboard",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "IdeaDesign",
+    "url": "https://ideadesign.top",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Preview reconstructed UI components with interactions + downloadable HTML",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Interior",
+    "url": "https://interior.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Interior React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "KokonutUI",
+    "url": "https://kokonutui.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Tailwind"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Modern React component pack",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Libraries.dev",
+    "url": "https://libraries.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Multi-library React component hub (orbs/beam)",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Libraries.dev Orbs",
+    "url": "https://libraries.dev/orbs",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Thought-orb loading indicators for AI interfaces \u2014 npm thinking-orbs",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Light Stroke Rail",
+    "url": "https://light-stroke-rail.vercel.app/",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Light stroke rail effect demo",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "MetalForge",
+    "url": "https://metalforge.xyz/editor",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Generate SwiftUI Metal shaders (progress bars etc.) via sliders \u2014 real .metal out",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Morphing Menu",
+    "url": "https://dannyjpwilliams.com/playground/morphing-menu",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Morphing navigation menu playground component",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "MUI X Data Grid (community)",
+    "url": "https://mui.com/x/react-data-grid/",
+    "repo": "https://github.com/mui/mui-x",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "MUI"
+    ],
+    "kind": "component-pack",
+    "stars": 3900,
+    "why": "MUI data grid with free community tier",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Nivo",
+    "url": "https://nivo.rocks",
+    "repo": "https://github.com/plouc/nivo",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "D3"
+    ],
+    "kind": "component-pack",
+    "stars": 13000,
+    "why": "Rich React dataviz components",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "ObsidianUI",
+    "url": "https://www.obsidianui.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Dark/obsidian themed React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "OpenDesign",
+    "url": "https://opendesign.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Open design React components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Opensource UI",
+    "url": "https://opensourceui.in",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Open source React UI collection",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Rare UI",
+    "url": "https://rareui.com",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Rare React UI components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "React Data Grid",
+    "url": "https://github.com/adazzle/react-data-grid",
+    "repo": "https://github.com/adazzle/react-data-grid",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": 6700,
+    "why": "Feature-rich React data grid",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React DatePicker",
+    "url": "https://reactdatepicker.com",
+    "repo": "https://github.com/Hacker0x01/react-datepicker",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": 7900,
+    "why": "Reusable React datepicker",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React Day Picker",
+    "url": "https://daypicker.dev",
+    "repo": "https://github.com/gpbl/react-day-picker",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": 6000,
+    "why": "Flexible date picker for React",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React Flow",
+    "url": "https://reactflow.dev",
+    "repo": "https://github.com/xyflow/xyflow",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": 25000,
+    "why": "Node-based diagrams and flow UIs",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React Hot Toast",
+    "url": "https://react-hot-toast.com",
+    "repo": "https://github.com/timolins/react-hot-toast",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": 9300,
+    "why": "Minimal React toast notifications",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React Select",
+    "url": "https://react-select.com",
+    "repo": "https://github.com/JedWatson/react-select",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": 27000,
+    "why": "Flexible select input for React",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React Toastify",
+    "url": "https://fkhadra.github.io/react-toastify",
+    "repo": "https://github.com/fkhadra/react-toastify",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": 12000,
+    "why": "Popular React notification system",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Reacticx",
+    "url": "https://reacticx.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "React UI components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Recharts",
+    "url": "https://recharts.org",
+    "repo": "https://github.com/recharts/recharts",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "D3"
+    ],
+    "kind": "component-pack",
+    "stars": 23000,
+    "why": "Composable React chart library",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Rubik (Sachi)",
+    "url": "https://rubik.sachi.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Rubik React UI playground",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Scritto",
+    "url": "https://scrit.to",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Scritto React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Simply Buttons",
+    "url": "https://simply-buttons.vercel.app",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Button component pack",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Sona UI",
+    "url": "https://www.sonaui.com",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Sona React UI components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Sona UI",
+    "url": "https://sona-ui.vercel.app/",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Sona UI component playground",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Sonner",
+    "url": "https://sonner.emilkowal.ski",
+    "repo": "https://github.com/emilkowalski/sonner",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": 9000,
+    "why": "Opinionated toast component used with shadcn",
+    "source": "web",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Spectrum Charts",
+    "url": "https://ui.spectrumhq.in/blocks/charts",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Chart blocks on Spectrum UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Spectrum Footers",
+    "url": "https://ui.spectrumhq.in/blocks/footers",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Open-source footer blocks built with shadcn + Motion",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Spectrum UI",
+    "url": "https://ui.spectrumhq.in",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Tailwind"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Blocks/charts/footers React component gallery",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Spell UI",
+    "url": "https://spell.sh",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Spell React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Three UI",
+    "url": "https://threeui.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Three.js"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "3D React UI components",
+    "source": "existing-uixo",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Three UI",
+    "url": "https://threeui.com/browse",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Three.js UI browse gallery",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Torph",
+    "url": "https://torph.lochie.me",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Small crafted React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "UI by Halaska",
+    "url": "https://ui.halaska.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Halaska React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "UI SFX",
+    "url": "https://uisfx.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "78 semantic UI cues / 936 open-source interface sound effects",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "UImaxxing",
+    "url": "https://uimaxx.ing",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "UI maxxing React components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "UIverse",
+    "url": "https://uiverse.io",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "HTML/CSS",
+      "React-export"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Community CSS/HTML elements (inspiration; React exports)",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Vanta UI",
+    "url": "https://vantaui.com",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "React UI library with free tier",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Venstyler",
+    "url": "https://www.venstyler.com",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Venstyler React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "VibePrompts",
+    "url": "https://vibeprompts.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "286 free components for vibe coders with prompts",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Victory",
+    "url": "https://commerce.nearform.com/open-source/victory",
+    "repo": "https://github.com/FormidableLabs/victory",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": 11000,
+    "why": "Composable React data viz",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "WandPress",
+    "url": "https://wandpress.netlify.app",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "WandPress React UI",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "XiodUI",
+    "url": "https://ui.xiod.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React"
+    ],
+    "kind": "component-pack",
+    "stars": null,
+    "why": "Xiod React UI kit",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "3D Icons",
+    "url": "https://3dicons.co",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "Open-source 3D icon set",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Basicons",
+    "url": "https://basicons.xyz",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "Free basic icon set",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Bootstrap Icons",
+    "url": "https://icons.getbootstrap.com",
+    "repo": "https://github.com/twbs/icons",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": 7000,
+    "why": "Official Bootstrap icon set",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Boxicons",
+    "url": "https://boxicons.com",
+    "repo": "https://github.com/atisawd/boxicons",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": 3000,
+    "why": "Simple open source icon set",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "css.gg",
+    "url": "https://css.gg",
+    "repo": "https://github.com/astrit/css.gg",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "CSS",
+      "React"
+    ],
+    "kind": "icons-react",
+    "stars": 10000,
+    "why": "700+ CSS icons usable in React",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Devicon",
+    "url": "https://devicon.dev",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "From @Manixh02 list post",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Eva Icons",
+    "url": "https://akveo.github.io/eva-icons",
+    "repo": "https://github.com/akveo/eva-icons",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": 8000,
+    "why": "Eva Design System open icons",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Feather Icons",
+    "url": "https://feathericons.com",
+    "repo": "https://github.com/feathericons/feather",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": 24000,
+    "why": "Simply beautiful open source icons",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Heroicons React",
+    "url": "https://heroicons.com",
+    "repo": "https://github.com/tailwindlabs/heroicons",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": 21000,
+    "why": "Tailwind Labs hand-crafted SVG icons + React",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Hugeicons",
+    "url": "https://hugeicons.com",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "Large icon pack with React free tier",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Icon Creator",
+    "url": "https://iconcreator.dev/",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "Free customized icon packs generator",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Iconer",
+    "url": "https://iconer.app",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "Icon packs browser",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Iconify",
+    "url": "https://iconify.design",
+    "repo": "https://github.com/iconify/iconify",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": 5000,
+    "why": "Unified icon framework with React components",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Iconly",
+    "url": "https://iconly.design/",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "App icon inspiration and assets",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Iconoir",
+    "url": "https://iconoir.com",
+    "repo": "https://github.com/iconoir-icons/iconoir",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": 4000,
+    "why": "Open-source icon library with React",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Iconsax",
+    "url": "https://app.iconsax.io",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "Iconsax icon library",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Ikonik",
+    "url": "https://ikonik.modulify.ai",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "50k+ open-source icons with built-in SVG editor",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Ionicons",
+    "url": "https://ionic.io/ionicons",
+    "repo": "https://github.com/ionic-team/ionicons",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": 17000,
+    "why": "Premium open icon pack from Ionic",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Isocons",
+    "url": "https://www.isocons.app/",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "Isometric icons",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Lucide Animated",
+    "url": "https://lucide-animated.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons",
+      "Motion"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "Animated Lucide-style icons",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Lucide Icons",
+    "url": "https://lucide.dev/icons",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "Open-source Lucide icon set",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Lucide React",
+    "url": "https://lucide.dev",
+    "repo": "https://github.com/lucide-icons/lucide",
+    "access": [
+      "Free"
+    ],
+    "license": "ISC",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": 15000,
+    "why": "Fork of Feather; first-class React icon package",
+    "source": "existing-uixo",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Morphicons",
+    "url": "https://www.morphicons.com/",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "Morphing / characterful icons",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Moving Icons",
+    "url": "https://www.movingicons.dev/icons",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "Animated icon set",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Mx-icons",
+    "url": "https://mx-icons.vercel.app",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "From @Manixh02 list post",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Phosphor Icons",
+    "url": "https://phosphoricons.com",
+    "repo": "https://github.com/phosphor-icons/core",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": 5000,
+    "why": "Flexible icon family with React",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Radix Icons",
+    "url": "https://www.radix-ui.com/icons",
+    "repo": "https://github.com/radix-ui/icons",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": 2000,
+    "why": "Crisp 15\u00d715 icons for Radix/React",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "React Font Awesome",
+    "url": "https://fontawesome.com",
+    "repo": "https://github.com/FortAwesome/react-fontawesome",
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "other",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "Official Font Awesome React components",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "React Icons",
+    "url": "https://react-icons.github.io/react-icons",
+    "repo": "https://github.com/react-icons/react-icons",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": 11000,
+    "why": "Popular icons pack as React components",
+    "source": "awesome",
+    "already_in_candidates": false
+  },
+  {
+    "name": "Remix Icon",
+    "url": "https://remixicon.com",
+    "repo": "https://github.com/Remix-Design/RemixIcon",
+    "access": [
+      "Free"
+    ],
+    "license": "Apache-2.0",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": 7000,
+    "why": "Open-source neutral-style icon system",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Rune Icons",
+    "url": "https://www.runeicons.com/",
+    "repo": null,
+    "access": [
+      "Free",
+      "Paid"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "Icon set with more character than usual packs",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Simple Icons",
+    "url": "https://simpleicons.org",
+    "repo": "https://github.com/simple-icons/simple-icons",
+    "access": [
+      "Free"
+    ],
+    "license": "CC0-1.0",
+    "stack": [
+      "SVG",
+      "React"
+    ],
+    "kind": "icons-react",
+    "stars": 20000,
+    "why": "SVG icons for popular brands",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Tabler Icons React",
+    "url": "https://tabler.io/icons",
+    "repo": "https://github.com/tabler/tabler-icons",
+    "access": [
+      "Free"
+    ],
+    "license": "MIT",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": 17000,
+    "why": "6000+ free icons with React package",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "Thesvg",
+    "url": "https://thesvg.org",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "From @Manixh02 list post",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  },
+  {
+    "name": "UseAnimations",
+    "url": "https://useanimations.com",
+    "repo": null,
+    "access": [
+      "Free"
+    ],
+    "license": "unknown",
+    "stack": [
+      "React",
+      "Icons"
+    ],
+    "kind": "icons-react",
+    "stars": null,
+    "why": "Animated micro-interaction icon set",
+    "source": "existing-uixo",
+    "already_in_candidates": true
+  }
+]
