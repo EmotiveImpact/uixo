@@ -1,14 +1,14 @@
 /* The approved visual prototype implemented as a shared layout, not a skin over the old shell. */
 :root {
-  --background: #07090d;
-  --foreground: #f5f6f9;
-  --muted: #141920;
-  --muted-foreground: #959daa;
-  --border: #202630;
-  --card: #10151c;
-  --uixo-surface: #0d1219;
+  --background: #000;
+  --foreground: #f4f4f5;
+  --muted: #151516;
+  --muted-foreground: #949499;
+  --border: #1b1b1d;
+  --card: #0c0c0d;
+  --uixo-surface: #0b0b0c;
   --uixo-line: rgb(255 255 255 / 0.08);
-  --uixo-soft: #b1b9c6;
+  --uixo-soft: #b0b0b5;
   --uixo-accent: #a5b4ff;
   --uixo-shadow: 0 24px 64px rgb(0 0 0 / 0.22);
 }
