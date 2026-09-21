@@ -1,0 +1,548 @@
+{
+  "actualPublishedCount": 0,
+  "archiveSha256": "34be7c3603604ad701926dba5afe6ed3629e053ea4276ddf7c6b161029dac7e4",
+  "branch": "main",
+  "excludedCount": 0,
+  "exclusions": [],
+  "installationStrategy": "Use retained upstream evidence. No installation command is approved by this capture.",
+  "inventoryCount": 3,
+  "items": [
+    {
+      "categorySuggestion": "forms",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "babelize-elements/language-switcher",
+      "inventoryEvidence": {
+        "path": "src/registry/registry.ts",
+        "url": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Language Switcher",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "babelize-elements",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "language-switcher",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "2fad61fb31f5612cbc27ffcaa2cd2fb763e43ce0",
+          "path": "src/registry/components/language-switcher.tsx",
+          "sha256": "c5fa2cfd20df5c05c84c1d99103d6132baa01bf00c907656b3b5b01821af69a4",
+          "url": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/components/language-switcher.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/language-switcher.tsx",
+      "sourceRef": "2cd92ba8acad36e6122d4c528cc81b5d99ffd587",
+      "sourceUrl": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/components/language-switcher.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "projectPackage": {
+          "bin": {
+            "elements": "./bin.js"
+          },
+          "dependencies": {
+            "clsx": "^2.1.1",
+            "tailwind-merge": "^3.6.0"
+          },
+          "description": "Open-source Localization UI components for React and Tailwind CSS.",
+          "devDependencies": {
+            "@tailwindcss/postcss": "^4",
+            "@testing-library/jest-dom": "^7.0.1",
+            "@testing-library/react": "^16.3.3",
+            "@testing-library/user-event": "^14.6.7",
+            "@types/node": "^20",
+            "@types/react": "^19",
+            "@types/react-dom": "^19",
+            "@vitejs/plugin-react": "^6.1.1",
+            "eslint": "^9",
+            "eslint-config-next": "16.3.0",
+            "fumadocs-core": "^16.14.0",
+            "fumadocs-mdx": "^15.2.2",
+            "fumadocs-ui": "^16.14.0",
+            "jsdom": "^30.0.1",
+            "lucide-react": "^1.28.0",
+            "motion": "^12.43.0",
+            "next": "16.3.0",
+            "next-themes": "^0.4.6",
+            "prettier": "^3.9.6",
+            "react": "19.2.8",
+            "react-dom": "19.2.8",
+            "tailwindcss": "^4",
+            "tsup": "^8.5.1",
+            "typescript": "^5",
+            "vitest": "^5.0.0"
+          },
+          "engines": {
+            "node": ">=20"
+          },
+          "exports": {
+            ".": {
+              "import": {
+                "default": "./dist/index.js",
+                "types": "./dist/index.d.ts"
+              },
+              "require": {
+                "default": "./dist/index.cjs",
+                "types": "./dist/index.d.cts"
+              }
+            },
+            "./package.json": "./package.json",
+            "./utils": {
+              "import": {
+                "default": "./dist/utils.js",
+                "types": "./dist/utils.d.ts"
+              },
+              "require": {
+                "default": "./dist/utils.cjs",
+                "types": "./dist/utils.d.cts"
+              }
+            }
+          },
+          "files": [
+            "dist",
+            "bin.js",
+            "README.md",
+            "LICENSE"
+          ],
+          "ignoreScripts": [
+            "sharp",
+            "unrs-resolver"
+          ],
+          "keywords": [
+            "react",
+            "i18n",
+            "localization",
+            "internationalization",
+            "tailwindcss",
+            "components",
+            "language-switcher",
+            "locale-picker",
+            "rtl",
+            "nextjs"
+          ],
+          "license": "MIT",
+          "main": "./dist/index.cjs",
+          "module": "./dist/index.js",
+          "name": "@babelize/elements",
+          "packageManager": "bun@1.3.14",
+          "peerDependencies": {
+            "react": ">=18",
+            "react-dom": ">=18",
+            "tailwindcss": ">=3"
+          },
+          "publishConfig": {
+            "access": "public"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/babelize/babelize-elements.git"
+          },
+          "scripts": {
+            "build": "next build",
+            "build:lib": "rm -rf dist && tsup",
+            "dev": "next dev",
+            "format": "prettier --write .",
+            "format:check": "prettier --check .",
+            "lint": "eslint",
+            "prepublishOnly": "bun run build:lib",
+            "start": "next start",
+            "test": "vitest run",
+            "test:pack": "node scripts/smoke-pack.mjs",
+            "test:watch": "vitest",
+            "typecheck": "fumadocs-mdx && tsc --noEmit && tsc --project tsconfig.lib.json --noEmit"
+          },
+          "sideEffects": false,
+          "trustedDependencies": [
+            "sharp",
+            "unrs-resolver"
+          ],
+          "type": "module",
+          "types": "./dist/index.d.ts",
+          "version": "1.1.2"
+        }
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "babelize-elements/navbar",
+      "inventoryEvidence": {
+        "path": "src/registry/registry.ts",
+        "url": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Navbar",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "babelize-elements",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "navbar",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "88fb5a59bdd6df2658fdd68f76d74d6b1a6277a9",
+          "path": "src/registry/components/navbar.tsx",
+          "sha256": "ded6c7136b82e990cad7f76d54efd969648eca33ec876bffab8804fb029dfc2d",
+          "url": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/components/navbar.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/navbar.tsx",
+      "sourceRef": "2cd92ba8acad36e6122d4c528cc81b5d99ffd587",
+      "sourceUrl": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/components/navbar.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "projectPackage": {
+          "bin": {
+            "elements": "./bin.js"
+          },
+          "dependencies": {
+            "clsx": "^2.1.1",
+            "tailwind-merge": "^3.6.0"
+          },
+          "description": "Open-source Localization UI components for React and Tailwind CSS.",
+          "devDependencies": {
+            "@tailwindcss/postcss": "^4",
+            "@testing-library/jest-dom": "^7.0.1",
+            "@testing-library/react": "^16.3.3",
+            "@testing-library/user-event": "^14.6.7",
+            "@types/node": "^20",
+            "@types/react": "^19",
+            "@types/react-dom": "^19",
+            "@vitejs/plugin-react": "^6.1.1",
+            "eslint": "^9",
+            "eslint-config-next": "16.3.0",
+            "fumadocs-core": "^16.14.0",
+            "fumadocs-mdx": "^15.2.2",
+            "fumadocs-ui": "^16.14.0",
+            "jsdom": "^30.0.1",
+            "lucide-react": "^1.28.0",
+            "motion": "^12.43.0",
+            "next": "16.3.0",
+            "next-themes": "^0.4.6",
+            "prettier": "^3.9.6",
+            "react": "19.2.8",
+            "react-dom": "19.2.8",
+            "tailwindcss": "^4",
+            "tsup": "^8.5.1",
+            "typescript": "^5",
+            "vitest": "^5.0.0"
+          },
+          "engines": {
+            "node": ">=20"
+          },
+          "exports": {
+            ".": {
+              "import": {
+                "default": "./dist/index.js",
+                "types": "./dist/index.d.ts"
+              },
+              "require": {
+                "default": "./dist/index.cjs",
+                "types": "./dist/index.d.cts"
+              }
+            },
+            "./package.json": "./package.json",
+            "./utils": {
+              "import": {
+                "default": "./dist/utils.js",
+                "types": "./dist/utils.d.ts"
+              },
+              "require": {
+                "default": "./dist/utils.cjs",
+                "types": "./dist/utils.d.cts"
+              }
+            }
+          },
+          "files": [
+            "dist",
+            "bin.js",
+            "README.md",
+            "LICENSE"
+          ],
+          "ignoreScripts": [
+            "sharp",
+            "unrs-resolver"
+          ],
+          "keywords": [
+            "react",
+            "i18n",
+            "localization",
+            "internationalization",
+            "tailwindcss",
+            "components",
+            "language-switcher",
+            "locale-picker",
+            "rtl",
+            "nextjs"
+          ],
+          "license": "MIT",
+          "main": "./dist/index.cjs",
+          "module": "./dist/index.js",
+          "name": "@babelize/elements",
+          "packageManager": "bun@1.3.14",
+          "peerDependencies": {
+            "react": ">=18",
+            "react-dom": ">=18",
+            "tailwindcss": ">=3"
+          },
+          "publishConfig": {
+            "access": "public"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/babelize/babelize-elements.git"
+          },
+          "scripts": {
+            "build": "next build",
+            "build:lib": "rm -rf dist && tsup",
+            "dev": "next dev",
+            "format": "prettier --write .",
+            "format:check": "prettier --check .",
+            "lint": "eslint",
+            "prepublishOnly": "bun run build:lib",
+            "start": "next start",
+            "test": "vitest run",
+            "test:pack": "node scripts/smoke-pack.mjs",
+            "test:watch": "vitest",
+            "typecheck": "fumadocs-mdx && tsc --noEmit && tsc --project tsconfig.lib.json --noEmit"
+          },
+          "sideEffects": false,
+          "trustedDependencies": [
+            "sharp",
+            "unrs-resolver"
+          ],
+          "type": "module",
+          "types": "./dist/index.d.ts",
+          "version": "1.1.2"
+        }
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "babelize-elements/phone-input",
+      "inventoryEvidence": {
+        "path": "src/registry/registry.ts",
+        "url": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Phone Input",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "babelize-elements",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "phone-input",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "deec416fcdd33566b584ec81d49db4418e6e9a1c",
+          "path": "src/registry/components/phone-input.tsx",
+          "sha256": "f720c010eaf485720723f1c66bdaedbcf050c598bf90a51d4c9850f365708513",
+          "url": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/components/phone-input.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/phone-input.tsx",
+      "sourceRef": "2cd92ba8acad36e6122d4c528cc81b5d99ffd587",
+      "sourceUrl": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/components/phone-input.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "projectPackage": {
+          "bin": {
+            "elements": "./bin.js"
+          },
+          "dependencies": {
+            "clsx": "^2.1.1",
+            "tailwind-merge": "^3.6.0"
+          },
+          "description": "Open-source Localization UI components for React and Tailwind CSS.",
+          "devDependencies": {
+            "@tailwindcss/postcss": "^4",
+            "@testing-library/jest-dom": "^7.0.1",
+            "@testing-library/react": "^16.3.3",
+            "@testing-library/user-event": "^14.6.7",
+            "@types/node": "^20",
+            "@types/react": "^19",
+            "@types/react-dom": "^19",
+            "@vitejs/plugin-react": "^6.1.1",
+            "eslint": "^9",
+            "eslint-config-next": "16.3.0",
+            "fumadocs-core": "^16.14.0",
+            "fumadocs-mdx": "^15.2.2",
+            "fumadocs-ui": "^16.14.0",
+            "jsdom": "^30.0.1",
+            "lucide-react": "^1.28.0",
+            "motion": "^12.43.0",
+            "next": "16.3.0",
+            "next-themes": "^0.4.6",
+            "prettier": "^3.9.6",
+            "react": "19.2.8",
+            "react-dom": "19.2.8",
+            "tailwindcss": "^4",
+            "tsup": "^8.5.1",
+            "typescript": "^5",
+            "vitest": "^5.0.0"
+          },
+          "engines": {
+            "node": ">=20"
+          },
+          "exports": {
+            ".": {
+              "import": {
+                "default": "./dist/index.js",
+                "types": "./dist/index.d.ts"
+              },
+              "require": {
+                "default": "./dist/index.cjs",
+                "types": "./dist/index.d.cts"
+              }
+            },
+            "./package.json": "./package.json",
+            "./utils": {
+              "import": {
+                "default": "./dist/utils.js",
+                "types": "./dist/utils.d.ts"
+              },
+              "require": {
+                "default": "./dist/utils.cjs",
+                "types": "./dist/utils.d.cts"
+              }
+            }
+          },
+          "files": [
+            "dist",
+            "bin.js",
+            "README.md",
+            "LICENSE"
+          ],
+          "ignoreScripts": [
+            "sharp",
+            "unrs-resolver"
+          ],
+          "keywords": [
+            "react",
+            "i18n",
+            "localization",
+            "internationalization",
+            "tailwindcss",
+            "components",
+            "language-switcher",
+            "locale-picker",
+            "rtl",
+            "nextjs"
+          ],
+          "license": "MIT",
+          "main": "./dist/index.cjs",
+          "module": "./dist/index.js",
+          "name": "@babelize/elements",
+          "packageManager": "bun@1.3.14",
+          "peerDependencies": {
+            "react": ">=18",
+            "react-dom": ">=18",
+            "tailwindcss": ">=3"
+          },
+          "publishConfig": {
+            "access": "public"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/babelize/babelize-elements.git"
+          },
+          "scripts": {
+            "build": "next build",
+            "build:lib": "rm -rf dist && tsup",
+            "dev": "next dev",
+            "format": "prettier --write .",
+            "format:check": "prettier --check .",
+            "lint": "eslint",
+            "prepublishOnly": "bun run build:lib",
+            "start": "next start",
+            "test": "vitest run",
+            "test:pack": "node scripts/smoke-pack.mjs",
+            "test:watch": "vitest",
+            "typecheck": "fumadocs-mdx && tsc --noEmit && tsc --project tsconfig.lib.json --noEmit"
+          },
+          "sideEffects": false,
+          "trustedDependencies": [
+            "sharp",
+            "unrs-resolver"
+          ],
+          "type": "module",
+          "types": "./dist/index.d.ts",
+          "version": "1.1.2"
+        }
+      }
+    }
+  ],
+  "licence": {
+    "additionalLicencePaths": [
+      "LICENSE"
+    ],
+    "expression": "MIT",
+    "gitBlobSha": "ec42ff8d1951c1761ccd41e3ed7846ae82847f61",
+    "note": "Root-text assessment only. Additional terms, inherited notices, third-party assets and preview permissions require separate review.",
+    "path": "LICENSE",
+    "publicationApproved": false,
+    "rootTextCommercialUse": "allowed",
+    "rootTextRedistribution": "allowed",
+    "sha256": "95b03d532df50498ea8c990df8da73e14cd8cb4d64dc344e91f25e0dead3e73a",
+    "sourceUrl": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/LICENSE"
+  },
+  "name": "Babelize Elements",
+  "observedAt": "2026-09-20T22:00:52.568915Z",
+  "previewStrategy": "Unapproved. Prefer official isolated demos; otherwise render pinned source. Never fabricate a preview.",
+  "providerId": "babelize-elements",
+  "publicationApproved": false,
+  "repository": "babelize/babelize-elements",
+  "retainedEvidence": [
+    {
+      "path": "data/registry/licences/babelize-elements/2cd92ba8acad36e6122d4c528cc81b5d99ffd587.txt",
+      "sha256": "95b03d532df50498ea8c990df8da73e14cd8cb4d64dc344e91f25e0dead3e73a"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/babelize-elements/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/upstream/README.md",
+      "sha256": "5bca99731ed34161dca02bd1b62bf3e43c313f0a422d2e70b84be8dede5a6df4"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/babelize-elements/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/upstream/package.json",
+      "sha256": "3ef31580ec78f456cc4a8bf2f7d260c1631d79a7cb823246d73a24f0a40638a7"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/babelize-elements/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/upstream/src/registry/registry.ts",
+      "sha256": "e9d242a16d7a8a8b8b3d86c69030756271aec6b2b6a3738471ee0f538e6f057f"
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceRef": "2cd92ba8acad36e6122d4c528cc81b5d99ffd587",
+  "status": "captured-unpublished",
+  "unresolvedRisks": [
+    "Official first-party identity needs signed-off website/repository evidence.",
+    "No actual component preview has passed browser acceptance.",
+    "Installation and transitive dependency evidence must be reviewed before publication.",
+    "Production project, Neon branch/database/endpoint and post-merge deployment acceptance remain unverified."
+  ],
+  "website": "https://elements.babelize.co/"
+}

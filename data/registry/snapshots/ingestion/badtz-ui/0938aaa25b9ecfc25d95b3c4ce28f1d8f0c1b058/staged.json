@@ -1,0 +1,2365 @@
+{
+  "actualPublishedCount": 0,
+  "archiveSha256": "d488eaeae7908137c1ad664434f3019cfa4ada996deae2ae923360b6108294c2",
+  "branch": "main",
+  "excludedCount": 43,
+  "exclusions": [
+    {
+      "name": "index",
+      "reason": "Out of individual web-component scope: registry:style"
+    },
+    {
+      "name": "mode-toggle",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "cursor-card-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "animated-keyboard-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "animated-keyboard-rgb-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "mini-keyboard-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "flipping-card-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "animated-list-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "particles-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "particles-snow-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "particles-stars-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "marquee-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "social-proof-avatars-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "border-beam-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "cloud-orbit-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "dock-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "expandable-card-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "image-split-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "image-trail-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "infinite-ribbon-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "infinite-ribbon-demo-2",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "3d-wrapper-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "pixel-distorsion-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "pulse-shader-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "mouse-wave-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "animated-card-1-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "animated-card-2-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "animated-card-3-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "stripe-animated-gradient-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "hyperspace-background-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "blur-reveal-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "fade-up-word-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "stagger-blur-effect-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "glowing-button-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "swipe-button-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "gradient-slide-button-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "star-button-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "confetti-button-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "shuffle-button-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "stagger-button-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "like-button-demo",
+      "reason": "Out of individual web-component scope: registry:example"
+    },
+    {
+      "name": "utils",
+      "reason": "Out of individual web-component scope: registry:lib"
+    },
+    {
+      "name": "use-mobile",
+      "reason": "Out of individual web-component scope: registry:hook"
+    }
+  ],
+  "installationStrategy": "Use retained upstream evidence. No installation command is approved by this capture.",
+  "inventoryCount": 35,
+  "items": [
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/cursor-cards",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Cursor Cards",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "cursor-cards",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "766c556f80211ff8f8c3b207104da1829050c792",
+          "path": "registry/new-york-v4/ui/cursor-cards.tsx",
+          "sha256": "7627a1ca647f575d30e9e4a3d7c63306fee1755be9d7a6e05e4f22b15161a298",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/cursor-cards.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/cursor-cards.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/cursor-cards.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "motion"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/cursor-cards.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "cursor-cards",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "motion",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "motion",
+        "class-variance-authority"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/animated-keyboard",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Animated Keyboard",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "animated-keyboard",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "b36c74642504e53c8c607c551115a74a37eeedff",
+          "path": "registry/new-york-v4/ui/animated-keyboard.tsx",
+          "sha256": "4b1f7f8c0ab5e013e731f6254eb3cde0fc034fa65a3d4e369bcc05257f0bb535",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/animated-keyboard.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/animated-keyboard.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/animated-keyboard.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "motion",
+          "class-variance-authority"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/animated-keyboard.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "animated-keyboard",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/flipping-card",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Flipping Card",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "flipping-card",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "f3c9d010687c1b98bb4feb840a42b49a0db56891",
+          "path": "registry/new-york-v4/ui/flipping-card.tsx",
+          "sha256": "2e193e28445f5c279671ed02404c1652bd84ab4d100e1610160e769a32b4c732",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/flipping-card.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/flipping-card.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/flipping-card.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/flipping-card.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "flipping-card",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "motion",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/animated-list",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Animated List",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "animated-list",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "9cea7562734b1ff1bf51062627723b4006b579af",
+          "path": "registry/new-york-v4/ui/animated-list.tsx",
+          "sha256": "4e13d0e3d20cb35ec334055e87231c0c443ed695c51a28b8a93f170a70e08e07",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/animated-list.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/animated-list.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/animated-list.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "motion"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/animated-list.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "animated-list",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "backgrounds",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "@tsparticles/react",
+        "@tsparticles/slim"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/particles",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Particles",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "particles",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "079a91a36c77b9f2efd941583dc5ad71ac6b86e3",
+          "path": "registry/new-york-v4/ui/particles.tsx",
+          "sha256": "f5aea69d151bd949213903d068f49ca5ef3fd7e9ea69b47f4fab8f2d321945fa",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/particles.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/particles.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/particles.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "@tsparticles/react",
+          "@tsparticles/slim"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/particles.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "particles",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/marquee",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Marquee",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "marquee",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "4a4b33af4ff11b0aa88be628a29333adbf7d1ab4",
+          "path": "registry/new-york-v4/ui/marquee.tsx",
+          "sha256": "ef5d18c5f3ad9a0b79ab69590f6f494a28cece06a56aef7c1a0d32e2146a5777",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/marquee.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/marquee.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/marquee.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "css": {
+          "@keyframes marquee-left": {
+            "from": {
+              "transform": "translateX(0)"
+            },
+            "to": {
+              "transform": "translateX(calc(-100% - var(--gap)))"
+            }
+          },
+          "@keyframes marquee-right": {
+            "from": {
+              "transform": "translateX(calc(-100% - var(--gap)))"
+            },
+            "to": {
+              "transform": "translateX(0)"
+            }
+          }
+        },
+        "cssVars": {
+          "theme": {
+            "animate-marquee-left": "marquee-left var(--duration, 30s) linear infinite",
+            "animate-marquee-right": "marquee-right var(--duration, 30s) linear infinite"
+          }
+        },
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/marquee.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "marquee",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "media",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/social-proof-avatars",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Social Proof Avatars",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "social-proof-avatars",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "4e5c3e9c5fcd72cca4051969aca65e1b1f5e1bea",
+          "path": "registry/new-york-v4/ui/social-proof-avatars.tsx",
+          "sha256": "7f1a82148c289e0c8e49ec114e36518414f4c4138098eedab5157745686bee71",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/social-proof-avatars.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/social-proof-avatars.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/social-proof-avatars.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/social-proof-avatars.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "social-proof-avatars",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "backgrounds",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/border-beam",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Border Beam",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "border-beam",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "9ce25af5bb3d5b3f46988077262536470c4a1be2",
+          "path": "registry/new-york-v4/ui/border-beam.tsx",
+          "sha256": "d1342b9cb8d103a5a1cc5c20ee6652254f079f6ba81206967c4374231f6f07f4",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/border-beam.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/border-beam.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/border-beam.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "motion"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/border-beam.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "border-beam",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "motion",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/cloud-orbit",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Cloud Orbit",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "cloud-orbit",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "619b4c276013707b908b165c5284555044d0b3ed",
+          "path": "registry/new-york-v4/ui/cloud-orbit.tsx",
+          "sha256": "28bef7a651c06068ddd8a6cb79d1cd1a9e0bfa2e1cbafc3b8d967a210aa3c174",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/cloud-orbit.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/cloud-orbit.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/cloud-orbit.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "motion"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/cloud-orbit.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "cloud-orbit",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/dock",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Dock",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "dock",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "844d7ee33afa1b9e467765064b9fc4dc8f9e3eb2",
+          "path": "registry/new-york-v4/ui/dock.tsx",
+          "sha256": "0717a9c4265d77e6cf6bc5ad556b7ca71da932c9f9a07dbef7d2804c9000e089",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/dock.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/dock.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/dock.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "motion"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/dock.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "dock",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/expandable-card",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Expandable Card",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "expandable-card",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "dd1393c879aef5ec949c4bf3c54eec3a7cf2c581",
+          "path": "registry/new-york-v4/ui/expandable-card.tsx",
+          "sha256": "494408bad369dbdbf379def3ae4ab5a33a1734801eb70059cc84ce8619e1b26f",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/expandable-card.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/expandable-card.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/expandable-card.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "motion"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/expandable-card.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "expandable-card",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "media",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/image-split",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Image Split",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "image-split",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "8ab6fbfe460c13d3793639d1d7a7cc79dd865a62",
+          "path": "registry/new-york-v4/ui/image-split.tsx",
+          "sha256": "1f45f90722b9f6dc549bfe1959cc185d7519a23d6206a5aeaf4a713947329b27",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/image-split.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/image-split.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/image-split.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/image-split.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "image-split",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "media",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "gsap"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/image-trail",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Image Trail",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "image-trail",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "b26916a25becb51d8a0363f35780c9da590f5768",
+          "path": "registry/new-york-v4/ui/image-trail.tsx",
+          "sha256": "189f96c569042ed52c4121c2c5f7358f29f8401a9a46d6e948acd9dce59881ba",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/image-trail.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/image-trail.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/image-trail.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "gsap"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/image-trail.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "image-trail",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/infinite-ribbon",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Infinite Ribbon",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "infinite-ribbon",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "3dc8ed2dbf3f8e9e4f493b57d965574d5491beb2",
+          "path": "registry/new-york-v4/ui/infinite-ribbon.tsx",
+          "sha256": "ec6045f921bea4cb83279bf9de0d71993a9c9be994d5c6abd2bb4c8b3efeb548",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/infinite-ribbon.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/infinite-ribbon.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/infinite-ribbon.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "css": {
+          "@keyframes infinite-ribbon": {
+            "0%": {
+              "transform": "translateX(0)"
+            },
+            "100%": {
+              "transform": "translateX(-100%)"
+            }
+          },
+          "@keyframes infinite-ribbon-reverse": {
+            "0%": {
+              "transform": "translateX(-100%)"
+            },
+            "100%": {
+              "transform": "translateX(0)"
+            }
+          }
+        },
+        "cssVars": {
+          "theme": {
+            "animate-infinite-ribbon": "infinite-ribbon var(--ribbon-duration) linear infinite",
+            "animate-infinite-ribbon-reverse": "infinite-ribbon-reverse var(--ribbon-duration) linear infinite"
+          }
+        },
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/infinite-ribbon.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "infinite-ribbon",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/3d-wrapper",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "3D Wrapper",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "3d-wrapper",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "cdd46cb1a2da00c6112d40b3850f9e4e4125f82b",
+          "path": "registry/new-york-v4/ui/3d-wrapper.tsx",
+          "sha256": "d636e8332c4a1e9a9eda6bc397ad42026de0a1317e10c8bb29bba3ad64d0e92f",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/3d-wrapper.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/3d-wrapper.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/3d-wrapper.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "motion"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/3d-wrapper.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "3d-wrapper",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "@react-three/fiber",
+        "@react-three/drei",
+        "three"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/pixel-distorsion",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Pixel Distorsion",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "pixel-distorsion",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "b2bf4409221fd83d32611bedc43ca02fe2af0844",
+          "path": "registry/new-york-v4/ui/pixel-distorsion.tsx",
+          "sha256": "7e6190c1dcc318877c9439a91f58fe73312b1e148f4799a4d4917907aff4b0ee",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/pixel-distorsion.tsx"
+        },
+        {
+          "gitBlobSha": "54d266d31d04329e0306d39050d9b3233cd8b721",
+          "path": "registry/new-york-v4/ui/pixel-distorsion-scene.tsx",
+          "sha256": "55cbb2c1061c7aba677fd710a7a92d251eed3179e26085e7ee1bbbab70974548",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/pixel-distorsion-scene.tsx"
+        },
+        {
+          "gitBlobSha": "3ab7fb26638349f278568215ac8fbe1f66c4d8b6",
+          "path": "registry/new-york-v4/ui/pixel-distorsion-shader.tsx",
+          "sha256": "0b229a93416e1e3f36abe30c7923c093c624440cd267c4b28eefc942d079b1bb",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/pixel-distorsion-shader.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/pixel-distorsion.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/pixel-distorsion.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "@react-three/fiber",
+          "@react-three/drei",
+          "three"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/pixel-distorsion.tsx",
+            "type": "registry:ui"
+          },
+          {
+            "path": "registry/new-york-v4/ui/pixel-distorsion-scene.tsx",
+            "type": "registry:ui"
+          },
+          {
+            "path": "registry/new-york-v4/ui/pixel-distorsion-shader.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "pixel-distorsion",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "@react-three/fiber",
+        "@react-three/drei",
+        "three"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/pulse-shader",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Pulse Shader",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "pulse-shader",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "98718aa72693d31ada19e19f4367f6745979ee1d",
+          "path": "registry/new-york-v4/ui/pulse-shader.tsx",
+          "sha256": "f158585d85ec86947f99c6d839d0280beffbce74922b1a36bbda576f38782850",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/pulse-shader.tsx"
+        },
+        {
+          "gitBlobSha": "4ffd3d7516f99407e47be5f1c3b5f7415d813613",
+          "path": "registry/new-york-v4/ui/pulse-shader-scene.tsx",
+          "sha256": "5dddb880c62e1d2ef628bc9c81065b7e9a8f2defa35deead85dc4e349f0791c6",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/pulse-shader-scene.tsx"
+        },
+        {
+          "gitBlobSha": "003345b7db594117dd9340ba00df0bdce24fc1e8",
+          "path": "registry/new-york-v4/ui/pulse-shader-shader.tsx",
+          "sha256": "ebb79c83d58c32aa94924f08ed2129b9e1e91ec2dcac4af5dd851f1f7b849974",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/pulse-shader-shader.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/pulse-shader.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/pulse-shader.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "@react-three/fiber",
+          "@react-three/drei",
+          "three"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/pulse-shader.tsx",
+            "type": "registry:ui"
+          },
+          {
+            "path": "registry/new-york-v4/ui/pulse-shader-scene.tsx",
+            "type": "registry:ui"
+          },
+          {
+            "path": "registry/new-york-v4/ui/pulse-shader-shader.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "pulse-shader",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "@react-three/fiber",
+        "@react-three/drei",
+        "three"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/mouse-wave",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Mouse Wave",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "mouse-wave",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "dc7acf9f8fa0175040268feaa5737bb97ce69f23",
+          "path": "registry/new-york-v4/ui/mouse-wave.tsx",
+          "sha256": "3907159b9d11a77497379c9fdea949f10848bdb829f8308973682e85f5f1f878",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/mouse-wave.tsx"
+        },
+        {
+          "gitBlobSha": "5bbb5b0347099b30b6ae1311d6c1564685a66df7",
+          "path": "registry/new-york-v4/ui/mouse-wave-scene.tsx",
+          "sha256": "79a8815d035095e95879cf70cbc649f272bc395bdbeea2a2e43b251274c993ff",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/mouse-wave-scene.tsx"
+        },
+        {
+          "gitBlobSha": "bd2a6d47c51eea9eb27e9199d7cccb8e225218ee",
+          "path": "registry/new-york-v4/ui/mouse-wave-shader.tsx",
+          "sha256": "0f19cb883a559471df8d55817a1d5d9cefaf75860cce6bb6b90cfec75945f9fa",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/mouse-wave-shader.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/mouse-wave.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/mouse-wave.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "@react-three/fiber",
+          "@react-three/drei",
+          "three"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/mouse-wave.tsx",
+            "type": "registry:ui"
+          },
+          {
+            "path": "registry/new-york-v4/ui/mouse-wave-scene.tsx",
+            "type": "registry:ui"
+          },
+          {
+            "path": "registry/new-york-v4/ui/mouse-wave-shader.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "mouse-wave",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/animated-card-1",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Animated Card 1",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "animated-card-1",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "cb88c0efdbe73f0ab8bfc362c02365805e09c76e",
+          "path": "registry/new-york-v4/ui/animated-card.tsx",
+          "sha256": "6e15e69250b07f9fe60b281cef7b3a65fe7d3aa120749bab209b2d4fd5b38e0b",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/animated-card.tsx"
+        },
+        {
+          "gitBlobSha": "f62eb2b8ad9a79716c339b4c3b44663e2955a57c",
+          "path": "registry/new-york-v4/ui/visual-1.tsx",
+          "sha256": "6c1b74878b50d3f378842869f2a68051735e00839188cde5351b0511b59729e6",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/visual-1.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/animated-card.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/animated-card.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/animated-card.tsx",
+            "type": "registry:ui"
+          },
+          {
+            "path": "registry/new-york-v4/ui/visual-1.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "animated-card-1",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/animated-card-2",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Animated Card 2",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "animated-card-2",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "cb88c0efdbe73f0ab8bfc362c02365805e09c76e",
+          "path": "registry/new-york-v4/ui/animated-card.tsx",
+          "sha256": "6e15e69250b07f9fe60b281cef7b3a65fe7d3aa120749bab209b2d4fd5b38e0b",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/animated-card.tsx"
+        },
+        {
+          "gitBlobSha": "bdbeb01813933164fdf0542e13915a7a187b172d",
+          "path": "registry/new-york-v4/ui/visual-2.tsx",
+          "sha256": "1b586f1505f0999ab62b9d0fd5c72c8214364cfe9af16512e2fad32959872496",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/visual-2.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/animated-card.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/animated-card.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/animated-card.tsx",
+            "type": "registry:ui"
+          },
+          {
+            "path": "registry/new-york-v4/ui/visual-2.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "animated-card-2",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/animated-card-3",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Animated Card 3",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "animated-card-3",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "cb88c0efdbe73f0ab8bfc362c02365805e09c76e",
+          "path": "registry/new-york-v4/ui/animated-card.tsx",
+          "sha256": "6e15e69250b07f9fe60b281cef7b3a65fe7d3aa120749bab209b2d4fd5b38e0b",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/animated-card.tsx"
+        },
+        {
+          "gitBlobSha": "e345d60794a865f42d8129a591515d9a99da5428",
+          "path": "registry/new-york-v4/ui/visual-3.tsx",
+          "sha256": "6cf4ff8d1928462ac5ca199fb5002e3950ef6348c8ba079feadfcbce1946aeb8",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/visual-3.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/animated-card.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/animated-card.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/animated-card.tsx",
+            "type": "registry:ui"
+          },
+          {
+            "path": "registry/new-york-v4/ui/visual-3.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "animated-card-3",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "motion",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/stripe-animated-gradient",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Stripe Animated Gradient",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "stripe-animated-gradient",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "9da0030b92aa5f38811ee5c77251a7be3acb8a67",
+          "path": "registry/new-york-v4/ui/stripe-animated-gradient.tsx",
+          "sha256": "d54a87b988641879a3c018e61b623647b49a102ec4960aade2c3a9aac2b58a6b",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/stripe-animated-gradient.tsx"
+        },
+        {
+          "gitBlobSha": "2391ea3bd0818cb22babe03fdfb7a9c947ac9d29",
+          "path": "registry/new-york-v4/ui/stripe-shader.js",
+          "sha256": "6c848bfd8f9da064853357990690888483e71708db8af342b1c8d3c5ea633526",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/stripe-shader.js"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/stripe-animated-gradient.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/stripe-animated-gradient.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/stripe-animated-gradient.tsx",
+            "type": "registry:ui"
+          },
+          {
+            "path": "registry/new-york-v4/ui/stripe-shader.js",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "stripe-animated-gradient",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "backgrounds",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/hyperspace-background",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Hyperspace Background",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "hyperspace-background",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "0d618c5cd35e25da0cb46672728517f98242a964",
+          "path": "registry/new-york-v4/ui/hyperspace-background.tsx",
+          "sha256": "2ade0f37b82ae8695cb6932615ece728ac161572be3995da5647bb2ad0b0e5f9",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/hyperspace-background.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/hyperspace-background.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/hyperspace-background.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/hyperspace-background.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "hyperspace-background",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/blur-reveal",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Blur Reveal",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "blur-reveal",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "5d88348c7bb861c946eb63077738025da27a01bc",
+          "path": "registry/new-york-v4/ui/blur-reveal.tsx",
+          "sha256": "f255a2785381d94cb0e3cf3b958d585f515a1f420df987c0b1cf6fc8f71f2d3a",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/blur-reveal.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/blur-reveal.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/blur-reveal.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "motion"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/blur-reveal.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "blur-reveal",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "text",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/fade-up-word",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Fade Up Word",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "fade-up-word",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "6dadb550614e311f70ef2bd0be301142d29b6643",
+          "path": "registry/new-york-v4/ui/fade-up-word.tsx",
+          "sha256": "4a4e83d4d874252df176e193c2aea095af41cb4204bdb8531e07c04e529d42bc",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/fade-up-word.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/fade-up-word.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/fade-up-word.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "motion"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/fade-up-word.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "fade-up-word",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/stagger-blur-effect",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Stagger Blur Effect",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "stagger-blur-effect",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "eeaece99d5a4fb5db8cb370a6c0c517ba8cffacb",
+          "path": "registry/new-york-v4/ui/stagger-blur-effect.tsx",
+          "sha256": "dc7c4a173e89c474697c55ce4ca61d1848bc798f768661a9a6f6c825aaaf866f",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/stagger-blur-effect.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/stagger-blur-effect.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/stagger-blur-effect.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge",
+          "motion"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/stagger-blur-effect.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "stagger-blur-effect",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/glowing-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Glowing Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "glowing-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "ec6cd9f47180d68f03bfbaa32187b5aa6fffd974",
+          "path": "registry/new-york-v4/ui/glowing-button.tsx",
+          "sha256": "6230065c66ddd2fcf6513aa81b10a24d035d9668066152262e0af2fbbcac4566",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/glowing-button.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/glowing-button.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/glowing-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/glowing-button.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "glowing-button",
+        "registryDependencies": [
+          "button"
+        ],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "clsx tailwind-merge",
+        "canvas-confetti",
+        "@types/canvas-confetti"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/swipe-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Swipe Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "swipe-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "e60b6d99e5d2aec12725cfd22467e84259b049c8",
+          "path": "registry/new-york-v4/ui/swipe-button.tsx",
+          "sha256": "69fd715063e6ea2b68fea9d3c80c0a78b892c54d9935fdaa13f4ada8245190e7",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/swipe-button.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/swipe-button.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/swipe-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx tailwind-merge",
+          "canvas-confetti",
+          "@types/canvas-confetti"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/swipe-button.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "swipe-button",
+        "registryDependencies": [
+          "button"
+        ],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/gradient-slide-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Gradient Slide Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "gradient-slide-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "48abd7a9aee4739490121b10cdc2d5a8d228422b",
+          "path": "registry/new-york-v4/ui/gradient-slide-button.tsx",
+          "sha256": "e25123711804e7333a1b42b077de65d0cdd7513751b6237dc10d3308e05c96df",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/gradient-slide-button.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/gradient-slide-button.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/gradient-slide-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/gradient-slide-button.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "gradient-slide-button",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/star-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Star Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "star-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "865505a67c37a0a77c8c0a272155635a0478bbb9",
+          "path": "registry/new-york-v4/ui/star-button.tsx",
+          "sha256": "337fbfafceeba8499e2e1281d968eeb09874e228ba11f190f793dcf88269f201",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/star-button.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/star-button.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/star-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "css": {
+          "@keyframes star-btn": {
+            "0%": {
+              "offset-distance": "0%"
+            },
+            "100%": {
+              "offset-distance": "100%"
+            }
+          }
+        },
+        "cssVars": {
+          "theme": {
+            "animate-star-btn": "star-btn calc(var(--duration) * 1s) linear infinite"
+          }
+        },
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/star-button.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "star-button",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "clsx tailwind-merge canvas-confetti @types/canvas-confetti"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/confetti-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Confetti Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "confetti-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "7dc930acc8afdd9bda08c3b105e8385da526f618",
+          "path": "registry/new-york-v4/ui/confetti-button.tsx",
+          "sha256": "f4c2cf0bbffbcde495596c39afbda0ba83756ef795f60c4b98427d6bc3d1e3c4",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/confetti-button.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/confetti-button.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/confetti-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx tailwind-merge canvas-confetti @types/canvas-confetti"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/confetti-button.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "confetti-button",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/shuffle-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Shuffle Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "shuffle-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "35d887cbc4776c6ebde311f15c3b07b1660e6ac6",
+          "path": "registry/new-york-v4/ui/shuffle-button.tsx",
+          "sha256": "b303bde836e9bfe3353ed5368198624bf4d4aa50582918bfeb6280bf0636f546",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/shuffle-button.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/shuffle-button.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/shuffle-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/shuffle-button.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "shuffle-button",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "clsx tailwind-merge",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/stagger-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Stagger Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "stagger-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "b19418e1ae45d517dfc792bad51d74024838f381",
+          "path": "registry/new-york-v4/ui/stagger-button.tsx",
+          "sha256": "33c5720ae8398714062904c65a5a8944273f6c8503611766a827478180413ca4",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/stagger-button.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/stagger-button.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/stagger-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx tailwind-merge",
+          "motion"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/stagger-button.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "stagger-button",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "clsx tailwind-merge",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/like-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Like Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "like-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "a2e293434341ce691d6c4c8aba4788b7a8ae7675",
+          "path": "registry/new-york-v4/ui/like-button.tsx",
+          "sha256": "fcc2f9c55c2c638fb04f42a4c6583acd57415abb84a2ad0f2c0ce829caa78af5",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/like-button.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/like-button.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/like-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx tailwind-merge",
+          "motion"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/like-button.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "like-button",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "badtz-ui/button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "badtz-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "a2df8dce675fed0712d021fa45245289ecd26c88",
+          "path": "registry/new-york-v4/ui/button.tsx",
+          "sha256": "82403231e33fd3d45b111e5e819df194cdfa7cef9a726770185724a60bd20932",
+          "url": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/button.tsx"
+        }
+      ],
+      "sourcePath": "registry/new-york-v4/ui/button.tsx",
+      "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+      "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/registry/new-york-v4/ui/button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx",
+          "tailwind-merge"
+        ],
+        "files": [
+          {
+            "path": "registry/new-york-v4/ui/button.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "name": "button",
+        "registryDependencies": [],
+        "type": "registry:ui"
+      }
+    }
+  ],
+  "licence": {
+    "additionalLicencePaths": [
+      "LICENSE.md"
+    ],
+    "expression": "Restricted / review required",
+    "gitBlobSha": "c134b2255b97e33e257e2cc96f5c7b5e248613e8",
+    "note": "Root-text assessment only. Additional terms, inherited notices, third-party assets and preview permissions require separate review.",
+    "path": "LICENSE.md",
+    "publicationApproved": false,
+    "rootTextCommercialUse": "unknown",
+    "rootTextRedistribution": "unknown",
+    "sha256": "215e7f63642e6f69cf3e3ee5399cdc6b2f750830dde470229f266a81b0ce681d",
+    "sourceUrl": "https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/LICENSE.md"
+  },
+  "name": "BadtzUI",
+  "observedAt": "2026-09-20T22:01:00.556344Z",
+  "previewStrategy": "Unapproved. Prefer official isolated demos; otherwise render pinned source. Never fabricate a preview.",
+  "providerId": "badtz-ui",
+  "publicationApproved": false,
+  "repository": "badtzx0/badtz-ui",
+  "retainedEvidence": [
+    {
+      "path": "data/registry/licences/badtz-ui/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058.txt",
+      "sha256": "215e7f63642e6f69cf3e3ee5399cdc6b2f750830dde470229f266a81b0ce681d"
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceRef": "0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058",
+  "status": "captured-unpublished",
+  "unresolvedRisks": [
+    "The additional significant-modification condition blocks automatic commercial redistribution approval.",
+    "Official first-party identity needs signed-off website/repository evidence.",
+    "No actual component preview has passed browser acceptance.",
+    "Installation and transitive dependency evidence must be reviewed before publication.",
+    "Production project, Neon branch/database/endpoint and post-merge deployment acceptance remain unverified."
+  ],
+  "website": "https://badtz-ui.com/"
+}

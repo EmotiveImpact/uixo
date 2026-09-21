@@ -1,0 +1,1904 @@
+{
+  "actualPublishedCount": 0,
+  "archiveSha256": "2c78f0d960a628ec956c8793397bd55d083e7d5449eece84bcb998874571c5a6",
+  "branch": "main",
+  "excludedCount": 0,
+  "exclusions": [],
+  "installationStrategy": "Use retained upstream evidence. No installation command is approved by this capture.",
+  "inventoryCount": 45,
+  "items": [
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/action-bar",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Action Bar",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "action-bar",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "970be698d9834fb039ef180fc9bc6e55b6c5df40",
+          "path": "docs/registry/bases/radix/ui/action-bar.tsx",
+          "sha256": "7eb3dd058c6b2ed4b07a40714627ad9de0a8bdeeb762776c691c57f90ea0fcce",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/action-bar.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/action-bar.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/action-bar.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/angle-slider",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Angle Slider",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "angle-slider",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "1921f61663145d50f3c81b5e062e6f4e311079f9",
+          "path": "docs/registry/bases/radix/ui/angle-slider.tsx",
+          "sha256": "e1bf2eab18942490efbdfab2b23edd7c9bdaf908c25a285fd21a6e9d778a67a2",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/angle-slider.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/angle-slider.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/angle-slider.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "media",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/avatar-group",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Avatar Group",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "avatar-group",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "e3f4ea50ec6223b32a3916f77a4216b2892aaa88",
+          "path": "docs/registry/bases/radix/ui/avatar-group.tsx",
+          "sha256": "aff0d67af61e174f9697520a34fb1c0be45b360c5012ba93cfb69cd5c462ad8f",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/avatar-group.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/avatar-group.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/avatar-group.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/badge-overflow",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Badge Overflow",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "badge-overflow",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "91d862f47d15243fc2466d5bf5c803ad40c913dd",
+          "path": "docs/registry/bases/radix/ui/badge-overflow.tsx",
+          "sha256": "222aa797c8acdc3a9e1f5835d051c821b9ac1fff079d8cb7e607db5aabae9daf",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/badge-overflow.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/badge-overflow.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/badge-overflow.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/banner",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Banner",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "banner",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "f6adbc06bbe40661111624fc7404309a74842ac7",
+          "path": "docs/registry/bases/radix/ui/banner.tsx",
+          "sha256": "340b1aa629688b138aeafb2707e7ddadde4d56c59f43ceba1cabb2762f3aa268",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/banner.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/banner.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/banner.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/checkbox-group",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Checkbox Group",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "checkbox-group",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "d53cb7d4e5ce3928b824779673f4895cd324c294",
+          "path": "docs/registry/bases/radix/ui/checkbox-group.tsx",
+          "sha256": "308e2b710d23b62db38efd6ac9dbcccc805dc04cce7d08bad1cc2ea22f598d9b",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/checkbox-group.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/checkbox-group.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/checkbox-group.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "feedback",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/circular-progress",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Circular Progress",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "circular-progress",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "3e40443bf7e40fe648c658bd04f786476ba3a439",
+          "path": "docs/registry/bases/radix/ui/circular-progress.tsx",
+          "sha256": "deac7c93ffbc31cac416127319331369f0900ca4eb7bf6e0f27d65afb8c32e36",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/circular-progress.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/circular-progress.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/circular-progress.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/color-picker",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Color Picker",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "color-picker",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "6cebdb5ef4f02e36de7bd81dd1731a792f5dafde",
+          "path": "docs/registry/bases/radix/ui/color-picker.tsx",
+          "sha256": "1b33f3f204f774a39a6795c093de6073b379b61ac456ce052d6038e6a43e5093",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/color-picker.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/color-picker.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/color-picker.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/color-swatch",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Color Swatch",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "color-swatch",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "8a195223f35418b926c2dee22b9ec32d749e368a",
+          "path": "docs/registry/bases/radix/ui/color-swatch.tsx",
+          "sha256": "4a6669611d56a5713364b80ed2273dec76811f5d6bdb4854aa8ab8ff96b62a3d",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/color-swatch.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/color-swatch.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/color-swatch.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/compare-slider",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Compare Slider",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "compare-slider",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "3f3e4fdbce552ebc027eeacecee3479c3a96d07a",
+          "path": "docs/registry/bases/radix/ui/compare-slider.tsx",
+          "sha256": "435d7b57ebfb8055b0a30635d8e3f17c6ce57ac1718cb07b01b66f7eb6a73860",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/compare-slider.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/compare-slider.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/compare-slider.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/cropper",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Cropper",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "cropper",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "35a7e4f66e53553e73812759070cde22f35a4fbb",
+          "path": "docs/registry/bases/radix/ui/cropper.tsx",
+          "sha256": "a584a418b5c6fd4f5e44179ed9769a250a9b6150f9964a3343aeeddd56a46145",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/cropper.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/cropper.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/cropper.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/combobox",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Combobox",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "combobox",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "65d485d122884284c26f43f40e7f340c791fc005",
+          "path": "docs/registry/bases/radix/ui/combobox.tsx",
+          "sha256": "b45d166c0c132d6cf973a3ceae5bdaad3a1ac4178b620de7dc6383c06885ca12",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/combobox.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/combobox.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/combobox.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/editable",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Editable",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "editable",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "e4e2b25562ae3701a82e68027027b6cd39ab758b",
+          "path": "docs/registry/bases/radix/ui/editable.tsx",
+          "sha256": "8459cf4a6377d0da977279cec6c9dad19c5c17673b29e04fa9cbbaba8f5490e5",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/editable.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/editable.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/editable.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/file-upload",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "File Upload",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "file-upload",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "d6a94b211f85788b15131377c430d80f5fbf7365",
+          "path": "docs/registry/bases/radix/ui/file-upload.tsx",
+          "sha256": "0da9dcd8919b0f183c5a2371a88166796bc29a1968c274726a27651c02e7a1d9",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/file-upload.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/file-upload.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/file-upload.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/fps",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Fps",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "fps",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "ecf8bcdaf3d24c2bef78b3d85d254d13c32bb85c",
+          "path": "docs/registry/bases/radix/ui/fps.tsx",
+          "sha256": "28729fd3de9c54be0cead7036155a6cd09ce288247514a19f33f45a3b4c4202c",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/fps.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/fps.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/fps.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "feedback",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/gauge",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Gauge",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "gauge",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "d3f10c4fe2d33a215edd97ae742bdd10f3613442",
+          "path": "docs/registry/bases/radix/ui/gauge.tsx",
+          "sha256": "c82fc117b004cab12ae55633d6b013f5d8ad24db9499041a81434fe438497d88",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/gauge.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/gauge.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/gauge.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/kanban",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Kanban",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "kanban",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "b0196908716c986b30477e5882fa715c93013142",
+          "path": "docs/registry/bases/radix/ui/kanban.tsx",
+          "sha256": "5af55b1329c824105290250612d4bc0b2d0a2104539991e81b021dbd6112cb85",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/kanban.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/kanban.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/kanban.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/key-value",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Key Value",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "key-value",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "111fd4cd2689fb01605e4159286879971e4b999a",
+          "path": "docs/registry/bases/radix/ui/key-value.tsx",
+          "sha256": "58587945590376c6ef48fcbec8fbf984974e829c95c82b2acd303b121545087e",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/key-value.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/key-value.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/key-value.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/listbox",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Listbox",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "listbox",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "3544f7f9e491e0cda3d543834fde0027fd88cb14",
+          "path": "docs/registry/bases/radix/ui/listbox.tsx",
+          "sha256": "143205691ae581416602cbc80b0300b40951146f752a46143f954e3a09247d0f",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/listbox.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/listbox.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/listbox.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/marquee",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Marquee",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "marquee",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "dc6d1973736f7e60a82454f1bc23a3e7ce6ce650",
+          "path": "docs/registry/bases/radix/ui/marquee.tsx",
+          "sha256": "a01986f47b90e199330c62714103ba713106281257f6872515055997f9d28375",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/marquee.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/marquee.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/marquee.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/mask-input",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Mask Input",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "mask-input",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "cf4c75c38228372dd7e25b2d4f98e4818c9963b1",
+          "path": "docs/registry/bases/radix/ui/mask-input.tsx",
+          "sha256": "3a500d6c3260db81b8eb437ee6f3de713f745fafe2d943a6f15bdfad60a2ec5d",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/mask-input.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/mask-input.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/mask-input.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/masonry",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Masonry",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "masonry",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "e5559c176cfe4c239647b98368cec3ef87183526",
+          "path": "docs/registry/bases/radix/ui/masonry.tsx",
+          "sha256": "35e1538cc19e266f25a334ba837d0aeb091893f45a7f6a46791cc8b0e0bf35e0",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/masonry.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/masonry.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/masonry.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/media-player",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Media Player",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "media-player",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "c07979e236bd2d24997d23baafd6eb5197739ebf",
+          "path": "docs/registry/bases/radix/ui/media-player.tsx",
+          "sha256": "f5f8af9006f2012b60fbd664210ece1e336cb397335c4c27972e2b73b356039f",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/media-player.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/media-player.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/media-player.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/mention",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Mention",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "mention",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "441d9c959599a0a270cc062b2eb0d667cb0e3076",
+          "path": "docs/registry/bases/radix/ui/mention.tsx",
+          "sha256": "e81a535c1230d99152b0de27a89909eb7dcecfea4be15aaf2232822c0ba62ae6",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/mention.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/mention.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/mention.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/phone-input",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Phone Input",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "phone-input",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "066a7e63fd099da34ce65c88c895424a6e20d092",
+          "path": "docs/registry/bases/radix/ui/phone-input.tsx",
+          "sha256": "66f176a43149a798cb3c2a8c39bbdf723ca769fad5f52806c6b298167d4a19df",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/phone-input.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/phone-input.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/phone-input.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/presentation",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Presentation",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "presentation",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "2f7c7cf9d0a0c237ab26d270a1312e4674a7d39f",
+          "path": "docs/registry/bases/radix/ui/presentation.tsx",
+          "sha256": "2776e794ff8e0daf35dda34c322371e127ae05788fd09f4f7b733f8c185c5010",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/presentation.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/presentation.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/presentation.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/relative-time-card",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Relative Time Card",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "relative-time-card",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "f78b623f3e17f6c9e02579ad6a4ef1ac353035dc",
+          "path": "docs/registry/bases/radix/ui/relative-time-card.tsx",
+          "sha256": "8581ba72b2c1db16af8e6ca7d80687386637a4386d3c751c48ff42b7cf12b4cc",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/relative-time-card.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/relative-time-card.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/relative-time-card.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/responsive-dialog",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Responsive Dialog",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "responsive-dialog",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "cf52c4877ed9827eda2e8dd628989669595315cd",
+          "path": "docs/registry/bases/radix/ui/responsive-dialog.tsx",
+          "sha256": "2e948a7498dba29fb0763a85170c267f695f2a14ce9e885e48a92d3440d630db",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/responsive-dialog.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/responsive-dialog.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/responsive-dialog.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/scroller",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Scroller",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "scroller",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "865aa4d78a708c5c0ca7bf12ceca15342109726e",
+          "path": "docs/registry/bases/radix/ui/scroller.tsx",
+          "sha256": "984f1ffbc8bfc73336c577714861d67d1f21c16b2ad96e580d3b7a83c13d5dcb",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/scroller.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/scroller.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/scroller.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/scroll-spy",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Scroll Spy",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "scroll-spy",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "c894b75d4d9b873b47fc2ff217fc5abd749eafeb",
+          "path": "docs/registry/bases/radix/ui/scroll-spy.tsx",
+          "sha256": "a09cb40d6d6c0b59e6006565997983472e1439ffb114c47ea74cddb09ced2f5e",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/scroll-spy.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/scroll-spy.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/scroll-spy.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/segmented-input",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Segmented Input",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "segmented-input",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "35b00d2e1a5451fd124422c358de1bc667252745",
+          "path": "docs/registry/bases/radix/ui/segmented-input.tsx",
+          "sha256": "bfcd82e5d9350ba81591e682b806c22911c74b88265d6e891509bc09947f5eb1",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/segmented-input.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/segmented-input.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/segmented-input.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/selection-toolbar",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Selection Toolbar",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "selection-toolbar",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "a35421caf9b294e65c3cc2c58c702c8d3494268c",
+          "path": "docs/registry/bases/radix/ui/selection-toolbar.tsx",
+          "sha256": "e5a0bb15f188271a0f008023c3a494701d8d6a62e8ff2e889f343007bc8a87b9",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/selection-toolbar.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/selection-toolbar.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/selection-toolbar.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/sortable",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Sortable",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "sortable",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "cfd988969dd45b49e9003153de29e2cb0e32debb",
+          "path": "docs/registry/bases/radix/ui/sortable.tsx",
+          "sha256": "193c4bafa53c16b30b117ac461cdef27279b4cd4da4e20a399aeed8efdeb0357",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/sortable.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/sortable.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/sortable.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/speed-dial",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Speed Dial",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "speed-dial",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "a8049b49b6149e2bb27f3fa2ff9639cae808f443",
+          "path": "docs/registry/bases/radix/ui/speed-dial.tsx",
+          "sha256": "b2ce730e5f8a3c0c7f7ed94a9204a10ab5e0ea4807c28a969199227f43c20ab4",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/speed-dial.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/speed-dial.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/speed-dial.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/stack",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Stack",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "stack",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "578061adf54a9685ec63fba2cf647300e42284bb",
+          "path": "docs/registry/bases/radix/ui/stack.tsx",
+          "sha256": "1f3e1181d97e6eff5b9fce423b72f590d4150591280d0a36b8855b61b7972e0e",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/stack.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/stack.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/stack.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/stat",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Stat",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "stat",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "393fa9bc499946e43ba43c74f4c3a93571ea0f22",
+          "path": "docs/registry/bases/radix/ui/stat.tsx",
+          "sha256": "b3870fcb87f611bcf76be17c3d7c0d12fe7f71bbe113ee98197bd6a729a71ee5",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/stat.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/stat.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/stat.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "feedback",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/status",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Status",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "status",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "71992ce423aa696149a193956ac1ace4e76eaa60",
+          "path": "docs/registry/bases/radix/ui/status.tsx",
+          "sha256": "1f9a8a5dc73aff82f4e30018cd4534ad4b093674cb8797da70418c1808454c0c",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/status.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/status.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/status.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/stepper",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Stepper",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "stepper",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "151a1c05bfee73a08bc42ee8e262db9339142327",
+          "path": "docs/registry/bases/radix/ui/stepper.tsx",
+          "sha256": "a3f96712e29a13d5f1e24ab555a3cdecaeab94e9063e9549075c0084855a96f0",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/stepper.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/stepper.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/stepper.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/swap",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Swap",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "swap",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "2c5806eeb35ccd3ef2591d79c2b776f9e3b9f86f",
+          "path": "docs/registry/bases/radix/ui/swap.tsx",
+          "sha256": "9db93d27c3738bc9c80150be6191bbb61ed6ad911813981b5194c6fe24c55017",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/swap.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/swap.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/swap.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/qr-code",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Qr Code",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "qr-code",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "db23964e3590277d57900bf57d6f337b2c78e19b",
+          "path": "docs/registry/bases/radix/ui/qr-code.tsx",
+          "sha256": "02bfa9f997f24ab56d9916726671a3259493b97c9be1b945c0d420a9fc80f1cc",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/qr-code.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/qr-code.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/qr-code.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/rating",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Rating",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "rating",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "1d5c23bbbb1444e270d9967ce6820802c497c6b5",
+          "path": "docs/registry/bases/radix/ui/rating.tsx",
+          "sha256": "85fe74c185fa6b47eba769d413e1a5abc6c8545f885d80f40e2c5003f6459192",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/rating.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/rating.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/rating.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/tags-input",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Tags Input",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "tags-input",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "e19215c22767f22666ebaa8f50fe3264b460ff2e",
+          "path": "docs/registry/bases/radix/ui/tags-input.tsx",
+          "sha256": "86a4ec0c5d9d6704e56552b325f71b2b96fcbca6fddd9b2f229bf59b05be3c7f",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/tags-input.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/tags-input.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/tags-input.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/timeline",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Timeline",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "timeline",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "790e421d083d255159ecedef9bd8b3610767a6c4",
+          "path": "docs/registry/bases/radix/ui/timeline.tsx",
+          "sha256": "c47815001ecc82c9dcbec9c6146680d07e3d4f03f3a2771f1d7f41445f0e63d1",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/timeline.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/timeline.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/timeline.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/time-picker",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Time Picker",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "time-picker",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "b6e45093f6cc31e4bf561e12c4acdd6366e52382",
+          "path": "docs/registry/bases/radix/ui/time-picker.tsx",
+          "sha256": "568b506e9dc3d0fe30226ea26b99b93f9bfc29551be5987366e304ab6cb26d9c",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/time-picker.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/time-picker.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/time-picker.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": null,
+      "dependencyEvidenceComplete": false,
+      "description": null,
+      "id": "dice-ui/tour",
+      "inventoryEvidence": {
+        "path": "docs/registry/bases/radix/ui/_registry.ts",
+        "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/_registry.ts"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Tour",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "dice-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": null,
+      "slug": "tour",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "ec40ca90f2ac21b987eb75293795bf40e85a13d9",
+          "path": "docs/registry/bases/radix/ui/tour.tsx",
+          "sha256": "8c2b7f2f173e62329b5556dae2573119bbdf255f3292d657729500ed82ca9847",
+          "url": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/tour.tsx"
+        }
+      ],
+      "sourcePath": "docs/registry/bases/radix/ui/tour.tsx",
+      "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+      "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/docs/registry/bases/radix/ui/tour.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "base": "radix",
+        "installationNote": "Dependency declarations need a full literal AST review before publication."
+      }
+    }
+  ],
+  "licence": {
+    "additionalLicencePaths": [
+      "LICENSE"
+    ],
+    "expression": "MIT",
+    "gitBlobSha": "6a059f7e2465f9b3f7d5e85f21a7ca7e8e449894",
+    "note": "Root-text assessment only. Additional terms, inherited notices, third-party assets and preview permissions require separate review.",
+    "path": "LICENSE",
+    "publicationApproved": false,
+    "rootTextCommercialUse": "allowed",
+    "rootTextRedistribution": "allowed",
+    "sha256": "798456e9f649d796bad55d80f9ee50a71eb2d16920300a66a8221b70123e40db",
+    "sourceUrl": "https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/LICENSE"
+  },
+  "name": "Dice UI",
+  "observedAt": "2026-09-20T22:00:45.323186Z",
+  "previewStrategy": "Unapproved. Prefer official isolated demos; otherwise render pinned source. Never fabricate a preview.",
+  "providerId": "dice-ui",
+  "publicationApproved": false,
+  "repository": "sadmann7/diceui",
+  "retainedEvidence": [
+    {
+      "path": "data/registry/licences/dice-ui/c6e666943d55011c12cac224803666fdcde5b53e.txt",
+      "sha256": "798456e9f649d796bad55d80f9ee50a71eb2d16920300a66a8221b70123e40db"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/dice-ui/c6e666943d55011c12cac224803666fdcde5b53e/upstream/README.md",
+      "sha256": "a16ff1db3153004d9dbbd68dfae7a7e60f65af867ecf1b7b0e4719d84f249043"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/dice-ui/c6e666943d55011c12cac224803666fdcde5b53e/upstream/docs/registry/bases/base/ui/_registry.ts",
+      "sha256": "1b9fb7df06d8113d940fe2115b74e4c472d2d33d0fb038f64c54aa74a4188ff4"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/dice-ui/c6e666943d55011c12cac224803666fdcde5b53e/upstream/docs/registry/bases/radix/ui/_registry.ts",
+      "sha256": "1a6ecd14c80a4c29fdbf5e9862592932b0c7e5240418652b2a6f00e59069a0b8"
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceRef": "c6e666943d55011c12cac224803666fdcde5b53e",
+  "status": "captured-unpublished",
+  "unresolvedRisks": [
+    "Official first-party identity needs signed-off website/repository evidence.",
+    "No actual component preview has passed browser acceptance.",
+    "Installation and transitive dependency evidence must be reviewed before publication.",
+    "Production project, Neon branch/database/endpoint and post-merge deployment acceptance remain unverified."
+  ],
+  "website": "https://www.diceui.com/"
+}

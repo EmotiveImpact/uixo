@@ -1,0 +1,215 @@
+{
+  "actualPublishedCount": 0,
+  "archiveSha256": "20ce99252b6a007a3b6197508dcbf7a324d2938f1086ebc26e21ee56dcbc00bb",
+  "branch": "main",
+  "excludedCount": 8,
+  "exclusions": [
+    {
+      "name": "analytics-map",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "choropleth",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "analytics-card",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "delivery-tracker",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "uptime-monitor",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "heatmap",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "logistics-network",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "store-locator",
+      "reason": "Out of individual web-component scope: registry:block"
+    }
+  ],
+  "installationStrategy": "Use retained upstream evidence. No installation command is approved by this capture.",
+  "inventoryCount": 1,
+  "items": [
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "maplibre-gl@^6",
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "A MapLibre-powered map component with markers, popups, tooltips, routes, and controls.",
+      "id": "mapcn/map",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/AnmolSaini16/mapcn/blob/d160bd767bc6388618720c6038a4dd9948c97362/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Map",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "mapcn",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "map",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "33f1831033475956fdbbdaae80c57faf1e8dfc38",
+          "path": "src/registry/map.tsx",
+          "sha256": "cce137f8a2a3816a3f7e77a789ed4b92db5bf15b40528a4df8904c477fe9b921",
+          "url": "https://github.com/AnmolSaini16/mapcn/blob/d160bd767bc6388618720c6038a4dd9948c97362/src/registry/map.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/map.tsx",
+      "sourceRef": "d160bd767bc6388618720c6038a4dd9948c97362",
+      "sourceUrl": "https://github.com/AnmolSaini16/mapcn/blob/d160bd767bc6388618720c6038a4dd9948c97362/src/registry/map.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "css": {
+          "@layer base": {
+            ".maplibregl-ctrl-attrib": {
+              "@apply bg-background! text-muted-foreground! border-border! rounded-md! border! shadow-sm!": {}
+            },
+            ".maplibregl-ctrl-attrib a": {
+              "@apply text-muted-foreground!": {}
+            },
+            ".maplibregl-ctrl-attrib a:hover": {
+              "@apply text-foreground!": {}
+            },
+            ".maplibregl-ctrl-attrib-button": {
+              "@apply bg-transparent! dark:invert": {}
+            },
+            ".maplibregl-popup-content": {
+              "@apply bg-transparent! shadow-none! p-0! rounded-none!": {}
+            },
+            ".maplibregl-popup-tip": {
+              "@apply hidden!": {}
+            }
+          }
+        },
+        "dependencies": [
+          "maplibre-gl@^6",
+          "lucide-react"
+        ],
+        "description": "A MapLibre-powered map component with markers, popups, tooltips, routes, and controls.",
+        "devDependencies": [
+          "@types/geojson"
+        ],
+        "files": [
+          {
+            "path": "src/registry/map.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "meta": {
+          "components": [
+            {
+              "description": "Base MapLibre-powered map component.",
+              "href": "/llm/map",
+              "title": "Map"
+            },
+            {
+              "description": "Zoom, geolocate, fullscreen, and compass controls.",
+              "href": "/docs/controls",
+              "title": "Controls"
+            },
+            {
+              "description": "Map markers with labels, tooltips, and popup composition.",
+              "href": "/docs/markers",
+              "title": "Markers"
+            },
+            {
+              "description": "Standalone and marker-attached popup content.",
+              "href": "/docs/popups",
+              "title": "Popups"
+            },
+            {
+              "description": "Line routes with optional markers and interaction handlers.",
+              "href": "/docs/routes",
+              "title": "Routes"
+            },
+            {
+              "description": "Curved connection arcs between coordinates.",
+              "href": "/docs/arcs",
+              "title": "Arcs"
+            },
+            {
+              "description": "GeoJSON sources and layers for custom map data.",
+              "href": "/docs/geojson",
+              "title": "GeoJSON"
+            },
+            {
+              "description": "Clustered point layers for dense datasets.",
+              "href": "/docs/clusters",
+              "title": "Clusters"
+            }
+          ]
+        },
+        "name": "map",
+        "registryDependencies": [],
+        "title": "Map",
+        "type": "registry:ui"
+      }
+    }
+  ],
+  "licence": {
+    "additionalLicencePaths": [
+      "LICENSE"
+    ],
+    "expression": "MIT",
+    "gitBlobSha": "9b9dbfc59ad6f24663c47ed4d51178dabe6aaafe",
+    "note": "Root-text assessment only. Additional terms, inherited notices, third-party assets and preview permissions require separate review.",
+    "path": "LICENSE",
+    "publicationApproved": false,
+    "rootTextCommercialUse": "allowed",
+    "rootTextRedistribution": "allowed",
+    "sha256": "73020a10c41b48b72fbcc0f8bc38fbc24ff13df874a3142ab48094162490bb29",
+    "sourceUrl": "https://github.com/AnmolSaini16/mapcn/blob/d160bd767bc6388618720c6038a4dd9948c97362/LICENSE"
+  },
+  "name": "MapCN",
+  "observedAt": "2026-09-20T22:00:51.831233Z",
+  "previewStrategy": "Unapproved. Prefer official isolated demos; otherwise render pinned source. Never fabricate a preview.",
+  "providerId": "mapcn",
+  "publicationApproved": false,
+  "repository": "AnmolSaini16/mapcn",
+  "retainedEvidence": [
+    {
+      "path": "data/registry/licences/mapcn/d160bd767bc6388618720c6038a4dd9948c97362.txt",
+      "sha256": "73020a10c41b48b72fbcc0f8bc38fbc24ff13df874a3142ab48094162490bb29"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/mapcn/d160bd767bc6388618720c6038a4dd9948c97362/upstream/README.md",
+      "sha256": "381b47e8c89662114591a061bb82f2d3d59870faf67c8fbe31449b064914bf8c"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/mapcn/d160bd767bc6388618720c6038a4dd9948c97362/upstream/registry.json",
+      "sha256": "41ad0acd2a9a75ad9ac85911fd844770bad0683cee688f043ed21a14b5057ce0"
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceRef": "d160bd767bc6388618720c6038a4dd9948c97362",
+  "status": "captured-unpublished",
+  "unresolvedRisks": [
+    "MIT applies to the code, not automatically to CARTO basemap services. Review authorised tile configuration and commercial-use terms.",
+    "Official first-party identity needs signed-off website/repository evidence.",
+    "No actual component preview has passed browser acceptance.",
+    "Installation and transitive dependency evidence must be reviewed before publication.",
+    "Production project, Neon branch/database/endpoint and post-merge deployment acceptance remain unverified."
+  ],
+  "website": "https://www.mapcn.dev/"
+}

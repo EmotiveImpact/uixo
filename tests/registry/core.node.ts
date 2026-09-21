@@ -32,12 +32,12 @@ test('migration and captured-source seed are repeatable; counts reflect actual r
     await migrate(db);
     const first = await seedCaptured(registry),
       second = await seedCaptured(registry);
-    assert.equal(first.inserted, 464);
+    assert.equal(first.inserted, 1437);
     assert.equal(second.inserted, 0);
-    assert.equal((await registry.stats()).assets, 464);
-    assert.equal((await registry.providers()).length, 7);
+    assert.equal((await registry.stats()).assets, 1437);
+    assert.equal((await registry.providers()).length, 12);
     const inventory = await registry.inventory();
-    assert.equal(inventory.total, 464);
+    assert.equal(inventory.total, 1437);
     assert.ok(inventory.kinds.find((entry) => entry.id === 'component')!.count > 0);
     assert.equal(
       inventory.kinds.find((entry) => entry.id === 'font'),
@@ -82,6 +82,31 @@ test('verified preview sync repairs existing records and unpublishes source-less
     await db.close();
   }
 });
+
+test('provider-scoped sync is idempotent and does not touch unrelated providers', async () => {
+  const { db, registry } = await setup();
+  try {
+    const first = await syncCaptured(registry, new Set(['uiable']));
+    assert.equal(first.inserted, 707);
+    assert.equal(first.updated, 0);
+    assert.equal(first.unchanged, 0);
+    assert.equal((await registry.stats()).assets, 707);
+    assert.equal((await registry.providers()).length, 1);
+    assert.equal((await registry.search({ provider: 'uiable' })).total, 707);
+    assert.equal((await registry.search({ provider: 'shadcn' })).total, 0);
+
+    const second = await syncCaptured(registry, new Set(['uiable']));
+    assert.equal(second.inserted, 0);
+    assert.equal(second.updated, 0);
+    assert.equal(second.unchanged, 707);
+    assert.equal((await registry.stats()).assets, 707);
+
+    await assert.rejects(syncCaptured(registry, new Set(['not-approved'])), /unknown provider ID/);
+  } finally {
+    await db.close();
+  }
+});
+
 test('publication is a separate atomic review gate; edits do not replace live records', async () => {
   const { db, registry } = await setup();
   try {
@@ -360,8 +385,13 @@ test('captured React registries retain pinned source, licence and acquisition ev
     components.every(
       (asset) =>
         (asset.preview?.kind === 'image' && asset.preview.url) ||
-        (asset.providerId === 'animata' && asset.preview?.kind === 'embed') ||
+        (['animata', 'uiable', 'flowbite-react', 'heroui-web', 'tailark'].includes(
+          asset.providerId,
+        ) &&
+          asset.preview?.kind === 'embed' &&
+          asset.preview.url) ||
         asset.providerId === 'simply-buttons' ||
+        asset.providerId === 'babelize-elements' ||
         ['switch', 'table', 'tabs', 'textarea', 'toggle', 'toggle-group', 'tooltip'].includes(
           asset.slug,
         ),
@@ -571,7 +601,7 @@ test('discovery lists icon packs, retains legacy saved icons and filters compone
       'Exercise existing saved icon compatibility.',
     );
     const all = await registry.search({ limit: 48 });
-    assert.equal(all.total, 464);
+    assert.equal(all.total, 1437);
     const packs = await registry.search({ kind: 'icon' });
     assert.equal(packs.total, 2);
     assert.ok(packs.items.every((asset) => asset.kind === 'icon-pack'));
@@ -631,7 +661,7 @@ test('icon indexing emits one library without fetching individual glyph trees', 
 
 test('Simply Buttons keeps original provenance and does not invent licence permissions', async () => {
   const assets = (await capturedAssets()).filter((asset) => asset.providerId === 'simply-buttons');
-  assert.equal(assets.length, 108);
+  assert.equal(assets.length, 128);
   for (const original of assets) {
     const asset = validateAsset(original);
     assert.equal(asset.category, 'buttons');
@@ -663,5 +693,76 @@ test('Animata snapshot only publishes source-pinned components with official liv
     assets.every(
       (asset) => asset.variants[0].sourceRef === '36674e4e9cfdc0f237693d8b736a2bf41065ca1d',
     ),
+  );
+});
+
+test('reviewed provider snapshots publish only truthfully previewable pinned web assets', async () => {
+  const assets = await capturedAssets();
+  const uiable = assets.filter((asset) => asset.providerId === 'uiable');
+  const flowbite = assets.filter((asset) => asset.providerId === 'flowbite-react');
+  const heroui = assets.filter((asset) => asset.providerId === 'heroui-web');
+  const tailark = assets.filter((asset) => asset.providerId === 'tailark');
+  const babelize = assets.filter((asset) => asset.providerId === 'babelize-elements');
+
+  assert.equal(uiable.length, 707);
+  assert.equal(flowbite.length, 45);
+  assert.equal(heroui.length, 68);
+  assert.equal(tailark.length, 150);
+  assert.equal(babelize.length, 3);
+
+  assert.ok(
+    uiable.every(
+      (asset) =>
+        asset.preview?.kind === 'embed' &&
+        asset.preview.url.startsWith('https://uiable.com/preview/') &&
+        asset.variants[0].acquisition.kind === 'registry' &&
+        asset.variants[0].acquisition.url === `https://uiable.com/r/${asset.slug}.json` &&
+        asset.variants[0].sourceRef === '34e78586c904091059deb63412ae330b2757e923',
+    ),
+  );
+  assert.ok(
+    flowbite.every(
+      (asset) =>
+        asset.preview?.kind === 'embed' &&
+        asset.preview.url.startsWith('https://flowbite-react.com/examples/') &&
+        asset.variants[0].acquisition.kind === 'package' &&
+        asset.variants[0].acquisition.packageName === 'flowbite-react' &&
+        asset.variants[0].sourceRef === '85319bd067822f7aa9670688780aeb58cc187aa5',
+    ),
+  );
+  assert.ok(!flowbite.some((asset) => asset.slug === 'dark-theme-toggle'));
+  assert.ok(
+    heroui.every(
+      (asset) =>
+        asset.preview?.kind === 'embed' &&
+        asset.preview.url.startsWith('https://storybook-v3.heroui.com/iframe.html?id=') &&
+        asset.licence.expression === 'Apache-2.0' &&
+        asset.variants[0].acquisition.packageName === '@heroui/react' &&
+        asset.variants[0].sourceRef === 'ac71b5f644803b2107c878908e64f100d6a7d443',
+    ),
+  );
+  assert.ok(
+    tailark.every(
+      (asset) =>
+        asset.preview?.kind === 'embed' &&
+        asset.preview.url === `https://tailark.com/view/${asset.slug}` &&
+        asset.variants[0].acquisition.kind === 'registry' &&
+        asset.variants[0].acquisition.url === `https://tailark.com/r/${asset.slug}.json` &&
+        asset.variants[0].sourceRef === '8139698115c1341bfd2e3e286c04bb4d8146f472',
+    ),
+  );
+  assert.ok(
+    babelize.every(
+      (asset) =>
+        asset.preview === null &&
+        asset.variants[0].acquisition.kind === 'registry' &&
+        asset.variants[0].acquisition.url === `https://elements.babelize.co/r/${asset.slug}.json` &&
+        asset.variants[0].sourceRef === '2cd92ba8acad36e6122d4c528cc81b5d99ffd587',
+    ),
+  );
+  assert.equal(
+    new Set([...uiable, ...flowbite, ...heroui, ...tailark, ...babelize].map((asset) => asset.id))
+      .size,
+    973,
   );
 });

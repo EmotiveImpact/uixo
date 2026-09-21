@@ -1,0 +1,1271 @@
+{
+  "actualPublishedCount": 0,
+  "archiveSha256": "3a2783a1fa36d1c750ef9448978b0fe1c01aa9233aa805456a43af397140eb7a",
+  "branch": "main",
+  "excludedCount": 1,
+  "exclusions": [
+    {
+      "name": "utils",
+      "reason": "Out of individual web-component scope: registry:lib"
+    }
+  ],
+  "installationStrategy": "Use retained upstream evidence. No installation command is approved by this capture.",
+  "inventoryCount": 21,
+  "items": [
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Button1",
+      "id": "microinteractions-ui/button1",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Button1",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "button1",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "a607dc351549087e2d32af558af9c25777e8d7a0",
+          "path": "src/registry/components/button1.tsx",
+          "sha256": "b3eb0d53e90c6cab7c3087b8a6c4e7382d94b39e09f6c4d686f338a36b5d19fd",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button1.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/button1.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button1.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Button1",
+        "files": [
+          {
+            "path": "src/registry/components/button1.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "button1",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Button1",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Button2",
+      "id": "microinteractions-ui/button2",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Button2",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "button2",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "2651431867995714ee279ebb89a4614a2e8959e1",
+          "path": "src/registry/components/button2.tsx",
+          "sha256": "2293c6152d7c386c3b072968a65fe797adea1fd1634ce45c4d777ef51226c818",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button2.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/button2.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button2.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Button2",
+        "files": [
+          {
+            "path": "src/registry/components/button2.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "button2",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Button2",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Button3",
+      "id": "microinteractions-ui/button3",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Button3",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "button3",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "171042c817dbc259aa6c6216aee3184967d8672b",
+          "path": "src/registry/components/button3.tsx",
+          "sha256": "646ea59cfab88deddb3f6e2dc99bf603b2e6c546dff4839901af2bb7a0a23e1b",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button3.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/button3.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button3.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Button3",
+        "files": [
+          {
+            "path": "src/registry/components/button3.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "button3",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Button3",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Button4",
+      "id": "microinteractions-ui/button4",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Button4",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "button4",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "32f9728ddc15cf622bb54222f867c5bb1dc10e58",
+          "path": "src/registry/components/button4.tsx",
+          "sha256": "6260160b88c59088d4de7e3cbaa7b10e70f33cb34fd3cd40f82fb277fdde7681",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button4.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/button4.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button4.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Button4",
+        "files": [
+          {
+            "path": "src/registry/components/button4.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "button4",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Button4",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Button5",
+      "id": "microinteractions-ui/button5",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Button5",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "button5",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "f3656c8f54c8259296870fa7251b112085da66ad",
+          "path": "src/registry/components/button5.tsx",
+          "sha256": "24ab25a5babdd85eddd1033692d1f5aad0c59052f1a5f1874498a7e5ef02accf",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button5.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/button5.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button5.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Button5",
+        "files": [
+          {
+            "path": "src/registry/components/button5.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "button5",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Button5",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Button6",
+      "id": "microinteractions-ui/button6",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Button6",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "button6",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "8805bbd220f4c0cc816db0d531e0944b553e3426",
+          "path": "src/registry/components/button6.tsx",
+          "sha256": "89318c32663f6113c8eb9fb16e4ddc7d30c183d77447bd9ca2043ce3cefd1d6e",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button6.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/button6.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button6.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Button6",
+        "files": [
+          {
+            "path": "src/registry/components/button6.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "button6",
+        "registryDependencies": [],
+        "title": "Button6",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "Button7",
+      "id": "microinteractions-ui/button7",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Button7",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "button7",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "8d44c851d8a6959f2cbcfb5f6b9fc38f070efc59",
+          "path": "src/registry/components/button7.tsx",
+          "sha256": "306aebbbe43b0fff64e231175464da998159046df04aabce70f9a22f39f6bb1d",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button7.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/button7.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button7.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "Button7",
+        "files": [
+          {
+            "path": "src/registry/components/button7.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "button7",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Button7",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Button8",
+      "id": "microinteractions-ui/button8",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Button8",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "button8",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "93aca73e9798f7c1cb0b6aa5a3194c477c5b5530",
+          "path": "src/registry/components/button8.tsx",
+          "sha256": "9d589c79ad4331697af1676c7e16886cb50d93da9c97a233f6b9320dd9b1b865",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button8.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/button8.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/button8.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Button8",
+        "files": [
+          {
+            "path": "src/registry/components/button8.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "button8",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Button8",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Input1",
+      "id": "microinteractions-ui/input1",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Input1",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "badge"
+      ],
+      "slug": "input1",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "2f5c0d38c5b80c2cb49c278b4f03d68f81e52183",
+          "path": "src/registry/components/input1.tsx",
+          "sha256": "f97a349873b2d819019752cd6c7cf3588d752f2236d4b4fab809e2a7f35fc11c",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/input1.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/input1.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/input1.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Input1",
+        "files": [
+          {
+            "path": "src/registry/components/input1.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "input1",
+        "registryDependencies": [
+          "badge"
+        ],
+        "title": "Input1",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [
+        "motion",
+        "react-aria-components"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Input2",
+      "id": "microinteractions-ui/input2",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Input2",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "input2",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "7847de9c36f318a4e5b0366ca55ab36a89667e1c",
+          "path": "src/registry/components/input2.tsx",
+          "sha256": "25dbd70bfc35a0a028685cd26e725c19c11f23cb4b4736ef05d00d7c604073a6",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/input2.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/input2.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/input2.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion",
+          "react-aria-components"
+        ],
+        "description": "Input2",
+        "files": [
+          {
+            "path": "src/registry/components/input2.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "input2",
+        "registryDependencies": [],
+        "title": "Input2",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Navbar1",
+      "id": "microinteractions-ui/navbar1",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Navbar1",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "tooltip",
+        "avatar"
+      ],
+      "slug": "navbar1",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "0159d632762079dc96deae9e6e1738f850ecbde3",
+          "path": "src/registry/components/navbar1.tsx",
+          "sha256": "e35714abe9ad61503db9e8866247049098ee2e87401d7847d0ea0d0f91782c2e",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/navbar1.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/navbar1.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/navbar1.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion",
+          "lucide-react"
+        ],
+        "description": "Navbar1",
+        "files": [
+          {
+            "path": "src/registry/components/navbar1.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "navbar1",
+        "registryDependencies": [
+          "tooltip",
+          "avatar"
+        ],
+        "title": "Navbar1",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Tabs1",
+      "id": "microinteractions-ui/tabs1",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Tabs1",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "tabs",
+        "scroll-area"
+      ],
+      "slug": "tabs1",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "3f38a8932143130119ea05a59c6eb56cbf916a57",
+          "path": "src/registry/components/tabs1.tsx",
+          "sha256": "9a1edad015ed10c163c3e3352e5e415f707d042498e60d67d0afbc249bc915eb",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/tabs1.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/tabs1.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/tabs1.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Tabs1",
+        "files": [
+          {
+            "path": "src/registry/components/tabs1.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "tabs1",
+        "registryDependencies": [
+          "tabs",
+          "scroll-area"
+        ],
+        "title": "Tabs1",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Tabs2",
+      "id": "microinteractions-ui/tabs2",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Tabs2",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "tabs",
+        "scroll-area",
+        "badge"
+      ],
+      "slug": "tabs2",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "e321915f81a68ef3a77f0c09b4a75c10a2d531af",
+          "path": "src/registry/components/tabs2.tsx",
+          "sha256": "1484ed18b0dc65bdb37a7410e5b7ae188a83070279df5e225552bd937279548b",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/tabs2.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/tabs2.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/tabs2.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Tabs2",
+        "files": [
+          {
+            "path": "src/registry/components/tabs2.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "tabs2",
+        "registryDependencies": [
+          "tabs",
+          "scroll-area",
+          "badge"
+        ],
+        "title": "Tabs2",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Tabs3",
+      "id": "microinteractions-ui/tabs3",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Tabs3",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "tabs"
+      ],
+      "slug": "tabs3",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "8bfd102c9fd942793b09f57da5d012c1b0014754",
+          "path": "src/registry/components/tabs3.tsx",
+          "sha256": "8b3305efccade6b524b0ed3695c2db44a7449dc612afb59034d3cba66211be0c",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/tabs3.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/tabs3.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/tabs3.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Tabs3",
+        "files": [
+          {
+            "path": "src/registry/components/tabs3.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "tabs3",
+        "registryDependencies": [
+          "tabs"
+        ],
+        "title": "Tabs3",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Tabs4",
+      "id": "microinteractions-ui/tabs4",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Tabs4",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "tabs"
+      ],
+      "slug": "tabs4",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "5ebd9c2cf2089348ce90ef89392e3ab77e1637a3",
+          "path": "src/registry/components/tabs4.tsx",
+          "sha256": "82f44c84ac39f9c04741a56a963722c79267c488ab17218bd83213b37b072010",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/tabs4.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/tabs4.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/tabs4.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Tabs4",
+        "files": [
+          {
+            "path": "src/registry/components/tabs4.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "tabs4",
+        "registryDependencies": [
+          "tabs"
+        ],
+        "title": "Tabs4",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Tabs5",
+      "id": "microinteractions-ui/tabs5",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Tabs5",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "tabs"
+      ],
+      "slug": "tabs5",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "5e080e8a51793ba529e77dd05ae904f51b6a78e4",
+          "path": "src/registry/components/tabs5.tsx",
+          "sha256": "cf7dc670580017266d4d5c46c81ec9199f77953fae17b666725cfe12658d55dc",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/tabs5.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/tabs5.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/tabs5.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Tabs5",
+        "files": [
+          {
+            "path": "src/registry/components/tabs5.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "tabs5",
+        "registryDependencies": [
+          "tabs"
+        ],
+        "title": "Tabs5",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "motion",
+        "next-themes"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "ThemeToggle1",
+      "id": "microinteractions-ui/theme-toggle1",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "ThemeToggle1",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "theme-toggle1",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "8e17e56bac8415dbbb8000e6b68f24063629a6fd",
+          "path": "src/registry/components/theme-toggle1.tsx",
+          "sha256": "7ded18d3d618abf88625ebe4465b4118bb75aa112eebf120c81a10b5e4e2d6a4",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/theme-toggle1.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/theme-toggle1.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/theme-toggle1.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion",
+          "next-themes"
+        ],
+        "description": "ThemeToggle1",
+        "files": [
+          {
+            "path": "src/registry/components/theme-toggle1.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "theme-toggle1",
+        "registryDependencies": [],
+        "title": "ThemeToggle1",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "motion",
+        "lucide-react",
+        "next-themes"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "ThemeToggle2",
+      "id": "microinteractions-ui/theme-toggle2",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "ThemeToggle2",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "theme-toggle2",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "8948f9839b703731130e7a16355f8a7ef0da7e99",
+          "path": "src/registry/components/theme-toggle2.tsx",
+          "sha256": "f244bc8e683ea49aba7e54ea74256375b7848c29152344bea86217faa1dd217f",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/theme-toggle2.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/theme-toggle2.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/theme-toggle2.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion",
+          "lucide-react",
+          "next-themes"
+        ],
+        "description": "ThemeToggle2",
+        "files": [
+          {
+            "path": "src/registry/components/theme-toggle2.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "theme-toggle2",
+        "registryDependencies": [],
+        "title": "ThemeToggle2",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "Base Stepper component",
+      "id": "microinteractions-ui/stepper",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Stepper",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "stepper",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "04bc8efea45ee145c5cf3f3e6a2177197248b99e",
+          "path": "src/registry/components/stepper.tsx",
+          "sha256": "ce5b051014286d8e56b38d3f6b8633cf2de6a3537d2183b3fe67e6333605981e",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/stepper.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/stepper.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/stepper.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "Base Stepper component",
+        "files": [
+          {
+            "path": "src/registry/components/stepper.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "stepper",
+        "registryDependencies": [],
+        "title": "Stepper",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "Stepper1",
+      "id": "microinteractions-ui/stepper1",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Stepper1",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://microinteractionsui.com/r/stepper.json"
+      ],
+      "slug": "stepper1",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "48214f505e11e8db66fb771b000436c47696a764",
+          "path": "src/registry/components/stepper1.tsx",
+          "sha256": "d877355208152c3620d8435cd88fba963452b369e13e66ed2b3b05fb9f433126",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/stepper1.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/stepper1.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/stepper1.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "Stepper1",
+        "files": [
+          {
+            "path": "src/registry/components/stepper1.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "stepper1",
+        "registryDependencies": [
+          "button",
+          "https://microinteractionsui.com/r/stepper.json"
+        ],
+        "title": "Stepper1",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "Stepper2",
+      "id": "microinteractions-ui/stepper2",
+      "inventoryEvidence": {
+        "path": "src/registry.json",
+        "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Stepper2",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "microinteractions-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://microinteractionsui.com/r/stepper.json"
+      ],
+      "slug": "stepper2",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "88d9470e38a5b06f3f764548091bb8c6f467668f",
+          "path": "src/registry/components/stepper2.tsx",
+          "sha256": "19577149c4fad33c7d6aaf73d8857a23400e9c9c63e3b31b68e8f179e1d57334",
+          "url": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/stepper2.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/components/stepper2.tsx",
+      "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+      "sourceUrl": "https://github.com/mateusmachry/microinteractionsui/blob/95d98ec8de72d1222855f0104f550718bacb1648/src/registry/components/stepper2.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "Stepper2",
+        "files": [
+          {
+            "path": "src/registry/components/stepper2.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "stepper2",
+        "registryDependencies": [
+          "button",
+          "https://microinteractionsui.com/r/stepper.json"
+        ],
+        "title": "Stepper2",
+        "type": "registry:component"
+      }
+    }
+  ],
+  "licence": {
+    "additionalLicencePaths": [],
+    "expression": "Unlicensed",
+    "gitBlobSha": null,
+    "note": "Root-text assessment only. Additional terms, inherited notices, third-party assets and preview permissions require separate review.",
+    "path": null,
+    "publicationApproved": false,
+    "rootTextCommercialUse": "unknown",
+    "rootTextRedistribution": "unknown",
+    "sha256": null,
+    "sourceUrl": null
+  },
+  "name": "MicroInteractions UI",
+  "observedAt": "2026-09-20T22:00:57.323308Z",
+  "previewStrategy": "Unapproved. Prefer official isolated demos; otherwise render pinned source. Never fabricate a preview.",
+  "providerId": "microinteractions-ui",
+  "publicationApproved": false,
+  "repository": "mateusmachry/microinteractionsui",
+  "retainedEvidence": [],
+  "schemaVersion": 1,
+  "sourceRef": "95d98ec8de72d1222855f0104f550718bacb1648",
+  "status": "captured-unpublished",
+  "unresolvedRisks": [
+    "No project licence has been established. An unrelated skill licence is not a component-project licence.",
+    "Official first-party identity needs signed-off website/repository evidence.",
+    "No actual component preview has passed browser acceptance.",
+    "Installation and transitive dependency evidence must be reviewed before publication.",
+    "Production project, Neon branch/database/endpoint and post-merge deployment acceptance remain unverified."
+  ],
+  "website": "https://www.microinteractionsui.com/"
+}

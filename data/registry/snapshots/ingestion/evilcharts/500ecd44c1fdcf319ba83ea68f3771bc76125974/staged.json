@@ -1,0 +1,2756 @@
+{
+  "actualPublishedCount": 0,
+  "archiveSha256": "ded6cc88c013fa8e7f29ba5fa7c62d659830d098d6d033e2fd4d52adfedcdcce",
+  "branch": "main",
+  "excludedCount": 252,
+  "exclusions": [
+    {
+      "name": "ex-hover-highlight-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-svg-renderer-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-brush-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-buffer-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-hover-reveal-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-animated-dashed-stroke-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bump-curve-type-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dashed-stroke-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-default-type-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dotted-area-variant-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-expanded-type-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-area-variant-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-bump-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-reverse-area-variant-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-hatched-area-variant-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-lines-area-variant-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-monotoney-curve-type-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-solid-area-variant-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-solid-stroke-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-stacked-type-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-step-curve-type-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-svg-renderer-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-bump-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bump-curve-type-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-step-curve-type-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-monotoney-curve-type-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-solid-stroke-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dashed-stroke-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-animated-dashed-stroke-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-glowing-desktop-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-glowing-mobile-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-buffer-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-hover-reveal-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dot-default-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dot-border-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dot-colored-border-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dot-ping-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-legend-square-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-legend-circle-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-legend-circle-outline-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-legend-rounded-square-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-legend-rounded-square-outline-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-legend-vertical-bar-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-legend-horizontal-bar-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-svg-renderer-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-buffer-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-default-variant-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-expandable-variant-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-max-highlight-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-blocks-variant-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-hatched-variant-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-duotone-variant-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-duotone-reverse-variant-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-variant-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-stripped-variant-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-stacked-type-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-percent-type-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-horizontal-layout-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-hover-highlight-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-glowing-desktop-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-glowing-mobile-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-tooltip-default-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-tooltip-frosted-glass-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-chart-config-default-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-chart-config-icons-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-echarts-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-svg-renderer-echarts-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-echarts-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-echarts-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-hatched-variant-echarts-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-duotone-variant-echarts-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-variant-echarts-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-stripped-variant-echarts-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dashed-stroke-echarts-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-animated-dashed-stroke-echarts-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bump-curve-echarts-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dots-echarts-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-hover-highlight-echarts-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-glowing-echarts-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-echarts-radar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-svg-renderer-echarts-radar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-lines-variant-echarts-radar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-circle-grid-echarts-radar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-echarts-radar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-echarts-radar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-echarts-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-svg-renderer-echarts-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-echarts-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-donut-echarts-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-padded-echarts-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-overlapping-padded-echarts-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-labels-echarts-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-echarts-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-outside-labels-echarts-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-echarts-radial-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-svg-renderer-echarts-radial-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-semi-variant-echarts-radial-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-echarts-radial-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-echarts-radial-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-echarts-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-svg-renderer-echarts-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-echarts-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-echarts-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-solid-link-variant-echarts-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-source-link-variant-echarts-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-labeled-nodes-echarts-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-outside-labels-echarts-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-solid-labeled-nodes-echarts-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-brush-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-bump-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-default-type-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-stacked-type-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-expanded-type-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bump-curve-type-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-step-curve-type-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-monotoney-curve-type-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-solid-stroke-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dashed-stroke-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-animated-dashed-stroke-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-area-variant-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-reverse-area-variant-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-solid-area-variant-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dotted-area-variant-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-lines-area-variant-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-hatched-area-variant-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dot-default-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dot-border-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dot-colored-border-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-bump-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bump-curve-type-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-step-curve-type-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-monotoney-curve-type-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-solid-stroke-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dashed-stroke-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-animated-dashed-stroke-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-glowing-desktop-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-glowing-mobile-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-buffer-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bg-dots-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bg-grid-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bg-cross-hatch-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bg-diagonal-lines-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bg-plus-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bg-falling-triangles-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bg-4-pointed-star-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bg-tiny-checkers-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bg-overlapping-circles-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bg-wiggle-lines-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bg-bubbles-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-buffer-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-default-variant-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-hatched-variant-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-duotone-variant-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-duotone-reverse-variant-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-variant-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-stripped-variant-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-stacked-type-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-percent-type-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-horizontal-layout-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-hover-highlight-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-glowing-desktop-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-glowing-mobile-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-hatched-variant-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-duotone-variant-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-variant-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-stripped-variant-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dashed-stroke-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-animated-dashed-stroke-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-bump-curve-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-dots-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-hover-highlight-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-glowing-composed-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-donut-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-padded-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-overlapping-padded-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-labels-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-glowing-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-radial-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-semi-variant-radial-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-radial-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-radial-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-radar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-lines-variant-radar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-circle-grid-radar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-radar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-radar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-glowing-radar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-gradient-colors-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-loading-state-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-solid-link-variant-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-source-link-variant-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-labeled-nodes-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-outside-labels-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-solid-labeled-nodes-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-tooltip-default-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-tooltip-frosted-glass-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-legend-square-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-legend-circle-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-legend-circle-outline-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-legend-rounded-square-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-legend-rounded-square-outline-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-legend-vertical-bar-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-legend-horizontal-bar-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-chart-config-default-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ex-chart-config-icons-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "monospace-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "hover-trace-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "grid-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "isometric-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "latency-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "portfolio-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "benchmark-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "audience-echarts-area-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "market-share-echarts-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "progress-rings-echarts-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "budget-echarts-radial-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "ride-echarts-radial-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "cache-tiers-echarts-radial-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "revenue-mix-echarts-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "reliability-score-echarts-pie-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "payouts-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "shipments-echarts-line-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "grid-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "monospace-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "peak-echarts-bar-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "allocation-echarts-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    },
+    {
+      "name": "pipeline-echarts-sankey-chart",
+      "reason": "Out of individual web-component scope: registry:block"
+    }
+  ],
+  "installationStrategy": "Use retained upstream evidence. No installation command is approved by this capture.",
+  "inventoryCount": 27,
+  "items": [
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "recharts"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "evilcharts/recharts-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Recharts Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "recharts-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "dbbabd84c4927ddd3379d5102e3bac5711fd8748",
+          "path": "src/registry/ui/recharts-chart.tsx",
+          "sha256": "4cd9b99678ae2ee7fa588e2c980fa9c3ce4003110acdde6cdd7db1d96db67d3b",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/recharts-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/ui/recharts-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/recharts-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "recharts"
+        ],
+        "files": [
+          {
+            "path": "src/registry/ui/recharts-chart.tsx",
+            "target": "components/evilcharts/ui/recharts-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "recharts-chart",
+        "registryDependencies": [],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [
+        "recharts"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "evilcharts/recharts-tooltip",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Recharts Tooltip",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "recharts-tooltip",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "c8f92095f00ea6762ea7bc0072c07b7f2d9974fa",
+          "path": "src/registry/ui/recharts-tooltip.tsx",
+          "sha256": "49f0deedb6637b0ffcf1afd978311a3afb66cb966325a881fb8b324e15d8d09c",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/recharts-tooltip.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/ui/recharts-tooltip.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/recharts-tooltip.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "recharts"
+        ],
+        "files": [
+          {
+            "path": "src/registry/ui/recharts-tooltip.tsx",
+            "target": "components/evilcharts/ui/recharts-tooltip.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "recharts-tooltip",
+        "registryDependencies": [],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "recharts"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "evilcharts/recharts-legend",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Recharts Legend",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "recharts-legend",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "45be86f130ef6b6c090c6ad6bb7cc45bac72c688",
+          "path": "src/registry/ui/recharts-legend.tsx",
+          "sha256": "d1eb325e11315c5640efe6b70543bbc370654e9d2e5101774603bd2b1dcb3ef8",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/recharts-legend.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/ui/recharts-legend.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/recharts-legend.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "recharts"
+        ],
+        "files": [
+          {
+            "path": "src/registry/ui/recharts-legend.tsx",
+            "target": "components/evilcharts/ui/recharts-legend.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "recharts-legend",
+        "registryDependencies": [],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "recharts"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "evilcharts/recharts-dot",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Recharts Dot",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "recharts-dot",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "79c2df6af66613a1ef641e8e4d2ad80a03e26562",
+          "path": "src/registry/ui/recharts-dot.tsx",
+          "sha256": "94b12dc6ee83299561da38fe8fc4d0de66f05fedb2a81aebbab097f903781f5b",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/recharts-dot.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/ui/recharts-dot.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/recharts-dot.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "recharts"
+        ],
+        "files": [
+          {
+            "path": "src/registry/ui/recharts-dot.tsx",
+            "target": "components/evilcharts/ui/recharts-dot.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "recharts-dot",
+        "registryDependencies": [],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "recharts"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "evilcharts/recharts-brush",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Recharts Brush",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/recharts-chart"
+      ],
+      "slug": "recharts-brush",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "a2b6ad84f4a47394d053460a6122b886e01817f4",
+          "path": "src/registry/ui/recharts-brush.tsx",
+          "sha256": "b7299eb13167fcb2b7786efcd630cf9273eb0e9c5660a34c2e919461a3d7ceb9",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/recharts-brush.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/ui/recharts-brush.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/recharts-brush.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "recharts"
+        ],
+        "files": [
+          {
+            "path": "src/registry/ui/recharts-brush.tsx",
+            "target": "components/evilcharts/ui/recharts-brush.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "recharts-brush",
+        "registryDependencies": [
+          "@evilcharts/recharts-chart"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "backgrounds",
+      "dependencies": [
+        "recharts"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "evilcharts/recharts-background",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Recharts Background",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "recharts-background",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "9c35f3ff4a3ece482d3542cab04be283f89efef1",
+          "path": "src/registry/ui/recharts-background.tsx",
+          "sha256": "eb71bf98cc051f1638a91f1a50fc0b27b36d48502b8db5da420bf34b14b689cd",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/recharts-background.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/ui/recharts-background.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/recharts-background.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "recharts"
+        ],
+        "files": [
+          {
+            "path": "src/registry/ui/recharts-background.tsx",
+            "target": "components/evilcharts/ui/recharts-background.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "recharts-background",
+        "registryDependencies": [],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "echarts"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "evilcharts/echarts-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Echarts Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "echarts-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "d1ec3b3f3f7d9770e3cfcb1e19088673c627625f",
+          "path": "src/registry/ui/echarts-chart.tsx",
+          "sha256": "c0cfe2bcb6dd9c3ed8f2e29d372a073c9cd324811a8d4bcb4e12bf43707e12f3",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/echarts-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/ui/echarts-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/echarts-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "echarts"
+        ],
+        "files": [
+          {
+            "path": "src/registry/ui/echarts-chart.tsx",
+            "target": "components/evilcharts/ui/echarts-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "echarts-chart",
+        "registryDependencies": [],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [
+        "echarts"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "evilcharts/echarts-tooltip",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Echarts Tooltip",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/echarts-chart"
+      ],
+      "slug": "echarts-tooltip",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "501a37d10c6817a0b84c81f4a2284c20fa8de6f7",
+          "path": "src/registry/ui/echarts-tooltip.tsx",
+          "sha256": "336fbe5d39ee652a00d9bcf215b4e0559606041df9472dda9281bec0f425c886",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/echarts-tooltip.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/ui/echarts-tooltip.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/echarts-tooltip.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "echarts"
+        ],
+        "files": [
+          {
+            "path": "src/registry/ui/echarts-tooltip.tsx",
+            "target": "components/evilcharts/ui/echarts-tooltip.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "echarts-tooltip",
+        "registryDependencies": [
+          "@evilcharts/echarts-chart"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "evilcharts/echarts-legend",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Echarts Legend",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/echarts-chart"
+      ],
+      "slug": "echarts-legend",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "869200e2791bd6ddf6293fd707a54d3c6de411f2",
+          "path": "src/registry/ui/echarts-legend.tsx",
+          "sha256": "2f649c97b1c81ad36294eb281629b01c947a2033e278fe0ee1f62eaa656738e4",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/echarts-legend.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/ui/echarts-legend.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/echarts-legend.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "files": [
+          {
+            "path": "src/registry/ui/echarts-legend.tsx",
+            "target": "components/evilcharts/ui/echarts-legend.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "echarts-legend",
+        "registryDependencies": [
+          "@evilcharts/echarts-chart"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "echarts"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "evilcharts/echarts-dot",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Echarts Dot",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "echarts-dot",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "c0ff64c81fbd4f14bc1080c99d40e94bbd670991",
+          "path": "src/registry/ui/echarts-dot.tsx",
+          "sha256": "27258e7e3072ca8163e266e42b3073a5cadf382d415bc2410cb09f4b3fbc3cdd",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/echarts-dot.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/ui/echarts-dot.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/echarts-dot.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "echarts"
+        ],
+        "files": [
+          {
+            "path": "src/registry/ui/echarts-dot.tsx",
+            "target": "components/evilcharts/ui/echarts-dot.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "echarts-dot",
+        "registryDependencies": [],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "echarts"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": null,
+      "id": "evilcharts/echarts-brush",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Echarts Brush",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/echarts-chart"
+      ],
+      "slug": "echarts-brush",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "83d3d516118953f33c6423f2f7c10df48159855f",
+          "path": "src/registry/ui/echarts-brush.tsx",
+          "sha256": "8ab742558334a63adadb09d19ff9cd039f22de4303d61f0ec93ebcbc0dd917a2",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/echarts-brush.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/ui/echarts-brush.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/ui/echarts-brush.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "echarts"
+        ],
+        "files": [
+          {
+            "path": "src/registry/ui/echarts-brush.tsx",
+            "target": "components/evilcharts/ui/echarts-brush.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "echarts-brush",
+        "registryDependencies": [
+          "@evilcharts/echarts-chart"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "echarts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Area chart component rendered with Apache ECharts",
+      "id": "evilcharts/echarts-area-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Echarts Area Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/echarts-chart",
+        "@evilcharts/echarts-tooltip",
+        "@evilcharts/echarts-legend",
+        "@evilcharts/echarts-dot",
+        "@evilcharts/echarts-brush"
+      ],
+      "slug": "echarts-area-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "dd5e448b213fbd586a97c4861919b45af5949505",
+          "path": "src/registry/charts/echarts-area-chart.tsx",
+          "sha256": "74acc0d36517f67184b40e7dd5a504f88a34452dcfc09593362d1ab346561acb",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-area-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/echarts-area-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-area-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "echarts",
+          "motion"
+        ],
+        "description": "Area chart component rendered with Apache ECharts",
+        "files": [
+          {
+            "path": "src/registry/charts/echarts-area-chart.tsx",
+            "target": "components/evilcharts/charts/echarts-area-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "echarts-area-chart",
+        "registryDependencies": [
+          "@evilcharts/echarts-chart",
+          "@evilcharts/echarts-tooltip",
+          "@evilcharts/echarts-legend",
+          "@evilcharts/echarts-dot",
+          "@evilcharts/echarts-brush"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "echarts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Line chart component rendered with Apache ECharts",
+      "id": "evilcharts/echarts-line-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Echarts Line Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/echarts-chart",
+        "@evilcharts/echarts-dot",
+        "@evilcharts/echarts-tooltip",
+        "@evilcharts/echarts-legend",
+        "@evilcharts/echarts-brush"
+      ],
+      "slug": "echarts-line-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "407d8908cea0a1c464b1082970e59abd253ad735",
+          "path": "src/registry/charts/echarts-line-chart.tsx",
+          "sha256": "f61630059e09912cb6fa33e4a86e83dd9849c72e3bff885bc788a0a1b87b771b",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-line-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/echarts-line-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-line-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "echarts",
+          "motion"
+        ],
+        "description": "Line chart component rendered with Apache ECharts",
+        "files": [
+          {
+            "path": "src/registry/charts/echarts-line-chart.tsx",
+            "target": "components/evilcharts/charts/echarts-line-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "echarts-line-chart",
+        "registryDependencies": [
+          "@evilcharts/echarts-chart",
+          "@evilcharts/echarts-dot",
+          "@evilcharts/echarts-tooltip",
+          "@evilcharts/echarts-legend",
+          "@evilcharts/echarts-brush"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "echarts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Bar chart component rendered with Apache ECharts",
+      "id": "evilcharts/echarts-bar-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Echarts Bar Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/echarts-chart",
+        "@evilcharts/echarts-tooltip",
+        "@evilcharts/echarts-dot",
+        "@evilcharts/echarts-legend",
+        "@evilcharts/echarts-brush"
+      ],
+      "slug": "echarts-bar-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "9f4a3affd5092b9a8f41915196ba663ba8ea3cad",
+          "path": "src/registry/charts/echarts-bar-chart.tsx",
+          "sha256": "96184173d52ed4e1c3aea84a735c355a6e144d11587bff0fb1391a81a1f25ef2",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-bar-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/echarts-bar-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-bar-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "echarts",
+          "motion"
+        ],
+        "description": "Bar chart component rendered with Apache ECharts",
+        "files": [
+          {
+            "path": "src/registry/charts/echarts-bar-chart.tsx",
+            "target": "components/evilcharts/charts/echarts-bar-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "echarts-bar-chart",
+        "registryDependencies": [
+          "@evilcharts/echarts-chart",
+          "@evilcharts/echarts-tooltip",
+          "@evilcharts/echarts-dot",
+          "@evilcharts/echarts-legend",
+          "@evilcharts/echarts-brush"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "echarts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Composed chart component rendered with Apache ECharts",
+      "id": "evilcharts/echarts-composed-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Echarts Composed Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/echarts-chart",
+        "@evilcharts/echarts-tooltip",
+        "@evilcharts/echarts-dot",
+        "@evilcharts/echarts-legend",
+        "@evilcharts/echarts-brush"
+      ],
+      "slug": "echarts-composed-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "2e3941a58943c1ce7035d2d751bf9321c22d1df1",
+          "path": "src/registry/charts/echarts-composed-chart.tsx",
+          "sha256": "bf8dda2245b618828851e60bd4de5595086f2c0de6c67245d86c7400e62c4401",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-composed-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/echarts-composed-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-composed-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "echarts",
+          "motion"
+        ],
+        "description": "Composed chart component rendered with Apache ECharts",
+        "files": [
+          {
+            "path": "src/registry/charts/echarts-composed-chart.tsx",
+            "target": "components/evilcharts/charts/echarts-composed-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "echarts-composed-chart",
+        "registryDependencies": [
+          "@evilcharts/echarts-chart",
+          "@evilcharts/echarts-tooltip",
+          "@evilcharts/echarts-dot",
+          "@evilcharts/echarts-legend",
+          "@evilcharts/echarts-brush"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "echarts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Radar chart component rendered with Apache ECharts",
+      "id": "evilcharts/echarts-radar-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Echarts Radar Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/echarts-chart",
+        "@evilcharts/echarts-tooltip",
+        "@evilcharts/echarts-dot",
+        "@evilcharts/echarts-legend"
+      ],
+      "slug": "echarts-radar-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "cbc0c22d406b96f564f39decdf0e83e24efc4048",
+          "path": "src/registry/charts/echarts-radar-chart.tsx",
+          "sha256": "6051029c8ef3654ed66df329495929fc8c8ad83158a71635350fb20880680246",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-radar-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/echarts-radar-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-radar-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "echarts",
+          "motion"
+        ],
+        "description": "Radar chart component rendered with Apache ECharts",
+        "files": [
+          {
+            "path": "src/registry/charts/echarts-radar-chart.tsx",
+            "target": "components/evilcharts/charts/echarts-radar-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "echarts-radar-chart",
+        "registryDependencies": [
+          "@evilcharts/echarts-chart",
+          "@evilcharts/echarts-tooltip",
+          "@evilcharts/echarts-dot",
+          "@evilcharts/echarts-legend"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "echarts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Pie chart component rendered with Apache ECharts",
+      "id": "evilcharts/echarts-pie-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Echarts Pie Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/echarts-chart",
+        "@evilcharts/echarts-tooltip",
+        "@evilcharts/echarts-legend"
+      ],
+      "slug": "echarts-pie-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "587d8997821a3fdcad858a26677828feff94e23a",
+          "path": "src/registry/charts/echarts-pie-chart.tsx",
+          "sha256": "dfb481cff6d7387d113be9e124b15646152b2a1b697536b71f1369986652b871",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-pie-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/echarts-pie-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-pie-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "echarts",
+          "motion"
+        ],
+        "description": "Pie chart component rendered with Apache ECharts",
+        "files": [
+          {
+            "path": "src/registry/charts/echarts-pie-chart.tsx",
+            "target": "components/evilcharts/charts/echarts-pie-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "echarts-pie-chart",
+        "registryDependencies": [
+          "@evilcharts/echarts-chart",
+          "@evilcharts/echarts-tooltip",
+          "@evilcharts/echarts-legend"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "echarts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Radial chart component rendered with Apache ECharts",
+      "id": "evilcharts/echarts-radial-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Echarts Radial Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/echarts-chart",
+        "@evilcharts/echarts-tooltip",
+        "@evilcharts/echarts-legend"
+      ],
+      "slug": "echarts-radial-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "f114d5b4db1ffa403bc924cf87192616dab4fc77",
+          "path": "src/registry/charts/echarts-radial-chart.tsx",
+          "sha256": "e19d6bd3db28480a591a9b5ab6c01986f5b637a353c88b7895155c8084b50d13",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-radial-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/echarts-radial-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-radial-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "echarts",
+          "motion"
+        ],
+        "description": "Radial chart component rendered with Apache ECharts",
+        "files": [
+          {
+            "path": "src/registry/charts/echarts-radial-chart.tsx",
+            "target": "components/evilcharts/charts/echarts-radial-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "echarts-radial-chart",
+        "registryDependencies": [
+          "@evilcharts/echarts-chart",
+          "@evilcharts/echarts-tooltip",
+          "@evilcharts/echarts-legend"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "echarts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Sankey chart component rendered with Apache ECharts",
+      "id": "evilcharts/echarts-sankey-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Echarts Sankey Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/echarts-chart",
+        "@evilcharts/echarts-tooltip"
+      ],
+      "slug": "echarts-sankey-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "a9b3df3037b8fe0a22e921c544561e439d89fcc6",
+          "path": "src/registry/charts/echarts-sankey-chart.tsx",
+          "sha256": "1b77887e558eade0fec43c884393c6ba319f617593b06c8dbec66b77e715f5ff",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-sankey-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/echarts-sankey-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/echarts-sankey-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "echarts",
+          "motion"
+        ],
+        "description": "Sankey chart component rendered with Apache ECharts",
+        "files": [
+          {
+            "path": "src/registry/charts/echarts-sankey-chart.tsx",
+            "target": "components/evilcharts/charts/echarts-sankey-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "echarts-sankey-chart",
+        "registryDependencies": [
+          "@evilcharts/echarts-chart",
+          "@evilcharts/echarts-tooltip"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "recharts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Area chart component",
+      "id": "evilcharts/recharts-area-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Recharts Area Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/recharts-chart",
+        "@evilcharts/recharts-tooltip",
+        "@evilcharts/recharts-legend",
+        "@evilcharts/recharts-dot",
+        "@evilcharts/recharts-brush",
+        "@evilcharts/recharts-background"
+      ],
+      "slug": "recharts-area-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "6a9b9332fff8c070419f1a455df32fcbc73fc292",
+          "path": "src/registry/charts/recharts-area-chart.tsx",
+          "sha256": "298384a5104af8006aa27fd4014a5b48587f2775f7ff87d20110be73a7a07b00",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-area-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/recharts-area-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-area-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "recharts",
+          "motion"
+        ],
+        "description": "Area chart component",
+        "files": [
+          {
+            "path": "src/registry/charts/recharts-area-chart.tsx",
+            "target": "components/evilcharts/charts/recharts-area-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "recharts-area-chart",
+        "registryDependencies": [
+          "@evilcharts/recharts-chart",
+          "@evilcharts/recharts-tooltip",
+          "@evilcharts/recharts-legend",
+          "@evilcharts/recharts-dot",
+          "@evilcharts/recharts-brush",
+          "@evilcharts/recharts-background"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "recharts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Line chart component",
+      "id": "evilcharts/recharts-line-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Recharts Line Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/recharts-chart",
+        "@evilcharts/recharts-tooltip",
+        "@evilcharts/recharts-legend",
+        "@evilcharts/recharts-dot",
+        "@evilcharts/recharts-brush",
+        "@evilcharts/recharts-background"
+      ],
+      "slug": "recharts-line-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "3807fc0aca9a42954850c551c3b604649d7f9a53",
+          "path": "src/registry/charts/recharts-line-chart.tsx",
+          "sha256": "3ca0c71d6ea928f8f3ff4f43810e444bbd72b521a4cd67d4cae27ef66f86794a",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-line-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/recharts-line-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-line-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "recharts",
+          "motion"
+        ],
+        "description": "Line chart component",
+        "files": [
+          {
+            "path": "src/registry/charts/recharts-line-chart.tsx",
+            "target": "components/evilcharts/charts/recharts-line-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "recharts-line-chart",
+        "registryDependencies": [
+          "@evilcharts/recharts-chart",
+          "@evilcharts/recharts-tooltip",
+          "@evilcharts/recharts-legend",
+          "@evilcharts/recharts-dot",
+          "@evilcharts/recharts-brush",
+          "@evilcharts/recharts-background"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "recharts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Bar chart component",
+      "id": "evilcharts/recharts-bar-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Recharts Bar Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/recharts-chart",
+        "@evilcharts/recharts-tooltip",
+        "@evilcharts/recharts-legend",
+        "@evilcharts/recharts-brush",
+        "@evilcharts/recharts-background"
+      ],
+      "slug": "recharts-bar-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "170dfc8b9b326558a48725012e3a544940317502",
+          "path": "src/registry/charts/recharts-bar-chart.tsx",
+          "sha256": "660b0a63d43cfb14aaeabd7f1c6dc4ad6f30df387c2b6aca9497d5c417b14c53",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-bar-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/recharts-bar-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-bar-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "recharts",
+          "motion"
+        ],
+        "description": "Bar chart component",
+        "files": [
+          {
+            "path": "src/registry/charts/recharts-bar-chart.tsx",
+            "target": "components/evilcharts/charts/recharts-bar-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "recharts-bar-chart",
+        "registryDependencies": [
+          "@evilcharts/recharts-chart",
+          "@evilcharts/recharts-tooltip",
+          "@evilcharts/recharts-legend",
+          "@evilcharts/recharts-brush",
+          "@evilcharts/recharts-background"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "recharts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Composed chart component combining bar and line charts",
+      "id": "evilcharts/recharts-composed-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Recharts Composed Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/recharts-chart",
+        "@evilcharts/recharts-tooltip",
+        "@evilcharts/recharts-legend",
+        "@evilcharts/recharts-dot",
+        "@evilcharts/recharts-brush",
+        "@evilcharts/recharts-background"
+      ],
+      "slug": "recharts-composed-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "bf1bb9ff73faf115102f695d895ba249fe964d52",
+          "path": "src/registry/charts/recharts-composed-chart.tsx",
+          "sha256": "a33dc68ab96eaa2ab2d72925a47f0ee936b579e56c1427a6a30e4bf9d1ba4cc4",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-composed-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/recharts-composed-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-composed-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "recharts",
+          "motion"
+        ],
+        "description": "Composed chart component combining bar and line charts",
+        "files": [
+          {
+            "path": "src/registry/charts/recharts-composed-chart.tsx",
+            "target": "components/evilcharts/charts/recharts-composed-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "recharts-composed-chart",
+        "registryDependencies": [
+          "@evilcharts/recharts-chart",
+          "@evilcharts/recharts-tooltip",
+          "@evilcharts/recharts-legend",
+          "@evilcharts/recharts-dot",
+          "@evilcharts/recharts-brush",
+          "@evilcharts/recharts-background"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "recharts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Pie chart component with donut, gradient, and glow effects",
+      "id": "evilcharts/recharts-pie-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Recharts Pie Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/recharts-chart",
+        "@evilcharts/recharts-tooltip",
+        "@evilcharts/recharts-legend",
+        "@evilcharts/recharts-background"
+      ],
+      "slug": "recharts-pie-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "863e063c2cd44ce8129f0bc7eaabaf6d37ad1c00",
+          "path": "src/registry/charts/recharts-pie-chart.tsx",
+          "sha256": "12d68c0c60874f4b59a30d26f19c9f97f291e4a98df5a6b0f759bd4335b20497",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-pie-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/recharts-pie-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-pie-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "recharts",
+          "motion"
+        ],
+        "description": "Pie chart component with donut, gradient, and glow effects",
+        "files": [
+          {
+            "path": "src/registry/charts/recharts-pie-chart.tsx",
+            "target": "components/evilcharts/charts/recharts-pie-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "recharts-pie-chart",
+        "registryDependencies": [
+          "@evilcharts/recharts-chart",
+          "@evilcharts/recharts-tooltip",
+          "@evilcharts/recharts-legend",
+          "@evilcharts/recharts-background"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "recharts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Radial bar chart component with full and semi-circle variants",
+      "id": "evilcharts/recharts-radial-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Recharts Radial Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/recharts-chart",
+        "@evilcharts/recharts-tooltip",
+        "@evilcharts/recharts-legend",
+        "@evilcharts/recharts-background"
+      ],
+      "slug": "recharts-radial-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "37b0c88aab5326231801727cd53b44d1989c4f47",
+          "path": "src/registry/charts/recharts-radial-chart.tsx",
+          "sha256": "1445226e0365c4b4747da16e17cd86e9d7bdf96bf1a90cfa9a95cd9b8e6e6d63",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-radial-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/recharts-radial-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-radial-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "recharts",
+          "motion"
+        ],
+        "description": "Radial bar chart component with full and semi-circle variants",
+        "files": [
+          {
+            "path": "src/registry/charts/recharts-radial-chart.tsx",
+            "target": "components/evilcharts/charts/recharts-radial-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "recharts-radial-chart",
+        "registryDependencies": [
+          "@evilcharts/recharts-chart",
+          "@evilcharts/recharts-tooltip",
+          "@evilcharts/recharts-legend",
+          "@evilcharts/recharts-background"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "recharts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Radar chart component with filled and lines variants",
+      "id": "evilcharts/recharts-radar-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Recharts Radar Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/recharts-chart",
+        "@evilcharts/recharts-tooltip",
+        "@evilcharts/recharts-legend",
+        "@evilcharts/recharts-dot",
+        "@evilcharts/recharts-background"
+      ],
+      "slug": "recharts-radar-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "98738589c404340e5fc986ae6580198edb2dc2ca",
+          "path": "src/registry/charts/recharts-radar-chart.tsx",
+          "sha256": "fd30c1b5186ad2c1f6fd3e35b0e6a5a6c510c640861b406af1a6d3c9e89897c4",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-radar-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/recharts-radar-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-radar-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "recharts",
+          "motion"
+        ],
+        "description": "Radar chart component with filled and lines variants",
+        "files": [
+          {
+            "path": "src/registry/charts/recharts-radar-chart.tsx",
+            "target": "components/evilcharts/charts/recharts-radar-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "recharts-radar-chart",
+        "registryDependencies": [
+          "@evilcharts/recharts-chart",
+          "@evilcharts/recharts-tooltip",
+          "@evilcharts/recharts-legend",
+          "@evilcharts/recharts-dot",
+          "@evilcharts/recharts-background"
+        ],
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "recharts",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Sankey chart component for visualizing flow data with nodes and links",
+      "id": "evilcharts/recharts-sankey-chart",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Recharts Sankey Chart",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "evilcharts",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "@evilcharts/recharts-chart",
+        "@evilcharts/recharts-tooltip",
+        "@evilcharts/recharts-background"
+      ],
+      "slug": "recharts-sankey-chart",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "55922e24d265002a7545da2ea69c98de7662767b",
+          "path": "src/registry/charts/recharts-sankey-chart.tsx",
+          "sha256": "33dfe779d9be15df575b8c995217040897f9c021b28c9366ffbc87a8b566ac58",
+          "url": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-sankey-chart.tsx"
+        }
+      ],
+      "sourcePath": "src/registry/charts/recharts-sankey-chart.tsx",
+      "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+      "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/src/registry/charts/recharts-sankey-chart.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "recharts",
+          "motion"
+        ],
+        "description": "Sankey chart component for visualizing flow data with nodes and links",
+        "files": [
+          {
+            "path": "src/registry/charts/recharts-sankey-chart.tsx",
+            "target": "components/evilcharts/charts/recharts-sankey-chart.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "recharts-sankey-chart",
+        "registryDependencies": [
+          "@evilcharts/recharts-chart",
+          "@evilcharts/recharts-tooltip",
+          "@evilcharts/recharts-background"
+        ],
+        "type": "registry:component"
+      }
+    }
+  ],
+  "licence": {
+    "additionalLicencePaths": [
+      "LICENSE"
+    ],
+    "expression": "MIT",
+    "gitBlobSha": "49228a9586c40ffca3c8762ab569138b7d9637dd",
+    "note": "Root-text assessment only. Additional terms, inherited notices, third-party assets and preview permissions require separate review.",
+    "path": "LICENSE",
+    "publicationApproved": false,
+    "rootTextCommercialUse": "allowed",
+    "rootTextRedistribution": "allowed",
+    "sha256": "7b6baf25f6caa0de061a2c99a47205d6651cdefc6e636910bc51bb3853ed056e",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/LICENSE"
+  },
+  "name": "EvilCharts",
+  "observedAt": "2026-09-20T22:00:50.444096Z",
+  "previewStrategy": "Unapproved. Prefer official isolated demos; otherwise render pinned source. Never fabricate a preview.",
+  "providerId": "evilcharts",
+  "publicationApproved": false,
+  "repository": "legions-developer/evilcharts",
+  "retainedEvidence": [
+    {
+      "path": "data/registry/licences/evilcharts/500ecd44c1fdcf319ba83ea68f3771bc76125974.txt",
+      "sha256": "7b6baf25f6caa0de061a2c99a47205d6651cdefc6e636910bc51bb3853ed056e"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/evilcharts/500ecd44c1fdcf319ba83ea68f3771bc76125974/upstream/README.md",
+      "sha256": "f339e0eff7919dc9f2e5e8697b5b51c3b8ac019d90c4d7d48a8bbb7ed1d3acaf"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/evilcharts/500ecd44c1fdcf319ba83ea68f3771bc76125974/upstream/registry.json",
+      "sha256": "68811224d182f9e318604e2d03499e8f2e63a4869a749fbc8e96536c48cbe211"
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceRef": "500ecd44c1fdcf319ba83ea68f3771bc76125974",
+  "status": "captured-unpublished",
+  "unresolvedRisks": [
+    "Official first-party identity needs signed-off website/repository evidence.",
+    "No actual component preview has passed browser acceptance.",
+    "Installation and transitive dependency evidence must be reviewed before publication.",
+    "Production project, Neon branch/database/endpoint and post-merge deployment acceptance remain unverified."
+  ],
+  "website": "https://evilcharts.com/"
+}

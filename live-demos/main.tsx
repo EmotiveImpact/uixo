@@ -24,6 +24,7 @@ const origins = {
   'magic-ui': 'https://magicui.design',
   shadcn: 'https://ui.shadcn.com',
   'motion-primitives': 'https://motion-primitives.com',
+  'babelize-elements': 'https://elements.babelize.co',
 };
 const base = document.createElement('base');
 base.href = origins[id.split('/')[0]] + '/';

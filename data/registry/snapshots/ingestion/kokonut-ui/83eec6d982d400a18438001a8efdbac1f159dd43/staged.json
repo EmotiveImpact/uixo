@@ -1,0 +1,2854 @@
+{
+  "actualPublishedCount": 0,
+  "archiveSha256": "abf75ffad9f70e44825d398c8e4845e143c6fe253fa537a122f4d9160047607f",
+  "branch": "main",
+  "excludedCount": 5,
+  "exclusions": [
+    {
+      "name": "use-auto-resize-textarea",
+      "reason": "Out of individual web-component scope: registry:hook"
+    },
+    {
+      "name": "use-click-outside",
+      "reason": "Out of individual web-component scope: registry:hook"
+    },
+    {
+      "name": "use-copy-to-clipboard",
+      "reason": "Out of individual web-component scope: registry:hook"
+    },
+    {
+      "name": "use-mobile",
+      "reason": "Out of individual web-component scope: registry:hook"
+    },
+    {
+      "name": "utils",
+      "reason": "Out of individual web-component scope: registry:lib"
+    }
+  ],
+  "installationStrategy": "Use retained upstream evidence. No installation command is approved by this capture.",
+  "inventoryCount": 46,
+  "items": [
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Animated AI chat input with model selection dropdown, file attachment and auto-resizing textarea. Built with React, Tailwind CSS and Motion.",
+      "id": "kokonut-ui/ai-prompt",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "AI Input Selector",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "textarea",
+        "button",
+        "dropdown-menu"
+      ],
+      "slug": "ai-prompt",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "c8b0003adbe7f686760c09cecc46fa41eb827767",
+          "path": "components/kokonutui/ai-prompt.tsx",
+          "sha256": "999d532239549e615b2fac74247cbe9c80991387301202d70c4219c2a936dcfe",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/ai-prompt.tsx"
+        },
+        {
+          "gitBlobSha": "7fc573792f3d4bff4de6facbad38ef8b93458400",
+          "path": "hooks/use-auto-resize-textarea.ts",
+          "sha256": "2f63a48ded800f00794cf4dc2f0caf2d32c17e7e311872d4f011d8720e87fe04",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/hooks/use-auto-resize-textarea.ts"
+        },
+        {
+          "gitBlobSha": "c5d2e127c58de7e06c247ada98d5d5fae9fef7de",
+          "path": "components/icons/anthropic.tsx",
+          "sha256": "7995d87a1f2e5b71c74b7027e3d161b3ba40267bc785c655e185677161e0fd8f",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/icons/anthropic.tsx"
+        },
+        {
+          "gitBlobSha": "5d7f4f07b4e967a261ff0e8c87a7470a9d7b346a",
+          "path": "components/icons/anthropic-dark.tsx",
+          "sha256": "403462b284c92a0abef01c6954972314d535317c1d52543dc1f8e541dbc8a501",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/icons/anthropic-dark.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/ai-prompt.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/ai-prompt.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ],
+        "description": "Animated AI chat input with model selection dropdown, file attachment and auto-resizing textarea. Built with React, Tailwind CSS and Motion.",
+        "files": [
+          {
+            "path": "components/kokonutui/ai-prompt.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "hooks/use-auto-resize-textarea.ts",
+            "type": "registry:hook"
+          },
+          {
+            "path": "components/icons/anthropic.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/icons/anthropic-dark.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "ai-prompt",
+        "registryDependencies": [
+          "textarea",
+          "button",
+          "dropdown-menu"
+        ],
+        "title": "AI Input Selector",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Keyboard shortcut button with a Command icon, hover shimmer sweep, and smooth CSS transitions, built with React and Tailwind CSS.",
+      "id": "kokonut-ui/command-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Command Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "command-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "0be01b2a36794111727a5bde3b67ec1258b60d92",
+          "path": "components/kokonutui/command-button.tsx",
+          "sha256": "182c98c05dce120908ca70961ca9d0eb5edce78d86cebba7f1eed427117e06cc",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/command-button.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/command-button.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/command-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react"
+        ],
+        "description": "Keyboard shortcut button with a Command icon, hover shimmer sweep, and smooth CSS transitions, built with React and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/command-button.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "command-button",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Command Button",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Interactive card that flips in 3D on hover to reveal features and a call to action, built with React and Tailwind CSS transforms and transitions.",
+      "id": "kokonut-ui/card-flip",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Card Flip",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "card-flip",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "b254129304040da95e0f2488859997e38a90ceb7",
+          "path": "components/kokonutui/card-flip.tsx",
+          "sha256": "d9ac9c1b8f0663771bebd7f5e4171ba7bdb1d37db18029f8afa7de4c1a76564f",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/card-flip.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/card-flip.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/card-flip.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react"
+        ],
+        "description": "Interactive card that flips in 3D on hover to reveal features and a call to action, built with React and Tailwind CSS transforms and transitions.",
+        "files": [
+          {
+            "path": "components/kokonutui/card-flip.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "card-flip",
+        "registryDependencies": [],
+        "title": "Card Flip",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Bottom drawer with spring-based slide-in and staggered content reveal, built on Vaul with React, Motion, and Tailwind CSS.",
+      "id": "kokonut-ui/smooth-drawer",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Smooth Drawer",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "drawer",
+        "button"
+      ],
+      "slug": "smooth-drawer",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "8d6f6b516d5296ee6fb27a23b8c574927667caf1",
+          "path": "components/kokonutui/smooth-drawer.tsx",
+          "sha256": "12140b2a4ec7ef5a9f00bdf18d0ee062275b9fd77a73f685b26748c2ae586055",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/smooth-drawer.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/smooth-drawer.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/smooth-drawer.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Bottom drawer with spring-based slide-in and staggered content reveal, built on Vaul with React, Motion, and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/smooth-drawer.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "smooth-drawer",
+        "registryDependencies": [
+          "drawer",
+          "button"
+        ],
+        "title": "Smooth Drawer",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Hero section with translucent geometric shapes that drop in and float over a gradient backdrop. Built with React, Tailwind CSS and Motion.",
+      "id": "kokonut-ui/shape-hero",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Shapes Hero",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "shape-hero",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "37f4a48796c8a0c67db63fb38c4b918a053f34d4",
+          "path": "components/kokonutui/shape-hero.tsx",
+          "sha256": "d5385d1d843fb1b8117cd5d8b34d7f994eb76d6ffc237e379e20fcefdf3c4eb2",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/shape-hero.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/shape-hero.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/shape-hero.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Hero section with translucent geometric shapes that drop in and float over a gradient backdrop. Built with React, Tailwind CSS and Motion.",
+        "files": [
+          {
+            "path": "components/kokonutui/shape-hero.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "shape-hero",
+        "registryDependencies": [],
+        "title": "Shapes Hero",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "feedback",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Animated AI thinking indicator that cycles status messages with a shimmering gradient text effect. Built with React, Tailwind CSS and Motion.",
+      "id": "kokonut-ui/ai-text-loading",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "AI Text Loading",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "ai-text-loading",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "d40b7335a65d7f5233dd8127448b61fd1a0a6a6b",
+          "path": "components/kokonutui/ai-text-loading.tsx",
+          "sha256": "a565572da23892da2af714bd321de744529ecd88d7602f8d8a46a43660a25221",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/ai-text-loading.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/ai-text-loading.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/ai-text-loading.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Animated AI thinking indicator that cycles status messages with a shimmering gradient text effect. Built with React, Tailwind CSS and Motion.",
+        "files": [
+          {
+            "path": "components/kokonutui/ai-text-loading.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "ai-text-loading",
+        "registryDependencies": [],
+        "title": "AI Text Loading",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "text",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Animated shimmer text with a looping gradient sweep across the letters, built with React, Tailwind CSS gradients and Motion animations.",
+      "id": "kokonut-ui/shimmer-text",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Shimmer Text",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "shimmer-text",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "759df88ddfb9232cf7a85065a36f1e319c49138f",
+          "path": "components/kokonutui/shimmer-text.tsx",
+          "sha256": "b87779c25c71c21d2c4f02ad8632e94d478b699748a93db30db04a327e0d786a",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/shimmer-text.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/shimmer-text.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/shimmer-text.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Animated shimmer text with a looping gradient sweep across the letters, built with React, Tailwind CSS gradients and Motion animations.",
+        "files": [
+          {
+            "path": "components/kokonutui/shimmer-text.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "shimmer-text",
+        "registryDependencies": [],
+        "title": "Shimmer Text",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "media",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Horizontally scrolling card carousel with ratings, badges and arrow navigation, built with React, Tailwind CSS and shadcn/ui primitives.",
+      "id": "kokonut-ui/carousel-cards",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Carousel Cards",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "button"
+      ],
+      "slug": "carousel-cards",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "1ecacbeef4d992d46edd34ceb4db43db8a859362",
+          "path": "components/kokonutui/carousel-cards.tsx",
+          "sha256": "644fc1134d1d8e314116fdb9110be382bf7b8d72c00cd9a14b69c73e40b0da4f",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/carousel-cards.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/carousel-cards.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/carousel-cards.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react"
+        ],
+        "description": "Horizontally scrolling card carousel with ratings, badges and arrow navigation, built with React, Tailwind CSS and shadcn/ui primitives.",
+        "files": [
+          {
+            "path": "components/kokonutui/carousel-cards.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "carousel-cards",
+        "registryDependencies": [
+          "card",
+          "badge",
+          "button"
+        ],
+        "title": "Carousel Cards",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Drag and drop file upload with animated progress, file validation and error states. Built with React, Tailwind CSS and Motion animations.",
+      "id": "kokonut-ui/file-upload",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "File Upload",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "file-upload",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "07c9f6092fb23e120348274e8b15df6f30318b39",
+          "path": "components/kokonutui/file-upload.tsx",
+          "sha256": "744833d19215d833fd586bd0b72aca43961cf282a7292929ea13b3f7a5b7904c",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/file-upload.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/file-upload.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/file-upload.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ],
+        "description": "Drag and drop file upload with animated progress, file validation and error states. Built with React, Tailwind CSS and Motion animations.",
+        "files": [
+          {
+            "path": "components/kokonutui/file-upload.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "file-upload",
+        "registryDependencies": [],
+        "title": "File Upload",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Search bar with debounced input, shortcut hints, and an animated action suggestions dropdown, built with React, Motion, and Tailwind CSS.",
+      "id": "kokonut-ui/action-search-bar",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Action Search Bar",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "input"
+      ],
+      "slug": "action-search-bar",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "a3aff651019fe1e539a2baef440d10f18a351584",
+          "path": "components/kokonutui/action-search-bar.tsx",
+          "sha256": "c36b256f6f7526423ede140b1644f171cef6aa665d73af368ed39d4b0e27d2ac",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/action-search-bar.tsx"
+        },
+        {
+          "gitBlobSha": "0d4f006fcf2739a9ed2e3c6c4e5d783f457094d7",
+          "path": "hooks/use-debounce.ts",
+          "sha256": "b9be9fe86d974a4ae317844aaff567b115bbc5fc862309c57f453586afef4dda",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/hooks/use-debounce.ts"
+        }
+      ],
+      "sourcePath": "components/kokonutui/action-search-bar.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/action-search-bar.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ],
+        "description": "Search bar with debounced input, shortcut hints, and an animated action suggestions dropdown, built with React, Motion, and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/action-search-bar.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "hooks/use-debounce.ts",
+            "type": "registry:hook"
+          }
+        ],
+        "name": "action-search-bar",
+        "registryDependencies": [
+          "input"
+        ],
+        "title": "Action Search Bar",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "AI search chat input with toggleable web search mode, file attachment and auto-resizing textarea. Built with React, Tailwind CSS and Motion.",
+      "id": "kokonut-ui/ai-input-search",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "AI Input Search",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "textarea"
+      ],
+      "slug": "ai-input-search",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "cab1d38cbde899e56c1598b02518e17f57be5675",
+          "path": "components/kokonutui/ai-input-search.tsx",
+          "sha256": "eaa3b8bd1dbc4a9cc2abcc9f52f9b4b21f7d453580540d046dd7659363edd3c9",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/ai-input-search.tsx"
+        },
+        {
+          "gitBlobSha": "7fc573792f3d4bff4de6facbad38ef8b93458400",
+          "path": "hooks/use-auto-resize-textarea.ts",
+          "sha256": "2f63a48ded800f00794cf4dc2f0caf2d32c17e7e311872d4f011d8720e87fe04",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/hooks/use-auto-resize-textarea.ts"
+        }
+      ],
+      "sourcePath": "components/kokonutui/ai-input-search.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/ai-input-search.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "AI search chat input with toggleable web search mode, file attachment and auto-resizing textarea. Built with React, Tailwind CSS and Motion.",
+        "files": [
+          {
+            "path": "components/kokonutui/ai-input-search.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "hooks/use-auto-resize-textarea.ts",
+            "type": "registry:hook"
+          }
+        ],
+        "name": "ai-input-search",
+        "registryDependencies": [
+          "textarea"
+        ],
+        "title": "AI Input Search",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Multi-step currency exchange card with animated progress and SVG checkmark confirmation, built with React, Tailwind CSS and Motion animations.",
+      "id": "kokonut-ui/currency-transfer",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Currency Transfer",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "card",
+        "tooltip"
+      ],
+      "slug": "currency-transfer",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "dcf9b0b2c9e394a21a1d01525217fdbdec99d8d0",
+          "path": "components/kokonutui/currency-transfer.tsx",
+          "sha256": "f0e056696ef792ef9da517f4db001c96786b9a87b299cb24567de9a08185e82b",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/currency-transfer.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/currency-transfer.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/currency-transfer.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ],
+        "description": "Multi-step currency exchange card with animated progress and SVG checkmark confirmation, built with React, Tailwind CSS and Motion animations.",
+        "files": [
+          {
+            "path": "components/kokonutui/currency-transfer.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "currency-transfer",
+        "registryDependencies": [
+          "card",
+          "tooltip"
+        ],
+        "title": "Currency Transfer",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "backgrounds",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Animated background of flowing SVG line paths drawn across the hero section. Built with React, Tailwind CSS and Motion path animations.",
+      "id": "kokonut-ui/background-paths",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Background Paths",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "background-paths",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "64c5b88b239046d5c2dce12d47dcce8982267e40",
+          "path": "components/kokonutui/background-paths.tsx",
+          "sha256": "a2b19a8ae00c0d74e27680ff6fd6410cac7d2bda60e9adcdc51cad66d1ed8fe9",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/background-paths.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/background-paths.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/background-paths.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Animated background of flowing SVG line paths drawn across the hero section. Built with React, Tailwind CSS and Motion path animations.",
+        "files": [
+          {
+            "path": "components/kokonutui/background-paths.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "background-paths",
+        "registryDependencies": [],
+        "title": "Background Paths",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Interactive card with an animated dot pattern that repels away from the cursor, powered by React, Tailwind CSS and Motion spring physics.",
+      "id": "kokonut-ui/mouse-effect-card",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Mouse Effect Card",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "card",
+        "button"
+      ],
+      "slug": "mouse-effect-card",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "f43ed00eca55f9de6a05773099b54b11ce0b0fe8",
+          "path": "components/kokonutui/mouse-effect-card.tsx",
+          "sha256": "3a1a1c3308214e69a6a1129e2d1191cae87b6d071b70a8a1ded0253b263d7483",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/mouse-effect-card.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/mouse-effect-card.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/mouse-effect-card.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Interactive card with an animated dot pattern that repels away from the cursor, powered by React, Tailwind CSS and Motion spring physics.",
+        "files": [
+          {
+            "path": "components/kokonutui/mouse-effect-card.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "mouse-effect-card",
+        "registryDependencies": [
+          "card",
+          "button"
+        ],
+        "title": "Mouse Effect Card",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "backgrounds",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Animated background of drifting light beams rendered on an HTML canvas with configurable intensity. Built with React, Tailwind CSS and Motion.",
+      "id": "kokonut-ui/beams-background",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Beams Background",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "beams-background",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "58decd29e5d3fe93682ccb315017201319e3bfe4",
+          "path": "components/kokonutui/beams-background.tsx",
+          "sha256": "e23e686a270c5bb160933147f28e00b86c54c550427f02649e2380d477bfd64e",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/beams-background.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/beams-background.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/beams-background.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Animated background of drifting light beams rendered on an HTML canvas with configurable intensity. Built with React, Tailwind CSS and Motion.",
+        "files": [
+          {
+            "path": "components/kokonutui/beams-background.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "beams-background",
+        "registryDependencies": [],
+        "title": "Beams Background",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Canvas particle flow field background with noise-driven streams of glowing light, color themes and density options. Built with React and Motion.",
+      "id": "kokonut-ui/flow-field",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Flow Field",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "flow-field",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "c9ce160fc0b43948e41b051536b4c1053f7519b6",
+          "path": "components/kokonutui/flow-field.tsx",
+          "sha256": "1b359ac0069161cbb33eeb74e39ecb4285fd0c177c6832676dd5767d9c9a56dd",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/flow-field.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/flow-field.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/flow-field.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Canvas particle flow field background with noise-driven streams of glowing light, color themes and density options. Built with React and Motion.",
+        "files": [
+          {
+            "path": "components/kokonutui/flow-field.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "flow-field",
+        "registryDependencies": [],
+        "title": "Flow Field",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Animated activity rings card inspired by the Apple Fitness app, with progress circles built in React using Tailwind CSS and Motion animations.",
+      "id": "kokonut-ui/apple-activity-card",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Apple Activity Card",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "apple-activity-card",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "10046026dcd1bf9190c3cb4ab0131653a93f8147",
+          "path": "components/kokonutui/apple-activity-card.tsx",
+          "sha256": "a5d8992a4668b9c848d354046246f2b4b444bf8d830f3c58b69338a7fad83dad",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/apple-activity-card.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/apple-activity-card.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/apple-activity-card.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Animated activity rings card inspired by the Apple Fitness app, with progress circles built in React using Tailwind CSS and Motion animations.",
+        "files": [
+          {
+            "path": "components/kokonutui/apple-activity-card.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "apple-activity-card",
+        "registryDependencies": [],
+        "title": "Apple Activity Card",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "AI voice input button with recording timer, pulsing waveform bars and listening state. Built with React and animated Tailwind CSS styles.",
+      "id": "kokonut-ui/ai-voice",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "AI Voice",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "ai-voice",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "6e439a833ccfdc17dc12f348b287981a4ef25d05",
+          "path": "components/kokonutui/ai-voice.tsx",
+          "sha256": "ec4d5f0041ab70757f48a2f39c4688dea47b41dfea2ab11680b0d87c5a65d8af",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/ai-voice.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/ai-voice.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/ai-voice.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion",
+          "lucide-react"
+        ],
+        "description": "AI voice input button with recording timer, pulsing waveform bars and listening state. Built with React and animated Tailwind CSS styles.",
+        "files": [
+          {
+            "path": "components/kokonutui/ai-voice.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "ai-voice",
+        "registryDependencies": [],
+        "title": "AI Voice",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Animated tab switcher with a sliding active indicator and smooth card content transitions, built with React, Motion, and Tailwind CSS.",
+      "id": "kokonut-ui/smooth-tab",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Smooth Tab",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "smooth-tab",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "bcaad99bac8bfc16aef578921971e449fb9d8b63",
+          "path": "components/kokonutui/smooth-tab.tsx",
+          "sha256": "bb2fc18f312519c009418151a26ea925ad57dcfb2b48e0a1733e66c715f7ea74",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/smooth-tab.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/smooth-tab.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/smooth-tab.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion",
+          "lucide-react"
+        ],
+        "description": "Animated tab switcher with a sliding active indicator and smooth card content transitions, built with React, Motion, and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/smooth-tab.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "smooth-tab",
+        "registryDependencies": [],
+        "title": "Smooth Tab",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Animated team size selector with stacked overlapping avatars, spring transitions and increment controls. Built with React, Tailwind CSS and Motion.",
+      "id": "kokonut-ui/team-selector",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Team Selector",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "team-selector",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "33a204138b27290820c33c950ac9636058ac146d",
+          "path": "components/kokonutui/team-selector.tsx",
+          "sha256": "3e152a0c608f81e611d8ec3ac4269e69cf8a8a51b3bfde0bd5a10d269abd9b18",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/team-selector.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/team-selector.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/team-selector.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion",
+          "lucide-react"
+        ],
+        "description": "Animated team size selector with stacked overlapping avatars, spring transitions and increment controls. Built with React, Tailwind CSS and Motion.",
+        "files": [
+          {
+            "path": "components/kokonutui/team-selector.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "team-selector",
+        "registryDependencies": [],
+        "title": "Team Selector",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Light and dark theme toggle button with a rotating sun icon and shimmer hover effect, built with React, next-themes, and Tailwind CSS.",
+      "id": "kokonut-ui/switch-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Switch Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "switch-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "3c64135fb41ac1e098cb1a50ed791de893ab3aea",
+          "path": "components/kokonutui/switch-button.tsx",
+          "sha256": "93b214bf0041a1e9e94f2692c45c79c979973ded0983c379ce0a2bc96dde4c65",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/switch-button.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/switch-button.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/switch-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react"
+        ],
+        "description": "Light and dark theme toggle button with a rotating sun icon and shimmer hover effect, built with React, next-themes, and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/switch-button.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "switch-button",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Switch Button",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Responsive bento grid of feature cards with animated charts, counters and timelines, built with React, Tailwind CSS and Motion animations.",
+      "id": "kokonut-ui/bento-grid",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Bento Grid",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "bento-grid",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "4cc1ba2a3813094bf2916b79724a170cfe1d8b7d",
+          "path": "components/kokonutui/bento-grid.tsx",
+          "sha256": "da2254450e864be2ff8107b2b839adc1facaef10969a09e2818d6182e41a3bf0",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/bento-grid.tsx"
+        },
+        {
+          "gitBlobSha": "c5d2e127c58de7e06c247ada98d5d5fae9fef7de",
+          "path": "components/icons/anthropic.tsx",
+          "sha256": "7995d87a1f2e5b71c74b7027e3d161b3ba40267bc785c655e185677161e0fd8f",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/icons/anthropic.tsx"
+        },
+        {
+          "gitBlobSha": "5d7f4f07b4e967a261ff0e8c87a7470a9d7b346a",
+          "path": "components/icons/anthropic-dark.tsx",
+          "sha256": "403462b284c92a0abef01c6954972314d535317c1d52543dc1f8e541dbc8a501",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/icons/anthropic-dark.tsx"
+        },
+        {
+          "gitBlobSha": "dab1b575dbcccfa9b6bab74ca271f1698365c94b",
+          "path": "components/icons/gemini.tsx",
+          "sha256": "177b60c1f1e1022970f14bf09a3c75e01fe33def1ed314e1ae0a122e20cd335e",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/icons/gemini.tsx"
+        },
+        {
+          "gitBlobSha": "0416d503e6c40214b32da450ec72e2b74c40b3a2",
+          "path": "components/icons/open-ai.tsx",
+          "sha256": "3633d159ec885541a122d00a5956c67dcd0b77964a7f3d79e039b3537db3a015",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/icons/open-ai.tsx"
+        },
+        {
+          "gitBlobSha": "2a00c8bf26e353925e13a2bd7583818be451c7d9",
+          "path": "components/icons/open-ai-dark.tsx",
+          "sha256": "8f728b0d0a5b0f5011cd654121913989f799d407b7bec6c5aa426e35e180d4a1",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/icons/open-ai-dark.tsx"
+        },
+        {
+          "gitBlobSha": "20119f381afcb5e5528adeaa9819db5897b7e295",
+          "path": "components/icons/mistral.tsx",
+          "sha256": "2928c7d889adccec34399c608721cc436d6bfbfebc6bf5cfa0c2bebd8fd9dbf6",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/icons/mistral.tsx"
+        },
+        {
+          "gitBlobSha": "5407edaaaf1cc08a2938e54753b8042ae5bd31d2",
+          "path": "components/icons/deepseek.tsx",
+          "sha256": "5676240396cb6ba1097e2ca0384e109ad29843a2b71f0fe9398ca2b14edef55e",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/icons/deepseek.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/bento-grid.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/bento-grid.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ],
+        "description": "Responsive bento grid of feature cards with animated charts, counters and timelines, built with React, Tailwind CSS and Motion animations.",
+        "files": [
+          {
+            "path": "components/kokonutui/bento-grid.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/icons/anthropic.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/icons/anthropic-dark.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/icons/gemini.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/icons/open-ai.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/icons/open-ai-dark.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/icons/mistral.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/icons/deepseek.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "bento-grid",
+        "registryDependencies": [],
+        "title": "Bento Grid",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Share button that expands into a row of social icon buttons with staggered Motion animations on hover, built with React and Tailwind CSS.",
+      "id": "kokonut-ui/social-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Social Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "social-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "97ee3bd62dec7f2440ae3cc1d6bd327cea2440f8",
+          "path": "components/kokonutui/social-button.tsx",
+          "sha256": "f96be9b4c16b8392dca8abf546dc4e3d71b89ff04de079fcccca39ceb4cf0333",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/social-button.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/social-button.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/social-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ],
+        "description": "Share button that expands into a row of social icon buttons with staggered Motion animations on hover, built with React and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/social-button.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "social-button",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Social Button",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Press-and-hold confirmation button with an animated progress fill, configurable hold duration, and color variants, built with React and Motion.",
+      "id": "kokonut-ui/hold-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Hold Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "hold-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "3ed5b1c7c6b3955a7327d146b65a97cc4461b5cf",
+          "path": "components/kokonutui/hold-button.tsx",
+          "sha256": "af7e3030d802534b0ab14869eb871aa0ca5f4a234cb777849874809da7e0c71f",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/hold-button.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/hold-button.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/hold-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ],
+        "description": "Press-and-hold confirmation button with an animated progress fill, configurable hold duration, and color variants, built with React and Motion.",
+        "files": [
+          {
+            "path": "components/kokonutui/hold-button.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "hold-button",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Hold Button",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Magnetic button that pulls floating particles to its center on hover using Motion spring animations, built with React and Tailwind CSS.",
+      "id": "kokonut-ui/attract-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Magnet Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "attract-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "2d91bbe02dab7c949d5e84c99c4d35b7a62101ec",
+          "path": "components/kokonutui/attract-button.tsx",
+          "sha256": "8edcd830aa5233ae32a4f02818e5e530fe0abd342b6b6ccf8805cbbd00b035e9",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/attract-button.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/attract-button.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/attract-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ],
+        "description": "Magnetic button that pulls floating particles to its center on hover using Motion spring animations, built with React and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/attract-button.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "attract-button",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Magnet Button",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "Layered gradient button with emerald, purple, and orange variants, soft inner glow, and hover overlay, styled entirely with Tailwind CSS in React.",
+      "id": "kokonut-ui/gradient-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Gradient Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "gradient-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "c28d25be17787a97d4a645084b6abc8afb367094",
+          "path": "components/kokonutui/gradient-button.tsx",
+          "sha256": "690f58faa7c751cf629ad4b447eee321c08254f02fc32a837861848e237cb08a",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/gradient-button.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/gradient-button.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/gradient-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "Layered gradient button with emerald, purple, and orange variants, soft inner glow, and hover overlay, styled entirely with Tailwind CSS in React.",
+        "files": [
+          {
+            "path": "components/kokonutui/gradient-button.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "gradient-button",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Gradient Button",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [],
+      "dependencyEvidenceComplete": true,
+      "description": "Open in v0 button that sends a component registry JSON to v0.dev for instant editing, built with React, the shadcn Button, and Tailwind CSS.",
+      "id": "kokonut-ui/v0-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "V0 Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "v0-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "4ac547c07f6c32354089f0e13ca6f4acb87a20a7",
+          "path": "components/kokonutui/v0-button.tsx",
+          "sha256": "5f295f438212e57e957da9bbff461a82b96adbbe673bb2de2efa9e660c60bb73",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/v0-button.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/v0-button.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/v0-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [],
+        "description": "Open in v0 button that sends a component registry JSON to v0.dev for instant editing, built with React, the shadcn Button, and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/v0-button.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "v0-button",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "V0 Button",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Figma-inspired toolbar where the selected tool expands to reveal its label with spring animations, built with React, Motion, and Tailwind CSS.",
+      "id": "kokonut-ui/toolbar",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Toolbar",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "toolbar",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "6ba513ca442175d4a5bbe6109c4f0468e3a0ae54",
+          "path": "components/kokonutui/toolbar.tsx",
+          "sha256": "c68bf71709dda30f6495c37ddebe572a74937e6bf69140ef8f29822ec25e315d",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/toolbar.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/toolbar.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/toolbar.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ],
+        "description": "Figma-inspired toolbar where the selected tool expands to reveal its label with spring animations, built with React, Motion, and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/toolbar.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "toolbar",
+        "registryDependencies": [],
+        "title": "Toolbar",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "feedback",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Animated AI loading state cycling task statuses through a scrolling code-style log with an SVG progress spinner. Built with React and Tailwind CSS.",
+      "id": "kokonut-ui/ai-loading",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "AI State Loading",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "ai-loading",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "f6314f4e8a898e8766f8533c09dcb0f995843543",
+          "path": "components/kokonutui/ai-loading.tsx",
+          "sha256": "04b3e3facb60bca3aa0c5729036502100afe9fff13605a77a396007d3757583e",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/ai-loading.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/ai-loading.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/ai-loading.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Animated AI loading state cycling task statuses through a scrolling code-style log with an SVG progress spinner. Built with React and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/ai-loading.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "ai-loading",
+        "registryDependencies": [],
+        "title": "AI State Loading",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Stack of product cards that expands on click to reveal details and specs, animated with Motion and styled with React and Tailwind CSS.",
+      "id": "kokonut-ui/card-stack",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Stack",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "card-stack",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "8af1ec69d184bfbd8edcc78a898477686177d22a",
+          "path": "components/kokonutui/card-stack.tsx",
+          "sha256": "08852db2a7ac4587d586e4989099f63e6eb76dc769a4c9521493e40ece8fc0b6",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/card-stack.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/card-stack.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/card-stack.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Stack of product cards that expands on click to reveal details and specs, animated with Motion and styled with React and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/card-stack.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "card-stack",
+        "registryDependencies": [],
+        "title": "Stack",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "forms",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Animated avatar picker with SVG avatar options, colored selection ring and username input. Built with React, Tailwind CSS and Motion.",
+      "id": "kokonut-ui/avatar-picker",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Avatar Picker",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "card",
+        "button",
+        "input"
+      ],
+      "slug": "avatar-picker",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "9b1e2ef0b66a1cf1da0dc24a12307bb233f5bbc8",
+          "path": "components/kokonutui/avatar-picker.tsx",
+          "sha256": "aa1ba402f26b7cf52adea1e4589df8cab9f32b0702d77ec87bd02b4470739e41",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/avatar-picker.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/avatar-picker.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/avatar-picker.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ],
+        "description": "Animated avatar picker with SVG avatar options, colored selection ring and username input. Built with React, Tailwind CSS and Motion.",
+        "files": [
+          {
+            "path": "components/kokonutui/avatar-picker.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "avatar-picker",
+        "registryDependencies": [
+          "card",
+          "button",
+          "input"
+        ],
+        "title": "Avatar Picker",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Typewriter text animation that types and deletes multiple sequences with a blinking cursor and auto loop, built with React and Motion.",
+      "id": "kokonut-ui/type-writer",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Typing Text",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "type-writer",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "b741577e4aa5ca62429cc100a16adaabd9fae0ef",
+          "path": "components/kokonutui/type-writer.tsx",
+          "sha256": "b01eec3b2b4c69ded9fa393d16d610e7f9c787db3d5110649a4181a83041c591",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/type-writer.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/type-writer.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/type-writer.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Typewriter text animation that types and deletes multiple sequences with a blinking cursor and auto loop, built with React and Motion.",
+        "files": [
+          {
+            "path": "components/kokonutui/type-writer.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "type-writer",
+        "registryDependencies": [],
+        "title": "Typing Text",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "text",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Hover text effect with layered colorful shadows that snap flat on mouseover, built with React, Tailwind CSS and Motion hover animations.",
+      "id": "kokonut-ui/swoosh-text",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Swoosh Text",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "swoosh-text",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "a9c82a0b787b35312e3210ed0a865cfae2b3d9af",
+          "path": "components/kokonutui/swoosh-text.tsx",
+          "sha256": "877ace40954656610bcc02e343924b626234f27c126381577813f64e2c2b2e0e",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/swoosh-text.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/swoosh-text.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/swoosh-text.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Hover text effect with layered colorful shadows that snap flat on mouseover, built with React, Tailwind CSS and Motion hover animations.",
+        "files": [
+          {
+            "path": "components/kokonutui/swoosh-text.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "swoosh-text",
+        "registryDependencies": [],
+        "title": "Swoosh Text",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "text",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Text effect that splits into two offset slices and merges together on hover using clip-path, built with React, Tailwind CSS and Motion animations.",
+      "id": "kokonut-ui/sliced-text",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Sliced Text",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "sliced-text",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "d375858d721e3fb6ec514edf0df145a33ff4cf8d",
+          "path": "components/kokonutui/sliced-text.tsx",
+          "sha256": "e11a1347b2c0b4e66ac497130cf0c63a976cf242cf7c7c6af3cd703078fed3ad",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/sliced-text.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/sliced-text.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/sliced-text.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Text effect that splits into two offset slices and merges together on hover using clip-path, built with React, Tailwind CSS and Motion animations.",
+        "files": [
+          {
+            "path": "components/kokonutui/sliced-text.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "sliced-text",
+        "registryDependencies": [],
+        "title": "Sliced Text",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "text",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Customizable glitch text effect with adjustable intensity, colors and sizes, animated in React with Motion and styled with Tailwind CSS.",
+      "id": "kokonut-ui/glitch-text",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Glitch Text",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "glitch-text",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "5b4f85dc18ab8487cb5daabca4149c59b626d0f4",
+          "path": "components/kokonutui/glitch-text.tsx",
+          "sha256": "d2e96549e920b82459c8f5f330c580809de17990a7b53974a2c6aec59adf35cf",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/glitch-text.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/glitch-text.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/glitch-text.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Customizable glitch text effect with adjustable intensity, colors and sizes, animated in React with Motion and styled with Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/glitch-text.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "glitch-text",
+        "registryDependencies": [],
+        "title": "Glitch Text",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "text",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Matrix-style text effect where letters scramble through binary characters before revealing, built with React, Tailwind CSS and Motion animations.",
+      "id": "kokonut-ui/matrix-text",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Matrix Text",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "matrix-text",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "5ecaa9c0b9fa81f43f7d17c0bf6360c1735401e0",
+          "path": "components/kokonutui/matrix-text.tsx",
+          "sha256": "57d6bc5c36f533429a831abc4b1459788295cef8dbb500c7ef97e4805909b274",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/matrix-text.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/matrix-text.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/matrix-text.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Matrix-style text effect where letters scramble through binary characters before revealing, built with React, Tailwind CSS and Motion animations.",
+        "files": [
+          {
+            "path": "components/kokonutui/matrix-text.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "matrix-text",
+        "registryDependencies": [],
+        "title": "Matrix Text",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "text",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Animated text switcher that cycles through greetings in multiple languages, built with React, Tailwind CSS and Motion enter and exit transitions.",
+      "id": "kokonut-ui/dynamic-text",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Dynamic Text",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "dynamic-text",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "23e105f2cc39bf66d5f22dc7bd2b6e640a047266",
+          "path": "components/kokonutui/dynamic-text.tsx",
+          "sha256": "0cb1d29f5a8a3e6da6e3c885e10cbd9a367c56420bea5d8ace9e7d29a34d3136",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/dynamic-text.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/dynamic-text.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/dynamic-text.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Animated text switcher that cycles through greetings in multiple languages, built with React, Tailwind CSS and Motion enter and exit transitions.",
+        "files": [
+          {
+            "path": "components/kokonutui/dynamic-text.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "dynamic-text",
+        "registryDependencies": [],
+        "title": "Dynamic Text",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Button that bursts animated particles from its center on click with a quick scale press effect, built with React, Motion, and Tailwind CSS.",
+      "id": "kokonut-ui/particle-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Particle Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "particle-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "d5eb13c1d6f5c5f1b3b78266f3b119ee0226d925",
+          "path": "components/kokonutui/particle-button.tsx",
+          "sha256": "7239cbee4211282e61b77e8004c029f164f02f5b850d6cd9b96e246e4650a758",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/particle-button.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/particle-button.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/particle-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ],
+        "description": "Button that bursts animated particles from its center on click with a quick scale press effect, built with React, Motion, and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/particle-button.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "particle-button",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Particle Button",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "data-display",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "X (Twitter) style post card with author details, verified badge, reply thread and hover gradient, built with React and Tailwind CSS.",
+      "id": "kokonut-ui/tweet-card",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "X Card",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "tweet-card",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "7552218b5f2f99ba7ff51816bbce29c4d31757c2",
+          "path": "components/kokonutui/tweet-card.tsx",
+          "sha256": "b8813033611e35bc5b3f386ab12aa1f3d574f995dbb06d0b4faf3bcbbd25cc2e",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/tweet-card.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/tweet-card.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/tweet-card.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react"
+        ],
+        "description": "X (Twitter) style post card with author details, verified badge, reply thread and hover gradient, built with React and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/tweet-card.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "tweet-card",
+        "registryDependencies": [],
+        "title": "X Card",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "text",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Scroll-driven text list that highlights the active word as you scroll, using IntersectionObserver with React, Tailwind CSS and Motion animations.",
+      "id": "kokonut-ui/scroll-text",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Scroll Text",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "scroll-text",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "946e136f75d43b867897657b6dbeba081c4f1cba",
+          "path": "components/kokonutui/scroll-text.tsx",
+          "sha256": "05e021c8a5a946e7206e3ab12d75505c4975b3cb4e82d261c8629c758d6d253e",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/scroll-text.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/scroll-text.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/scroll-text.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Scroll-driven text list that highlights the active word as you scroll, using IntersectionObserver with React, Tailwind CSS and Motion animations.",
+        "files": [
+          {
+            "path": "components/kokonutui/scroll-text.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "scroll-text",
+        "registryDependencies": [],
+        "title": "Scroll Text",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Apple-inspired liquid glass card and buttons using SVG displacement filters for a refractive effect, built with React and Tailwind CSS.",
+      "id": "kokonut-ui/liquid-glass-card",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Liquid Glass",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "card",
+        "button"
+      ],
+      "slug": "liquid-glass-card",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "d4870a859735fe65331252a8f6632378daafbba6",
+          "path": "components/kokonutui/liquid-glass-card.tsx",
+          "sha256": "483feb7ef3ef441a42ce665e6cdba123313385b2c572087b4dfadaadc429b962",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/liquid-glass-card.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/liquid-glass-card.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/liquid-glass-card.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react"
+        ],
+        "description": "Apple-inspired liquid glass card and buttons using SVG displacement filters for a refractive effect, built with React and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/liquid-glass-card.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "liquid-glass-card",
+        "registryDependencies": [
+          "card",
+          "button"
+        ],
+        "title": "Liquid Glass",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "overlays",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "User profile dropdown menu with avatar, subscription and model details, and quick action links, built with React, shadcn/ui, and Tailwind CSS.",
+      "id": "kokonut-ui/profile-dropdown",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Profile Dropdown",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
+      ],
+      "slug": "profile-dropdown",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "65ceafb91944bf44cb5af95dd26fb5d8cba301f1",
+          "path": "components/kokonutui/profile-dropdown.tsx",
+          "sha256": "7c833663e62910dea23fcbab97c5b0fd13edffb278ed7a2fcdfa3000fea36f6d",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/profile-dropdown.tsx"
+        },
+        {
+          "gitBlobSha": "dab1b575dbcccfa9b6bab74ca271f1698365c94b",
+          "path": "components/icons/gemini.tsx",
+          "sha256": "177b60c1f1e1022970f14bf09a3c75e01fe33def1ed314e1ae0a122e20cd335e",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/icons/gemini.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/profile-dropdown.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/profile-dropdown.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "lucide-react"
+        ],
+        "description": "User profile dropdown menu with avatar, subscription and model details, and quick action links, built with React, shadcn/ui, and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/profile-dropdown.tsx",
+            "type": "registry:component"
+          },
+          {
+            "path": "components/icons/gemini.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "profile-dropdown",
+        "registryDependencies": [
+          "dropdown-menu"
+        ],
+        "title": "Profile Dropdown",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "other",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Animated loading indicator with rotating gradient rings, size variants and customizable title text. Built with React, Tailwind CSS and Motion.",
+      "id": "kokonut-ui/loader",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Loader",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "loader",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "99f5f4d149fdd2aa25767d6cdd3aa1c10723c70f",
+          "path": "components/kokonutui/loader.tsx",
+          "sha256": "b1d882e88876a0d56f44f777c3d935a1aa2fc7607cd6f1255a2e1c372be66a74",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/loader.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/loader.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/loader.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Animated loading indicator with rotating gradient rings, size variants and customizable title text. Built with React, Tailwind CSS and Motion.",
+        "files": [
+          {
+            "path": "components/kokonutui/loader.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "loader",
+        "registryDependencies": [],
+        "title": "Loader",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "buttons",
+      "dependencies": [
+        "motion"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Animated link button with a vertical text slide on hover and default and ghost variants, built with React, Motion, and Tailwind CSS.",
+      "id": "kokonut-ui/slide-text-button",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Slide Text Button",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "slug": "slide-text-button",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "a55d24ff7896a5ff44427794e387d31407bb3062",
+          "path": "components/kokonutui/slide-text-button.tsx",
+          "sha256": "5ebb72de04e7bf5e00344a6f64a1b44157055ae84f9f28fce2cf4ef32c86cb79",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/slide-text-button.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/slide-text-button.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/slide-text-button.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion"
+        ],
+        "description": "Animated link button with a vertical text slide on hover and default and ghost variants, built with React, Motion, and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/slide-text-button.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "slide-text-button",
+        "registryDependencies": [
+          "button"
+        ],
+        "title": "Slide Text Button",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "navigation",
+      "dependencies": [
+        "clsx"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Navigation bar whose active link morphs into a rounded pill with smooth CSS transitions, built with React, Next.js Link, and Tailwind CSS.",
+      "id": "kokonut-ui/morphic-navbar",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Morphic Navbar",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "morphic-navbar",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "e4e4f064e396afaf44e5cb87bbaedd585be71c2e",
+          "path": "components/kokonutui/morphic-navbar.tsx",
+          "sha256": "bad139e8f5b80869102f023edae22e3b7985bab093048a2e45239e31342d6082",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/morphic-navbar.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/morphic-navbar.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/morphic-navbar.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "clsx"
+        ],
+        "description": "Navigation bar whose active link morphs into a rounded pill with smooth CSS transitions, built with React, Next.js Link, and Tailwind CSS.",
+        "files": [
+          {
+            "path": "components/kokonutui/morphic-navbar.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "morphic-navbar",
+        "registryDependencies": [],
+        "title": "Morphic Navbar",
+        "type": "registry:component"
+      }
+    },
+    {
+      "categorySuggestion": "layout",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "dependencyEvidenceComplete": true,
+      "description": "Feature card grid with ambient aurora glow, magnetic 3D tilt and focus dimming on hover, built with React, Tailwind CSS and Motion springs.",
+      "id": "kokonut-ui/spotlight-cards",
+      "inventoryEvidence": {
+        "path": "registry.json",
+        "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json"
+      },
+      "kind": "component",
+      "missingSourceFiles": [],
+      "name": "Spotlight Cards",
+      "platform": "web",
+      "preview": null,
+      "previewStatus": "not-verified",
+      "providerId": "kokonut-ui",
+      "providerTags": [],
+      "publicationBlockers": [
+        "Actual component preview has not passed review and browser acceptance",
+        "Official identity, installation and complete licence review remain required"
+      ],
+      "registryDependencies": [],
+      "slug": "spotlight-cards",
+      "sourceFiles": [
+        {
+          "gitBlobSha": "4f3d6fbe117ffc2f718a25c4846b7b98543507c4",
+          "path": "components/kokonutui/spotlight-cards.tsx",
+          "sha256": "31372db211229f725b4b2ec7fe3381b7b2f5f78ba62a1e2d0f28f4f3a75ba2de",
+          "url": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/spotlight-cards.tsx"
+        }
+      ],
+      "sourcePath": "components/kokonutui/spotlight-cards.tsx",
+      "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+      "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/components/kokonutui/spotlight-cards.tsx",
+      "status": "unpublished",
+      "upstreamMetadata": {
+        "dependencies": [
+          "motion",
+          "lucide-react"
+        ],
+        "description": "Feature card grid with ambient aurora glow, magnetic 3D tilt and focus dimming on hover, built with React, Tailwind CSS and Motion springs.",
+        "files": [
+          {
+            "path": "components/kokonutui/spotlight-cards.tsx",
+            "type": "registry:component"
+          }
+        ],
+        "name": "spotlight-cards",
+        "registryDependencies": [],
+        "title": "Spotlight Cards",
+        "type": "registry:component"
+      }
+    }
+  ],
+  "licence": {
+    "additionalLicencePaths": [
+      "LICENSE"
+    ],
+    "expression": "MIT",
+    "gitBlobSha": "c5ec4f31444e458c6662d6fecd38c01b9afe42db",
+    "note": "Root-text assessment only. Additional terms, inherited notices, third-party assets and preview permissions require separate review.",
+    "path": "LICENSE",
+    "publicationApproved": false,
+    "rootTextCommercialUse": "allowed",
+    "rootTextRedistribution": "allowed",
+    "sha256": "b2e018ad1fd564608cc1ee0c2ad675ce5202c8ed9f5f68e6d09e7b6bc881d5d2",
+    "sourceUrl": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/LICENSE"
+  },
+  "name": "Kokonut UI",
+  "observedAt": "2026-09-20T22:00:51.205000Z",
+  "previewStrategy": "Unapproved. Prefer official isolated demos; otherwise render pinned source. Never fabricate a preview.",
+  "providerId": "kokonut-ui",
+  "publicationApproved": false,
+  "repository": "kokonut-labs/kokonutui",
+  "retainedEvidence": [
+    {
+      "path": "data/registry/licences/kokonut-ui/83eec6d982d400a18438001a8efdbac1f159dd43.txt",
+      "sha256": "b2e018ad1fd564608cc1ee0c2ad675ce5202c8ed9f5f68e6d09e7b6bc881d5d2"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kokonut-ui/83eec6d982d400a18438001a8efdbac1f159dd43/upstream/README.md",
+      "sha256": "fc18481da3c43fe961f8309ffd8b486e9363057ea84465c1d48542fbbc4539c0"
+    },
+    {
+      "path": "data/registry/snapshots/ingestion/kokonut-ui/83eec6d982d400a18438001a8efdbac1f159dd43/upstream/registry.json",
+      "sha256": "f2d00a578fdadbae26ec115ef3d3e2cff21047b786df53ee3d83d3eed647cef4"
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceRef": "83eec6d982d400a18438001a8efdbac1f159dd43",
+  "status": "captured-unpublished",
+  "unresolvedRisks": [
+    "Official first-party identity needs signed-off website/repository evidence.",
+    "No actual component preview has passed browser acceptance.",
+    "Installation and transitive dependency evidence must be reviewed before publication.",
+    "Production project, Neon branch/database/endpoint and post-merge deployment acceptance remain unverified."
+  ],
+  "website": "https://kokonutui.com/"
+}

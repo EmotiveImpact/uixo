@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "providerId": "babelize-elements",
+  "name": "Babelize Elements",
+  "website": "https://elements.babelize.co/",
+  "repository": "babelize/babelize-elements",
+  "branch": "main",
+  "sourceRef": "2cd92ba8acad36e6122d4c528cc81b5d99ffd587",
+  "observedAt": "2026-09-21T00:00:00.000Z",
+  "status": "reviewed-unpublished",
+  "publicationApproved": false,
+  "inventoryCount": 3,
+  "excludedCount": 0,
+  "actualPublishedCount": 0,
+  "exclusions": [],
+  "previewStrategy": "Locally render the exact pinned first-party demo source in UIXO's sandboxed live-demo runner.",
+  "installationStrategy": "Official Babelize /r/[name].json registry item with dependencies and registryDependencies taken from the pinned registry definition.",
+  "items": [
+    {
+      "id": "babelize-elements/language-switcher",
+      "providerId": "babelize-elements",
+      "slug": "language-switcher",
+      "name": "Language Switcher",
+      "description": "Copy-paste language switcher component for React with dropdown, search, RTL support, and full accessibility.",
+      "kind": "component",
+      "platform": "web",
+      "status": "unpublished",
+      "categorySuggestion": "navigation",
+      "providerTags": [
+        "localization",
+        "i18n"
+      ],
+      "sourceRef": "2cd92ba8acad36e6122d4c528cc81b5d99ffd587",
+      "sourceUrl": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/components/language-switcher.tsx",
+      "sourcePath": "src/registry/components/language-switcher.tsx",
+      "sourceFiles": [
+        {
+          "path": "src/registry/components/language-switcher.tsx",
+          "url": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/components/language-switcher.tsx"
+        }
+      ],
+      "inventoryEvidence": {
+        "path": "src/registry/registry.ts",
+        "url": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/registry.ts"
+      },
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://elements.babelize.co/r/locale-types.json",
+        "https://elements.babelize.co/r/use-controllable-state.json"
+      ],
+      "dependencyEvidenceComplete": true,
+      "upstreamMetadata": {
+        "demoPath": "src/components/docs/language-switcher-demo.tsx",
+        "demoUrl": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/components/docs/language-switcher-demo.tsx",
+        "installUrl": "https://elements.babelize.co/r/language-switcher.json",
+        "localDemoId": "babelize-elements/language-switcher"
+      },
+      "preview": null,
+      "previewStatus": "local-pinned-demo",
+      "missingSourceFiles": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "babelize-elements/phone-input",
+      "providerId": "babelize-elements",
+      "slug": "phone-input",
+      "name": "Phone Input",
+      "description": "International phone number input with country selector, flag emojis, and dial code search for 50 countries.",
+      "kind": "component",
+      "platform": "web",
+      "status": "unpublished",
+      "categorySuggestion": "forms",
+      "providerTags": [
+        "localization",
+        "i18n"
+      ],
+      "sourceRef": "2cd92ba8acad36e6122d4c528cc81b5d99ffd587",
+      "sourceUrl": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/components/phone-input.tsx",
+      "sourcePath": "src/registry/components/phone-input.tsx",
+      "sourceFiles": [
+        {
+          "path": "src/registry/components/phone-input.tsx",
+          "url": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/components/phone-input.tsx"
+        }
+      ],
+      "inventoryEvidence": {
+        "path": "src/registry/registry.ts",
+        "url": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/registry.ts"
+      },
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://elements.babelize.co/r/use-controllable-state.json"
+      ],
+      "dependencyEvidenceComplete": true,
+      "upstreamMetadata": {
+        "demoPath": "src/components/docs/phone-input-demo.tsx",
+        "demoUrl": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/components/docs/phone-input-demo.tsx",
+        "installUrl": "https://elements.babelize.co/r/phone-input.json",
+        "localDemoId": "babelize-elements/phone-input"
+      },
+      "preview": null,
+      "previewStatus": "local-pinned-demo",
+      "missingSourceFiles": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "babelize-elements/navbar",
+      "providerId": "babelize-elements",
+      "slug": "navbar",
+      "name": "NavBar",
+      "description": "Responsive navigation bar with built-in language selector, mobile menu, CTA button, and GitHub link.",
+      "kind": "component",
+      "platform": "web",
+      "status": "unpublished",
+      "categorySuggestion": "navigation",
+      "providerTags": [
+        "localization",
+        "i18n"
+      ],
+      "sourceRef": "2cd92ba8acad36e6122d4c528cc81b5d99ffd587",
+      "sourceUrl": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/components/navbar.tsx",
+      "sourcePath": "src/registry/components/navbar.tsx",
+      "sourceFiles": [
+        {
+          "path": "src/registry/components/navbar.tsx",
+          "url": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/components/navbar.tsx"
+        }
+      ],
+      "inventoryEvidence": {
+        "path": "src/registry/registry.ts",
+        "url": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/registry/registry.ts"
+      },
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "https://elements.babelize.co/r/locale-types.json",
+        "https://elements.babelize.co/r/use-controllable-state.json"
+      ],
+      "dependencyEvidenceComplete": true,
+      "upstreamMetadata": {
+        "demoPath": "src/components/docs/navbar-demo.tsx",
+        "demoUrl": "https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/src/components/docs/navbar-demo.tsx",
+        "installUrl": "https://elements.babelize.co/r/navbar.json",
+        "localDemoId": "babelize-elements/navbar"
+      },
+      "preview": null,
+      "previewStatus": "local-pinned-demo",
+      "missingSourceFiles": [],
+      "publicationBlockers": []
+    }
+  ]
+}
