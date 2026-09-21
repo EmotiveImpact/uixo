@@ -32,12 +32,12 @@ test('migration and captured-source seed are repeatable; counts reflect actual r
     await migrate(db);
     const first = await seedCaptured(registry),
       second = await seedCaptured(registry);
-    assert.equal(first.inserted, 1434);
+    assert.equal(first.inserted, 1437);
     assert.equal(second.inserted, 0);
-    assert.equal((await registry.stats()).assets, 1434);
-    assert.equal((await registry.providers()).length, 11);
+    assert.equal((await registry.stats()).assets, 1437);
+    assert.equal((await registry.providers()).length, 12);
     const inventory = await registry.inventory();
-    assert.equal(inventory.total, 1434);
+    assert.equal(inventory.total, 1437);
     assert.ok(inventory.kinds.find((entry) => entry.id === 'component')!.count > 0);
     assert.equal(
       inventory.kinds.find((entry) => entry.id === 'font'),
@@ -596,7 +596,7 @@ test('discovery lists icon packs, retains legacy saved icons and filters compone
       'Exercise existing saved icon compatibility.',
     );
     const all = await registry.search({ limit: 48 });
-    assert.equal(all.total, 1434);
+    assert.equal(all.total, 1437);
     const packs = await registry.search({ kind: 'icon' });
     assert.equal(packs.total, 2);
     assert.ok(packs.items.every((asset) => asset.kind === 'icon-pack'));
@@ -656,7 +656,7 @@ test('icon indexing emits one library without fetching individual glyph trees', 
 
 test('Simply Buttons keeps original provenance and does not invent licence permissions', async () => {
   const assets = (await capturedAssets()).filter((asset) => asset.providerId === 'simply-buttons');
-  assert.equal(assets.length, 118);
+  assert.equal(assets.length, 128);
   for (const original of assets) {
     const asset = validateAsset(original);
     assert.equal(asset.category, 'buttons');
