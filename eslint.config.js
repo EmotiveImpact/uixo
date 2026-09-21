@@ -14,6 +14,7 @@ export default tseslint.config(
       'provider-demos/kibo-ui/vendor',
       'public/provider-demos',
       'legacy',
+      'data/registry/snapshots/ingestion/**/upstream/**',
       'src/components/motion',
       'src/components/previews/shadcn/*.tsx',
       'src/lib/ease.ts',

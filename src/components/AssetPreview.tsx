@@ -4,6 +4,7 @@ import type { CollectionAssetPreview } from '../../shared/intelligence';
 import { assetHref, readAssetQuery, safeAssetUrl } from '../lib/asset-library';
 import { assetDestinationUrl } from '../lib/asset-destination';
 import { navigateInApp } from '../lib/navigation';
+import demos from '../../live-demos/manifest.json';
 
 type PreviewStatus = 'loading' | 'ready' | 'error';
 
