@@ -1,14 +1,18 @@
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { ArrowRight, ArrowUpRight, Search } from 'lucide-react';
 import { SiteFooter } from './SiteFooter';
-import { EditorPick } from './EditorPick';
 import { Thumbnail } from './Thumbnail';
+import { DiscoveryHeader } from './discovery/DiscoveryHeader';
 import { collections, resources, thumbnailPosition } from '../data';
-import { editorPick } from '../data';
-import type { Resource } from '../types';
+import { navigateInApp } from '../lib/navigation';
+import { useRegistryData } from '../hooks/useRegistryData';
+import type { RegistryStatus } from '../lib/asset-library';
 
 type LandingPageProps = {
   authAvailable: boolean;
   signedIn: boolean;
+  light?: boolean;
+  onToggleTheme?: () => void;
   hrefs: {
     browse: string;
     assets: string;
@@ -25,59 +29,19 @@ type LandingPageProps = {
   onAbout: () => void;
 };
 
-/** Intercept in-app navigation without breaking middle-click or the crawler's href. */
-function internal(handler: () => void) {
-  return (event: React.MouseEvent) => {
-    if (event.metaKey || event.ctrlKey || event.shiftKey) return;
-    event.preventDefault();
-    handler();
-  };
-}
+// Real retained component captures, not generated artwork or invented Kibo components.
+const heroCaptures = [
+  { id: 'shadcn/command', name: 'Command', provider: 'shadcn/ui' },
+  { id: 'shadcn/calendar', name: 'Calendar', provider: 'shadcn/ui' },
+  { id: 'magic-ui/aurora-text', name: 'Aurora Text', provider: 'Magic UI' },
+  { id: 'shadcn/button', name: 'Button', provider: 'shadcn/ui' },
+];
 
-function FeatureCard({
-  resource,
-  href,
-  onOpen,
-}: {
-  resource: Resource;
-  href: string;
-  onOpen: (id: string) => void;
-}) {
-  return (
-    <article>
-      <a
-        className="landing-thumb"
-        href={href}
-        onClick={internal(() => onOpen(resource.id))}
-        aria-label={`Open details for ${resource.name}`}
-      >
-        <Thumbnail
-          id={resource.id}
-          alt={`${resource.name} website preview`}
-          sizes="(max-width: 900px) 100vw, 33vw"
-          onError={() => undefined}
-        />
-      </a>
-      <a className="landing-name" href={href} onClick={internal(() => onOpen(resource.id))}>
-        {resource.name}
-      </a>
-      <p className="landing-desc">{resource.description}</p>
-      <p className="landing-meta">
-        by {resource.creator} ·{' '}
-        <span className={`pricing-${resource.pricing.toLowerCase()}`}>{resource.pricing}</span>
-      </p>
-    </article>
-  );
-}
-
-/**
- * The front door. Deliberately renders without the sidebar and topbar: this page's job is
- * to say what UIXO is, the app's job is to help you find things. Mixing the two was what
- * made the earlier single-surface layouts feel wrong.
- */
 export function LandingPage({
   authAvailable,
   signedIn,
+  light = false,
+  onToggleTheme = () => {},
   hrefs,
   onBrowse,
   onAssets,
@@ -85,186 +49,254 @@ export function LandingPage({
   onOpenCollection,
   onOpenResource,
   onSignIn,
-  onAbout,
 }: LandingPageProps) {
-  // The pick headlines the page, so it should not also lead the Featured row.
-  const featured = resources
-    .filter((resource) => resource.featured && resource.id !== editorPick.resourceId)
-    .slice(0, 3);
-
-  const lastChecked = resources
-    .map((resource) => resource.lastChecked)
-    .sort()
-    .at(-1);
-
+  const [q, setQ] = useState('');
+  const [tab, setTab] = useState<'curated' | 'new'>('curated');
+  const searchRef = useRef<HTMLInputElement>(null);
+  const { data: status } = useRegistryData<RegistryStatus>('status');
+  const featured =
+    tab === 'curated'
+      ? resources.filter((item) => item.featured).slice(0, 8)
+      : [...resources].sort((a, b) => b.addedOrder - a.addedOrder).slice(0, 8);
+  const internal = (event: React.MouseEvent<HTMLAnchorElement>, run: () => void) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0)
+      return;
+    event.preventDefault();
+    run();
+  };
   return (
-    <div className="landing">
-      <div className="landing-wrap">
-        <nav className="landing-nav" aria-label="Main navigation">
-          <a className="brand" href="/" aria-label="UIXO home">
-            UIXO
-          </a>
-          <span className="landing-links">
-            <a href={hrefs.browse} onClick={internal(onBrowse)}>
-              Websites
-            </a>
-            <a href={hrefs.assets} onClick={internal(onAssets)}>
-              Assets
-            </a>
-            <a href={hrefs.collections} onClick={internal(onCollections)}>
-              Collections
-            </a>
-          </span>
-          <span className="landing-nav-right">
-            <button className="ghost" onClick={onAbout}>
-              About
+    <div className="discovery-home">
+      <DiscoveryHeader
+        active="discover"
+        light={light}
+        onToggleTheme={onToggleTheme}
+        onSearch={() => searchRef.current?.focus()}
+        account={
+          authAvailable && !signedIn ? (
+            <button className="header-signin" onClick={onSignIn}>
+              Sign in
             </button>
-            {!authAvailable ? (
-              <a className="solid" href={hrefs.browse} onClick={internal(onBrowse)}>
-                Browse the directory
-              </a>
-            ) : signedIn ? (
-              <a className="solid" href={hrefs.browse} onClick={internal(onBrowse)}>
-                Open the directory
-              </a>
-            ) : (
-              <>
-                <button className="ghost" onClick={onSignIn}>
-                  Sign in
-                </button>
-                <button className="solid" onClick={onSignIn}>
-                  Join
-                </button>
-              </>
-            )}
-          </span>
-        </nav>
-
-        <header className="landing-hero">
-          <p className="landing-eyebrow">A hand-checked directory</p>
-          <h1>
-            Good tools.
-            <br />
-            <span>Great interfaces.</span>
-          </h1>
-          <p className="landing-lede">
-            A small collection of the resources we actually reach for — components, icons,
-            backgrounds and type. Every one chosen by hand, and checked by hand.
-          </p>
-          <div className="landing-cta">
-            <a className="solid" href={hrefs.browse} onClick={internal(onBrowse)}>
-              Browse the directory <ArrowRight size={15} />
+          ) : (
+            <a className="header-signin" href={hrefs.assets} onClick={(e) => internal(e, onAssets)}>
+              Explore UIXO
             </a>
-            <p className="landing-facts">
-              <span>
-                <b>{resources.length}</b> websites
-              </span>
-              <span>
-                <b>{collections.length}</b> collections
-              </span>
-              {lastChecked && (
+          )
+        }
+      />
+      <main className="discovery-container">
+        <section className="discovery-hero">
+          <div className="hero-copy">
+            <p className="discovery-kicker">BETTER INTERFACES. A BRIGHTER INTERNET.</p>
+            <h1>
+              The interface
+              <br />
+              <span>starts here.</span>
+            </h1>
+            <p className="hero-description">
+              Discover exceptional components, libraries and design resources. Find your next idea.
+              Make it yours.
+            </p>
+            <form
+              className="hero-search"
+              role="search"
+              onSubmit={(event) => {
+                event.preventDefault();
+                navigateInApp(`${hrefs.assets}?q=${encodeURIComponent(q.trim())}`);
+              }}
+            >
+              <Search size={19} />
+              <input
+                ref={searchRef}
+                id="hero-component-search"
+                type="search"
+                aria-label="Search components"
+                maxLength={300}
+                placeholder="What will you build next?"
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+              />
+              <button type="submit" aria-label="Search components">
+                <ArrowRight size={19} />
+              </button>
+            </form>
+            <div className="hero-shortcuts">
+              <span>Explore</span>
+              <a href={hrefs.assets + '?category=buttons&kind=component'}>Buttons</a>
+              <a href={hrefs.assets + '?category=motion&kind=component'}>Motion</a>
+              <a href={hrefs.browse} onClick={(e) => internal(e, onBrowse)}>
+                UI libraries <ArrowUpRight size={11} />
+              </a>
+            </div>
+            <div className="hero-stats">
+              {status?.stats && (
                 <span>
-                  Checked{' '}
-                  <b>
-                    {new Date(`${lastChecked}T00:00:00Z`).toLocaleDateString(undefined, {
-                      day: 'numeric',
-                      month: 'short',
-                    })}
-                  </b>
+                  <strong>{status.stats.assets}</strong>{' '}
+                  {status.readOnly ? 'preview assets' : 'catalogue assets'}
                 </span>
               )}
-            </p>
-          </div>
-        </header>
-
-        <EditorPick onOpen={onOpenResource} href={hrefs.resource(editorPick.resourceId)} />
-
-        <section className="landing-section" aria-labelledby="landing-featured">
-          <div className="landing-head">
-            <div>
-              <h2 id="landing-featured">Featured</h2>
-              <p>Curated picks — the ones we reach for most.</p>
+              <span>
+                <strong>{resources.length}</strong> resources
+              </span>
+              <span>
+                <strong>{collections.length}</strong> collections
+              </span>
             </div>
-            <a className="landing-viewall" href={hrefs.browse} onClick={internal(onBrowse)}>
-              View all <ArrowRight size={13} />
+          </div>
+          <div className="hero-stage" aria-label="Actual component screenshots">
+            <div className="hero-stage-glow" aria-hidden="true" />
+            <div className="hero-orbit" aria-hidden="true" />
+            {heroCaptures.map((item, i) => (
+              <a
+                key={item.id}
+                className={`hero-component hero-component-${i + 1}`}
+                href={`${hrefs.assets}?id=${encodeURIComponent(item.id)}`}
+              >
+                <div className="hero-component-caption">
+                  <span>{item.provider}</span>
+                  <ArrowUpRight size={12} />
+                </div>
+                <img
+                  src={`/assets/component-previews/${item.id}.webp`}
+                  alt={`${item.name} upstream screenshot`}
+                  width={638}
+                  height={384}
+                />
+                <div className="hero-component-footer">
+                  <strong>{item.name}</strong>
+                  <span>Screenshot</span>
+                </div>
+              </a>
+            ))}
+            <span className="hero-stage-note">REAL COMPONENTS. ENDLESS POSSIBILITIES.</span>
+          </div>
+        </section>
+        <section className="discovery-feature-section" aria-labelledby="featured-title">
+          <div className="discovery-section-bar">
+            <div className="discovery-feed-tabs" role="group" aria-label="Featured resources order">
+              <button aria-pressed={tab === 'curated'} onClick={() => setTab('curated')}>
+                Curated
+              </button>
+              <button aria-pressed={tab === 'new'} onClick={() => setTab('new')}>
+                New additions
+              </button>
+              <a href={hrefs.collections} onClick={(e) => internal(e, onCollections)}>
+                Collections
+              </a>
+            </div>
+            <a
+              className="discovery-viewall"
+              href={hrefs.browse}
+              onClick={(e) => internal(e, onBrowse)}
+            >
+              Explore everything <ArrowRight size={14} />
             </a>
           </div>
-          <div className="landing-grid">
-            {featured.map((resource) => (
-              <FeatureCard
-                key={resource.id}
-                resource={resource}
-                href={hrefs.resource(resource.id)}
-                onOpen={onOpenResource}
-              />
+          <div className="discovery-section-heading">
+            <h2 id="featured-title">
+              {tab === 'curated'
+                ? 'Good design. Great starting points.'
+                : 'Fresh finds for your next project.'}
+            </h2>
+            <p>A few things worth opening a new tab for.</p>
+          </div>
+          <div className="discovery-feature-grid">
+            {featured.map((item) => (
+              <article key={item.id} className="discovery-product">
+                <a
+                  className="discovery-product-image"
+                  href={hrefs.resource(item.id)}
+                  onClick={(e) => internal(e, () => onOpenResource(item.id))}
+                >
+                  <Thumbnail
+                    id={item.id}
+                    alt={`${item.name} website screenshot`}
+                    sizes="(max-width: 680px) 100vw, (max-width: 1050px) 50vw, 25vw"
+                    onError={() => {}}
+                  />
+                  <span className="product-type">Resource</span>
+                </a>
+                <div className="discovery-product-title">
+                  <a
+                    href={hrefs.resource(item.id)}
+                    onClick={(e) => internal(e, () => onOpenResource(item.id))}
+                  >
+                    {item.name}
+                  </a>
+                  <a
+                    aria-label={`Visit ${item.name}`}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ArrowUpRight size={15} />
+                  </a>
+                </div>
+                <p>
+                  {item.creator}
+                  <span>{item.pricing}</span>
+                </p>
+                <div className="discovery-product-tags">
+                  <span>{item.category}</span>
+                  <span>{item.formats[0]}</span>
+                </div>
+              </article>
             ))}
           </div>
         </section>
-
-        <section className="landing-section" aria-labelledby="landing-collections">
-          <div className="landing-head">
+        <section className="discovery-collections" aria-labelledby="collections-title">
+          <div className="discovery-section-heading">
             <div>
-              <h2 id="landing-collections">Collections</h2>
-              <p>Curated sets with a point of view.</p>
+              <p className="discovery-kicker">LESS SEARCHING. MORE MAKING.</p>
+              <h2 id="collections-title">A little direction goes a long way.</h2>
             </div>
             <a
-              className="landing-viewall"
+              className="discovery-viewall"
               href={hrefs.collections}
-              onClick={internal(onCollections)}
+              onClick={(e) => internal(e, onCollections)}
             >
-              View all <ArrowRight size={13} />
+              All collections <ArrowRight size={14} />
             </a>
           </div>
-          <div className="landing-grid">
-            {collections.slice(0, 3).map((collection) => {
-              const covers = collection.resourceIds
-                .map((id) => resources.find((entry) => entry.id === id))
-                .filter((entry): entry is Resource => Boolean(entry))
-                .slice(0, 4);
-
-              return (
-                <a
-                  key={collection.slug}
-                  className="landing-collection"
-                  href={hrefs.collection(collection.slug)}
-                  onClick={internal(() => onOpenCollection(collection.slug))}
-                >
-                  <span className="landing-covers" aria-hidden="true">
-                    {covers.map((resource) => (
-                      <img
-                        key={resource.id}
-                        src={`/assets/${resource.id}.png`}
-                        alt=""
-                        loading="lazy"
-                        style={{ objectPosition: thumbnailPosition(resource.id) }}
-                      />
-                    ))}
-                  </span>
-                  <h3>
-                    {collection.name} <ArrowUpRight size={15} />
-                  </h3>
-                  <p>{collection.tagline}</p>
-                </a>
-              );
-            })}
+          <div className="discovery-collection-grid">
+            {collections.slice(0, 3).map((item) => (
+              <a
+                className="discovery-collection"
+                key={item.slug}
+                href={hrefs.collection(item.slug)}
+                onClick={(e) => internal(e, () => onOpenCollection(item.slug))}
+              >
+                <div className="collection-covers">
+                  {item.resourceIds.slice(0, 3).map((id) => (
+                    <img
+                      key={id}
+                      src={`/assets/${id}.png`}
+                      alt=""
+                      loading="lazy"
+                      style={{ objectPosition: thumbnailPosition(id) }}
+                    />
+                  ))}
+                </div>
+                <div>
+                  <h3>{item.name}</h3>
+                  <ArrowUpRight size={17} />
+                  <p>{item.tagline}</p>
+                </div>
+              </a>
+            ))}
           </div>
         </section>
-
-        <section className="landing-handoff">
+        <section className="discovery-handoff">
           <div>
-            <h2>The whole collection.</h2>
-            <p>
-              Filter by category, format and pricing, save what you like into lists, and search by
-              what a thing is for.
-            </p>
+            <p className="discovery-kicker">FROM INSPIRATION TO IMPLEMENTATION</p>
+            <h2>Find it. Try it. Build with it.</h2>
+            <p>The original source and installation details, always one click away.</p>
           </div>
-          <a className="solid" href={hrefs.browse} onClick={internal(onBrowse)}>
-            Open the directory <ArrowRight size={15} />
+          <a href={hrefs.assets} onClick={(e) => internal(e, onAssets)}>
+            Explore components <ArrowRight size={16} />
           </a>
         </section>
-
         <SiteFooter count={null} />
-      </div>
+      </main>
     </div>
   );
 }

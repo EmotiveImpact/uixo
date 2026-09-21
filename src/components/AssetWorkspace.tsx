@@ -1,5 +1,4 @@
 import { RegistryReadiness } from './RegistryReadiness';
-import { FeaturedCollections } from './DiscoveryCollections';
 import { RegistryIntelligence } from './RegistryIntelligence';
 import { NotFound } from './NotFound';
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
@@ -133,7 +132,7 @@ export function AssetWorkspace() {
   const title =
     titles[query.view] ||
     (query.view === 'sources'
-      ? 'Indexed sources'
+      ? 'UI libraries'
       : query.view === 'saved'
         ? 'Saved assets'
         : COMPONENT_CATEGORIES.find((entry) => entry.id === query.category)?.label ||
@@ -141,7 +140,7 @@ export function AssetWorkspace() {
             ? 'Icon packs'
             : query.kind === 'component'
               ? 'Components'
-              : 'Assets'));
+              : 'Components & assets'));
   const hasFilters = Boolean(
     query.q ||
     query.kind ||
@@ -154,209 +153,212 @@ export function AssetWorkspace() {
   );
   return (
     <AnimatedSidebarProvider
+      className="uixo-shell"
       open={sidebarOpen}
       onOpenChange={setSidebarOpen}
       openMobile={mobileOpen}
       onOpenMobileChange={setMobileOpen}
       style={APP_SIDEBAR_SIZING}
     >
-      <AppSidebar
-        category={null}
-        sub={null}
-        listId={null}
-        openSection={null}
-        lists={lists}
-        onAssets
-        assetView={query.view}
-        registryCurator={isCurator}
-        onChooseAssetView={(view) => navigate({ view }, true)}
-        onSavedAssets={query.view === 'saved'}
-        onShowSavedAssets={() => navigate({ view: 'saved' }, true)}
-        savedAssetCount={assetSaves.saved.length}
-        assetKind={query.kind}
-        assetCategory={query.category}
-        onChooseAssetCategory={(category) =>
-          navigate({
-            kind: 'component',
-            category,
-            view: query.view === 'saved' ? 'saved' : 'assets',
-            offset: 0,
-            id: '',
-          })
+      <TopBar
+        catalogue="assets"
+        light={light}
+        onToggleTheme={toggleTheme}
+        onOpenModal={setModal}
+        adminAction={
+          isCurator
+            ? { label: 'Admin', href: '/admin', onSelect: () => navigateInApp('/admin') }
+            : undefined
         }
-        onChooseAssetKind={(kind) =>
-          navigate({
-            kind,
-            category: '',
-            view: query.view === 'saved' ? 'saved' : 'assets',
-            offset: 0,
-            id: '',
-          })
+        account={
+          <AccountMenu
+            available={authAvailable}
+            user={user}
+            onSignIn={() => setModal('signin')}
+            onDashboard={() => go({ ...EMPTY_ROUTE, dashboard: true })}
+            onAdmin={() => navigateInApp('/admin')}
+            onSignOut={signOut}
+            dashboardHref="/dashboard"
+            adminHref="/admin"
+          />
         }
-        assetProviders={assetProviders}
-        onShowAll={() => go({ ...EMPTY_ROUTE })}
-        homeHref="/browse"
-        onChooseList={(listId) => go({ ...EMPTY_ROUTE, listId })}
-        onDeleteList={remove}
-        onChooseCategory={openCategory}
-        onChooseSub={openCategory}
-        onSubmit={() => setModal('submit')}
       />
-      <a className="skip-link" href="#main">
-        Skip to content
-      </a>
-      <AnimatedSidebarInset className="site-main asset-workspace" id="main" tabIndex={-1}>
-        <TopBar
-          catalogue="assets"
-          light={light}
-          onToggleTheme={toggleTheme}
-          onOpenModal={setModal}
-          adminAction={
-            isCurator
-              ? { label: 'Admin', href: '/admin', onSelect: () => navigateInApp('/admin') }
-              : undefined
+      <div className="catalogue-body">
+        <AppSidebar
+          publicMode={!privateWorkspace && !utility}
+          assetQuery={query}
+          onNavigateAssets={navigate}
+          category={null}
+          sub={null}
+          listId={null}
+          openSection={null}
+          lists={lists}
+          onAssets
+          assetView={query.view}
+          registryCurator={isCurator}
+          onChooseAssetView={(view) => navigate({ view }, true)}
+          onSavedAssets={query.view === 'saved'}
+          onShowSavedAssets={() => navigate({ view: 'saved' }, true)}
+          savedAssetCount={assetSaves.saved.length}
+          assetKind={query.kind}
+          assetCategory={query.category}
+          onChooseAssetCategory={(category) =>
+            navigate({
+              kind: 'component',
+              category,
+              view: query.view === 'saved' ? 'saved' : 'assets',
+              offset: 0,
+              id: '',
+            })
           }
-          account={
-            <AccountMenu
-              available={authAvailable}
-              user={user}
-              onSignIn={() => setModal('signin')}
-              onDashboard={() => go({ ...EMPTY_ROUTE, dashboard: true })}
-              onAdmin={() => navigateInApp('/admin')}
-              onSignOut={signOut}
-              dashboardHref="/dashboard"
-              adminHref="/admin"
-            />
+          onChooseAssetKind={(kind) =>
+            navigate({
+              kind,
+              category: '',
+              view: query.view === 'saved' ? 'saved' : 'assets',
+              offset: 0,
+              id: '',
+            })
           }
+          assetProviders={assetProviders}
+          onShowAll={() => go({ ...EMPTY_ROUTE })}
+          homeHref="/browse"
+          onChooseList={(listId) => go({ ...EMPTY_ROUTE, listId })}
+          onDeleteList={remove}
+          onChooseCategory={openCategory}
+          onChooseSub={openCategory}
+          onSubmit={() => setModal('submit')}
         />
-        <PageHeading
-          title={title}
-          subtitle={
-            intelligence
-              ? 'Source-backed selections and evidence from the UIXO registry.'
-              : utility
-                ? 'One library. Your workflow.'
-                : 'Live components and icon packs, with the source left intact. Find it, understand it, make it yours.'
-          }
-          canClear={hasFilters}
-          onClear={() => navigate({ view: query.view }, true)}
-        />
-        <RegistryReadiness />
-        <SaveSyncNotice
-          label="Asset favourites"
-          status={assetSaves.syncStatus}
-          error={assetSaves.syncError}
-          onRetry={assetSaves.retrySync}
-        />
-        <SaveSyncNotice
-          label="Website favourites"
-          status={listSyncStatus}
-          error={listSyncError}
-          onRetry={retryListSync}
-        />
-        {!intelligence &&
-          !utility &&
-          query.view === 'assets' &&
-          !hasFilters &&
-          query.offset === 0 &&
-          !query.id && <FeaturedCollections query={query} navigate={navigate} />}
-        {intelligence ? (
-          privateWorkspace && !settled ? (
-            <p role="status">Checking account…</p>
-          ) : privateWorkspace && !isCurator ? (
-            <NotFound onReset={() => navigate({}, true)} />
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        <AnimatedSidebarInset className="site-main asset-workspace" id="main" tabIndex={-1}>
+          <PageHeading
+            title={title}
+            subtitle={
+              intelligence
+                ? 'Source-backed selections and evidence from the UIXO registry.'
+                : utility
+                  ? 'One library. Your workflow.'
+                  : 'Components and icon packs from trusted sources. Preview them, inspect the details, and go straight to the original.'
+            }
+            canClear={hasFilters}
+            onClear={() => navigate({ view: query.view }, true)}
+          />
+          <RegistryReadiness />
+          <SaveSyncNotice
+            label="Asset favourites"
+            status={assetSaves.syncStatus}
+            error={assetSaves.syncError}
+            onRetry={assetSaves.retrySync}
+          />
+          <SaveSyncNotice
+            label="Website favourites"
+            status={listSyncStatus}
+            error={listSyncError}
+            onRetry={retryListSync}
+          />
+          {intelligence ? (
+            privateWorkspace && !settled ? (
+              <p role="status">Checking account…</p>
+            ) : privateWorkspace && !isCurator ? (
+              <NotFound onReset={() => navigate({}, true)} />
+            ) : (
+              <RegistryIntelligence
+                query={query}
+                navigate={navigate}
+                isCurator={isCurator}
+                assetSaves={assetSaves}
+              />
+            )
+          ) : utility ? (
+            ['review', 'scout', 'jobs'].includes(query.view) && !settled ? (
+              <p role="status">Checking account…</p>
+            ) : ['review', 'scout', 'jobs'].includes(query.view) && !isCurator ? (
+              <NotFound onReset={() => navigate({}, true)} />
+            ) : (
+              <AssetUtilities key={query.view} view={query.view} />
+            )
           ) : (
-            <RegistryIntelligence
+            <AssetLibrary
               query={query}
               navigate={navigate}
-              isCurator={isCurator}
+              density={density}
               assetSaves={assetSaves}
+              discovery={
+                <DiscoveryControls
+                  assetSearch
+                  catalogue="assets"
+                  showDiscovery={!utility}
+                  searchRef={searchRef}
+                  search={query.q}
+                  onSearchChange={(q) =>
+                    navigate({
+                      q,
+                      offset: 0,
+                      view: query.view === 'sources' ? 'assets' : query.view,
+                    })
+                  }
+                  price={
+                    (query.price === 'free'
+                      ? 'Free'
+                      : query.price === 'paid'
+                        ? 'Paid'
+                        : 'All') as PriceFilter
+                  }
+                  onPriceChange={(price) =>
+                    navigate({ price: price === 'All' ? '' : price.toLowerCase(), offset: 0 })
+                  }
+                />
+              }
             />
-          )
-        ) : utility ? (
-          ['review', 'scout', 'jobs'].includes(query.view) && !settled ? (
-            <p role="status">Checking account…</p>
-          ) : ['review', 'scout', 'jobs'].includes(query.view) && !isCurator ? (
-            <NotFound onReset={() => navigate({}, true)} />
-          ) : (
-            <AssetUtilities key={query.view} view={query.view} />
-          )
-        ) : (
-          <AssetLibrary
-            query={query}
-            navigate={navigate}
-            density={density}
-            assetSaves={assetSaves}
-            discovery={
-              <DiscoveryControls
-                assetSearch
-                catalogue="assets"
-                showDiscovery={!utility}
-                searchRef={searchRef}
-                search={query.q}
-                onSearchChange={(q) =>
-                  navigate({ q, offset: 0, view: query.view === 'sources' ? 'assets' : query.view })
-                }
-                price={
-                  (query.price === 'free'
-                    ? 'Free'
-                    : query.price === 'paid'
-                      ? 'Paid'
-                      : 'All') as PriceFilter
-                }
-                onPriceChange={(price) =>
-                  navigate({ price: price === 'All' ? '' : price.toLowerCase(), offset: 0 })
-                }
-              />
-            }
-          />
-        )}
-        <p className="dv2-release-label">DISCOVERY V2 · SOURCE-BACKED ASSET REGISTRY</p>
-        <SiteFooter count={null} assets>
-          <nav aria-label="Asset workspace links">
-            <a href="/browse/assets?view=collections">Asset collections</a>
-            {isCurator && (
-              <>
-                <a href="/browse/assets?view=health">Registry health</a>
-                <a href="/browse/assets?view=operations">Operations board</a>
-                <a href="/browse/assets?view=collection-editor">Collection editorial</a>
-              </>
-            )}
-            <a
-              href="/browse/assets?view=guide"
-              onClick={(event) => {
-                if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-                event.preventDefault();
-                navigate({ view: 'guide' }, true);
-              }}
-            >
-              How to use UIXO
-            </a>
-            <a
-              href="/browse/assets?view=connect"
-              onClick={(event) => {
-                if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-                event.preventDefault();
-                navigate({ view: 'connect' }, true);
-              }}
-            >
-              Connect your AI agent
-            </a>
-            {isCurator && (
+          )}
+          <SiteFooter count={null} assets>
+            <nav aria-label="Asset workspace links">
+              <a href="/browse/assets?view=collections">Asset collections</a>
+              {isCurator && (
+                <>
+                  <a href="/browse/assets?view=health">Registry health</a>
+                  <a href="/browse/assets?view=operations">Operations board</a>
+                  <a href="/browse/assets?view=collection-editor">Collection editorial</a>
+                </>
+              )}
               <a
-                href="/admin"
+                href="/browse/assets?view=guide"
                 onClick={(event) => {
                   if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
                   event.preventDefault();
-                  navigateInApp('/admin');
+                  navigate({ view: 'guide' }, true);
                 }}
               >
-                Admin workspace
+                How to use UIXO
               </a>
-            )}
-          </nav>
-        </SiteFooter>
-      </AnimatedSidebarInset>
+              <a
+                href="/browse/assets?view=connect"
+                onClick={(event) => {
+                  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                  event.preventDefault();
+                  navigate({ view: 'connect' }, true);
+                }}
+              >
+                Connect your AI agent
+              </a>
+              {isCurator && (
+                <a
+                  href="/admin"
+                  onClick={(event) => {
+                    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                    event.preventDefault();
+                    navigateInApp('/admin');
+                  }}
+                >
+                  Admin workspace
+                </a>
+              )}
+            </nav>
+          </SiteFooter>
+        </AnimatedSidebarInset>
+      </div>
       <AppDialog
         dialogRef={dialogRef}
         modal={modal}

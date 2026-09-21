@@ -2,7 +2,6 @@ import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
 import { useEffect, useState, type ReactNode } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark, SlidersHorizontal, X } from 'lucide-react';
 import {
-  EMPTY_ASSET_QUERY,
   assetHref,
   catalogueResult,
   inventoryResult,
@@ -187,29 +186,23 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
     <section className="asset-library" aria-label="Asset library">
       {discovery}
       <div className="asset-library-toolbar">
-        <nav aria-label="Asset views">
-          {(['assets', 'sources', 'collections', 'saved'] as const).map((entry) => (
-            <a
-              key={entry}
-              href={assetHref({ ...EMPTY_ASSET_QUERY, view: entry })}
-              className={view === entry ? 'selected' : ''}
-              aria-current={view === entry ? 'page' : undefined}
-              onClick={(event) => {
-                if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-                event.preventDefault();
-                navigate({ view: entry }, true);
-              }}
+        <div className="component-category-chips" role="group" aria-label="Component categories">
+          <button
+            aria-pressed={!category && !kind}
+            onClick={() => navigate({ kind: '', category: '', offset: 0, id: '' })}
+          >
+            All
+          </button>
+          {COMPONENT_CATEGORIES.slice(0, 7).map((entry) => (
+            <button
+              key={entry.id}
+              aria-pressed={category === entry.id}
+              onClick={() => navigate({ kind: 'component', category: entry.id, offset: 0, id: '' })}
             >
-              {entry === 'assets'
-                ? 'All assets'
-                : entry === 'sources'
-                  ? 'Indexed sources'
-                  : entry === 'collections'
-                    ? 'Collections'
-                    : `Saved (${saved.length})`}
-            </a>
+              {entry.label}
+            </button>
           ))}
-        </nav>
+        </div>
         {view !== 'sources' && (
           <button
             className="asset-refine"
@@ -222,42 +215,11 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
           </button>
         )}
       </div>
-      {view !== 'sources' && inventory && (
-        <div className="asset-library-inventory" aria-label="Catalogue inventory">
-          <span>{inventory.total} indexed</span>
-          {KIND_OPTIONS.map((option) => {
-            const count = inventoryCount('kinds', option.id);
-            return (
-              <button
-                key={option.id}
-                type="button"
-                disabled={count === 0}
-                aria-pressed={kind === option.id}
-                onClick={() => filter('kind', kind === option.id ? '' : option.id)}
-              >
-                {option.label} <strong>{count}</strong>
-              </button>
-            );
-          })}
-        </div>
-      )}
-      <p className="asset-library-status">
-        {status
-          ? status.readOnly
-            ? 'Read-only evaluation catalogue. Browsing works; publishing and indexing need a persistent database.'
-            : 'Connected to the persistent registry.'
-          : 'Checking registry connection…'}{' '}
-        {status && (
-          <span>
-            {status.stats.assets} published assets · {status.stats.providers} indexed sources
-          </span>
-        )}
-      </p>
       {view === 'sources' ? (
         <div className="asset-library-source-grid">
           {providers.map((p) => (
             <article key={p.id}>
-              <small>Indexed source</small>
+              <small>UI library</small>
               <h2>{p.name}</h2>
               <p>{p.rationale}</p>
               <button onClick={() => navigate({ provider: p.id }, true)}>
@@ -380,7 +342,10 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
               : error
                 ? 'Registry unavailable, not an empty result'
                 : `${result?.total ?? 0} ${result?.total === 1 ? 'asset' : 'assets'} found`}
-            <span>Keyword search · Source-level curation</span>
+            <span>
+              {status?.readOnly ? 'Preview catalogue' : 'Source-linked'} · {providers.length}{' '}
+              sources
+            </span>
           </div>
           {error ? (
             <section className="asset-library-empty" role="alert">
@@ -418,42 +383,47 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                 <article className="asset-library-card" key={asset.id}>
                   <AssetPreview asset={asset} />
                   <div className="asset-library-card-body">
+                    <div className="asset-card-heading">
+                      <h2>
+                        <a
+                          className="asset-library-card-link"
+                          href={assetHref({ ...query, id: asset.id })}
+                          onClick={(event) => {
+                            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+                              return;
+                            event.preventDefault();
+                            navigate({ id: asset.id });
+                          }}
+                          aria-label={`Inspect ${asset.name} from ${nameOf(asset.providerId)}`}
+                        >
+                          {asset.name}
+                        </a>
+                      </h2>
+                      <button
+                        className="asset-library-save"
+                        aria-label={
+                          saved.includes(asset.id) ? `Unsave ${asset.name}` : `Save ${asset.name}`
+                        }
+                        aria-pressed={saved.includes(asset.id)}
+                        onClick={() => toggleSave(asset.id)}
+                      >
+                        <Bookmark
+                          size={16}
+                          fill={saved.includes(asset.id) ? 'currentColor' : 'none'}
+                        />
+                      </button>
+                    </div>
                     <small>
                       {nameOf(asset.providerId)} ·{' '}
                       {asset.kind === 'icon-pack' ? 'Icon pack' : asset.kind}
                     </small>
-                    <h2>
-                      <a
-                        className="asset-library-card-link"
-                        href={assetHref({ ...query, id: asset.id })}
-                        onClick={(event) => {
-                          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
-                            return;
-                          event.preventDefault();
-                          navigate({ id: asset.id });
-                        }}
-                        aria-label={`Inspect ${asset.name} from ${nameOf(asset.providerId)}`}
-                      >
-                        {asset.name}
-                      </a>
-                    </h2>
-                    <p>{asset.description}</p>
+
                     <div className="asset-library-tags">
                       <span>{asset.variants[0]?.framework}</span>
                       <span>{asset.variants[0]?.format.toUpperCase()}</span>
                       <span>{asset.licence.expression}</span>
                     </div>
                   </div>
-                  <button
-                    className="asset-library-save"
-                    aria-label={
-                      saved.includes(asset.id) ? `Unsave ${asset.name}` : `Save ${asset.name}`
-                    }
-                    aria-pressed={saved.includes(asset.id)}
-                    onClick={() => toggleSave(asset.id)}
-                  >
-                    <Bookmark size={16} fill={saved.includes(asset.id) ? 'currentColor' : 'none'} />
-                  </button>
                 </article>
               ))}
             </div>

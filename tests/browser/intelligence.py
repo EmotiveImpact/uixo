@@ -71,7 +71,7 @@ with sync_playwright() as p:
         assert browser_status['role'] == 'curator'
 
         for view, query, expected_heading in [
-            ('assets', '', 'Build from a considered selection.'),
+            ('assets', '', 'Components & assets'),
             ('health', 'view=health', 'Know what is in the library.'),
             ('sources', 'view=sources', 'Understand the source, not just the count.'),
             ('source', 'view=sources&provider=shadcn', 'shadcn/ui'),
