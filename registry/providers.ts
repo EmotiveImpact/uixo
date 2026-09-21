@@ -170,6 +170,23 @@ export const PROVIDERS: Provider[] = [
     rationale:
       'Official HeroUI v3 web package pinned after the documented Apache-2.0 relicensing. Preview IDs are derived from the retained pinned Storybook source rather than guessed from component names.',
   },
+  {
+    id: 'tailark',
+    name: 'Tailark',
+    url: 'https://tailark.com/',
+    repo: 'tailark/blocks',
+    branch: 'main',
+    licencePath: 'LICENCE.md',
+    adapter: 'reviewed-snapshot',
+    registryBaseUrl: 'https://tailark.com/r/',
+    sourceRef: '8139698115c1341bfd2e3e286c04bb4d8146f472',
+    snapshotPath: 'data/registry/snapshots/tailark-reviewed.json',
+    css: 'tailwind',
+    approved: true,
+    selectedAt: '2026-09-21T00:00:00.000Z',
+    rationale:
+      'Official MIT Tailark block registry pinned to an immutable commit. UIXO publishes one logical Base block per official public installer and isolated view route; Radix alternatives remain retained but unpublished to avoid duplicate identities.',
+  },
 ];
 export function licenceFromText(
   provider: Provider,
@@ -997,11 +1014,16 @@ export async function reviewedSnapshotAssets(provider: Provider): Promise<Asset[
             kind: 'registry' as const,
             url: `https://uiable.com/r/${encodeURIComponent(item.slug)}.json`,
           }
-        : {
-            kind: 'package' as const,
-            packageName: packageName!,
-            url: provider.url,
-          };
+        : provider.id === 'tailark'
+          ? {
+              kind: 'registry' as const,
+              url: `https://tailark.com/r/${encodeURIComponent(item.slug)}.json`,
+            }
+          : {
+              kind: 'package' as const,
+              packageName: packageName!,
+              url: provider.url,
+            };
     const category = componentCategory(item.slug);
     assets.push({
       id: item.id,
