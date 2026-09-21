@@ -697,11 +697,13 @@ test('reviewed provider snapshots publish only truthfully previewable pinned web
   const flowbite = assets.filter((asset) => asset.providerId === 'flowbite-react');
   const heroui = assets.filter((asset) => asset.providerId === 'heroui-web');
   const tailark = assets.filter((asset) => asset.providerId === 'tailark');
+  const babelize = assets.filter((asset) => asset.providerId === 'babelize-elements');
 
   assert.equal(uiable.length, 707);
   assert.equal(flowbite.length, 45);
   assert.equal(heroui.length, 68);
   assert.equal(tailark.length, 150);
+  assert.equal(babelize.length, 3);
 
   assert.ok(
     uiable.every(
@@ -744,8 +746,19 @@ test('reviewed provider snapshots publish only truthfully previewable pinned web
         asset.variants[0].sourceRef === '8139698115c1341bfd2e3e286c04bb4d8146f472',
     ),
   );
+  assert.ok(
+    babelize.every(
+      (asset) =>
+        asset.preview === null &&
+        asset.variants[0].acquisition.kind === 'registry' &&
+        asset.variants[0].acquisition.url ===
+          `https://elements.babelize.co/r/${asset.slug}.json` &&
+        asset.variants[0].sourceRef === '2cd92ba8acad36e6122d4c528cc81b5d99ffd587',
+    ),
+  );
   assert.equal(
-    new Set([...uiable, ...flowbite, ...heroui, ...tailark].map((asset) => asset.id)).size,
-    970,
+    new Set([...uiable, ...flowbite, ...heroui, ...tailark, ...babelize].map((asset) => asset.id))
+      .size,
+    973,
   );
 });
