@@ -885,6 +885,12 @@ async function reviewedPreview(
     return example ? `https://flowbite-react.com/examples/${example}` : null;
   }
   if (provider.id === 'heroui-web') return heroUiPreview(provider, item);
+  if (provider.id === 'tailark') {
+    if (!/^(dusk|mist|veil)-[a-z0-9-]+-[a-z0-9-]+$/.test(item.slug))
+      throw new RegistryError('PROVIDER_FORMAT', 'Tailark reviewed block name is invalid.', 502);
+    return `https://tailark.com/view/${item.slug}`;
+  }
+  if (provider.id === 'babelize-elements') return null;
   throw new RegistryError(
     'PROVIDER_FORMAT',
     'No reviewed preview policy exists for this provider.',
