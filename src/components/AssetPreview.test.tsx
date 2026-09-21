@@ -88,9 +88,12 @@ describe('AssetPreview', () => {
   it('prefers a reviewed live component over its static capture', () => {
     const { container } = render(<AssetPreview asset={asset({})} />);
 
-    expect(screen.getByTitle('Live Alert demo').getAttribute('sandbox')).toBe('allow-scripts');
+    const frame = screen.getByTitle('Live Alert demo');
+    expect(frame.getAttribute('sandbox')).toBe('allow-scripts');
     expect(screen.getByText('Loading preview')).toBeTruthy();
     expect(screen.queryByText('Live · Try it')).toBeNull();
+    fireEvent.load(frame);
+    expect(screen.getByText('Live · Try it')).toBeTruthy();
     expect(container.querySelector('img')).toBeNull();
     expect(container.querySelector('.is-live-component')).toBeTruthy();
   });

@@ -121,8 +121,8 @@ function LivePreview({
               : { width: 480, height: size.height / scale, transform: `scale(${scale})` }),
           }}
           onLoad={() => {
-            if (external) setStatus('ready');
-            else
+            setStatus('ready');
+            if (!external)
               frame.current?.contentWindow?.postMessage({ type: 'uixo-preview-theme', theme }, '*');
           }}
         />
