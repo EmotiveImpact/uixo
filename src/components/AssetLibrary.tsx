@@ -186,23 +186,27 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
     <section className="asset-library" aria-label="Asset library">
       {discovery}
       <div className="asset-library-toolbar">
-        <div className="component-category-chips" role="group" aria-label="Component categories">
-          <button
-            aria-pressed={!category && !kind}
-            onClick={() => navigate({ kind: '', category: '', offset: 0, id: '' })}
-          >
-            All
-          </button>
-          {COMPONENT_CATEGORIES.slice(0, 7).map((entry) => (
+        {(!kind || kind === 'component') && (
+          <div className="component-category-chips" role="group" aria-label="Component categories">
             <button
-              key={entry.id}
-              aria-pressed={category === entry.id}
-              onClick={() => navigate({ kind: 'component', category: entry.id, offset: 0, id: '' })}
+              aria-pressed={!category && !kind}
+              onClick={() => navigate({ kind: '', category: '', offset: 0, id: '' })}
             >
-              {entry.label}
+              All
             </button>
-          ))}
-        </div>
+            {COMPONENT_CATEGORIES.slice(0, 7).map((entry) => (
+              <button
+                key={entry.id}
+                aria-pressed={category === entry.id}
+                onClick={() =>
+                  navigate({ kind: 'component', category: entry.id, offset: 0, id: '' })
+                }
+              >
+                {entry.label}
+              </button>
+            ))}
+          </div>
+        )}
         {view !== 'sources' && (
           <button
             className="asset-refine"
