@@ -1,326 +1,328 @@
 # Provider ingestion queue
 
-Updated 20 September 2026. Base main: `7ed44ecdf603d84e11e60735430e6be37a737184`.
-Branch: `feat/provider-ingestion-approved-wave`. Do not merge automatically.
+Updated 21 September 2026. Base main at start: `7ed44ecdf603d84e11e60735430e6be37a737184`.
+Branch: `feat/provider-ingestion-approved-wave`. Pull request: #49. **Do not merge automatically.**
 
-## Current delivery state
+## Current state
 
-The explicit queue, source inventory readers, immutable staging capture and 43 local tests are committed on this branch. This is not a claim that the components have been published. No new provider has passed every publication gate. No production database write, merge or deployed preview acceptance has been performed.
+UIXO has two separate products and they remain separate:
 
-The branch-only `Provider ingestion evidence` workflow captures each provider sequentially from its exact SHA, retains permitted evidence and commits only staging snapshots/licences to this branch. It never updates `registry/providers.ts`, publishes an Asset or connects to Neon. Its actual run outcome and counts must be recorded below after verification. A successful inventory capture is not a reviewed publication.
+- `src/content/resources.json` is the editorial website directory.
+- `registry/providers.ts` is the approved asset-ingestion allowlist.
 
-## Product boundaries
+A website appearing in the directory does not approve it for asset ingestion.
 
-`src/content/resources.json` is the website directory. `registry/providers.ts` is the asset ingestion allowlist. Directory membership is not approval. The queue in `tools/provider_ingestion/queue.json` is an explicit audit scope, not a second publication allowlist.
+Production was checked directly on 21 September 2026 and reports **464 assets across 7 providers** using persistent Postgres storage. No provider from this queue has been written to the production database.
 
-Do not ingest 21st.dev. React Bits remains a website-directory link under the user's Commons Clause exclusion. Do not ingest individual icons. React Native belongs in the separate future queue below.
+The current branch catalogue contains **1,437 source-controlled records across 12 providers**. This branch adds **973 reviewed web assets across five providers**:
 
-## Existing providers and counts
+| Provider | Branch-ready assets | Upstream SHA | Licence | Truthful preview |
+| --- | ---: | --- | --- | --- |
+| UIAble | 707 | `34e78586c904091059deb63412ae330b2757e923` | MIT | Exact first-party `uiable.com/preview/...` route |
+| Flowbite React | 45 | `85319bd067822f7aa9670688780aeb58cc187aa5` | MIT | Exact first-party isolated `/examples/...` route |
+| HeroUI Web | 68 | `ac71b5f644803b2107c878908e64f100d6a7d443` | Apache-2.0 root licence | Exact official v3 Storybook story derived from pinned story source |
+| Tailark | 150 | `8139698115c1341bfd2e3e286c04bb4d8146f472` | MIT | Exact first-party `/view/[name]` block renderer |
+| Babelize Elements | 3 | `2cd92ba8acad36e6122d4c528cc81b5d99ffd587` | MIT | Exact pinned first-party demo source rendered in UIXO's sandboxed live-demo runner |
+| **Total new** | **973** | | | |
 
-These are current source-controlled capture/test counts, not a fresh production database measurement. Preserve existing IDs, names, curator edits and provider revocations.
+These records are branch-ready only. Production publication still requires merge, exact production Neon target verification, provider-scoped sync and deployed browser acceptance.
 
-- shadcn/ui: 53 component records, existing pinned local demos.
-- Magic UI: 68 component records, existing local demos and official captures. Seven source-less manifest entries are already excluded.
-- Motion Primitives: 33 component records, existing pinned local demos and official captures.
-- Simply Buttons: 108 existing records with original local demos. README reuse guidance is not a newly approved standard redistribution licence; permissions remain unknown.
-- Animata: 200 existing records with official Storybook embeds.
-- Lucide: one pack-level record, `lucide/pack`.
-- Heroicons: one pack-level record, `heroicons/pack`.
+## Already live providers
 
-Total: **464 source-controlled catalogue records**. Existing Lucide/Heroicons mutable-branch evidence and Simply Buttons' non-standard licence guidance are legacy remediation items, not exceptions to the new-provider requirements. Existing saved individual icons are compatibility records, not permission to crawl more glyphs.
+The current production API reports **464 assets / 7 providers**. The source-controlled catalogue underlying that production total contains:
 
-## Counts and approval terminology
+- shadcn/ui: 53 component records.
+- Magic UI: 68 component records.
+- Motion Primitives: 33 component records.
+- Simply Buttons: 108 records.
+- Animata: 200 component records.
+- Lucide: 1 pack-level icon record.
+- Heroicons: 1 pack-level icon record.
 
-Expected counts below are observed inventory units, not published assets. Counts marked pending require complete source enumeration. Actual new published count is zero for every provider at this checkpoint. The capture job records actual staged counts separately in `data/registry/snapshots/ingestion/<provider>/<SHA>/staged.json` and its `capture.jsonl` artifact.
+Lucide and Heroicons remain pack-only. Existing legacy individual icon records, if encountered in saved user state, are compatibility records and are not permission to crawl or publish individual glyphs.
 
-The MIT/Apache assessments below cover the root licence text only. For those roots, commercial use and redistribution are permitted subject to the licence notices and conditions. This does not approve inherited code, third-party imagery, external services or a preview. Restrictions and unknown rights remain explicit.
-
-For every provider, the following gates remain mandatory: complete official identity/licence review; installation and dependency evidence; real component preview; strict adapter validation; idempotent scoped database acceptance; and light/dark desktop/narrow browser checks. A missing gate keeps the record unpublished.
-
-## Ordered provider audit
+## Ordered provider queue
 
 ### 1. Kibo UI
 
-Website: https://www.kibo-ui.com/. Repository: https://github.com/shadcnblocks/kibo. Branch: `main`.
+- [x] Official identity verified: https://www.kibo-ui.com/ and `shadcnblocks/kibo`.
+- [x] Branch/SHA: `main` at `3d63cdb15b79d972e3dc38a10997987672f9b263`.
+- [x] Licence: MIT, `license.md`; retained under `data/registry/licences/kibo-ui/`.
+- [x] Stable inventory captured from first-party packages.
+- [ ] Publication approved.
 
-SHA: `3d63cdb15b79d972e3dc38a10997987672f9b263`.
-Licence: MIT, `license.md`. Commercial use: allowed by root text. Redistribution: allowed with notices; component review pending.
-Evidence: https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/license.md.
-Exact licence bytes and source/hash evidence are committed under `data/registry/licences/kibo-ui/`.
+Expected inventory: 40 web components after excluding `patterns`, `shadcn-ui`, `typescript-config` and style-only `typography`.
+Actual branch-published count: **0**.
 
-Expected inventory: 41 packages after removing shared/tooling/pattern directories, before style-only exclusions. Complete component count pending. Actual published: **0**.
-Preview: original example plus exact pinned component, locally rendered unless an official isolated route is established. Do not iframe the complete docs page as a component demo.
-Installation: package manifests plus the pinned `apps/docs/lib/package.ts` registry transformation. Workspace dependencies need explicit end-user mapping.
-Exclusions: shared shadcn primitives, TypeScript tooling, patterns and style-only typography. Risks: example dependency closure, external media and per-component browser acceptance.
-
-- [x] Candidate SHA and root licence evidence recorded.
-- [ ] Approved adapter, truthful previews and reviewed publication complete.
+Preview strategy: pinned local render from the exact Kibo source unless a component-specific official isolated route is proven.
+Installation strategy: upstream package metadata plus Kibo's registry transformation.
+Blocker: the reviewed snapshot does not yet prove complete end-user dependency closure or a truthful accepted preview for every record. Kibo does **not** block later providers.
 
 ### 2. Dice UI
 
-Website: https://www.diceui.com/. Repository: https://github.com/sadmann7/diceui. Branch: `main`.
+- [x] Official identity verified: https://www.diceui.com/ and `sadmann7/diceui`.
+- [x] Branch/SHA: `main` at `c6e666943d55011c12cac224803666fdcde5b53e`.
+- [x] Licence: MIT, `LICENSE`.
+- [x] Stable Radix/Base UI registry trees captured.
+- [ ] Publication approved.
 
-SHA: `c6e666943d55011c12cac224803666fdcde5b53e`.
-Licence: MIT, `LICENSE`. Commercial use: allowed by root text. Redistribution: allowed with notices; component review pending.
-Evidence: https://github.com/sadmann7/diceui/blob/c6e666943d55011c12cac224803666fdcde5b53e/LICENSE.
+Expected logical inventory: **45** Radix component identities. Base UI is an alternate implementation family, not another set of duplicate catalogue identities.
+Actual branch-published count: **0**.
 
-Expected inventory: 45 Radix UI declarations; 40 Base UI declarations are alternative implementations, not automatically another 40 assets. Actual published: **0**.
-Preview: original Radix/Base UI examples, rendered from the matching pinned implementation unless an official isolated route is verified.
-Installation: `docs/registry/bases/{radix,base}/ui/_registry.ts`. Extract declarations without executing TypeScript; retain differing dependencies.
-Exclusions: hooks, internal helpers and duplicate family identities. Risks: declaration parsing and variant identity need full review; lexical name capture is not complete install evidence.
-
-- [x] Candidate SHA and inventory layout recorded.
-- [ ] Approved adapter, truthful previews and reviewed publication complete.
+Preview strategy: matching pinned Radix/Base UI demo rendered from the exact implementation.
+Blocker: static dependency extraction and implementation-specific preview mapping are not complete enough to publish without weakening current validation.
 
 ### 3. UIAble
 
-Website: https://uiable.com/. Repository: https://github.com/codedthemes/uiable. Branch: `master`.
+- [x] Official identity verified: https://uiable.com/ and `codedthemes/uiable`.
+- [x] Branch/SHA: `master` at `34e78586c904091059deb63412ae330b2757e923`.
+- [x] Licence: MIT, `LICENSE`; licence text retained.
+- [x] Stable inventory: first-party `public/registry-index.json` and component registry.
+- [x] Component source, dependencies and registry dependencies retained.
+- [x] Truthful preview mapping implemented.
+- [x] Runtime adapter implemented.
+- [x] Provider-scoped sync covered by idempotence tests.
+- [ ] Production database sync and deployed acceptance.
 
-SHA: `34e78586c904091059deb63412ae330b2757e923`.
-Licence: MIT, `LICENSE`, community repository only. Commercial use: allowed by root text. Redistribution: allowed with notices; Pro excluded.
-Evidence: https://github.com/codedthemes/uiable/blob/34e78586c904091059deb63412ae330b2757e923/LICENSE.
+Expected component variants: **707**. The provider's separate 62 primitives and 60 blocks are deliberately not ingested in this wave.
+Actual branch-published count: **707**.
 
-Expected inventory: 707 component variants in `src/components/uiable/registry.json`. The separate 62 primitives and 60 blocks are not included in that count. Actual published: **0**.
-Preview: exact official `/preview/<category>/<component>` route derived from the source path. Generated `/preview/<name>` metadata must not be assumed correct. Sandbox/storage behaviour needs browser proof.
-Installation: official `@uiable` registry instructions, retained generated item JSON and declared registry dependencies.
-Exclusions: Pro products, shared primitive duplicates and separate blocks. Risks: 707-entry inventory requires separate bounded staging, not raising the existing runtime parser's 200-component limit; theme messaging and iframe boot require acceptance.
-
-- [x] Candidate SHA, registry structure and preview route implementation recorded.
-- [ ] Approved adapter, truthful previews and reviewed publication complete.
+Preview: exact official isolated route derived from the pinned component source path.
+Installation: `https://uiable.com/r/<component>.json`.
+Exclusions: Pro products, 62 shared primitives and 60 blocks.
 
 ### 4. Flowbite React
 
-Website: https://flowbite-react.com/. Repository: https://github.com/themesberg/flowbite-react. Branch: `main`.
+- [x] Official identity verified: https://flowbite-react.com/ and `themesberg/flowbite-react`.
+- [x] Branch/SHA: `main` at `85319bd067822f7aa9670688780aeb58cc187aa5`.
+- [x] Licence: MIT, `LICENSE`; Pro is excluded.
+- [x] Package/source inventory captured.
+- [x] Exact isolated examples mapped.
+- [x] Runtime adapter implemented.
+- [ ] Production database sync and deployed acceptance.
 
-SHA: `85319bd067822f7aa9670688780aeb58cc187aa5`.
-Licence: MIT, `LICENSE`. Commercial use: allowed by root text. Redistribution: allowed with notices; Pro excluded.
-Evidence: https://github.com/themesberg/flowbite-react/blob/85319bd067822f7aa9670688780aeb58cc187aa5/LICENSE.
+Expected source component inventory after internal exclusions: **46**.
+Actual branch-published count: **45**.
 
-Expected inventory: 46 source directories before internal exclusions. Staging excludes internal Floating and identifies the separate ButtonGroup within Button; final count must be measured. Actual published: **0**.
-Preview: official Storybook first, otherwise exact `/examples/<component>.<example>` routes backed by pinned example files. Do not reuse a forms screenshot for unrelated controls.
-Installation: retained `packages/ui/package.json`, package peer/dependency declarations and upstream setup docs.
-Exclusions: internal primitives, Pro products and unreviewed duplicate examples. Risks: external hosted demos are mutable; theme and viewport support must be tested rather than inferred from HTTP 200.
-
-- [x] Candidate SHA and official isolated example route recorded.
-- [ ] Approved adapter, truthful previews and reviewed publication complete.
+Preview: exact first-party `flowbite-react.com/examples/<example>` route.
+Installation: `flowbite-react` package with upstream peer-dependency evidence.
+Exclusions: internal `Floating` primitive; `DarkThemeToggle` remains unpublished because no unique truthful isolated upstream demo was established.
 
 ### 5. HeroUI Web
 
-Website: https://www.heroui.com/. Repository: https://github.com/heroui-inc/heroui. Branch: `v3`.
+- [x] Official identity verified: https://www.heroui.com/ and `heroui-inc/heroui`.
+- [x] Branch/SHA: `v3` at `ac71b5f644803b2107c878908e64f100d6a7d443`.
+- [x] Root licence: Apache-2.0, `LICENSE`.
+- [x] Web-only Storybook inventory captured.
+- [x] Exact Storybook IDs derived from pinned source, not guessed.
+- [x] Runtime adapter implemented.
+- [ ] Production database sync and deployed acceptance.
 
-SHA: `ac71b5f644803b2107c878908e64f100d6a7d443`.
-Licence: Apache-2.0, `LICENSE`. Commercial use: allowed by root text. Redistribution: allowed subject to Apache conditions, notices and component review.
-Evidence: https://github.com/heroui-inc/heroui/blob/ac71b5f644803b2107c878908e64f100d6a7d443/LICENSE.
+Expected web component stories: **68**.
+Actual branch-published count: **68**.
 
-Expected inventory: 68 component Storybook files with matching web implementation paths. Actual published: **0**.
-Preview: official Storybook matched against its real index and reviewed story IDs; no guessed ID generation. Native demos are not web previews.
-Installation: `packages/react/package.json`, declared peers/dependencies and official React setup.
-Exclusions: HeroUI Native, Pro products, helper-only docs and unreviewed examples. Risks: the current runtime Provider type only permits main/master and its licence recogniser only handles MIT/ISC. Add explicit reviewed support rather than weakening guards or casting around them.
-
-- [x] Candidate SHA, branch and story source inventory recorded.
-- [ ] Approved adapter, truthful previews and reviewed publication complete.
+Preview: official `storybook-v3.heroui.com/iframe.html` with the story ID parsed from each pinned `.stories.tsx` file.
+Installation: `@heroui/react` with retained upstream peer dependencies.
+Exclusions: HeroUI Native and other non-web products.
+Risk note: the pinned repository root is Apache-2.0 while package metadata still contains older MIT metadata. Both are permissive, but UIXO records the root licence controlling the reviewed repository revision rather than hiding the mismatch.
 
 ### 6. Fancy Components
 
-Website: https://www.fancycomponents.dev/. Repository: https://github.com/danielpetho/fancy. Branch: `main`.
+- [x] Official identity verified: https://www.fancycomponents.dev/ and `danielpetho/fancy`.
+- [x] Branch/SHA: `main` at `f9f62c61207b2dd3210476dd98af3c9a5be24094`.
+- [x] Licence: MIT, `LICENSE`.
+- [x] Stable source inventory captured.
+- [ ] Truthful preview acceptance.
+- [ ] Publication approved.
 
-SHA: `f9f62c61207b2dd3210476dd98af3c9a5be24094`.
-Licence: MIT, `LICENSE`. Commercial use: allowed by root text. Redistribution: allowed with notices; component/media review pending.
-Evidence: https://github.com/danielpetho/fancy/blob/f9f62c61207b2dd3210476dd98af3c9a5be24094/LICENSE.
+Expected component inventory: **45**.
+Actual branch-published count: **0**.
 
-Expected inventory: pending complete enumeration of `src/fancy/components/<category>/*.tsx`. Actual published: **0**.
-Preview: the corresponding original `src/fancy/examples` implementation with exact pinned source, or a verified official isolated route.
-Installation: per-component docs and source imports. The project package.json is not a claim that every component needs every dependency.
-Exclusions: duplicate examples, landing-page artwork, fonts and unreviewed demo imagery. Risks: physics/animation dependencies and external media require isolated execution review.
-
-- [x] Candidate SHA and stable source layout recorded.
-- [ ] Approved adapter, truthful previews and reviewed publication complete.
+Blocker: the provider has first-party examples but no isolated public component route was established. Publishing requires vendoring and browser-testing the exact pinned component/example source, including physics/media dependencies. No generic screenshot or recreated animation is accepted.
 
 ### 7. EvilCharts
 
-Website: https://evilcharts.com/. Repository: https://github.com/legions-developer/evilcharts. Branch: `main`.
+- [x] Official identity verified: https://evilcharts.com/ and `legions-developer/evilcharts`.
+- [x] Branch/SHA: `main` at `500ecd44c1fdcf319ba83ea68f3771bc76125974`.
+- [x] Licence: MIT, `LICENSE`.
+- [x] First-party registry captured.
+- [ ] Truthful per-component preview acceptance.
+- [ ] Publication approved.
 
-SHA: `500ecd44c1fdcf319ba83ea68f3771bc76125974`.
-Licence: MIT, `LICENSE`. Commercial use: allowed by root text. Redistribution: allowed with notices; component review pending.
-Evidence: https://github.com/legions-developer/evilcharts/blob/500ecd44c1fdcf319ba83ea68f3771bc76125974/LICENSE.
+Expected component inventory: **27** `registry:component` entries. **252** `registry:block` examples are outside this component wave.
+Actual branch-published count: **0**.
 
-Expected inventory: 27 registry component entries; 252 registry blocks are a separate scope. Some component entries are chart helpers, not standalone public demos. Actual published: **0**.
-Preview: actual Recharts/ECharts examples from matching pinned source. The repository's illustrative SVG chart previews do not prove a real chart render.
-Installation: exact registry item dependencies and registryDependencies, with chart engine identity retained.
-Exclusions: block-only entries, helpers lacking standalone demos and illustrations offered as live previews. Risks: helper/category mapping, engine-specific runtime and canvas rendering.
-
-- [x] Candidate SHA and registry counts recorded.
-- [ ] Approved adapter, truthful previews and reviewed publication complete.
+Blocker: chart helpers and chart components have many exact first-party example files, but no safe isolated route covering every component has been proven. The repository's illustrative SVG previews are not substitutes for actual chart renders. Local pinned rendering remains the acceptable path.
 
 ### 8. Kokonut UI
 
-Website: https://kokonutui.com/. Repository: https://github.com/kokonut-labs/kokonutui. Branch: `main`.
+- [x] Official identity verified: https://kokonutui.com/ and `kokonut-labs/kokonutui`.
+- [x] Branch/SHA: `main` at `83eec6d982d400a18438001a8efdbac1f159dd43`.
+- [x] Licence: MIT, `LICENSE`.
+- [x] First-party registry captured.
+- [ ] Truthful isolated/local previews completed.
+- [ ] Publication approved.
 
-SHA: `83eec6d982d400a18438001a8efdbac1f159dd43`.
-Licence: MIT, `LICENSE`. Commercial use: allowed by root text. Redistribution: allowed with notices; component review pending.
-Evidence: https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/LICENSE.
+Expected inventory: **46** components.
+Actual branch-published count: **0**.
+Exclusions: 4 hooks and 1 lib helper.
 
-Expected inventory: 46 components; exclude four hooks and one library helper. Actual published: **0**.
-Preview: real component-specific implementation from `components/kokonutui`, using a verified official demo or pinned local render.
-Installation: root registry.json dependencies, supporting files and shadcn registry dependencies.
-Exclusions: Pro offerings, helper-only records and standalone icon records. Risks: third-party brand graphics and component demonstrations need separate review.
-
-- [x] Candidate SHA and component/helper split recorded.
-- [ ] Approved adapter, truthful previews and reviewed publication complete.
+Blocker: docs exist per component, but no component-specific isolated public renderer was established. Exact pinned local rendering is required before publication.
 
 ### 9. MapCN
 
-Website: https://www.mapcn.dev/. Official repository: https://github.com/AnmolSaini16/mapcn. Branch: `main`.
+- [x] Official identity corrected to https://www.mapcn.dev/ and `AnmolSaini16/mapcn`.
+- [x] Branch/SHA: `main` at `d160bd767bc6388618720c6038a4dd9948c97362`.
+- [x] Code licence: MIT, `LICENSE`.
+- [x] Registry captured.
+- [ ] Basemap/service terms cleared.
+- [ ] Publication approved.
 
-SHA: `d160bd767bc6388618720c6038a4dd9948c97362`.
-Licence: MIT code, `LICENSE`. Commercial code use and redistribution: allowed by root text with notices. Basemap service authorisation is separate and unresolved.
-Evidence: https://github.com/AnmolSaini16/mapcn/blob/d160bd767bc6388618720c6038a4dd9948c97362/LICENSE.
+Expected atomic component inventory in the current component scope: **1** (`map`). Eight block records remain outside the atomic component wave.
+Actual branch-published count: **0**.
 
-Expected inventory: recount the official registry; do not reuse the earlier `pacb9148/mapcn` fork inventory or SHA. Actual published: **0**.
-Preview: actual MapLibre component with an authorised basemap configuration and visible required attribution, or an official reviewed isolated demo.
-Installation: official registry item, MapLibre dependencies and upstream style requirements.
-Exclusions: the earlier search-result fork, unauthorised tile-service usage and unrelated page blocks. Risks: CARTO basemap commercial terms are not granted by the MIT component licence; WebGL/worker/CSP behaviour needs acceptance.
-
-- [x] Official-site repository correction and exact SHA recorded.
-- [ ] Approved adapter, authorised truthful preview and reviewed publication complete.
+Blocker: MIT covers the source code, not automatically CARTO or other basemap/tile services. A truthful live MapLibre preview must use authorised tiles and preserve attribution before UIXO publishes it.
 
 ### 10. Babelize Elements
 
-Website: https://elements.babelize.co/. Repository: https://github.com/babelize/babelize-elements. Branch: `main`.
+- [x] Official identity verified: https://elements.babelize.co/ and `babelize/babelize-elements`.
+- [x] Branch/SHA: `main` at `2cd92ba8acad36e6122d4c528cc81b5d99ffd587`.
+- [x] Licence: MIT, `LICENSE`.
+- [x] Exact registry metadata retained.
+- [x] Exact first-party demos vendored unchanged and SHA-256 locked.
+- [x] Sandboxed local preview manifest implemented.
+- [x] Runtime adapter implemented.
+- [ ] Production database sync and deployed acceptance.
 
-SHA: `2cd92ba8acad36e6122d4c528cc81b5d99ffd587`.
-Licence: MIT, `LICENSE`. Commercial use: allowed by root text. Redistribution: allowed with notices; component review pending.
-Evidence: https://github.com/babelize/babelize-elements/blob/2cd92ba8acad36e6122d4c528cc81b5d99ffd587/LICENSE.
+Expected inventory: **3**.
+Actual branch-published count: **3**.
 
-Expected inventory: language-switcher, navbar and phone-input, three source components. Actual published: **0**.
-Preview: original docs demos paired with the exact pinned source, or a verified official isolated demo.
-Installation: pinned README documents npm `@babelize/elements`, `@elements` registry setup and Tailwind source scanning. Preserve actual installation requirements.
-Exclusions: marketing claims about future components, helpers and invented locale-picker records. Risks: registry transformation and demo dependency closure remain to be verified.
-
-- [x] Candidate SHA and corrected official .co domain recorded.
-- [ ] Approved adapter, truthful previews and reviewed publication complete.
+Assets: Language Switcher, Phone Input and NavBar.
+Preview: exact pinned first-party demo source rendered by UIXO's existing sandboxed live-demo runner.
+Installation: official `https://elements.babelize.co/r/<name>.json` registry item with upstream dependencies and absolute registry-dependency URLs.
 
 ### 11. Spectrum UI
 
-Website: https://ui.spectrumhq.in/. Repository: https://github.com/arihantcodes/spectrum-ui. Branch: `main`.
+- [x] Official identity verified: https://ui.spectrumhq.in/ and `arihantcodes/spectrum-ui`.
+- [x] Branch/SHA: `main` at `cdb32064c2d9843dfc7f55da71282fa0ffc719d3`.
+- [x] Root licence: Apache-2.0.
+- [x] Registry inspected.
+- [ ] Rights review complete.
+- [ ] Publication approved.
 
-SHA: `cdb32064c2d9843dfc7f55da71282fa0ffc719d3`.
-Root licence: Apache-2.0, `LICENSE`. Commercial use and redistribution for the complete component collection: **not established**. Root permissions do not resolve inherited code.
-Evidence: https://github.com/arihantcodes/spectrum-ui/blob/cdb32064c2d9843dfc7f55da71282fa0ffc719d3/LICENSE.
+Expected registry component-shaped records: **221** plus 92 blocks and 2 hooks.
+Actual branch-published count: **0**.
 
-Expected inventory: 221 component entries, 92 blocks and two hooks. Actual published: **0**.
-Preview: none approved; audit ancestry first, then review an original component-specific demo.
-Installation: root registry declarations can be staged as evidence, not executed or declared approved.
-Exclusions: blocks, hooks, bundled node_modules, restricted inherited sources and unverified notices. Blocker: mixed ancestry includes Aceternity, Magic UI and shadcn; review individual notices and permissions before redistribution.
-
-- [x] Candidate SHA and mixed-ancestry blocker recorded.
-- [ ] Per-component rights, truthful previews and reviewed publication complete.
+Blocker: mixed inherited ancestry includes external component sources. The root Apache licence is not proof that every inherited component can be redistributed under that licence. The strict staging parser also surfaced non-conforming names that require manual review. UIXO does not weaken validation to force these through.
 
 ### 12. MicroInteractions UI
 
-Website: https://www.microinteractionsui.com/. Repository: https://github.com/mateusmachry/microinteractionsui. Branch: `main`.
+- [x] Official identity verified: https://www.microinteractionsui.com/ and `mateusmachry/microinteractionsui`.
+- [x] Branch/SHA: `main` at `95d98ec8de72d1222855f0104f550718bacb1648`.
+- [x] Registry inventory captured.
+- [ ] Applicable project licence established.
+- [ ] Publication approved.
 
-SHA: `95d98ec8de72d1222855f0104f550718bacb1648`.
-Licence identifier/path: no component-project licence established in the reviewed source. Commercial use: unknown. Redistribution: unknown.
-Evidence: https://github.com/mateusmachry/microinteractionsui/tree/95d98ec8de72d1222855f0104f550718bacb1648.
+Expected component inventory: **21**; one lib helper excluded.
+Actual branch-published count: **0**.
 
-Expected inventory: 21 components and one helper in src/registry.json. Actual published: **0**.
-Preview: none approved pending licence evidence.
-Installation: pinned README's CLI example is evidence only, not a redistribution licence.
-Exclusions: the library helper and unrelated `.agents/skills/frontend-design/LICENSE.txt`. Blocker: an unrelated skill licence does not license this component project. Obtain an applicable grant before publication.
-
-- [x] Candidate SHA and missing-rights blocker recorded.
-- [ ] Applicable licence, truthful previews and reviewed publication complete.
+Blocker: no applicable project licence is present. An unrelated licence inside an agent/skill directory does not license the component project.
 
 ### 13. BadtzUI
 
-Website: https://badtz-ui.com/. Repository: https://github.com/badtzx0/badtz-ui. Branch: `main`.
+- [x] Official identity verified: https://badtz-ui.com/ and `badtzx0/badtz-ui`.
+- [x] Branch/SHA: `main` at `0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058`.
+- [x] Licence text retained.
+- [x] Registry captured.
+- [ ] Redistribution approved.
+- [ ] Publication approved.
 
-SHA: `0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058`.
-Licence: MIT text with an additional restriction, `LICENSE.md`; **not ordinary MIT**. Intended commercial redistribution: not approved. General commercial-use certainty: unknown for this catalogue workflow.
-Evidence: https://github.com/badtzx0/badtz-ui/blob/0938aaa25b9ecfc25d95b3c4ce28f1d8f0c1b058/LICENSE.md.
-Exact bytes and source/hash evidence are committed under `data/registry/licences/badtz-ui/`.
+Expected UI component inventory: **35**; 43 style/example/helper records excluded.
+Actual branch-published count: **0**.
 
-Expected inventory: 35 UI components, 40 examples and three style/helper entries. Actual published: **0**.
-Preview: none approved for catalogue publication.
-Installation: registry metadata may be audited, but no automated acquisition or redistribution approval is granted.
-Blocker: commercial redistribution requires significant modification; minor modifications or unaltered versions cannot be sold. Do not misclassify the licence from its MIT heading or create modified lookalikes to evade the restriction.
-
-- [x] Exact restriction text and hashes retained; fixture regression verifies refusal.
-- [ ] Suitable permission or a separately authorised catalogue arrangement established.
+Blocker: its licence contains MIT text plus an additional commercial redistribution/sale restriction requiring significant modification. UIXO will not represent that as ordinary MIT or redistribute the catalogue automatically.
 
 ### 14. Tailark
 
-Website: https://tailark.com/. Repository: https://github.com/tailark/blocks. Branch: `main`.
+- [x] Official identity verified: https://tailark.com/ and `tailark/blocks`.
+- [x] Branch/SHA: `main` at `8139698115c1341bfd2e3e286c04bb4d8146f472`.
+- [x] Licence: MIT, `LICENCE.md`.
+- [x] Six Base/Radix registry sources statically parsed without executing upstream code.
+- [x] Public installer and isolated renderer proved.
+- [x] Runtime adapter implemented.
+- [ ] Production database sync and deployed acceptance.
 
-SHA: `8139698115c1341bfd2e3e286c04bb4d8146f472`.
-Licence: MIT, `LICENCE.md`, free repository only. Commercial use: allowed by root text. Redistribution: allowed with notices; Pro excluded.
-Evidence: https://github.com/tailark/blocks/blob/8139698115c1341bfd2e3e286c04bb4d8146f472/LICENCE.md.
+Expected raw inventory: **300** declarations, comprising 150 Base blocks plus 150 Radix mirrors.
+Actual branch-published count: **150** logical Base blocks.
 
-Expected inventory: pending complete free block enumeration across Base/Radix and kit registries. Blocks are staged for scope review, not silently published as generic primitive components. Actual published: **0**.
-Preview: official `/view/<registry-name>` matched to the actual free block entry. Preserve kit/base identity.
-Installation: review `createRegistryHelpers` output and actual item URLs/dependencies, not guessed registry names.
-Exclusions: Pro, page-level products, helper-only components and duplicate identities. Risks: reused logos/media, light-only kits, composite block classification and inherited notices.
-
-- [x] Candidate SHA, free source layout and isolated view route recorded.
-- [ ] Approved scope/adapter, truthful previews and reviewed publication complete.
+Preview: exact `https://tailark.com/view/<name>` renderer.
+Installation: exact `https://tailark.com/r/<name>.json` Base registry item.
+Exclusion: the 150 Radix declarations are retained as alternate implementations but not published as duplicate assets because Tailark's public installer and view routes resolve the Base catalogue.
 
 ### 15. 8bitcn/ui
 
-Website: https://www.8bitcn.com/. Repository: https://github.com/TheOrcDev/8bitcn-ui. Branch: `main`.
+- [x] Official identity verified: https://www.8bitcn.com/ and `TheOrcDev/8bitcn-ui`.
+- [x] Branch/SHA: `main` at `898caa5932590ab8ff70f54e3c9aff5b5baa523c`.
+- [x] Licence: MIT, `license.md`.
+- [x] Registry captured with retro styles and dependency declarations.
+- [ ] Truthful preview coverage completed.
+- [ ] Publication approved.
 
-SHA: `898caa5932590ab8ff70f54e3c9aff5b5baa523c`.
-Licence: MIT, `license.md`. Commercial use: allowed by root text. Redistribution: allowed with notices; component/media review pending.
-Evidence: https://github.com/TheOrcDev/8bitcn-ui/blob/898caa5932590ab8ff70f54e3c9aff5b5baa523c/license.md.
+Expected component inventory: **56**.
+Actual branch-published count: **0**.
+Exclusions: **65** block/page records in this wave.
 
-Expected inventory: 56 components. The separate 63 blocks and two pages are not automatically part of the component catalogue. Actual published: **0**.
-Preview: original component-specific examples with exact pinned source, retained retro styles and reviewed dependency closure.
-Installation: root registry.json, declared shadcn dependencies and supporting CSS files.
-Exclusions: blocks/pages until scope review, individual icons and unreviewed game/media/font assets. Risks: inherited component notices, font rights and responsive demo behaviour.
+Blocker: docs and several first-party demos exist, but not a unique isolated truthful preview for all 56 components. Publication requires exact pinned local renders while preserving the provider's retro stylesheet and dependency closure.
 
-- [x] Candidate SHA and component/block/page split recorded.
-- [ ] Approved adapter, truthful previews and reviewed publication complete.
+## Link-only and excluded sources
 
-## Link-only and pack-only sources
+- **React Bits** remains a website-directory link only. Its Commons Clause condition makes component redistribution unsuitable for UIXO's asset catalogue.
+- **21st.dev** is not ingested. This work does not convert directory membership into provider approval.
 
-React Bits: website-directory-only under the user's Commons Clause exclusion. 21st.dev: not ingested. BadtzUI and MicroInteractions UI remain audit/link-only until suitable rights are established. Spectrum UI remains blocked for per-component rights review. No other website becomes approved through this document.
+## Pack-only icon sources
 
-Lucide and Heroicons remain one pack record each. Other icon websites require separate provider approval and one pack-level entry, never a per-glyph crawl.
+- Lucide: one provider-level icon-pack record only.
+- Heroicons: one provider-level icon-pack record only.
+- No new individual icon records are created.
 
 ## React Native future queue
 
-HeroUI Native, Reactix, Native Bloom, RN Neo, Make It Animated and React Native Motion require a visible platform filter, native runtime/preview support and their own source/licence audits. None is included in the web-component ingestion queue.
+These remain outside the web-component catalogue until UIXO has a visible platform filter and Native-specific preview/install handling:
 
-## Validation and progress
+- HeroUI Native
+- Reactix
+- Native Bloom
+- RN Neo
+- Make It Animated
+- React Native Motion
 
-- [x] Read current documentation, provider/preview implementation, tests and database sync workflow.
-- [x] Confirm latest main and create a separate branch.
-- [x] Record all fifteen candidate source SHAs and known blockers.
-- [x] Retain exact Kibo and Badtz licence evidence, verified against upstream Git blob hashes.
-- [x] Implement staging-only inventory readers and immutable capture; keep current provider validation unchanged.
-- [x] Run 43 local fixture/evidence tests, Python compilation and the ordered queue dry run.
-- [ ] Complete and verify real upstream capture for every eligible inventory.
-- [ ] Retain actual staged counts and full licence evidence for successful captures.
-- [ ] Add approved runtime adapters, real preview support and strict acquisition mappings.
-- [ ] Prove provider-scoped database sync against an isolated database, preserving existing records and revocations.
-- [ ] Run and record lint, TypeScript, application/registry tests and production build for the final head.
-- [ ] Verify every published preview in light/dark modes at desktop/narrow widths.
-- [ ] Record final published, excluded and blocked counts in this document and the PR.
+## Runtime and sync safeguards
 
-Local commands already run:
+New reviewed providers use immutable source snapshots and exact commit SHAs. Existing provider IDs are not renamed. Provider sync is now scoped:
 
-```sh
-python -m unittest discover -s tests/provider_ingestion -v
-python -m compileall -q tools/provider_ingestion tests/provider_ingestion
-python -m tools.provider_ingestion.capture --plan --all
-```
+`npm run registry:sync-provider -- <provider-id>`
 
-These tests do not constitute UIXO database sync, React runtime, production Neon or browser acceptance. No npm validation result is claimed at this checkpoint. The full application CI remains separate.
+The scoped command is idempotence-tested and does not touch unrelated providers. Do not use the global sync merely to publish one provider.
 
-## Production database action after merge
+Production database action remains **required after merge**, one provider at a time, only after confirming the Vercel production deployment and its exact Neon project/branch/database/endpoint. The intended order is UIAble, Flowbite React, HeroUI Web, Babelize Elements and Tailark, with verification after each provider.
 
-**This staging-only change requires no production database action.** Do not run the unscoped `registry:sync` merely to publish these audit records. The existing command updates providers and assets across the catalogue and can overwrite state outside this batch.
+## Validation
 
-A subsequent reviewed publication change must first confirm the exact Vercel production project/deployment SHA and Neon project, branch, database and endpoint. Record the backup and isolation boundary without exposing credentials. Then use a provider-scoped insert-only/reviewed operation that preserves existing names, payloads and revocations, refuses changed existing records, and has tested repeat-run behaviour.
+Source-evidence staging:
 
-Only after human merge approval and successful deployment should the confirmed production target receive approved records. Verify deployed counts and every real preview afterwards. A source commit, CI capture artifact or HTTP 200 is not production publication or preview acceptance.
+- `python -m unittest discover -s tests/provider_ingestion -v`: 43 provider-ingestion tests.
+- `python -m compileall -q tools/provider_ingestion tests/provider_ingestion`.
+- Immutable source capture is repeatable and records zero publication during evidence collection.
+
+Application acceptance required before merge:
+
+- `npm run format:check`
+- `npm run lint`
+- `npm test`
+- `npm run typecheck`
+- Registry/MCP verification
+- live-demo source-lock verification and build
+- production build
+- isolated browser acceptance at desktop and narrow widths
+
+The PR must not be merged until the current head passes those checks. After merge and provider-scoped production sync, verify each new provider on the deployed site in both light and dark modes and at desktop and narrow widths. A provider that fails its truthful preview stays unpublished.
