@@ -385,8 +385,13 @@ test('captured React registries retain pinned source, licence and acquisition ev
     components.every(
       (asset) =>
         (asset.preview?.kind === 'image' && asset.preview.url) ||
-        (asset.providerId === 'animata' && asset.preview?.kind === 'embed') ||
+        (['animata', 'uiable', 'flowbite-react', 'heroui-web', 'tailark'].includes(
+          asset.providerId,
+        ) &&
+          asset.preview?.kind === 'embed' &&
+          asset.preview.url) ||
         asset.providerId === 'simply-buttons' ||
+        asset.providerId === 'babelize-elements' ||
         ['switch', 'table', 'tabs', 'textarea', 'toggle', 'toggle-group', 'tooltip'].includes(
           asset.slug,
         ),
