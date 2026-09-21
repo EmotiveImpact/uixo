@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AssetProvenance } from './AssetProvenance';
 import { AssetPreview } from './AssetPreview';
 import { registryRequest, safeAssetUrl } from '../lib/asset-library';
+import { assetDestinationUrl } from '../lib/asset-destination';
 import type { Acquisition, AssetQuery, AssetRecord } from '../lib/asset-library';
 
 export function AssetDetail({
@@ -92,7 +93,7 @@ export function AssetDetail({
   const selected = asset?.variants.find((item) => item.id === variant);
   const current = resolution?.variant === variant ? resolution : null;
   const result = current?.result;
-  const sourceUrl = safeAssetUrl(result?.url) || safeAssetUrl(asset?.sourceUrl);
+  const destinationUrl = asset ? assetDestinationUrl(asset, result?.url) : undefined;
   const command = result?.command
     ? [result.command.executable, ...result.command.arguments]
         .map((part) =>
@@ -168,20 +169,22 @@ export function AssetDetail({
                   <Copy size={14} />
                   Copy install command
                 </button>
-              ) : sourceUrl ? (
+              ) : destinationUrl ? (
                 <a
                   className="asset-library-primary"
-                  href={sourceUrl}
+                  href={destinationUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {asset.kind === 'icon-pack' ? 'Browse icon pack' : 'Open original source'}
+                  {asset.kind === 'icon-pack'
+                    ? 'Browse icon pack'
+                    : `View on ${nameOf(asset.providerId)}`}
                   <ArrowUpRight size={14} />
                 </a>
               ) : null}
-              {command && sourceUrl && (
-                <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
-                  View source
+              {command && destinationUrl && (
+                <a href={destinationUrl} target="_blank" rel="noopener noreferrer">
+                  View on {nameOf(asset.providerId)}
                   <ArrowUpRight size={14} />
                 </a>
               )}
