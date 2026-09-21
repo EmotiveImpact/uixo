@@ -696,10 +696,12 @@ test('reviewed provider snapshots publish only truthfully previewable pinned web
   const uiable = assets.filter((asset) => asset.providerId === 'uiable');
   const flowbite = assets.filter((asset) => asset.providerId === 'flowbite-react');
   const heroui = assets.filter((asset) => asset.providerId === 'heroui-web');
+  const tailark = assets.filter((asset) => asset.providerId === 'tailark');
 
   assert.equal(uiable.length, 707);
   assert.equal(flowbite.length, 45);
   assert.equal(heroui.length, 68);
+  assert.equal(tailark.length, 150);
 
   assert.ok(
     uiable.every(
@@ -732,5 +734,18 @@ test('reviewed provider snapshots publish only truthfully previewable pinned web
         asset.variants[0].sourceRef === 'ac71b5f644803b2107c878908e64f100d6a7d443',
     ),
   );
-  assert.equal(new Set([...uiable, ...flowbite, ...heroui].map((asset) => asset.id)).size, 820);
+  assert.ok(
+    tailark.every(
+      (asset) =>
+        asset.preview?.kind === 'embed' &&
+        asset.preview.url === `https://tailark.com/view/${asset.slug}` &&
+        asset.variants[0].acquisition.kind === 'registry' &&
+        asset.variants[0].acquisition.url === `https://tailark.com/r/${asset.slug}.json` &&
+        asset.variants[0].sourceRef === '8139698115c1341bfd2e3e286c04bb4d8146f472',
+    ),
+  );
+  assert.equal(
+    new Set([...uiable, ...flowbite, ...heroui, ...tailark].map((asset) => asset.id)).size,
+    970,
+  );
 });
