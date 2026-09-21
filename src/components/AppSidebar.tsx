@@ -2,7 +2,7 @@ import { CatalogueSidebar } from './discovery/CatalogueSidebar';
 import { RegistryExplore } from './RegistryExplore';
 import { EMPTY_ASSET_QUERY, assetHref } from '../lib/asset-library';
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
-import { Blocks, Heart, PanelLeft, Plus, Shapes, Trash2, X } from 'lucide-react';
+import { Blocks, Heart, PanelLeft, Plus, Shapes, Trash2, Type, X } from 'lucide-react';
 import {
   AnimatedSidebar,
   AnimatedSidebarClose,
@@ -167,31 +167,36 @@ function LegacyAppSidebar({
                 {[
                   { id: 'component', label: 'Components', icon: Blocks, count: componentCount },
                   { id: 'icon-pack', label: 'Icon packs', icon: Shapes, count: iconCount },
+                  { id: 'font', label: 'Fonts', icon: Type, count: 0 },
                 ].map(({ id, label, icon: Icon, count }) => (
                   <AnimatedSidebarMenuItem key={id}>
                     <AnimatedSidebarMenuButton
                       icon={<Icon className="size-4" />}
                       badge={count ? String(count) : undefined}
-                      ariaExpanded={id === 'component' ? assetKind !== 'icon-pack' : undefined}
+                      ariaExpanded={
+                        id === 'component' ? !assetKind || assetKind === 'component' : undefined
+                      }
                       isActive={assetKind === id && !assetCategory}
                       onSelect={() => onChooseAssetKind(id)}
                     >
                       {label}
                     </AnimatedSidebarMenuButton>
-                    {id === 'component' && assetKind !== 'icon-pack' && onChooseAssetCategory && (
-                      <AnimatedSidebarMenuSub open>
-                        {COMPONENT_CATEGORIES.map((entry) => (
-                          <AnimatedSidebarMenuSubItem key={entry.id}>
-                            <AnimatedSidebarMenuSubButton
-                              isActive={assetCategory === entry.id}
-                              onSelect={() => onChooseAssetCategory(entry.id)}
-                            >
-                              {entry.label}
-                            </AnimatedSidebarMenuSubButton>
-                          </AnimatedSidebarMenuSubItem>
-                        ))}
-                      </AnimatedSidebarMenuSub>
-                    )}
+                    {id === 'component' &&
+                      (!assetKind || assetKind === 'component') &&
+                      onChooseAssetCategory && (
+                        <AnimatedSidebarMenuSub open>
+                          {COMPONENT_CATEGORIES.map((entry) => (
+                            <AnimatedSidebarMenuSubItem key={entry.id}>
+                              <AnimatedSidebarMenuSubButton
+                                isActive={assetCategory === entry.id}
+                                onSelect={() => onChooseAssetCategory(entry.id)}
+                              >
+                                {entry.label}
+                              </AnimatedSidebarMenuSubButton>
+                            </AnimatedSidebarMenuSubItem>
+                          ))}
+                        </AnimatedSidebarMenuSub>
+                      )}
                   </AnimatedSidebarMenuItem>
                 ))}
               </AnimatedSidebarMenu>

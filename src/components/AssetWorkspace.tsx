@@ -242,7 +242,7 @@ export function AssetWorkspace() {
                 ? 'Source-backed selections and evidence from the UIXO registry.'
                 : utility
                   ? 'One library. Your workflow.'
-                  : 'Components and icon packs from trusted sources. Preview them, inspect the details, and go straight to the original.'
+                  : 'Components, icon packs, and fonts from trusted sources. Preview them, inspect the details, and go straight to the original.'
             }
             canClear={hasFilters}
             onClear={() => navigate({ view: query.view }, true)}

@@ -75,6 +75,7 @@ describe('AppSidebar catalogue context', () => {
     expect(screen.getByRole('button', { name: 'Buttons' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Forms' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Navigation' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Fonts' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Sources' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'All assets' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Asset collections' })).toBeTruthy();
