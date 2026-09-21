@@ -1,8 +1,11 @@
 # List-poster watchlist
 
-Updated: 2026-09-20
+Updated: 2026-09-21
 
-## Core handles (25)
+Priority seed (not exclusive). Dump all links from list posts.
+
+## Handles
+
 - @walebuilds_
 - @rkant7
 - @Tegadesigns
@@ -28,27 +31,36 @@ Updated: 2026-09-20
 - @eamin_ux
 - @deb_isadev
 - @Mohd__Shahid_07
+- @codestirring
+- @jarradgrigg
+- @Hartdrawss
+- @AAishakar
+- @himanshubuildss
+- @simoom_design
 
-## Discovery candidates (21)
-- @_itshyper__
+## Discovery candidates
+
 - @AGTPinsights
-- @ahmad_Uxflow
 - @AI_With_Stella
+- @AboveRepl
+- @CJfromJBW
+- @Milo_Milady
+- @NityamAS
+- @Shefali__J
+- @VullnetAdemaj
+- @_itshyper__
+- @ahmad_Uxflow
 - @alibey_10
 - @apvarun
 - @cabralorenzo
 - @chadcombinator
-- @CJfromJBW
 - @codebydinil
 - @eddieeee0716
-- @Milo_Milady
+- @iyoushetwt
 - @mr_nirajkumar07
 - @mredu000
-- @NityamAS
-- @Shefali__J
+- @prettysites
 - @suriadesign
 - @theansarh
 - @thedzianis
-- @VullnetAdemaj
 - @zaikhdev
-
