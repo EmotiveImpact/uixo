@@ -215,7 +215,7 @@ describe('Screenshot fallback interactions', () => {
     });
     expect(window.location.search).toBe('');
     fireEvent.error(screen.getByAltText('Alert captured component preview'));
-    expect(screen.getByRole('link', { name: /Open original source/ })).toBeTruthy();
+    expect(screen.getByRole('link', { name: /Open provider page/ })).toBeTruthy();
     expect(screen.queryByText('Live · Try it')).toBeNull();
     expect(screen.queryByRole('link', { name: 'Inspect Alert screenshot' })).toBeNull();
   });
@@ -226,6 +226,6 @@ describe('Screenshot fallback interactions', () => {
     act(() => vi.advanceTimersByTime(20000));
     expect(screen.queryByRole('img')).toBeNull();
     expect(screen.getByText('Preview unavailable')).toBeTruthy();
-    expect(screen.getByRole('link', { name: /Open original source/ })).toBeTruthy();
+    expect(screen.getByRole('link', { name: /Open provider page/ })).toBeTruthy();
   });
 });

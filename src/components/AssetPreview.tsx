@@ -2,6 +2,7 @@ import { reviewedPreviewPath } from '../../shared/reviewed-previews';
 import { useEffect, useRef, useState } from 'react';
 import type { CollectionAssetPreview } from '../../shared/intelligence';
 import { assetHref, readAssetQuery, safeAssetUrl } from '../lib/asset-library';
+import { assetDestinationUrl } from '../lib/asset-destination';
 import { navigateInApp } from '../lib/navigation';
 import demos from '../../live-demos/manifest.json';
 
@@ -95,7 +96,6 @@ function LivePreview({
   }, [visible, status]);
 
   const scale = detail ? 1 : size.width / 480;
-  const demo = demos[asset.id as keyof typeof demos];
   const showFallbackImage = status === 'error' && fallbackImageUrl && !fallbackFailed;
 
   return (
@@ -169,11 +169,11 @@ function LivePreview({
       {status === 'error' && (!fallbackImageUrl || fallbackFailed) && (
         <a
           className="asset-live-fallback"
-          href={safeAssetUrl(demo?.sourceUrl ?? asset.sourceUrl)}
+          href={assetDestinationUrl(asset)}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Open original source ↗
+          Open provider page ↗
         </a>
       )}
       <small className="actual-preview-label">
@@ -216,7 +216,7 @@ export function AssetPreview({
         <div className="asset-library-no-preview">
           <strong>{asset.name}</strong>
           <span>Explore the complete library</span>
-          <a href={safeAssetUrl(asset.sourceUrl)} target="_blank" rel="noopener noreferrer">
+          <a href={assetDestinationUrl(asset)} target="_blank" rel="noopener noreferrer">
             Browse icon pack ↗
           </a>
         </div>
@@ -261,8 +261,8 @@ export function AssetPreview({
       ) : (
         <div className="asset-library-no-preview">
           <strong>Preview unavailable</strong>
-          <a href={safeAssetUrl(asset.sourceUrl)} target="_blank" rel="noopener noreferrer">
-            Open original source ↗
+          <a href={assetDestinationUrl(asset)} target="_blank" rel="noopener noreferrer">
+            Open provider page ↗
           </a>
         </div>
       )}

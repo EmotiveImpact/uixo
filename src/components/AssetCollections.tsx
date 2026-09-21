@@ -8,6 +8,7 @@ import type {
 } from '../../shared/intelligence';
 import type { Catalogue, ProviderRecord } from '../lib/asset-library';
 import { registryRequest, safeAssetUrl } from '../lib/asset-library';
+import { assetDestinationUrl } from '../lib/asset-destination';
 import { AssetPreview } from './AssetPreview';
 import { CollectionGrid } from './DiscoveryCollections';
 import { AssetDetail } from './AssetDetail';
@@ -145,8 +146,12 @@ function PublicCollectionDetail({ query, navigate, assetSaves }: IntelligencePro
                           Inspect source <ArrowRight size={14} />
                         </RegistryLink>
                       )}
-                      <a href={safeAssetUrl(i.sourceUrl)} target="_blank" rel="noopener noreferrer">
-                        Original source
+                      <a
+                        href={i.asset ? assetDestinationUrl(i.asset) : safeAssetUrl(i.sourceUrl)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {i.asset ? `View on ${i.providerName || 'provider'}` : 'Provider website'}
                       </a>
                     </div>
                   </div>
