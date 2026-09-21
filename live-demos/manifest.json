@@ -1570,5 +1570,23 @@
     "export": "GrigolettiFramerButtonPreview",
     "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
     "sourceUrl": "https://simply-buttons.vercel.app/?q=Verified%20expert%20badge#grigoletti-framer"
+  },
+  "babelize-elements/language-switcher": {
+    "file": "./vendor/babelize-elements/components/docs/language-switcher-demo.tsx",
+    "export": "LanguageSwitcherDemo",
+    "ref": "2cd92ba8acad36e6122d4c528cc81b5d99ffd587",
+    "sourceUrl": "https://elements.babelize.co/docs/components/language-switchers/language-switcher"
+  },
+  "babelize-elements/phone-input": {
+    "file": "./vendor/babelize-elements/components/docs/phone-input-demo.tsx",
+    "export": "PhoneInputDemo",
+    "ref": "2cd92ba8acad36e6122d4c528cc81b5d99ffd587",
+    "sourceUrl": "https://elements.babelize.co/docs/components/inputs/phone-input"
+  },
+  "babelize-elements/navbar": {
+    "file": "./vendor/babelize-elements/components/docs/navbar-demo.tsx",
+    "export": "NavBarDemo",
+    "ref": "2cd92ba8acad36e6122d4c528cc81b5d99ffd587",
+    "sourceUrl": "https://elements.babelize.co/docs/components/navigation/navbar"
   }
 }
