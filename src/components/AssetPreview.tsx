@@ -42,6 +42,14 @@ function officialEmbedUrl(asset: CollectionAssetPreview): string | undefined {
   )
     return url;
 
+  if (
+    asset.providerId === 'tailark' &&
+    parsed.origin === 'https://tailark.com' &&
+    /^\/view\/(?:dusk|mist|veil)-[a-z0-9-]+-[a-z0-9-]+$/.test(parsed.pathname) &&
+    !parsed.search
+  )
+    return url;
+
   return undefined;
 }
 
