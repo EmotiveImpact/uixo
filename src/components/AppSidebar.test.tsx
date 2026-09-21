@@ -19,7 +19,7 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-function renderSidebar(onAssets: boolean, curator = false) {
+function renderSidebar(onAssets: boolean, curator = false, publicMode = false, assetKind = '') {
   render(
     <AnimatedSidebarProvider>
       <AppSidebar
@@ -36,6 +36,8 @@ function renderSidebar(onAssets: boolean, curator = false) {
         onChooseSub={vi.fn()}
         onSubmit={vi.fn()}
         onAssets={onAssets}
+        publicMode={publicMode}
+        assetKind={assetKind}
         registryCurator={curator}
         onChooseAssetView={vi.fn()}
         onChooseAssetKind={onAssets ? vi.fn() : undefined}
@@ -105,5 +107,12 @@ describe('AppSidebar catalogue context', () => {
     for (const name of ['Registry health', 'Operations', 'Editorial', 'Indexing']) {
       expect(screen.getByRole('button', { name })).toBeTruthy();
     }
+  });
+
+  it('shows Fonts in the public asset filters and hides component categories on that route', () => {
+    renderSidebar(true, false, true, 'font');
+
+    expect(screen.getByRole('button', { name: 'Fonts' })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: 'Buttons' })).toBeNull();
   });
 });
