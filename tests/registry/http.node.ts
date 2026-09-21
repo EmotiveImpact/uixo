@@ -173,7 +173,7 @@ test('snapshot deployment is explicitly read-only, including for valid curator c
     await seedCaptured(f.registry);
     const status = await f.api('status');
     assert.equal(status.data.readOnly, true);
-    assert.equal(status.data.stats.assets, 1434);
+    assert.equal(status.data.stats.assets, 1437);
     const mutation = await f.api('scout', 'curator', { items: [{ url: 'https://example.com/' }] });
     assert.equal(mutation.status, 503);
     assert.equal(mutation.data.error.code, 'READ_ONLY_SNAPSHOT');
