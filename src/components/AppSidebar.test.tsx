@@ -115,4 +115,12 @@ describe('AppSidebar catalogue context', () => {
     expect(screen.getByRole('button', { name: 'Fonts' })).toBeTruthy();
     expect(screen.queryByRole('button', { name: 'Buttons' })).toBeNull();
   });
+
+  it('uses meaningful icons for component categories in the public asset sidebar', () => {
+    renderSidebar(true, false, true, 'component');
+
+    const overlays = screen.getByRole('button', { name: 'Overlays' });
+    expect(overlays.querySelector('svg.filter-category-icon')).toBeTruthy();
+    expect(overlays.querySelector('.filter-dot')).toBeNull();
+  });
 });

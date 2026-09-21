@@ -1,16 +1,27 @@
 import {
   ArrowUpRight,
+  BellRing,
   Blocks,
   Bookmark,
   ChevronDown,
+  Image,
+  LayoutGrid,
   Layers,
+  MousePointerClick,
+  Navigation as NavigationIcon,
+  PanelsTopLeft,
+  Play,
   Plus,
   Shapes,
+  Sparkles,
+  Table2,
   Terminal,
+  TextCursorInput,
   Trash2,
   Type,
   X,
 } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import type { AppSidebarProps } from '../AppSidebar';
 import {
   AnimatedSidebar,
@@ -24,6 +35,21 @@ import { categories, resources } from '../../data';
 import { categoryCount, populatedSubs } from '../../lib/filters';
 import { navigateInApp } from '../../lib/navigation';
 import { DEFAULT_LIST_ID } from '../../types';
+
+const COMPONENT_CATEGORY_ICONS = {
+  buttons: MousePointerClick,
+  forms: TextCursorInput,
+  navigation: NavigationIcon,
+  layout: LayoutGrid,
+  overlays: PanelsTopLeft,
+  'data-display': Table2,
+  feedback: BellRing,
+  text: Type,
+  backgrounds: Image,
+  media: Play,
+  motion: Sparkles,
+  other: Shapes,
+} satisfies Record<(typeof COMPONENT_CATEGORIES)[number]['id'], LucideIcon>;
 
 function AssetFilters(props: AppSidebarProps) {
   const { data } = useRegistryData<CatalogueInventory>('inventory');
@@ -60,17 +86,20 @@ function AssetFilters(props: AppSidebarProps) {
           </button>
         ))}
         {showComponentCategories &&
-          COMPONENT_CATEGORIES.map((item) => (
-            <button
-              key={item.id}
-              className={props.assetCategory === item.id ? 'chosen' : ''}
-              onClick={() => props.onChooseAssetCategory?.(item.id)}
-            >
-              <span className="filter-dot" />
-              <span>{item.label}</span>
-              <small>{count('categories', item.id)}</small>
-            </button>
-          ))}
+          COMPONENT_CATEGORIES.map((item) => {
+            const Icon = COMPONENT_CATEGORY_ICONS[item.id];
+            return (
+              <button
+                key={item.id}
+                className={props.assetCategory === item.id ? 'chosen' : ''}
+                onClick={() => props.onChooseAssetCategory?.(item.id)}
+              >
+                <Icon className="filter-category-icon" aria-hidden="true" />
+                <span>{item.label}</span>
+                <small>{count('categories', item.id)}</small>
+              </button>
+            );
+          })}
       </div>
       <details className="filter-section" open>
         <summary>
