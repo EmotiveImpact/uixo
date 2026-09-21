@@ -5,7 +5,9 @@ import { migrate, sqliteDatabase } from '../registry/database.ts';
 import { Registry } from '../registry/service.ts';
 import { seedCaptured, syncCaptured } from '../registry/bootstrap.ts';
 import { enqueue, runJob } from '../registry/jobs.ts';
-const [command, provider] = process.argv.slice(2);
+const args = process.argv.slice(2);
+const command = args[0];
+const provider = args.slice(1).find((argument) => !argument.startsWith('--'));
 if (
   ![
     'migrate',
