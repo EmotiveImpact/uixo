@@ -15,3 +15,9 @@ ops
 
 live-demos/vendor
 live-demos/package-lock.json
+
+provider-demos/kibo-ui/vendor
+provider-demos/kibo-ui/upstream-theme.css
+provider-demos/kibo-ui/LICENSE.upstream.txt
+provider-demos/kibo-ui/package-lock.json
+public/provider-demos

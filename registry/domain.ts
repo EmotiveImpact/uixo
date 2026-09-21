@@ -27,6 +27,7 @@ export type Variant = {
   css: string | null;
   dependencies: string[];
   registryDependencies?: string[];
+  dependencyVersions?: Record<string, string>;
   peerDependencies: Record<string, string>;
   sourceRef: string | null;
   acquisition: {
@@ -65,7 +66,8 @@ export type Provider = {
     | 'shadcn-registry'
     | 'github-json-registry'
     | 'github-storybook'
-    | 'reviewed-gallery';
+    | 'reviewed-gallery'
+    | 'reviewed-react';
   registryPath?: string;
   registryBaseUrl?: string;
   /** Repository prefix applied to install-registry file paths before linking source. */
@@ -300,7 +302,7 @@ export function validateAsset(input: unknown): Asset {
       a.kind === 'component'
         ? a.providerId === 'simply-buttons'
           ? 'buttons'
-          : componentCategory(text(a.slug, 180))
+          : componentCategory(text(a.slug, 180), providerId)
         : '',
     tags: strings(a.tags),
     price: choice(a.price, ['free', 'paid', 'unknown'], 'unknown') as Asset['price'],
@@ -321,6 +323,20 @@ export function validateAsset(input: unknown): Asset {
         peerDependencies: Object.fromEntries(
           Object.entries(peers).map(([key, value]) => [text(key, 100), text(value, 200)]),
         ),
+        ...(x.dependencyVersions === undefined
+          ? {}
+          : {
+              dependencyVersions: Object.fromEntries(
+                (Object.keys(record(x.dependencyVersions)).length > 40
+                  ? fail('Too many dependency version requirements.')
+                  : Object.entries(record(x.dependencyVersions))
+                ).map(([name, range]) => {
+                  if (!strings(x.dependencies ?? []).includes(name))
+                    return fail('Version evidence must belong to a declared dependency.');
+                  return [text(name, 100), text(range, 150)];
+                }),
+              ),
+            }),
         sourceRef: x.sourceRef ? text(x.sourceRef, 100) : null,
         acquisition: {
           kind: choice(text(ac.kind, 40), [

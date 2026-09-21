@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 3000",
-    "build": "npm run demos:build && npm run registry:deps && npm run registry:verify && npm run previews:verify && tsc --noEmit && vite build && node scripts/prerender.mjs",
+    "build": "npm run reviewed-demos:build && npm run demos:build && npm run registry:deps && npm run registry:verify && npm run previews:verify && tsc --noEmit && vite build && node scripts/prerender.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "prerender": "node scripts/prerender.mjs",
     "typecheck": "tsc --noEmit",
@@ -27,14 +27,16 @@
     "db:schema": "psql \"$DATABASE_URL\" -v ON_ERROR_STOP=1 -f db/schema.sql",
     "registry:dev": "node --experimental-strip-types tools/registry-dev.ts",
     "registry:deps": "npm ci --prefix registry --ignore-scripts",
-    "registry:test": "node --experimental-strip-types --test tests/registry/core.node.ts tests/registry/http.node.ts tests/registry/intelligence.node.ts services/eve/lib/client.node.ts tests/registry/discovery.node.ts tests/registry/source-directory.node.ts",
+    "registry:test": "node --experimental-strip-types --test tests/registry/core.node.ts tests/registry/http.node.ts tests/registry/intelligence.node.ts services/eve/lib/client.node.ts tests/registry/discovery.node.ts tests/registry/source-directory.node.ts tests/registry/kibo.node.ts tests/registry/dependency-notices.node.ts tests/registry/kibo-safety.node.ts",
     "registry:test:mcp": "node --experimental-strip-types --test registry/tests/mcp.node.ts",
     "registry:verify": "node tools/verify-registry.mjs",
     "registry:mcp": "node --experimental-strip-types registry/stdio.ts",
     "registry:db": "node --experimental-strip-types tools/registry-db.ts",
     "registry:sync": "node --env-file=.env.local --experimental-strip-types tools/registry-db.ts sync --allow-remote",
     "demos:build": "node scripts/verify-live-demos.mjs && npm ci --prefix live-demos --ignore-scripts && vite build --config live-demos/vite.config.mjs && node scripts/verify-live-demo-output.mjs",
-    "registry:verify-release": "node --experimental-strip-types registry/verify-release.ts"
+    "registry:verify-release": "node --experimental-strip-types registry/verify-release.ts",
+    "reviewed-demos:build": "node --experimental-strip-types scripts/prepare-reviewed-previews.mjs && npm ci --prefix provider-demos/kibo-ui --ignore-scripts && tsc --project provider-demos/kibo-ui/tsconfig.json && vite build --config provider-demos/kibo-ui/vite.config.mjs",
+    "registry:sync-reviewed": "node --experimental-strip-types tools/sync-reviewed-provider.ts"
   },
   "dependencies": {
     "@neondatabase/auth": "^0.5.0-beta",

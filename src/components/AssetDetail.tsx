@@ -204,33 +204,8 @@ export function AssetDetail({
                 <dt>Licence</dt>
                 <dd>{asset.licence.expression}</dd>
               </div>
-              <div>
-                <dt>Commercial</dt>
-                <dd>{asset.licence.commercial}</dd>
-              </div>
-              <div>
-                <dt>Redistribution</dt>
-                <dd>{asset.licence.redistribution}</dd>
-              </div>
-              <div>
-                <dt>Source check</dt>
-                <dd>
-                  {asset.verifiedAt
-                    ? new Date(asset.verifiedAt).toLocaleDateString('en-GB')
-                    : 'Not verified'}
-                </dd>
-              </div>
-              <div>
-                <dt>Editorial pick</dt>
-                <dd>{asset.editorialPick ? 'Yes' : 'No'}</dd>
-              </div>
             </dl>
 
-            <AssetProvenance
-              asset={asset}
-              variantId={variant}
-              providerName={nameOf(asset.providerId)}
-            />
             <label className="asset-library-field asset-variant-field">
               Choose a variant
               <select
@@ -309,7 +284,19 @@ export function AssetDetail({
 
             <details className="asset-drawer-section">
               <summary>Licence &amp; provenance</summary>
+              <AssetProvenance
+                asset={asset}
+                variantId={variant}
+                providerName={nameOf(asset.providerId)}
+              />
+
               <p>{asset.licence.note}</p>
+              <p>
+                <strong>Commercial use:</strong> {asset.licence.commercial}
+              </p>
+              <p>
+                <strong>Redistribution</strong>: {asset.licence.redistribution}
+              </p>
               {asset.evidence?.map((item, index) => (
                 <div className="asset-evidence" key={`${item.field}-${index}`}>
                   <a href={safeAssetUrl(item.url)} target="_blank" rel="noopener noreferrer">

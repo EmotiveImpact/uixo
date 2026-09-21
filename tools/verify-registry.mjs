@@ -5,6 +5,9 @@ const suites = [
     'core and HTTP',
     [
       'tests/registry/core.node.ts',
+      'tests/registry/kibo.node.ts',
+      'tests/registry/kibo-safety.node.ts',
+      'tests/registry/dependency-notices.node.ts',
       'tests/registry/http.node.ts',
       'tests/registry/intelligence.node.ts',
       'tests/registry/discovery.node.ts',

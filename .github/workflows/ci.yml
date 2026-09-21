@@ -51,17 +51,67 @@ jobs:
           tail -n 14 test-results/intelligence/application.log
 
       - name: Build and verify registry, MCP and previews
+        id: build
         run: |
           mkdir -p test-results/intelligence
           npm run build > test-results/intelligence/build.log 2>&1 || { tail -n 150 test-results/intelligence/build.log; exit 1; }
           grep -E '# tests|# pass|# fail|Verified|prerendered' test-results/intelligence/build.log
 
+      - name: Explicit application typecheck
+        run: npm run typecheck
+
       - name: Install isolated browser test tools
+        id: browser-tools
         run: |
           python -m pip install -r tests/browser/requirements.txt
           python -m playwright install --with-deps chromium
 
+      - name: Kibo built-source light and dark interaction matrix
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.browser-tools.outcome == 'success' }}
+        run: |
+          set -o pipefail
+          python -m http.server 3001 --bind 127.0.0.1 --directory dist > test-results/intelligence/kibo-static.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            curl --fail --silent http://127.0.0.1:3001/provider-demos/kibo-ui/index.html > /dev/null && break
+            sleep 1
+          done
+          UIXO_WEB_URL=http://127.0.0.1:3001 python tests/browser/kibo.py > test-results/intelligence/kibo-browser.log 2>&1 || { cat test-results/intelligence/kibo-browser.log; exit 1; }
+          cat test-results/intelligence/kibo-browser.log
+
+      - name: Public prototype layout and interaction acceptance
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.browser-tools.outcome == 'success' }}
+        run: |
+          set -o pipefail
+          mkdir -p test-results/redesign
+          node --experimental-strip-types tools/registry-dev.ts --memory > test-results/redesign/registry.log 2>&1 &
+          REGISTRY_PID=$!
+          npm run dev > test-results/redesign/vite.log 2>&1 &
+          VITE_PID=$!
+          trap 'kill "$REGISTRY_PID" "$VITE_PID" 2>/dev/null || true' EXIT
+          READY=false
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent 'http://127.0.0.1:4175/api/registry?action=status' > /dev/null && curl --fail --silent 'http://localhost:3000' > /dev/null; then
+              READY=true
+              break
+            fi
+            sleep 1
+          done
+          test "$READY" = true
+          python tests/browser/redesign.py > test-results/redesign/browser.log 2>&1 || { cat test-results/redesign/browser.log; exit 1; }
+          cat test-results/redesign/browser.log
+
+      - name: Retain public layout evidence before operator checks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-layout-${{ github.run_id }}
+          path: test-results/redesign
+          retention-days: 7
+
       - name: Browser and network acceptance with an isolated registry
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.browser-tools.outcome == 'success' }}
         run: |
           set -o pipefail
           mkdir -p test-results/intelligence
@@ -80,7 +130,7 @@ jobs:
           done
           test "$READY" = true
           python tests/browser/bootstrap.py | tee test-results/intelligence/bootstrap.json
-          python tests/browser/intelligence.py
+          python tests/browser/intelligence.py > test-results/intelligence/intelligence-browser.log 2>&1 || { tail -n 100 test-results/intelligence/intelligence-browser.log; exit 1; }
           npm run registry:verify-release -- http://127.0.0.1:4175 | tee test-results/intelligence/network-acceptance.log
 
       - name: Retain browser verification evidence
@@ -88,5 +138,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: intelligence-browser-${{ github.run_id }}
-          path: test-results/intelligence
+          path: |
+            test-results/intelligence
+            test-results/redesign
           retention-days: 7

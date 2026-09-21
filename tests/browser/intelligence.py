@@ -71,7 +71,7 @@ with sync_playwright() as p:
         assert browser_status['role'] == 'curator'
 
         for view, query, expected_heading in [
-            ('assets', '', 'Build from a considered selection.'),
+            ('assets', '', 'Components & assets'),
             ('health', 'view=health', 'Know what is in the library.'),
             ('sources', 'view=sources', 'Understand the source, not just the count.'),
             ('source', 'view=sources&provider=shadcn', 'shadcn/ui'),
@@ -98,7 +98,9 @@ with sync_playwright() as p:
         page.get_by_role('button', name='Sources', exact=True).click()
         heading('Understand the source, not just the count.')
         page.get_by_role('searchbox', name='Find a source').fill('shadcn')
-        expect(page.locator('.dv2-source-card')).to_have_count(1)
+        expect(page.locator('.dv2-source-card')).to_have_count(2)
+        expect(page.locator('.dv2-source-card').filter(has=page.get_by_role('heading', name='shadcn/ui', exact=True))).to_have_count(1)
+        expect(page.locator('.dv2-source-card').filter(has=page.get_by_role('heading', name='Kibo UI', exact=True))).to_have_count(1)
         page.get_by_role('button', name='Asset collections', exact=True).click()
         heading('A considered starting point.')
         expect(page.locator('.dv2-collection-card')).to_have_count(6)

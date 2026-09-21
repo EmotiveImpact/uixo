@@ -1,3 +1,5 @@
+import { reviewedPreviewPath } from '../shared/reviewed-previews.ts';
+import { KIBO_REF } from './kibo.ts';
 import { readFile } from 'node:fs/promises';
 import { COMPONENT_CATEGORIES } from '../shared/component-categories.ts';
 import type {
@@ -96,9 +98,10 @@ export function measureAsset(asset: Asset, index: Media, now = Date.now()): Evid
     }
   }
   const pinnedLive = Boolean(
-    live &&
-    /^[a-f0-9]{40}$/i.test(live.ref) &&
-    asset.variants.some((v) => v.sourceRef === live.ref),
+    (live &&
+      /^[a-f0-9]{40}$/i.test(live.ref) &&
+      asset.variants.some((v) => v.sourceRef === live.ref)) ||
+    (reviewedPreviewPath(asset) && asset.variants.some((v) => v.sourceRef === KIBO_REF)),
   );
   m.officialCaptures = Number(captured);
   m.pinnedLiveDemos = Number(pinnedLive);

@@ -2,7 +2,12 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { LandingPage } from './LandingPage';
 
-afterEach(cleanup);
+vi.mock('../hooks/useRegistryData', () => ({ useRegistryData: () => ({ data: null }) }));
+
+afterEach(() => {
+  cleanup();
+  window.history.replaceState(null, '', '/');
+});
 
 describe('LandingPage catalogue navigation', () => {
   it('exposes the same three catalogue destinations as the application shell', () => {
@@ -32,15 +37,15 @@ describe('LandingPage catalogue navigation', () => {
     );
 
     const navigation = screen.getByRole('navigation', { name: 'Main navigation' });
-    const websites = navigation.querySelector('a[href="/browse"]');
-    const assets = navigation.querySelector('a[href="/browse/assets"]');
+    const resources = navigation.querySelector('a[href="/browse"]');
+    const components = navigation.querySelector('a[href="/browse/assets"]');
     const collections = navigation.querySelector('a[href="/collections"]');
 
-    expect(websites?.textContent).toBe('Websites');
-    expect(assets?.textContent).toBe('Assets');
+    expect(resources?.textContent).toBe('Resources');
+    expect(components?.textContent).toBe('Components');
     expect(collections?.textContent).toBe('Collections');
 
-    fireEvent.click(assets!);
-    expect(onAssets).toHaveBeenCalledOnce();
+    fireEvent.click(components!);
+    expect(window.location.pathname).toBe('/browse/assets');
   });
 });
