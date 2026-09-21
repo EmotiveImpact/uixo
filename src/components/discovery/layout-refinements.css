@@ -252,3 +252,140 @@
     inset: auto;
   }
 }
+
+/* Borderless UIXO pass: hierarchy comes from tone, space and motion. */
+:root,
+:root.light {
+  --border: transparent;
+  --uixo-line: transparent;
+}
+
+#root *,
+#root *::before,
+#root *::after {
+  border-color: transparent !important;
+}
+
+.discovery-header {
+  box-shadow: 0 8px 28px rgb(0 0 0 / 0.12);
+}
+
+:root.light .discovery-header {
+  box-shadow: 0 8px 28px rgb(25 35 55 / 0.05);
+}
+
+.discovery-sidebar > div,
+.catalogue-body [data-slot='sidebar'] > div {
+  background: color-mix(in srgb, var(--background) 93%, var(--muted));
+}
+
+.filter-section {
+  border-bottom-width: 0;
+}
+
+.filter-dot,
+.filter-check {
+  border-width: 0;
+  background: color-mix(in srgb, var(--muted-foreground) 18%, transparent);
+}
+
+.filter-section [aria-pressed='true'] .filter-check {
+  background: var(--uixo-accent);
+  box-shadow: none;
+}
+
+.uixo-shell .search-wrap,
+.uixo-shell .prices,
+.uixo-shell .asset-library-filters,
+.header-search,
+.header-icon,
+.discovery-header .avatar {
+  border-width: 0;
+  background: color-mix(in srgb, var(--uixo-surface) 88%, var(--muted));
+}
+
+.uixo-shell .search-wrap:focus-within {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.uixo-shell .asset-library-toolbar,
+.uixo-shell .asset-library-card .asset-library-preview,
+.uixo-shell .website-grid .preview-link,
+.site-footer,
+.filter-section {
+  border-width: 0;
+}
+
+.uixo-shell .component-category-chips button,
+.uixo-shell .asset-library-tags span,
+.discovery-product-tags span,
+.product-type {
+  border-width: 0;
+  background: color-mix(in srgb, var(--muted) 84%, transparent);
+}
+
+.uixo-shell .component-category-chips button:hover,
+.uixo-shell .component-category-chips button[aria-pressed='true'] {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.uixo-shell .asset-library-card,
+.uixo-shell .website-grid > article,
+.discovery-product-image,
+.discovery-collection,
+.discovery-handoff {
+  border-width: 0;
+  background: var(--uixo-surface);
+  box-shadow: 0 14px 38px rgb(0 0 0 / 0.14);
+}
+
+:root.light .uixo-shell .asset-library-card,
+:root.light .uixo-shell .website-grid > article,
+:root.light .discovery-product-image,
+:root.light .discovery-collection,
+:root.light .discovery-handoff {
+  box-shadow: 0 14px 38px rgb(25 35 55 / 0.07);
+}
+
+.uixo-shell .asset-library-card,
+.uixo-shell .website-grid > article,
+.discovery-product,
+.discovery-collection {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.uixo-shell .asset-library-card:hover,
+.uixo-shell .website-grid > article:hover,
+.discovery-product:hover,
+.discovery-collection:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 48px rgb(0 0 0 / 0.2);
+}
+
+:root.light .uixo-shell .asset-library-card:hover,
+:root.light .uixo-shell .website-grid > article:hover,
+:root.light .discovery-product:hover,
+:root.light .discovery-collection:hover {
+  box-shadow: 0 22px 48px rgb(25 35 55 / 0.11);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uixo-shell .asset-library-card,
+  .uixo-shell .website-grid > article,
+  .discovery-product,
+  .discovery-collection {
+    transition: none;
+  }
+
+  .uixo-shell .asset-library-card:hover,
+  .uixo-shell .website-grid > article:hover,
+  .discovery-product:hover,
+  .discovery-collection:hover {
+    transform: none;
+  }
+}
