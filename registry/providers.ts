@@ -171,6 +171,23 @@ export const PROVIDERS: Provider[] = [
       'Official HeroUI v3 web package pinned after the documented Apache-2.0 relicensing. Preview IDs are derived from the retained pinned Storybook source rather than guessed from component names.',
   },
   {
+    id: 'babelize-elements',
+    name: 'Babelize Elements',
+    url: 'https://elements.babelize.co/',
+    repo: 'babelize/babelize-elements',
+    branch: 'main',
+    licencePath: 'LICENSE',
+    adapter: 'reviewed-snapshot',
+    registryBaseUrl: 'https://elements.babelize.co/r/',
+    sourceRef: '2cd92ba8acad36e6122d4c528cc81b5d99ffd587',
+    snapshotPath: 'data/registry/snapshots/babelize-elements-reviewed.json',
+    css: 'tailwind',
+    approved: true,
+    selectedAt: '2026-09-21T00:00:00.000Z',
+    rationale:
+      'Official MIT Babelize registry pinned to an immutable commit. UIXO renders the exact first-party demo source locally in the sandboxed preview runner and preserves the provider registry dependencies.',
+  },
+  {
     id: 'tailark',
     name: 'Tailark',
     url: 'https://tailark.com/',
@@ -996,7 +1013,10 @@ export async function reviewedSnapshotAssets(provider: Provider): Promise<Asset[
   const assets: Asset[] = [];
   for (const item of snapshot.items) {
     const previewUrl = await reviewedPreview(provider, item);
-    if (!previewUrl) continue;
+    const hasPinnedLocalDemo =
+      provider.id === 'babelize-elements' &&
+      ['language-switcher', 'phone-input', 'navbar'].includes(item.slug);
+    if (!previewUrl && !hasPinnedLocalDemo) continue;
     const packageProvider = provider.id === 'flowbite-react' || provider.id === 'heroui-web';
     const dependencies = packageProvider ? [] : reviewedStringArray(item.dependencies, true);
     const registryDependencies = packageProvider
@@ -1019,7 +1039,12 @@ export async function reviewedSnapshotAssets(provider: Provider): Promise<Asset[
               kind: 'registry' as const,
               url: `https://tailark.com/r/${encodeURIComponent(item.slug)}.json`,
             }
-          : {
+          : provider.id === 'babelize-elements'
+            ? {
+                kind: 'registry' as const,
+                url: `https://elements.babelize.co/r/${encodeURIComponent(item.slug)}.json`,
+              }
+            : {
               kind: 'package' as const,
               packageName: packageName!,
               url: provider.url,
@@ -1074,19 +1099,23 @@ export async function reviewedSnapshotAssets(provider: Provider): Promise<Asset[
           method: 'declared',
         },
         {
-          field: 'official isolated component preview',
-          url: previewUrl,
+          field: previewUrl
+            ? 'official isolated component preview'
+            : 'first-party demo source used for pinned local preview',
+          url: previewUrl ?? text(record(item.upstreamMetadata).demoUrl, 2048),
           reference: provider.sourceRef,
           observedAt: snapshot.observedAt,
-          method: 'declared',
+          method: previewUrl ? 'declared' : 'inspected',
         },
       ],
       verifiedAt: snapshot.observedAt,
-      preview: {
-        kind: 'embed',
-        url: previewUrl,
-        label: `Official live ${provider.name} component demonstration.`,
-      },
+      preview: previewUrl
+        ? {
+            kind: 'embed',
+            url: previewUrl,
+            label: `Official live ${provider.name} component demonstration.`,
+          }
+        : null,
       editorialPick: false,
     });
   }
