@@ -138,9 +138,11 @@ export function AssetWorkspace() {
         : COMPONENT_CATEGORIES.find((entry) => entry.id === query.category)?.label ||
           (query.kind === 'icon-pack'
             ? 'Icon packs'
-            : query.kind === 'component'
-              ? 'Components'
-              : 'Components & assets'));
+            : query.kind === 'font'
+              ? 'Fonts'
+              : query.kind === 'component'
+                ? 'Components'
+                : 'Components & assets'));
   const hasFilters = Boolean(
     query.q ||
     query.kind ||

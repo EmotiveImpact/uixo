@@ -27,6 +27,17 @@ describe('Discovery header', () => {
     );
   });
 
+  it('promotes Fonts as a first-class asset destination and marks it selected', () => {
+    window.history.replaceState(null, '', '/browse/assets?kind=font');
+    render(<DiscoveryHeader active="components" light={false} onToggleTheme={vi.fn()} />);
+    const fonts = screen.getByRole('link', { name: 'Fonts' });
+    expect(fonts.getAttribute('href')).toBe('/browse/assets?kind=font');
+    expect(fonts.getAttribute('aria-current')).toBe('page');
+    expect(screen.getByRole('link', { name: 'Components' }).hasAttribute('aria-current')).toBe(
+      false,
+    );
+  });
+
   it('closes the mobile navigation on Escape and returns focus to its trigger', () => {
     render(<DiscoveryHeader active="discover" light={false} onToggleTheme={vi.fn()} />);
     fireEvent.click(screen.getByRole('button', { name: 'Open menu' }));

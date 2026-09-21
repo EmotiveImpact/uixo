@@ -21,6 +21,7 @@ const destinations = [
   { id: 'components', label: 'Components', href: '/browse/assets' },
   { id: 'resources', label: 'Resources', href: '/browse' },
   { id: 'icons', label: 'Icon packs', href: '/browse/assets?kind=icon-pack' },
+  { id: 'fonts', label: 'Fonts', href: '/browse/assets?kind=font' },
   { id: 'templates', label: 'Templates', href: '/category/templates' },
   { id: 'collections', label: 'Collections', href: '/collections' },
 ];
@@ -49,14 +50,15 @@ export function DiscoveryHeader({
     window.addEventListener('keydown', close);
     return () => window.removeEventListener('keydown', close);
   }, [menuOpen]);
-  const icons =
-    active === 'components' &&
-    new URLSearchParams(window.location.search).get('kind') === 'icon-pack';
+  const assetKind =
+    active === 'components' ? new URLSearchParams(window.location.search).get('kind') : null;
   const selected = window.location.pathname.startsWith('/category/templates')
     ? 'templates'
-    : icons
+    : assetKind === 'icon-pack'
       ? 'icons'
-      : active;
+      : assetKind === 'font'
+        ? 'fonts'
+        : active;
   const navigate = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0)
       return;
