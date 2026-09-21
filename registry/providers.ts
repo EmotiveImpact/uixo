@@ -1,3 +1,4 @@
+import { readKiboSnapshot, readKiboLicence, kiboComponentAsset } from './kibo.ts';
 import { createHash } from 'node:crypto';
 import { componentCategory } from '../shared/component-categories.ts';
 import { type Asset, type Licence, type Provider, RegistryError, record, text } from './domain.ts';
@@ -116,6 +117,21 @@ export const PROVIDERS: Provider[] = [
     selectedAt: '2026-09-20T00:00:00.000Z',
     rationale:
       'Official open-source React component collection with an MIT licence, pinned upstream source files, and provider-hosted Storybook demos for each catalogued component.',
+  },
+  {
+    id: 'kibo-ui',
+    name: 'Kibo UI',
+    url: 'https://www.kibo-ui.com/',
+    repo: 'shadcnblocks/kibo',
+    branch: 'main',
+    licencePath: 'license.md',
+    adapter: 'reviewed-react',
+    registryBaseUrl: 'https://www.kibo-ui.com/r/',
+    css: 'tailwind',
+    approved: true,
+    selectedAt: '2026-09-20T01:14:57.899Z',
+    rationale:
+      'Only ten individually reviewed React components at the immutable Kibo snapshot. Original components and official examples use an isolated, hash-verified local preview build. Other packages are not approved by this adapter.',
   },
 ];
 export function licenceFromText(
@@ -632,6 +648,31 @@ export async function indexPage(
   const offset = options.offset ?? 0;
   if (!Number.isSafeInteger(offset) || offset < 0 || offset > 100000)
     throw new RegistryError('INVALID_INPUT', 'Invalid provider offset.');
+  if (provider.adapter === 'reviewed-react') {
+    const snapshot = await readKiboSnapshot();
+    if (options.sourceRef && options.sourceRef !== snapshot.ref)
+      throw new RegistryError(
+        'REVIEW_REQUIRED',
+        'Kibo indexing is limited to the reviewed source snapshot.',
+        409,
+      );
+    const licence = licenceFromText(
+      provider,
+      await readKiboLicence(snapshot),
+      snapshot.licence.sourceUrl,
+      snapshot.observedAt,
+    );
+    const assets = snapshot.items.map((item) =>
+      kiboComponentAsset(item, provider, licence, snapshot),
+    );
+    return {
+      assets: assets.slice(offset, offset + 200),
+      total: assets.length,
+      offset,
+      nextOffset: offset + 200 < assets.length ? offset + 200 : null,
+      sourceRef: snapshot.ref,
+    };
+  }
   if (provider.adapter === 'github-storybook') {
     const snapshot = await readAnimataSnapshot();
     if (options.sourceRef && options.sourceRef !== snapshot.ref)

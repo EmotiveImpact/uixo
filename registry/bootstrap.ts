@@ -1,3 +1,4 @@
+import { readKiboSnapshot, readKiboLicence, kiboComponentAsset } from './kibo.ts';
 import { randomUUID } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { fingerprint, type Asset, validateAsset } from './domain.ts';
@@ -28,6 +29,18 @@ export async function capturedAssets(): Promise<Asset[]> {
   };
   const assets: Asset[] = [];
   for (const provider of PROVIDERS) {
+    if (provider.adapter === 'reviewed-react') {
+      const snapshot = await readKiboSnapshot();
+      const licence = licenceFromText(
+        provider,
+        await readKiboLicence(snapshot),
+        snapshot.licence.sourceUrl,
+        snapshot.observedAt,
+      );
+      for (const item of snapshot.items)
+        assets.push(kiboComponentAsset(item, provider, licence, snapshot));
+      continue;
+    }
     if (provider.adapter === 'reviewed-gallery') {
       const snapshot = JSON.parse(
         await readFile(
@@ -103,6 +116,8 @@ export async function capturedAssets(): Promise<Asset[]> {
   ).captures;
   for (const asset of assets) {
     const capture = previews[asset.id];
+    if (asset.providerId === 'kibo-ui' && capture)
+      throw new Error('A reviewed Kibo live preview cannot be replaced by a static capture.');
     if (asset.kind === 'component' && capture)
       asset.preview = {
         kind: 'image',

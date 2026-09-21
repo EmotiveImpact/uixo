@@ -1,6 +1,7 @@
 import { act, cleanup, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { AssetRecord } from '../lib/asset-library';
+import { KIBO_PREVIEW_REF } from '../../shared/reviewed-previews';
 import { AssetPreview } from './AssetPreview';
 
 class ResizeObserverStub {
@@ -68,7 +69,9 @@ describe('AssetPreview', () => {
     expect(frame.style.visibility).toBe('hidden');
     expect(screen.getByRole('status').textContent).toContain('Loading live demo');
     act(() => vi.advanceTimersByTime(20000));
-    expect(screen.getByRole('link', { name: /Open original live demo/ })).toBeTruthy();
+    expect(screen.getByRole('link', { name: /Open original source/ })).toBeTruthy();
+    expect(screen.getByText('Preview could not load')).toBeTruthy();
+    expect(screen.queryByText('Live demo · Try it')).toBeNull();
     act(() => {
       window.dispatchEvent(
         new MessageEvent('message', {
@@ -78,14 +81,15 @@ describe('AssetPreview', () => {
       );
     });
     expect(frame.style.visibility).toBe('visible');
-    expect(screen.queryByRole('link', { name: /Open original live demo/ })).toBeNull();
+    expect(screen.getByText('Live demo · Try it')).toBeTruthy();
+    expect(screen.queryByRole('link', { name: /Open original source/ })).toBeNull();
   });
 
   it('prefers a reviewed live component over its static capture', () => {
     const { container } = render(<AssetPreview asset={asset({})} />);
 
     expect(screen.getByTitle('Live Alert demo').getAttribute('sandbox')).toBe('allow-scripts');
-    expect(screen.getByText(/^Live demo/)).toBeTruthy();
+    expect(screen.getByText('Loading original demo')).toBeTruthy();
     expect(container.querySelector('img')).toBeNull();
     expect(container.querySelector('.is-live-component')).toBeTruthy();
   });
@@ -129,5 +133,54 @@ describe('AssetPreview', () => {
     expect(frame.getAttribute('src')).toContain('animata.design/preview/iframe');
     expect(frame.getAttribute('sandbox')).toBe('allow-scripts');
     expect(container.querySelector('img')).toBeNull();
+  });
+  it('uses only the exact reviewed Kibo preview and refuses replacement URLs', () => {
+    const original = asset({
+      id: 'kibo-ui/announcement',
+      providerId: 'kibo-ui',
+      slug: 'announcement',
+      name: 'Announcement',
+      sourceUrl: `https://github.com/shadcnblocks/kibo/blob/${KIBO_PREVIEW_REF}/packages/announcement/index.tsx`,
+      variants: [
+        {
+          id: 'kibo-ui/announcement/react',
+          framework: 'react',
+          format: 'tsx',
+          dependencies: [],
+          css: 'tailwind',
+          sourceRef: KIBO_PREVIEW_REF,
+        },
+      ],
+      preview: {
+        kind: 'embed',
+        url: 'https://uixo-brown.vercel.app/provider-demos/kibo-ui/index.html?id=announcement',
+        label: 'Original source',
+      },
+    });
+    const { container, rerender } = render(<AssetPreview asset={original} />);
+    expect(screen.getByTitle('Live Announcement demo').getAttribute('src')).toContain(
+      '/provider-demos/kibo-ui/index.html?id=announcement',
+    );
+    expect(screen.getByTitle('Live Announcement demo').getAttribute('sandbox')).toBe(
+      'allow-scripts',
+    );
+    expect(container.querySelector('img')).toBeNull();
+    for (const sourceUrl of [
+      original.sourceUrl.replace(KIBO_PREVIEW_REF, 'a'.repeat(40)),
+      'https://unreviewed.example/source',
+    ]) {
+      rerender(<AssetPreview asset={{ ...original, sourceUrl }} />);
+      expect(container.querySelector('iframe')).toBeNull();
+    }
+    rerender(
+      <AssetPreview
+        asset={{
+          ...original,
+          preview: { kind: 'embed', url: 'https://evil.example/demo', label: 'Not reviewed' },
+        }}
+      />,
+    );
+    expect(container.querySelector('iframe')).toBeNull();
+    expect(screen.getByText('Live preview unavailable')).toBeTruthy();
   });
 });

@@ -1,0 +1,992 @@
+{
+  "schemaVersion": 1,
+  "providerId": "kibo-ui",
+  "website": "https://www.kibo-ui.com/",
+  "repo": "shadcnblocks/kibo",
+  "branch": "main",
+  "ref": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+  "observedAt": "2026-09-20T01:14:57.899Z",
+  "licence": {
+    "identifier": "MIT",
+    "path": "license.md",
+    "sha256": "1fe9198b595ddadef7e2d99e3e1698c036db61c81e91c7b42df90d59f563b2ba",
+    "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/license.md",
+    "commercial": "allowed",
+    "redistribution": "allowed",
+    "conditions": "Retain the copyright and permission notices."
+  },
+  "inventory": {
+    "path": "packages",
+    "registryGeneratorPath": "apps/docs/app/r/registry.json/route.ts",
+    "packageCount": 44,
+    "reactComponentCount": 40,
+    "reviewedCount": 10,
+    "excludedCount": 4,
+    "blockedCount": 30,
+    "records": [
+      {
+        "slug": "announcement",
+        "state": "reviewed",
+        "reason": "Exact component, official default example, dependency closure and licence retained. Browser acceptance is a separate release gate."
+      },
+      {
+        "slug": "avatar-stack",
+        "state": "blocked",
+        "reason": "Official default example includes remote media, branding or external service input; complete preview and third-party asset rights not reviewed."
+      },
+      {
+        "slug": "banner",
+        "state": "reviewed",
+        "reason": "Exact component, official default example, dependency closure and licence retained. Browser acceptance is a separate release gate."
+      },
+      {
+        "slug": "calendar",
+        "state": "blocked",
+        "reason": "No source-pinned preview/dependency closure and four-mode browser acceptance reviewed in this batch."
+      },
+      {
+        "slug": "choicebox",
+        "state": "blocked",
+        "reason": "Component contains @repo/shadcn-ui workspace imports; the inspected registry generator/CLI does not rewrite these. Consumer installation is not proven."
+      },
+      {
+        "slug": "code-block",
+        "state": "blocked",
+        "reason": "No source-pinned preview/dependency closure and four-mode browser acceptance reviewed in this batch."
+      },
+      {
+        "slug": "color-picker",
+        "state": "blocked",
+        "reason": "No source-pinned preview/dependency closure and four-mode browser acceptance reviewed in this batch."
+      },
+      {
+        "slug": "combobox",
+        "state": "reviewed",
+        "reason": "Exact component, official default example, dependency closure and licence retained. Browser acceptance is a separate release gate."
+      },
+      {
+        "slug": "comparison",
+        "state": "blocked",
+        "reason": "Official default example includes remote media, branding or external service input; complete preview and third-party asset rights not reviewed."
+      },
+      {
+        "slug": "contribution-graph",
+        "state": "blocked",
+        "reason": "No source-pinned preview/dependency closure and four-mode browser acceptance reviewed in this batch."
+      },
+      {
+        "slug": "credit-card",
+        "state": "blocked",
+        "reason": "Official default example includes remote media, branding or external service input; complete preview and third-party asset rights not reviewed."
+      },
+      {
+        "slug": "cursor",
+        "state": "blocked",
+        "reason": "No source-pinned preview/dependency closure and four-mode browser acceptance reviewed in this batch."
+      },
+      {
+        "slug": "deck",
+        "state": "blocked",
+        "reason": "Official default example includes remote media, branding or external service input; complete preview and third-party asset rights not reviewed."
+      },
+      {
+        "slug": "dialog-stack",
+        "state": "reviewed",
+        "reason": "Exact component, official default example, dependency closure and licence retained. Browser acceptance is a separate release gate."
+      },
+      {
+        "slug": "dropzone",
+        "state": "blocked",
+        "reason": "No source-pinned preview/dependency closure and four-mode browser acceptance reviewed in this batch."
+      },
+      {
+        "slug": "editor",
+        "state": "blocked",
+        "reason": "No source-pinned preview/dependency closure and four-mode browser acceptance reviewed in this batch."
+      },
+      {
+        "slug": "gantt",
+        "state": "blocked",
+        "reason": "No source-pinned preview/dependency closure and four-mode browser acceptance reviewed in this batch."
+      },
+      {
+        "slug": "glimpse",
+        "state": "blocked",
+        "reason": "Server-dependent link preview requires separately reviewed network/SSR handling."
+      },
+      {
+        "slug": "image-crop",
+        "state": "blocked",
+        "reason": "No source-pinned preview/dependency closure and four-mode browser acceptance reviewed in this batch."
+      },
+      {
+        "slug": "image-zoom",
+        "state": "blocked",
+        "reason": "Official default example includes remote media, branding or external service input; complete preview and third-party asset rights not reviewed."
+      },
+      {
+        "slug": "kanban",
+        "state": "blocked",
+        "reason": "No source-pinned preview/dependency closure and four-mode browser acceptance reviewed in this batch."
+      },
+      {
+        "slug": "list",
+        "state": "blocked",
+        "reason": "No source-pinned preview/dependency closure and four-mode browser acceptance reviewed in this batch."
+      },
+      {
+        "slug": "marquee",
+        "state": "blocked",
+        "reason": "Official default example includes remote media, branding or external service input; complete preview and third-party asset rights not reviewed."
+      },
+      {
+        "slug": "mini-calendar",
+        "state": "blocked",
+        "reason": "No source-pinned preview/dependency closure and four-mode browser acceptance reviewed in this batch."
+      },
+      {
+        "slug": "patterns",
+        "state": "excluded",
+        "reason": "Pattern catalogue is outside this component batch."
+      },
+      {
+        "slug": "pill",
+        "state": "blocked",
+        "reason": "Official default example includes remote media, branding or external service input; complete preview and third-party asset rights not reviewed."
+      },
+      {
+        "slug": "qr-code",
+        "state": "blocked",
+        "reason": "Official default example includes remote media, branding or external service input; complete preview and third-party asset rights not reviewed."
+      },
+      {
+        "slug": "rating",
+        "state": "reviewed",
+        "reason": "Exact component, official default example, dependency closure and licence retained. Browser acceptance is a separate release gate."
+      },
+      {
+        "slug": "reel",
+        "state": "blocked",
+        "reason": "Official default example includes remote media, branding or external service input; complete preview and third-party asset rights not reviewed."
+      },
+      {
+        "slug": "relative-time",
+        "state": "reviewed",
+        "reason": "Exact component, official default example, dependency closure and licence retained. Browser acceptance is a separate release gate."
+      },
+      {
+        "slug": "sandbox",
+        "state": "blocked",
+        "reason": "Executes an external Sandpack environment; isolation and network policy not reviewed."
+      },
+      {
+        "slug": "shadcn-ui",
+        "state": "excluded",
+        "reason": "Supporting primitives; must not duplicate the shadcn provider."
+      },
+      {
+        "slug": "snippet",
+        "state": "blocked",
+        "reason": "Official default example includes remote media, branding or external service input; complete preview and third-party asset rights not reviewed."
+      },
+      {
+        "slug": "spinner",
+        "state": "blocked",
+        "reason": "Component contains @repo/shadcn-ui workspace imports; the inspected registry generator/CLI does not rewrite these. Consumer installation is not proven."
+      },
+      {
+        "slug": "status",
+        "state": "reviewed",
+        "reason": "Exact component, official default example, dependency closure and licence retained. Browser acceptance is a separate release gate."
+      },
+      {
+        "slug": "stories",
+        "state": "blocked",
+        "reason": "Official default example includes remote media, branding or external service input; complete preview and third-party asset rights not reviewed."
+      },
+      {
+        "slug": "table",
+        "state": "blocked",
+        "reason": "No source-pinned preview/dependency closure and four-mode browser acceptance reviewed in this batch."
+      },
+      {
+        "slug": "tags",
+        "state": "reviewed",
+        "reason": "Exact component, official default example, dependency closure and licence retained. Browser acceptance is a separate release gate."
+      },
+      {
+        "slug": "theme-switcher",
+        "state": "reviewed",
+        "reason": "Exact component, official default example, dependency closure and licence retained. Browser acceptance is a separate release gate."
+      },
+      {
+        "slug": "ticker",
+        "state": "blocked",
+        "reason": "Official example requires NEXT_PUBLIC_LOGO_DEV_TOKEN and remote logo service; no safe, complete preview reviewed."
+      },
+      {
+        "slug": "tree",
+        "state": "reviewed",
+        "reason": "Exact component, official default example, dependency closure and licence retained. Browser acceptance is a separate release gate."
+      },
+      {
+        "slug": "typescript-config",
+        "state": "excluded",
+        "reason": "Build configuration, not a component."
+      },
+      {
+        "slug": "typography",
+        "state": "excluded",
+        "reason": "CSS-only registry:style entry, not a React TSX component."
+      },
+      {
+        "slug": "video-player",
+        "state": "blocked",
+        "reason": "Official default example includes remote media, branding or external service input; complete preview and third-party asset rights not reviewed."
+      }
+    ]
+  },
+  "preview": {
+    "strategy": "local-pinned-upstream-example",
+    "isolatedDependencies": true,
+    "network": "No external connections, frames, media or form submissions permitted.",
+    "styleAdaptation": "Retain the original global.css as evidence; use its unchanged theme/token/base section before /* Custom */, removing only documentation-shell imports and source directives. Component and example files remain byte-for-byte upstream.",
+    "runtimeDependencies": {
+      "@radix-ui/react-use-controllable-state": "1.2.2",
+      "class-variance-authority": "0.7.1",
+      "clsx": "2.1.1",
+      "cmdk": "1.1.1",
+      "lucide-react": "0.577.0",
+      "motion": "12.35.1",
+      "radix-ui": "1.4.3",
+      "react": "19.2.4",
+      "react-dom": "19.2.4",
+      "tailwind-merge": "3.3.1",
+      "tw-animate-css": "1.4.0"
+    },
+    "dependencyEvidence": "pnpm-lock.yaml: apps/docs and component/shared primitive importer entries. React and Lucide use the docs runtime satisfying the selected component ranges."
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "731a50345f23d9b6b8dc8c8a5d7f9d4ee533a3e9b8ebc806c017c85767f2955f",
+      "bytes": 1442
+    },
+    {
+      "path": "apps/docs/app/global.css",
+      "sha256": "db2bc9aaf007429d568cbba158652ef1adcab245fb3c3979b5bf72ed9d4fd179",
+      "bytes": 6030
+    },
+    {
+      "path": "apps/docs/app/r/[component]/route.ts",
+      "sha256": "59c564121957637272309d8714d5855f5f861ce4cad765ae37bbd77f5b7784eb",
+      "bytes": 1628
+    },
+    {
+      "path": "apps/docs/app/r/registry.json/route.ts",
+      "sha256": "6c3d6da0e91fe8463a0eb951ca0926e8184dc96c9396658a964352a9a75ce6d0",
+      "bytes": 1285
+    },
+    {
+      "path": "apps/docs/content/components/announcement.mdx",
+      "sha256": "e8e05a7858de487221fed3f4b50c10e241af5643fbf5f3962f2c7e5ad53c9587",
+      "bytes": 645
+    },
+    {
+      "path": "apps/docs/content/components/banner.mdx",
+      "sha256": "98c6eb12604994d58b36f045e0381fa65561e10b262c90950c9cd7d1d4ac1a58",
+      "bytes": 589
+    },
+    {
+      "path": "apps/docs/content/components/combobox.mdx",
+      "sha256": "53da861bbc1296766871f887d4577083f7bea48c6de9e04c812934f12bb867f0",
+      "bytes": 683
+    },
+    {
+      "path": "apps/docs/content/components/dialog-stack.mdx",
+      "sha256": "bd6ffada9469fd74f0e3af5580ab82adf6f4d248625cb1e88a00fe0fe66442d0",
+      "bytes": 756
+    },
+    {
+      "path": "apps/docs/content/components/rating.mdx",
+      "sha256": "02b1fc9524c884591dae481ff7612e4d10d76bb1390f59a11c0e6a6b95b36768",
+      "bytes": 580
+    },
+    {
+      "path": "apps/docs/content/components/relative-time.mdx",
+      "sha256": "7e4756c3814bf968b081bc1814a9fc0fa150c69e6f70b614d58f04ce26a9b06f",
+      "bytes": 666
+    },
+    {
+      "path": "apps/docs/content/components/status.mdx",
+      "sha256": "251a518bdf21ddfd66add023897689f935cb534cbd480da2b083622e2a1f039f",
+      "bytes": 350
+    },
+    {
+      "path": "apps/docs/content/components/tags.mdx",
+      "sha256": "27a4854cced80144bf2078ea7461dbc17701982dfecd18a4aef64ec43d80671c",
+      "bytes": 596
+    },
+    {
+      "path": "apps/docs/content/components/theme-switcher.mdx",
+      "sha256": "19ec06fb22fe14ec981cae03c71eb845c86f12dd728890acafa5c407a8365d47",
+      "bytes": 424
+    },
+    {
+      "path": "apps/docs/content/components/tree.mdx",
+      "sha256": "e8c692646876e963dff644955255a38a82bacc4c4a42cc11401cae4d3ace6495",
+      "bytes": 830
+    },
+    {
+      "path": "apps/docs/content/docs/setup.mdx",
+      "sha256": "362a331d3d8bee7c85eb9d79458a3a57259eeefa00472990f04711403c21033d",
+      "bytes": 2773
+    },
+    {
+      "path": "apps/docs/examples/announcement.tsx",
+      "sha256": "a6003834b99473d0c22355116cddd866e4f94c05f854e4a08f57bffbc365d1af",
+      "bytes": 452
+    },
+    {
+      "path": "apps/docs/examples/banner.tsx",
+      "sha256": "78e3f471be249bcf66d40f67d6be5f90dcfb73055786758765f2ce2fd86fa009",
+      "bytes": 388
+    },
+    {
+      "path": "apps/docs/examples/combobox.tsx",
+      "sha256": "1e3bbc85534d2c0e3361bfb4a9da761d7c6d911fbba869c7bf85df2294fbc725",
+      "bytes": 1183
+    },
+    {
+      "path": "apps/docs/examples/dialog-stack.tsx",
+      "sha256": "c5bdbc9408499eb4ca6b2bd8ec6bb1b15ee58f0f440f10db0d55ae10942ca140",
+      "bytes": 2223
+    },
+    {
+      "path": "apps/docs/examples/rating.tsx",
+      "sha256": "faf0af6e35ed4435f8060d7024ed841e43dd32ab6629dc07798ba16ba1beaf83",
+      "bytes": 255
+    },
+    {
+      "path": "apps/docs/examples/relative-time.tsx",
+      "sha256": "194127807438b8823d85a4da7e9d96c7f1a05ab9c568dd7e93f934ba27c8bf22",
+      "bytes": 746
+    },
+    {
+      "path": "apps/docs/examples/status.tsx",
+      "sha256": "55f4ea4cd534ca15519c91d8e054b9aacfd14213c21401c0559e37bcaa17d224",
+      "bytes": 552
+    },
+    {
+      "path": "apps/docs/examples/tags.tsx",
+      "sha256": "57012c648ec035136e76a3048824ba1de0aaf7bb4016ece03902e4d4e42a496d",
+      "bytes": 2114
+    },
+    {
+      "path": "apps/docs/examples/theme-switcher.tsx",
+      "sha256": "348603c839999a625adad7bfaa1862dae321ce46aad4bbf4e80a337c8e212386",
+      "bytes": 328
+    },
+    {
+      "path": "apps/docs/examples/tree.tsx",
+      "sha256": "95b0d33fa896973ceb37f2df80db01918ecd6bf210d5b615679edba95d57fd9b",
+      "bytes": 5739
+    },
+    {
+      "path": "apps/docs/lib/package.ts",
+      "sha256": "457f6fa1a0dd93a797afa7fe284eaf65ab2b93bb082849a087de7a641f1f8b67",
+      "bytes": 4626
+    },
+    {
+      "path": "apps/docs/package.json",
+      "sha256": "4697ef8a71ceb1fb9cbdc6b91f2ca5ce243122ee5a4b0c1cc0df3f3fda0d564f",
+      "bytes": 3309
+    },
+    {
+      "path": "license.md",
+      "sha256": "1fe9198b595ddadef7e2d99e3e1698c036db61c81e91c7b42df90d59f563b2ba",
+      "bytes": 1068
+    },
+    {
+      "path": "package.json",
+      "sha256": "b139c35caf63051e641e68914c00d47b22275322f77e981fedd583cca6728911",
+      "bytes": 1015
+    },
+    {
+      "path": "packages/announcement/index.tsx",
+      "sha256": "9c947617e73e8369e7b4cc5b4e11cd16c8e2278d14701b687999de657782d405",
+      "bytes": 1275
+    },
+    {
+      "path": "packages/announcement/package.json",
+      "sha256": "e90b3957986ec46ed0ccfd8262c69653123993b629b673445c69a972fb28a69a",
+      "bytes": 432
+    },
+    {
+      "path": "packages/banner/index.tsx",
+      "sha256": "36f49256459e45ae6816730b1619878253656d9e98221b6b106323681ed5f26b",
+      "bytes": 2991
+    },
+    {
+      "path": "packages/banner/package.json",
+      "sha256": "70208d545183d450a5610e7cb88dfe6373832fad6bc00c9cd23377365d03ad96",
+      "bytes": 554
+    },
+    {
+      "path": "packages/combobox/index.tsx",
+      "sha256": "ad7e6aeeb6e7a6505878cdfe701e169a82c592101ee06f2c833362aa0eee68b8",
+      "bytes": 7530
+    },
+    {
+      "path": "packages/combobox/package.json",
+      "sha256": "2dadb014daef106149d8843aaefaa2f07135f6f4a166c521145a67a931716b4f",
+      "bytes": 529
+    },
+    {
+      "path": "packages/dialog-stack/index.tsx",
+      "sha256": "ea301d2cca14c8104499e7fc52ffb9a692b23b261ad51eb00793c363da98bef6",
+      "bytes": 12091
+    },
+    {
+      "path": "packages/dialog-stack/package.json",
+      "sha256": "2ccbba31c0259959a1bf9b12ec2a41731caff5a87e1e53581b4bd2604c273b3b",
+      "bytes": 649
+    },
+    {
+      "path": "packages/rating/index.tsx",
+      "sha256": "a8f5323b63a9139abc7f94374dfe25136a0d2dd69daa0f2caad9251cb5f2819a",
+      "bytes": 6034
+    },
+    {
+      "path": "packages/rating/package.json",
+      "sha256": "f83ff5a62e6a8c479e7246565f7c68edd3475607d20a79ac29a34c3cb6b3584a",
+      "bytes": 528
+    },
+    {
+      "path": "packages/relative-time/index.tsx",
+      "sha256": "97de2ca519b61e7088f5062f13eb8b01f5aeafcb9ce6b81b142f0d0b9c854597",
+      "bytes": 4116
+    },
+    {
+      "path": "packages/relative-time/package.json",
+      "sha256": "6af0ba0892e1d21aa3e771b4a7c8f495e2cb38374d0a9420638e0e91cb62cef5",
+      "bytes": 488
+    },
+    {
+      "path": "packages/shadcn-ui/components/ui/badge.tsx",
+      "sha256": "145cf69448e20e027dd99e8e013507279aaa0922c30f63dabb54b75ab15222aa",
+      "bytes": 1666
+    },
+    {
+      "path": "packages/shadcn-ui/components/ui/button.tsx",
+      "sha256": "208d8cf515ccd73c1ca0030a11de1ba460a9fcd6c83faafeadc000833790d22e",
+      "bytes": 2175
+    },
+    {
+      "path": "packages/shadcn-ui/components/ui/command.tsx",
+      "sha256": "53be7fe88f0ddbb2f6d97c64c07c1b4816050494880a582c92c0c3c62117b03c",
+      "bytes": 4846
+    },
+    {
+      "path": "packages/shadcn-ui/components/ui/dialog.tsx",
+      "sha256": "c7d128632214c9c78706a91a0616659ecf3be5119492b2ca66607bd83901b802",
+      "bytes": 3991
+    },
+    {
+      "path": "packages/shadcn-ui/components/ui/popover.tsx",
+      "sha256": "381c7e91747142d14b87efaf6211707c348aa090ba3c843001f4c99ede32e27b",
+      "bytes": 1644
+    },
+    {
+      "path": "packages/shadcn-ui/lib/utils.ts",
+      "sha256": "7c8c3dfc0cdd370d44932828eb067ef771c8fe7996693221d5d4b90af6d54f2d",
+      "bytes": 166
+    },
+    {
+      "path": "packages/shadcn-ui/package.json",
+      "sha256": "e8910f40fb4fecf4bf7979d1c795d41f2610c9012dbf7cf02c0e00395a5311d2",
+      "bytes": 863
+    },
+    {
+      "path": "packages/status/index.tsx",
+      "sha256": "6794dcc818f3b8902429cf80ba4ff8983e69df5d09ebbf81560b28043ff64916",
+      "bytes": 1837
+    },
+    {
+      "path": "packages/status/package.json",
+      "sha256": "b7768cbacd3488a74e1b17f0f7e397f0d6637b7a1d2c117c3ed1c7670ab73593",
+      "bytes": 435
+    },
+    {
+      "path": "packages/tags/index.tsx",
+      "sha256": "19443b2c142d595f87c87640d0bbd86497014426f8e16d06843eee9ec9e453ba",
+      "bytes": 5258
+    },
+    {
+      "path": "packages/tags/package.json",
+      "sha256": "41cc110f30b92ff1c06ddd352fbcc86c960f1772e658599bea06aea7d1db2681",
+      "bytes": 416
+    },
+    {
+      "path": "packages/theme-switcher/index.tsx",
+      "sha256": "435c5ba0416e808dc4258353c26e34cd34c5c807bd13f2354db9bd144aac4017",
+      "bytes": 2301
+    },
+    {
+      "path": "packages/theme-switcher/package.json",
+      "sha256": "21971a389db8297c30e33e7720cb7f27718022a66a32a8cf428b913ca5e69f35",
+      "bytes": 555
+    },
+    {
+      "path": "packages/tree/index.tsx",
+      "sha256": "c382566776463e3e72a00f89e4e14ed928c54f6db82801d84d5d4d623b4acb9d",
+      "bytes": 10861
+    },
+    {
+      "path": "packages/tree/package.json",
+      "sha256": "e592d9ebf52ddb0d09d42fef1a20fca0eec0dfbadd44866cde8e0bc954564587",
+      "bytes": 511
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+      "bytes": 574541
+    },
+    {
+      "path": "scripts/index.ts",
+      "sha256": "0ecdb5b79ecc16b80964e1fce6f50e1f593f1192397863155e69041adddb4064",
+      "bytes": 976
+    }
+  ],
+  "items": [
+    {
+      "slug": "announcement",
+      "name": "Announcement",
+      "description": "A compound badge designed to display an announcement.",
+      "category": "feedback",
+      "tags": [
+        "announcement",
+        "kibo-ui",
+        "composable",
+        "shadcn",
+        "Megaphone"
+      ],
+      "sourcePath": "packages/announcement/index.tsx",
+      "sourceSha256": "9c947617e73e8369e7b4cc5b4e11cd16c8e2278d14701b687999de657782d405",
+      "packagePath": "packages/announcement/package.json",
+      "package": {
+        "name": "@repo/announcement",
+        "description": "A compound badge designed to display an announcement.",
+        "version": "0.0.0",
+        "private": true,
+        "dependencies": {
+          "@repo/shadcn-ui": "workspace:*",
+          "react": "^19.2.1",
+          "react-dom": "^19.2.1"
+        },
+        "devDependencies": {
+          "@repo/typescript-config": "workspace:*",
+          "@types/react": "^19.2.14",
+          "@types/react-dom": "^19.2.3",
+          "typescript": "^5.9.3"
+        }
+      },
+      "docsPath": "apps/docs/content/components/announcement.mdx",
+      "examplePath": "apps/docs/examples/announcement.tsx",
+      "exampleSha256": "a6003834b99473d0c22355116cddd866e4f94c05f854e4a08f57bffbc365d1af",
+      "registryDependencies": [
+        "badge"
+      ],
+      "registryUrl": "https://www.kibo-ui.com/r/announcement.json",
+      "previewPath": "/provider-demos/kibo-ui/index.html?id=announcement",
+      "previewStrategy": "local-pinned-upstream-example"
+    },
+    {
+      "slug": "banner",
+      "name": "Banner",
+      "description": "A banner is a full-width component that can be used to show a message and action to the user.",
+      "category": "feedback",
+      "tags": [
+        "banner",
+        "kibo-ui",
+        "composable",
+        "shadcn",
+        "CircleAlert"
+      ],
+      "sourcePath": "packages/banner/index.tsx",
+      "sourceSha256": "36f49256459e45ae6816730b1619878253656d9e98221b6b106323681ed5f26b",
+      "packagePath": "packages/banner/package.json",
+      "package": {
+        "name": "@repo/banner",
+        "description": "A banner is a full-width component that can be used to show a message and action to the user.",
+        "version": "0.0.0",
+        "private": true,
+        "dependencies": {
+          "@radix-ui/react-use-controllable-state": "^1.2.2",
+          "@repo/shadcn-ui": "workspace:*",
+          "lucide-react": "^0.545.0",
+          "react": "^19.2.0",
+          "react-dom": "^19.2.0"
+        },
+        "devDependencies": {
+          "@repo/typescript-config": "workspace:*",
+          "@types/react": "^19.2.14",
+          "@types/react-dom": "^19.2.3",
+          "typescript": "^5.9.3"
+        }
+      },
+      "docsPath": "apps/docs/content/components/banner.mdx",
+      "examplePath": "apps/docs/examples/banner.tsx",
+      "exampleSha256": "78e3f471be249bcf66d40f67d6be5f90dcfb73055786758765f2ce2fd86fa009",
+      "registryDependencies": [
+        "button"
+      ],
+      "registryUrl": "https://www.kibo-ui.com/r/banner.json",
+      "previewPath": "/provider-demos/kibo-ui/index.html?id=banner",
+      "previewStrategy": "local-pinned-upstream-example"
+    },
+    {
+      "slug": "combobox",
+      "name": "Combobox",
+      "description": "Autocomplete input and command palette with a list of suggestions.",
+      "category": "forms",
+      "tags": [
+        "combobox",
+        "kibo-ui",
+        "composable",
+        "shadcn",
+        "ChevronsUpDown"
+      ],
+      "sourcePath": "packages/combobox/index.tsx",
+      "sourceSha256": "ad7e6aeeb6e7a6505878cdfe701e169a82c592101ee06f2c833362aa0eee68b8",
+      "packagePath": "packages/combobox/package.json",
+      "package": {
+        "name": "@repo/combobox",
+        "description": "Autocomplete input and command palette with a list of suggestions.",
+        "version": "0.0.0",
+        "private": true,
+        "dependencies": {
+          "@radix-ui/react-use-controllable-state": "^1.2.2",
+          "@repo/shadcn-ui": "workspace:*",
+          "lucide-react": "^0.545.0",
+          "react": "^19.2.0",
+          "react-dom": "^19.2.0"
+        },
+        "devDependencies": {
+          "@repo/typescript-config": "workspace:*",
+          "@types/react": "^19.2.14",
+          "@types/react-dom": "^19.2.3",
+          "typescript": "^5.9.3"
+        }
+      },
+      "docsPath": "apps/docs/content/components/combobox.mdx",
+      "examplePath": "apps/docs/examples/combobox.tsx",
+      "exampleSha256": "1e3bbc85534d2c0e3361bfb4a9da761d7c6d911fbba869c7bf85df2294fbc725",
+      "registryDependencies": [
+        "button",
+        "command",
+        "popover"
+      ],
+      "registryUrl": "https://www.kibo-ui.com/r/combobox.json",
+      "previewPath": "/provider-demos/kibo-ui/index.html?id=combobox",
+      "previewStrategy": "local-pinned-upstream-example"
+    },
+    {
+      "slug": "dialog-stack",
+      "name": "Dialog Stack",
+      "description": "Composable stacked dialogs, useful for creating a wizard, nested form or multi-step process. It provides a consistent layout and styling for each dialog, and includes navigation component.",
+      "category": "overlays",
+      "tags": [
+        "dialog-stack",
+        "kibo-ui",
+        "composable",
+        "shadcn",
+        "Layers"
+      ],
+      "sourcePath": "packages/dialog-stack/index.tsx",
+      "sourceSha256": "ea301d2cca14c8104499e7fc52ffb9a692b23b261ad51eb00793c363da98bef6",
+      "packagePath": "packages/dialog-stack/package.json",
+      "package": {
+        "name": "@repo/dialog-stack",
+        "description": "Composable stacked dialogs, useful for creating a wizard, nested form or multi-step process. It provides a consistent layout and styling for each dialog, and includes navigation component.",
+        "version": "0.0.0",
+        "private": true,
+        "dependencies": {
+          "@radix-ui/react-use-controllable-state": "^1.2.2",
+          "@repo/shadcn-ui": "workspace:*",
+          "radix-ui": "^1.4.3",
+          "react": "^19.2.0",
+          "react-dom": "^19.2.0"
+        },
+        "devDependencies": {
+          "@repo/typescript-config": "workspace:*",
+          "@types/react": "^19.2.14",
+          "@types/react-dom": "^19.2.3",
+          "typescript": "^5.9.3"
+        }
+      },
+      "docsPath": "apps/docs/content/components/dialog-stack.mdx",
+      "examplePath": "apps/docs/examples/dialog-stack.tsx",
+      "exampleSha256": "c5bdbc9408499eb4ca6b2bd8ec6bb1b15ee58f0f440f10db0d55ae10942ca140",
+      "registryDependencies": [],
+      "registryUrl": "https://www.kibo-ui.com/r/dialog-stack.json",
+      "previewPath": "/provider-demos/kibo-ui/index.html?id=dialog-stack",
+      "previewStrategy": "local-pinned-upstream-example"
+    },
+    {
+      "slug": "rating",
+      "name": "Rating",
+      "description": "A star rating component with keyboard navigation and hover effects.",
+      "category": "forms",
+      "tags": [
+        "rating",
+        "kibo-ui",
+        "composable",
+        "shadcn",
+        "Star"
+      ],
+      "sourcePath": "packages/rating/index.tsx",
+      "sourceSha256": "a8f5323b63a9139abc7f94374dfe25136a0d2dd69daa0f2caad9251cb5f2819a",
+      "packagePath": "packages/rating/package.json",
+      "package": {
+        "name": "@repo/rating",
+        "description": "A star rating component with keyboard navigation and hover effects.",
+        "version": "0.0.0",
+        "private": true,
+        "dependencies": {
+          "@radix-ui/react-use-controllable-state": "^1.2.2",
+          "@repo/shadcn-ui": "workspace:*",
+          "lucide-react": "^0.545.0",
+          "react": "^19.2.0",
+          "react-dom": "^19.2.0"
+        },
+        "devDependencies": {
+          "@repo/typescript-config": "workspace:*",
+          "@types/react": "^19.2.14",
+          "@types/react-dom": "^19.2.3",
+          "typescript": "^5.9.3"
+        }
+      },
+      "docsPath": "apps/docs/content/components/rating.mdx",
+      "examplePath": "apps/docs/examples/rating.tsx",
+      "exampleSha256": "faf0af6e35ed4435f8060d7024ed841e43dd32ab6629dc07798ba16ba1beaf83",
+      "registryDependencies": [],
+      "registryUrl": "https://www.kibo-ui.com/r/rating.json",
+      "previewPath": "/provider-demos/kibo-ui/index.html?id=rating",
+      "previewStrategy": "local-pinned-upstream-example"
+    },
+    {
+      "slug": "relative-time",
+      "name": "Relative Time",
+      "description": "A component that displays time in various timezones.",
+      "category": "data-display",
+      "tags": [
+        "relative-time",
+        "kibo-ui",
+        "composable",
+        "shadcn",
+        "Clock"
+      ],
+      "sourcePath": "packages/relative-time/index.tsx",
+      "sourceSha256": "97de2ca519b61e7088f5062f13eb8b01f5aeafcb9ce6b81b142f0d0b9c854597",
+      "packagePath": "packages/relative-time/package.json",
+      "package": {
+        "name": "@repo/relative-time",
+        "description": "A component that displays time in various timezones.",
+        "version": "0.0.0",
+        "private": true,
+        "dependencies": {
+          "@radix-ui/react-use-controllable-state": "^1.2.2",
+          "@repo/shadcn-ui": "workspace:*",
+          "react": "^19.2.0",
+          "react-dom": "^19.2.0"
+        },
+        "devDependencies": {
+          "@repo/typescript-config": "workspace:*",
+          "@types/react": "^19.2.14",
+          "@types/react-dom": "^19.2.3",
+          "typescript": "^5.9.3"
+        }
+      },
+      "docsPath": "apps/docs/content/components/relative-time.mdx",
+      "examplePath": "apps/docs/examples/relative-time.tsx",
+      "exampleSha256": "194127807438b8823d85a4da7e9d96c7f1a05ab9c568dd7e93f934ba27c8bf22",
+      "registryDependencies": [],
+      "registryUrl": "https://www.kibo-ui.com/r/relative-time.json",
+      "previewPath": "/provider-demos/kibo-ui/index.html?id=relative-time",
+      "previewStrategy": "local-pinned-upstream-example"
+    },
+    {
+      "slug": "status",
+      "name": "Status",
+      "description": "Status components are used to display the uptime of a service.",
+      "category": "feedback",
+      "tags": [
+        "status",
+        "kibo-ui",
+        "composable",
+        "shadcn",
+        "Radio"
+      ],
+      "sourcePath": "packages/status/index.tsx",
+      "sourceSha256": "6794dcc818f3b8902429cf80ba4ff8983e69df5d09ebbf81560b28043ff64916",
+      "packagePath": "packages/status/package.json",
+      "package": {
+        "name": "@repo/status",
+        "description": "Status components are used to display the uptime of a service.",
+        "version": "0.0.0",
+        "private": true,
+        "dependencies": {
+          "@repo/shadcn-ui": "workspace:*",
+          "react": "^19.2.0",
+          "react-dom": "^19.2.0"
+        },
+        "devDependencies": {
+          "@repo/typescript-config": "workspace:*",
+          "@types/react": "^19.2.14",
+          "@types/react-dom": "^19.2.3",
+          "typescript": "^5.9.3"
+        }
+      },
+      "docsPath": "apps/docs/content/components/status.mdx",
+      "examplePath": "apps/docs/examples/status.tsx",
+      "exampleSha256": "55f4ea4cd534ca15519c91d8e054b9aacfd14213c21401c0559e37bcaa17d224",
+      "registryDependencies": [
+        "badge"
+      ],
+      "registryUrl": "https://www.kibo-ui.com/r/status.json",
+      "previewPath": "/provider-demos/kibo-ui/index.html?id=status",
+      "previewStrategy": "local-pinned-upstream-example"
+    },
+    {
+      "slug": "tags",
+      "name": "Tags",
+      "description": "Tags are a way to apply multiple labels to an item.",
+      "category": "forms",
+      "tags": [
+        "tags",
+        "kibo-ui",
+        "composable",
+        "shadcn",
+        "Tags"
+      ],
+      "sourcePath": "packages/tags/index.tsx",
+      "sourceSha256": "19443b2c142d595f87c87640d0bbd86497014426f8e16d06843eee9ec9e453ba",
+      "packagePath": "packages/tags/package.json",
+      "package": {
+        "name": "@repo/tags",
+        "description": "Tags are a way to apply multiple labels to an item.",
+        "version": "0.0.0",
+        "private": true,
+        "dependencies": {
+          "lucide-react": "^0.545.0",
+          "react": "^19.2.0",
+          "react-dom": "^19.2.0"
+        },
+        "devDependencies": {
+          "@repo/typescript-config": "workspace:*",
+          "@types/react": "^19.2.14",
+          "@types/react-dom": "^19.2.3",
+          "typescript": "^5.9.3"
+        }
+      },
+      "docsPath": "apps/docs/content/components/tags.mdx",
+      "examplePath": "apps/docs/examples/tags.tsx",
+      "exampleSha256": "57012c648ec035136e76a3048824ba1de0aaf7bb4016ece03902e4d4e42a496d",
+      "registryDependencies": [
+        "badge",
+        "button",
+        "command",
+        "popover"
+      ],
+      "registryUrl": "https://www.kibo-ui.com/r/tags.json",
+      "previewPath": "/provider-demos/kibo-ui/index.html?id=tags",
+      "previewStrategy": "local-pinned-upstream-example"
+    },
+    {
+      "slug": "theme-switcher",
+      "name": "Theme Switcher",
+      "description": "A component to switch between light, dark and system theme.",
+      "category": "forms",
+      "tags": [
+        "theme-switcher",
+        "kibo-ui",
+        "composable",
+        "shadcn",
+        "Moon"
+      ],
+      "sourcePath": "packages/theme-switcher/index.tsx",
+      "sourceSha256": "435c5ba0416e808dc4258353c26e34cd34c5c807bd13f2354db9bd144aac4017",
+      "packagePath": "packages/theme-switcher/package.json",
+      "package": {
+        "name": "@repo/theme-switcher",
+        "description": "A component to switch between light, dark and system theme.",
+        "version": "0.0.0",
+        "private": true,
+        "dependencies": {
+          "@radix-ui/react-use-controllable-state": "^1.2.2",
+          "@repo/shadcn-ui": "workspace:*",
+          "lucide-react": "^0.545.0",
+          "motion": "^12.23.24",
+          "react": "^19.2.0",
+          "react-dom": "^19.2.0"
+        },
+        "devDependencies": {
+          "@repo/typescript-config": "workspace:*",
+          "@types/react": "^19.2.14",
+          "@types/react-dom": "^19.2.3",
+          "typescript": "^5.9.3"
+        }
+      },
+      "docsPath": "apps/docs/content/components/theme-switcher.mdx",
+      "examplePath": "apps/docs/examples/theme-switcher.tsx",
+      "exampleSha256": "348603c839999a625adad7bfaa1862dae321ce46aad4bbf4e80a337c8e212386",
+      "registryDependencies": [],
+      "registryUrl": "https://www.kibo-ui.com/r/theme-switcher.json",
+      "previewPath": "/provider-demos/kibo-ui/index.html?id=theme-switcher",
+      "previewStrategy": "local-pinned-upstream-example"
+    },
+    {
+      "slug": "tree",
+      "name": "Tree",
+      "description": "A composable tree component with animated expand/collapse and customizable nodes.",
+      "category": "data-display",
+      "tags": [
+        "tree",
+        "kibo-ui",
+        "composable",
+        "shadcn",
+        "FolderTree"
+      ],
+      "sourcePath": "packages/tree/index.tsx",
+      "sourceSha256": "c382566776463e3e72a00f89e4e14ed928c54f6db82801d84d5d4d623b4acb9d",
+      "packagePath": "packages/tree/package.json",
+      "package": {
+        "name": "@repo/tree",
+        "description": "A composable tree component with animated expand/collapse and customizable nodes.",
+        "version": "0.0.0",
+        "private": true,
+        "dependencies": {
+          "@repo/shadcn-ui": "workspace:*",
+          "motion": "^12.23.24",
+          "lucide-react": "^0.545.0",
+          "react": "^19.2.0",
+          "react-dom": "^19.2.0"
+        },
+        "devDependencies": {
+          "@repo/typescript-config": "workspace:*",
+          "@types/react": "^19.2.14",
+          "@types/react-dom": "^19.2.3",
+          "typescript": "^5.9.3"
+        }
+      },
+      "docsPath": "apps/docs/content/components/tree.mdx",
+      "examplePath": "apps/docs/examples/tree.tsx",
+      "exampleSha256": "95b0d33fa896973ceb37f2df80db01918ecd6bf210d5b615679edba95d57fd9b",
+      "registryDependencies": [],
+      "registryUrl": "https://www.kibo-ui.com/r/tree.json",
+      "previewPath": "/provider-demos/kibo-ui/index.html?id=tree",
+      "previewStrategy": "local-pinned-upstream-example"
+    }
+  ]
+}
