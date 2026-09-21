@@ -16,14 +16,14 @@ Production was checked directly on 21 September 2026 and reports **464 assets ac
 
 The current branch catalogue contains **1,437 source-controlled records across 12 providers**. This branch adds **973 reviewed web assets across five providers**:
 
-| Provider | Branch-ready assets | Upstream SHA | Licence | Truthful preview |
-| --- | ---: | --- | --- | --- |
-| UIAble | 707 | `34e78586c904091059deb63412ae330b2757e923` | MIT | Exact first-party `uiable.com/preview/...` route |
-| Flowbite React | 45 | `85319bd067822f7aa9670688780aeb58cc187aa5` | MIT | Exact first-party isolated `/examples/...` route |
-| HeroUI Web | 68 | `ac71b5f644803b2107c878908e64f100d6a7d443` | Apache-2.0 root licence | Exact official v3 Storybook story derived from pinned story source |
-| Tailark | 150 | `8139698115c1341bfd2e3e286c04bb4d8146f472` | MIT | Exact first-party `/view/[name]` block renderer |
-| Babelize Elements | 3 | `2cd92ba8acad36e6122d4c528cc81b5d99ffd587` | MIT | Exact pinned first-party demo source rendered in UIXO's sandboxed live-demo runner |
-| **Total new** | **973** | | | |
+| Provider          | Branch-ready assets | Upstream SHA                               | Licence                 | Truthful preview                                                                   |
+| ----------------- | ------------------: | ------------------------------------------ | ----------------------- | ---------------------------------------------------------------------------------- |
+| UIAble            |                 707 | `34e78586c904091059deb63412ae330b2757e923` | MIT                     | Exact first-party `uiable.com/preview/...` route                                   |
+| Flowbite React    |                  45 | `85319bd067822f7aa9670688780aeb58cc187aa5` | MIT                     | Exact first-party isolated `/examples/...` route                                   |
+| HeroUI Web        |                  68 | `ac71b5f644803b2107c878908e64f100d6a7d443` | Apache-2.0 root licence | Exact official v3 Storybook story derived from pinned story source                 |
+| Tailark           |                 150 | `8139698115c1341bfd2e3e286c04bb4d8146f472` | MIT                     | Exact first-party `/view/[name]` block renderer                                    |
+| Babelize Elements |                   3 | `2cd92ba8acad36e6122d4c528cc81b5d99ffd587` | MIT                     | Exact pinned first-party demo source rendered in UIXO's sandboxed live-demo runner |
+| **Total new**     |             **973** |                                            |                         |                                                                                    |
 
 These records are branch-ready only. Production publication still requires merge, exact production Neon target verification, provider-scoped sync and deployed browser acceptance.
 
