@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20",
+  "updated": "2026-09-21",
   "exclusive_allowlist": false,
   "note": "Core handles are priority; also discover and add new list-droppers. Dump all links from list posts.",
   "handles": [
@@ -27,29 +27,38 @@
     "ah4alt",
     "eamin_ux",
     "deb_isadev",
-    "Mohd__Shahid_07"
+    "Mohd__Shahid_07",
+    "codestirring",
+    "jarradgrigg",
+    "Hartdrawss",
+    "AAishakar",
+    "himanshubuildss",
+    "simoom_design"
   ],
   "discovery_candidates": [
-    "_itshyper__",
     "AGTPinsights",
-    "ahmad_Uxflow",
     "AI_With_Stella",
+    "AboveRepl",
+    "CJfromJBW",
+    "Milo_Milady",
+    "NityamAS",
+    "Shefali__J",
+    "VullnetAdemaj",
+    "_itshyper__",
+    "ahmad_Uxflow",
     "alibey_10",
     "apvarun",
     "cabralorenzo",
     "chadcombinator",
-    "CJfromJBW",
     "codebydinil",
     "eddieeee0716",
-    "Milo_Milady",
+    "iyoushetwt",
     "mr_nirajkumar07",
     "mredu000",
-    "NityamAS",
-    "Shefali__J",
+    "prettysites",
     "suriadesign",
     "theansarh",
     "thedzianis",
-    "VullnetAdemaj",
     "zaikhdev"
   ]
 }

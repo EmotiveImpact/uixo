@@ -1,25 +1,25 @@
 {
-  "updated": "2026-09-20",
-  "updated_note": "OSS React UI libraries census ingest — +92 NEW (1 URL-deduped)",
+  "updated": "2026-09-21",
+  "updated_note": "Weekday digest 2026-09-21: +23 candidates from X list harvest (X UI Scout - grokbot)",
   "counts_by_category": {
-    "Inspiration": 117,
-    "Components": 90,
-    "UI libraries": 116,
-    "Marketplace": 24,
-    "Backgrounds": 15,
-    "Fonts": 12,
-    "Icons": 42,
+    "Inspiration": 119,
+    "Components": 93,
+    "UI libraries": 117,
+    "Marketplace": 25,
+    "Backgrounds": 18,
+    "Fonts": 20,
+    "Icons": 45,
     "Illustrations": 13,
-    "Templates": 50,
-    "Mockups": 10
+    "Templates": 51,
+    "Mockups": 11
   },
   "totals": {
-    "candidates": 489,
-    "needs_review": 411,
-    "new_this_run": 92,
-    "already_present": 1,
+    "candidates": 512,
+    "needs_review": 434,
+    "new_this_run": 23,
+    "already_present": 0,
     "skipped_dupes_existing_site": 0,
-    "image_captured": 450,
+    "image_captured": 473,
     "image_og_captured": 38,
     "image_blocked": 1,
     "image_pending": 0
@@ -13466,14 +13466,637 @@
       "license": "MIT",
       "stars": 11000,
       "image_method": "screenshot"
+    },
+    {
+      "id": "keyline-icons",
+      "name": "Keyline Icons",
+      "category": "Icons",
+      "subcategory": "Vector",
+      "tags": [
+        "Icons",
+        "shadcn",
+        "MIT"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Keyline",
+      "formats": [
+        "SVG",
+        "React"
+      ],
+      "url": "https://keylineicons.com",
+      "source": "https://x.com/pengsonal/status/2101924224625729719",
+      "why": "1,000 free shadcn/ui icons × 4 styles × 2 corners (8k total), MIT, no attribution",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 500,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "toolcraft",
+      "name": "Toolcraft",
+      "category": "UI libraries",
+      "subcategory": "React",
+      "tags": [
+        "UI libraries",
+        "open-source",
+        "AI",
+        "design-apps"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "pixel-point",
+      "formats": [
+        "React"
+      ],
+      "url": "https://github.com/pixel-point/toolcraft",
+      "source": "https://x.com/Manixh02/status/2101891565673427051",
+      "why": "Open-source starter kit + UI library for building custom design apps with AI",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 501,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "pryzm",
+      "name": "Pryzm",
+      "category": "Backgrounds",
+      "subcategory": "Generator",
+      "tags": [
+        "Backgrounds",
+        "gradients",
+        "grain",
+        "glass"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Pryzm",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://pryzm.design",
+      "source": "https://x.com/Manixh02/status/2101891565673427051",
+      "why": "Visual studio for unique backgrounds/textures — gradients, glass, grain, animated loops",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 502,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "valessa",
+      "name": "Valessa",
+      "category": "Mockups",
+      "subcategory": "3D",
+      "tags": [
+        "Mockups",
+        "3D",
+        "product"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Riotters",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://valessa.riotters.com",
+      "source": "https://x.com/Manixh02/status/2101891565673427051",
+      "why": "3D product visualizer — materials, animation, lighting; export PNG/video",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 503,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "book-of-shapes",
+      "name": "Book of Shapes",
+      "category": "Backgrounds",
+      "subcategory": "Patterns",
+      "tags": [
+        "Backgrounds",
+        "SVG",
+        "patterns",
+        "generative"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Book of Shapes",
+      "formats": [
+        "SVG",
+        "Web"
+      ],
+      "url": "https://bookofshapes.com",
+      "source": "https://x.com/Manixh02/status/2101891565673427051",
+      "why": "Minimal generative customizable SVG patterns",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 504,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "microcharts",
+      "name": "microcharts",
+      "category": "Components",
+      "subcategory": "Charts",
+      "tags": [
+        "Components",
+        "React",
+        "charts",
+        "sparklines"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "microcharts",
+      "formats": [
+        "React"
+      ],
+      "url": "https://microcharts.dev",
+      "source": "https://x.com/csaba_kissi/status/2101922327453978719",
+      "why": "Word-sized React micro-charts/sparklines; tiny, accessible, RSC-safe",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 505,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "dx-figgle",
+      "name": "Dx Figgle",
+      "category": "Fonts",
+      "subcategory": "Display",
+      "tags": [
+        "Fonts",
+        "free",
+        "display"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Dirtyline Studio",
+      "formats": [
+        "Font"
+      ],
+      "url": "https://dirtylinestudio.com/product/dx-figgle-free-font",
+      "source": "https://x.com/noahelhadedy/status/2101920035463709092",
+      "why": "Bold playful display font (Regular + Italic) — free download",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 506,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "alpha-lyrae",
+      "name": "Alpha Lyrae",
+      "category": "Fonts",
+      "subcategory": "Sans",
+      "tags": [
+        "Fonts",
+        "free",
+        "sans"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Best Free Fonts",
+      "formats": [
+        "Font"
+      ],
+      "url": "https://bestfreefonts.com/alpha-lyrae",
+      "source": "https://x.com/noahelhadedy/status/2101920035463709092",
+      "why": "Free sans-serif typeface listed in Noah's premium free fonts pack",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 507,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "pangram-sans-rounded",
+      "name": "Pangram Sans Rounded",
+      "category": "Fonts",
+      "subcategory": "Sans",
+      "tags": [
+        "Fonts",
+        "geometric",
+        "rounded"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Pangram Pangram",
+      "formats": [
+        "Font"
+      ],
+      "url": "https://pangrampangram.com/products/pangram-sans-rounded",
+      "source": "https://x.com/noahelhadedy/status/2101920035463709092",
+      "why": "Extensive geometric rounded sans — free to try, commercial paid",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 508,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "mango-grotesque",
+      "name": "Mango Grotesque",
+      "category": "Fonts",
+      "subcategory": "Variable",
+      "tags": [
+        "Fonts",
+        "variable",
+        "condensed"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Rajput Rajesh",
+      "formats": [
+        "Font"
+      ],
+      "url": "https://rajputrajesh-448.gumroad.com/l/MangoGrotesque",
+      "source": "https://x.com/noahelhadedy/status/2101920035463709092",
+      "why": "Variable condensed grotesk — 9 weights / 18 styles",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 509,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "thunder-typeface",
+      "name": "THUNDER",
+      "category": "Fonts",
+      "subcategory": "Condensed",
+      "tags": [
+        "Fonts",
+        "variable",
+        "condensed"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Rajput Rajesh",
+      "formats": [
+        "Font"
+      ],
+      "url": "https://rajputrajesh-448.gumroad.com/l/thundertypeface9",
+      "source": "https://x.com/noahelhadedy/status/2101920035463709092",
+      "why": "Condensed typeface with two contrasts, 36 styles + variable",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 510,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "ladi-typeface",
+      "name": "Ladi Typeface",
+      "category": "Fonts",
+      "subcategory": "Display",
+      "tags": [
+        "Fonts",
+        "experimental",
+        "liquid"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "mleimig",
+      "formats": [
+        "Font"
+      ],
+      "url": "https://mleimig.gumroad.com/l/laditype",
+      "source": "https://x.com/noahelhadedy/status/2101920035463709092",
+      "why": "Asymmetric liquid high-contrast experimental typeface",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 511,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "harmony-modern-serif",
+      "name": "Harmony Modern Serif",
+      "category": "Fonts",
+      "subcategory": "Serif",
+      "tags": [
+        "Fonts",
+        "serif",
+        "modern"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Artem Nevsky / Pixel Surplus",
+      "formats": [
+        "Font"
+      ],
+      "url": "https://pixelsurplus.com/products/harmony-modern-serif-font",
+      "source": "https://x.com/noahelhadedy/status/2101920035463709092",
+      "why": "Modern serif — free for personal use, paid commercial",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 512,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "uncut-wtf",
+      "name": "UNCUT.wtf",
+      "category": "Fonts",
+      "subcategory": "Catalogue",
+      "tags": [
+        "Fonts",
+        "catalogue",
+        "contemporary"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "UNCUT",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://uncut.wtf",
+      "source": "https://x.com/eamin_ux/status/2101615480003871103",
+      "why": "Free contemporary typeface catalogue (160+ faces)",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 513,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "symbl",
+      "name": "Symbl",
+      "category": "Icons",
+      "subcategory": "Logo tools",
+      "tags": [
+        "Icons",
+        "logo",
+        "favicon",
+        "scale-test"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Symbl",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://symbl.space",
+      "source": "https://x.com/simoom_design/status/2101612340974129554",
+      "why": "Upload a logo symbol and preview it at every scale from favicon to billboard",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 514,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "svgl",
+      "name": "SVGL",
+      "category": "Icons",
+      "subcategory": "Brand logos",
+      "tags": [
+        "Icons",
+        "SVG",
+        "logos",
+        "brands"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "SVGL",
+      "formats": [
+        "SVG"
+      ],
+      "url": "https://svgl.app",
+      "source": "https://x.com/simoom_design/status/2101612340974129554",
+      "why": "Beautiful library of SVG brand logos",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 515,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "ditherland",
+      "name": "DITHERLAND",
+      "category": "Backgrounds",
+      "subcategory": "Effects",
+      "tags": [
+        "Backgrounds",
+        "dither",
+        "effects"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Leo Becker",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://ditherland.leobecker.com",
+      "source": "https://x.com/simoom_design/status/2101612340974129554",
+      "why": "Turn images and video into dithered artwork",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 516,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "vgpu",
+      "name": "vgpu",
+      "category": "Components",
+      "subcategory": "WebGPU",
+      "tags": [
+        "Components",
+        "WebGPU",
+        "shaders",
+        "agents"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "vgpu",
+      "formats": [
+        "Web",
+        "JS"
+      ],
+      "url": "https://vgpu.sh",
+      "source": "https://x.com/simoom_design/status/2101612340974129554",
+      "why": "WebGPU library designed for agents — holographic cards and GPU effects",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 517,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "prettysites",
+      "name": "PrettySites",
+      "category": "Templates",
+      "subcategory": "AI prompts",
+      "tags": [
+        "Templates",
+        "prompts",
+        "motion",
+        "AI"
+      ],
+      "access": [
+        "Paid",
+        "Free"
+      ],
+      "creator": "PrettySites",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://prettysites.io",
+      "source": "https://x.com/prettysites/status/2100906434556801399",
+      "why": "Premium website prompts, motion backgrounds & design inspiration for AI coding tools",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 518,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "jev-ui",
+      "name": "jev-ui",
+      "category": "Components",
+      "subcategory": "AI-native",
+      "tags": [
+        "Components",
+        "React",
+        "LLM",
+        "AI-native"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Above Replacement",
+      "formats": [
+        "React"
+      ],
+      "url": "https://docs.jev-ui.dev",
+      "source": "https://x.com/AboveRepl/status/2101871051583996241",
+      "why": "React components that ask an LLM for permission — Branch/Rank/Gate resolution",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 519,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "on-design",
+      "name": "on.design",
+      "category": "Marketplace",
+      "subcategory": "Community",
+      "tags": [
+        "Marketplace",
+        "community",
+        "designers"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "on.design",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://on.design",
+      "source": "https://x.com/tranmautritam/status/2101598286025253128",
+      "why": "Invite-only community for designers to share work and discover studios",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 520,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "inspomcp",
+      "name": "Inspo MCP",
+      "category": "Inspiration",
+      "subcategory": "AI agents",
+      "tags": [
+        "Inspiration",
+        "MCP",
+        "DESIGN.md",
+        "agents"
+      ],
+      "access": [
+        "Free",
+        "Paid"
+      ],
+      "creator": "Inspo",
+      "formats": [
+        "Web",
+        "MCP"
+      ],
+      "url": "https://inspomcp.dev",
+      "source": "https://x.com/tranmautritam/status/2101598286025253128",
+      "why": "800+ real production sites with DESIGN.md + MCP for coding agents",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 521,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
+    },
+    {
+      "id": "goatedui",
+      "name": "Goated UI",
+      "category": "Inspiration",
+      "subcategory": "Gallery",
+      "tags": [
+        "Inspiration",
+        "icons",
+        "OG",
+        "UI"
+      ],
+      "access": [
+        "Free"
+      ],
+      "creator": "Goated UI",
+      "formats": [
+        "Web"
+      ],
+      "url": "https://goatedui.dev",
+      "source": "https://x.com/tranmautritam/status/2101598286025253128",
+      "why": "Web, UI, app icon & OG inspiration gallery",
+      "needs_review": true,
+      "image_status": "captured",
+      "addedOrder": 522,
+      "ingest_batch": "weekday-digest-2026-09-21",
+      "image_method": "screenshot"
     }
   ],
   "image_capture": {
-    "captured": 450,
+    "captured": 473,
     "og-captured": 38,
     "blocked": 1,
     "pending": 0,
-    "at": "2026-09-20T09:44:30.349Z"
+    "at": "2026-09-21T07:45:41.751Z"
   },
   "paste_ingest": {
     "added_ids": [
@@ -13598,71 +14221,79 @@
     ]
   },
   "weekday_digest": {
-    "batch": "weekday-digest-2026-09-18",
+    "batch": "weekday-digest-2026-09-21",
     "added_ids": [
-      "spectrum-empty-states",
-      "reelfolio",
-      "css-toggles-colorion",
-      "ant-design",
-      "daisyui",
-      "react-aria",
-      "reshaped",
-      "venstyler",
-      "scritto",
-      "dicebear",
-      "fluid-functionalism",
-      "shadcn-lint"
+      "keyline-icons",
+      "toolcraft",
+      "pryzm",
+      "valessa",
+      "book-of-shapes",
+      "microcharts",
+      "dx-figgle",
+      "alpha-lyrae",
+      "pangram-sans-rounded",
+      "mango-grotesque",
+      "thunder-typeface",
+      "ladi-typeface",
+      "harmony-modern-serif",
+      "uncut-wtf",
+      "symbl",
+      "svgl",
+      "ditherland",
+      "vgpu",
+      "prettysites",
+      "jev-ui",
+      "on-design",
+      "inspomcp",
+      "goatedui"
     ],
     "source_posts": [
-      "https://x.com/AAishakar/status/2100820877973815545",
-      "https://x.com/Hartdrawss/status/2100578141433385082",
-      "https://x.com/arihantCodes/status/2100572001895166144",
-      "https://x.com/arihantCodes/status/2100679925145714701",
-      "https://x.com/codestirring/status/2100796203332227481",
-      "https://x.com/csaba_kissi/status/2100840794160816596",
-      "https://x.com/eamin_ux/status/2100657187500822889",
-      "https://x.com/jarradgrigg/status/2100784131773006057",
-      "https://x.com/neropursue/status/2100843735084921068",
-      "https://x.com/taher_max_/status/2100613393426366908"
+      "https://x.com/pengsonal/status/2101924224625729719",
+      "https://x.com/Manixh02/status/2101891565673427051",
+      "https://x.com/csaba_kissi/status/2101922327453978719",
+      "https://x.com/noahelhadedy/status/2101920035463709092",
+      "https://x.com/eamin_ux/status/2101615480003871103",
+      "https://x.com/simoom_design/status/2101612340974129554",
+      "https://x.com/prettysites/status/2100906434556801399",
+      "https://x.com/AboveRepl/status/2101871051583996241",
+      "https://x.com/tranmautritam/status/2101598286025253128",
+      "https://x.com/himanshubuildss/status/2101255618313302146",
+      "https://x.com/iyoushetwt/status/2101355631311786362",
+      "https://x.com/codestirring/status/2101264540327633356"
     ],
-    "new_count": 12,
-    "at": "2026-09-18T07:48:17Z",
+    "new_count": 23,
+    "at": "2026-09-21T07:44:00Z",
     "watchlist_adds": [
       "codestirring",
       "jarradgrigg",
       "Hartdrawss",
-      "AAishakar"
+      "AAishakar",
+      "himanshubuildss",
+      "simoom_design"
     ],
     "thumbs": {
-      "captured": 12,
+      "captured": 23,
       "og_captured": 0,
       "blocked": 0
     },
     "skipped_off_brief": [
       "agent-memory.dev (AI agent memory — Tech Scout)",
-      "lightvela.ai (AI agent credits)",
-      "activebuilders.dev (builder community, not UI resource)",
-      "Stowdrop.app (bookmark folders)",
-      "app.scenario.com (AI 3D/content gen — Tech Scout)"
+      "sevalla.com (deploy hosting infra)",
+      "github.com/upscayl/upscayl (image upscaler tool, not UI resource)",
+      "ah4alt AI model freebie posts (not UI craft)",
+      "askwhykartik Reddit marketing subreddits",
+      "Wushu25 Android wallpaper/icon pack"
     ],
     "skipped_dupes_sample": [
-      "elyx.design",
-      "open-design.ai",
-      "spectrumhq empty host (added path block)",
-      "inspora",
-      "backgrounds.supply",
-      "fontshare",
-      "libraries.dev",
-      "astryx",
-      "kibo-ui",
-      "shadcn",
-      "heroui",
+      "spectrum-ui",
       "vibeui",
-      "torph",
-      "typehug",
-      "uisfx",
-      "kage.design",
-      "all 20 Hartdrawss icon libs already present"
+      "rareui",
+      "astryx",
+      "ui-skills",
+      "refero-styles",
+      "scrolltide",
+      "magic-ui",
+      "21st-dev"
     ]
   },
   "designer_list_ingest": {
