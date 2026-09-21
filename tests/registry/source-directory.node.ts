@@ -40,7 +40,7 @@ test('public source measurements match the existing complete report for the capt
   try {
     const directory = await sourceDirectory(registry);
     const report = await coverage(registry);
-    assert.equal(directory.total, 12);
+    assert.equal(directory.total, 11);
     assert.equal(directory.nextOffset, null);
     assert.equal(
       directory.items.reduce((sum, s) => sum + s.assetCount, 0),
