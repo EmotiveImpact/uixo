@@ -751,8 +751,7 @@ test('reviewed provider snapshots publish only truthfully previewable pinned web
       (asset) =>
         asset.preview === null &&
         asset.variants[0].acquisition.kind === 'registry' &&
-        asset.variants[0].acquisition.url ===
-          `https://elements.babelize.co/r/${asset.slug}.json` &&
+        asset.variants[0].acquisition.url === `https://elements.babelize.co/r/${asset.slug}.json` &&
         asset.variants[0].sourceRef === '2cd92ba8acad36e6122d4c528cc81b5d99ffd587',
     ),
   );

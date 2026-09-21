@@ -1045,10 +1045,10 @@ export async function reviewedSnapshotAssets(provider: Provider): Promise<Asset[
                 url: `https://elements.babelize.co/r/${encodeURIComponent(item.slug)}.json`,
               }
             : {
-              kind: 'package' as const,
-              packageName: packageName!,
-              url: provider.url,
-            };
+                kind: 'package' as const,
+                packageName: packageName!,
+                url: provider.url,
+              };
     const category = componentCategory(item.slug);
     assets.push({
       id: item.id,
