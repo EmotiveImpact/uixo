@@ -5,7 +5,9 @@ import { migrate, sqliteDatabase } from '../registry/database.ts';
 import { Registry } from '../registry/service.ts';
 import { seedCaptured, syncCaptured } from '../registry/bootstrap.ts';
 import { enqueue, runJob } from '../registry/jobs.ts';
-const [command, provider] = process.argv.slice(2);
+const [command, ...arguments_] = process.argv.slice(2);
+const provider = arguments_.find((argument) => !argument.startsWith('--'));
+const remoteDatabaseUrl = process.env.UIXO_DATABASE_URL || process.env.DATABASE_URL;
 if (
   ![
     'migrate',
@@ -21,12 +23,12 @@ if (
   throw new Error(
     'Usage: registry-db.ts migrate|seed|sync|sync-provider|index|collections-seed|readiness|collections-publish-new [provider-id]',
   );
-if (process.env.UIXO_DATABASE_URL && !process.argv.includes('--allow-remote'))
+if (remoteDatabaseUrl && !process.argv.includes('--allow-remote'))
   throw new Error(
     'Remote database writes require --allow-remote. Use a dedicated registry development database first.',
   );
-const db = process.env.UIXO_DATABASE_URL
-  ? await (await import('../registry/postgres.ts')).postgresDatabase(process.env.UIXO_DATABASE_URL)
+const db = remoteDatabaseUrl
+  ? await (await import('../registry/postgres.ts')).postgresDatabase(remoteDatabaseUrl)
   : await sqliteDatabase('.uixo/registry.sqlite');
 try {
   const registry = new Registry(db);
