@@ -76,7 +76,7 @@ with sync_playwright() as p:
             {'name': 'shadcn/ui', 'url': 'https://ui.shadcn.com/', 'note': 'Investigate retained source evidence.'},
             {'name': 'Magic UI', 'url': 'https://magicui.design/', 'note': 'Review source-pinned motion previews.'},
         ]})
-        page.goto(WEB + '/browse/assets', wait_until='networkidle')
+        page.goto(WEB + '/browse/assets', wait_until='domcontentloaded')
         browser_status = page.evaluate("async () => (await fetch('/api/registry?action=status', {credentials:'same-origin'})).json()")
         print(json.dumps({'preflight': {'apiRole': api('status')['role'], 'browserRole': browser_status['role'], 'pageUrl': page.url}}), flush=True)
         assert browser_status['role'] == 'curator'
@@ -94,7 +94,7 @@ with sync_playwright() as p:
             for width in [1440, 390]:
                 page.wait_for_timeout(4000)
                 page.set_viewport_size({'width': width, 'height': 1100 if width == 1440 else 844})
-                page.goto(WEB + '/browse/assets?' + query, wait_until='networkidle')
+                page.goto(WEB + '/browse/assets?' + query, wait_until='domcontentloaded')
                 heading(expected_heading)
                 page.wait_for_timeout(300)
                 if view == 'collections':
@@ -105,7 +105,7 @@ with sync_playwright() as p:
                 results.append({'view': view, 'width': width, 'horizontalOverflow': overflow, 'alerts': alerts})
 
         page.set_viewport_size({'width': 1440, 'height': 1100})
-        page.goto(WEB + '/browse/assets', wait_until='networkidle')
+        page.goto(WEB + '/browse/assets', wait_until='domcontentloaded')
         page.get_by_role('button', name='Sources', exact=True).click()
         heading('Understand the source, not just the count.')
         page.get_by_role('searchbox', name='Find a source').fill('shadcn')
@@ -118,7 +118,7 @@ with sync_playwright() as p:
         expect(page.locator('.dv2-collection-visual')).to_have_count(6)
         results.append({'visibleNavigation': True, 'sourceSearch': True, 'realCollectionCards': 6})
 
-        page.goto(WEB + '/browse/assets?view=collection-editor&collection=dashboard-foundations', wait_until='networkidle')
+        page.goto(WEB + '/browse/assets?view=collection-editor&collection=dashboard-foundations', wait_until='domcontentloaded')
         page.get_by_label('Collection title', exact=True).fill('Dashboard foundations, revised draft')
         page.get_by_role('button', name='Save draft', exact=True).click()
         page.get_by_text('Draft saved. The public version is unchanged.', exact=True).wait_for()
@@ -127,11 +127,11 @@ with sync_playwright() as p:
         guest = browser.new_context(viewport={'width': 390, 'height': 844})
         guest.route('**/api/auth/**', lambda r: r.fulfill(body='null', content_type='application/json'))
         gp = guest.new_page()
-        gp.goto(WEB + '/browse/assets?view=health', wait_until='networkidle')
+        gp.goto(WEB + '/browse/assets?view=health', wait_until='domcontentloaded')
         assert gp.locator('.registry-intelligence').count() == 0
         unauthorised = guest.request.get(WEB + '/api/registry?action=operations')
         assert unauthorised.status == 401
-        gp.goto(WEB + '/browse/assets?view=collections', wait_until='networkidle')
+        gp.goto(WEB + '/browse/assets?view=collections', wait_until='domcontentloaded')
         gp.get_by_role('heading', name='A considered starting point.').wait_for()
         results.append({'editorSaveKeptPublishedTitle': True, 'guestPrivateRouteBlocked': True, 'guestOperationsHTTP': unauthorised.status})
         guest.close()
