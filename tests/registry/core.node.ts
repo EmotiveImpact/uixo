@@ -724,5 +724,11 @@ test('reviewed provider snapshots publish only truthfully previewable pinned web
         asset.variants[0].sourceRef === 'ac71b5f644803b2107c878908e64f100d6a7d443',
     ),
   );
+  for (const asset of [uiable[0], flowbite[0], heroui[0]]) {
+    const recipe = resolveAsset(asset);
+    assert.equal(recipe.status, 'ready');
+    assert.equal(recipe.executed, false);
+    assert.equal(recipe.sourceRef, asset.variants[0].sourceRef);
+  }
   assert.equal(new Set([...uiable, ...flowbite, ...heroui].map((asset) => asset.id)).size, 820);
 });

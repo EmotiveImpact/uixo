@@ -72,6 +72,7 @@ export function resolveAsset(asset: Asset, variantId?: string) {
       shadcn: { origin: 'https://ui.shadcn.com', path: '/r/' },
       'magic-ui': { origin: 'https://magicui.design', path: '/r/' },
       'motion-primitives': { origin: 'https://motion-primitives.com', path: '/c/' },
+      uiable: { origin: 'https://uiable.com', path: '/r/' },
     };
     if (
       asset.providerId === 'kibo-ui' &&
@@ -104,6 +105,8 @@ export function resolveAsset(asset: Asset, variantId?: string) {
     const allowed: Record<string, string> = {
       lucide: 'lucide-react',
       heroicons: '@heroicons/react',
+      'flowbite-react': 'flowbite-react',
+      'heroui-web': '@heroui/react',
     };
     if (allowed[asset.providerId] !== acquisition.packageName)
       throw new RegistryError('UNTRUSTED_PACKAGE', 'Package does not match this provider.', 403);
