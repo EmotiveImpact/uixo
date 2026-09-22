@@ -8,6 +8,9 @@ import demos from '../../live-demos/manifest.json';
 
 type PreviewStatus = 'loading' | 'ready' | 'error';
 
+const DEFAULT_PREVIEW_WIDTH = 480;
+const UIABLE_PREVIEW_WIDTH = 360;
+
 function officialEmbedUrl(asset: CollectionAssetPreview): string | undefined {
   if (asset.preview?.kind !== 'embed') return undefined;
   const url = safeAssetUrl(asset.preview.url);
@@ -127,13 +130,19 @@ function LivePreview({
     return () => window.clearTimeout(timeout);
   }, [visible, status]);
 
-  const scale = detail ? 1 : size.width / 480;
+  // UIAble demos are complete responsive pages whose examples sit at the page's
+  // leading edge. Giving them the generic desktop canvas makes compact controls
+  // look unusually wide and leaves most of the card empty. Render those pages at
+  // their small-screen breakpoint, then scale the whole viewport proportionally.
+  const previewWidth = asset.providerId === 'uiable' ? UIABLE_PREVIEW_WIDTH : DEFAULT_PREVIEW_WIDTH;
+  const scale = detail ? 1 : size.width / previewWidth;
   const showFallbackImage = status === 'error' && fallbackImageUrl && !fallbackFailed;
 
   return (
     <div
       ref={viewport}
       data-preview-state={status}
+      data-preview-provider={asset.providerId}
       className={`asset-live-viewport ${detail ? 'is-detail' : ''} ${
         showFallbackImage ? 'has-captured-fallback' : ''
       }`}
@@ -150,7 +159,11 @@ function LivePreview({
             visibility: status === 'ready' ? 'visible' : 'hidden',
             ...(detail
               ? {}
-              : { width: 480, height: size.height / scale, transform: `scale(${scale})` }),
+              : {
+                  width: previewWidth,
+                  height: size.height / scale,
+                  transform: `scale(${scale})`,
+                }),
           }}
           onLoad={() => {
             setStatus('ready');

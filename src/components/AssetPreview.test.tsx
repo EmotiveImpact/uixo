@@ -159,6 +159,33 @@ describe('AssetPreview', () => {
     const frame = screen.getByTitle('Live Calendar Basic demo');
     expect(frame.getAttribute('sandbox')).toBe('allow-scripts allow-same-origin');
     expect(frame.getAttribute('referrerpolicy')).toBe('no-referrer');
+    expect(frame.style.width).toBe('360px');
+    expect(frame.style.transform).toBe('scale(1.3333333333333333)');
+    expect(frame.closest('[data-preview-provider]')?.getAttribute('data-preview-provider')).toBe(
+      'uiable',
+    );
+  });
+
+  it('keeps the standard canvas width for other providers', () => {
+    render(
+      <AssetPreview
+        asset={asset({
+          id: 'flowbite-react/accordion',
+          providerId: 'flowbite-react',
+          slug: 'accordion',
+          name: 'Accordion',
+          preview: {
+            kind: 'embed',
+            url: 'https://flowbite-react.com/examples/components.Accordion',
+            label: 'Official Flowbite demo',
+          },
+        })}
+      />,
+    );
+
+    const frame = screen.getByTitle('Live Accordion demo');
+    expect(frame.style.width).toBe('480px');
+    expect(frame.style.transform).toBe('scale(1)');
   });
   it('uses only the exact reviewed Kibo preview and refuses replacement URLs', () => {
     const original = asset({
