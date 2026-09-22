@@ -11,6 +11,17 @@ OUTPUT = Path(os.environ.get('UIXO_BROWSER_RESULTS', 'test-results/intelligence'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 WEB = 'http://localhost:3000'
 
+
+def record_page_error(errors, error):
+    """Keep UIXO failures while excluding expected opaque preview errors."""
+    message = str(error)
+    expected_preview_errors = (
+        "document is sandboxed and lacks the 'allow-same-origin' flag",
+        "Failed to construct 'Worker': Script at ",
+    )
+    if not any(expected in message for expected in expected_preview_errors):
+        errors.append(message)
+
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=True)
     ctx = browser.new_context(viewport={'width': 1440, 'height': 1100}, device_scale_factor=1)
@@ -26,7 +37,7 @@ with sync_playwright() as p:
     ctx.route('**/api/saved-assets', lambda r: r.fulfill(json={'assetIds': [], 'revision': 0}))
     page = ctx.new_page()
     errors, api_failures, results = [], [], []
-    page.on('pageerror', lambda error: errors.append(str(error)))
+    page.on('pageerror', lambda error: record_page_error(errors, error))
     page.on('response', lambda response: api_failures.append({'url': response.url, 'status': response.status}) if '/api/registry' in response.url and response.status >= 400 else None)
 
     def api(action, body=None):
