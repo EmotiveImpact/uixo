@@ -135,8 +135,30 @@ describe('AssetPreview', () => {
 
     const frame = screen.getByTitle('Live Ripple Button demo');
     expect(frame.getAttribute('src')).toContain('animata.design/preview/iframe');
-    expect(frame.getAttribute('sandbox')).toBe('allow-scripts');
+    expect(frame.getAttribute('sandbox')).toBe('allow-scripts allow-same-origin');
     expect(container.querySelector('img')).toBeNull();
+  });
+
+  it('keeps reviewed external demos cross-origin while permitting their own runtime storage', () => {
+    render(
+      <AssetPreview
+        asset={asset({
+          id: 'uiable/calendar-basic',
+          providerId: 'uiable',
+          slug: 'calendar-basic',
+          name: 'Calendar Basic',
+          preview: {
+            kind: 'embed',
+            url: 'https://uiable.com/preview/calendar/calendar-basic',
+            label: 'Official UIAble demo',
+          },
+        })}
+      />,
+    );
+
+    const frame = screen.getByTitle('Live Calendar Basic demo');
+    expect(frame.getAttribute('sandbox')).toBe('allow-scripts allow-same-origin');
+    expect(frame.getAttribute('referrerpolicy')).toBe('no-referrer');
   });
   it('uses only the exact reviewed Kibo preview and refuses replacement URLs', () => {
     const original = asset({

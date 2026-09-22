@@ -143,7 +143,7 @@ function LivePreview({
           ref={frame}
           title={`Live ${asset.name} demo`}
           src={src}
-          sandbox="allow-scripts"
+          sandbox={external ? 'allow-scripts allow-same-origin' : 'allow-scripts'}
           referrerPolicy="no-referrer"
           style={{
             colorScheme: theme,
