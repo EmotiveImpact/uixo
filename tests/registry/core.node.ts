@@ -2,7 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { sqliteDatabase, migrate } from '../../registry/database.ts';
 import { Registry } from '../../registry/service.ts';
-import { capturedAssets, seedCaptured, syncCaptured } from '../../registry/bootstrap.ts';
+import {
+  approvedCapturedAssets,
+  capturedAssets,
+  seedCaptured,
+  syncCaptured,
+} from '../../registry/bootstrap.ts';
 import { parseSearch, validateAsset, canonicalUrl, parseScout } from '../../registry/domain.ts';
 import {
   resolveAsset,
@@ -29,14 +34,17 @@ async function setup() {
 test('migration and captured-source seed are repeatable; counts reflect actual rows', async () => {
   const { db, registry } = await setup();
   try {
-    const expectedAssets = (await capturedAssets()).length;
+    const expectedAssets = (await approvedCapturedAssets()).length;
     await migrate(db);
     const first = await seedCaptured(registry),
       second = await seedCaptured(registry);
     assert.equal(first.inserted, expectedAssets);
     assert.equal(second.inserted, 0);
     assert.equal((await registry.stats()).assets, expectedAssets);
-    assert.equal((await registry.providers()).length, PROVIDERS.length);
+    assert.equal(
+      (await registry.providers()).length,
+      PROVIDERS.filter((provider) => provider.approved).length,
+    );
     const inventory = await registry.inventory();
     assert.equal(inventory.total, expectedAssets);
     assert.ok(inventory.kinds.find((entry) => entry.id === 'component')!.count > 0);
@@ -583,7 +591,7 @@ test('discovery lists icon packs, retains legacy saved icons and filters compone
       'Exercise existing saved icon compatibility.',
     );
     const all = await registry.search({ limit: 48 });
-    assert.equal(all.total, (await capturedAssets()).length);
+    assert.equal(all.total, (await approvedCapturedAssets()).length);
     const packs = await registry.search({ kind: 'icon' });
     assert.equal(packs.total, 2);
     assert.ok(packs.items.every((asset) => asset.kind === 'icon-pack'));
@@ -684,11 +692,14 @@ test('Animata snapshot only publishes source-pinned components with official liv
 
 test('reviewed provider snapshots publish only truthfully previewable pinned web assets', async () => {
   const assets = await capturedAssets();
+  const approvedAssets = await approvedCapturedAssets();
   const uiable = assets.filter((asset) => asset.providerId === 'uiable');
   const flowbite = assets.filter((asset) => asset.providerId === 'flowbite-react');
   const heroui = assets.filter((asset) => asset.providerId === 'heroui-web');
 
   assert.equal(uiable.length, 707);
+  assert.equal(PROVIDERS.find((provider) => provider.id === 'uiable')?.approved, false);
+  assert.ok(!approvedAssets.some((asset) => asset.providerId === 'uiable'));
   assert.equal(flowbite.length, 45);
   assert.equal(heroui.length, 68);
 

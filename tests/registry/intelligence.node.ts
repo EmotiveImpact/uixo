@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
 import { sqliteDatabase, migrate } from '../../registry/database.ts';
 import { Registry } from '../../registry/service.ts';
-import { seedCaptured, capturedAssets } from '../../registry/bootstrap.ts';
+import { approvedCapturedAssets, seedCaptured, capturedAssets } from '../../registry/bootstrap.ts';
 import { PROVIDERS } from '../../registry/providers.ts';
 import { freshness, measureAsset, coverage } from '../../registry/intelligence.ts';
 import {
@@ -68,7 +68,7 @@ test('intelligence migration is repeatable and leaves existing registry rows unc
   const { db, registry } = await setup();
   try {
     await migrate(db);
-    assert.equal((await registry.stats()).assets, (await capturedAssets()).length);
+    assert.equal((await registry.stats()).assets, (await approvedCapturedAssets()).length);
     assert.equal((await listCollections(registry)).total, 0);
   } finally {
     await db.close();
@@ -116,8 +116,8 @@ test('coverage totals reflect published assets, real media and approved sources'
   const { db, registry } = await setup();
   try {
     const report = await coverage(registry);
-    assert.equal(report.metrics.total, (await capturedAssets()).length);
-    assert.equal(report.sources.length, PROVIDERS.length);
+    assert.equal(report.metrics.total, (await approvedCapturedAssets()).length);
+    assert.equal(report.sources.length, PROVIDERS.filter((provider) => provider.approved).length);
     assert.equal(
       report.sources.reduce((n, p) => n + p.metrics.total, 0),
       report.metrics.total,

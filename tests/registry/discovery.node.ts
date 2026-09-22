@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
 import { sqliteDatabase, migrate } from '../../registry/database.ts';
 import { Registry } from '../../registry/service.ts';
-import { capturedAssets, seedCaptured } from '../../registry/bootstrap.ts';
+import { approvedCapturedAssets, seedCaptured } from '../../registry/bootstrap.ts';
 import { PROVIDERS } from '../../registry/providers.ts';
 import {
   listCollections,
@@ -41,7 +41,7 @@ test('release snapshot contains six real selections and remains idempotent', asy
     assert.equal(collection.items[0].providerName, 'shadcn/ui');
     assert.ok(collection.items[0].frameworks?.includes('react'));
     assert.ok(collection.items[0].licenceExpression);
-    assert.equal((await registry.stats()).assets, (await capturedAssets()).length);
+    assert.equal((await registry.stats()).assets, (await approvedCapturedAssets()).length);
     await assert.rejects(
       publishCollection(
         registry,
@@ -202,7 +202,10 @@ test('public source directory and private starter preparation keep their HTTP bo
   try {
     const sources = await api('source-directory');
     assert.equal(sources.status, 200);
-    assert.equal(sources.data.items.length, PROVIDERS.length);
+    assert.equal(
+      sources.data.items.length,
+      PROVIDERS.filter((provider) => provider.approved).length,
+    );
     assert.ok(
       sources.data.items.every(
         (source: { metrics: { total: number }; upstreamStatus: string }) =>

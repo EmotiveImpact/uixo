@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
 import { sqliteDatabase, migrate } from '../../registry/database.ts';
 import { Registry } from '../../registry/service.ts';
-import { seedCaptured, capturedAssets } from '../../registry/bootstrap.ts';
+import { approvedCapturedAssets, seedCaptured, capturedAssets } from '../../registry/bootstrap.ts';
 import { PROVIDERS } from '../../registry/providers.ts';
 import { coverage } from '../../registry/intelligence.ts';
 import {
@@ -40,11 +40,11 @@ test('public source measurements match the existing complete report for the capt
   try {
     const directory = await sourceDirectory(registry);
     const report = await coverage(registry);
-    assert.equal(directory.total, PROVIDERS.length);
+    assert.equal(directory.total, PROVIDERS.filter((provider) => provider.approved).length);
     assert.equal(directory.nextOffset, null);
     assert.equal(
       directory.items.reduce((sum, s) => sum + s.assetCount, 0),
-      (await capturedAssets()).length,
+      (await approvedCapturedAssets()).length,
     );
     for (const item of directory.items) {
       assert.equal(item.evidenceStatus, 'complete');
@@ -73,7 +73,7 @@ test('public directory and profile survive a single source above 10,000 assets w
       },
     };
     const directory = await sourceDirectory(registry);
-    assert.equal(directory.total, PROVIDERS.length + 1);
+    assert.equal(directory.total, PROVIDERS.filter((provider) => provider.approved).length + 1);
     const large = directory.items.find((s) => s.id === 'large-provider')!;
     assert.equal(large.assetCount, 10001);
     assert.equal(large.metrics, null);
@@ -129,7 +129,7 @@ test('source pagination bounds provider rows and searches beyond the first page'
     }
     const first = await sourceDirectory(registry, { limit: 12 });
     const second = await sourceDirectory(registry, { limit: 12, offset: 12 });
-    assert.equal(first.total, PROVIDERS.length + 60);
+    assert.equal(first.total, PROVIDERS.filter((provider) => provider.approved).length + 60);
     assert.equal(first.items.length, 12);
     assert.equal(new Set([...first.items, ...second.items].map((s) => s.id)).size, 24);
     const last = await sourceDirectory(registry, { q: 'source-059', limit: 1 });
