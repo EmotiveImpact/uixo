@@ -2,6 +2,9 @@ import { useRef, useState } from 'react';
 import { ArrowRight, ArrowUpRight, Search } from 'lucide-react';
 import { SiteFooter } from './SiteFooter';
 import { Thumbnail } from './Thumbnail';
+import { AssetPreview } from './AssetPreview';
+import type { CollectionAssetPreview } from '../../shared/intelligence';
+import './homepage.css';
 import { DiscoveryHeader } from './discovery/DiscoveryHeader';
 import { collections, resources, thumbnailPosition } from '../data';
 import { navigateInApp } from '../lib/navigation';
@@ -29,13 +32,40 @@ type LandingPageProps = {
   onAbout: () => void;
 };
 
-// Real retained component captures, not generated artwork or invented Kibo components.
-const heroCaptures = [
+// Use published records and the same original live demos as the asset catalogue.
+const featuredComponents = [
   { id: 'shadcn/command', name: 'Command', provider: 'shadcn/ui' },
-  { id: 'shadcn/calendar', name: 'Calendar', provider: 'shadcn/ui' },
   { id: 'magic-ui/aurora-text', name: 'Aurora Text', provider: 'Magic UI' },
-  { id: 'shadcn/button', name: 'Button', provider: 'shadcn/ui' },
+  { id: 'shadcn/calendar', name: 'Calendar', provider: 'shadcn/ui' },
 ];
+
+function FeaturedComponent({
+  item,
+  href,
+}: {
+  item: (typeof featuredComponents)[number];
+  href: string;
+}) {
+  const { data, error } = useRegistryData<CollectionAssetPreview>('asset', { id: item.id });
+  return (
+    <article className="home-component">
+      {data ? (
+        <AssetPreview asset={data} />
+      ) : (
+        <div className="home-preview-pending" role="status">
+          {error ? 'Preview unavailable' : 'Loading component…'}
+        </div>
+      )}
+      <a className="home-component-link" href={href}>
+        <div>
+          <h3>{item.name}</h3>
+          <span>{item.provider}</span>
+        </div>
+        <ArrowUpRight size={18} />
+      </a>
+    </article>
+  );
+}
 
 export function LandingPage({
   authAvailable,
@@ -68,6 +98,7 @@ export function LandingPage({
     <div className="discovery-home">
       <DiscoveryHeader
         active="discover"
+        compactNavigation
         light={light}
         onToggleTheme={onToggleTheme}
         onSearch={() => searchRef.current?.focus()}
@@ -76,11 +107,7 @@ export function LandingPage({
             <button className="header-signin" onClick={onSignIn}>
               Sign in
             </button>
-          ) : (
-            <a className="header-signin" href={hrefs.assets} onClick={(e) => internal(e, onAssets)}>
-              Explore UIXO
-            </a>
-          )
+          ) : null
         }
       />
       <main className="discovery-container">
@@ -88,13 +115,11 @@ export function LandingPage({
           <div className="hero-copy">
             <p className="discovery-kicker">BETTER INTERFACES. A BRIGHTER INTERNET.</p>
             <h1>
-              The interface
-              <br />
-              <span>starts here.</span>
+              The interface <span>starts here.</span>
             </h1>
             <p className="hero-description">
-              Discover exceptional components, libraries and design resources. Find your next idea.
-              Make it yours.
+              Exceptional components and websites, in one place. Find a detail. Try it. Make it
+              yours.
             </p>
             <form
               className="hero-search"
@@ -142,32 +167,29 @@ export function LandingPage({
               </span>
             </div>
           </div>
-          <div className="hero-stage" aria-label="Actual component screenshots">
-            <div className="hero-stage-glow" aria-hidden="true" />
-            <div className="hero-orbit" aria-hidden="true" />
-            {heroCaptures.map((item, i) => (
-              <a
+        </section>
+        <section className="home-showcase" aria-labelledby="showcase-title">
+          <div className="home-showcase-heading">
+            <div>
+              <p className="discovery-kicker">A FEW GOOD DETAILS</p>
+              <h2 id="showcase-title">Try something great.</h2>
+            </div>
+            <a
+              className="discovery-viewall"
+              href={hrefs.assets}
+              onClick={(e) => internal(e, onAssets)}
+            >
+              All assets <ArrowRight size={14} />
+            </a>
+          </div>
+          <div className="home-component-grid">
+            {featuredComponents.map((item) => (
+              <FeaturedComponent
                 key={item.id}
-                className={`hero-component hero-component-${i + 1}`}
+                item={item}
                 href={`${hrefs.assets}?id=${encodeURIComponent(item.id)}`}
-              >
-                <div className="hero-component-caption">
-                  <span>{item.provider}</span>
-                  <ArrowUpRight size={12} />
-                </div>
-                <img
-                  src={`/assets/component-previews/${item.id}.webp`}
-                  alt={`${item.name} upstream screenshot`}
-                  width={638}
-                  height={384}
-                />
-                <div className="hero-component-footer">
-                  <strong>{item.name}</strong>
-                  <span>Screenshot</span>
-                </div>
-              </a>
+              />
             ))}
-            <span className="hero-stage-note">REAL COMPONENTS. ENDLESS POSSIBILITIES.</span>
           </div>
         </section>
         <section className="discovery-feature-section" aria-labelledby="featured-title">

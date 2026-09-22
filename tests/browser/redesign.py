@@ -38,7 +38,7 @@ def visit(page, route):
     global last_navigation
     # This suite deliberately reloads whole applications, unlike normal SPA browsing.
     # Each reload requests fresh public metadata. Do not bypass the server rate limiter.
-    remaining = 4.0 - (time.monotonic() - last_navigation)
+    remaining = 7.0 - (time.monotonic() - last_navigation)
     if remaining > 0:
         page.wait_for_timeout(remaining * 1000)
     last_navigation = time.monotonic()
@@ -66,8 +66,8 @@ with sync_playwright() as p:
                     for view, route in [('home', '/'), ('components', '/browse/assets'), ('resources', '/browse'), ('detail', '/browse/assets?id=shadcn%2Fbutton')]:
                         visit(page, route)
                         if view == 'home':
-                            expect(page.locator('.hero-component')).to_have_count(4)
-                            page.wait_for_function("[...document.querySelectorAll('.hero-component img')].every(img => img.complete && img.naturalWidth > 0)")
+                            expect(page.locator('.home-component')).to_have_count(3)
+                            expect(page.locator('.home-component .asset-live-viewport[data-preview-state="ready"]').first).to_be_visible(timeout=20000)
                             assert page.locator('[data-slot="sidebar"]').count() == 0
                         elif view == 'components':
                             wait_for_card(page)
