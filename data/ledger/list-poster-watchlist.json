@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-21",
+  "updated": "2026-09-22",
   "exclusive_allowlist": false,
   "note": "Core handles are priority; also discover and add new list-droppers. Dump all links from list posts.",
   "handles": [
@@ -33,7 +33,10 @@
     "Hartdrawss",
     "AAishakar",
     "himanshubuildss",
-    "simoom_design"
+    "simoom_design",
+    "voidyaps",
+    "dhruvtwt_",
+    "M_jawad_yasin"
   ],
   "discovery_candidates": [
     "AGTPinsights",
@@ -59,6 +62,7 @@
     "suriadesign",
     "theansarh",
     "thedzianis",
-    "zaikhdev"
+    "zaikhdev",
+    "Lioicons"
   ]
 }

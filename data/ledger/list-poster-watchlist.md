@@ -1,11 +1,9 @@
 # List-poster watchlist
+Updated: 2026-09-22
 
-Updated: 2026-09-21
+Priority seed (not exclusive).
 
-Priority seed (not exclusive). Dump all links from list posts.
-
-## Handles
-
+## Core handles
 - @walebuilds_
 - @rkant7
 - @Tegadesigns
@@ -37,9 +35,11 @@ Priority seed (not exclusive). Dump all links from list posts.
 - @AAishakar
 - @himanshubuildss
 - @simoom_design
+- @voidyaps
+- @dhruvtwt_
+- @M_jawad_yasin
 
 ## Discovery candidates
-
 - @AGTPinsights
 - @AI_With_Stella
 - @AboveRepl
@@ -64,3 +64,4 @@ Priority seed (not exclusive). Dump all links from list posts.
 - @theansarh
 - @thedzianis
 - @zaikhdev
+- @Lioicons

@@ -1,26 +1,42 @@
 # UIXO candidates
 
-Updated: 2026-09-21
+Updated: 2026-09-22
 
-- Total: **512**
-- Needs review: 434
-- Captured: 450
+- Total: **525**
+- Needs review: 447
+- Captured: 486
 - OG captured: 38
 - Blocked: 1
-- Pending: 23
+- Pending: 0
 
 ## By category
 
-- Inspiration: 119
+- Inspiration: 120
 - UI libraries: 117
-- Components: 93
+- Components: 97
 - Templates: 51
-- Icons: 45
-- Marketplace: 25
-- Fonts: 20
+- Icons: 46
+- Marketplace: 26
+- Fonts: 26
 - Backgrounds: 18
 - Illustrations: 13
 - Mockups: 11
+
+## Weekday digest 2026-09-22 (new)
+
+- [The League of Moveable Type](https://www.theleagueofmoveabletype.com/) — Fonts — `league-of-moveable-type`
+- [Supa Fonts](https://supafonts.com) — Fonts — `supafonts`
+- [Freefaces Gallery](https://www.freefaces.gallery/) — Fonts — `freefaces-gallery`
+- [Tunera](https://tunera.xyz) — Fonts — `tunera`
+- [Use & Modify](https://usemodify.com) — Fonts — `use-modify`
+- [Open Foundry](https://open-foundry.com) — Fonts — `open-foundry`
+- [Lio Icons](https://liopro.com/lioicons) — Icons — `lio-icons`
+- [Designeer](https://designeer.xyz) — Inspiration — `designeer`
+- [Spectrum Tables](https://ui.spectrumhq.in/blocks/tables) — Components — `spectrum-tables`
+- [Ink](https://github.com/vadimdemedes/ink) — Components — `ink-cli`
+- [React Cosmos](https://github.com/react-cosmos/react-cosmos) — Components — `react-cosmos`
+- [json-render](https://github.com/vercel-labs/json-render) — Components — `json-render`
+- [Taste Skill](https://www.tasteskill.dev/) — Marketplace — `taste-skill`
 
 ## Weekday digest 2026-09-21 (new)
 
