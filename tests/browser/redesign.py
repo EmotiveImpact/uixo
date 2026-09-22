@@ -38,7 +38,7 @@ def visit(page, route):
     global last_navigation
     # This suite deliberately reloads whole applications, unlike normal SPA browsing.
     # Each reload requests fresh public metadata. Do not bypass the server rate limiter.
-    remaining = 4.0 - (time.monotonic() - last_navigation)
+    remaining = 7.0 - (time.monotonic() - last_navigation)
     if remaining > 0:
         page.wait_for_timeout(remaining * 1000)
     last_navigation = time.monotonic()
