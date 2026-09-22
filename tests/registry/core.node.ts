@@ -29,15 +29,16 @@ async function setup() {
 test('migration and captured-source seed are repeatable; counts reflect actual rows', async () => {
   const { db, registry } = await setup();
   try {
+    const expectedAssets = (await capturedAssets()).length;
     await migrate(db);
     const first = await seedCaptured(registry),
       second = await seedCaptured(registry);
-    assert.equal(first.inserted, 474);
+    assert.equal(first.inserted, expectedAssets);
     assert.equal(second.inserted, 0);
-    assert.equal((await registry.stats()).assets, 474);
-    assert.equal((await registry.providers()).length, 8);
+    assert.equal((await registry.stats()).assets, expectedAssets);
+    assert.equal((await registry.providers()).length, PROVIDERS.length);
     const inventory = await registry.inventory();
-    assert.equal(inventory.total, 474);
+    assert.equal(inventory.total, expectedAssets);
     assert.ok(inventory.kinds.find((entry) => entry.id === 'component')!.count > 0);
     assert.equal(
       inventory.kinds.find((entry) => entry.id === 'font'),
@@ -121,9 +122,17 @@ test('search enforces framework and format on the same variant and excludes unkn
   try {
     await seedCaptured(registry);
     assert.equal((await registry.search({ framework: 'react', format: 'svg' })).total, 0);
-    assert.equal(
-      (await registry.search({ q: 'find me a free React sidebar', commercial: true })).total,
-      1,
+    const sidebars = await registry.search({
+      q: 'find me a free React sidebar',
+      commercial: true,
+      limit: 48,
+    });
+    assert.ok(sidebars.total > 0);
+    assert.ok(
+      sidebars.items.every(
+        (asset) =>
+          asset.price === 'free' && asset.variants.some((variant) => variant.framework === 'react'),
+      ),
     );
     assert.equal((await registry.search({ q: 'react radar whichdoesnotexist' })).total, 0);
     const first = await registry.search({ kind: 'component', limit: 5 });
@@ -360,7 +369,10 @@ test('captured React registries retain pinned source, licence and acquisition ev
     components.every(
       (asset) =>
         (asset.preview?.kind === 'image' && asset.preview.url) ||
-        (['animata', 'kibo-ui'].includes(asset.providerId) && asset.preview?.kind === 'embed') ||
+        (['animata', 'kibo-ui', 'uiable', 'flowbite-react', 'heroui-web'].includes(
+          asset.providerId,
+        ) &&
+          asset.preview?.kind === 'embed') ||
         asset.providerId === 'simply-buttons' ||
         ['switch', 'table', 'tabs', 'textarea', 'toggle', 'toggle-group', 'tooltip'].includes(
           asset.slug,
@@ -571,7 +583,7 @@ test('discovery lists icon packs, retains legacy saved icons and filters compone
       'Exercise existing saved icon compatibility.',
     );
     const all = await registry.search({ limit: 48 });
-    assert.equal(all.total, 474);
+    assert.equal(all.total, (await capturedAssets()).length);
     const packs = await registry.search({ kind: 'icon' });
     assert.equal(packs.total, 2);
     assert.ok(packs.items.every((asset) => asset.kind === 'icon-pack'));
@@ -581,9 +593,13 @@ test('discovery lists icon packs, retains legacy saved icons and filters compone
     );
     assert.equal((await registry.inspect(legacy.id)).kind, 'icon');
     const forms = await registry.search({ category: 'forms', limit: 48 });
-    assert.ok(forms.items.some((asset) => asset.id === 'shadcn/switch'));
     assert.ok(
       forms.items.every((asset) => asset.kind === 'component' && asset.category === 'forms'),
+    );
+    assert.ok(
+      (await registry.search({ q: 'switch', category: 'forms', limit: 48 })).items.some(
+        (asset) => asset.id === 'shadcn/switch',
+      ),
     );
     const combined = await registry.search({
       category: 'forms',
@@ -664,4 +680,55 @@ test('Animata snapshot only publishes source-pinned components with official liv
       (asset) => asset.variants[0].sourceRef === '36674e4e9cfdc0f237693d8b736a2bf41065ca1d',
     ),
   );
+});
+
+test('reviewed provider snapshots publish only truthfully previewable pinned web assets', async () => {
+  const assets = await capturedAssets();
+  const uiable = assets.filter((asset) => asset.providerId === 'uiable');
+  const flowbite = assets.filter((asset) => asset.providerId === 'flowbite-react');
+  const heroui = assets.filter((asset) => asset.providerId === 'heroui-web');
+
+  assert.equal(uiable.length, 707);
+  assert.equal(flowbite.length, 45);
+  assert.equal(heroui.length, 68);
+
+  assert.ok(
+    uiable.every(
+      (asset) =>
+        asset.preview?.kind === 'embed' &&
+        asset.preview.url.startsWith('https://uiable.com/preview/') &&
+        asset.variants[0].acquisition.kind === 'registry' &&
+        asset.variants[0].acquisition.url === `https://uiable.com/r/${asset.slug}.json` &&
+        asset.variants[0].sourceRef === '34e78586c904091059deb63412ae330b2757e923',
+    ),
+  );
+  assert.ok(
+    flowbite.every(
+      (asset) =>
+        asset.preview?.kind === 'embed' &&
+        asset.preview.url.startsWith('https://flowbite-react.com/examples/') &&
+        asset.variants[0].acquisition.kind === 'package' &&
+        asset.variants[0].acquisition.packageName === 'flowbite-react' &&
+        asset.variants[0].sourceRef === '85319bd067822f7aa9670688780aeb58cc187aa5',
+    ),
+  );
+  assert.ok(!flowbite.some((asset) => asset.slug === 'dark-theme-toggle'));
+  assert.ok(
+    heroui.every(
+      (asset) =>
+        asset.preview?.kind === 'embed' &&
+        asset.preview.url.startsWith('https://storybook-v3.heroui.com/iframe.html?id=') &&
+        asset.licence.expression === 'Apache-2.0' &&
+        asset.variants[0].acquisition.kind === 'package' &&
+        asset.variants[0].acquisition.packageName === '@heroui/react' &&
+        asset.variants[0].sourceRef === 'ac71b5f644803b2107c878908e64f100d6a7d443',
+    ),
+  );
+  for (const asset of [uiable[0], flowbite[0], heroui[0]]) {
+    const recipe = resolveAsset(asset);
+    assert.equal(recipe.status, 'ready');
+    assert.equal(recipe.executed, false);
+    assert.equal(recipe.sourceRef, asset.variants[0].sourceRef);
+  }
+  assert.equal(new Set([...uiable, ...flowbite, ...heroui].map((asset) => asset.id)).size, 820);
 });

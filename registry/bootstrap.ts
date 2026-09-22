@@ -9,6 +9,7 @@ import {
   licenceFromText,
   parseJsonRegistry,
   PROVIDERS,
+  reviewedSnapshotAssets,
   storybookComponentAsset,
 } from './providers.ts';
 import { readAnimataSnapshot } from './animata.ts';
@@ -56,6 +57,10 @@ export async function capturedAssets(): Promise<Asset[]> {
         assets.push(
           buttonGalleryAsset(item, provider, snapshot.ref, snapshot.observedAt, guidance),
         );
+      continue;
+    }
+    if (provider.adapter === 'reviewed-snapshot') {
+      assets.push(...(await reviewedSnapshotAssets(provider)));
       continue;
     }
     if (provider.adapter === 'github-storybook') {
@@ -181,10 +186,16 @@ export async function seedCaptured(registry: Registry) {
  * This is an explicit operator command: unlike seedCaptured it updates existing rows and
  * removes only provider entries named in the source-backed exclusion policy.
  */
-export async function syncCaptured(registry: Registry) {
-  for (const provider of PROVIDERS) await registry.putProvider(provider);
+export async function syncCaptured(registry: Registry, providerIds?: ReadonlySet<string>) {
+  const selectedProviders = providerIds
+    ? PROVIDERS.filter((provider) => providerIds.has(provider.id))
+    : PROVIDERS;
+  if (providerIds && selectedProviders.length !== providerIds.size)
+    throw new Error('Scoped sync includes an unknown provider ID.');
+  for (const provider of selectedProviders) await registry.putProvider(provider);
 
-  const assets = await capturedAssets();
+  const selected = new Set(selectedProviders.map((provider) => provider.id));
+  const assets = (await capturedAssets()).filter((asset) => selected.has(asset.providerId));
   let inserted = 0;
   let updated = 0;
   let unchanged = 0;
@@ -220,7 +231,7 @@ export async function syncCaptured(registry: Registry) {
   }
 
   let removed = 0;
-  for (const provider of PROVIDERS) {
+  for (const provider of selectedProviders) {
     for (const slug of provider.excludedComponents ?? []) {
       const assetId = `${provider.id}/${slug}`;
       const present = await registry.db.query(

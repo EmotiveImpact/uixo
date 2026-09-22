@@ -17,6 +17,23 @@ results = []
 last_navigation = 0.0
 
 
+def record_page_error(errors, error):
+    """Keep application failures while excluding expected opaque preview errors.
+
+    Remote provider demos deliberately run with only ``allow-scripts`` so they
+    cannot read UIXO storage or share the application's origin. Some upstream
+    demos probe localStorage or Vercel's challenge worker during boot; Chromium
+    reports those blocked probes through the parent page's ``pageerror`` event.
+    """
+    message = str(error)
+    expected_preview_errors = (
+        "document is sandboxed and lacks the 'allow-same-origin' flag",
+        "Failed to construct 'Worker': Script at ",
+    )
+    if not any(expected in message for expected in expected_preview_errors):
+        errors.append(message)
+
+
 def visit(page, route):
     global last_navigation
     # This suite deliberately reloads whole applications, unlike normal SPA browsing.
@@ -43,7 +60,7 @@ with sync_playwright() as p:
                 ctx.add_init_script(f"if (window === window.top) localStorage.setItem('uixo-theme', JSON.stringify('{theme}'))")
                 page = ctx.new_page()
                 errors, failures = [], []
-                page.on('pageerror', lambda error: errors.append(str(error)))
+                page.on('pageerror', lambda error: record_page_error(errors, error))
                 page.on('response', lambda response: failures.append({'url': response.url, 'status': response.status}) if '/api/registry?' in response.url and response.status >= 400 else None)
                 try:
                     for view, route in [('home', '/'), ('components', '/browse/assets'), ('resources', '/browse'), ('detail', '/browse/assets?id=shadcn%2Fbutton')]:

@@ -9,13 +9,45 @@ import demos from '../../live-demos/manifest.json';
 type PreviewStatus = 'loading' | 'ready' | 'error';
 
 function officialEmbedUrl(asset: CollectionAssetPreview): string | undefined {
-  if (asset.providerId !== 'animata' || asset.preview?.kind !== 'embed') return undefined;
+  if (asset.preview?.kind !== 'embed') return undefined;
   const url = safeAssetUrl(asset.preview.url);
   if (!url) return undefined;
   const parsed = new URL(url);
-  return parsed.origin === 'https://animata.design' && parsed.pathname === '/preview/iframe'
-    ? url
-    : undefined;
+
+  if (
+    asset.providerId === 'animata' &&
+    parsed.origin === 'https://animata.design' &&
+    parsed.pathname === '/preview/iframe'
+  )
+    return url;
+
+  if (
+    asset.providerId === 'uiable' &&
+    parsed.origin === 'https://uiable.com' &&
+    /^\/preview\/[a-z0-9-]+(?:\/[a-z0-9-]+)*$/.test(parsed.pathname) &&
+    !parsed.search
+  )
+    return url;
+
+  if (
+    asset.providerId === 'flowbite-react' &&
+    parsed.origin === 'https://flowbite-react.com' &&
+    /^\/examples\/[A-Za-z0-9.]+$/.test(parsed.pathname) &&
+    !parsed.search
+  )
+    return url;
+
+  if (
+    asset.providerId === 'heroui-web' &&
+    parsed.origin === 'https://storybook-v3.heroui.com' &&
+    parsed.pathname === '/iframe.html' &&
+    /^[a-z0-9-]+--[a-z0-9-]+$/.test(parsed.searchParams.get('id') ?? '') &&
+    parsed.searchParams.get('viewMode') === 'story' &&
+    [...parsed.searchParams.keys()].every((key) => key === 'id' || key === 'viewMode')
+  )
+    return url;
+
+  return undefined;
 }
 
 function LivePreview({

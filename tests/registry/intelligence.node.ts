@@ -68,7 +68,7 @@ test('intelligence migration is repeatable and leaves existing registry rows unc
   const { db, registry } = await setup();
   try {
     await migrate(db);
-    assert.equal((await registry.stats()).assets, 474);
+    assert.equal((await registry.stats()).assets, (await capturedAssets()).length);
     assert.equal((await listCollections(registry)).total, 0);
   } finally {
     await db.close();
@@ -116,8 +116,8 @@ test('coverage totals reflect published assets, real media and approved sources'
   const { db, registry } = await setup();
   try {
     const report = await coverage(registry);
-    assert.equal(report.metrics.total, 474);
-    assert.equal(report.sources.length, 8);
+    assert.equal(report.metrics.total, (await capturedAssets()).length);
+    assert.equal(report.sources.length, PROVIDERS.length);
     assert.equal(
       report.sources.reduce((n, p) => n + p.metrics.total, 0),
       report.metrics.total,
@@ -127,7 +127,7 @@ test('coverage totals reflect published assets, real media and approved sources'
     assert.ok(report.metrics.pinnedLiveDemos > 0);
     assert.equal(
       report.metrics.fresh + report.metrics.ageing + report.metrics.stale + report.metrics.unknown,
-      474,
+      report.metrics.total,
     );
     await registry.putProvider({ ...PROVIDERS[0], approved: false });
     const hidden = await coverage(registry);

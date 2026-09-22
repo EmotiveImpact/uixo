@@ -32,8 +32,9 @@ test('real MCP client discovers and calls every UIXO tool through the official H
     assert.notEqual(search.isError, true);
     assert.ok(search.structuredContent);
     const items = search.structuredContent?.items as { id: string }[];
-    assert.equal(items.length, 1);
-    const id = items[0].id;
+    assert.ok(items.length > 0);
+    const id = items.find((item) => item.id === 'shadcn/sidebar')?.id;
+    assert.equal(id, 'shadcn/sidebar');
     for (const name of ['inspect_asset', 'get_preview', 'resolve_asset', 'acquire_asset']) {
       const result = await client.callTool({ name, arguments: { id } });
       assert.notEqual(result.isError, true);
