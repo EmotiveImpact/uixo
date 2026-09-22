@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
 import { sqliteDatabase, migrate } from '../../registry/database.ts';
 import { Registry } from '../../registry/service.ts';
-import { capturedAssets, seedCaptured } from '../../registry/bootstrap.ts';
+import { approvedCapturedAssets, capturedAssets, seedCaptured } from '../../registry/bootstrap.ts';
 import { PROVIDERS } from '../../registry/providers.ts';
 import { createRegistryHandler } from '../../registry/http.ts';
 
@@ -173,7 +173,7 @@ test('snapshot deployment is explicitly read-only, including for valid curator c
     await seedCaptured(f.registry);
     const status = await f.api('status');
     assert.equal(status.data.readOnly, true);
-    assert.equal(status.data.stats.assets, (await capturedAssets()).length);
+    assert.equal(status.data.stats.assets, (await approvedCapturedAssets()).length);
     const mutation = await f.api('scout', 'curator', { items: [{ url: 'https://example.com/' }] });
     assert.equal(mutation.status, 503);
     assert.equal(mutation.data.error.code, 'READ_ONLY_SNAPSHOT');

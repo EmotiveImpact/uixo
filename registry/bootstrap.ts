@@ -150,11 +150,26 @@ export async function capturedAssets(): Promise<Asset[]> {
   }
   return assets;
 }
+
+/** Captured records belonging to sources that are currently approved for public release. */
+export async function approvedCapturedAssets(): Promise<Asset[]> {
+  const approvedProviderIds = new Set(
+    PROVIDERS.filter((provider) => provider.approved).map((provider) => provider.id),
+  );
+  return (await capturedAssets()).filter((asset) => approvedProviderIds.has(asset.providerId));
+}
+
 export async function seedCaptured(registry: Registry) {
   for (const provider of PROVIDERS) {
     await registry.db.query(
-      'INSERT INTO uixo_v2_providers(id,name,approved,payload,updated_at) VALUES($1,$2,1,$3,$4) ON CONFLICT(id) DO NOTHING',
-      [provider.id, provider.name, JSON.stringify(provider), new Date().toISOString()],
+      'INSERT INTO uixo_v2_providers(id,name,approved,payload,updated_at) VALUES($1,$2,$3,$4,$5) ON CONFLICT(id) DO NOTHING',
+      [
+        provider.id,
+        provider.name,
+        provider.approved ? 1 : 0,
+        JSON.stringify(provider),
+        new Date().toISOString(),
+      ],
     );
   }
   const assets = await capturedAssets();
@@ -194,7 +209,9 @@ export async function syncCaptured(registry: Registry, providerIds?: ReadonlySet
     throw new Error('Scoped sync includes an unknown provider ID.');
   for (const provider of selectedProviders) await registry.putProvider(provider);
 
-  const selected = new Set(selectedProviders.map((provider) => provider.id));
+  const selected = new Set(
+    selectedProviders.filter((provider) => provider.approved).map((provider) => provider.id),
+  );
   const assets = (await capturedAssets()).filter((asset) => selected.has(asset.providerId));
   let inserted = 0;
   let updated = 0;

@@ -47,7 +47,9 @@ Unknown expected counts are deliberately not guessed from website marketing.
    published in production. Source review approved for the ten-record batch only; release
    remains blocked by hosted preview acceptance below.
 2. **Dice UI:** next, not yet audited. Expected unknown; implemented 0; published 0.
-3. **UIAble:** not yet audited. Expected unknown; implemented 0; published 0.
+3. **UIAble:** 707 immutable records retained, public provider approval revoked. Its first-party
+   preview routes did not render reliably or consistently at catalogue-card sizes. Re-publication
+   requires a fresh visual quality review; published 0.
 4. **Flowbite React:** not yet audited. Expected unknown; implemented 0; published 0.
 5. **HeroUI Web:** not yet audited. Expected unknown; implemented 0; published 0.
 6. **Fancy Components:** not yet audited. Expected unknown; implemented 0; published 0.

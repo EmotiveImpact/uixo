@@ -147,10 +147,10 @@ export const PROVIDERS: Provider[] = [
     snapshotPath:
       'data/registry/snapshots/ingestion/uiable/34e78586c904091059deb63412ae330b2757e923/staged.json',
     css: 'tailwind',
-    approved: true,
+    approved: false,
     selectedAt: '2026-09-21T00:00:00.000Z',
     rationale:
-      "First-party MIT component registry pinned to an immutable commit. UIXO uses each component's exact source path, declared dependencies, official registry install URL and exact first-party isolated preview route.",
+      'Retained as an immutable MIT source snapshot, but withheld from the public catalogue because its first-party preview routes do not render reliably or consistently at catalogue-card sizes. Re-publication requires a fresh visual quality review.',
   },
   {
     id: 'flowbite-react',
