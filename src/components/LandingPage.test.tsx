@@ -41,8 +41,8 @@ describe('LandingPage catalogue navigation', () => {
     const components = navigation.querySelector('a[href="/browse/assets"]');
     const collections = navigation.querySelector('a[href="/collections"]');
 
-    expect(resources?.textContent).toBe('Resources');
-    expect(components?.textContent).toBe('Components');
+    expect(resources?.textContent).toBe('Websites');
+    expect(components?.textContent).toBe('Assets');
     expect(collections?.textContent).toBe('Collections');
 
     fireEvent.click(components!);

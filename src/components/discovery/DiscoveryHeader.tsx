@@ -5,6 +5,7 @@ import { navigateInApp } from '../../lib/navigation';
 type Props = {
   active: 'discover' | 'resources' | 'components' | 'collections';
   light: boolean;
+  compactNavigation?: boolean;
   onToggleTheme: () => void;
   account?: ReactNode;
   onSearch?: () => void;
@@ -29,6 +30,7 @@ const destinations = [
 /** One full-width header, above the catalogue sidebar rather than inside it. */
 export function DiscoveryHeader({
   active,
+  compactNavigation = false,
   light,
   onToggleTheme,
   account,
@@ -66,8 +68,15 @@ export function DiscoveryHeader({
     setMenuOpen(false);
     navigateInApp(href);
   };
+  const navigation = compactNavigation
+    ? [
+        { id: 'resources', label: 'Websites', href: '/browse' },
+        { id: 'components', label: 'Assets', href: '/browse/assets' },
+        { id: 'collections', label: 'Collections', href: '/collections' },
+      ]
+    : destinations;
   return (
-    <header className="discovery-header">
+    <header className={`discovery-header ${compactNavigation ? 'home-header' : ''}`}>
       <div className="discovery-header-inner">
         <a
           className="brand discovery-wordmark"
@@ -78,7 +87,7 @@ export function DiscoveryHeader({
           UIXO
         </a>
         <nav className="discovery-navigation" aria-label="Main navigation">
-          {destinations.map((item) => (
+          {navigation.map((item) => (
             <a
               key={item.id}
               href={item.href}
@@ -145,7 +154,7 @@ export function DiscoveryHeader({
           className="discovery-mobile-menu"
           aria-label="Mobile navigation"
         >
-          {destinations.map((item) => (
+          {navigation.map((item) => (
             <a
               key={item.id}
               href={item.href}
