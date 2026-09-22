@@ -9,7 +9,8 @@ import demos from '../../live-demos/manifest.json';
 type PreviewStatus = 'loading' | 'ready' | 'error';
 
 const DEFAULT_PREVIEW_WIDTH = 480;
-const UIABLE_PREVIEW_WIDTH = 360;
+const UIABLE_PREVIEW_WIDTH = 280;
+const UIABLE_PREVIEW_INSET = 12;
 
 function officialEmbedUrl(asset: CollectionAssetPreview): string | undefined {
   if (asset.preview?.kind !== 'embed') return undefined;
@@ -130,12 +131,13 @@ function LivePreview({
     return () => window.clearTimeout(timeout);
   }, [visible, status]);
 
-  // UIAble demos are complete responsive pages whose examples sit at the page's
-  // leading edge. Giving them the generic desktop canvas makes compact controls
-  // look unusually wide and leaves most of the card empty. Render those pages at
-  // their small-screen breakpoint, then scale the whole viewport proportionally.
-  const previewWidth = asset.providerId === 'uiable' ? UIABLE_PREVIEW_WIDTH : DEFAULT_PREVIEW_WIDTH;
-  const scale = detail ? 1 : size.width / previewWidth;
+  // UIAble demos are complete responsive pages whose examples sit flush against
+  // the page's leading edge. Give those pages a compact viewport and a small
+  // visual stage so controls remain legible instead of looking wide or clipped.
+  const uiableCard = asset.providerId === 'uiable' && !detail;
+  const previewWidth = uiableCard ? UIABLE_PREVIEW_WIDTH : DEFAULT_PREVIEW_WIDTH;
+  const previewInset = uiableCard ? UIABLE_PREVIEW_INSET : 0;
+  const scale = detail ? 1 : Math.max(size.width - previewInset * 2, 1) / previewWidth;
   const showFallbackImage = status === 'error' && fallbackImageUrl && !fallbackFailed;
 
   return (
@@ -161,8 +163,10 @@ function LivePreview({
               ? {}
               : {
                   width: previewWidth,
-                  height: size.height / scale,
-                  transform: `scale(${scale})`,
+                  height: Math.max(size.height - previewInset * 2, 1) / scale,
+                  transform: uiableCard
+                    ? `translate(${previewInset}px, ${previewInset}px) scale(${scale})`
+                    : `scale(${scale})`,
                 }),
           }}
           onLoad={() => {

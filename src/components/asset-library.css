@@ -1357,6 +1357,9 @@
   inset: 0;
   overflow: hidden;
 }
+.asset-live-viewport[data-preview-provider='uiable'] {
+  background: #fff;
+}
 .asset-live-viewport iframe {
   display: block;
   border: 0;
