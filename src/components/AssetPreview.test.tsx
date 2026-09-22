@@ -159,8 +159,8 @@ describe('AssetPreview', () => {
     const frame = screen.getByTitle('Live Calendar Basic demo');
     expect(frame.getAttribute('sandbox')).toBe('allow-scripts allow-same-origin');
     expect(frame.getAttribute('referrerpolicy')).toBe('no-referrer');
-    expect(frame.style.width).toBe('360px');
-    expect(frame.style.transform).toBe('scale(1.3333333333333333)');
+    expect(frame.style.width).toBe('280px');
+    expect(frame.style.transform).toBe('translate(12px, 12px) scale(1.6285714285714286)');
     expect(frame.closest('[data-preview-provider]')?.getAttribute('data-preview-provider')).toBe(
       'uiable',
     );
