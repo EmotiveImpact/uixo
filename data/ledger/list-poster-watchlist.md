@@ -1,5 +1,5 @@
 # List-poster watchlist
-Updated: 2026-09-22
+Updated: 2026-09-23
 
 Priority seed (not exclusive).
 
@@ -65,3 +65,5 @@ Priority seed (not exclusive).
 - @thedzianis
 - @zaikhdev
 - @Lioicons
+- @AK956043
+- @SLtowwl
