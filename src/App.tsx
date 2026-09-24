@@ -123,6 +123,7 @@ export function App() {
         format: route.format,
         browse: route.browse,
         search: route.search,
+        exactTaxonomy: route.candidates,
       }),
     [
       catalogue,
@@ -203,7 +204,7 @@ export function App() {
             : activeCollection
               ? activeCollection.tagline
               : route.candidates
-                ? 'Staged candidates — not live listings'
+                ? `${candidateListings.length} staged scout finds. Production listings are unchanged.`
                 : activeList
                   ? 'The good ones, kept close.'
                   : 'Good tools. Great interfaces.';
@@ -329,6 +330,7 @@ export function App() {
             savedAssetCount={assetSaves.saved.length}
             catalogueResources={route.candidates ? candidateListings : undefined}
             allLabel={route.candidates ? 'All candidates' : undefined}
+            exactTaxonomy={route.candidates}
           />
         )}
 

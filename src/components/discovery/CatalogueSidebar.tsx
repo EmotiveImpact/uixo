@@ -193,10 +193,20 @@ export function CatalogueSidebar(props: AppSidebarProps) {
                 >
                   <item.icon className="filter-category-icon" />
                   <span>{item.name}</span>
-                  <small>{categoryCount(props.catalogueResources ?? resources, item)}</small>
+                  <small>
+                    {categoryCount(
+                      props.catalogueResources ?? resources,
+                      item,
+                      props.exactTaxonomy,
+                    )}
+                  </small>
                 </button>
                 {props.openSection === item.name &&
-                  populatedSubs(props.catalogueResources ?? resources, item).map((sub) => (
+                  populatedSubs(
+                    props.catalogueResources ?? resources,
+                    item,
+                    props.exactTaxonomy,
+                  ).map((sub) => (
                     <button
                       className={`filter-sub ${props.sub === sub ? 'chosen' : ''}`}
                       key={sub}

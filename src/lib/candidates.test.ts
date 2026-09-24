@@ -12,6 +12,7 @@ import {
 import type { Candidate } from './candidates';
 import scoutFile from '../../data/uixo-candidates.json';
 import { resources } from '../data';
+import { filterResources } from './filters';
 
 const candidate = (over: Partial<Candidate> = {}): Candidate => ({
   id: 'thing',
@@ -226,6 +227,21 @@ describe('the public candidate preview', () => {
     const components = candidateListings.filter((entry) => entry.category === 'Components');
     expect(components.length).toBe(scoutFile.counts_by_category.Components);
     expect(components.length).toBeGreaterThan(0);
+  });
+
+  it('does not pull tag-only Components into the Components bucket', () => {
+    const shown = filterResources(candidateListings, {
+      listIds: null,
+      category: 'Components',
+      sub: null,
+      price: 'All',
+      format: 'All formats',
+      browse: 'Recent',
+      search: '',
+      exactTaxonomy: true,
+    });
+    expect(shown).toHaveLength(scoutFile.counts_by_category.Components);
+    expect(shown.every((entry) => entry.category === 'Components')).toBe(true);
   });
 
   it('maps access onto the same pricing chips the directory uses', () => {

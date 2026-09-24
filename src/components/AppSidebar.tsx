@@ -60,6 +60,7 @@ export type AppSidebarProps = {
   /** Override the live catalogue when browsing a different set (staged candidates). */
   catalogueResources?: Resource[];
   allLabel?: string;
+  exactTaxonomy?: boolean;
 };
 
 function LegacyAppSidebar({

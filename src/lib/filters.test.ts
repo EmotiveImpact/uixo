@@ -121,6 +121,18 @@ describe('browse order', () => {
   });
 });
 
+describe('exact taxonomy', () => {
+  it('still matches tags on the live directory', () => {
+    expect(names({ category: 'Components', browse: 'Recent' })).toContain('shadcn/ui');
+  });
+
+  it('ignores tags when exactTaxonomy is on, so the scout buckets stay honest', () => {
+    expect(names({ category: 'Components', browse: 'Recent', exactTaxonomy: true })).toEqual([
+      'Orbkit',
+    ]);
+  });
+});
+
 describe('pricing', () => {
   it('treats Free, Freemium and Paid as distinct', () => {
     expect(names({ price: 'Free', browse: 'Recent' })).toEqual([
