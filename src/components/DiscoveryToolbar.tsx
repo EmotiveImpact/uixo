@@ -12,6 +12,7 @@ type DiscoveryToolbarProps = {
   onFormatChange: (format: string) => void;
   density: Density;
   onDensityChange: (density: Density) => void;
+  formatOptions?: string[];
 };
 
 export function DiscoveryToolbar({
@@ -21,6 +22,7 @@ export function DiscoveryToolbar({
   onFormatChange,
   density,
   onDensityChange,
+  formatOptions = formats,
 }: DiscoveryToolbarProps) {
   return (
     <div className="discovery-toolbar">
@@ -79,7 +81,7 @@ export function DiscoveryToolbar({
             onChange={(event) => onFormatChange(event.target.value)}
           >
             <option>{ALL_FORMATS}</option>
-            {formats.map((option) => (
+            {formatOptions.map((option) => (
               <option key={option}>{option}</option>
             ))}
           </select>

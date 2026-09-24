@@ -25,7 +25,7 @@ import { categories, resources } from '../data';
 import { categoryCount, populatedSubs } from '../lib/filters';
 import { navigateInApp } from '../lib/navigation';
 import { DEFAULT_LIST_ID } from '../types';
-import type { List } from '../types';
+import type { List, Resource } from '../types';
 import type { AssetQuery, ProviderRecord } from '../lib/asset-library';
 
 export type AppSidebarProps = {
@@ -57,6 +57,9 @@ export type AppSidebarProps = {
   assetView?: AssetQuery['view'];
   registryCurator?: boolean;
   onChooseAssetView?: (view: AssetQuery['view']) => void;
+  /** Override the live catalogue when browsing a different set (staged candidates). */
+  catalogueResources?: Resource[];
+  allLabel?: string;
 };
 
 function LegacyAppSidebar({
