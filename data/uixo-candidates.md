@@ -1,28 +1,44 @@
 # UIXO candidates
 
-Updated: 2026-09-24
+Updated: 2026-09-25
 
-- Total: **549**
-- Needs review: 471
-- Captured: 508
+- Total: **562**
+- Needs review: 484
+- Captured: 521
 - OG captured: 40
 - Blocked: 1
 - Pending: 0
 
 ## By category
 
-- Inspiration: 122
-- UI libraries: 117
-- Components: 107
+- Inspiration: 126
+- UI libraries: 118
+- Components: 109
 - Templates: 53
 - Icons: 47
-- Marketplace: 32
-- Fonts: 26
-- Backgrounds: 19
+- Marketplace: 36
+- Fonts: 27
+- Backgrounds: 20
 - Illustrations: 13
 - Mockups: 13
 
-## Weekday digest 2026-09-24 (new)
+## Weekday digest 2026-09-25 (new)
+
+- [awesome-shadcn-ui (awesomeshadcn.dev)](https://awesomeshadcn.dev) — Inspiration — `awesome-shadcn-dev` (captured)
+- [tweakcn](https://tweakcn.com) — Marketplace — `tweakcn` (captured)
+- [skills.sh](https://skills.sh) — Marketplace — `skills-sh` (captured)
+- [Unicorn Studio](https://unicorn.studio) — Backgrounds — `unicorn-studio` (captured)
+- [designeng.tools](https://designeng.tools) — Inspiration — `designeng-tools` (captured)
+- [Motion Grid (WANNATHIS)](https://wannathis.one/online-tools/motion-grid) — Marketplace — `wannathis-motion-grid` (captured)
+- [Theatre.js](https://theatrejs.com) — Components — `theatrejs` (captured)
+- [GSAP](https://gsap.com) — Components — `gsap` (captured)
+- [Storybook](https://storybook.js.org) — UI libraries — `storybook` (captured)
+- [Are.na](https://www.are.na) — Inspiration — `are-na` (captured)
+- [Bleep](https://bleep.is) — Inspiration — `bleep` (captured)
+- [QuickPick](https://quickpick.space) — Marketplace — `quickpick` (captured)
+- [Best Free Fonts](https://bestfreefonts.com) — Fonts — `bestfreefonts` (captured)
+
+## Weekday digest 2026-09-24
 
 - [Uizze](https://uizze.com/) — Marketplace — `uizze` (captured)
 - [Toggles.dev](https://toggles.dev) — Components — `toggles-dev` (captured)
