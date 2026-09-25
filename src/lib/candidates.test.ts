@@ -1,14 +1,18 @@
 import { describe, expect, it } from 'vitest';
 import {
   accessToPricing,
+  candidateListings,
+  candidateSourceHref,
   importCandidates,
   normaliseUrl,
+  toCandidateListings,
   toResource,
   toResourceRows,
 } from './candidates';
 import type { Candidate } from './candidates';
 import scoutFile from '../../data/uixo-candidates.json';
 import { resources } from '../data';
+import { filterResources } from './filters';
 
 const candidate = (over: Partial<Candidate> = {}): Candidate => ({
   id: 'thing',
@@ -46,6 +50,8 @@ describe('accessToPricing', () => {
     expect(accessToPricing(['Paid'])).toBe('Paid');
     expect(accessToPricing(['Free', 'Paid'])).toBe('Freemium');
     expect(accessToPricing(['Paid', 'Free'])).toBe('Freemium');
+    expect(accessToPricing(['Free', 'Open source'])).toBe('Free');
+    expect(accessToPricing(['Open source'])).toBe('Free');
   });
 
   it('returns null rather than guessing at nonsense', () => {
@@ -208,5 +214,53 @@ describe('the scout file against the real taxonomy', () => {
     expect(new Set(rows.map((row) => row.addedOrder)).size).toBe(rows.length);
     // The scout numbers from 1, which would have clashed with every live listing.
     expect(Math.min(...items.map((item) => item.addedOrder ?? 0))).toBe(1);
+  });
+});
+
+describe('the public candidate preview', () => {
+  it('keeps every scout row, including ones already live', () => {
+    expect(candidateListings).toHaveLength(scoutFile.items.length);
+    expect(toCandidateListings(scoutFile)).toHaveLength(scoutFile.items.length);
+  });
+
+  it('lets Components be filtered as their own subset', () => {
+    const components = candidateListings.filter((entry) => entry.category === 'Components');
+    expect(components.length).toBe(scoutFile.counts_by_category.Components);
+    expect(components.length).toBeGreaterThan(0);
+  });
+
+  it('does not pull tag-only Components into the Components bucket', () => {
+    const shown = filterResources(candidateListings, {
+      listIds: null,
+      category: 'Components',
+      sub: null,
+      price: 'All',
+      format: 'All formats',
+      browse: 'Recent',
+      search: '',
+      exactTaxonomy: true,
+    });
+    expect(shown).toHaveLength(scoutFile.counts_by_category.Components);
+    expect(shown.every((entry) => entry.category === 'Components')).toBe(true);
+  });
+
+  it('maps access onto the same pricing chips the directory uses', () => {
+    expect(new Set(candidateListings.map((entry) => entry.pricing))).toEqual(
+      new Set(['Free', 'Freemium', 'Paid']),
+    );
+  });
+
+  it('prefers a harvested source post over a bare handle', () => {
+    expect(
+      candidateSourceHref({
+        ...candidate(),
+        source: 'UiSavior',
+        harvest_posts: ['https://x.com/UiSavior/status/1'],
+      }),
+    ).toBe('https://x.com/UiSavior/status/1');
+  });
+
+  it('turns a lone handle into an X profile when no post was recorded', () => {
+    expect(candidateSourceHref(candidate({ source: 'Manixh02' }))).toBe('https://x.com/Manixh02');
   });
 });

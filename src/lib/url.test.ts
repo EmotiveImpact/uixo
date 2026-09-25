@@ -56,6 +56,8 @@ describe('parseRoute', () => {
       route({ listId: 'favourites' }),
       route({ dashboard: true }),
       route({ review: true }),
+      route({ candidates: true, browse: 'Recent' }),
+      route({ candidates: true, category: 'Components', browse: 'Recent' }),
       route({ admin: true }),
       route({ search: 'react bits', price: 'Freemium', format: 'React', browse: 'Recent' }),
     ];
@@ -95,6 +97,36 @@ describe('parseRoute', () => {
 
   it('falls back to Featured for an unrecognised browse value', () => {
     expect(parseRoute('/browse', 'browse=Nonsense').browse).toBe('Featured');
+  });
+});
+
+describe('candidates preview', () => {
+  it('keeps the staged catalogue off the live directory paths', () => {
+    expect(routeToHref(route({ candidates: true, browse: 'Recent' }))).toBe('/candidates');
+    expect(parseRoute('/candidates', '')).toEqual(route({ candidates: true, browse: 'Recent' }));
+  });
+
+  it('filters staged candidates by category without touching /browse', () => {
+    expect(routeToHref(route({ candidates: true, category: 'Components', browse: 'Recent' }))).toBe(
+      '/candidates/category/components',
+    );
+    expect(parseRoute('/candidates/category/components', '')).toMatchObject({
+      candidates: true,
+      category: 'Components',
+      review: false,
+      landing: false,
+    });
+  });
+
+  it('accepts a candidate format that is not in the live directory', () => {
+    expect(parseRoute('/candidates', 'format=Web')).toMatchObject({
+      candidates: true,
+      format: 'Web',
+    });
+  });
+
+  it('does not treat a deeper unknown candidates path as valid', () => {
+    expect(parseRoute('/candidates/nonsense', '').notFound).toBe(true);
   });
 });
 

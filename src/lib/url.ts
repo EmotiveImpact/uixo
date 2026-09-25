@@ -16,6 +16,8 @@ export type RouteState = {
   dashboard: boolean;
   /** The curator-only candidate review inbox. */
   review: boolean;
+  /** Public browse of every staged scout candidate. Not live listings. */
+  candidates: boolean;
   /** The curator-only operational dashboard. */
   admin: boolean;
   /** Set when the path matched nothing we know about. */
@@ -37,6 +39,7 @@ export const EMPTY_ROUTE: RouteState = {
   collectionsIndex: false,
   dashboard: false,
   review: false,
+  candidates: false,
   admin: false,
   notFound: false,
   landing: false,
@@ -51,6 +54,9 @@ export const LANDING_ROUTE: RouteState = { ...EMPTY_ROUTE, landing: true };
 
 /** Where the directory itself lives, now that "/" is the landing page. */
 export const BROWSE_PATH = '/browse';
+
+/** Public scan of staged scout candidates. Not the live directory. */
+export const CANDIDATES_PATH = '/candidates';
 
 export function slugify(value: string): string {
   return value
@@ -74,6 +80,12 @@ export function routeToHref(route: RouteState): string {
     path = '/dashboard';
   } else if (route.review) {
     path = '/review';
+  } else if (route.candidates) {
+    path = CANDIDATES_PATH;
+    if (route.category) {
+      path = `${CANDIDATES_PATH}/category/${slugify(route.category)}`;
+      if (route.sub) path += `/${slugify(route.sub)}`;
+    }
   } else if (route.admin) {
     path = '/admin';
   } else if (route.collectionSlug) {
@@ -91,7 +103,8 @@ export function routeToHref(route: RouteState): string {
   if (route.search.trim()) params.set('q', route.search.trim());
   if (route.price !== 'All') params.set('price', route.price);
   if (route.format !== ALL_FORMATS) params.set('format', route.format);
-  if (route.browse !== 'Featured') params.set('browse', route.browse);
+  const defaultBrowse = route.candidates ? 'Recent' : 'Featured';
+  if (route.browse !== defaultBrowse) params.set('browse', route.browse);
 
   const query = params.toString();
   return query ? `${path}?${query}` : path;
@@ -132,6 +145,27 @@ export function parseRoute(pathname: string, searchParams: string): RouteState {
   if (segments[0] === 'review') {
     route.review = true;
     return route;
+  }
+
+  if (segments[0] === 'candidates') {
+    route.candidates = true;
+    route.browse = params.get('browse') === 'Featured' ? 'Featured' : 'Recent';
+    const requestedFormat = params.get('format');
+    if (requestedFormat && requestedFormat !== ALL_FORMATS) route.format = requestedFormat;
+    if (!segments[1]) return route;
+    if (segments[1] === 'category' && segments[2]) {
+      const category = findCategory(segments[2]);
+      if (!category) return { ...route, notFound: true };
+      route.category = category.name;
+      if (segments[3]) {
+        const sub = category.sub.find((entry) => slugify(entry) === segments[3]);
+        if (!sub) return { ...route, notFound: true };
+        route.sub = sub;
+      }
+      if (segments[4]) return { ...route, notFound: true };
+      return route;
+    }
+    return { ...route, notFound: true };
   }
 
   if (segments[0] === 'admin' && !segments[1]) {
