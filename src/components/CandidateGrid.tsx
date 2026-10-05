@@ -1,6 +1,7 @@
 import { ArrowUpRight } from 'lucide-react';
 import { useState } from 'react';
 import { Thumbnail } from './Thumbnail';
+import { candidateSourceLabel } from '../lib/candidates';
 import type { CandidateListing } from '../lib/candidates';
 import type { Density } from '../hooks/useDensity';
 
@@ -13,6 +14,7 @@ type CandidateCardProps = {
 export function CandidateCard({ listing, onSelectCategory, onSelectFormat }: CandidateCardProps) {
   const [imageFailed, setImageFailed] = useState(false);
   const format = listing.formats[0];
+  const sourceLabel = candidateSourceLabel(listing.source);
 
   return (
     <article>
@@ -60,15 +62,15 @@ export function CandidateCard({ listing, onSelectCategory, onSelectFormat }: Can
         <span className={`pricing pricing-${listing.pricing.toLowerCase()}`}>
           {listing.pricing}
         </span>
-        {listing.source ? (
+        {sourceLabel ? (
           <>
             <span>·</span>
             {listing.sourceHref ? (
               <a href={listing.sourceHref} target="_blank" rel="noopener noreferrer">
-                {listing.source}
+                {sourceLabel}
               </a>
             ) : (
-              <span>{listing.source}</span>
+              <span>{sourceLabel}</span>
             )}
           </>
         ) : null}

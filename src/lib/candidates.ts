@@ -1,4 +1,3 @@
-import scoutFile from '../../data/uixo-candidates.json';
 import { categories, resources } from '../data';
 import type { Pricing, Resource } from '../types';
 
@@ -72,22 +71,22 @@ const PRICING: Record<string, Pricing> = {
   'Paid,Free': 'Freemium',
 };
 
-/** Scout notes sometimes say "Open source" for a free listing. That is still Free. */
-function normaliseAccessToken(token: string): 'Free' | 'Paid' | null {
+/**
+ * Scout notes sometimes say "Open source" for a free listing, which is still Free, and
+ * sometimes use the site's own "Freemium", which is Free plus Paid.
+ */
+function normaliseAccessToken(token: string): ('Free' | 'Paid')[] {
   const value = token.trim().toLowerCase();
-  if (value === 'free' || value === 'open source' || value === 'opensource') return 'Free';
-  if (value === 'paid') return 'Paid';
-  return null;
+  if (value === 'free' || value === 'open source' || value === 'opensource') return ['Free'];
+  if (value === 'paid') return ['Paid'];
+  if (value === 'freemium') return ['Free', 'Paid'];
+  return [];
 }
 
 /** "Free + Paid" in the scout's vocabulary is what the site calls Freemium. */
 export function accessToPricing(access: string[] | undefined): Pricing | null {
   if (!Array.isArray(access) || access.length === 0) return null;
-  const known = [
-    ...new Set(
-      access.map(normaliseAccessToken).filter((token): token is 'Free' | 'Paid' => token !== null),
-    ),
-  ].sort();
+  const known = [...new Set(access.flatMap(normaliseAccessToken))].sort();
   if (!known.length) return null;
   return PRICING[known.join(',')] ?? null;
 }
@@ -237,6 +236,22 @@ export function candidateSourceHref(candidate: Candidate): string | null {
   return null;
 }
 
+/** Scout sources are sometimes a full post URL. Show the poster's handle or the site instead. */
+export function candidateSourceLabel(source: string | undefined): string | null {
+  const value = source?.trim();
+  if (!value) return null;
+  if (!/^https?:\/\//i.test(value)) return value;
+  try {
+    const url = new URL(value);
+    const host = url.hostname.replace(/^www\./, '');
+    const handle = url.pathname.split('/').filter(Boolean)[0];
+    if ((host === 'x.com' || host === 'twitter.com') && handle) return `@${handle}`;
+    return host;
+  } catch {
+    return value;
+  }
+}
+
 /**
  * Every scout row, including ones already live. The public preview is a scan of the
  * staged file, not the curator queue — `importCandidates` still drops duplicates for /review.
@@ -272,10 +287,3 @@ export function toCandidateListings(
     ];
   });
 }
-
-/** The staged scout file, imported so `/candidates` can browse it without a network fetch. */
-export const candidateFile = scoutFile as CandidateFile;
-export const candidateListings = toCandidateListings(candidateFile);
-export const candidateFormats = [
-  ...new Set(candidateListings.flatMap((entry) => entry.formats)),
-].sort();

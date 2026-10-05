@@ -34,7 +34,8 @@ import { useSearchHotkey } from './hooks/useSearchHotkey';
 import { useTheme } from './hooks/useTheme';
 import { filterResources } from './lib/filters';
 import { navigateInApp } from './lib/navigation';
-import { candidateFormats, candidateListings } from './lib/candidates';
+import type { CandidateListing } from './lib/candidates';
+import { useCandidateCatalogue } from './hooks/useCandidateCatalogue';
 import { EMPTY_ROUTE, routeToHref } from './lib/url';
 import { APP_SIDEBAR_SIZING } from './lib/layout';
 import { collections, resources } from './data';
@@ -106,7 +107,12 @@ export function App() {
     if (route.listId && !activeList) navigate({ listId: null });
   }, [route.listId, activeList, navigate]);
 
-  const catalogue = route.candidates ? candidateListings : resources;
+  const candidateCatalogue = useCandidateCatalogue(route.candidates);
+  const candidateListings = candidateCatalogue?.listings ?? null;
+  const catalogue = useMemo(
+    () => (route.candidates ? (candidateListings ?? []) : resources),
+    [route.candidates, candidateListings],
+  );
   const shown = useMemo(
     () =>
       filterResources(catalogue, {
@@ -204,7 +210,9 @@ export function App() {
             : activeCollection
               ? activeCollection.tagline
               : route.candidates
-                ? `${candidateListings.length} staged scout finds. Production listings are unchanged.`
+                ? candidateListings
+                  ? `${candidateListings.length} staged scout finds. Production listings are unchanged.`
+                  : 'Loading staged scout finds.'
                 : activeList
                   ? 'The good ones, kept close.'
                   : 'Good tools. Great interfaces.';
@@ -213,7 +221,9 @@ export function App() {
   const showsGrid =
     !route.dashboard && !route.admin && !route.review && !route.notFound && !route.collectionsIndex;
   const showsLiveGrid = showsGrid && !route.candidates;
-  const showsCandidateGrid = showsGrid && route.candidates;
+  // Staged candidates load on demand, so there is nothing to count until they arrive.
+  const showsCandidateGrid = showsGrid && route.candidates && candidateListings !== null;
+  const showsCount = showsLiveGrid || showsCandidateGrid;
 
   const hasFilters =
     Boolean(route.search || route.category) ||
@@ -328,7 +338,7 @@ export function App() {
             onChooseSub={chooseSub}
             onSubmit={() => setModal('submit')}
             savedAssetCount={assetSaves.saved.length}
-            catalogueResources={route.candidates ? candidateListings : undefined}
+            catalogueResources={route.candidates ? (candidateListings ?? []) : undefined}
             allLabel={route.candidates ? 'All candidates' : undefined}
             exactTaxonomy={route.candidates}
           />
@@ -341,7 +351,7 @@ export function App() {
         <AnimatedSidebarInset className="site-main" id="main" tabIndex={-1}>
           {route.candidates && (
             <p className="candidate-banner" role="status">
-              Staged candidates — not live listings
+              Staged candidates, not live listings
             </p>
           )}
 
@@ -375,7 +385,7 @@ export function App() {
               onFormatChange={(format) => navigate({ format })}
               density={density}
               onDensityChange={setDensity}
-              formatOptions={route.candidates ? candidateFormats : undefined}
+              formatOptions={route.candidates ? (candidateCatalogue?.formats ?? []) : undefined}
             />
           )}
 
@@ -392,7 +402,7 @@ export function App() {
 
           {/* Announce result counts so filtering is not silent to a screen reader. */}
           <p className="sr-only" role="status" aria-live="polite">
-            {showsGrid
+            {showsCount
               ? `${shown.length} ${
                   route.candidates ? 'candidate' : 'website'
                 }${shown.length === 1 ? '' : 's'} shown`
@@ -470,7 +480,7 @@ export function App() {
             <>
               <CandidateGrid
                 density={density}
-                listings={shown as typeof candidateListings}
+                listings={shown as CandidateListing[]}
                 onSelectCategory={chooseCategory}
                 onSelectFormat={(format) => navigate({ format })}
               />
@@ -479,7 +489,7 @@ export function App() {
             </>
           )}
 
-          <SiteFooter count={showsGrid ? shown.length : null} />
+          <SiteFooter count={showsCount ? shown.length : null} />
         </AnimatedSidebarInset>
       </div>
 

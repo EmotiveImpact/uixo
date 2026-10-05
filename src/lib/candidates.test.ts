@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import {
   accessToPricing,
-  candidateListings,
   candidateSourceHref,
+  candidateSourceLabel,
   importCandidates,
   normaliseUrl,
   toCandidateListings,
@@ -13,6 +13,7 @@ import type { Candidate } from './candidates';
 import scoutFile from '../../data/uixo-candidates.json';
 import { resources } from '../data';
 import { filterResources } from './filters';
+import { candidateListings } from './candidateCatalogue';
 
 const candidate = (over: Partial<Candidate> = {}): Candidate => ({
   id: 'thing',
@@ -52,6 +53,7 @@ describe('accessToPricing', () => {
     expect(accessToPricing(['Paid', 'Free'])).toBe('Freemium');
     expect(accessToPricing(['Free', 'Open source'])).toBe('Free');
     expect(accessToPricing(['Open source'])).toBe('Free');
+    expect(accessToPricing(['Freemium'])).toBe('Freemium');
   });
 
   it('returns null rather than guessing at nonsense', () => {
@@ -262,5 +264,12 @@ describe('the public candidate preview', () => {
 
   it('turns a lone handle into an X profile when no post was recorded', () => {
     expect(candidateSourceHref(candidate({ source: 'Manixh02' }))).toBe('https://x.com/Manixh02');
+  });
+
+  it('shows a handle or site rather than a raw source URL', () => {
+    expect(candidateSourceLabel('https://x.com/neropursue/status/2103053659')).toBe('@neropursue');
+    expect(candidateSourceLabel('https://www.example.com/post')).toBe('example.com');
+    expect(candidateSourceLabel('UiSavior')).toBe('UiSavior');
+    expect(candidateSourceLabel(undefined)).toBeNull();
   });
 });
