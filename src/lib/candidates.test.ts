@@ -54,6 +54,7 @@ describe('accessToPricing', () => {
     expect(accessToPricing(['Free', 'Open source'])).toBe('Free');
     expect(accessToPricing(['Open source'])).toBe('Free');
     expect(accessToPricing(['Freemium'])).toBe('Freemium');
+    expect(accessToPricing(['Free', 'Donation'])).toBeNull();
   });
 
   it('returns null rather than guessing at nonsense', () => {
@@ -220,6 +221,11 @@ describe('the scout file against the real taxonomy', () => {
 });
 
 describe('the public candidate preview', () => {
+  it('leaves out a row whose access cannot be mapped instead of calling it Free', () => {
+    const file = { items: [candidate({ access: ['Donation'] }), candidate({ id: 'other' })] };
+    expect(toCandidateListings(file).map((entry) => entry.id)).toEqual(['other']);
+  });
+
   it('keeps every scout row, including ones already live', () => {
     expect(candidateListings).toHaveLength(scoutFile.items.length);
     expect(toCandidateListings(scoutFile)).toHaveLength(scoutFile.items.length);

@@ -75,18 +75,21 @@ const PRICING: Record<string, Pricing> = {
  * Scout notes sometimes say "Open source" for a free listing, which is still Free, and
  * sometimes use the site's own "Freemium", which is Free plus Paid.
  */
-function normaliseAccessToken(token: string): ('Free' | 'Paid')[] {
+function normaliseAccessToken(token: string): ('Free' | 'Paid')[] | null {
   const value = token.trim().toLowerCase();
   if (value === 'free' || value === 'open source' || value === 'opensource') return ['Free'];
   if (value === 'paid') return ['Paid'];
   if (value === 'freemium') return ['Free', 'Paid'];
-  return [];
+  return null;
 }
 
 /** "Free + Paid" in the scout's vocabulary is what the site calls Freemium. */
 export function accessToPricing(access: string[] | undefined): Pricing | null {
   if (!Array.isArray(access) || access.length === 0) return null;
-  const known = [...new Set(access.flatMap(normaliseAccessToken))].sort();
+  const tokens = access.map(normaliseAccessToken);
+  // One unrecognised value makes the whole row unknown rather than quietly dropping it.
+  if (tokens.some((token) => token === null)) return null;
+  const known = [...new Set(tokens.flat() as ('Free' | 'Paid')[])].sort();
   if (!known.length) return null;
   return PRICING[known.join(',')] ?? null;
 }
@@ -262,7 +265,9 @@ export function toCandidateListings(
 ): CandidateListing[] {
   return (file.items ?? []).flatMap((item, index) => {
     if (!item?.id || !item.url) return [];
-    const pricing = accessToPricing(item.access) ?? 'Free';
+    // Rows the review inbox would flag for access are left out rather than shown as Free.
+    const pricing = accessToPricing(item.access);
+    if (!pricing) return [];
     return [
       {
         id: item.id,
