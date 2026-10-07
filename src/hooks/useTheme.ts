@@ -8,10 +8,8 @@ function initialTheme(): Theme {
   if (requested === 'dark' || requested === 'light') return requested;
   const stored = readStored<Theme | null>(THEME_KEY, null);
   if (stored === 'light' || stored === 'dark') return stored;
-  // No stored choice: follow the operating system rather than assuming dark.
-  const prefersLight =
-    typeof window !== 'undefined' && window.matchMedia?.('(prefers-color-scheme: light)').matches;
-  return prefersLight ? 'light' : 'dark';
+  // No stored choice: dark, like UI8. Screenshots carry the colour and read best on near-black.
+  return 'dark';
 }
 
 /**

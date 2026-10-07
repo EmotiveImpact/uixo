@@ -1,7 +1,11 @@
-import { ArrowUpRight, Bookmark, BookmarkCheck } from 'lucide-react';
+import { ArrowUpRight, Bookmark, BookmarkCheck, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { Thumbnail } from './Thumbnail';
+import { resources } from '../data';
+import { newThreshold } from '../lib/freshness';
 import type { Resource } from '../types';
+
+const NEW_FROM = newThreshold(resources);
 
 type ResourceCardProps = {
   resource: Resource;
@@ -10,7 +14,6 @@ type ResourceCardProps = {
   onOpen: (id: string) => void;
   onToggleSaved: (id: string) => void;
   onSelectCategory: (category: string) => void;
-  onSelectFormat: (format: string) => void;
 };
 
 export function ResourceCard({
@@ -20,7 +23,6 @@ export function ResourceCard({
   onOpen,
   onToggleSaved,
   onSelectCategory,
-  onSelectFormat,
 }: ResourceCardProps) {
   const [imageFailed, setImageFailed] = useState(false);
 
@@ -52,46 +54,48 @@ export function ResourceCard({
             onError={() => setImageFailed(true)}
           />
         )}
+
+        {resource.addedOrder >= NEW_FROM && <span className="card-badge">New</span>}
       </a>
+
+      <div className="card-actions">
+        <a
+          className="visit"
+          href={resource.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visit ${resource.name} website`}
+        >
+          <ArrowUpRight size={16} />
+        </a>
+        <button
+          className="save"
+          aria-label={`${isSaved ? 'Remove' : 'Save'} ${resource.name} ${isSaved ? 'from' : 'to'} favourites`}
+          aria-pressed={isSaved}
+          onClick={() => onToggleSaved(resource.id)}
+        >
+          {isSaved ? <BookmarkCheck size={16} /> : <Bookmark size={16} />}
+        </button>
+      </div>
 
       <div className="card-heading">
         <a href={href} onClick={open}>
           {resource.name}
         </a>
-        <div className="card-actions">
-          <a
-            className="visit"
-            href={resource.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Visit ${resource.name} website`}
-          >
-            <ArrowUpRight size={17} />
-          </a>
-          <button
-            className="save"
-            aria-label={`${isSaved ? 'Remove' : 'Save'} ${resource.name} ${isSaved ? 'from' : 'to'} favourites`}
-            aria-pressed={isSaved}
-            onClick={() => onToggleSaved(resource.id)}
-          >
-            {isSaved ? <BookmarkCheck size={18} /> : <Bookmark size={18} />}
-          </button>
-        </div>
-      </div>
-
-      <p className="card-description">{resource.description}</p>
-
-      <div className="metadata">
-        <span>by {resource.creator}</span>
-        <span>·</span>
-        <span className={`pricing pricing-${resource.pricing.toLowerCase()}`}>
+        <span className={`card-price pricing-${resource.pricing.toLowerCase()}`}>
           {resource.pricing}
         </span>
       </div>
 
-      <div className="resource-tags">
+      <p className="card-description">{resource.description}</p>
+
+      <div className="card-byline">
+        <span className="creator-avatar" aria-hidden="true">
+          {resource.creator.charAt(0)}
+        </span>
+        <span className="creator-name">{resource.creator}</span>
+        <ChevronRight size={12} aria-hidden="true" />
         <button onClick={() => onSelectCategory(resource.category)}>{resource.category}</button>
-        <button onClick={() => onSelectFormat(resource.formats[0])}>{resource.formats[0]}</button>
       </div>
     </article>
   );

@@ -9,6 +9,7 @@ export type AssetRecord = {
   name: string;
   description: string;
   kind: string;
+  category?: string;
   price: string;
   tags: string[];
   sourceUrl: string;
