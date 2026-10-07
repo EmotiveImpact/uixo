@@ -14,6 +14,12 @@ import type { RegistryStatus } from '../lib/asset-library';
 
 const NEW_FROM = newThreshold(resources);
 
+/** Real thumbnails scattered behind the hero, as UI8 does with its own products. */
+const COLLAGE = resources
+  .filter((item) => item.featured)
+  .slice(0, 8)
+  .map((item) => item.id);
+
 type LandingPageProps = {
   authAvailable: boolean;
   signedIn: boolean;
@@ -84,13 +90,19 @@ export function LandingPage({
   onSignIn,
 }: LandingPageProps) {
   const [q, setQ] = useState('');
-  const [tab, setTab] = useState<'curated' | 'new'>('curated');
+  const [tab, setTab] = useState<'featured' | 'new' | 'free'>('featured');
   const searchRef = useRef<HTMLInputElement>(null);
   const { data: status } = useRegistryData<RegistryStatus>('status');
-  const featured =
-    tab === 'curated'
-      ? resources.filter((item) => item.featured).slice(0, 8)
-      : [...resources].sort((a, b) => b.addedOrder - a.addedOrder).slice(0, 8);
+  const byRecency = [...resources].sort((a, b) => b.addedOrder - a.addedOrder);
+  const picked =
+    tab === 'featured'
+      ? resources.filter((item) => item.featured)
+      : tab === 'new'
+        ? byRecency
+        : byRecency.filter((item) => item.pricing === 'Free');
+  // Eight cards plus the promo fill a three-by-three grid; top up with recent finds if short.
+  const featured = [...picked, ...byRecency.filter((item) => !picked.includes(item))].slice(0, 8);
+  const total = resources.length + (status?.stats?.assets ?? 0);
   const internal = (event: React.MouseEvent<HTMLAnchorElement>, run: () => void) => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0)
       return;
@@ -114,15 +126,19 @@ export function LandingPage({
         }
       />
       <main className="discovery-container">
-        <section className="discovery-hero">
-          <div className="hero-copy">
-            <p className="discovery-kicker">Better interfaces. A brighter internet.</p>
+        <section className="ui8-hero">
+          <div className="ui8-hero-collage" aria-hidden="true">
+            {COLLAGE.map((id) => (
+              <img key={id} src={`/assets/${id}.png`} alt="" loading="lazy" />
+            ))}
+          </div>
+          <div className="ui8-hero-copy">
             <h1>
-              The interface <span>starts here.</span>
+              {total.toLocaleString('en-GB')} hand-picked components and resources to speed up your
+              next build.
             </h1>
             <p className="hero-description">
-              Exceptional components and websites, in one place. Find a detail. Try it. Make it
-              yours.
+              Live previews, the original source one click away, and new finds every weekday.
             </p>
             <form
               className="hero-search"
@@ -148,83 +164,54 @@ export function LandingPage({
               </button>
             </form>
             <div className="hero-shortcuts">
-              <span>Explore</span>
+              <span>Popular</span>
               <a href={hrefs.assets + '?category=buttons&kind=component'}>Buttons</a>
               <a href={hrefs.assets + '?category=motion&kind=component'}>Motion</a>
               <a href={hrefs.browse} onClick={(e) => internal(e, onBrowse)}>
                 UI libraries <ArrowUpRight size={11} />
               </a>
             </div>
-            <div className="hero-stats">
-              {status?.stats && (
-                <span>
-                  <strong>{status.stats.assets}</strong>{' '}
-                  {status.readOnly ? 'preview assets' : 'catalogue assets'}
-                </span>
-              )}
-              <span>
-                <strong>{resources.length}</strong> resources
-              </span>
-              <span>
-                <strong>{collections.length}</strong> collections
-              </span>
-            </div>
           </div>
         </section>
-        <section className="home-showcase" aria-labelledby="showcase-title">
-          <div className="home-showcase-heading">
-            <div>
-              <p className="discovery-kicker">A few good details</p>
-              <h2 id="showcase-title">Try something great.</h2>
-            </div>
-            <a
-              className="discovery-viewall"
-              href={hrefs.assets}
-              onClick={(e) => internal(e, onAssets)}
-            >
-              All assets <ArrowRight size={14} />
-            </a>
-          </div>
-          <div className="home-component-grid">
-            {featuredComponents.map((item) => (
-              <FeaturedComponent
-                key={item.id}
-                item={item}
-                href={`${hrefs.assets}?id=${encodeURIComponent(item.id)}`}
-              />
-            ))}
-          </div>
-        </section>
-        <section className="discovery-feature-section" aria-labelledby="featured-title">
-          <div className="discovery-section-heading">
-            <h2 id="featured-title">
-              {tab === 'curated'
-                ? 'Good design. Great starting points.'
-                : 'Fresh finds for your next project.'}
-            </h2>
-            <p>A few things worth opening a new tab for.</p>
-          </div>
-          <div className="discovery-section-bar">
-            <div className="discovery-feed-tabs" role="group" aria-label="Featured resources order">
-              <button aria-pressed={tab === 'curated'} onClick={() => setTab('curated')}>
-                Curated
-              </button>
-              <button aria-pressed={tab === 'new'} onClick={() => setTab('new')}>
-                New additions
-              </button>
-              <a href={hrefs.collections} onClick={(e) => internal(e, onCollections)}>
-                Collections
-              </a>
-            </div>
-            <a
-              className="discovery-viewall"
-              href={hrefs.browse}
-              onClick={(e) => internal(e, onBrowse)}
-            >
-              Explore everything <ArrowRight size={14} />
-            </a>
+        <section className="ui8-feed" aria-labelledby="featured-title">
+          <h2 id="featured-title" className="sr-only">
+            Resources
+          </h2>
+          <div className="ui8-switch" role="group" aria-label="Featured resources order">
+            <button aria-pressed={tab === 'featured'} onClick={() => setTab('featured')}>
+              Featured
+            </button>
+            <button aria-pressed={tab === 'new'} onClick={() => setTab('new')}>
+              New
+            </button>
+            <button aria-pressed={tab === 'free'} onClick={() => setTab('free')}>
+              Free
+            </button>
           </div>
           <div className="discovery-feature-grid">
+            <a
+              className="promo-card"
+              href={`${hrefs.assets}?view=connect`}
+              onClick={(e) => internal(e, () => navigateInApp(`${hrefs.assets}?view=connect`))}
+            >
+              <div className="promo-card-art">
+                <span>For developers</span>
+                <strong>Connect your AI agent</strong>
+                <code>MCP · registry · source links</code>
+              </div>
+              <div className="card-heading">
+                <span>UIXO for agents</span>
+                <span className="card-price">Free</span>
+              </div>
+              <div className="card-byline">
+                <span className="creator-avatar" aria-hidden="true">
+                  U
+                </span>
+                <span className="creator-name">UIXO</span>
+                <ChevronRight size={12} aria-hidden="true" />
+                <span>Let your agent search the catalogue</span>
+              </div>
+            </a>
             {featured.map((item) => (
               <article key={item.id} className="discovery-product">
                 <a
@@ -258,6 +245,33 @@ export function LandingPage({
                   <span>{item.category}</span>
                 </div>
               </article>
+            ))}
+          </div>
+          <a className="ui8-more" href={hrefs.browse} onClick={(e) => internal(e, onBrowse)}>
+            Explore all {resources.length} resources <ArrowRight size={15} />
+          </a>
+        </section>
+        <section className="home-showcase" aria-labelledby="showcase-title">
+          <div className="home-showcase-heading">
+            <div>
+              <p className="discovery-kicker">A few good details</p>
+              <h2 id="showcase-title">Try something great.</h2>
+            </div>
+            <a
+              className="discovery-viewall"
+              href={hrefs.assets}
+              onClick={(e) => internal(e, onAssets)}
+            >
+              All assets <ArrowRight size={14} />
+            </a>
+          </div>
+          <div className="home-component-grid">
+            {featuredComponents.map((item) => (
+              <FeaturedComponent
+                key={item.id}
+                item={item}
+                href={`${hrefs.assets}?id=${encodeURIComponent(item.id)}`}
+              />
             ))}
           </div>
         </section>
@@ -302,16 +316,6 @@ export function LandingPage({
               </a>
             ))}
           </div>
-        </section>
-        <section className="discovery-handoff">
-          <div>
-            <p className="discovery-kicker">From inspiration to implementation</p>
-            <h2>Find it. Try it. Build with it.</h2>
-            <p>The original source and installation details, always one click away.</p>
-          </div>
-          <a href={hrefs.assets} onClick={(e) => internal(e, onAssets)}>
-            Explore components <ArrowRight size={16} />
-          </a>
         </section>
         <SiteFooter count={null} />
       </main>
