@@ -2815,6 +2815,23 @@ kbd {
   color: var(--muted-foreground);
   font-size: 10.5px;
 }
+.candidate-banner {
+  margin: 0 0 16px;
+  padding: 11px 14px;
+  border-radius: 9px;
+  border: 1px solid #3d3424;
+  background: #16120e;
+  color: #c6a77f;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.15px;
+  line-height: 1.5;
+}
+.light .candidate-banner {
+  border-color: #e6d4b0;
+  background: #fff7e8;
+  color: #6b4f1d;
+}
 .admin-notice {
   display: flex;
   align-items: flex-start;
