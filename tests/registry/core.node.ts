@@ -147,6 +147,14 @@ test('search enforces framework and format on the same variant and excludes unkn
     const second = await registry.search({ kind: 'component', limit: 5, offset: 5 });
     assert.equal(first.items.length, 5);
     assert.equal(new Set([...first.items, ...second.items].map((a) => a.id)).size, 10);
+    const pending = new Set(
+      PROVIDERS.filter((provider) => provider.previewsPending).map((provider) => provider.id),
+    );
+    const browse = await registry.search({ kind: 'component', limit: 48 });
+    assert.ok(
+      browse.items.every((asset) => !pending.has(asset.providerId)),
+      'Components awaiting captured previews rank after previewed components',
+    );
   } finally {
     await db.close();
   }

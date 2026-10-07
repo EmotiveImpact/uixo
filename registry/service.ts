@@ -300,7 +300,7 @@ export class Registry {
         .join(' + ') || '0';
     args.push(search.limit, search.offset);
     const rows = await this.db.query(
-      `SELECT a.payload,a.revision,(${score}) AS score FROM uixo_v2_assets a JOIN uixo_v2_providers p ON p.id=a.provider_id JOIN uixo_v2_licences l ON l.id=a.licence_id WHERE ${where} ORDER BY score DESC,CASE WHEN a.kind='component' THEN 0 ELSE 1 END,a.name ASC,a.id ASC LIMIT $${args.length - 1} OFFSET $${args.length}`,
+      `SELECT a.payload,a.revision,(${score}) AS score FROM uixo_v2_assets a JOIN uixo_v2_providers p ON p.id=a.provider_id JOIN uixo_v2_licences l ON l.id=a.licence_id WHERE ${where} ORDER BY score DESC,CASE WHEN p.payload LIKE '%"previewsPending":true%' THEN 1 ELSE 0 END,CASE WHEN a.kind='component' THEN 0 ELSE 1 END,a.name ASC,a.id ASC LIMIT $${args.length - 1} OFFSET $${args.length}`,
       args,
     );
     const items = rows.map((row) => {
