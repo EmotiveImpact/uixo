@@ -796,3 +796,350 @@ kbd {
     height: 40px;
   }
 }
+
+/* ---------------------------------------------------------- Card anatomy */
+/*
+ * Borrowed from UI8: line one answers "what and how much", line two answers "who and
+ * where". Actions float on the image instead of crowding the name row.
+ */
+
+.uixo-shell .website-grid > article,
+.discovery-product {
+  position: relative;
+}
+
+.uixo-shell .website-grid .card-heading,
+.discovery-product .card-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 14px 0 0;
+}
+
+.uixo-shell .website-grid .card-heading a,
+.discovery-product .card-heading a {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--ds-text-md);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+:is(:root, :root.light) .card-price {
+  flex: none;
+  background: none;
+  font-size: var(--ds-text-sm);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--foreground);
+}
+
+.card-byline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  margin-top: 6px;
+  font-size: var(--ds-text-sm);
+  line-height: 1.4;
+  color: var(--muted-foreground);
+}
+
+.card-byline svg {
+  flex: none;
+  opacity: 0.6;
+}
+
+.card-byline .creator-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.creator-avatar {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--muted);
+  box-shadow: inset 0 0 0 1px var(--ds-line);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--uixo-soft);
+}
+
+:is(:root, :root.light) .card-byline button {
+  flex: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  transition: color var(--ds-fast) var(--ds-ease);
+}
+
+:is(:root, :root.light) .card-byline button:hover {
+  color: var(--foreground);
+}
+
+/* "New" label on the image, top left. */
+.card-badge {
+  position: absolute;
+  z-index: 5;
+  top: 10px;
+  left: 10px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--foreground);
+  color: var(--background);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.3;
+  pointer-events: none;
+}
+
+/* Visit and save float over the image, top right. */
+.uixo-shell .website-grid > article > .card-actions {
+  position: absolute;
+  z-index: 5;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 6px;
+}
+
+:is(:root, :root.light) .uixo-shell .website-grid > article > .card-actions > * {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 8px;
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--background) 82%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow:
+    inset 0 0 0 1px var(--ds-line),
+    var(--ds-raise);
+}
+
+:is(:root, :root.light) .uixo-shell .website-grid > article > .card-actions > *:hover {
+  background: var(--background);
+}
+
+.uixo-shell .website-grid > article > .card-actions .save[aria-pressed='true'] {
+  color: var(--uixo-accent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .uixo-shell .website-grid > article > .card-actions > * {
+    opacity: 0;
+    transform: translateY(-2px);
+    transition:
+      opacity var(--ds-fast) var(--ds-ease),
+      transform var(--ds-fast) var(--ds-ease);
+  }
+
+  .uixo-shell .website-grid > article:is(:hover, :focus-within) > .card-actions > *,
+  .uixo-shell .website-grid > article > .card-actions .save[aria-pressed='true'] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.uixo-shell .website-grid.density-compact .card-byline {
+  display: none;
+}
+
+/* ------------------------------------------------------------- Browse menu */
+/* Borrowed from UI8: three top-level items, with every category one click away. */
+
+.discovery-navigation {
+  gap: 28px;
+}
+
+.discovery-navigation a,
+.discovery-browse-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+:is(:root, :root.light) .discovery-browse-trigger {
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: var(--ds-text-md);
+  font-weight: 450;
+  color: var(--muted-foreground);
+  transition: color var(--ds-fast) var(--ds-ease);
+}
+
+.discovery-browse-trigger svg {
+  transition: transform var(--ds-fast) var(--ds-ease);
+}
+
+.discovery-browse-trigger:hover,
+.discovery-browse-trigger[aria-expanded='true'],
+.discovery-browse-trigger[data-active] {
+  color: var(--foreground);
+}
+
+.discovery-browse-trigger[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+
+.nav-badge {
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--muted);
+  box-shadow: inset 0 0 0 1px var(--ds-line);
+  font-family: var(--ds-mono);
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--uixo-soft);
+}
+
+.discovery-browse-menu {
+  position: absolute;
+  z-index: 41;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--background);
+  box-shadow:
+    inset 0 -1px 0 var(--ds-line),
+    0 24px 48px -24px rgb(0 0 0 / 0.18);
+  animation: ds-menu-in 180ms var(--ds-ease);
+}
+
+.discovery-browse-menu-inner {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(0, 2.4fr) minmax(220px, 1fr);
+  gap: 40px;
+  max-width: 1600px;
+  margin: auto;
+  padding: 28px 32px 32px;
+}
+
+.discovery-browse-menu h2 {
+  margin: 0 0 10px;
+  font-size: var(--ds-text-xs);
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+
+.discovery-browse-menu section {
+  display: flex;
+  flex-direction: column;
+}
+
+.discovery-browse-menu .browse-menu-resources {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 24px;
+  align-content: start;
+}
+
+.discovery-browse-menu .browse-menu-resources h2 {
+  grid-column: 1 / -1;
+}
+
+.discovery-browse-menu section a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 -10px;
+  padding: 7px 10px;
+  border-radius: var(--ds-radius-sm);
+  font-size: var(--ds-text-md);
+  color: var(--uixo-soft);
+  text-decoration: none;
+  transition:
+    background-color var(--ds-fast) var(--ds-ease),
+    color var(--ds-fast) var(--ds-ease);
+}
+
+.discovery-browse-menu section a:hover,
+.discovery-browse-menu section a[aria-current] {
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+.discovery-browse-menu section a small {
+  font-family: var(--ds-mono);
+  font-size: var(--ds-text-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--muted-foreground);
+}
+
+.browse-menu-feature {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  min-height: 150px;
+  padding: 18px;
+  border-radius: var(--ds-radius);
+  background: var(--foreground);
+  color: var(--background);
+  text-decoration: none;
+}
+
+.browse-menu-feature span {
+  font-family: var(--ds-mono);
+  font-size: var(--ds-text-xs);
+  opacity: 0.65;
+}
+
+.browse-menu-feature strong {
+  font-size: var(--ds-text-lg);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.browse-menu-feature svg {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  transition: transform var(--ds-fast) var(--ds-ease);
+}
+
+.browse-menu-feature:hover svg {
+  transform: translate(2px, -2px);
+}
+
+@keyframes ds-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 900px) {
+  .discovery-browse-menu-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .discovery-browse-menu {
+    animation: none;
+  }
+}

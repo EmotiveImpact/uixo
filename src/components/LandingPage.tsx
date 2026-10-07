@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { ArrowRight, ArrowUpRight, Search } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, ChevronRight, Search } from 'lucide-react';
 import { SiteFooter } from './SiteFooter';
 import { Thumbnail } from './Thumbnail';
 import { AssetPreview } from './AssetPreview';
@@ -8,8 +8,11 @@ import './homepage.css';
 import { DiscoveryHeader } from './discovery/DiscoveryHeader';
 import { collections, resources, thumbnailPosition } from '../data';
 import { navigateInApp } from '../lib/navigation';
+import { newThreshold } from '../lib/freshness';
 import { useRegistryData } from '../hooks/useRegistryData';
 import type { RegistryStatus } from '../lib/asset-library';
+
+const NEW_FROM = newThreshold(resources);
 
 type LandingPageProps = {
   authAvailable: boolean;
@@ -235,31 +238,24 @@ export function LandingPage({
                     sizes="(max-width: 680px) 100vw, (max-width: 1050px) 50vw, 25vw"
                     onError={() => {}}
                   />
-                  <span className="product-type">Resource</span>
+                  {item.addedOrder >= NEW_FROM && <span className="card-badge">New</span>}
                 </a>
-                <div className="discovery-product-title">
+                <div className="card-heading">
                   <a
                     href={hrefs.resource(item.id)}
                     onClick={(e) => internal(e, () => onOpenResource(item.id))}
                   >
                     {item.name}
                   </a>
-                  <a
-                    aria-label={`Visit ${item.name}`}
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ArrowUpRight size={15} />
-                  </a>
+                  <span className="card-price">{item.pricing}</span>
                 </div>
-                <p>
-                  {item.creator}
-                  <span>{item.pricing}</span>
-                </p>
-                <div className="discovery-product-tags">
+                <div className="card-byline">
+                  <span className="creator-avatar" aria-hidden="true">
+                    {item.creator.charAt(0)}
+                  </span>
+                  <span className="creator-name">{item.creator}</span>
+                  <ChevronRight size={12} aria-hidden="true" />
                   <span>{item.category}</span>
-                  <span>{item.formats[0]}</span>
                 </div>
               </article>
             ))}

@@ -411,7 +411,6 @@ export function App() {
                 onOpen={(resourceId) => navigate({ resourceId })}
                 onToggleSaved={toggleSaved}
                 onSelectCategory={chooseCategory}
-                onSelectFormat={(format) => navigate({ format })}
               />
 
               {!shown.length && (
