@@ -1,0 +1,798 @@
+/*
+ * UIXO design system: the final layer.
+ *
+ * Earlier passes (styles.css, uixo-redesign.css, layout-refinements.css) each restyled the
+ * same surfaces, which left three token sets, 8px to 12px card text and grey-on-grey
+ * boxes. This file loads last and owns the public look: one neutral palette, one type
+ * scale, hairline structure instead of tinted panels, and one motion curve.
+ *
+ * Rules of thumb for future changes:
+ * - Thumbnails carry the colour. Chrome stays neutral.
+ * - Hierarchy comes from type size, weight and contrast, not from extra boxes.
+ * - Structure comes from 1px hairlines (drawn with box-shadow, because the borderless
+ *   pass forces border-color to transparent), never from drop shadows.
+ * - Nothing readable goes below 11px.
+ */
+
+:root {
+  --ds-font: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --ds-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --ds-text-xs: 11px;
+  --ds-text-sm: 13px;
+  --ds-text-md: 14px;
+  --ds-text-lg: 15px;
+  --ds-radius-sm: 8px;
+  --ds-radius: 12px;
+
+  --ds-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ds-fast: 140ms;
+  --ds-slow: 420ms;
+
+  /* Dark theme (the :root default). */
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --muted: #1a1a1a;
+  --muted-foreground: #8f8f94;
+  --card: #0a0a0a;
+  --accent: #1f1f1f;
+  --ring: #ededed;
+  --uixo-surface: #111111;
+  --uixo-soft: #a1a1a6;
+  --ds-line: rgb(255 255 255 / 0.08);
+  --ds-line-strong: rgb(255 255 255 / 0.16);
+  --ds-thumb: #141414;
+  --ds-raise: 0 1px 2px rgb(0 0 0 / 0.4);
+
+  font-family: var(--ds-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+:root.light {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --muted: #f4f4f5;
+  --muted-foreground: #6b6b73;
+  --card: #ffffff;
+  --accent: #f4f4f5;
+  --ring: #0a0a0a;
+  --uixo-surface: #fafafa;
+  --uixo-soft: #52525b;
+  --ds-line: rgb(0 0 0 / 0.08);
+  --ds-line-strong: rgb(0 0 0 / 0.16);
+  --ds-thumb: #f4f4f5;
+  --ds-raise: 0 1px 2px rgb(0 0 0 / 0.06), 0 1px 1px rgb(0 0 0 / 0.03);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+kbd {
+  font-family: var(--ds-mono);
+}
+
+/* ------------------------------------------------------------------ Header */
+
+.discovery-header,
+:root.light .discovery-header {
+  background: color-mix(in srgb, var(--background) 82%, transparent);
+  backdrop-filter: saturate(1.6) blur(14px);
+  -webkit-backdrop-filter: saturate(1.6) blur(14px);
+  box-shadow: inset 0 -1px 0 var(--ds-line);
+}
+
+.discovery-wordmark.brand {
+  font-weight: 600;
+  letter-spacing: 0.32em;
+}
+
+.discovery-navigation a {
+  font-size: var(--ds-text-md);
+  font-weight: 450;
+  transition: color var(--ds-fast) var(--ds-ease);
+}
+
+.header-icon,
+.uixo-shell .header-icon,
+:is(:root, :root.light) .header-icon {
+  background: transparent;
+  transition: background-color var(--ds-fast) var(--ds-ease);
+}
+
+.header-icon:hover {
+  background: var(--muted);
+}
+
+/* ----------------------------------------------------------------- Sidebar */
+
+:is(:root, :root.light) .discovery-sidebar > div,
+:is(:root, :root.light) .catalogue-body [data-slot='sidebar'] > div {
+  background: var(--background);
+  box-shadow: inset -1px 0 0 var(--ds-line);
+}
+
+.filter-section h2 {
+  font-size: var(--ds-text-xs);
+  font-weight: 500;
+  color: var(--muted-foreground);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.filter-section button {
+  font-size: var(--ds-text-md);
+  border-radius: var(--ds-radius-sm);
+  color: var(--uixo-soft);
+  transition:
+    background-color var(--ds-fast) var(--ds-ease),
+    color var(--ds-fast) var(--ds-ease);
+}
+
+.filter-section button:hover,
+.filter-section button.chosen {
+  color: var(--foreground);
+}
+
+.filter-section button.chosen {
+  background: var(--muted);
+  font-weight: 500;
+}
+
+.filter-section button small {
+  font-family: var(--ds-mono);
+  font-size: var(--ds-text-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--muted-foreground);
+}
+
+/* ------------------------------------------------------------ Page heading */
+
+.uixo-shell .heading h1 {
+  font-size: clamp(32px, 3vw, 44px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.uixo-shell .heading p {
+  max-width: 62ch;
+  font-size: var(--ds-text-lg);
+  line-height: 1.55;
+  color: var(--muted-foreground);
+}
+
+/* ------------------------------------------------------ Search and controls */
+
+:is(:root, :root.light) .uixo-shell .search-wrap {
+  background: var(--background);
+  border-radius: 10px;
+  box-shadow:
+    inset 0 0 0 1px var(--ds-line),
+    var(--ds-raise);
+  transition: box-shadow var(--ds-fast) var(--ds-ease);
+}
+
+:is(:root, :root.light) .uixo-shell .search-wrap:hover {
+  box-shadow:
+    inset 0 0 0 1px var(--ds-line-strong),
+    var(--ds-raise);
+}
+
+:is(:root, :root.light) .uixo-shell .search-wrap:focus-within {
+  outline: none;
+  box-shadow:
+    inset 0 0 0 1px var(--foreground),
+    0 0 0 4px color-mix(in srgb, var(--foreground) 8%, transparent);
+}
+
+.uixo-shell .search-wrap input {
+  font-size: var(--ds-text-md);
+}
+
+.uixo-shell .search-wrap kbd {
+  min-width: 20px;
+  padding: 1px 6px;
+  border-radius: 5px;
+  font-size: var(--ds-text-xs);
+  color: var(--muted-foreground);
+  box-shadow: inset 0 0 0 1px var(--ds-line);
+  background: transparent;
+}
+
+/* One segmented control everywhere: a quiet track with a raised selection. */
+:is(:root, :root.light) .uixo-shell .segments {
+  padding: 3px;
+  gap: 2px;
+  border-radius: 10px;
+  background: var(--muted);
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .uixo-shell .segments button {
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted-foreground);
+  font-size: var(--ds-text-sm);
+  font-weight: 500;
+  box-shadow: none;
+  transition:
+    background-color var(--ds-fast) var(--ds-ease),
+    color var(--ds-fast) var(--ds-ease);
+}
+
+:is(:root, :root.light) .uixo-shell .segments button:not(.selected):hover {
+  background: transparent;
+  color: var(--foreground);
+}
+
+:is(:root, :root.light) .uixo-shell .segments button.selected {
+  background: var(--background);
+  color: var(--foreground);
+  box-shadow:
+    inset 0 0 0 1px var(--ds-line),
+    var(--ds-raise);
+}
+
+:is(:root, :root.light) .uixo-shell .format-filter {
+  background: var(--background);
+  box-shadow: inset 0 0 0 1px var(--ds-line);
+  border-radius: 10px;
+  font-size: var(--ds-text-sm);
+}
+
+.uixo-shell .browse-caption {
+  font-size: var(--ds-text-sm);
+  color: var(--muted-foreground);
+}
+
+/* Category chips: outlined at rest, filled when chosen. */
+:is(:root, :root.light) .uixo-shell .component-category-chips button {
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--uixo-soft);
+  font-size: var(--ds-text-sm);
+  font-weight: 450;
+  box-shadow: inset 0 0 0 1px var(--ds-line);
+  transition:
+    background-color var(--ds-fast) var(--ds-ease),
+    color var(--ds-fast) var(--ds-ease),
+    box-shadow var(--ds-fast) var(--ds-ease);
+}
+
+:is(:root, :root.light) .uixo-shell .component-category-chips button:hover {
+  background: transparent;
+  color: var(--foreground);
+  box-shadow: inset 0 0 0 1px var(--ds-line-strong);
+}
+
+:is(:root, :root.light) .uixo-shell .component-category-chips button[aria-pressed='true'] {
+  background: var(--foreground);
+  color: var(--background);
+  box-shadow: none;
+}
+
+.uixo-shell .asset-refine {
+  font-size: var(--ds-text-sm);
+}
+
+.uixo-shell .asset-library-result-count,
+.uixo-shell .asset-library-result-count span {
+  font-family: var(--ds-mono);
+  font-size: var(--ds-text-xs);
+  color: var(--muted-foreground);
+}
+
+/* ------------------------------------------------------------------- Cards */
+/*
+ * Website, asset and homepage cards share one anatomy: a framed thumbnail with the
+ * metadata set straight onto the canvas below it, the way Mobbin, Godly and Refero do.
+ * No card box, no drop shadow, no lift. Hover brings the frame forward instead.
+ */
+
+:is(:root, :root.light) .uixo-shell .website-grid > article,
+:is(:root, :root.light) .uixo-shell .asset-library-card,
+:is(:root, :root.light) .discovery-product {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  transform: none;
+}
+
+:is(:root, :root.light) .uixo-shell .website-grid > article:hover,
+:is(:root, :root.light) .uixo-shell .asset-library-card:hover,
+:is(:root, :root.light) .discovery-product:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.uixo-shell .asset-library-grid,
+.uixo-shell .website-grid {
+  gap: 36px 20px;
+}
+
+/* The frame. */
+:is(:root, :root.light) .uixo-shell .website-grid .preview-link,
+:is(:root, :root.light) .uixo-shell .asset-library-card .asset-library-preview,
+:is(:root, :root.light) .discovery-product-image,
+:is(:root, :root.light) .home-component .asset-library-preview,
+:is(:root, :root.light) .collection-covers {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--ds-radius);
+  background: var(--ds-thumb);
+  box-shadow: none;
+  transform: none;
+}
+
+/* Hairline drawn above the image so light screenshots never bleed into a white page. */
+.uixo-shell .website-grid .preview-link::after,
+.uixo-shell .asset-library-card .asset-library-preview::after,
+.discovery-product-image::after,
+.home-component .asset-library-preview::after,
+.collection-covers::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px var(--ds-line);
+  pointer-events: none;
+  transition: box-shadow var(--ds-fast) var(--ds-ease);
+}
+
+.uixo-shell .website-grid > article:hover .preview-link::after,
+.uixo-shell .asset-library-card:hover .asset-library-preview::after,
+.discovery-product:hover .discovery-product-image::after,
+.collection-card:hover .collection-covers::after,
+.discovery-collection:hover .collection-covers::after {
+  box-shadow: inset 0 0 0 1px var(--ds-line-strong);
+}
+
+.uixo-shell .website-grid .preview-link img,
+.discovery-product-image img,
+.collection-covers img {
+  transition: transform var(--ds-slow) var(--ds-ease);
+}
+
+.uixo-shell .website-grid > article:hover .preview-link img,
+.discovery-product:hover .discovery-product-image img {
+  transform: scale(1.025);
+}
+
+/* Name row. */
+.uixo-shell .card-heading,
+.uixo-shell .website-grid .card-heading {
+  margin-top: 14px;
+  align-items: center;
+}
+
+.uixo-shell .card-heading a,
+.uixo-shell .asset-library-card h2,
+.uixo-shell .asset-library-card h2 a,
+.discovery-product-title a {
+  font-size: var(--ds-text-md);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+
+.uixo-shell .asset-library-card-body {
+  padding: 14px 0 0;
+}
+
+/* Secondary line: creator and price in one muted run. */
+.uixo-shell .metadata,
+.uixo-shell .asset-library-card-body > small,
+.discovery-product > p {
+  margin-top: 4px;
+  font-size: var(--ds-text-sm);
+  line-height: 1.45;
+  color: var(--muted-foreground);
+}
+
+.uixo-shell .metadata .pricing,
+.uixo-shell .metadata .pricing-free,
+.uixo-shell .metadata .pricing-freemium,
+.uixo-shell .metadata .pricing-paid {
+  color: var(--muted-foreground);
+  background: none;
+}
+
+/* Tags read as quiet mono labels rather than a row of grey pills. */
+.uixo-shell .resource-tags,
+.uixo-shell .asset-library-tags,
+.discovery-product-tags {
+  margin-top: 8px;
+  gap: 4px 12px;
+}
+
+:is(:root, :root.light) .uixo-shell .resource-tags button,
+:is(:root, :root.light) .uixo-shell .asset-library-tags span,
+:is(:root, :root.light) .discovery-product-tags span {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  font-family: var(--ds-mono);
+  font-size: var(--ds-text-xs);
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--muted-foreground);
+}
+
+:is(:root, :root.light) .uixo-shell .resource-tags button:hover {
+  background: none;
+  color: var(--foreground);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.discovery-product .product-type {
+  display: none;
+}
+
+/* Card actions sit quietly until the card is in play; saved state always shows. */
+.uixo-shell .card-actions .save,
+.uixo-shell .card-actions .visit,
+.uixo-shell .asset-library-save {
+  color: var(--muted-foreground);
+  border-radius: 6px;
+  transition:
+    opacity var(--ds-fast) var(--ds-ease),
+    color var(--ds-fast) var(--ds-ease),
+    background-color var(--ds-fast) var(--ds-ease);
+}
+
+.uixo-shell .card-actions .save:hover,
+.uixo-shell .card-actions .visit:hover,
+.uixo-shell .asset-library-save:hover {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+.uixo-shell .card-actions svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .uixo-shell .website-grid > article .card-actions > *,
+  .uixo-shell .asset-library-card .asset-library-save {
+    opacity: 0;
+  }
+
+  .uixo-shell .website-grid > article:is(:hover, :focus-within) .card-actions > *,
+  .uixo-shell .asset-library-card:is(:hover, :focus-within) .asset-library-save,
+  .uixo-shell .card-actions .save[aria-pressed='true'],
+  .uixo-shell .asset-library-save[aria-pressed='true'] {
+    opacity: 1;
+  }
+}
+
+/* Small overlay labels on previews. */
+:is(:root, :root.light) .uixo-shell .asset-library-preview > small,
+:is(:root, :root.light) .actual-preview-label {
+  padding: 3px 7px;
+  border-radius: 6px;
+  font-family: var(--ds-mono);
+  font-size: 10.5px;
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--background) 86%, transparent);
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 0 0 1px var(--ds-line);
+}
+
+/* ------------------------------------------------------------- Collections */
+
+.collection-index > p:first-child {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: var(--ds-text-sm);
+}
+
+.collection-index > p:first-child a {
+  color: var(--muted-foreground);
+  text-decoration: none;
+}
+
+.collection-index > p:first-child a:hover {
+  color: var(--foreground);
+}
+
+:is(:root, :root.light) .collection-card,
+:is(:root, :root.light) .discovery-collection {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+:is(:root, :root.light) .collection-card:hover,
+:is(:root, :root.light) .discovery-collection:hover {
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.collection-card h2,
+.discovery-collection h3 {
+  font-size: var(--ds-text-lg);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.collection-card .collection-tagline,
+.discovery-collection p {
+  font-size: var(--ds-text-sm);
+  color: var(--muted-foreground);
+}
+
+.collection-card .collection-count {
+  font-family: var(--ds-mono);
+  font-size: var(--ds-text-xs);
+  color: var(--muted-foreground);
+}
+
+/* ---------------------------------------------------------------- Homepage */
+
+.discovery-home {
+  background: var(--background);
+}
+
+.discovery-home .discovery-kicker {
+  margin-bottom: 14px;
+  font-family: var(--ds-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--muted-foreground);
+}
+
+.discovery-home .hero-copy h1 {
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
+
+.discovery-home .hero-description {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--muted-foreground);
+}
+
+:is(:root, :root.light) .discovery-home .hero-search {
+  background: var(--background);
+  box-shadow:
+    inset 0 0 0 1px var(--ds-line-strong),
+    0 1px 2px rgb(0 0 0 / 0.04),
+    0 12px 32px -16px rgb(0 0 0 / 0.18);
+  transition: box-shadow var(--ds-fast) var(--ds-ease);
+}
+
+:is(:root, :root.light) .discovery-home .hero-search:focus-within {
+  outline: none;
+  box-shadow:
+    inset 0 0 0 1px var(--foreground),
+    0 0 0 4px color-mix(in srgb, var(--foreground) 8%, transparent),
+    0 12px 32px -16px rgb(0 0 0 / 0.18);
+}
+
+.discovery-home .hero-shortcuts a,
+.discovery-home .hero-shortcuts button {
+  color: var(--muted-foreground);
+  transition: color var(--ds-fast) var(--ds-ease);
+}
+
+.discovery-home .hero-shortcuts a:hover,
+.discovery-home .hero-shortcuts button:hover {
+  color: var(--foreground);
+}
+
+.discovery-home .hero-stats {
+  font-family: var(--ds-mono);
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+
+.discovery-home .hero-stats strong {
+  color: var(--foreground);
+  font-weight: 500;
+}
+
+.home-showcase h2,
+.discovery-home .discovery-section-heading h2,
+.discovery-handoff h2 {
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.discovery-home .discovery-section-heading p {
+  font-size: var(--ds-text-md);
+  color: var(--muted-foreground);
+}
+
+.discovery-home .discovery-viewall {
+  font-size: var(--ds-text-sm);
+  font-weight: 500;
+  color: var(--muted-foreground);
+  transition: color var(--ds-fast) var(--ds-ease);
+}
+
+.discovery-home .discovery-viewall:hover {
+  color: var(--foreground);
+}
+
+.discovery-home .discovery-feed-tabs {
+  gap: 2px;
+  padding: 3px;
+  border-radius: 10px;
+  background: var(--muted);
+}
+
+:is(:root, :root.light) .discovery-home .discovery-feed-tabs > * {
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 7px;
+  background: transparent;
+  font-size: var(--ds-text-sm);
+  font-weight: 500;
+  color: var(--muted-foreground);
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .discovery-home .discovery-feed-tabs > [aria-pressed='true'] {
+  background: var(--background);
+  color: var(--foreground);
+  box-shadow:
+    inset 0 0 0 1px var(--ds-line),
+    var(--ds-raise);
+}
+
+:is(:root, :root.light) .home-component {
+  background: transparent;
+  box-shadow: none;
+}
+
+.home-component-link h3 {
+  font-size: var(--ds-text-md);
+  font-weight: 500;
+}
+
+.home-component-link span {
+  font-size: var(--ds-text-sm);
+  color: var(--muted-foreground);
+}
+
+.home-preview-pending {
+  border-radius: var(--ds-radius);
+  background: var(--ds-thumb);
+  box-shadow: inset 0 0 0 1px var(--ds-line);
+  font-family: var(--ds-mono);
+  font-size: var(--ds-text-xs);
+  color: var(--muted-foreground);
+}
+
+/* The closing panel inverts, so the page ends on one confident block. */
+:is(:root, :root.light) .discovery-handoff {
+  background: var(--foreground);
+  color: var(--background);
+  box-shadow: none;
+  border-radius: 20px;
+}
+
+:is(:root, :root.light) .discovery-handoff .discovery-kicker,
+:is(:root, :root.light) .discovery-handoff p {
+  color: color-mix(in srgb, var(--background) 62%, var(--foreground));
+}
+
+:is(:root, :root.light) .discovery-handoff h2 {
+  color: var(--background);
+}
+
+:is(:root, :root.light) .discovery-handoff a {
+  background: var(--background);
+  color: var(--foreground);
+  font-weight: 500;
+  transition: transform var(--ds-fast) var(--ds-ease);
+}
+
+:is(:root, :root.light) .discovery-handoff a:hover {
+  transform: translateX(2px);
+}
+
+/* ------------------------------------------------------------------ Footer */
+
+.site-footer,
+.site-footer a,
+.site-footer span {
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+
+.site-footer a:hover {
+  color: var(--foreground);
+}
+
+/* ------------------------------------------------------------ Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .uixo-shell .website-grid .preview-link img,
+  .discovery-product-image img,
+  .collection-covers img,
+  .discovery-handoff a {
+    transition: none;
+  }
+
+  .uixo-shell .website-grid > article:hover .preview-link img,
+  .discovery-product:hover .discovery-product-image img,
+  :is(:root, :root.light) .discovery-handoff a:hover {
+    transform: none;
+  }
+}
+
+/* Feed tabs now sit under the section heading, so the bar is spacing only. */
+.discovery-home .discovery-section-bar {
+  margin: 20px 0 24px;
+  padding: 0;
+}
+
+/* Collection text sits on the canvas, aligned with the cover's edge. */
+.discovery-collection > div:last-child {
+  padding: 14px 0 0;
+}
+
+.collection-covers {
+  margin-bottom: 14px;
+}
+
+.collection-index > p:first-child a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Neutral second line in the hero, without the old blue-grey cast. */
+:is(:root, :root.light) .discovery-home .hero-copy h1 span {
+  color: color-mix(in srgb, var(--foreground) 38%, var(--background));
+}
+
+/* Asset cards: name and source read as one block. */
+.uixo-shell .asset-card-heading {
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.uixo-shell .asset-library-card h2 {
+  margin: 0;
+}
+
+.uixo-shell .asset-library-card-body > small {
+  margin-top: 2px;
+}
+
+/* Mobile homepage header: the wrapped navigation row belongs inside the header, not under it. */
+@media (max-width: 760px) {
+  .discovery-home .home-header .discovery-header-inner {
+    height: auto;
+    min-height: 64px;
+    row-gap: 0;
+    padding-top: 12px;
+  }
+
+  .discovery-home .home-header .discovery-navigation {
+    height: 40px;
+  }
+}

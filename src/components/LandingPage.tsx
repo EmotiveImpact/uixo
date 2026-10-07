@@ -113,7 +113,7 @@ export function LandingPage({
       <main className="discovery-container">
         <section className="discovery-hero">
           <div className="hero-copy">
-            <p className="discovery-kicker">BETTER INTERFACES. A BRIGHTER INTERNET.</p>
+            <p className="discovery-kicker">Better interfaces. A brighter internet.</p>
             <h1>
               The interface <span>starts here.</span>
             </h1>
@@ -171,7 +171,7 @@ export function LandingPage({
         <section className="home-showcase" aria-labelledby="showcase-title">
           <div className="home-showcase-heading">
             <div>
-              <p className="discovery-kicker">A FEW GOOD DETAILS</p>
+              <p className="discovery-kicker">A few good details</p>
               <h2 id="showcase-title">Try something great.</h2>
             </div>
             <a
@@ -193,6 +193,14 @@ export function LandingPage({
           </div>
         </section>
         <section className="discovery-feature-section" aria-labelledby="featured-title">
+          <div className="discovery-section-heading">
+            <h2 id="featured-title">
+              {tab === 'curated'
+                ? 'Good design. Great starting points.'
+                : 'Fresh finds for your next project.'}
+            </h2>
+            <p>A few things worth opening a new tab for.</p>
+          </div>
           <div className="discovery-section-bar">
             <div className="discovery-feed-tabs" role="group" aria-label="Featured resources order">
               <button aria-pressed={tab === 'curated'} onClick={() => setTab('curated')}>
@@ -212,14 +220,6 @@ export function LandingPage({
             >
               Explore everything <ArrowRight size={14} />
             </a>
-          </div>
-          <div className="discovery-section-heading">
-            <h2 id="featured-title">
-              {tab === 'curated'
-                ? 'Good design. Great starting points.'
-                : 'Fresh finds for your next project.'}
-            </h2>
-            <p>A few things worth opening a new tab for.</p>
           </div>
           <div className="discovery-feature-grid">
             {featured.map((item) => (
@@ -268,7 +268,7 @@ export function LandingPage({
         <section className="discovery-collections" aria-labelledby="collections-title">
           <div className="discovery-section-heading">
             <div>
-              <p className="discovery-kicker">LESS SEARCHING. MORE MAKING.</p>
+              <p className="discovery-kicker">Less searching. More making.</p>
               <h2 id="collections-title">A little direction goes a long way.</h2>
             </div>
             <a
@@ -309,7 +309,7 @@ export function LandingPage({
         </section>
         <section className="discovery-handoff">
           <div>
-            <p className="discovery-kicker">FROM INSPIRATION TO IMPLEMENTATION</p>
+            <p className="discovery-kicker">From inspiration to implementation</p>
             <h2>Find it. Try it. Build with it.</h2>
             <p>The original source and installation details, always one click away.</p>
           </div>

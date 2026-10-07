@@ -168,7 +168,7 @@ export function App() {
             ? 'Collections'
             : activeCollection
               ? activeCollection.name
-              : route.sub || route.category || (activeList ? activeList.name : 'All websites');
+              : route.sub || route.category || (activeList ? activeList.name : 'All resources');
 
   const subtitle = route.review
     ? 'Staged candidates. Nothing reaches the site until you approve it.'
