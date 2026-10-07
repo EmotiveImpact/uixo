@@ -1592,3 +1592,160 @@ kbd {
 .discovery-collection > div:last-child {
   padding: 14px 8px 0;
 }
+
+/* ------------------------------------------------- Live component tiles */
+
+.component-tile {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+:is(:root, :root.light) .component-tile .asset-library-preview,
+.component-tile .home-preview-pending {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.46;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 12px;
+  background: var(--ds-thumb);
+  box-shadow: none;
+}
+
+.component-tile .asset-library-preview::before {
+  display: none;
+}
+
+.component-tile .asset-library-preview::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px var(--ds-line);
+  pointer-events: none;
+}
+
+.component-tile .asset-live-viewport,
+.component-tile .asset-live-loading,
+.component-tile .asset-live-fallback {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.component-tile .asset-live-loading,
+.component-tile .asset-live-fallback {
+  display: grid;
+  place-items: center;
+  font-size: var(--ds-text-sm);
+  color: var(--muted-foreground);
+}
+
+.component-tile iframe {
+  display: block;
+  border: 0;
+  transform-origin: top left;
+  background: var(--ds-thumb);
+}
+
+.component-tile .asset-library-preview > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.component-tile .actual-preview-label,
+.component-tile .asset-library-preview > small {
+  position: absolute;
+  inset: auto auto 10px 12px;
+  z-index: 5;
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  font-family: var(--ds-mono);
+  font-size: var(--ds-text-xs);
+  color: var(--muted-foreground);
+  pointer-events: none;
+}
+
+.component-tile .card-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.component-tile .card-heading a {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--foreground);
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Websites follow the components, a step down in emphasis. */
+.home-websites {
+  padding: 72px 0 8px;
+}
+
+.home-websites .discovery-section-heading {
+  margin-bottom: 24px;
+}
+
+/* ------------------------------------------- Three columns, site-wide */
+
+.uixo-shell :is(.asset-library-grid, .website-grid),
+.uixo-shell :is(.asset-library-grid, .website-grid)[class*='density-'] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-card {
+  padding: 8px 8px 6px;
+  border-radius: 18px;
+  background: var(--ds-card);
+  box-shadow: inset 0 0 0 1px var(--ds-line);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-card:hover {
+  background: var(--ds-card-hover);
+  box-shadow: inset 0 0 0 1px var(--ds-line-strong);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-card .asset-library-preview {
+  border-radius: 12px;
+}
+
+.uixo-shell .asset-library-card-body {
+  padding: 14px 8px 8px;
+}
+
+.collection-index {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1100px) {
+  .uixo-shell :is(.asset-library-grid, .website-grid),
+  .uixo-shell :is(.asset-library-grid, .website-grid)[class*='density-'],
+  .collection-index {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .uixo-shell :is(.asset-library-grid, .website-grid),
+  .uixo-shell :is(.asset-library-grid, .website-grid)[class*='density-'],
+  .collection-index {
+    grid-template-columns: 1fr;
+  }
+}

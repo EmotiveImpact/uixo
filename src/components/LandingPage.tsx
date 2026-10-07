@@ -3,14 +3,13 @@ import { ArrowRight, ArrowUpRight, ChevronRight, Search } from 'lucide-react';
 import { SiteFooter } from './SiteFooter';
 import { Thumbnail } from './Thumbnail';
 import { AssetPreview } from './AssetPreview';
-import type { CollectionAssetPreview } from '../../shared/intelligence';
 import './homepage.css';
 import { DiscoveryHeader } from './discovery/DiscoveryHeader';
 import { collections, resources, thumbnailPosition } from '../data';
 import { navigateInApp } from '../lib/navigation';
 import { newThreshold } from '../lib/freshness';
 import { useRegistryData } from '../hooks/useRegistryData';
-import type { RegistryStatus } from '../lib/asset-library';
+import type { AssetRecord, Catalogue, ProviderRecord } from '../lib/asset-library';
 
 const NEW_FROM = newThreshold(resources);
 
@@ -41,39 +40,85 @@ type LandingPageProps = {
   onAbout: () => void;
 };
 
-// Use published records and the same original live demos as the asset catalogue.
-const featuredComponents = [
-  { id: 'shadcn/command', name: 'Command', provider: 'shadcn/ui' },
-  { id: 'magic-ui/aurora-text', name: 'Aurora Text', provider: 'Magic UI' },
-  { id: 'shadcn/calendar', name: 'Calendar', provider: 'shadcn/ui' },
+// Components with original live demos, chosen to show range on first load.
+const FEATURED_COMPONENTS = [
+  'magic-ui/aurora-text',
+  'magic-ui/shimmer-button',
+  'shadcn/calendar',
+  'motion-primitives/text-effect',
+  'magic-ui/animated-beam',
+  'magic-ui/terminal',
+  'magic-ui/dock',
+  'magic-ui/retro-grid',
 ];
 
-function FeaturedComponent({
-  item,
-  href,
-}: {
-  item: (typeof featuredComponents)[number];
-  href: string;
-}) {
-  const { data, error } = useRegistryData<CollectionAssetPreview>('asset', { id: item.id });
+const SHELVES = [
+  { id: 'featured', label: 'Featured' },
+  { id: 'buttons', label: 'Buttons' },
+  { id: 'text', label: 'Text effects' },
+  { id: 'backgrounds', label: 'Backgrounds' },
+] as const;
+type Shelf = (typeof SHELVES)[number]['id'];
+
+const categoryLabel = (id = 'other') =>
+  id === 'other' ? 'Components' : (id.charAt(0).toUpperCase() + id.slice(1)).replace('-', ' ');
+
+type CardLinks = { href: (id: string) => string; providerName: (id: string) => string };
+
+function ComponentCard({ asset, links }: { asset: AssetRecord; links: CardLinks }) {
+  const provider = links.providerName(asset.providerId);
+  const href = links.href(asset.id);
   return (
-    <article className="home-component">
-      {data ? (
-        <AssetPreview asset={data} />
-      ) : (
-        <div className="home-preview-pending" role="status">
-          {error ? 'Preview unavailable' : 'Loading component…'}
-        </div>
-      )}
-      <a className="home-component-link" href={href}>
-        <div>
-          <h3>{item.name}</h3>
-          <span>{item.provider}</span>
-        </div>
-        <ArrowUpRight size={18} />
-      </a>
+    <article className="discovery-product component-tile">
+      <AssetPreview asset={asset} />
+      <div className="card-heading">
+        <a
+          href={href}
+          onClick={(event) => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            navigateInApp(href);
+          }}
+        >
+          {asset.name}
+        </a>
+        <span className="card-price">{asset.price === 'free' ? 'Free' : asset.price}</span>
+      </div>
+      <div className="card-byline">
+        <span className="creator-avatar" aria-hidden="true">
+          {provider.charAt(0)}
+        </span>
+        <span className="creator-name">{provider}</span>
+        <ChevronRight size={12} aria-hidden="true" />
+        <span>{categoryLabel(asset.category)}</span>
+      </div>
     </article>
   );
+}
+
+function PendingCard({ failed }: { failed: boolean }) {
+  return (
+    <div className="discovery-product component-tile" aria-busy={!failed}>
+      <div className="home-preview-pending">
+        {failed ? 'Preview unavailable' : 'Loading component…'}
+      </div>
+    </div>
+  );
+}
+
+function FeaturedComponent({ id, links }: { id: string; links: CardLinks }) {
+  const { data, error } = useRegistryData<AssetRecord>('asset', { id });
+  return data ? <ComponentCard asset={data} links={links} /> : <PendingCard failed={!!error} />;
+}
+
+function ShelfComponents({ category, links }: { category: string; links: CardLinks }) {
+  const { data, error } = useRegistryData<Catalogue>('search', {
+    kind: 'component',
+    category,
+    limit: '8',
+  });
+  if (!data) return Array.from({ length: 8 }, (_, i) => <PendingCard key={i} failed={!!error} />);
+  return data.items.map((asset) => <ComponentCard key={asset.id} asset={asset} links={links} />);
 }
 
 export function LandingPage({
@@ -90,19 +135,18 @@ export function LandingPage({
   onSignIn,
 }: LandingPageProps) {
   const [q, setQ] = useState('');
-  const [tab, setTab] = useState<'featured' | 'new' | 'free'>('featured');
+  const [shelf, setShelf] = useState<Shelf>('featured');
   const searchRef = useRef<HTMLInputElement>(null);
-  const { data: status } = useRegistryData<RegistryStatus>('status');
-  const byRecency = [...resources].sort((a, b) => b.addedOrder - a.addedOrder);
-  const picked =
-    tab === 'featured'
-      ? resources.filter((item) => item.featured)
-      : tab === 'new'
-        ? byRecency
-        : byRecency.filter((item) => item.pricing === 'Free');
-  // Eight cards plus the promo fill a three-by-three grid; top up with recent finds if short.
-  const featured = [...picked, ...byRecency.filter((item) => !picked.includes(item))].slice(0, 8);
-  const total = resources.length + (status?.stats?.assets ?? 0);
+  const { data: catalogue } = useRegistryData<Catalogue>('search', {
+    kind: 'component',
+    limit: '1',
+  });
+  const { data: providerList } = useRegistryData<{ items: ProviderRecord[] }>('providers');
+  const links: CardLinks = {
+    href: (id) => `${hrefs.assets}?id=${encodeURIComponent(id)}`,
+    providerName: (id) => providerList?.items.find((p) => p.id === id)?.name ?? id,
+  };
+  const websites = resources.filter((item) => item.featured).slice(0, 6);
   const internal = (event: React.MouseEvent<HTMLAnchorElement>, run: () => void) => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0)
       return;
@@ -134,11 +178,13 @@ export function LandingPage({
           </div>
           <div className="ui8-hero-copy">
             <h1>
-              {total.toLocaleString('en-GB')} hand-picked components and resources to speed up your
-              next build.
+              {catalogue
+                ? `${catalogue.total.toLocaleString('en-GB')} live components`
+                : 'Live components'}{' '}
+              to try, copy and ship in your next build.
             </h1>
             <p className="hero-description">
-              Live previews, the original source one click away, and new finds every weekday.
+              Every one runs right here in the page, with the original source one click away.
             </p>
             <form
               className="hero-search"
@@ -155,7 +201,7 @@ export function LandingPage({
                 type="search"
                 aria-label="Search components"
                 maxLength={300}
-                placeholder="What will you build next?"
+                placeholder="Search buttons, text effects, calendars…"
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
               />
@@ -166,27 +212,25 @@ export function LandingPage({
             <div className="hero-shortcuts">
               <span>Popular</span>
               <a href={hrefs.assets + '?category=buttons&kind=component'}>Buttons</a>
-              <a href={hrefs.assets + '?category=motion&kind=component'}>Motion</a>
-              <a href={hrefs.browse} onClick={(e) => internal(e, onBrowse)}>
-                UI libraries <ArrowUpRight size={11} />
-              </a>
+              <a href={hrefs.assets + '?category=text&kind=component'}>Text effects</a>
+              <a href={hrefs.assets + '?category=backgrounds&kind=component'}>Backgrounds</a>
             </div>
           </div>
         </section>
-        <section className="ui8-feed" aria-labelledby="featured-title">
-          <h2 id="featured-title" className="sr-only">
-            Resources
+        <section className="ui8-feed" aria-labelledby="components-title">
+          <h2 id="components-title" className="sr-only">
+            Components
           </h2>
-          <div className="ui8-switch" role="group" aria-label="Featured resources order">
-            <button aria-pressed={tab === 'featured'} onClick={() => setTab('featured')}>
-              Featured
-            </button>
-            <button aria-pressed={tab === 'new'} onClick={() => setTab('new')}>
-              New
-            </button>
-            <button aria-pressed={tab === 'free'} onClick={() => setTab('free')}>
-              Free
-            </button>
+          <div className="ui8-switch" role="group" aria-label="Component shelf">
+            {SHELVES.map((item) => (
+              <button
+                key={item.id}
+                aria-pressed={shelf === item.id}
+                onClick={() => setShelf(item.id)}
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
           <div className="discovery-feature-grid">
             <a
@@ -212,7 +256,41 @@ export function LandingPage({
                 <span>Let your agent search the catalogue</span>
               </div>
             </a>
-            {featured.map((item) => (
+            {shelf === 'featured' ? (
+              FEATURED_COMPONENTS.map((id) => <FeaturedComponent key={id} id={id} links={links} />)
+            ) : (
+              <ShelfComponents key={shelf} category={shelf} links={links} />
+            )}
+          </div>
+          <a
+            className="ui8-more"
+            href={
+              shelf === 'featured'
+                ? hrefs.assets
+                : `${hrefs.assets}?category=${shelf}&kind=component`
+            }
+            onClick={(e) => internal(e, onAssets)}
+          >
+            Explore all {catalogue ? catalogue.total.toLocaleString('en-GB') : ''} components{' '}
+            <ArrowRight size={15} />
+          </a>
+        </section>
+        <section className="home-websites" aria-labelledby="websites-title">
+          <div className="discovery-section-heading">
+            <div>
+              <p className="discovery-kicker">Beyond components</p>
+              <h2 id="websites-title">Libraries and sites worth a new tab.</h2>
+            </div>
+            <a
+              className="discovery-viewall"
+              href={hrefs.browse}
+              onClick={(e) => internal(e, onBrowse)}
+            >
+              All {resources.length} resources <ArrowRight size={14} />
+            </a>
+          </div>
+          <div className="discovery-feature-grid">
+            {websites.map((item) => (
               <article key={item.id} className="discovery-product">
                 <a
                   className="discovery-product-image"
@@ -222,7 +300,7 @@ export function LandingPage({
                   <Thumbnail
                     id={item.id}
                     alt={`${item.name} website screenshot`}
-                    sizes="(max-width: 680px) 100vw, (max-width: 1050px) 50vw, 25vw"
+                    sizes="(max-width: 680px) 100vw, (max-width: 1050px) 50vw, 33vw"
                     onError={() => {}}
                   />
                   {item.addedOrder >= NEW_FROM && <span className="card-badge">New</span>}
@@ -245,33 +323,6 @@ export function LandingPage({
                   <span>{item.category}</span>
                 </div>
               </article>
-            ))}
-          </div>
-          <a className="ui8-more" href={hrefs.browse} onClick={(e) => internal(e, onBrowse)}>
-            Explore all {resources.length} resources <ArrowRight size={15} />
-          </a>
-        </section>
-        <section className="home-showcase" aria-labelledby="showcase-title">
-          <div className="home-showcase-heading">
-            <div>
-              <p className="discovery-kicker">A few good details</p>
-              <h2 id="showcase-title">Try something great.</h2>
-            </div>
-            <a
-              className="discovery-viewall"
-              href={hrefs.assets}
-              onClick={(e) => internal(e, onAssets)}
-            >
-              All assets <ArrowRight size={14} />
-            </a>
-          </div>
-          <div className="home-component-grid">
-            {featuredComponents.map((item) => (
-              <FeaturedComponent
-                key={item.id}
-                item={item}
-                href={`${hrefs.assets}?id=${encodeURIComponent(item.id)}`}
-              />
             ))}
           </div>
         </section>
