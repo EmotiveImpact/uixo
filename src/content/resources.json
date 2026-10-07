@@ -4189,57 +4189,25 @@
     "lastChecked": "2026-09-14"
   },
   {
-    "id": "screenlane",
-    "name": "Screenlane",
-    "description": "Searchable library of real mobile and web app screens, sorted by pattern.",
-    "category": "Inspiration",
-    "subcategory": "Directories",
-    "tags": ["Screens", "UI"],
-    "pricing": "Freemium",
-    "creator": "Screenlane",
-    "formats": ["Web"],
-    "aliases": [],
-    "addedOrder": 262,
-    "featured": false,
-    "url": "https://screenlane.com",
-    "lastChecked": "2026-09-25"
-  },
-  {
     "id": "godly",
-    "name": "Godly",
-    "description": "Curated gallery of striking, motion-heavy landing pages, recorded as video.",
+    "name": "Recent (formerly Godly Website)",
+    "description": "Design inspiration gallery covering websites, interfaces, branding, typography and motion.",
     "category": "Inspiration",
-    "subcategory": "Landing pages",
-    "tags": ["Websites", "Awwwards-style"],
+    "subcategory": "Galleries",
+    "tags": ["Websites", "Awwwards-style", "Landing pages"],
     "pricing": "Free",
     "creator": "Godly",
     "formats": ["Web"],
-    "aliases": [],
+    "aliases": ["Godly Website"],
     "addedOrder": 263,
     "featured": false,
-    "url": "https://godly.website",
-    "lastChecked": "2026-09-25"
-  },
-  {
-    "id": "ui-movement",
-    "name": "UI Movement",
-    "description": "Daily collection of UI animation and interaction design shots.",
-    "category": "Inspiration",
-    "subcategory": "Directories",
-    "tags": ["Animation", "UI"],
-    "pricing": "Free",
-    "creator": "UI Movement",
-    "formats": ["Web"],
-    "aliases": [],
-    "addedOrder": 264,
-    "featured": false,
-    "url": "https://uimovement.com",
-    "lastChecked": "2026-09-25"
+    "url": "https://recent.design/",
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "fwa",
     "name": "FWA",
-    "description": "Favourite Website Awards, cutting-edge web design showcase",
+    "description": "Website awards and a gallery of recognised digital design projects.",
     "category": "Inspiration",
     "subcategory": "Awards",
     "tags": ["Awards", "Web"],
@@ -4249,8 +4217,8 @@
     "aliases": [],
     "addedOrder": 265,
     "featured": false,
-    "url": "https://fwa.com",
-    "lastChecked": "2026-09-25"
+    "url": "https://thefwa.com/",
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "land-book",
@@ -4266,22 +4234,6 @@
     "addedOrder": 266,
     "featured": false,
     "url": "https://land-book.com",
-    "lastChecked": "2026-09-25"
-  },
-  {
-    "id": "heroui-native-2",
-    "name": "HeroUI Native",
-    "description": "HeroUI components for React Native, matching the web library.",
-    "category": "UI libraries",
-    "subcategory": "React Native",
-    "tags": [],
-    "pricing": "Free",
-    "creator": "heroui.com",
-    "formats": ["Web"],
-    "aliases": [],
-    "addedOrder": 267,
-    "featured": false,
-    "url": "https://heroui.com/en/docs/native",
     "lastChecked": "2026-09-25"
   },
   {
@@ -4301,22 +4253,6 @@
     "lastChecked": "2026-09-25"
   },
   {
-    "id": "originui",
-    "name": "Originui",
-    "description": "Copy-paste React components built with Tailwind CSS and shadcn/ui conventions.",
-    "category": "UI libraries",
-    "subcategory": "React",
-    "tags": ["Components"],
-    "pricing": "Free",
-    "creator": "originui.com",
-    "formats": ["Web"],
-    "aliases": [],
-    "addedOrder": 269,
-    "featured": false,
-    "url": "https://originui.com",
-    "lastChecked": "2026-09-25"
-  },
-  {
     "id": "wireframekits",
     "name": "Wireframe Kits",
     "description": "Wireframe kits for Figma.",
@@ -4330,22 +4266,6 @@
     "addedOrder": 270,
     "featured": false,
     "url": "https://wireframekits.com",
-    "lastChecked": "2026-09-25"
-  },
-  {
-    "id": "briefup",
-    "name": "Briefup",
-    "description": "Design brief generator",
-    "category": "Templates",
-    "subcategory": "Tools",
-    "tags": ["Brief", "Tools"],
-    "pricing": "Free",
-    "creator": "briefup.co",
-    "formats": ["Web"],
-    "aliases": [],
-    "addedOrder": 271,
-    "featured": false,
-    "url": "https://briefup.co",
     "lastChecked": "2026-09-25"
   },
   {
@@ -4432,8 +4352,8 @@
     "id": "screenshot-to-code",
     "name": "Screenshot to Code",
     "description": "Convert screenshots/designs to clean code",
-    "category": "Marketplace",
-    "subcategory": "AI skills",
+    "category": "Templates",
+    "subcategory": "Tools",
     "tags": ["Screenshot", "Code", "AI", "AI Tools"],
     "pricing": "Freemium",
     "creator": "Screenshot to Code",
@@ -4447,9 +4367,9 @@
   {
     "id": "uisfx",
     "name": "UI SFX",
-    "description": "78 semantic UI cues / 936 open-source interface sound effects",
-    "category": "Components",
-    "subcategory": "React",
+    "description": "Interface sound effects with live web synthesis and downloadable audio files.",
+    "category": "Marketplace",
+    "subcategory": "Design assets",
     "tags": ["SFX", "UI Sounds", "Open Source", "Sound"],
     "pricing": "Free",
     "creator": "UI SFX",
@@ -4458,7 +4378,7 @@
     "addedOrder": 278,
     "featured": false,
     "url": "https://uisfx.com",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "libraries-dev-orbs",
@@ -4671,7 +4591,7 @@
   {
     "id": "shadcn-io",
     "name": "shadcn.io",
-    "description": "shadcn ecosystem / UI libs directory",
+    "description": "React components and blocks for the shadcn/ui ecosystem, with documentation and installation guides.",
     "category": "UI libraries",
     "subcategory": "React",
     "tags": ["shadcn", "Components", "Directories"],
@@ -4735,9 +4655,9 @@
   {
     "id": "lightugc",
     "name": "LightUGC",
-    "description": "UGC / creator tooling site (from watchlist builder)",
-    "category": "Marketplace",
-    "subcategory": "Stock",
+    "description": "AI tool for creating, remixing and scheduling short-form marketing content.",
+    "category": "Templates",
+    "subcategory": "Tools",
     "tags": ["UGC", "Tools"],
     "pricing": "Freemium",
     "creator": "LightUGC",
@@ -4746,7 +4666,7 @@
     "addedOrder": 296,
     "featured": false,
     "url": "https://lightugc.com",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "circle-loaders",
@@ -4975,7 +4895,7 @@
   {
     "id": "sona-ui",
     "name": "Sona UI",
-    "description": "Sona UI component playground",
+    "description": "Animated React components with copyable source and shadcn registry installation.",
     "category": "Components",
     "subcategory": "React",
     "tags": ["UI", "React"],
@@ -4985,8 +4905,8 @@
     "aliases": [],
     "addedOrder": 311,
     "featured": false,
-    "url": "https://sona-ui.vercel.app/",
-    "lastChecked": "2026-09-25"
+    "url": "https://www.sonaui.com/",
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "drawably",
@@ -5023,18 +4943,18 @@
   {
     "id": "vessa",
     "name": "Vessa",
-    "description": "Design craft site from bookmarks list",
-    "category": "Inspiration",
-    "subcategory": "Galleries",
+    "description": "Create editable online brand guidelines with colours, typography and motion. The editor is free; publishing a brand requires payment.",
+    "category": "Templates",
+    "subcategory": "Tools",
     "tags": ["Design"],
-    "pricing": "Free",
+    "pricing": "Freemium",
     "creator": "Vessa",
     "formats": ["Web"],
     "aliases": [],
     "addedOrder": 314,
     "featured": false,
     "url": "https://www.vessa.design/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "morphicons",
@@ -5087,18 +5007,18 @@
   {
     "id": "shift-graphics",
     "name": "Shift Graphics",
-    "description": "Shift graphics / motion assets",
-    "category": "Backgrounds",
-    "subcategory": "Textures",
+    "description": "Free, open-source editor for designing variable fonts on macOS, Windows and Linux.",
+    "category": "Fonts",
+    "subcategory": "Tools",
     "tags": ["Graphics", "Motion"],
-    "pricing": "Freemium",
+    "pricing": "Free",
     "creator": "Shift Graphics",
-    "formats": ["Web"],
+    "formats": ["macOS", "Windows", "Linux"],
     "aliases": [],
     "addedOrder": 318,
     "featured": false,
     "url": "https://www.shift.graphics/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "appicons-store",
@@ -5119,18 +5039,18 @@
   {
     "id": "cuelume",
     "name": "Cuelume",
-    "description": "Cuelume UI components (also referenced from RN port)",
-    "category": "Components",
-    "subcategory": "React",
+    "description": "Synthesised interaction sounds for web interfaces, with a JavaScript API.",
+    "category": "Templates",
+    "subcategory": "Tools",
     "tags": ["UI", "Components"],
     "pricing": "Free",
     "creator": "Cuelume",
-    "formats": ["Web"],
+    "formats": ["JavaScript", "Audio"],
     "aliases": [],
     "addedOrder": 320,
     "featured": false,
     "url": "https://cuelume.dev/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "threeui",
@@ -5263,9 +5183,9 @@
   {
     "id": "animos",
     "name": "Animos",
-    "description": "Motion templates for design showcases",
+    "description": "Browser-based motion templates for presenting design work.",
     "category": "Templates",
-    "subcategory": "Framer",
+    "subcategory": "Tools",
     "tags": ["Motion", "Templates", "Showcase"],
     "pricing": "Freemium",
     "creator": "animos.app",
@@ -5274,7 +5194,7 @@
     "addedOrder": 329,
     "featured": false,
     "url": "https://animos.app/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "shots",
@@ -5296,8 +5216,8 @@
     "id": "diffui",
     "name": "DiffUI",
     "description": "Prompt-to-design AI without the slop",
-    "category": "Marketplace",
-    "subcategory": "AI skills",
+    "category": "Templates",
+    "subcategory": "Tools",
     "tags": ["AI", "Prompt-to-design", "Code", "AI Design"],
     "pricing": "Freemium",
     "creator": "DiffUI",
@@ -5359,9 +5279,9 @@
   {
     "id": "preview-kit",
     "name": "Preview Kit",
-    "description": "Animated presentation / preview kit",
+    "description": "Turn a website into an animated presentation video.",
     "category": "Templates",
-    "subcategory": "Coded",
+    "subcategory": "Tools",
     "tags": ["Presentations", "Animated", "Preview"],
     "pricing": "Freemium",
     "creator": "usepreviewkit.com",
@@ -5418,22 +5338,6 @@
     "addedOrder": 338,
     "featured": false,
     "url": "https://skills.sh/emilkowalski/skills/emil-design-eng",
-    "lastChecked": "2026-09-25"
-  },
-  {
-    "id": "lucide-icons",
-    "name": "Lucide Icons",
-    "description": "Open-source Lucide icon set",
-    "category": "Icons",
-    "subcategory": "Vector",
-    "tags": ["Icons", "SVG"],
-    "pricing": "Free",
-    "creator": "Lucide",
-    "formats": ["SVG"],
-    "aliases": [],
-    "addedOrder": 339,
-    "featured": false,
-    "url": "https://lucide.dev/icons",
     "lastChecked": "2026-09-25"
   },
   {
@@ -5578,22 +5482,6 @@
     "addedOrder": 348,
     "featured": false,
     "url": "https://www.gems.design/",
-    "lastChecked": "2026-09-25"
-  },
-  {
-    "id": "sonaui-com",
-    "name": "Sona UI (sonaui.com)",
-    "description": "Animated accessible React components (new domain)",
-    "category": "Components",
-    "subcategory": "React",
-    "tags": ["React", "Motion", "Accessible"],
-    "pricing": "Freemium",
-    "creator": "Sona UI",
-    "formats": ["React"],
-    "aliases": [],
-    "addedOrder": 349,
-    "featured": false,
-    "url": "https://www.sonaui.com/",
     "lastChecked": "2026-09-25"
   },
   {
@@ -5919,9 +5807,9 @@
   {
     "id": "apple-design-resources",
     "name": "Apple Design Resources",
-    "description": "Official Apple design templates, icon production templates, iOS 27 kits",
-    "category": "Templates",
-    "subcategory": "Coded",
+    "description": "Official Apple UI kits, design templates and production resources for Figma and Sketch.",
+    "category": "Marketplace",
+    "subcategory": "UI kits",
     "tags": ["Apple", "iOS", "Figma", "Sketch", "UI kits", "iOS UI kits"],
     "pricing": "Free",
     "creator": "Apple",
@@ -5930,7 +5818,7 @@
     "addedOrder": 370,
     "featured": false,
     "url": "https://developer.apple.com/design/resources/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "scenerecap",
@@ -5946,22 +5834,6 @@
     "addedOrder": 371,
     "featured": false,
     "url": "https://scenerecap.com/explained",
-    "lastChecked": "2026-09-25"
-  },
-  {
-    "id": "screely",
-    "name": "Screely",
-    "description": "Beautiful browser-frame screenshot mockups",
-    "category": "Mockups",
-    "subcategory": "Tools",
-    "tags": ["Screenshots", "Mockups", "Browser frame", "Screenshot frames"],
-    "pricing": "Free",
-    "creator": "Screely",
-    "formats": ["Web"],
-    "aliases": [],
-    "addedOrder": 372,
-    "featured": false,
-    "url": "https://screely.com",
     "lastChecked": "2026-09-25"
   },
   {
@@ -6160,8 +6032,8 @@
     "id": "shadcn-lint",
     "name": "shadcn/lint",
     "description": "Agent-first linter for Tailwind design systems, verify component/theme rules",
-    "category": "Components",
-    "subcategory": "React",
+    "category": "Templates",
+    "subcategory": "Tools",
     "tags": ["shadcn", "Tailwind", "Lint", "Agents", "Design system", "Tooling"],
     "pricing": "Free",
     "creator": "shadcn-ui",
@@ -6256,9 +6128,9 @@
     "id": "shoogle",
     "name": "Shoogle",
     "description": "Search engine for shadcn UI blocks, components and templates across registries",
-    "category": "Marketplace",
-    "subcategory": "UI kits",
-    "tags": ["shadcn", "Search", "Components", "Blocks", "Templates"],
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": ["shadcn", "Search", "Components", "Blocks", "Templates", "UI kits"],
     "pricing": "Free",
     "creator": "alibey_10",
     "formats": ["Web"],
@@ -6303,18 +6175,18 @@
   {
     "id": "openmotion",
     "name": "OpenMotion",
-    "description": "Build launch videos from a prompt, editable motion scenes with canvas + timeline",
+    "description": "Create and edit motion videos from prompts using a canvas and timeline. The app is currently free and works with a Claude Code or Codex subscription.",
     "category": "Templates",
-    "subcategory": "Framer",
+    "subcategory": "Tools",
     "tags": ["Motion", "Video", "Prompts", "AI", "Canvas"],
-    "pricing": "Freemium",
+    "pricing": "Free",
     "creator": "openmotion.design",
-    "formats": ["Web"],
+    "formats": ["macOS", "Windows", "Video", "WebM", "HTML"],
     "aliases": [],
     "addedOrder": 394,
     "featured": false,
     "url": "https://openmotion.design",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "text-effects-colorion",
@@ -6383,9 +6255,9 @@
   {
     "id": "closeit-fast",
     "name": "closeit.fast",
-    "description": "E-sign docs tool from Vullnet list (edge of UIXO scope, needs_review)",
-    "category": "Marketplace",
-    "subcategory": "Design assets",
+    "description": "Send documents for electronic signatures and track their signing status.",
+    "category": "Templates",
+    "subcategory": "Tools",
     "tags": ["E-sign", "Documents", "PDF", "Tool", "Tools"],
     "pricing": "Freemium",
     "creator": "closeit.fast",
@@ -6394,7 +6266,7 @@
     "addedOrder": 399,
     "featured": false,
     "url": "https://closeit.fast",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "alignui",
@@ -6733,22 +6605,6 @@
     "lastChecked": "2026-09-25"
   },
   {
-    "id": "nextui",
-    "name": "NextUI (legacy archive)",
-    "description": "Predecessor brand of HeroUI; still referenced",
-    "category": "UI libraries",
-    "subcategory": "React",
-    "tags": ["Tailwind"],
-    "pricing": "Free",
-    "creator": "nextui-org",
-    "formats": ["React"],
-    "aliases": [],
-    "addedOrder": 421,
-    "featured": false,
-    "url": "https://nextui.org",
-    "lastChecked": "2026-09-25"
-  },
-  {
     "id": "orbit",
     "name": "Orbit",
     "description": "Kiwi.com Orbit React design system",
@@ -6783,7 +6639,7 @@
   {
     "id": "pivotal-ui",
     "name": "Pivotal UI",
-    "description": "Pivotal design system React",
+    "description": "Pivotal UI documentation for its React components, styles and design guidelines.",
     "category": "UI libraries",
     "subcategory": "React",
     "tags": [],
@@ -6793,8 +6649,8 @@
     "aliases": [],
     "addedOrder": 424,
     "featured": false,
-    "url": "https://styleguide.pivotal.io",
-    "lastChecked": "2026-09-25"
+    "url": "https://pivotal-cf.github.io/pivotal-ui/",
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "primer-react",
@@ -7039,18 +6895,18 @@
   {
     "id": "shards-ui",
     "name": "Shards UI",
-    "description": "Modern React design system (classic Shards)",
+    "description": "Free Bootstrap 4 UI kit with CSS components and layout examples.",
     "category": "UI libraries",
-    "subcategory": "React",
-    "tags": ["Bootstrap"],
+    "subcategory": "CSS",
+    "tags": ["Bootstrap", "React"],
     "pricing": "Free",
     "creator": "designrevision",
-    "formats": ["React"],
+    "formats": ["CSS", "HTML"],
     "aliases": [],
     "addedOrder": 440,
     "featured": false,
     "url": "https://designrevision.com/downloads/shards",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "shineout",
@@ -7070,8 +6926,8 @@
   },
   {
     "id": "polaris",
-    "name": "Shopify Polaris",
-    "description": "Shopify admin React design system",
+    "name": "Shopify Polaris React (legacy)",
+    "description": "Archived React implementation of Shopify Polaris, retained as a legacy reference.",
     "category": "UI libraries",
     "subcategory": "React",
     "tags": [],
@@ -7081,13 +6937,13 @@
     "aliases": [],
     "addedOrder": 442,
     "featured": false,
-    "url": "https://polaris.shopify.com",
-    "lastChecked": "2026-09-25"
+    "url": "https://github.com/Shopify/polaris-react-archive",
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "supabase-ui",
     "name": "Supabase UI (legacy)",
-    "description": "Legacy Supabase React UI (archived reference)",
+    "description": "Archived Supabase React UI library, retained as a legacy reference.",
     "category": "UI libraries",
     "subcategory": "React",
     "tags": [],
@@ -7097,8 +6953,8 @@
     "aliases": [],
     "addedOrder": 443,
     "featured": false,
-    "url": "https://ui.supabase.com",
-    "lastChecked": "2026-09-25"
+    "url": "https://github.com/supabase/ui",
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "tabler-react",
@@ -7343,7 +7199,7 @@
   {
     "id": "reach-ui",
     "name": "Reach UI",
-    "description": "Accessible React component foundation (archived legacy)",
+    "description": "Accessible React component primitives for building apps and design systems.",
     "category": "UI libraries",
     "subcategory": "React",
     "tags": ["Primitives"],
@@ -7353,8 +7209,8 @@
     "aliases": [],
     "addedOrder": 459,
     "featured": false,
-    "url": "https://reach.tech",
-    "lastChecked": "2026-09-25"
+    "url": "https://github.com/reach/reach-ui",
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "react-use-gesture",
@@ -7456,9 +7312,9 @@
     "id": "awesome-shadcn-ui",
     "name": "awesome-shadcn-ui",
     "description": "Curated index of shadcn registries and resources",
-    "category": "Components",
-    "subcategory": "React",
-    "tags": ["shadcn"],
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": ["shadcn", "React"],
     "pricing": "Free",
     "creator": "birobirobiro",
     "formats": ["React"],
@@ -7488,9 +7344,9 @@
     "id": "registry-directory",
     "name": "registry.directory",
     "description": "Explorer indexing ~79 registries / 27k components",
-    "category": "Components",
-    "subcategory": "React",
-    "tags": ["shadcn"],
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": ["shadcn", "React"],
     "pricing": "Free",
     "creator": "rbadillap",
     "formats": ["React"],
@@ -7504,9 +7360,9 @@
     "id": "ui-registries",
     "name": "UI Registries",
     "description": "Daily-updated directory of 500+ GitHub shadcn registries",
-    "category": "Components",
-    "subcategory": "React",
-    "tags": ["shadcn"],
+    "category": "Inspiration",
+    "subcategory": "Directories",
+    "tags": ["shadcn", "React"],
     "pricing": "Free",
     "creator": "ethan-krich",
     "formats": ["React"],
@@ -7530,22 +7386,6 @@
     "addedOrder": 470,
     "featured": false,
     "url": "https://auto-animate.formkit.com",
-    "lastChecked": "2026-09-25"
-  },
-  {
-    "id": "farm-ui",
-    "name": "Farm UI",
-    "description": "Animation-rich Radix/shadcn component blocks",
-    "category": "Components",
-    "subcategory": "Animation",
-    "tags": ["Radix", "shadcn", "Motion", "Animation"],
-    "pricing": "Freemium",
-    "creator": "Kinfe123",
-    "formats": ["React"],
-    "aliases": [],
-    "addedOrder": 471,
-    "featured": false,
-    "url": "https://farmui.com",
     "lastChecked": "2026-09-25"
   },
   {
@@ -7805,22 +7645,6 @@
     "lastChecked": "2026-09-25"
   },
   {
-    "id": "three-ui",
-    "name": "Three UI",
-    "description": "3D React UI components",
-    "category": "Components",
-    "subcategory": "React",
-    "tags": ["Three.js"],
-    "pricing": "Free",
-    "creator": "threeui",
-    "formats": ["React"],
-    "aliases": [],
-    "addedOrder": 488,
-    "featured": false,
-    "url": "https://threeui.com",
-    "lastChecked": "2026-09-25"
-  },
-  {
     "id": "victory",
     "name": "Victory",
     "description": "Composable React data viz",
@@ -7983,7 +7807,7 @@
   {
     "id": "alpha-lyrae",
     "name": "Alpha Lyrae",
-    "description": "Free sans-serif typeface listed in Noah's premium free fonts pack",
+    "description": "Sans-serif typeface with a free download listed on Best Free Fonts.",
     "category": "Fonts",
     "subcategory": "Sans serif",
     "tags": ["Fonts", "free", "sans", "Sans"],
@@ -8095,9 +7919,9 @@
   {
     "id": "symbl",
     "name": "Symbl",
-    "description": "Upload a logo symbol and preview it at every scale from favicon to billboard",
-    "category": "Icons",
-    "subcategory": "Packs",
+    "description": "Preview a logo at different sizes and in branding contexts.",
+    "category": "Mockups",
+    "subcategory": "Branding",
     "tags": ["Icons", "logo", "favicon", "scale-test", "Logo tools"],
     "pricing": "Free",
     "creator": "Symbl",
@@ -8106,7 +7930,7 @@
     "addedOrder": 506,
     "featured": false,
     "url": "https://symbl.space",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "svgl",
@@ -8241,7 +8065,7 @@
     "name": "The League of Moveable Type",
     "description": "Original open-source font foundry / library",
     "category": "Fonts",
-    "subcategory": "Sans serif",
+    "subcategory": "Tools",
     "tags": ["Fonts", "open-source", "foundry", "Open-source foundry"],
     "pricing": "Free",
     "creator": "The League of Moveable Type",
@@ -8287,18 +8111,18 @@
   {
     "id": "tunera",
     "name": "Tunera",
-    "description": "Transnational type foundry for original typefaces",
+    "description": "Independent type foundry offering fonts under the SIL Open Font License.",
     "category": "Fonts",
-    "subcategory": "Display",
+    "subcategory": "Tools",
     "tags": ["Fonts", "foundry", "typefaces", "Foundry"],
-    "pricing": "Freemium",
+    "pricing": "Free",
     "creator": "Tunera",
     "formats": ["Web"],
     "aliases": [],
     "addedOrder": 518,
     "featured": false,
     "url": "https://www.tunera.xyz/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "use-modify",
@@ -8400,8 +8224,8 @@
     "id": "react-cosmos",
     "name": "React Cosmos",
     "description": "Isolated sandbox to develop and preview UI components",
-    "category": "Components",
-    "subcategory": "React",
+    "category": "Templates",
+    "subcategory": "Tools",
     "tags": ["React", "sandbox", "components", "Next.js", "Devtools"],
     "pricing": "Free",
     "creator": "React Cosmos",
@@ -8445,25 +8269,9 @@
     "lastChecked": "2026-09-25"
   },
   {
-    "id": "design-vault",
-    "name": "Design Vault",
-    "description": "Product UI inspiration vault from Tegadesigns bookmark list",
-    "category": "Inspiration",
-    "subcategory": "UX",
-    "tags": ["inspiration", "product", "gallery", "Product UI"],
-    "pricing": "Free",
-    "creator": "Design Vault",
-    "formats": ["Web"],
-    "aliases": [],
-    "addedOrder": 528,
-    "featured": false,
-    "url": "https://designvault.io",
-    "lastChecked": "2026-09-25"
-  },
-  {
     "id": "animated-icons-co",
     "name": "Animated Icons",
-    "description": "Animated icon pack site from Tegadesigns design bookmarks list",
+    "description": "Animated icons for websites and apps, with free and paid collections.",
     "category": "Icons",
     "subcategory": "Animated",
     "tags": ["icons", "animated", "lottie"],
@@ -8474,7 +8282,7 @@
     "addedOrder": 529,
     "featured": false,
     "url": "https://animatedicons.co",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "animated-buttons-colorion",
@@ -8527,7 +8335,7 @@
   {
     "id": "color-review",
     "name": "Color.review",
-    "description": "Color review tool circulating in design-engineer bookmark lists",
+    "description": "Check foreground and background colour contrast for accessible text and interface design.",
     "category": "Inspiration",
     "subcategory": "Tools",
     "tags": ["color", "palette", "review", "design", "Color tools"],
@@ -8538,7 +8346,7 @@
     "addedOrder": 533,
     "featured": false,
     "url": "https://color.review",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "easing-gradients",
@@ -8607,7 +8415,7 @@
   {
     "id": "craftwork",
     "name": "Craftwork",
-    "description": "Design resources marketplace (kits/templates) from Tegadesigns bookmarks",
+    "description": "Marketplace for UI kits, templates, illustrations and other design resources.",
     "category": "Marketplace",
     "subcategory": "Design assets",
     "tags": ["marketplace", "ui kits", "templates", "resources", "Design resources"],
@@ -8856,8 +8664,8 @@
     "id": "tweakcn",
     "name": "tweakcn",
     "description": "Visual theme editor/generator for shadcn/ui + Tailwind",
-    "category": "Marketplace",
-    "subcategory": "UI kits",
+    "category": "Templates",
+    "subcategory": "Colour tools",
     "tags": ["shadcn", "tailwind", "theme", "editor", "Theme editors"],
     "pricing": "Free",
     "creator": "tweakcn",
@@ -8951,25 +8759,25 @@
   {
     "id": "gsap",
     "name": "GSAP",
-    "description": "Professional JavaScript animation library (design-engineer stack)",
+    "description": "JavaScript animation library with timelines, scroll interactions and SVG effects, including free plugins.",
     "category": "Components",
     "subcategory": "Animation",
     "tags": ["animation", "javascript", "motion", "gsap"],
-    "pricing": "Freemium",
+    "pricing": "Free",
     "creator": "GSAP / Webflow",
     "formats": ["JavaScript"],
     "aliases": [],
     "addedOrder": 559,
     "featured": false,
     "url": "https://gsap.com",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-10-07"
   },
   {
     "id": "storybook",
     "name": "Storybook",
     "description": "Frontend workshop for building UI components in isolation",
-    "category": "UI libraries",
-    "subcategory": "React",
+    "category": "Templates",
+    "subcategory": "Tools",
     "tags": ["storybook", "components", "docs", "testing", "Component workshops"],
     "pricing": "Free",
     "creator": "Storybook",

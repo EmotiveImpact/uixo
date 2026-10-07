@@ -1,0 +1,154 @@
+id,scout_category,scout_subcategory,pr_category,pr_subcategory,audited_category,audited_subcategory,original_label_retained,decision
+aicss,Components,Agent UI,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+ui-halaska,Components,AI Products,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+liquid-glass-samasante,Components,Effects,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+screenshot-to-code,Marketplace,AI Tools,Marketplace,AI skills,Templates,Tools,True,"Screenshot-to-code app, not an installable agent skill."
+uisfx,Components,Sound,Components,React,Marketplace,Design assets,True,"Reusable audio assets, not React components."
+libraries-dev-orbs,Components,Loaders,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+vibeui,Templates,Prompts,Templates,AI prompts,Templates,AI prompts,True,Retained: reasonable fit within existing taxonomy.
+designmd-store,Marketplace,Design Systems,Marketplace,UI kits,Marketplace,UI kits,True,Retained: reasonable fit within existing taxonomy.
+transitions-dev,Components,Motion,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+astryx,UI libraries,Design Systems,UI libraries,React,UI libraries,React,True,Retained: reasonable fit within existing taxonomy.
+originkit,Components,Interactive,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+beautiful-ui,Components,AI Products,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+metalforge,Components,Shaders,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+oneworks-avatars,Illustrations,Avatars,Illustrations,Characters,Illustrations,Characters,True,Retained: reasonable fit within existing taxonomy.
+spectrum-footers,Components,Blocks,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+spectrum-charts,Components,Blocks,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+shadcn-io,UI libraries,Directories,UI libraries,React,UI libraries,React,True,"Current destination is a React component library, not just a directory."
+lightugc,Marketplace,UGC,Marketplace,Stock,Templates,Tools,True,"AI content creation tool, not stock assets; remove scout provenance from copy."
+circle-loaders,Components,Loaders,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+openui,UI libraries,Generative UI,UI libraries,AI tools,UI libraries,AI tools,True,Retained: reasonable fit within existing taxonomy.
+interfaces-dev,Inspiration,Magazine,Inspiration,Case studies,Inspiration,Case studies,True,Retained: reasonable fit within existing taxonomy.
+nebula-sans,Fonts,Typefaces,Fonts,Sans serif,Fonts,Sans serif,True,Retained: reasonable fit within existing taxonomy.
+product-now,Inspiration,Products,Inspiration,Galleries,Inspiration,Galleries,True,Retained: reasonable fit within existing taxonomy.
+rune-icons,Icons,Sets,Icons,Packs,Icons,Packs,True,Retained: reasonable fit within existing taxonomy.
+great-ui,UI libraries,Components,UI libraries,React,UI libraries,React,True,Retained: reasonable fit within existing taxonomy.
+vertically-works,Inspiration,Layouts,Inspiration,Sections,Inspiration,Sections,True,Retained: reasonable fit within existing taxonomy.
+drawably,Illustrations,Drawing,Illustrations,Hand-drawn,Illustrations,Hand-drawn,True,Retained: reasonable fit within existing taxonomy.
+blocks-so,Components,Blocks,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+vessa,Inspiration,Design,Inspiration,Galleries,Templates,Tools,True,"Brand-guideline authoring tool, not inspiration gallery; publishing is paid."
+rubik-sachi,Components,Playground,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+ascii-magic,Illustrations,ASCII,Illustrations,Customisable,Illustrations,Customisable,True,Retained: reasonable fit within existing taxonomy.
+shift-graphics,Backgrounds,Graphics,Backgrounds,Textures,Fonts,Tools,True,"Official site is a free font editor, not textures."
+appicons-store,Icons,App Icons,Icons,Packs,Icons,Packs,True,Retained: reasonable fit within existing taxonomy.
+cuelume,Components,UI,Components,React,Templates,Tools,True,"Web interaction-sound library, not visual UI components."
+threeui,Components,3D,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+light-stroke-rail,Components,Effects,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+bloub,Inspiration,Motion,Inspiration,Galleries,Inspiration,Galleries,True,Retained: reasonable fit within existing taxonomy.
+holosticker,Mockups,Stickers,Mockups,Branding,Mockups,Branding,True,Retained: reasonable fit within existing taxonomy.
+mockit,Mockups,3D Devices,Mockups,Devices,Mockups,Devices,True,Retained: reasonable fit within existing taxonomy.
+animos,Templates,Motion,Templates,Framer,Templates,Tools,True,"Browser motion-template tool, not Framer templates."
+shots,Mockups,Screenshots,Mockups,Tools,Mockups,Tools,True,Retained: reasonable fit within existing taxonomy.
+diffui,Marketplace,AI Design,Marketplace,AI skills,Templates,Tools,True,"Prompt-to-design app, not an installable agent skill."
+modulify-logo-maker,Marketplace,Logos,Marketplace,Design assets,Marketplace,Design assets,True,Retained: reasonable fit within existing taxonomy.
+logo-to-use,Inspiration,Logos,Inspiration,Brand,Inspiration,Brand,True,Retained: reasonable fit within existing taxonomy.
+preview-kit,Templates,Presentations,Templates,Coded,Templates,Tools,True,"Website-to-presentation video tool, not a coded template."
+iconly,Icons,App Icons,Icons,Packs,Icons,Packs,True,Retained: reasonable fit within existing taxonomy.
+skills-better-ui,Components,Agent Skills,Components,AI prompts,Components,AI prompts,True,Retained: reasonable fit within existing taxonomy.
+skills-emil-design-eng,Components,Agent Skills,Components,AI prompts,Components,AI prompts,True,Retained: reasonable fit within existing taxonomy.
+lucide-icons,Icons,SVG,Icons,Vector,,,,Same icon library as existing lucide.
+iconsax,Icons,SVG,Icons,Vector,Icons,Vector,True,Retained: reasonable fit within existing taxonomy.
+isocons,Icons,Isometric,Icons,3D,Icons,3D,True,Retained: reasonable fit within existing taxonomy.
+nucleo,Icons,SVG,Icons,Vector,Icons,Vector,True,Retained: reasonable fit within existing taxonomy.
+calligraph,Components,Typography,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+elyx,Marketplace,Design Tools,Marketplace,Design assets,Marketplace,Design assets,True,Retained: reasonable fit within existing taxonomy.
+sceneai,Inspiration,UI Prompts,Inspiration,Tools,Inspiration,Tools,True,Retained: reasonable fit within existing taxonomy.
+grabui-flowcontent,Templates,SaaS,Templates,Landing pages,Templates,Landing pages,True,Retained: reasonable fit within existing taxonomy.
+colors-visualizer,Backgrounds,Color tools,Backgrounds,Colour,Backgrounds,Colour,True,Retained: reasonable fit within existing taxonomy.
+brandbird,Mockups,Screenshot mockups,Mockups,Tools,Mockups,Tools,True,Retained: reasonable fit within existing taxonomy.
+shortcuts-design,Inspiration,Design tooling,Inspiration,Tools,Inspiration,Tools,True,Retained: reasonable fit within existing taxonomy.
+modulify,Templates,AI website builder,Templates,Tools,Templates,Tools,True,Retained: reasonable fit within existing taxonomy.
+ikonik,Icons,Icon library,Icons,Packs,Icons,Packs,True,Retained: reasonable fit within existing taxonomy.
+wonderlist,Templates,Figma websites,Templates,Landing pages,Templates,Landing pages,True,Retained: reasonable fit within existing taxonomy.
+motionin,Components,Interactive sections,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+vibeindex,Marketplace,Dev tools directory,Marketplace,Directories,Marketplace,Directories,True,Retained: reasonable fit within existing taxonomy.
+iconcreator,Icons,Icon generator,Icons,Packs,Icons,Packs,True,Retained: reasonable fit within existing taxonomy.
+watermelon-ui,UI libraries,shadcn,UI libraries,React,UI libraries,React,True,Retained: reasonable fit within existing taxonomy.
+uidesign-tips,Inspiration,Tips,Inspiration,Guidelines,Inspiration,Guidelines,True,Retained: reasonable fit within existing taxonomy.
+liquid-orb,Backgrounds,Orbs,Backgrounds,Gradients,Backgrounds,Gradients,True,Retained: reasonable fit within existing taxonomy.
+ai-elements,UI libraries,AI chat,UI libraries,AI tools,UI libraries,AI tools,True,Retained: reasonable fit within existing taxonomy.
+cult-ui,UI libraries,Creative interactions,UI libraries,Animation,UI libraries,Animation,True,Retained: reasonable fit within existing taxonomy.
+tremor,UI libraries,Dashboards,UI libraries,React,UI libraries,React,True,Retained: reasonable fit within existing taxonomy.
+base-ui,UI libraries,Unstyled primitives,UI libraries,React,UI libraries,React,True,Retained: reasonable fit within existing taxonomy.
+tailwind-plus,Templates,UI blocks,Templates,Coded,Templates,Coded,True,Retained: reasonable fit within existing taxonomy.
+apple-design-resources,Templates,iOS UI kits,Templates,Coded,Marketplace,UI kits,True,"Figma and Sketch design resources, not coded templates."
+scenerecap,Inspiration,UI bugs gallery,Inspiration,UX,Inspiration,UX,True,Retained: reasonable fit within existing taxonomy.
+screely,Mockups,Screenshot frames,Mockups,Tools,,,,"Current destination and capture show gambling content, not screenshot mockups."
+carbon-now,Mockups,Code screenshots,Mockups,Tools,Mockups,Tools,True,Retained: reasonable fit within existing taxonomy.
+spectrum-empty-states,Components,Blocks,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+css-toggles-colorion,Components,Toggles,Components,Buttons,Components,Buttons,True,Retained: reasonable fit within existing taxonomy.
+ant-design,UI libraries,Enterprise,UI libraries,React,UI libraries,React,True,Retained: reasonable fit within existing taxonomy.
+daisyui,UI libraries,Tailwind,UI libraries,CSS,UI libraries,CSS,True,Retained: reasonable fit within existing taxonomy.
+react-aria,UI libraries,Accessibility,UI libraries,React,UI libraries,React,True,Retained: reasonable fit within existing taxonomy.
+reshaped,UI libraries,Design system,UI libraries,React,UI libraries,React,True,Retained: reasonable fit within existing taxonomy.
+venstyler,UI libraries,3D components,UI libraries,Animation,UI libraries,Animation,True,Retained: reasonable fit within existing taxonomy.
+scritto,Components,Text animation,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+dicebear,Illustrations,Avatars,Illustrations,Characters,Illustrations,Characters,True,Retained: reasonable fit within existing taxonomy.
+fluid-functionalism,Components,UI components,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+shadcn-lint,Components,Tooling,Components,React,Templates,Tools,True,"Linting tool, not a React component."
+canvas-ui,UI libraries,Components,UI libraries,React,UI libraries,React,True,Retained: reasonable fit within existing taxonomy.
+spell-ui,Components,UI components,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+openmotion,Templates,Motion,Templates,Framer,Templates,Tools,True,"Motion-video authoring app, not a Framer template; current plan is free."
+text-effects-colorion,Components,Text,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+closeit-fast,Marketplace,Tools,Marketplace,Design assets,Templates,Tools,True,Electronic-signature app is not a design asset; remove research notes.
+pryzm,Backgrounds,Generator,Backgrounds,Gradients,Backgrounds,Gradients,True,Retained: reasonable fit within existing taxonomy.
+valessa,Mockups,3D,Mockups,Devices,Mockups,Devices,True,Retained: reasonable fit within existing taxonomy.
+book-of-shapes,Backgrounds,Patterns,Backgrounds,Textures,Backgrounds,Textures,True,Retained: reasonable fit within existing taxonomy.
+microcharts,Components,Charts,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+alpha-lyrae,Fonts,Sans,Fonts,Sans serif,Fonts,Sans serif,True,Remove scout-list provenance from public copy.
+pangram-sans-rounded,Fonts,Sans,Fonts,Sans serif,Fonts,Sans serif,True,Retained: reasonable fit within existing taxonomy.
+mango-grotesque,Fonts,Variable,Fonts,Sans serif,Fonts,Sans serif,True,Retained: reasonable fit within existing taxonomy.
+thunder-typeface,Fonts,Condensed,Fonts,Display,Fonts,Display,True,Retained: reasonable fit within existing taxonomy.
+uncut-wtf,Fonts,Catalogue,Fonts,Tools,Fonts,Tools,True,Retained: reasonable fit within existing taxonomy.
+symbl,Icons,Logo tools,Icons,Packs,Mockups,Branding,True,"Logo preview utility, not an icon pack."
+svgl,Icons,Brand logos,Icons,Packs,Icons,Packs,True,Retained: reasonable fit within existing taxonomy.
+ditherland,Backgrounds,Effects,Backgrounds,Shaders,Backgrounds,Shaders,True,Retained: reasonable fit within existing taxonomy.
+vgpu,Components,WebGPU,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+jev-ui,Components,AI-native,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+on-design,Marketplace,Community,Marketplace,Directories,Marketplace,Directories,True,Retained: reasonable fit within existing taxonomy.
+inspomcp,Inspiration,AI agents,Inspiration,Galleries,Inspiration,Galleries,True,Retained: reasonable fit within existing taxonomy.
+goatedui,Inspiration,Gallery,Inspiration,Galleries,Inspiration,Galleries,True,Retained: reasonable fit within existing taxonomy.
+league-of-moveable-type,Fonts,Open-source foundry,Fonts,Sans serif,Fonts,Tools,True,"Foundry catalogue spans multiple type styles, not only sans serif."
+supafonts,Fonts,Catalogue,Fonts,Tools,Fonts,Tools,True,Retained: reasonable fit within existing taxonomy.
+freefaces-gallery,Fonts,Catalogue,Fonts,Tools,Fonts,Tools,True,Retained: reasonable fit within existing taxonomy.
+tunera,Fonts,Foundry,Fonts,Display,Fonts,Tools,True,Foundry catalogue spans multiple type styles and offers open fonts.
+use-modify,Fonts,Catalogue,Fonts,Tools,Fonts,Tools,True,Retained: reasonable fit within existing taxonomy.
+open-foundry,Fonts,Catalogue,Fonts,Tools,Fonts,Tools,True,Retained: reasonable fit within existing taxonomy.
+lio-icons,Icons,Product icons,Icons,Packs,Icons,Packs,True,Retained: reasonable fit within existing taxonomy.
+designeer,Inspiration,Directory,Inspiration,Directories,Inspiration,Directories,True,Retained: reasonable fit within existing taxonomy.
+spectrum-tables,Components,Blocks,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+ink-cli,Components,Terminal UI,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+react-cosmos,Components,Devtools,Components,React,Templates,Tools,True,"Component development sandbox, not a component."
+json-render,Components,Generative UI,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+taste-skill,Marketplace,Agent skill,Marketplace,AI skills,Marketplace,AI skills,True,Retained: reasonable fit within existing taxonomy.
+design-vault,Inspiration,Product UI,Inspiration,UX,,,,Redirects to existing screensdesign.
+animated-buttons-colorion,Components,CSS buttons,Components,Buttons,Components,Buttons,True,Retained: reasonable fit within existing taxonomy.
+morflax-studio,Mockups,3D mockups,Mockups,Devices,Mockups,Devices,True,Retained: reasonable fit within existing taxonomy.
+shadcn-space,Components,shadcn blocks,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+color-review,Inspiration,Color tools,Inspiration,Tools,Inspiration,Tools,True,Replace scout provenance with observed function.
+ui-ux-pro-max-skill,Marketplace,Agent skill,Marketplace,AI skills,Marketplace,AI skills,True,Retained: reasonable fit within existing taxonomy.
+sl-site-engine,Marketplace,Agent skill,Marketplace,AI skills,Marketplace,AI skills,True,Retained: reasonable fit within existing taxonomy.
+craftwork,Marketplace,Design resources,Marketplace,Design assets,Marketplace,Design assets,True,Remove bookmark-list provenance from public copy.
+uizze,Marketplace,AI design pack,Marketplace,AI skills,Marketplace,AI skills,True,Retained: reasonable fit within existing taxonomy.
+toggles-dev,Components,Theme toggles,Components,Buttons,Components,Buttons,True,Retained: reasonable fit within existing taxonomy.
+lightswind,Components,Animated React,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+spline,Marketplace,3D design tool,Marketplace,Design assets,Marketplace,Design assets,True,Retained: reasonable fit within existing taxonomy.
+grabui-eastalio,Templates,Real estate,Templates,Landing pages,Templates,Landing pages,True,Retained: reasonable fit within existing taxonomy.
+unikist,Marketplace,Design resources directory,Marketplace,Directories,Marketplace,Directories,True,Retained: reasonable fit within existing taxonomy.
+ultramock,Mockups,3D mockups,Mockups,Devices,Mockups,Devices,True,Retained: reasonable fit within existing taxonomy.
+tween-ui,Components,GSAP animated,Components,Animation,Components,Animation,True,Retained: reasonable fit within existing taxonomy.
+pinui,Components,Pinterest-to-React,Components,Reconstruction,Components,Reconstruction,True,Retained: reasonable fit within existing taxonomy.
+dowel-ui,Components,Source-first React,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+streamtag-ui,Components,Generative UI,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+softform,Components,Multi-framework,Components,React,Components,React,True,Retained: reasonable fit within existing taxonomy.
+next-shadcn-dashboard-starter,Templates,Admin dashboard,Templates,Coded,Templates,Coded,True,Retained: reasonable fit within existing taxonomy.
+tweakcn,Marketplace,Theme editors,Marketplace,UI kits,Templates,Colour tools,True,"Theme editor, not a downloadable UI kit."
+skills-sh,Marketplace,Agent skills,Marketplace,AI skills,Marketplace,AI skills,True,Retained: reasonable fit within existing taxonomy.
+unicorn-studio,Backgrounds,Interactive effects,Backgrounds,Shaders,Backgrounds,Shaders,True,Retained: reasonable fit within existing taxonomy.
+wannathis-motion-grid,Marketplace,Motion templates,Marketplace,Design assets,Marketplace,Design assets,True,Retained: reasonable fit within existing taxonomy.
+storybook,UI libraries,Component workshops,UI libraries,React,Templates,Tools,True,"Component workshop tool, not a React-only component library."
+are-na,Inspiration,Asset boards,Inspiration,Galleries,Inspiration,Galleries,True,Retained: reasonable fit within existing taxonomy.
+bleep,Inspiration,Asset boards,Inspiration,Galleries,Inspiration,Galleries,True,Retained: reasonable fit within existing taxonomy.
+quickpick,Marketplace,Design organizers,Marketplace,Design assets,Marketplace,Design assets,True,Retained: reasonable fit within existing taxonomy.
+bestfreefonts,Fonts,Directories,Fonts,Tools,Fonts,Tools,True,Retained: reasonable fit within existing taxonomy.
