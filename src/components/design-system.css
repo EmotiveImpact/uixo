@@ -1749,3 +1749,36 @@ kbd {
     grid-template-columns: 1fr;
   }
 }
+
+/* ------------------------------------------------- No outlines on tiles */
+
+:is(:root, :root.light) .uixo-shell .website-grid > article,
+:is(:root, :root.light) .uixo-shell .asset-library-card,
+:is(:root, :root.light) .discovery-product,
+:is(:root, :root.light) .discovery-collection,
+:is(:root, :root.light) .collection-card,
+:is(:root, :root.light) .promo-card,
+:is(:root, :root.light) .home-preview-pending,
+:is(:root, :root.light) .uixo-shell .website-grid > article:hover,
+:is(:root, :root.light) .uixo-shell .asset-library-card:hover,
+:is(:root, :root.light) .discovery-product:hover,
+:is(:root, :root.light) .discovery-collection:hover,
+:is(:root, :root.light) .collection-card:hover,
+:is(:root, :root.light) .promo-card:hover {
+  border: 0;
+  box-shadow: none;
+}
+
+.uixo-shell .website-grid .preview-link::after,
+.uixo-shell .asset-library-card .asset-library-preview::after,
+.discovery-product-image::after,
+.component-tile .asset-library-preview::after,
+.home-component .asset-library-preview::after,
+.collection-covers::after {
+  display: none;
+}
+
+:is(:root, :root.light) .actual-preview-label {
+  border: 0;
+  box-shadow: none;
+}
