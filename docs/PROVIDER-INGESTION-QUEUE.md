@@ -63,6 +63,30 @@ Unknown expected counts are deliberately not guessed from website marketing.
 14. **Tailark:** not yet audited. Expected unknown; implemented 0; published 0.
 15. **8bitcn/ui:** not yet audited. Expected unknown; implemented 0; published 0.
 
+## Broad wave, 7 October 2026
+
+Eight providers were added from each official `registry.json`, pinned to an immutable commit,
+with the MIT licence text retained in `data/registry/licences/`. All are flagged
+`previewsPending`, so cards show no preview until official demo captures exist. Only
+`registry:ui` and `registry:component` records are indexed; blocks and examples are not.
+
+| Provider | Repository @ commit | Records |
+| --- | --- | --- |
+| Kokonut UI | kokonut-labs/kokonutui @ `83eec6d` | 46 |
+| EvilCharts | legions-developer/evilcharts @ `ecbd6a5` | 27 |
+| 8bitcn/ui | TheOrcDev/8bitcn-ui @ `9aedd71` | 56 |
+| Cult UI | nolly-studio/cult-ui @ `67a66c6` | 137 (152 demo and 17 sourceless alias records excluded) |
+| Neobrutalism Components | ekmas/neobrutalism-components @ `3306a80` | 111 |
+| ElevenLabs UI | elevenlabs/ui @ `23c31bd` | 17 |
+| prompt-kit | ibelick/prompt-kit @ `5a94966` | 21 |
+| mapcn | AnmolSaini16/mapcn @ `d160bd7` | 1 |
+
+Not added: shadcn/studio (MIT with a Commons Clause restriction on redistribution and
+competing products). Dice UI, Fancy Components, Tailark, Jolly UI and shadcn-chat publish
+TypeScript or generated registries rather than a committed `registry.json`, so they need an
+adapter before ingestion. The EvilCharts install base `https://evilcharts.com/r/` is inferred
+from its `@evilcharts` namespace; the others are documented in each repository.
+
 ## Kibo UI audit
 
 **Identity.** Website: https://www.kibo-ui.com/. Official repository:

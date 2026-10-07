@@ -9,7 +9,9 @@ const expected = new Set();
 const captured = JSON.parse(await readFile(new URL('data/registry/captured.json', root), 'utf8'));
 for (const [name] of captured.components) expected.add(`shadcn/${name}`);
 
-for (const provider of PROVIDERS.filter((entry) => entry.adapter === 'github-json-registry')) {
+for (const provider of PROVIDERS.filter(
+  (entry) => entry.adapter === 'github-json-registry' && !entry.previewsPending,
+)) {
   const snapshot = JSON.parse(
     await readFile(new URL(`data/registry/snapshots/${provider.id}.json`, root), 'utf8'),
   );
