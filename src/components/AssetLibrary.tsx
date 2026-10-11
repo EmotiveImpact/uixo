@@ -16,7 +16,6 @@ import type {
   Catalogue,
   CatalogueInventory,
   ProviderRecord,
-  RegistryStatus,
 } from '../lib/asset-library';
 
 type Props = {
@@ -60,7 +59,6 @@ function paginationItems(currentPage: number, totalPages: number): Array<number 
 
 export function AssetLibrary({ query, navigate, density, discovery, assetSaves }: Props) {
   const [providers, setProviders] = useState<ProviderRecord[]>([]);
-  const [status, setStatus] = useState<RegistryStatus | null>(null);
   const [inventory, setInventory] = useState<CatalogueInventory | null>(null);
   const [result, setResult] = useState<Catalogue | null>(null);
   const [loading, setLoading] = useState(true);
@@ -69,17 +67,13 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
   const [notice, setNotice] = useState('');
   const [refineOpen, setRefineOpen] = useState(false);
   const { saved, save, accountBacked } = assetSaves;
-  const { q, kind, category, provider, framework, format, commercial, price, offset, view } = query;
+  const { q, kind, category, provider, framework, format, commercial, price, sort, offset, view } =
+    query;
   useEffect(() => {
     const abort = new AbortController();
     void registryRequest<{ items: ProviderRecord[] }>('providers', { signal: abort.signal })
       .then((value) => {
         if (Array.isArray(value.items)) setProviders(value.items);
-      })
-      .catch(() => {});
-    void registryRequest<RegistryStatus>('status', { signal: abort.signal })
-      .then((value) => {
-        if (value.stats && typeof value.readOnly === 'boolean') setStatus(value);
       })
       .catch(() => {});
     void registryRequest<unknown>('inventory', { signal: abort.signal })
@@ -107,6 +101,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
         format,
         commercial: String(commercial),
         price,
+        sort: sort || 'relevant',
         offset: String(offset),
         limit: String(ASSET_PAGE_SIZE),
       };
@@ -139,6 +134,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
     format,
     commercial,
     price,
+    sort,
     offset,
     view,
     saved,
@@ -165,6 +161,28 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
     );
     if (view === 'saved') navigate({ offset: 0 });
   }
+  const activeFilters = [
+    q && { key: 'q', label: `“${q}”` },
+    kind && {
+      key: 'kind',
+      label:
+        {
+          component: 'Components',
+          'icon-pack': 'Icon packs',
+          font: 'Fonts',
+          template: 'Templates',
+        }[kind] ?? kind,
+    },
+    category && {
+      key: 'category',
+      label: COMPONENT_CATEGORIES.find((entry) => entry.id === category)?.label ?? category,
+    },
+    provider && { key: 'provider', label: nameOf(provider) },
+    framework && { key: 'framework', label: framework },
+    format && { key: 'format', label: format.toUpperCase() },
+    price && { key: 'price', label: price === 'free' ? 'Free' : price === 'paid' ? 'Paid' : price },
+    commercial && { key: 'commercial', label: 'Commercial use' },
+  ].filter(Boolean) as { key: keyof AssetQuery; label: string }[];
   const filter = (key: keyof AssetQuery, value: string | boolean) =>
     navigate({ [key]: value, ...(key === 'kind' ? { category: '' } : {}), offset: 0, id: '' });
   const refinementCount = [kind, category, provider, framework, format, commercial].filter(
@@ -341,16 +359,44 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
               <button onClick={() => navigate({ view }, true)}>Reset filters</button>
             </div>
           )}
-          <div className="asset-library-result-count" role="status" aria-live="polite">
-            {loading
-              ? 'Searching the registry…'
-              : error
-                ? 'Registry unavailable, not an empty result'
-                : `${result?.total ?? 0} ${result?.total === 1 ? 'asset' : 'assets'} found`}
-            <span>
-              {status?.readOnly ? 'Preview catalogue' : 'Source-linked'} · {providers.length}{' '}
-              sources
-            </span>
+          <div className="asset-library-result-count">
+            <div className="result-summary">
+              <span role="status" aria-live="polite">
+                {loading
+                  ? 'Searching…'
+                  : error
+                    ? 'Catalogue unavailable'
+                    : `${(result?.total ?? 0).toLocaleString('en-GB')} ${
+                        result?.total === 1 ? 'result' : 'results'
+                      }`}
+              </span>
+              {activeFilters.map((chip) => (
+                <button
+                  key={chip.key}
+                  className="active-filter"
+                  onClick={() =>
+                    navigate({ [chip.key]: chip.key === 'commercial' ? false : '', offset: 0 })
+                  }
+                  aria-label={`Remove filter ${chip.label}`}
+                >
+                  {chip.label}
+                  <X size={12} />
+                </button>
+              ))}
+            </div>
+            <label className="result-sort">
+              <span>Sort</span>
+              <select
+                value={sort}
+                onChange={(e) =>
+                  navigate({ sort: e.target.value as AssetQuery['sort'], offset: 0 })
+                }
+              >
+                <option value="">{q ? 'Best match' : 'Recommended'}</option>
+                <option value="newest">Recently updated</option>
+                <option value="name">A to Z</option>
+              </select>
+            </label>
           </div>
           {error ? (
             <section className="asset-library-empty" role="alert">

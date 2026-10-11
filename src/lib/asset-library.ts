@@ -89,6 +89,7 @@ export type AssetQuery = {
   format: string;
   commercial: boolean;
   price: string;
+  sort: '' | 'newest' | 'name';
   offset: number;
   view:
     | 'assets'
@@ -116,6 +117,7 @@ export const EMPTY_ASSET_QUERY: AssetQuery = {
   format: '',
   commercial: false,
   price: '',
+  sort: '',
   offset: 0,
   view: 'assets',
   id: '',
@@ -142,6 +144,7 @@ export function readAssetQuery(search: string): AssetQuery {
     format: valid(p.get('format'), ['tsx', 'jsx', 'svg', 'css', 'woff2']),
     commercial: p.get('commercial') === 'true',
     price: valid(p.get('price'), ['free', 'paid', 'unknown']),
+    sort: valid(p.get('sort'), ['newest', 'name']) as AssetQuery['sort'],
     offset: Number.isSafeInteger(offset) && offset >= 0 && offset <= 100000 ? offset : 0,
     view: (valid(p.get('view'), [
       'assets',

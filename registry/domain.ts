@@ -99,6 +99,7 @@ export type Search = {
   offset: number;
   saved: string[];
   terms: string[];
+  sort: 'relevant' | 'newest' | 'name';
 };
 export class RegistryError extends Error {
   code: string;
@@ -245,6 +246,7 @@ export function parseSearch(input: unknown): Search {
     offset: integer(raw.offset, 0, 0, 100000),
     saved: raw.saved ? strings(raw.saved, 200).map(identifier) : [],
     terms,
+    sort: choice(raw.sort, ['relevant', 'newest', 'name'], 'relevant') as Search['sort'],
   };
 }
 export function validateAsset(input: unknown): Asset {

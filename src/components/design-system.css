@@ -2076,3 +2076,177 @@ kbd {
   position: relative;
   z-index: 3;
 }
+
+/* ------------------------------------------------- Result count, chips, sort */
+.uixo-shell .asset-library-result-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin: 18px 0 16px;
+  min-height: 32px;
+}
+
+.result-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.uixo-shell .result-summary > span {
+  font-family: var(--ds-font);
+  font-size: var(--ds-text-md);
+  font-weight: 600;
+  color: var(--foreground);
+  margin-right: 4px;
+}
+
+:is(:root, :root.light) .active-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 10px 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ds-thumb);
+  color: var(--foreground);
+  font-family: var(--ds-font);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .active-filter:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.result-sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.uixo-shell .result-sort span {
+  font-family: var(--ds-font);
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+
+:is(:root, :root.light) .result-sort select {
+  height: 32px;
+  padding: 0 28px 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background-color: var(--ds-thumb);
+  color: var(--foreground);
+  font-family: var(--ds-font);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ------------------------------------------- Homepage announcement and tiles */
+:is(:root, :root.light) .hero-announcement {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  margin: 0 0 22px;
+  padding: 5px 14px 5px 5px;
+  border-radius: 999px;
+  background: var(--ds-thumb);
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.hero-announcement > span:not(.hero-announcement-tag) {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hero-announcement-tag {
+  flex: none;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--foreground);
+  color: var(--background);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.hero-announcement svg {
+  flex: none;
+  transition: transform 0.15s ease;
+}
+
+.hero-announcement:hover svg {
+  transform: translateX(2px);
+}
+
+.home-categories {
+  margin-top: 72px;
+}
+
+.category-tiles {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+:is(:root, :root.light) .category-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: var(--ds-thumb);
+  color: var(--foreground);
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.category-tile strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.category-tile span {
+  font-size: 12.5px;
+  color: var(--muted-foreground);
+}
+
+:is(:root, :root.light) .category-tile:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.category-tile:hover span {
+  color: inherit;
+  opacity: 0.7;
+}
+
+@media (max-width: 1100px) {
+  .category-tiles {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .category-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .home-categories {
+    margin-top: 48px;
+  }
+}

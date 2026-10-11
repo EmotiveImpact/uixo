@@ -11,6 +11,8 @@ import { navigateInApp } from '../lib/navigation';
 import { newThreshold } from '../lib/freshness';
 import { useRegistryData } from '../hooks/useRegistryData';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
+import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
+import { inventoryResult } from '../lib/asset-library';
 import type { AssetRecord, Catalogue, ProviderRecord } from '../lib/asset-library';
 
 const NEW_FROM = newThreshold(resources);
@@ -161,6 +163,23 @@ export function LandingPage({
     limit: '1',
   });
   const { data: providerList } = useRegistryData<{ items: ProviderRecord[] }>('providers');
+  const { data: latest } = useRegistryData<Catalogue>('search', {
+    kind: 'component',
+    sort: 'newest',
+    limit: '1',
+  });
+  const { data: rawInventory } = useRegistryData<unknown>('inventory');
+  let categoryCounts: Record<string, number> = {};
+  try {
+    if (rawInventory)
+      categoryCounts = Object.fromEntries(
+        inventoryResult(rawInventory).categories.map((entry) => [entry.id, entry.count]),
+      );
+  } catch {
+    categoryCounts = {};
+  }
+  const categories = COMPONENT_CATEGORIES.filter((entry) => categoryCounts[entry.id]);
+  const newest = latest?.items[0];
   const links: CardLinks = {
     href: (id) => `${hrefs.assets}?id=${encodeURIComponent(id)}`,
     providerName: (id) => providerList?.items.find((p) => p.id === id)?.name ?? id,
@@ -198,6 +217,19 @@ export function LandingPage({
             ))}
           </div>
           <div className="ui8-hero-copy">
+            {newest && (
+              <a
+                className="hero-announcement"
+                href={links.href(newest.id)}
+                onClick={(e) => internal(e, () => navigateInApp(links.href(newest.id)))}
+              >
+                <span className="hero-announcement-tag">New</span>
+                <span>
+                  {newest.name} from {links.providerName(newest.providerId)}
+                </span>
+                <ArrowRight size={14} aria-hidden="true" />
+              </a>
+            )}
             <h1>
               {catalogue
                 ? `${catalogue.total.toLocaleString('en-GB')} live components`
@@ -296,6 +328,44 @@ export function LandingPage({
             <ArrowRight size={15} />
           </a>
         </section>
+        {categories.length > 0 && (
+          <section className="home-categories" aria-labelledby="categories-title">
+            <div className="discovery-section-heading">
+              <div>
+                <p className="discovery-kicker">Browse by category</p>
+                <h2 id="categories-title">Find the piece you are missing.</h2>
+              </div>
+              <a
+                className="discovery-viewall"
+                href={`${hrefs.assets}?kind=component&sort=newest`}
+                onClick={(e) =>
+                  internal(e, () => navigateInApp(`${hrefs.assets}?kind=component&sort=newest`))
+                }
+              >
+                Recently updated <ArrowRight size={14} />
+              </a>
+            </div>
+            <div className="category-tiles">
+              {categories.map((entry) => {
+                const href = `${hrefs.assets}?category=${entry.id}&kind=component`;
+                return (
+                  <a
+                    key={entry.id}
+                    className="category-tile"
+                    href={href}
+                    onClick={(e) => internal(e, () => navigateInApp(href))}
+                  >
+                    <strong>{entry.id === 'other' ? 'Everything else' : entry.label}</strong>
+                    <span>
+                      {categoryCounts[entry.id].toLocaleString('en-GB')}{' '}
+                      {categoryCounts[entry.id] === 1 ? 'component' : 'components'}
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        )}
         <section className="home-websites" aria-labelledby="websites-title">
           <div className="discovery-section-heading">
             <div>
