@@ -17,6 +17,8 @@ import './homepage.css';
 import { DiscoveryHeader } from './discovery/DiscoveryHeader';
 import { collections, resources } from '../data';
 import { navigateInApp } from '../lib/navigation';
+import { coverOrder } from '../lib/collection-covers';
+import { CATEGORY_HUES } from '../lib/stage-hue';
 import { useRegistryData } from '../hooks/useRegistryData';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
@@ -140,21 +142,6 @@ const GLYPHS: Record<string, string> = {
       )
       .join('') +
     '</g>',
-};
-
-const CATEGORY_HUES: Record<string, number> = {
-  buttons: 268,
-  forms: 200,
-  navigation: 226,
-  layout: 180,
-  overlays: 300,
-  'data-display': 156,
-  feedback: 140,
-  text: 34,
-  backgrounds: 322,
-  media: 14,
-  motion: 190,
-  other: 250,
 };
 
 const COLLECTION_HUES = [246, 24, 188, 322, 156, 268];
@@ -283,6 +270,18 @@ function ShelfSwitch({ shelf, onChange }: { shelf: Shelf; onChange: (shelf: Shel
   );
 }
 
+/** Each cover fans three of its sites, never leading with another cover's front shot. */
+const coverShots = coverOrder(
+  collections
+    .slice(0, 3)
+    .map((item) =>
+      item.resourceIds
+        .map((id) => resources.find((resource) => resource.id === id))
+        .filter((resource) => resource !== undefined),
+    ),
+  (resource) => resource.id,
+);
+
 export function LandingPage({
   authAvailable,
   signedIn,
@@ -361,6 +360,7 @@ export function LandingPage({
         light={light}
         onToggleTheme={onToggleTheme}
         onSearch={() => searchRef.current?.focus()}
+        onSignIn={authAvailable && !signedIn ? onSignIn : undefined}
         account={
           authAvailable && !signedIn ? (
             <button className="header-signin" onClick={onSignIn}>
@@ -544,6 +544,7 @@ export function LandingPage({
                 const members = item.resourceIds
                   .map((id) => resources.find((resource) => resource.id === id))
                   .filter((resource) => resource !== undefined);
+                const shots = coverShots[index];
                 const names = members.map((resource) => resource.name);
                 const shown = names.slice(0, 2);
                 return (
@@ -552,7 +553,7 @@ export function LandingPage({
                       hue={COLLECTION_HUES[index % COLLECTION_HUES.length]}
                       className="hm-cover-stage"
                     >
-                      {members.slice(0, 3).map((resource, n) => (
+                      {shots.map((resource, n) => (
                         <span className={`hm-cover-shot is-${n}`} key={resource.id}>
                           <span className="hm-winbar" aria-hidden="true">
                             <i />

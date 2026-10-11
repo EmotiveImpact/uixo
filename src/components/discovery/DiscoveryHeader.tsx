@@ -29,6 +29,8 @@ type Props = {
   };
   sidebarTriggerRef?: RefObject<HTMLButtonElement | null>;
   adminAction?: ReactNode;
+  /** Signed out with accounts on offer: phones show Sign in in the menu, not the header. */
+  onSignIn?: () => void;
 };
 
 type Destination = { id: string; label: string; href: string; count?: number };
@@ -88,6 +90,7 @@ export function DiscoveryHeader({
   sidebar,
   sidebarTriggerRef,
   adminAction,
+  onSignIn,
 }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [browseOpen, setBrowseOpen] = useState(false);
@@ -293,6 +296,18 @@ export function DiscoveryHeader({
               <ArrowUpRight size={15} />
             </a>
           ))}
+          {onSignIn && (
+            <button
+              type="button"
+              className="discovery-mobile-signin"
+              onClick={() => {
+                setMenuOpen(false);
+                onSignIn();
+              }}
+            >
+              Sign in
+            </button>
+          )}
         </nav>
       )}
     </header>

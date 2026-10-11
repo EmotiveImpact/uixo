@@ -2252,3 +2252,21 @@
     animation: none;
   }
 }
+
+/* On a phone the two band actions stack at full width, so neither looks indented. */
+@media (max-width: 640px) {
+  .hm-band-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hm-btn-main,
+  .hm-btn-ghost {
+    justify-content: center;
+  }
+
+  .hm-btn-ghost {
+    background: var(--g-well);
+    color: var(--g-text);
+  }
+}

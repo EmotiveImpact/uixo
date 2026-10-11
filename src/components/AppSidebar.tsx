@@ -61,6 +61,8 @@ export type AppSidebarProps = {
   catalogueResources?: Resource[];
   allLabel?: string;
   exactTaxonomy?: boolean;
+  /** Signed out: the phone drawer offers Sign in, which the phone header hides. */
+  onSignIn?: () => void;
 };
 
 function LegacyAppSidebar({

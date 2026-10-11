@@ -106,3 +106,19 @@ export function providerMark(id: string, name = id): ProviderMark {
       .toUpperCase() || '·';
   return { background: `linear-gradient(135deg,${from},${to})`, glyph };
 }
+
+/** One hue per component category, shared by the homepage tiles and the sidebar dots. */
+export const CATEGORY_HUES: Record<string, number> = {
+  buttons: 268,
+  forms: 200,
+  navigation: 226,
+  layout: 180,
+  overlays: 300,
+  'data-display': 156,
+  feedback: 140,
+  text: 34,
+  backgrounds: 322,
+  media: 14,
+  motion: 190,
+  other: 250,
+};

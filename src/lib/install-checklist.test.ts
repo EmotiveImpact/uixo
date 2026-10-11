@@ -1,12 +1,20 @@
 import { describe, expect, it } from 'vitest';
 import { installChecklist } from './install-checklist';
+import type { AssetRecord } from './asset-library';
 
 const text = (items: ReturnType<typeof installChecklist>) =>
   items.map((item) =>
     item.parts.map((part) => (typeof part === 'string' ? part : `\`${part.code}\``)).join(''),
   );
 
-const licence = { expression: 'MIT', commercial: 'allowed', attribution: true } as never;
+const licence: AssetRecord['licence'] = {
+  expression: 'MIT',
+  commercial: 'allowed',
+  attribution: true,
+  redistribution: 'allowed',
+  sourceUrl: '',
+  note: '',
+};
 
 describe('before you install', () => {
   it('describes a shadcn registry install from the real instruction', () => {
@@ -44,7 +52,7 @@ describe('before you install', () => {
   it('names packages and peers, and says nothing it does not know', () => {
     const lines = text(
       installChecklist(
-        { licence: { ...licence, commercial: 'unknown' } } as never,
+        { licence: { ...licence, commercial: 'unknown' } },
         {
           id: 'v',
           framework: 'react',

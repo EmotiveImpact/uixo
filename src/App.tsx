@@ -298,6 +298,7 @@ export function App() {
         onToggleTheme={toggleTheme}
         onOpenModal={setModal}
         adminMode={adminMode}
+        onSignIn={authAvailable && settled && !user ? () => setModal('signin') : undefined}
         adminAction={
           isCurator
             ? adminMode
@@ -352,6 +353,7 @@ export function App() {
             onChooseCategory={chooseCategory}
             onChooseSub={chooseSub}
             onSubmit={() => setModal('submit')}
+            onSignIn={authAvailable && settled && !user ? () => setModal('signin') : undefined}
             savedAssetCount={assetSaves.saved.length}
             catalogueResources={route.candidates ? (candidateListings ?? []) : undefined}
             allLabel={route.candidates ? 'All candidates' : undefined}
