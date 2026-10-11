@@ -376,6 +376,7 @@ export function AssetWorkspace() {
                       onSearchChange={(q) =>
                         navigate({
                           q,
+                          exact: false,
                           offset: 0,
                           view: query.view === 'sources' ? 'assets' : query.view,
                         })

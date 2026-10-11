@@ -1635,6 +1635,30 @@
   background: var(--g-well-2);
 }
 
+/* Spelling correction under the result row: what was searched, and a way back to the typed word. */
+:is(:root, :root.light) .uixo-shell .search-correction {
+  margin: -8px 0 20px;
+  color: var(--g-text-2);
+  font: 400 14px/1.5 var(--g-sans);
+}
+
+:is(:root, :root.light) .uixo-shell .search-correction strong {
+  color: var(--g-text);
+  font-weight: 600;
+}
+
+:is(:root, :root.light) .uixo-shell .search-correction button {
+  min-height: 44px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: var(--g-text);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
 :is(:root, :root.light) .uixo-shell .result-sort {
   position: relative;
   display: inline-flex;

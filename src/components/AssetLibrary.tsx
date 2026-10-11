@@ -168,8 +168,20 @@ export function AssetLibrary({
   useEffect(() => () => window.clearTimeout(removedTimer.current), []);
   const [refineOpen, setRefineOpen] = useState(false);
   const { saved, save, accountBacked } = assetSaves;
-  const { q, kind, category, provider, framework, format, commercial, price, sort, offset, view } =
-    query;
+  const {
+    q,
+    kind,
+    category,
+    provider,
+    framework,
+    format,
+    commercial,
+    exact,
+    price,
+    sort,
+    offset,
+    view,
+  } = query;
   // The Saved view asks for these ids. A card in its undo window still counts, so removing
   // it does not reload the grid under the reader; the key is sorted so Undo is a no-op.
   const savedKey = [...new Set(removed ? [...saved, removed.id] : saved)].sort().join(',');
@@ -204,6 +216,7 @@ export function AssetLibrary({
         framework,
         format,
         commercial: String(commercial),
+        ...(exact ? { exact: 'true' } : {}),
         price,
         sort: sort || 'relevant',
         offset: String(offset),
@@ -237,6 +250,7 @@ export function AssetLibrary({
     framework,
     format,
     commercial,
+    exact,
     price,
     sort,
     offset,
@@ -576,6 +590,14 @@ export function AssetLibrary({
               </select>
             </label>
           </div>
+          {!loading && !error && result?.correction && (
+            <p className="search-correction">
+              Showing results for <strong>{result.correction.query}</strong>.{' '}
+              <button onClick={() => navigate({ exact: true, offset: 0 })}>
+                Search for “{q}” instead
+              </button>
+            </p>
+          )}
           {error ? (
             <LoadError
               subject="components"

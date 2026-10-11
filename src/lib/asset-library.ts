@@ -104,6 +104,8 @@ export type AssetQuery = {
   framework: string;
   format: string;
   commercial: boolean;
+  /** Search exactly as typed, without the spelling correction. */
+  exact: boolean;
   price: string;
   sort: '' | 'newest' | 'name';
   offset: number;
@@ -134,6 +136,7 @@ export const EMPTY_ASSET_QUERY: AssetQuery = {
   framework: '',
   format: '',
   commercial: false,
+  exact: false,
   price: '',
   sort: '',
   offset: 0,
@@ -162,6 +165,7 @@ export function readAssetQuery(search: string): AssetQuery {
     framework: valid(p.get('framework'), ['react', 'vue', 'html', 'agnostic']),
     format: valid(p.get('format'), ['tsx', 'jsx', 'svg', 'css', 'woff2']),
     commercial: p.get('commercial') === 'true',
+    exact: p.get('exact') === 'true',
     price: valid(p.get('price'), ['free', 'paid', 'unknown']),
     sort: valid(p.get('sort'), ['newest', 'name']) as AssetQuery['sort'],
     offset: Number.isSafeInteger(offset) && offset >= 0 && offset <= 100000 ? offset : 0,

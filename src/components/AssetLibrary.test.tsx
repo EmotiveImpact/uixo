@@ -192,3 +192,49 @@ describe('Saved undo', () => {
     expect(screen.getByRole('button', { name: 'Saved' }).getAttribute('aria-pressed')).toBe('true');
   });
 });
+
+describe('Spelling correction', () => {
+  it('says which word it searched for and offers the typed one', async () => {
+    vi.stubGlobal(
+      'IntersectionObserver',
+      class {
+        observe() {}
+        disconnect() {}
+      },
+    );
+    vi.stubGlobal(
+      'ResizeObserver',
+      class {
+        observe() {}
+        disconnect() {}
+      },
+    );
+    request.mockImplementation(async (action, options) => {
+      if (action !== 'search') throw new Error('not needed');
+      expect(options?.query?.exact).toBeUndefined();
+      return {
+        items: [],
+        total: 0,
+        nextOffset: null,
+        correction: {
+          query: 'accordion',
+          original: 'accordian',
+          changes: [{ from: 'accordian', to: 'accordion' }],
+        },
+      } as never;
+    });
+    const navigate = vi.fn();
+    render(
+      <AssetLibrary
+        query={{ ...EMPTY_ASSET_QUERY, q: 'accordian', kind: 'component' }}
+        navigate={navigate}
+        density="comfortable"
+        assetSaves={assetSaves}
+      />,
+    );
+    const instead = await screen.findByRole('button', { name: 'Search for “accordian” instead' });
+    expect(instead.closest('p')!.textContent).toContain('Showing results for accordion.');
+    fireEvent.click(instead);
+    expect(navigate).toHaveBeenCalledWith({ exact: true, offset: 0 });
+  });
+});

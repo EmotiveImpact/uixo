@@ -8,12 +8,13 @@ export type ConnectClient = {
   snippet: (endpoint: string) => string;
 };
 
-const mcpServersJson = (endpoint: string) =>
-  JSON.stringify({ mcpServers: { uixo: { url: endpoint } } }, null, 2);
+const json = (value: unknown) => JSON.stringify(value, null, 2);
 
 /**
- * One block per client. Claude Code takes its own `mcp add` command; the editors take the
- * shared `mcpServers` JSON shape. Check these when a client changes its config format.
+ * One block per client, in each client's own documented format: Claude Code takes its
+ * `mcp add` command, Cursor and Windsurf a `mcpServers` entry (Windsurf names the remote
+ * address `serverUrl`) and VS Code a `servers` entry with a transport type. Check these
+ * when a client changes its config format.
  */
 export const CONNECT_CLIENTS: ConnectClient[] = [
   {
@@ -26,23 +27,23 @@ export const CONNECT_CLIENTS: ConnectClient[] = [
   {
     id: 'cursor',
     name: 'Cursor',
-    how: 'Add this server to your MCP settings in Cursor.',
+    how: 'Add this to .cursor/mcp.json in your project, or ~/.cursor/mcp.json for every project.',
     language: 'json',
-    snippet: mcpServersJson,
+    snippet: (endpoint) => json({ mcpServers: { uixo: { url: endpoint } } }),
   },
   {
     id: 'vs-code',
     name: 'VS Code',
-    how: 'Add this server to your MCP settings in VS Code.',
+    how: 'Add this to .vscode/mcp.json in your project, then start the server from that file.',
     language: 'json',
-    snippet: mcpServersJson,
+    snippet: (endpoint) => json({ servers: { uixo: { type: 'http', url: endpoint } } }),
   },
   {
     id: 'windsurf',
     name: 'Windsurf',
-    how: 'Add this server to your MCP settings in Windsurf.',
+    how: 'Add this to ~/.codeium/windsurf/mcp_config.json, then refresh the MCP servers.',
     language: 'json',
-    snippet: mcpServersJson,
+    snippet: (endpoint) => json({ mcpServers: { uixo: { serverUrl: endpoint } } }),
   },
 ];
 

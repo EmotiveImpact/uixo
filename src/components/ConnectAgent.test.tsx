@@ -22,7 +22,7 @@ it('offers one tab per client, starting with Claude Code', () => {
   );
 });
 
-it('shows the mcpServers block for the editors and moves between tabs with the arrow keys', () => {
+it('shows each editor its own config block and moves between tabs with the arrow keys', () => {
   render(<ConnectAgent />);
   fireEvent.click(screen.getByRole('tab', { name: 'Cursor' }));
   const code = screen.getByRole('tabpanel').querySelector('code')!.textContent!;
@@ -30,9 +30,13 @@ it('shows the mcpServers block for the editors and moves between tabs with the a
 
   fireEvent.keyDown(screen.getByRole('tab', { name: 'Cursor' }), { key: 'ArrowRight' });
   expect(document.activeElement).toBe(screen.getByRole('tab', { name: 'VS Code' }));
-  expect(screen.getByRole('tabpanel').textContent).toContain('MCP settings in VS Code');
+  expect(screen.getByRole('tabpanel').textContent).toContain('.vscode/mcp.json');
+  const vscode = screen.getByRole('tabpanel').querySelector('code')!.textContent!;
+  expect(JSON.parse(vscode)).toEqual({ servers: { uixo: { type: 'http', url: endpoint } } });
   fireEvent.keyDown(screen.getByRole('tab', { name: 'VS Code' }), { key: 'End' });
   expect(screen.getByRole('tab', { name: 'Windsurf' }).getAttribute('aria-selected')).toBe('true');
+  const windsurf = screen.getByRole('tabpanel').querySelector('code')!.textContent!;
+  expect(JSON.parse(windsurf)).toEqual({ mcpServers: { uixo: { serverUrl: endpoint } } });
 });
 
 it('copies the block for the chosen client', async () => {
