@@ -1,4 +1,6 @@
 import { randomUUID } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
+import { KIBO_REVIEWED_COMPONENTS } from '../shared/reviewed-previews.ts';
 import { COMPONENT_CATEGORIES } from '../shared/component-categories.ts';
 import type { Database, Statement } from './database.ts';
 import {
@@ -12,6 +14,23 @@ import {
   parseSearch,
   validateAsset,
 } from './domain.ts';
+
+let readyIds: Promise<string[]> | undefined;
+/**
+ * Components whose preview is ready from data alone, with no client handshake: a pinned live
+ * demo (live-demos/manifest.json) or a reviewed, source-pinned Kibo preview. Captured images
+ * count as ready in SQL; third-party embeds rank below them because only the browser can
+ * tell whether they loaded.
+ */
+function previewReadyIds(): Promise<string[]> {
+  return (readyIds ??= readFile(new URL('../live-demos/manifest.json', import.meta.url), 'utf8')
+    .then((text) => Object.keys(JSON.parse(text) as Record<string, unknown>))
+    .catch(() => [] as string[])
+    .then((live) => [
+      ...live,
+      ...Object.keys(KIBO_REVIEWED_COMPONENTS).map((slug) => `kibo-ui/${slug}`),
+    ]));
+}
 
 export class Registry {
   db: Database;
@@ -300,10 +319,25 @@ export class Registry {
         .join(' + ') || '0';
     // Libraries whose live previews are still pending sink below ready ones.
     const pending = `CASE WHEN p.payload LIKE '%"previewsPending":true%' THEN 1 ELSE 0 END`;
+    const componentsFirst = `CASE WHEN a.kind='component' THEN 0 ELSE 1 END`;
+    let relevant = `score DESC,a.editorial_pick DESC,${pending},${componentsFirst},a.name ASC,a.id ASC`;
+    if (!terms.length) {
+      // No query: "Recommended" leads with what people can take (L-7). Editorial pick, then a
+      // preview that is ready from data alone, then an install command, then commercial use
+      // allowed, then the name compared case-insensitively.
+      const ready = (await previewReadyIds()).map((id) => {
+        args.push(id);
+        return `$${args.length}`;
+      });
+      const preview = `CASE WHEN ${pending}=1 THEN 0${ready.length ? ` WHEN a.id IN (${ready.join(',')}) THEN 2` : ''} WHEN a.payload LIKE '%"preview":{"kind":"image"%' THEN 2 WHEN a.payload LIKE '%"preview":{"kind":"embed"%' THEN 1 ELSE 0 END`;
+      const install = `CASE WHEN EXISTS(SELECT 1 FROM uixo_v2_variants iv WHERE iv.asset_id=a.id AND iv.acquisition IN ('registry','package')) THEN 1 ELSE 0 END`;
+      const commercial = `CASE WHEN l.commercial='allowed' THEN 1 ELSE 0 END`;
+      relevant = `a.editorial_pick DESC,${preview} DESC,${install} DESC,${commercial} DESC,${componentsFirst},LOWER(a.name) ASC,a.id ASC`;
+    }
     const order = {
-      relevant: `score DESC,a.editorial_pick DESC,${pending},CASE WHEN a.kind='component' THEN 0 ELSE 1 END,a.name ASC,a.id ASC`,
-      newest: `a.updated_at DESC,${pending},score DESC,a.name ASC,a.id ASC`,
-      name: `a.name ASC,a.id ASC`,
+      relevant,
+      newest: `a.updated_at DESC,${pending},score DESC,LOWER(a.name) ASC,a.id ASC`,
+      name: `LOWER(a.name) ASC,a.id ASC`,
     }[search.sort];
     args.push(search.limit, search.offset);
     const rows = await this.db.query(
