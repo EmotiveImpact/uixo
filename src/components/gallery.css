@@ -690,29 +690,40 @@
   box-shadow: 0 0 0 3px rgb(74 222 128 / 0.2);
 }
 
-/* Save: a glass icon button on the stage's top right, always visible. */
+/* Save: a glass icon button on the stage's top right, always visible. The button is a
+   44px target; the 34px glass disc is drawn inside it. */
 :is(:root, :root.light) .g-save {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 5px;
+  right: 5px;
   z-index: 3;
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
   padding: 0;
   border: 0;
   border-radius: 999px;
-  background: var(--g-glass);
+  background: transparent;
   color: var(--g-glass-text);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   box-shadow: none;
   opacity: 0.85;
   cursor: pointer;
+  transition: opacity 0.14s var(--g-ease);
+}
+
+.g-save::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  z-index: -1;
+  border-radius: 999px;
+  background: var(--g-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition:
-    opacity 0.14s var(--g-ease),
-    background 0.14s var(--g-ease);
+    background 0.14s var(--g-ease),
+    transform 0.1s var(--g-ease);
 }
 
 .g-card:hover .g-save,
@@ -721,12 +732,19 @@
   opacity: 1;
 }
 
-:is(:root, :root.light) .g-save:hover {
+.g-save:hover::before {
+  background: var(--g-glass-hover);
+}
+
+/* Pressed: the disc gives a little, so a tap is felt before the state changes. */
+.g-save:active::before {
+  transform: scale(0.9);
   background: var(--g-glass-hover);
 }
 
 /* Chrome: name and price, provider and category, a quiet command. */
 :is(:root, :root.light) .g-card .g-meta {
+  position: relative;
   margin: 0;
   padding: 14px 8px 6px;
   cursor: pointer;
@@ -756,6 +774,22 @@
   color: var(--g-text);
   text-decoration: none;
   border-radius: 4px;
+}
+
+/* The name's target covers the name, price, provider and category rows (and the padding
+   above them), never the save button or the install row. */
+.g-head {
+  position: relative;
+}
+
+:is(:root, :root.light) .g-card .g-head .g-name::after {
+  content: '';
+  position: absolute;
+  inset: -14px -8px 0;
+}
+
+:is(:root, :root.light) .g-card .g-name:active {
+  opacity: 0.7;
 }
 
 :is(:root, :root.light) .g-card .g-name:hover {
@@ -837,18 +871,21 @@
   color: #fff;
 }
 
+/* The quiet line keeps its look; its target is the card's full width and 44px tall. The
+   text sits where the 22px row put it, and the extra height reaches into the padding. */
 :is(:root, :root.light) .g-cmd,
 :is(:root, :root.light) .g-visit {
   position: relative;
-  margin-top: 12px;
-  width: 100%;
-  height: 22px;
+  z-index: 1;
+  margin: 1px -8px -6px;
+  width: calc(100% + 16px);
+  height: 44px;
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 0;
+  padding: 0 8px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 10px;
   background: none;
   box-shadow: none;
   text-align: left;
@@ -893,6 +930,16 @@
 
 .g-cmd:hover svg {
   opacity: 1;
+}
+
+/* Pressed: a faint band behind the row and the text gives a little. */
+:is(:root, :root.light) .g-cmd:active,
+:is(:root, :root.light) .g-visit:active {
+  background: var(--g-well);
+}
+
+.g-cmd:active code {
+  transform: translateY(0.5px);
 }
 
 :is(:root, :root.light) .g-cmd[data-state='copied'] {
@@ -1078,7 +1125,8 @@
   }
 }
 
-/* The stage stays live: the name link never stretches over the demo or the save button. */
+/* The stage stays live: the name link never stretches over the demo or the save button
+   (inside .g-head it stretches over the name rows only, above). */
 :is(:root, :root.light) .g-card .g-name::after {
   content: none;
 }
@@ -1564,18 +1612,27 @@
   color: var(--g-text);
 }
 
+/* Clear all: a 44px pill, quieter than the filter chips it clears. */
 :is(:root, :root.light) .uixo-shell .result-summary .clear-all {
+  height: 44px;
   margin-left: 4px;
-  padding: 0;
+  padding: 0 16px;
   border: 0;
-  background: none;
-  color: var(--g-text-3);
+  border-radius: 999px;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--g-line);
+  color: var(--g-text-2);
   font: 500 12.5px/1 var(--g-sans);
   cursor: pointer;
 }
 
 :is(:root, :root.light) .uixo-shell .result-summary .clear-all:hover {
+  background: var(--g-well);
   color: var(--g-text);
+}
+
+:is(:root, :root.light) .uixo-shell .result-summary .clear-all:active {
+  background: var(--g-well-2);
 }
 
 :is(:root, :root.light) .uixo-shell .result-sort {
@@ -1895,5 +1952,35 @@
 @media (max-width: 640px) {
   :is(:root, :root.light) .load-error {
     padding: 24px 20px;
+  }
+}
+
+/* ------------------------------------------------------ Phone targets */
+
+/* On a phone every primary control is a 44px target; nothing is under 24px. */
+@media (max-width: 767px) {
+  :is(:root, :root.light) .discovery-header .header-icon,
+  :is(:root, :root.light) .discovery-header .header-search {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .search-wrap input {
+    align-self: stretch;
+  }
+
+  :is(:root, :root.light) .uixo-shell .result-sort select {
+    height: 44px;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library .asset-library-pagination button {
+    min-width: 44px;
+    height: 44px;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .prices button {
+    height: 36px;
+    min-height: 36px;
   }
 }

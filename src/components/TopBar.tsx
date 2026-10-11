@@ -149,7 +149,7 @@ export function DiscoveryControls({
             </div>
           )}
           {commercial && (
-            <div className="segments commercial-filter">
+            <div className="segments prices commercial-filter">
               <button
                 type="button"
                 className={commercial.value ? 'selected' : ''}

@@ -114,30 +114,32 @@ export function ComponentCard({
           onOpen();
         }}
       >
-        <div className="g-r1">
-          <Heading>
-            <a
-              className={`g-name ${linkClassName}`}
-              href={href}
-              aria-label={linkLabel}
-              onClick={(event) => {
-                if (modified(event)) return;
-                event.preventDefault();
-                onOpen();
-              }}
-            >
-              {asset.name}
-            </a>
-          </Heading>
-          <PriceLabel label={price} />
-        </div>
-        <div className="g-r2">
-          <ProviderMarkSquare id={asset.providerId} name={providerName} />
-          <span className="g-provider">{providerName}</span>
-          <span className="g-sep" aria-hidden="true">
-            ›
-          </span>
-          <span>{categoryLabel}</span>
+        <div className="g-head">
+          <div className="g-r1">
+            <Heading>
+              <a
+                className={`g-name ${linkClassName}`}
+                href={href}
+                aria-label={linkLabel}
+                onClick={(event) => {
+                  if (modified(event)) return;
+                  event.preventDefault();
+                  onOpen();
+                }}
+              >
+                {asset.name}
+              </a>
+            </Heading>
+            <PriceLabel label={price} />
+          </div>
+          <div className="g-r2">
+            <ProviderMarkSquare id={asset.providerId} name={providerName} />
+            <span className="g-provider">{providerName}</span>
+            <span className="g-sep" aria-hidden="true">
+              ›
+            </span>
+            <span>{categoryLabel}</span>
+          </div>
         </div>
         <InstallLine asset={asset} />
       </div>
