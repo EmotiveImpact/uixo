@@ -31,6 +31,10 @@
   padding: 28px 0 20px;
 }
 
+.ad-crumbs nav {
+  min-width: 0;
+}
+
 .ad-crumbs ol {
   display: flex;
   flex-wrap: wrap;
@@ -1385,6 +1389,18 @@
   .ad-related-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+}
+
+/* At 320px (400% zoom of 1280) the toolbar wraps instead of pushing the page sideways. */
+@media (max-width: 359px) {
+  .ad-toolbar {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .ad .ad-backgrounds button {
+    padding: 0 8px;
   }
 }
 
