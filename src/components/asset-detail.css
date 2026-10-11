@@ -377,7 +377,7 @@
   padding: 0 8px 0 20px;
   margin-bottom: 12px;
   background: inherit;
-  border-bottom: 1px solid var(--g-line);
+  box-shadow: inset 0 -1px 0 var(--g-line);
   font: 400 12px/1 var(--g-mono);
   color: var(--g-text-3);
 }
@@ -759,7 +759,7 @@
   display: grid;
   grid-template-columns: 26px 1fr;
   padding: 11px 0;
-  border-top: 1px solid var(--g-line);
+  box-shadow: inset 0 1px 0 var(--g-line);
   color: var(--g-text-2);
   font: 400 14px/21px var(--g-sans);
 }
@@ -781,7 +781,7 @@
 .ad-note {
   margin: 4px 0 0;
   padding-top: 12px;
-  border-top: 1px solid var(--g-line);
+  box-shadow: inset 0 1px 0 var(--g-line);
   color: var(--g-text-3);
   font: 400 13px/20px var(--g-sans);
 }
@@ -975,7 +975,7 @@
 
 .ad-props th {
   padding: 0 8px 10px 0;
-  border-bottom: 1px solid var(--g-line);
+  box-shadow: inset 0 -1px 0 var(--g-line);
   text-align: left;
   font: 500 11px/14px var(--g-mono);
   color: var(--g-text-3);
@@ -983,12 +983,12 @@
 
 .ad-props td {
   padding: 12px 8px 12px 0;
-  border-bottom: 1px solid var(--g-line);
+  box-shadow: inset 0 -1px 0 var(--g-line);
   vertical-align: top;
 }
 
 .ad-props tr:last-child td {
-  border-bottom: 0;
+  box-shadow: none;
 }
 
 .ad-prop-name {
@@ -1044,7 +1044,7 @@
 .ad-facts dd {
   margin: 0;
   padding: 10px 0;
-  border-top: 1px solid var(--g-line);
+  box-shadow: inset 0 1px 0 var(--g-line);
   font: 400 13.5px/20px var(--g-sans);
 }
 
@@ -1057,13 +1057,15 @@
 }
 
 .ad-more {
-  border-top: 1px solid var(--g-line);
+  box-shadow: inset 0 1px 0 var(--g-line);
   color: var(--g-text-2);
   font: 400 13.5px/21px var(--g-sans);
 }
 
 .ad-more:last-of-type {
-  border-bottom: 1px solid var(--g-line);
+  box-shadow:
+    inset 0 1px 0 var(--g-line),
+    inset 0 -1px 0 var(--g-line);
 }
 
 .ad-more summary {
@@ -1336,7 +1338,8 @@
     padding: 0 9px;
   }
 
-  .ad-hint.is-end {
+  .ad-hint.is-end,
+  .ad-hint-width {
     display: none;
   }
 

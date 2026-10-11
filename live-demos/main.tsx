@@ -21,6 +21,8 @@ setTheme(params.get('theme') === 'light' ? 'light' : 'dark');
 // stays transparent and reports its content box so the card can frame it.
 const clearStage = params.get('stage') === 'clear';
 if (clearStage) document.documentElement.dataset.stage = 'clear';
+// Lets the harness style a demo's stage without touching the provider's source.
+document.documentElement.dataset.demo = id;
 window.addEventListener('message', (event) => {
   if (event.source === parent && event.data?.type === 'uixo-preview-theme')
     setTheme(event.data.theme);

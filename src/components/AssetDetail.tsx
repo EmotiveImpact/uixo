@@ -461,7 +461,7 @@ export function AssetDetail({
   const fileName = customisable?.fileName ?? liveEntry?.file.split('/').pop() ?? '';
   const live = Boolean(liveEntry) || Boolean(customisable);
   const stageTheme = background === 'dark' ? 'dark' : background === 'light' ? 'light' : undefined;
-  const sizeCaption = `${width === 'phone' ? 'Phone' : 'Desktop'} · ${Math.round(stageSize.width)} × ${Math.round(stageSize.height)}`;
+  const stageDimensions = `${Math.round(stageSize.width)} × ${Math.round(stageSize.height)}`;
   const hint = customisable
     ? 'Change the props below and the preview follows'
     : live
@@ -649,7 +649,12 @@ export function AssetDetail({
                         demoProps={values}
                       />
                     </div>
-                    <span className="ad-hint">{sizeCaption}</span>
+                    <span className="ad-hint">
+                      <span className="ad-hint-width">
+                        {width === 'phone' ? 'Phone' : 'Desktop'} ·{' '}
+                      </span>
+                      {stageDimensions}
+                    </span>
                     <span className="ad-hint is-end">{hint}</span>
                   </div>
                 ) : (
