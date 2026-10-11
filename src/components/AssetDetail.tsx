@@ -164,6 +164,22 @@ function CodeView({
   );
 }
 
+/** Spoken units for range controls, so a screen reader hears "2.5 seconds", not "2.5 s". */
+const UNIT_WORDS: Record<string, [string, string]> = {
+  s: ['second', 'seconds'],
+  ms: ['millisecond', 'milliseconds'],
+  px: ['pixel', 'pixels'],
+  '×': ['times', 'times'],
+  '°': ['degree', 'degrees'],
+  '%': ['percent', 'percent'],
+};
+
+function rangeValueText(value: number, unit: string) {
+  const words = UNIT_WORDS[unit];
+  if (!words) return `${value}${unit}`;
+  return `${value} ${value === 1 ? words[0] : words[1]}`;
+}
+
 function Control({
   name,
   control,
@@ -187,6 +203,8 @@ function Control({
           id={id}
           className="ad-range"
           type="range"
+          aria-label={UNIT_WORDS[control.unit] ? `${name}, ${UNIT_WORDS[control.unit][1]}` : name}
+          aria-valuetext={rangeValueText(Number(value), control.unit)}
           min={control.min}
           max={control.max}
           step={control.step}

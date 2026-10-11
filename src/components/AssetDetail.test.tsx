@@ -187,6 +187,10 @@ it('offers Customise only for curated demos, and the code follows the chosen pro
   );
   expect(await screen.findByRole('heading', { name: 'Customise' })).toBeTruthy();
   expect(screen.queryByRole('group', { name: 'Choose a variant' })).toBeNull();
+  // Sliders say what they change and in which unit.
+  const duration = screen.getByRole('slider', { name: 'shimmerDuration, seconds' });
+  expect(duration.getAttribute('aria-valuetext')).toMatch(/^[0-9.]+ seconds?$/);
+  expect(screen.getByRole('slider', { name: 'borderRadius, pixels' })).toBeTruthy();
   expect(screen.getByRole('table')).toBeTruthy();
   await screen.findByText(/components\.json/);
   fireEvent.click(screen.getByRole('button', { name: 'shimmerColor #c4b5fd' }));
