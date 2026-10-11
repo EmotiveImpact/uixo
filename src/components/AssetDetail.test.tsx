@@ -1,5 +1,5 @@
 import { afterEach, beforeAll, expect, it, vi } from 'vitest';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { AssetDetail } from './AssetDetail';
 import { EMPTY_ASSET_QUERY, readAssetQuery, assetHref } from '../lib/asset-library';
 beforeAll(() => {
@@ -87,7 +87,6 @@ it('restores licence evidence, saving, automatic acquisition and compatibility i
     <AssetDetail
       id={asset.id}
       nameOf={() => 'Lucide'}
-      close={() => {}}
       query={{ ...EMPTY_ASSET_QUERY, framework: 'react' }}
       saved={false}
       toggleSave={toggleSave}
@@ -103,7 +102,9 @@ it('restores licence evidence, saving, automatic acquisition and compatibility i
   expect(screen.getByText('Upstream SVG ↗')).toBeTruthy();
   fireEvent.click(screen.getByRole('button', { name: 'Save' }));
   expect(toggleSave).toHaveBeenCalledOnce();
-  fireEvent.change(screen.getByLabelText('Choose a variant'), { target: { value: 'svg' } });
+  const variants = screen.getByRole('group', { name: 'Choose a variant' });
+  expect(within(variants).getAllByRole('button')).toHaveLength(2);
+  fireEvent.click(within(variants).getByRole('button', { name: /Framework agnostic · SVG/ }));
   await screen.findByText('npm install svg');
   fireEvent.click(screen.getByText('Check compatibility'));
   await screen.findByText('Dependencies to add: lucide-react');
@@ -111,5 +112,87 @@ it('restores licence evidence, saving, automatic acquisition and compatibility i
     expect(requests.some((r) => r.action === 'compatibility' && r.body?.variantId === 'svg')).toBe(
       true,
     ),
+  );
+});
+
+it('offers Customise only for curated demos, and the code follows the chosen props', async () => {
+  class Observer {
+    observe() {}
+    disconnect() {}
+  }
+  vi.stubGlobal('ResizeObserver', Observer);
+  vi.stubGlobal('IntersectionObserver', Observer);
+  const shimmer = {
+    id: 'magic-ui/shimmer-button',
+    providerId: 'magic-ui',
+    slug: 'shimmer-button',
+    name: 'Shimmer Button',
+    kind: 'component',
+    category: 'buttons',
+    price: 'free',
+    tags: [],
+    description: 'A button with a shimmering light.',
+    sourceUrl: 'https://github.com/magicuidesign/magicui',
+    verifiedAt: '2026-09-14',
+    preview: null,
+    licence: {
+      expression: 'MIT',
+      commercial: 'allowed',
+      redistribution: 'allowed',
+      note: '',
+      sourceUrl: 'https://github.com/magicuidesign/magicui/LICENSE.md',
+    },
+    variants: [
+      {
+        id: 'react',
+        framework: 'react',
+        format: 'tsx',
+        css: 'tailwind',
+        dependencies: [],
+        acquisition: { kind: 'registry', url: 'https://magicui.design/r/shimmer-button.json' },
+      },
+    ],
+  };
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(async (url: string) => {
+      const action = new URL(url, 'https://uixo.test').searchParams.get('action');
+      return {
+        ok: true,
+        headers: new Headers({ 'content-type': 'application/json' }),
+        json: async () =>
+          action === 'asset'
+            ? shimmer
+            : {
+                status: 'ready',
+                message: '',
+                url: shimmer.sourceUrl,
+                command: {
+                  executable: 'npx',
+                  arguments: ['shadcn', 'add', 'https://magicui.design/r/shimmer-button.json'],
+                },
+                executed: false,
+              },
+      };
+    }),
+  );
+  render(
+    <AssetDetail
+      id={shimmer.id}
+      nameOf={() => 'Magic UI'}
+      query={EMPTY_ASSET_QUERY}
+      saved={false}
+      toggleSave={() => {}}
+    />,
+  );
+  expect(await screen.findByRole('heading', { name: 'Customise' })).toBeTruthy();
+  expect(screen.queryByRole('group', { name: 'Choose a variant' })).toBeNull();
+  expect(screen.getByRole('table')).toBeTruthy();
+  await screen.findByText(/components\.json/);
+  fireEvent.click(screen.getByRole('button', { name: 'shimmerColor #c4b5fd' }));
+  fireEvent.click(screen.getByRole('tab', { name: 'Code' }));
+  expect(screen.getByRole('tab', { name: 'Code' }).getAttribute('aria-selected')).toBe('true');
+  expect(screen.getByLabelText('Source of shimmer-button-demo.tsx').textContent).toContain(
+    'shimmerColor="#c4b5fd"',
   );
 });

@@ -14,6 +14,10 @@ type TopBarProps = {
   account: ReactNode;
   catalogue?: 'websites' | 'assets' | 'collections';
   adminMode?: boolean;
+  /** A page without the catalogue sidebar: phones get the header menu instead. */
+  sidebarless?: boolean;
+  /** Signed out: phones offer Sign in from their menu. */
+  onSignIn?: () => void;
   adminAction?: {
     label: 'Admin' | 'Exit admin';
     href: string;
@@ -39,6 +43,8 @@ export function TopBar({
   account,
   catalogue = 'websites',
   adminMode = false,
+  sidebarless = false,
+  onSignIn,
   adminAction,
 }: TopBarProps) {
   const sidebar = useAnimatedSidebar();
@@ -54,11 +60,16 @@ export function TopBar({
       light={light}
       onToggleTheme={onToggleTheme}
       account={account}
-      sidebar={{
-        expanded: sidebar.isMobile ? sidebar.openMobile : sidebar.open,
-        toggle: sidebar.toggleSidebar,
-      }}
+      sidebar={
+        sidebarless
+          ? undefined
+          : {
+              expanded: sidebar.isMobile ? sidebar.openMobile : sidebar.open,
+              toggle: sidebar.toggleSidebar,
+            }
+      }
       sidebarTriggerRef={sidebar.triggerRef}
+      onSignIn={onSignIn}
       onSearch={() =>
         window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))
       }

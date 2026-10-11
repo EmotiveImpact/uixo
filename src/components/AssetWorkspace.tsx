@@ -79,21 +79,6 @@ export function AssetWorkspace() {
     window.addEventListener('popstate', read);
     return () => window.removeEventListener('popstate', read);
   }, []);
-  useEffect(() => {
-    const focusSearch = (event: KeyboardEvent) => {
-      if (
-        (event.metaKey || event.ctrlKey) &&
-        event.key.toLowerCase() === 'k' &&
-        !modal &&
-        !query.id
-      ) {
-        event.preventDefault();
-        searchRef.current?.focus();
-      }
-    };
-    window.addEventListener('keydown', focusSearch);
-    return () => window.removeEventListener('keydown', focusSearch);
-  }, [modal, query.id]);
   const navigate = useCallback((changes: Partial<AssetQuery>, reset = false) => {
     setQuery((current) => {
       const next = { ...(reset ? EMPTY_ASSET_QUERY : current), ...changes };
@@ -107,6 +92,22 @@ export function AssetWorkspace() {
     });
     setMobileOpen(false);
   }, []);
+  useEffect(() => {
+    const focusSearch = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k' && !modal) {
+        event.preventDefault();
+        // A component page has no search field: go to the list and focus its search.
+        if (query.id) {
+          navigate({ id: '' });
+          window.requestAnimationFrame(() =>
+            window.requestAnimationFrame(() => searchRef.current?.focus()),
+          );
+        } else searchRef.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', focusSearch);
+    return () => window.removeEventListener('keydown', focusSearch);
+  }, [modal, query.id, navigate]);
   const go = (changes: Parameters<typeof routeToHref>[0]) => navigateInApp(routeToHref(changes));
   const openCategory = (category: string, sub: string | null = null) =>
     go({ ...EMPTY_ROUTE, category, sub });
@@ -119,6 +120,9 @@ export function AssetWorkspace() {
   ].includes(query.view);
   const privateWorkspace = ['health', 'operations', 'collection-editor'].includes(query.view);
   const utility = ['connect', 'guide', 'review', 'scout', 'jobs'].includes(query.view);
+  // A component's own page is full width, without the catalogue sidebar, as in the mockup.
+  // Shared links from collections (view=collections&id=…) open the same page.
+  const detailPage = Boolean(query.id) && !privateWorkspace && !utility;
   const titles: Record<string, string> = {
     health: 'Registry health',
     operations: 'Registry operations',
@@ -166,6 +170,8 @@ export function AssetWorkspace() {
     >
       <TopBar
         catalogue="assets"
+        sidebarless={detailPage}
+        onSignIn={authAvailable && settled && !user ? () => setModal('signin') : undefined}
         light={light}
         onToggleTheme={toggleTheme}
         onOpenModal={setModal}
@@ -188,67 +194,76 @@ export function AssetWorkspace() {
         }
       />
       <div className="catalogue-body">
-        <AppSidebar
-          publicMode={!privateWorkspace && !['review', 'scout', 'jobs'].includes(query.view)}
-          assetQuery={query}
-          onNavigateAssets={navigate}
-          category={null}
-          sub={null}
-          listId={null}
-          openSection={null}
-          lists={lists}
-          onAssets
-          assetView={query.view}
-          registryCurator={isCurator}
-          onChooseAssetView={(view) => navigate({ view }, true)}
-          onSavedAssets={query.view === 'saved'}
-          onShowSavedAssets={() => navigate({ view: 'saved' }, true)}
-          savedAssetCount={assetSaves.saved.length}
-          assetKind={query.kind}
-          assetCategory={query.category}
-          onChooseAssetCategory={(category) =>
-            navigate({
-              kind: 'component',
-              category,
-              view: query.view === 'saved' ? 'saved' : 'assets',
-              offset: 0,
-              id: '',
-            })
-          }
-          onChooseAssetKind={(kind) =>
-            navigate({
-              kind,
-              category: '',
-              view: query.view === 'saved' ? 'saved' : 'assets',
-              offset: 0,
-              id: '',
-            })
-          }
-          assetProviders={assetProviders}
-          onShowAll={() => go({ ...EMPTY_ROUTE })}
-          homeHref="/browse"
-          onChooseList={(listId) => go({ ...EMPTY_ROUTE, listId })}
-          onDeleteList={remove}
-          onChooseCategory={openCategory}
-          onChooseSub={openCategory}
-          onSubmit={() => setModal('submit')}
-        />
+        {!detailPage && (
+          <AppSidebar
+            publicMode={!privateWorkspace && !['review', 'scout', 'jobs'].includes(query.view)}
+            assetQuery={query}
+            onNavigateAssets={navigate}
+            category={null}
+            sub={null}
+            listId={null}
+            openSection={null}
+            lists={lists}
+            onAssets
+            assetView={query.view}
+            registryCurator={isCurator}
+            onChooseAssetView={(view) => navigate({ view }, true)}
+            onSavedAssets={query.view === 'saved'}
+            onShowSavedAssets={() => navigate({ view: 'saved' }, true)}
+            savedAssetCount={assetSaves.saved.length}
+            assetKind={query.kind}
+            assetCategory={query.category}
+            onChooseAssetCategory={(category) =>
+              navigate({
+                kind: 'component',
+                category,
+                view: query.view === 'saved' ? 'saved' : 'assets',
+                offset: 0,
+                id: '',
+              })
+            }
+            onChooseAssetKind={(kind) =>
+              navigate({
+                kind,
+                category: '',
+                view: query.view === 'saved' ? 'saved' : 'assets',
+                offset: 0,
+                id: '',
+              })
+            }
+            assetProviders={assetProviders}
+            onShowAll={() => go({ ...EMPTY_ROUTE })}
+            homeHref="/browse"
+            onChooseList={(listId) => go({ ...EMPTY_ROUTE, listId })}
+            onDeleteList={remove}
+            onChooseCategory={openCategory}
+            onChooseSub={openCategory}
+            onSubmit={() => setModal('submit')}
+            onSignIn={authAvailable && settled && !user ? () => setModal('signin') : undefined}
+          />
+        )}
         <a className="skip-link" href="#main">
           Skip to content
         </a>
-        <AnimatedSidebarInset className="site-main asset-workspace" id="main" tabIndex={-1}>
-          <PageHeading
-            title={title}
-            subtitle={
-              intelligence
-                ? 'Source-backed selections and evidence from the UIXO registry.'
-                : utility
-                  ? 'One library. Your workflow.'
-                  : 'Components, icon packs, and fonts from trusted sources. Preview them, inspect the details, and go straight to the original.'
-            }
-            canClear={hasFilters}
-            onClear={() => navigate({ view: query.view }, true)}
-          />
+        <AnimatedSidebarInset
+          className={`site-main asset-workspace ${detailPage ? 'is-detail-page' : ''}`}
+          id="main"
+          tabIndex={-1}
+        >
+          {!detailPage && (
+            <PageHeading
+              title={title}
+              subtitle={
+                intelligence
+                  ? 'Source-backed selections and evidence from the UIXO registry.'
+                  : utility
+                    ? 'One library. Your workflow.'
+                    : 'Components, icon packs, and fonts from trusted sources. Preview them, inspect the details, and go straight to the original.'
+              }
+              canClear={hasFilters}
+              onClear={() => navigate({ view: query.view }, true)}
+            />
+          )}
           <RegistryReadiness />
           <SaveSyncNotice
             label="Asset favourites"
@@ -262,7 +277,7 @@ export function AssetWorkspace() {
             error={listSyncError}
             onRetry={retryListSync}
           />
-          {intelligence ? (
+          {intelligence && !detailPage ? (
             privateWorkspace && !settled ? (
               <p role="status">Checking account…</p>
             ) : privateWorkspace && !isCurator ? (

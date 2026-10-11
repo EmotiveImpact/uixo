@@ -28,26 +28,33 @@ export function InstallCommand({ command }: { command: string }) {
 
   return (
     <div className="install-command">
-      {variants && (
-        <div className="install-command-tabs" role="group" aria-label="Package manager">
-          {PACKAGE_MANAGERS.map((entry) => (
-            <button
-              key={entry}
-              aria-pressed={entry === manager}
-              onClick={() => {
-                setManager(entry);
-                writePackageManager(entry);
-              }}
-            >
-              {entry}
-            </button>
-          ))}
-        </div>
-      )}
+      <div className="install-command-tabs">
+        {variants && (
+          <div role="group" aria-label="Package manager">
+            {PACKAGE_MANAGERS.map((entry) => (
+              <button
+                key={entry}
+                aria-pressed={entry === manager}
+                onClick={() => {
+                  setManager(entry);
+                  writePackageManager(entry);
+                }}
+              >
+                {entry}
+              </button>
+            ))}
+          </div>
+        )}
+        <span className="install-command-label">Install</span>
+      </div>
       <div className="install-command-line">
+        <span className="install-command-prompt" aria-hidden="true">
+          $
+        </span>
         <code tabIndex={0}>{shown}</code>
         <button
           onClick={() => void copy()}
+          data-state={copied || undefined}
           aria-label={copied === 'yes' ? 'Copied' : 'Copy install command'}
         >
           {copied === 'yes' ? <Check size={15} /> : <Copy size={15} />}

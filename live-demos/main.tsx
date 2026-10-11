@@ -1,9 +1,10 @@
 import './adapters/preview-storage';
 import { Tooltip } from 'radix-ui';
-import React, { Component, Suspense, lazy, useEffect } from 'react';
+import React, { Component, Suspense, lazy, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import manifest from './manifest.json';
 import { reportContentSize } from '../shared/preview-stage';
+import { customisableDemo, sanitiseDemoProps } from '../shared/demo-props';
 import './styles.css';
 const files = import.meta.glob(['./vendor/**/*.tsx', './vendor/**/*.jsx', './examples/*.tsx']);
 const params = new URLSearchParams(location.search),
@@ -63,8 +64,38 @@ function Ready() {
   }, []);
   return null;
 }
-const Demo =
-  entry && files[entry.file]
+// props=live: a curated demo renders through its UIXO wrapper and takes props from the
+// detail page. Only messages from the parent frame count, and every value is checked
+// against the demo's controls before it reaches the component.
+const customisable = params.get('props') === 'live' ? customisableDemo(id) : undefined;
+function Customised({ Wrapper }) {
+  const [values, setValues] = useState(() => sanitiseDemoProps(id, {}));
+  useEffect(() => {
+    const receive = (event) => {
+      if (event.source !== parent || event.data?.type !== 'uixo-preview-props') return;
+      if (event.data.id !== id) return;
+      const checked = sanitiseDemoProps(id, event.data.values);
+      if (checked) setValues(checked);
+    };
+    window.addEventListener('message', receive);
+    parent.postMessage({ type: 'uixo-preview-props-ready', id }, '*');
+    return () => window.removeEventListener('message', receive);
+  }, []);
+  // New props can change the content's size: ask for a fresh measurement.
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => window.dispatchEvent(new Event('resize')));
+    return () => cancelAnimationFrame(frame);
+  }, [values]);
+  return <Wrapper values={values} />;
+}
+const Demo = customisable
+  ? lazy(() =>
+      files['./examples/customisable.tsx']().then((module) => {
+        const Wrapper = module[customisable.export];
+        return { default: () => <Customised Wrapper={Wrapper} /> };
+      }),
+    )
+  : entry && files[entry.file]
     ? lazy(() => files[entry.file]().then((module) => ({ default: module[entry.export] })))
     : null;
 createRoot(document.getElementById('root')).render(

@@ -7,12 +7,15 @@ import { navigateInApp } from '../lib/navigation';
 import demos from '../../live-demos/manifest.json';
 import { stageFit } from '../../shared/preview-stage';
 import type { PreviewContentBox, PreviewSizeMessage } from '../../shared/preview-stage';
+import type { DemoPropValues, DemoPropsMessage } from '../../shared/demo-props';
 
 type PreviewStatus = 'loading' | 'ready' | 'error';
 
 const DEFAULT_PREVIEW_WIDTH = 480;
 const UIABLE_PREVIEW_WIDTH = 280;
 const UIABLE_PREVIEW_INSET = 12;
+/** The detail stage is larger than a card, so small components may grow a little more. */
+const DETAIL_STAGE_FIT = { maxScale: 2.8, fillWidth: 0.4, fillHeight: 0.5 };
 function officialEmbedUrl(asset: CollectionAssetPreview): string | undefined {
   if (asset.preview?.kind !== 'embed') return undefined;
   const url = safeAssetUrl(asset.preview.url);
@@ -63,6 +66,9 @@ function LivePreview({
   fallbackImageUrl,
   stage = false,
   framed = false,
+  zoom = true,
+  theme: themeOverride,
+  demoProps,
 }: {
   asset: CollectionAssetPreview;
   detail: boolean;
@@ -73,6 +79,12 @@ function LivePreview({
   stage?: boolean;
   /** An opaque page on a card stage: drawn as an inset window. */
   framed?: boolean;
+  /** On a stage, frame small content larger. Off for the detail page's phone width. */
+  zoom?: boolean;
+  /** Render the demo in this theme instead of the page's. */
+  theme?: 'light' | 'dark';
+  /** Props for a customisable demo, sent to the frame whenever they change. */
+  demoProps?: DemoPropValues;
 }) {
   const viewport = useRef<HTMLDivElement>(null);
   const frame = useRef<HTMLIFrameElement>(null);
@@ -81,9 +93,11 @@ function LivePreview({
   const [status, setStatus] = useState<PreviewStatus>('loading');
   const [fallbackFailed, setFallbackFailed] = useState(false);
   const [contentBox, setContentBox] = useState<PreviewContentBox | null>(null);
-  const [theme, setTheme] = useState(() =>
+  const [pageTheme, setTheme] = useState(() =>
     document.documentElement.classList.contains('light') ? 'light' : 'dark',
   );
+  const theme = themeOverride ?? pageTheme;
+  const propsRef = useRef(demoProps);
 
   useEffect(() => {
     const element = viewport.current;
@@ -116,6 +130,19 @@ function LivePreview({
     frame.current?.contentWindow?.postMessage({ type: 'uixo-preview-theme', theme }, '*');
   }, [theme]);
 
+  // The sandboxed frame has an opaque origin, so messages go to '*'; they carry only
+  // checked prop values, and the frame checks them again.
+  const sendProps = (values: DemoPropValues | undefined) => {
+    if (!values) return;
+    const message: DemoPropsMessage = { type: 'uixo-preview-props', id: asset.id, values };
+    frame.current?.contentWindow?.postMessage(message, '*');
+  };
+  useEffect(() => {
+    propsRef.current = demoProps;
+    sendProps(demoProps);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [demoProps]);
+
   useEffect(() => {
     if (external) return;
     const receive = (event: MessageEvent) => {
@@ -128,6 +155,15 @@ function LivePreview({
       if (event.data.status === 'ready' || event.data.status === 'error') {
         setStatus(event.data.status);
       }
+    };
+    const propsReady = (event: MessageEvent) => {
+      if (
+        event.source !== frame.current?.contentWindow ||
+        event.data?.type !== 'uixo-preview-props-ready' ||
+        event.data.id !== asset.id
+      )
+        return;
+      sendProps(propsRef.current);
     };
     const measure = (event: MessageEvent<PreviewSizeMessage>) => {
       if (
@@ -142,10 +178,13 @@ function LivePreview({
     };
     window.addEventListener('message', measure);
     window.addEventListener('message', receive);
+    window.addEventListener('message', propsReady);
     return () => {
       window.removeEventListener('message', receive);
       window.removeEventListener('message', measure);
+      window.removeEventListener('message', propsReady);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [asset.id, external, stage]);
 
   useEffect(() => {
@@ -162,10 +201,12 @@ function LivePreview({
   const previewInset = uiableCard ? UIABLE_PREVIEW_INSET : 0;
   const baseScale = detail ? 1 : Math.max(size.width - previewInset * 2, 1) / previewWidth;
   const fit =
-    stage && !detail && !external
-      ? stageFit(size, contentBox, baseScale)
+    stage && zoom && !external
+      ? stageFit(size, contentBox, baseScale, detail ? DETAIL_STAGE_FIT : undefined)
       : { scale: baseScale, x: 0, y: 0 };
   const scale = fit.scale;
+  // A detail stage sizes its frame like a card does; the plain detail fills its box.
+  const sized = !detail || stage;
   const showFallbackImage = status === 'error' && fallbackImageUrl && !fallbackFailed;
 
   return (
@@ -173,7 +214,7 @@ function LivePreview({
       ref={viewport}
       data-preview-state={status}
       data-preview-provider={asset.providerId}
-      data-stage-fit={stage && !detail ? (scale > baseScale ? 'zoomed' : 'canvas') : undefined}
+      data-stage-fit={stage ? (scale > baseScale ? 'zoomed' : 'canvas') : undefined}
       className={`asset-live-viewport ${detail ? 'is-detail' : ''} ${
         showFallbackImage ? 'has-captured-fallback' : ''
       } ${framed ? 'is-framed' : ''}`}
@@ -188,10 +229,13 @@ function LivePreview({
           style={{
             colorScheme: theme,
             visibility: status === 'ready' ? 'visible' : 'hidden',
-            ...(detail
+            ...(!sized
               ? {}
               : {
-                  width: uiableCard || scale === baseScale ? previewWidth : size.width / scale,
+                  width:
+                    uiableCard || (!detail && scale === baseScale)
+                      ? previewWidth
+                      : size.width / scale,
                   height: Math.max(size.height - previewInset * 2, 1) / scale,
                   transform: uiableCard
                     ? `translate(${previewInset}px, ${previewInset}px) scale(${scale})`
@@ -282,11 +326,20 @@ export function AssetPreview({
   asset,
   detail = false,
   stage = false,
+  zoom = true,
+  theme: themeOverride,
+  demoProps,
 }: {
   asset: CollectionAssetPreview;
   detail?: boolean;
   /** Draw on a card's tinted stage: transparent demos, inset windows and screenshots. */
   stage?: boolean;
+  /** On a stage, frame small content larger. */
+  zoom?: boolean;
+  /** Render live demos in this theme instead of the page's. */
+  theme?: 'light' | 'dark';
+  /** Live props for a customisable demo (see shared/demo-props.ts). */
+  demoProps?: DemoPropValues;
 }) {
   const [failedUrl, setFailedUrl] = useState('');
   const live = asset.kind === 'component' && Object.hasOwn(demos, asset.id);
@@ -295,8 +348,10 @@ export function AssetPreview({
   const imageUrl = asset.preview?.kind === 'image' ? safeAssetUrl(asset.preview.url) : undefined;
   const showImage = imageUrl && failedUrl !== imageUrl;
   const livePreview = live || Boolean(reviewed) || Boolean(embedUrl);
+  // The frame loads in the page theme; a stage background that needs another theme is
+  // sent as a message, so switching it never reloads the demo.
   const theme = document.documentElement.classList.contains('light') ? 'light' : 'dark';
-  const clear = stage ? '&stage=clear' : '';
+  const clear = (stage ? '&stage=clear' : '') + (demoProps ? '&props=live' : '');
 
   return (
     <div
@@ -320,6 +375,9 @@ export function AssetPreview({
           asset={asset}
           detail={detail}
           stage={stage}
+          zoom={zoom}
+          theme={themeOverride}
+          demoProps={demoProps}
           src={`/live-demos/index.html?id=${encodeURIComponent(asset.id)}&theme=${theme}${clear}`}
           fallbackImageUrl={imageUrl}
         />
@@ -329,6 +387,8 @@ export function AssetPreview({
           asset={asset}
           detail={detail}
           stage={stage}
+          zoom={zoom}
+          theme={themeOverride}
           src={`${reviewed}&theme=${theme}${clear}`}
           fallbackImageUrl={imageUrl}
         />

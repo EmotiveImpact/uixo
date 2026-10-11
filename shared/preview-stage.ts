@@ -171,12 +171,13 @@ export function stageFit(
   stage: { width: number; height: number },
   box: PreviewContentBox | null,
   base: number,
+  limits: { maxScale?: number; fillWidth?: number; fillHeight?: number } = {},
 ): { scale: number; x: number; y: number } {
   if (!box || box.width < 1 || box.height < 1) return { scale: base, x: 0, y: 0 };
   const fit = Math.min(
-    (STAGE_FILL_WIDTH * stage.width) / box.width,
-    (STAGE_FILL_HEIGHT * stage.height) / box.height,
-    STAGE_MAX_SCALE,
+    ((limits.fillWidth ?? STAGE_FILL_WIDTH) * stage.width) / box.width,
+    ((limits.fillHeight ?? STAGE_FILL_HEIGHT) * stage.height) / box.height,
+    limits.maxScale ?? STAGE_MAX_SCALE,
   );
   if (fit <= base) return { scale: base, x: 0, y: 0 };
   const limitX = stage.width * 0.2;

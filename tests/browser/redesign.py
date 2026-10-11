@@ -78,8 +78,10 @@ with sync_playwright() as p:
                         elif view == 'resources':
                             expect(page.locator('.website-grid article').first).to_be_visible()
                         else:
-                            expect(page.get_by_role('dialog')).to_be_visible()
-                            expect(page.get_by_role('dialog').locator('.asset-live-viewport')).to_have_attribute('data-preview-state', 'ready', timeout=20000)
+                            # A component opens as its own page: stage on the left, facts on the right.
+                            expect(page.get_by_role('heading', level=1)).to_have_text('Button')
+                            expect(page.locator('.ad-sin .asset-live-viewport')).to_have_attribute('data-preview-state', 'ready', timeout=20000)
+                            assert page.locator('[data-slot="sidebar"]').count() == 0
                         expect(page.locator('html')).to_have_class(theme)
                         page.wait_for_timeout(300)
                         page.screenshot(path=str(OUT / f'{view}-{theme}-{width}.png'), full_page=False)
@@ -103,8 +105,13 @@ with sync_playwright() as p:
                                 sidebar = page.locator('.discovery-sidebar').bounding_box()
                                 assert sidebar and sidebar['y'] >= header['height'], sidebar
                         if view == 'detail':
-                            box = page.get_by_role('dialog').bounding_box()
-                            assert box and box['width'] >= width * .9, box
+                            stage = page.locator('.ad-stage').bounding_box()
+                            aside = page.locator('.ad-head').bounding_box()
+                            assert stage and aside, (stage, aside)
+                            if width == 1440:
+                                assert stage['width'] > 760 and aside['x'] > stage['x'] + stage['width'], (stage, aside)
+                            else:
+                                assert stage['width'] >= width - 34 and aside['y'] < stage['y'], (stage, aside)
                         results.append({'view': view, 'theme': theme, 'width': width, 'headerWidth': header['width'], 'overflow': False})
                     visit(page, '/browse/assets')
                     wait_for_card(page)

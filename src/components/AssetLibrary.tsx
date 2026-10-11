@@ -200,6 +200,24 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
       });
     });
   };
+  if (query.id)
+    return (
+      <section className="asset-library is-detail" aria-label="Asset library">
+        <AssetDetail
+          key={query.id}
+          id={query.id}
+          nameOf={nameOf}
+          query={query}
+          navigate={navigate}
+          saved={saved.includes(query.id)}
+          toggleSave={() => toggleSave(query.id)}
+          related={{ isSaved: (id) => saved.includes(id), toggle: toggleSave }}
+        />
+        <p className="asset-library-muted" role="status">
+          {notice}
+        </p>
+      </section>
+    );
   return (
     <section className="asset-library" aria-label="Asset library">
       {discovery}
@@ -515,17 +533,6 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
       <p className="asset-library-muted" role="status">
         {notice}
       </p>
-      {query.id && (
-        <AssetDetail
-          key={query.id}
-          id={query.id}
-          nameOf={nameOf}
-          query={query}
-          saved={saved.includes(query.id)}
-          toggleSave={() => toggleSave(query.id)}
-          close={() => navigate({ id: '' })}
-        />
-      )}
     </section>
   );
 }

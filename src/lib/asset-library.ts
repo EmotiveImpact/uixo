@@ -30,6 +30,7 @@ export type AssetRecord = {
     sourceUrl: string;
     note: string;
     text?: string;
+    attribution?: boolean;
   };
   variants: {
     id: string;
