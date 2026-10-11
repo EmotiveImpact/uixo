@@ -255,17 +255,19 @@ export function AssetWorkspace() {
               subtitle={
                 intelligence
                   ? 'Source-backed selections and evidence from the UIXO registry.'
-                  : utility
-                    ? 'One library. Your workflow.'
-                    : query.view === 'saved'
-                      ? assetSaves.accountBacked
-                        ? 'What you save is kept in your account, on every device.'
-                        : 'What you save stays in this browser. Sign in to keep it on every device.'
-                      : query.kind === 'icon-pack'
-                        ? 'Complete icon libraries from their makers, with the licence for each.'
-                        : query.kind === 'font'
-                          ? 'Typefaces from trusted sources, with the licence for each.'
-                          : 'Try each one right here, then install it in one line.'
+                  : query.view === 'connect'
+                    ? 'Add UIXO to your editor, then ask for a component by name.'
+                    : utility
+                      ? 'One library. Your workflow.'
+                      : query.view === 'saved'
+                        ? assetSaves.accountBacked
+                          ? 'What you save is kept in your account, on every device.'
+                          : 'What you save stays in this browser. Sign in to keep it on every device.'
+                        : query.kind === 'icon-pack'
+                          ? 'Complete icon libraries from their makers, with the licence for each.'
+                          : query.kind === 'font'
+                            ? 'Typefaces from trusted sources, with the licence for each.'
+                            : 'Try each one right here, then install it in one line.'
               }
               canClear={hasFilters && (intelligence || utility)}
               onClear={() => navigate({ view: query.view }, true)}
