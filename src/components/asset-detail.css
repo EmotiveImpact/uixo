@@ -54,6 +54,10 @@
   min-width: 0;
 }
 
+.ad-crumbs li svg {
+  flex: none;
+}
+
 .ad-crumbs a {
   color: inherit;
   text-decoration: none;
