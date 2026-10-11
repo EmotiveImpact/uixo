@@ -1,7 +1,10 @@
-import { ArrowUpRight, Bookmark, Check, Copy, X } from 'lucide-react';
+import { ArrowUpRight, Bookmark, Check, Link2, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { AssetProvenance } from './AssetProvenance';
 import { AssetPreview } from './AssetPreview';
+import { InstallCommand } from './InstallCommand';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
+import { commandText } from '../lib/package-manager';
 import { registryRequest, safeAssetUrl } from '../lib/asset-library';
 import { assetDestinationUrl } from '../lib/asset-destination';
 import type { Acquisition, AssetQuery, AssetRecord } from '../lib/asset-library';
@@ -94,13 +97,8 @@ export function AssetDetail({
   const current = resolution?.variant === variant ? resolution : null;
   const result = current?.result;
   const destinationUrl = asset ? assetDestinationUrl(asset, result?.url) : undefined;
-  const command = result?.command
-    ? [result.command.executable, ...result.command.arguments]
-        .map((part) =>
-          /^[a-zA-Z0-9@/.:_=-]+$/.test(part) ? part : `'${part.replaceAll("'", "'\\''")}'`,
-        )
-        .join(' ')
-    : '';
+  const command = commandText(result);
+  useDocumentTitle(asset?.name);
 
   async function copy(value: string) {
     try {
@@ -163,15 +161,20 @@ export function AssetDetail({
             <h2 id="asset-detail-title">{asset.name}</h2>
             <p className="asset-detail-description">{asset.description}</p>
 
+            {command ? (
+              <InstallCommand command={command} />
+            ) : (
+              !current && (
+                <p className="install-command-pending" role="status">
+                  Finding the install command…
+                </p>
+              )
+            )}
+
             <div className="asset-detail-primary-actions">
-              {command ? (
-                <button className="asset-library-primary" onClick={() => void copy(command)}>
-                  <Copy size={14} />
-                  Copy install command
-                </button>
-              ) : destinationUrl ? (
+              {destinationUrl && (
                 <a
-                  className="asset-library-primary"
+                  className={command ? undefined : 'asset-library-primary'}
                   href={destinationUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -181,16 +184,14 @@ export function AssetDetail({
                     : `View on ${nameOf(asset.providerId)}`}
                   <ArrowUpRight size={14} />
                 </a>
-              ) : null}
-              {command && destinationUrl && (
-                <a href={destinationUrl} target="_blank" rel="noopener noreferrer">
-                  View on {nameOf(asset.providerId)}
-                  <ArrowUpRight size={14} />
-                </a>
               )}
               <button aria-pressed={saved} onClick={toggleSave}>
                 {saved ? <Check size={14} /> : <Bookmark size={14} />}
-                {saved ? 'Saved' : 'Save asset'}
+                {saved ? 'Saved' : 'Save'}
+              </button>
+              <button onClick={() => void copy(window.location.href)}>
+                <Link2 size={14} />
+                Copy link
               </button>
             </div>
 
@@ -229,21 +230,9 @@ export function AssetDetail({
             </label>
 
             <details className="asset-drawer-section" open>
-              <summary>Installation</summary>
-              {!current && <p>Finding the source and installation guidance…</p>}
+              <summary>Before you install</summary>
               {current?.error && <p role="alert">{current.error}</p>}
               {result?.message && <p>{result.message}</p>}
-              {command && (
-                <div className="asset-command">
-                  <pre tabIndex={0}>{command}</pre>
-                  <button
-                    onClick={() => void copy(command)}
-                    aria-label="Copy installation instruction"
-                  >
-                    <Copy size={14} />
-                  </button>
-                </div>
-              )}
               <p>
                 <strong>Dependencies:</strong>{' '}
                 {selected?.dependencies.join(', ') || 'None declared'}
@@ -310,7 +299,6 @@ export function AssetDetail({
                   </p>
                 </div>
               ))}
-              <button onClick={() => void copy(window.location.href)}>Copy asset link</button>
             </details>
             <p className="asset-drawer-notice" role="status">
               {notice}

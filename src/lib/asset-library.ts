@@ -40,6 +40,7 @@ export type AssetRecord = {
     registryDependencies?: string[];
     peerDependencies?: Record<string, string>;
     sourceRef?: string | null;
+    acquisition?: { kind: string; url?: string } | null;
   }[];
 };
 export type ProviderRecord = {

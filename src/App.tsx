@@ -225,6 +225,14 @@ export function App() {
           onOpenResource={(resourceId) => navigate({ ...EMPTY_ROUTE, resourceId })}
           onSignIn={() => setModal('signin')}
           onAbout={() => setModal('about')}
+          savedAssets={assetSaves.saved}
+          onToggleAssetSave={(id) =>
+            assetSaves.save(
+              assetSaves.saved.includes(id)
+                ? assetSaves.saved.filter((entry) => entry !== id)
+                : [...assetSaves.saved, id].slice(-200),
+            )
+          }
         />
         <AppDialog
           dialogRef={dialogRef}

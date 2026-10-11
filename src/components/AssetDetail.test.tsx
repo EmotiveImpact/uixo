@@ -101,7 +101,7 @@ it('restores licence evidence, saving, automatic acquisition and compatibility i
   );
   expect(screen.getByText('Redistribution')).toBeTruthy();
   expect(screen.getByText('Upstream SVG ↗')).toBeTruthy();
-  fireEvent.click(screen.getByText('Save asset'));
+  fireEvent.click(screen.getByRole('button', { name: 'Save' }));
   expect(toggleSave).toHaveBeenCalledOnce();
   fireEvent.change(screen.getByLabelText('Choose a variant'), { target: { value: 'svg' } });
   await screen.findByText('npm install svg');

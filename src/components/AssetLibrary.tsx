@@ -1,6 +1,6 @@
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
 import { useEffect, useState, type ReactNode } from 'react';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark, SlidersHorizontal, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, SlidersHorizontal, X } from 'lucide-react';
 import {
   assetHref,
   catalogueResult,
@@ -10,6 +10,7 @@ import {
 } from '../lib/asset-library';
 import { AssetDetail } from './AssetDetail';
 import { AssetPreview } from './AssetPreview';
+import { ComponentActions } from './ComponentActions';
 import type {
   AssetQuery,
   Catalogue,
@@ -408,23 +409,14 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                           {asset.name}
                         </a>
                       </h2>
-                      <button
-                        className="asset-library-save"
-                        aria-label={
-                          saved.includes(asset.id) ? `Unsave ${asset.name}` : `Save ${asset.name}`
-                        }
-                        aria-pressed={saved.includes(asset.id)}
-                        onClick={() => toggleSave(asset.id)}
-                      >
-                        <Bookmark
-                          size={16}
-                          fill={saved.includes(asset.id) ? 'currentColor' : 'none'}
-                        />
-                      </button>
+                      <span className="card-price">{asset.price === 'paid' ? 'Paid' : 'Free'}</span>
                     </div>
                     <small>
                       {nameOf(asset.providerId)} ·{' '}
-                      {asset.kind === 'icon-pack' ? 'Icon pack' : asset.kind}
+                      {asset.kind === 'icon-pack'
+                        ? 'Icon pack'
+                        : COMPONENT_CATEGORIES.find((entry) => entry.id === asset.category)
+                            ?.label || asset.kind}
                     </small>
 
                     <div className="asset-library-tags">
@@ -432,6 +424,11 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                       <span>{asset.variants[0]?.format.toUpperCase()}</span>
                       <span>{asset.licence.expression}</span>
                     </div>
+                    <ComponentActions
+                      asset={asset}
+                      saved={saved.includes(asset.id)}
+                      onToggleSave={() => toggleSave(asset.id)}
+                    />
                   </div>
                 </article>
               ))}

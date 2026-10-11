@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUpRight, ChevronRight, Search } from 'lucide-react';
 import { SiteFooter } from './SiteFooter';
 import { Thumbnail } from './Thumbnail';
 import { AssetPreview } from './AssetPreview';
+import { ComponentActions } from './ComponentActions';
 import './homepage.css';
 import { DiscoveryHeader } from './discovery/DiscoveryHeader';
 import { collections, resources, thumbnailPosition } from '../data';
@@ -39,6 +40,8 @@ type LandingPageProps = {
   onOpenResource: (id: string) => void;
   onSignIn: () => void;
   onAbout: () => void;
+  savedAssets?: string[];
+  onToggleAssetSave?: (id: string) => void;
 };
 
 // Components with original live demos, chosen to show range on first load.
@@ -64,7 +67,12 @@ type Shelf = (typeof SHELVES)[number]['id'];
 const categoryLabel = (id = 'other') =>
   id === 'other' ? 'Components' : (id.charAt(0).toUpperCase() + id.slice(1)).replace('-', ' ');
 
-type CardLinks = { href: (id: string) => string; providerName: (id: string) => string };
+type CardLinks = {
+  href: (id: string) => string;
+  providerName: (id: string) => string;
+  saved: (id: string) => boolean;
+  toggleSave?: (id: string) => void;
+};
 
 function ComponentCard({ asset, links }: { asset: AssetRecord; links: CardLinks }) {
   const provider = links.providerName(asset.providerId);
@@ -85,13 +93,20 @@ function ComponentCard({ asset, links }: { asset: AssetRecord; links: CardLinks 
         </a>
         <span className="card-price">{asset.price === 'free' ? 'Free' : asset.price}</span>
       </div>
-      <div className="card-byline">
-        <span className="creator-avatar" aria-hidden="true">
-          {provider.charAt(0)}
-        </span>
-        <span className="creator-name">{provider}</span>
-        <ChevronRight size={12} aria-hidden="true" />
-        <span>{categoryLabel(asset.category)}</span>
+      <div className="card-meta">
+        <div className="card-byline">
+          <span className="creator-avatar" aria-hidden="true">
+            {provider.charAt(0)}
+          </span>
+          <span className="creator-name">{provider}</span>
+          <ChevronRight size={12} aria-hidden="true" />
+          <span>{categoryLabel(asset.category)}</span>
+        </div>
+        <ComponentActions
+          asset={asset}
+          saved={links.saved(asset.id)}
+          onToggleSave={links.toggleSave && (() => links.toggleSave?.(asset.id))}
+        />
       </div>
     </article>
   );
@@ -134,6 +149,8 @@ export function LandingPage({
   onOpenCollection,
   onOpenResource,
   onSignIn,
+  savedAssets = [],
+  onToggleAssetSave,
 }: LandingPageProps) {
   const [q, setQ] = useState('');
   useDocumentTitle(null);
@@ -147,6 +164,8 @@ export function LandingPage({
   const links: CardLinks = {
     href: (id) => `${hrefs.assets}?id=${encodeURIComponent(id)}`,
     providerName: (id) => providerList?.items.find((p) => p.id === id)?.name ?? id,
+    saved: (id) => savedAssets.includes(id),
+    toggleSave: onToggleAssetSave,
   };
   const websites = resources.filter((item) => item.featured).slice(0, 6);
   const internal = (event: React.MouseEvent<HTMLAnchorElement>, run: () => void) => {
