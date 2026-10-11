@@ -21,3 +21,19 @@ export function navigateInApp(href: string): void {
   window.history.pushState(window.history.state, '', next);
   window.dispatchEvent(new PopStateEvent('popstate', { state: window.history.state }));
 }
+
+/** The one Saved page, on its websites tab. Old links to the favourites list land here. */
+export const SAVED_WEBSITES_HREF = '/browse/assets?view=saved&tab=websites';
+
+/** Swap the current entry for another in-app address, so Back never returns to the old one. */
+export function replaceInApp(href: string): void {
+  window.history.replaceState(window.history.state, '', href);
+  window.dispatchEvent(new PopStateEvent('popstate', { state: window.history.state }));
+}
+
+/** The favourites list became the Saved page's websites tab. */
+export function redirectLegacySaves(): boolean {
+  if (window.location.pathname.replace(/\/+$/, '') !== '/list/favourites') return false;
+  window.history.replaceState(window.history.state, '', SAVED_WEBSITES_HREF);
+  return true;
+}

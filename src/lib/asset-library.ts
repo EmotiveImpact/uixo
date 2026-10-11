@@ -108,6 +108,8 @@ export type AssetQuery = {
   id: string;
   collection: string;
   candidate: string;
+  /** The Saved page's tab: components (default) or websites. */
+  tab: '' | 'websites';
 };
 export const EMPTY_ASSET_QUERY: AssetQuery = {
   q: '',
@@ -124,6 +126,7 @@ export const EMPTY_ASSET_QUERY: AssetQuery = {
   id: '',
   collection: '',
   candidate: '',
+  tab: '',
 };
 const valid = (value: string | null, options: string[]) =>
   value && options.includes(value) ? value : '';
@@ -165,6 +168,7 @@ export function readAssetQuery(search: string): AssetQuery {
       ? p.get('collection')!
       : '',
     candidate: /^[a-f0-9-]{36}$/.test(p.get('candidate') ?? '') ? p.get('candidate')! : '',
+    tab: p.get('tab') === 'websites' ? 'websites' : '',
     id:
       /^[a-z0-9][a-z0-9._/-]{0,179}$/.test(p.get('id') ?? '') && !p.get('id')!.includes('..')
         ? p.get('id')!

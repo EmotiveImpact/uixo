@@ -206,7 +206,8 @@ export function DiscoveryHeader({
           <a
             className="header-icon header-saved"
             href="/browse/assets?view=saved"
-            aria-label="Saved assets"
+            aria-label="Saved"
+            title="Saved"
             onClick={(e) => navigate(e, '/browse/assets?view=saved')}
           >
             <Bookmark size={18} />

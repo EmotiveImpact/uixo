@@ -3,7 +3,6 @@ import {
   Bookmark,
   ChevronDown,
   Globe,
-  Heart,
   House,
   Layers,
   Plus,
@@ -237,17 +236,10 @@ export function CatalogueSidebar(props: AppSidebarProps) {
           >
             <Bookmark size={15} />
             <span>Saved</span>
-            <small>{props.savedAssetCount || ''}</small>
-          </button>
-          <button
-            aria-label="Favourite websites"
-            className={props.listId === DEFAULT_LIST_ID ? 'chosen' : ''}
-            onClick={() => props.onChooseList(DEFAULT_LIST_ID)}
-          >
-            <Heart size={15} />
-            <span>Saved websites</span>
             <small>
-              {props.lists.find((list) => list.id === DEFAULT_LIST_ID)?.resourceIds.length || ''}
+              {(props.savedAssetCount ?? 0) +
+                (props.lists.find((list) => list.id === DEFAULT_LIST_ID)?.resourceIds.length ??
+                  0) || ''}
             </small>
           </button>
           <button

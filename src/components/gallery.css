@@ -2018,3 +2018,70 @@
   font: 500 14px/1 var(--g-sans);
   cursor: pointer;
 }
+
+/* ------------------------------------------------------------- Saved page */
+
+:is(:root, :root.light) .uixo-shell .asset-library-toolbar[hidden],
+:is(:root, :root.light) .uixo-shell .asset-library-result-count[hidden] {
+  display: none;
+}
+
+/* Components and Websites, each with its count, as one segmented switch. */
+:is(:root, :root.light) .saved-tabs {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  align-self: flex-start;
+  gap: 2px;
+  margin: 0 0 24px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--g-well);
+}
+
+:is(:root, :root.light) .saved-tabs [role='tab'] {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--g-text-2);
+  font: 500 14px/1 var(--g-sans);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .saved-tabs [role='tab']:hover {
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .saved-tabs [role='tab'][aria-selected='true'] {
+  background: var(--g-bg);
+  color: var(--g-text);
+  box-shadow: var(--g-hi);
+}
+
+:root.light .saved-tabs [role='tab'][aria-selected='true'] {
+  background: #fff;
+}
+
+.saved-tab-count {
+  font: 500 12px/1 var(--g-mono);
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .asset-library-empty .asset-library-inline {
+  display: inline;
+  min-height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--g-text);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}

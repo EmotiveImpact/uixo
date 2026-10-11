@@ -34,13 +34,14 @@ import { useRoute } from './hooks/useRoute';
 import { useSearchHotkey } from './hooks/useSearchHotkey';
 import { useTheme } from './hooks/useTheme';
 import { filterResources } from './lib/filters';
-import { navigateInApp } from './lib/navigation';
+import { isSavedAnywhere } from './lib/lists';
+import { navigateInApp, replaceInApp, SAVED_WEBSITES_HREF } from './lib/navigation';
 import type { CandidateListing } from './lib/candidates';
 import { useCandidateCatalogue } from './hooks/useCandidateCatalogue';
 import { EMPTY_ROUTE, routeToHref } from './lib/url';
 import { APP_SIDEBAR_SIZING } from './lib/layout';
 import { collections, resources } from './data';
-import { ALL_FORMATS } from './types';
+import { ALL_FORMATS, DEFAULT_LIST_ID } from './types';
 import type { BrowseOrder, ModalName, PriceFilter } from './types';
 
 export function App() {
@@ -99,6 +100,15 @@ export function App() {
     return () => window.removeEventListener('keydown', onKey);
   }, [route.landing, modal]);
 
+  // Saving a website says so, rather than only re-announcing the result count.
+  const [saveAnnouncement, setSaveAnnouncement] = useState('');
+  const toggleWebsite = (resourceId: string) => {
+    const name = resources.find((entry) => entry.id === resourceId)?.name ?? 'This website';
+    const wasSaved = isSavedAnywhere(lists, resourceId);
+    toggleSaved(resourceId);
+    setSaveAnnouncement(wasSaved ? `Removed ${name} from saved.` : `Saved ${name}.`);
+  };
+
   const activeList = lists.find((entry) => entry.id === route.listId) ?? null;
   const activeCollection = collections.find((entry) => entry.slug === route.collectionSlug) ?? null;
   const openResource = resources.find((entry) => entry.id === route.resourceId) ?? null;
@@ -107,6 +117,11 @@ export function App() {
   useEffect(() => {
     if (route.listId && !activeList) navigate({ listId: null });
   }, [route.listId, activeList, navigate]);
+
+  // Saved websites live on the one Saved page now; the old favourites list redirects there.
+  useEffect(() => {
+    if (route.listId === DEFAULT_LIST_ID) replaceInApp(SAVED_WEBSITES_HREF);
+  }, [route.listId]);
 
   const candidateCatalogue = useCandidateCatalogue(route.candidates);
   const candidateListings = candidateCatalogue?.listings ?? null;
@@ -380,13 +395,13 @@ export function App() {
           />
 
           <SaveSyncNotice
-            label="Website favourites"
+            label="Saved websites"
             status={listSyncStatus}
             error={listSyncError}
             onRetry={retryListSync}
           />
           <SaveSyncNotice
-            label="Asset favourites"
+            label="Saved components"
             status={assetSaves.syncStatus}
             error={assetSaves.syncError}
             onRetry={assetSaves.retrySync}
@@ -416,6 +431,10 @@ export function App() {
             price={route.price}
             onPriceChange={(price: PriceFilter) => navigate({ price })}
           />
+
+          <p className="sr-only" role="status">
+            {saveAnnouncement}
+          </p>
 
           {/* Announce result counts so filtering is not silent to a screen reader. */}
           <p className="sr-only" role="status" aria-live="polite">
@@ -479,7 +498,7 @@ export function App() {
                 resources={shown}
                 lists={lists}
                 onOpen={(resourceId) => navigate({ resourceId })}
-                onToggleSaved={toggleSaved}
+                onToggleSaved={toggleWebsite}
                 onSelectCategory={chooseCategory}
               />
 

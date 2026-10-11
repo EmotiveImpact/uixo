@@ -14,6 +14,10 @@ import { AppDialog } from './AppDialog';
 import { PageHeading } from './PageHeading';
 import { AssetUtilities } from './AssetUtilities';
 import { AssetLibrary } from './AssetLibrary';
+import { ResourceGrid } from './ResourceGrid';
+import { SavedTabs } from './SavedTabs';
+import { resources } from '../data';
+import { DEFAULT_LIST_ID } from '../types';
 import { SaveSyncNotice } from './SaveSyncNotice';
 import { useAuth } from '../hooks/useAuth';
 import { useAssetSaves } from '../hooks/useAssetSaves';
@@ -58,6 +62,7 @@ export function AssetWorkspace() {
   } = useAuth();
   const {
     lists,
+    toggleSaved: toggleSavedWebsite,
     remove,
     syncStatus: listSyncStatus,
     syncError: listSyncError,
@@ -109,6 +114,16 @@ export function AssetWorkspace() {
     return () => window.removeEventListener('keydown', focusSearch);
   }, [modal, query.id, navigate]);
   const go = (changes: Parameters<typeof routeToHref>[0]) => navigateInApp(routeToHref(changes));
+  const followInApp = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    navigateInApp(href);
+  };
+  const [websiteNotice, setWebsiteNotice] = useState('');
+  const savedWebsiteIds = lists.find((list) => list.id === DEFAULT_LIST_ID)?.resourceIds ?? [];
+  const savedWebsites = savedWebsiteIds
+    .map((id) => resources.find((resource) => resource.id === id))
+    .filter((resource) => resource !== undefined);
   const openCategory = (category: string, sub: string | null = null) =>
     go({ ...EMPTY_ROUTE, category, sub });
   const intelligence = [
@@ -139,7 +154,7 @@ export function AssetWorkspace() {
     (query.view === 'sources'
       ? 'Component sources'
       : query.view === 'saved'
-        ? 'Saved assets'
+        ? 'Saved'
         : COMPONENT_CATEGORIES.find((entry) => entry.id === query.category)?.label ||
           (query.kind === 'icon-pack'
             ? 'Icon packs'
@@ -258,11 +273,15 @@ export function AssetWorkspace() {
                   ? 'Source-backed selections and evidence from the UIXO registry.'
                   : utility
                     ? 'One library. Your workflow.'
-                    : query.kind === 'icon-pack'
-                      ? 'Complete icon libraries from their makers, with the licence for each.'
-                      : query.kind === 'font'
-                        ? 'Typefaces from trusted sources, with the licence for each.'
-                        : 'Try each one right here, then install it in one line.'
+                    : query.view === 'saved'
+                      ? assetSaves.accountBacked
+                        ? 'What you save is kept in your account, on every device.'
+                        : 'What you save stays in this browser. Sign in to keep it on every device.'
+                      : query.kind === 'icon-pack'
+                        ? 'Complete icon libraries from their makers, with the licence for each.'
+                        : query.kind === 'font'
+                          ? 'Typefaces from trusted sources, with the licence for each.'
+                          : 'Try each one right here, then install it in one line.'
               }
               canClear={hasFilters && (intelligence || utility)}
               onClear={() => navigate({ view: query.view }, true)}
@@ -270,13 +289,13 @@ export function AssetWorkspace() {
           )}
           <RegistryReadiness />
           <SaveSyncNotice
-            label="Asset favourites"
+            label="Saved components"
             status={assetSaves.syncStatus}
             error={assetSaves.syncError}
             onRetry={assetSaves.retrySync}
           />
           <SaveSyncNotice
-            label="Website favourites"
+            label="Saved websites"
             status={listSyncStatus}
             error={listSyncError}
             onRetry={retryListSync}
@@ -303,49 +322,97 @@ export function AssetWorkspace() {
               <AssetUtilities key={query.view} view={query.view} />
             )
           ) : (
-            <AssetLibrary
-              query={query}
-              navigate={navigate}
-              density={density}
-              assetSaves={assetSaves}
-              discovery={
-                <DiscoveryControls
-                  assetSearch
-                  catalogue="assets"
-                  showDiscovery={!utility}
-                  placeholder={
-                    query.category
-                      ? `Search ${(COMPONENT_CATEGORIES.find((entry) => entry.id === query.category)?.label ?? 'components').toLowerCase()}`
-                      : query.kind === 'component'
-                        ? 'Search components'
-                        : undefined
-                  }
-                  searchRef={searchRef}
-                  search={query.q}
-                  onSearchChange={(q) =>
-                    navigate({
-                      q,
-                      offset: 0,
-                      view: query.view === 'sources' ? 'assets' : query.view,
-                    })
-                  }
-                  price={
-                    (query.price === 'free'
-                      ? 'Free'
-                      : query.price === 'paid'
-                        ? 'Paid'
-                        : 'All') as PriceFilter
-                  }
-                  onPriceChange={(price) =>
-                    navigate({ price: price === 'All' ? '' : price.toLowerCase(), offset: 0 })
-                  }
-                  commercial={{
-                    value: query.commercial,
-                    onChange: (commercial) => navigate({ commercial, offset: 0 }),
-                  }}
+            <>
+              {query.view === 'saved' && (
+                <SavedTabs
+                  tab={query.tab}
+                  components={assetSaves.saved.length}
+                  websites={savedWebsites.length}
+                  onChoose={(tab) => navigate({ view: 'saved', tab }, true)}
                 />
-              }
-            />
+              )}
+              {query.view === 'saved' && query.tab === 'websites' ? (
+                <div role="tabpanel" id="saved-panel" aria-labelledby="saved-tab-websites">
+                  {savedWebsites.length ? (
+                    <ResourceGrid
+                      density={density}
+                      resources={savedWebsites}
+                      lists={lists}
+                      onOpen={(resourceId) => go({ ...EMPTY_ROUTE, resourceId })}
+                      onToggleSaved={(id) => {
+                        const resource = savedWebsites.find((entry) => entry.id === id);
+                        toggleSavedWebsite(id);
+                        setWebsiteNotice(resource ? `Removed ${resource.name} from saved.` : '');
+                      }}
+                      onSelectCategory={(category) => openCategory(category)}
+                    />
+                  ) : (
+                    <section className="asset-library-empty">
+                      <h2>No saved websites yet.</h2>
+                      <p>Use the bookmark on any website or library to keep it here.</p>
+                      <a href="/browse" onClick={(event) => followInApp(event, '/browse')}>
+                        Browse websites and libraries
+                      </a>
+                    </section>
+                  )}
+                  <p className="sr-only" role="status">
+                    {websiteNotice}
+                  </p>
+                </div>
+              ) : (
+                <AssetLibrary
+                  query={query}
+                  navigate={navigate}
+                  density={density}
+                  assetSaves={assetSaves}
+                  savedWebsites={
+                    query.view === 'saved' && savedWebsites.length
+                      ? {
+                          count: savedWebsites.length,
+                          show: () => navigate({ view: 'saved', tab: 'websites' }, true),
+                        }
+                      : undefined
+                  }
+                  discovery={
+                    <DiscoveryControls
+                      assetSearch
+                      catalogue="assets"
+                      showDiscovery={!utility}
+                      placeholder={
+                        query.category
+                          ? `Search ${(COMPONENT_CATEGORIES.find((entry) => entry.id === query.category)?.label ?? 'components').toLowerCase()}`
+                          : query.kind === 'component'
+                            ? 'Search components'
+                            : undefined
+                      }
+                      searchRef={searchRef}
+                      search={query.q}
+                      onSearchChange={(q) =>
+                        navigate({
+                          q,
+                          offset: 0,
+                          view: query.view === 'sources' ? 'assets' : query.view,
+                        })
+                      }
+                      price={
+                        (query.price === 'free'
+                          ? 'Free'
+                          : query.price === 'paid'
+                            ? 'Paid'
+                            : 'All') as PriceFilter
+                      }
+                      onPriceChange={(price) =>
+                        navigate({ price: price === 'All' ? '' : price.toLowerCase(), offset: 0 })
+                      }
+                      commercial={{
+                        value: query.commercial,
+                        onChange: (commercial) => navigate({ commercial, offset: 0 }),
+                      }}
+                    />
+                  }
+                />
+              )}
+            </>
           )}
           <SiteFooter>
             {isCurator && (

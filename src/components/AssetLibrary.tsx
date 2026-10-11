@@ -37,6 +37,8 @@ type Props = {
     save: (assetIds: string[]) => boolean;
     accountBacked: boolean;
   };
+  /** On Saved: websites saved on the other tab, so an empty components tab can point there. */
+  savedWebsites?: { count: number; show: () => void };
 };
 
 const ASSET_PAGE_SIZE = 24;
@@ -145,7 +147,14 @@ function paginationItems(currentPage: number, totalPages: number): Array<number 
   return items;
 }
 
-export function AssetLibrary({ query, navigate, density, discovery, assetSaves }: Props) {
+export function AssetLibrary({
+  query,
+  navigate,
+  density,
+  discovery,
+  assetSaves,
+  savedWebsites,
+}: Props) {
   const [providers, setProviders] = useState<ProviderRecord[]>([]);
   const [inventory, setInventory] = useState<CatalogueInventory | null>(null);
   const [result, setResult] = useState<Catalogue | null>(null);
@@ -346,10 +355,17 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
         </p>
       </section>
     );
+  // Nothing saved yet: no filters over an empty page, only the way to fill it.
+  const bareSaved = view === 'saved' && !savedKey;
   return (
-    <section className="asset-library" aria-label="Asset library">
-      {discovery}
-      <div className="asset-library-toolbar">
+    <section
+      className="asset-library"
+      {...(view === 'saved'
+        ? { role: 'tabpanel', id: 'saved-panel', 'aria-labelledby': 'saved-tab-components' }
+        : { 'aria-label': 'Asset library' })}
+    >
+      {!bareSaved && discovery}
+      <div className="asset-library-toolbar" hidden={bareSaved}>
         {(!kind || kind === 'component') && (
           <div className="component-category-chips" role="group" aria-label="Component categories">
             <button
@@ -515,7 +531,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
               <button onClick={() => navigate({ view }, true)}>Reset filters</button>
             </div>
           )}
-          <div className="asset-library-result-count">
+          <div className="asset-library-result-count" hidden={bareSaved}>
             <div className="result-summary">
               <strong role="status" aria-live="polite">
                 {loading
@@ -583,20 +599,35 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
             <section className="asset-library-empty">
               <h2>
                 {view === 'saved'
-                  ? 'Nothing saved here yet.'
+                  ? savedKey
+                    ? 'No saved component matches these filters.'
+                    : 'No saved components yet.'
                   : query.q
                     ? `Nothing matches “${query.q}”.`
                     : 'Nothing matches these filters.'}
               </h2>
               <p>
                 {view === 'saved'
-                  ? 'Use the bookmark on any component to keep it here for later.'
+                  ? 'Use the bookmark on any component to keep it here.'
                   : 'Try a broader word or remove a filter. Fonts and templates are still being added.'}
               </p>
+              {view === 'saved' && savedWebsites && (
+                <p>
+                  You have {savedWebsites.count} saved{' '}
+                  {savedWebsites.count === 1 ? 'website' : 'websites'}.{' '}
+                  <button
+                    type="button"
+                    className="asset-library-inline"
+                    onClick={savedWebsites.show}
+                  >
+                    Show saved websites
+                  </button>
+                </p>
+              )}
               <button onClick={() => navigate({}, true)}>
                 {view === 'saved' ? 'Browse components' : 'Clear search and filters'}
               </button>
-              <a href="/browse">Browse websites and libraries instead</a>
+              {view !== 'saved' && <a href="/browse">Browse websites and libraries instead</a>}
             </section>
           ) : (
             <div className={`asset-library-grid asset-density-${density}`}>

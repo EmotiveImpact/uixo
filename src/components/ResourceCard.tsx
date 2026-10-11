@@ -70,7 +70,7 @@ export function ResourceCard({
         </a>
         <button
           className="save"
-          aria-label={`${isSaved ? 'Remove' : 'Save'} ${resource.name} ${isSaved ? 'from' : 'to'} favourites`}
+          aria-label={isSaved ? `Remove ${resource.name} from saved` : `Save ${resource.name}`}
           aria-pressed={isSaved}
           onClick={() => onToggleSaved(resource.id)}
         >
