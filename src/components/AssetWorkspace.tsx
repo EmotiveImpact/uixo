@@ -258,9 +258,13 @@ export function AssetWorkspace() {
                   ? 'Source-backed selections and evidence from the UIXO registry.'
                   : utility
                     ? 'One library. Your workflow.'
-                    : 'Components, icon packs, and fonts from trusted sources. Preview them, inspect the details, and go straight to the original.'
+                    : query.kind === 'icon-pack'
+                      ? 'Complete icon libraries from their makers, with the licence for each.'
+                      : query.kind === 'font'
+                        ? 'Typefaces from trusted sources, with the licence for each.'
+                        : 'Try each one right here, then install it in one line.'
               }
-              canClear={hasFilters}
+              canClear={hasFilters && (intelligence || utility)}
               onClear={() => navigate({ view: query.view }, true)}
             />
           )}
@@ -309,6 +313,13 @@ export function AssetWorkspace() {
                   assetSearch
                   catalogue="assets"
                   showDiscovery={!utility}
+                  placeholder={
+                    query.category
+                      ? `Search ${(COMPONENT_CATEGORIES.find((entry) => entry.id === query.category)?.label ?? 'components').toLowerCase()}`
+                      : query.kind === 'component'
+                        ? 'Search components'
+                        : undefined
+                  }
                   searchRef={searchRef}
                   search={query.q}
                   onSearchChange={(q) =>

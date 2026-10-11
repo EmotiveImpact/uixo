@@ -34,6 +34,8 @@ type DiscoveryControlsProps = {
   catalogue?: 'websites' | 'assets' | 'collections';
   collectionIndex?: boolean;
   showDiscovery?: boolean;
+  /** Overrides the search placeholder, e.g. "Search buttons". */
+  placeholder?: string;
 };
 
 export function TopBar({
@@ -107,6 +109,7 @@ export function DiscoveryControls({
   catalogue = 'websites',
   collectionIndex = false,
   showDiscovery = true,
+  placeholder,
 }: DiscoveryControlsProps) {
   return (
     <>
@@ -131,11 +134,12 @@ export function DiscoveryControls({
                         : 'Search websites'
                 }
                 placeholder={
-                  collectionIndex
+                  placeholder ??
+                  (collectionIndex
                     ? 'Search collections…'
                     : assetSearch
                       ? 'Search components and icon packs…'
-                      : 'Search by name, tag or use case…'
+                      : 'Search by name, tag or use case…')
                 }
               />
               <kbd>/</kbd>

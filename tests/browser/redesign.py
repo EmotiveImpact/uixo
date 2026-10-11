@@ -116,7 +116,7 @@ with sync_playwright() as p:
                     visit(page, '/browse/assets')
                     wait_for_card(page)
                     with page.expect_response(lambda response: '/api/registry?' in response.url and 'action=search' in response.url and 'category=forms' in response.url) as filtered:
-                        page.locator('.component-category-chips').get_by_role('button', name='Forms', exact=True).click()
+                        page.locator('.component-category-chips').get_by_role('button', name=re.compile(r'^Forms( [0-9,]+)?$')).click()
                     assert filtered.value.status == 200
                     payload = filtered.value.json()
                     assert payload['items'] and payload['total'] > 0
@@ -126,7 +126,7 @@ with sync_playwright() as p:
                     expect(page.locator('.active-filter', has_text='Forms')).to_be_visible()
                     first_card = page.locator('.asset-library-card').first
                     expect(first_card.locator('.asset-library-card-link')).to_have_attribute('href', re.compile('id=' + re.escape(quote(selected['id'], safe=''))))
-                    expect(page.locator('.component-category-chips').get_by_role('button', name='Forms', exact=True)).to_have_attribute('aria-pressed', 'true')
+                    expect(page.locator('.component-category-chips').get_by_role('button', name=re.compile(r'^Forms( [0-9,]+)?$'))).to_have_attribute('aria-pressed', 'true')
                     save = first_card.get_by_role('button', name=f"Save {selected['name']}", exact=True)
                     save.click()
                     expect(first_card.get_by_role('button', name=f"Unsave {selected['name']}", exact=True)).to_have_attribute('aria-pressed', 'true')

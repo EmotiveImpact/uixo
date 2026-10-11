@@ -1,6 +1,14 @@
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
-import { useEffect, useState, type ReactNode } from 'react';
-import { ArrowLeft, ArrowRight, ArrowUpRight, SlidersHorizontal, X } from 'lucide-react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
+import {
+  ArrowRight,
+  ArrowUpRight,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  SlidersHorizontal,
+  X,
+} from 'lucide-react';
 import {
   assetHref,
   catalogueResult,
@@ -30,6 +38,82 @@ type Props = {
 };
 
 const ASSET_PAGE_SIZE = 24;
+/** Categories shown as chips; the rest sit under More. */
+const VISIBLE_CATEGORIES = 7;
+const formatCount = (value: number) => value.toLocaleString('en-GB');
+
+/** The categories that do not fit the chip row, in a small menu that closes on choice. */
+function MoreCategories({
+  current,
+  count,
+  onChoose,
+}: {
+  current: string;
+  count: (id: string) => number | undefined;
+  onChoose: (id: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const wrap = useRef<HTMLDivElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+  const rest = COMPONENT_CATEGORIES.slice(VISIBLE_CATEGORIES);
+  const chosen = rest.find((entry) => entry.id === current);
+  useEffect(() => {
+    if (!open) return;
+    const dismiss = (event: PointerEvent) => {
+      if (!wrap.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const escape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      setOpen(false);
+      trigger.current?.focus();
+    };
+    document.addEventListener('pointerdown', dismiss);
+    document.addEventListener('keydown', escape);
+    return () => {
+      document.removeEventListener('pointerdown', dismiss);
+      document.removeEventListener('keydown', escape);
+    };
+  }, [open]);
+  return (
+    <div className="chip-more" ref={wrap}>
+      <button
+        ref={trigger}
+        aria-pressed={Boolean(chosen)}
+        aria-expanded={open}
+        aria-controls="more-categories"
+        onClick={() => setOpen((value) => !value)}
+      >
+        {chosen?.label ?? 'More'}
+        <ChevronDown size={14} aria-hidden="true" />
+      </button>
+      {open && (
+        <div
+          className="chip-more-menu"
+          id="more-categories"
+          role="group"
+          aria-label="More categories"
+        >
+          {rest.map((entry) => {
+            const value = count(entry.id);
+            return (
+              <button
+                key={entry.id}
+                aria-pressed={entry.id === current}
+                onClick={() => {
+                  setOpen(false);
+                  onChoose(entry.id);
+                }}
+              >
+                {entry.label}
+                {value !== undefined && <span className="chip-count">{formatCount(value)}</span>}
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
 const KIND_OPTIONS = [
   { id: 'component', label: 'Components' },
   { id: 'icon-pack', label: 'Icon packs' },
@@ -229,8 +313,9 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
               onClick={() => navigate({ kind: '', category: '', offset: 0, id: '' })}
             >
               All
+              {inventory && <span className="chip-count">{formatCount(inventory.total)}</span>}
             </button>
-            {COMPONENT_CATEGORIES.slice(0, 7).map((entry) => (
+            {COMPONENT_CATEGORIES.slice(0, VISIBLE_CATEGORIES).map((entry) => (
               <button
                 key={entry.id}
                 aria-pressed={category === entry.id}
@@ -239,8 +324,18 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                 }
               >
                 {entry.label}
+                {inventory && (
+                  <span className="chip-count">
+                    {formatCount(inventoryCount('categories', entry.id))}
+                  </span>
+                )}
               </button>
             ))}
+            <MoreCategories
+              current={category}
+              count={(id) => (inventory ? inventoryCount('categories', id) : undefined)}
+              onChoose={(id) => navigate({ kind: 'component', category: id, offset: 0, id: '' })}
+            />
           </div>
         )}
         {view !== 'sources' && (
@@ -378,7 +473,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
           )}
           <div className="asset-library-result-count">
             <div className="result-summary">
-              <span role="status" aria-live="polite">
+              <strong role="status" aria-live="polite">
                 {loading
                   ? 'Searching…'
                   : error
@@ -386,7 +481,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                     : `${(result?.total ?? 0).toLocaleString('en-GB')} ${
                         result?.total === 1 ? 'result' : 'results'
                       }`}
-              </span>
+              </strong>
               {activeFilters.map((chip) => (
                 <button
                   key={chip.key}
@@ -397,12 +492,18 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                   aria-label={`Remove filter ${chip.label}`}
                 >
                   {chip.label}
-                  <X size={12} />
+                  <X size={13} />
                 </button>
               ))}
+              {activeFilters.length > 0 && (
+                <button className="clear-all" onClick={() => navigate({ view }, true)}>
+                  Clear all
+                </button>
+              )}
             </div>
             <label className="result-sort">
               <span>Sort</span>
+              <ChevronDown className="result-sort-chevron" size={14} aria-hidden="true" />
               <select
                 value={sort}
                 onChange={(e) =>
@@ -477,22 +578,22 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
           )}
           {!loading && !error && result && (offset > 0 || result.nextOffset !== null) && (
             <nav className="asset-library-pagination" aria-label="Asset pages">
-              <div className="asset-library-pagination-summary">
-                <strong>
-                  Page {currentPage} of {totalPages}
-                </strong>
-                <span>
-                  Showing {firstResult}–{lastResult} of {result.total} assets
+              <p className="asset-library-pagination-summary">
+                Showing {firstResult} to {lastResult} of{' '}
+                <span className="mono">{result.total.toLocaleString('en-GB')}</span>
+                <span className="sr-only">
+                  , page {currentPage} of {totalPages}
                 </span>
-              </div>
+              </p>
               <div className="asset-library-pagination-controls">
                 <button
                   className="asset-library-page-direction"
                   disabled={currentPage === 1}
                   onClick={() => changePage(currentPage - 1)}
                   aria-label="Go to previous asset page"
+                  title="Previous page"
                 >
-                  <ArrowLeft size={15} /> Previous
+                  <ChevronLeft size={15} />
                 </button>
                 <div
                   className="asset-library-page-numbers"
@@ -522,8 +623,9 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                   disabled={currentPage === totalPages}
                   onClick={() => changePage(currentPage + 1)}
                   aria-label="Go to next asset page"
+                  title="Next page"
                 >
-                  Next <ArrowRight size={15} />
+                  <ChevronRight size={15} />
                 </button>
               </div>
             </nav>

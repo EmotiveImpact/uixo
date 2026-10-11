@@ -1024,3 +1024,721 @@
 :is(:root, :root.light) .g-card .g-name::after {
   content: none;
 }
+
+/* ------------------------------------------------------------ Phone menu */
+
+@media (max-width: 900px) {
+  :is(:root, :root.light) .discovery-header .discovery-mobile-menu {
+    display: grid;
+    padding: 6px 16px 18px;
+    border-top: 0;
+  }
+
+  :is(:root, :root.light) .discovery-mobile-menu a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 46px;
+    color: var(--g-text-2);
+    font: 400 15px/20px var(--g-sans);
+    text-decoration: none;
+    border-bottom: 1px solid var(--g-line);
+  }
+
+  :is(:root, :root.light) .discovery-mobile-menu a[aria-current] {
+    color: var(--g-text);
+  }
+
+  :is(:root, :root.light) .discovery-mobile-menu a svg {
+    color: var(--g-text-3);
+  }
+
+  :is(:root, :root.light) .discovery-mobile-menu .discovery-mobile-signin {
+    height: 44px;
+    margin-top: 14px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--g-invert-bg);
+    color: var(--g-invert-text);
+    font: 500 14px/1 var(--g-sans);
+    cursor: pointer;
+  }
+}
+
+/* Phones keep Sign in in their menu or drawer, as the mockup does; the header stays light. */
+@media (max-width: 767px) {
+  :is(:root, :root.light) .discovery-header :is(.header-signin, .signin-button) {
+    display: none;
+  }
+}
+
+.filter-signin {
+  display: none;
+}
+
+:is(:root, :root.light) [data-mobile='true'] .filter-signin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 44px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-invert-bg);
+  color: var(--g-invert-text);
+  font: 500 14px/1 var(--g-sans);
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------ Components page chrome */
+/* Sidebar, heading, search, price switch, chips, result row, sort and pages, as in
+   the approved mockup's Components frame. */
+
+:is(:root, :root.light) .uixo-shell .discovery-sidebar > div {
+  border-right: 1px solid var(--g-line);
+  background: var(--g-bg);
+}
+
+:is(:root, :root.light) .uixo-shell .discovery-sidebar [data-slot='sidebar-content'] {
+  padding: 28px 12px 28px;
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section {
+  margin: 0 0 24px;
+  padding: 0;
+  border: 0;
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section h2,
+:is(:root, :root.light) .discovery-sidebar .filter-section summary {
+  margin: 0 0 8px;
+  padding: 0 12px;
+  font: 500 11px/14px var(--g-mono);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section summary svg {
+  transition: transform 0.14s var(--g-ease);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section[open] summary svg {
+  transform: rotate(180deg);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section :is(button, .filter-link) {
+  height: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin: 0;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--g-text-2);
+  font: 400 14px/18px var(--g-sans);
+  text-align: left;
+  text-decoration: none;
+  box-shadow: none;
+  transition:
+    background 0.14s var(--g-ease),
+    color 0.14s var(--g-ease);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section :is(button, .filter-link) > svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section :is(button, .filter-link):hover {
+  background: var(--g-surface);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light)
+  .discovery-sidebar
+  .filter-section
+  button:is(.chosen, [aria-pressed='true']) {
+  background: var(--g-well);
+  color: var(--g-text);
+  font-weight: 500;
+  box-shadow: var(--g-hi);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section button.chosen > svg {
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section button small {
+  margin-left: auto;
+  font: 400 11.5px/1 var(--g-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light)
+  .discovery-sidebar
+  .filter-section
+  button
+  > span:not(.filter-dot, .filter-check) {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filter-dot {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  margin: 0 3px;
+  border-radius: 3px;
+  background: hsl(var(--h) 70% 62%);
+  opacity: 0.75;
+}
+
+:root.light .filter-dot {
+  background: hsl(var(--h) 65% 52%);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-check {
+  width: 14px;
+  height: 14px;
+  margin: 0 1px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px var(--g-line);
+  background: var(--g-well);
+}
+
+:is(:root, :root.light) .discovery-sidebar button[aria-pressed='true'] .filter-check {
+  background: var(--g-accent);
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-foot {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--g-line);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-submit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--g-text-2);
+  font: 400 13.5px/1 var(--g-sans);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-submit:hover {
+  background: var(--g-surface);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) [data-mobile='true'] .filter-signin {
+  flex: none;
+}
+
+/* Heading */
+:is(:root, :root.light) .uixo-shell .asset-workspace .heading {
+  margin: 6px 0 28px;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .heading h1 {
+  font: 600 44px/48px var(--g-sans);
+  letter-spacing: -0.025em;
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .heading p {
+  margin-top: 10px;
+  max-width: 64ch;
+  font: 400 15px/24px var(--g-sans);
+  color: var(--g-text-2);
+}
+
+/* Search and the price switch */
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .search-wrap {
+  flex: 1;
+  height: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-well);
+  color: var(--g-text-3);
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .search-wrap:focus-within {
+  box-shadow: 0 0 0 2px var(--g-accent);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .search-wrap input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  color: var(--g-text);
+  font: 400 15px/1 var(--g-sans);
+}
+
+:is(:root, :root.light)
+  .uixo-shell
+  .asset-workspace
+  .discovery-controls
+  .search-wrap
+  input::placeholder {
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .search-wrap kbd {
+  min-width: 0;
+  padding: 5px 7px;
+  border-radius: 7px;
+  background: var(--g-bg);
+  color: var(--g-text-3);
+  font: 500 11px/1 var(--g-mono);
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .prices {
+  height: auto;
+  display: inline-flex;
+  gap: 2px;
+  padding: 4px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-well);
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .prices button {
+  height: 40px;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--g-text-2);
+  font: 500 13px/16px var(--g-sans);
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .prices button:hover {
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .prices button.selected {
+  background: var(--g-bg);
+  color: var(--g-text);
+  box-shadow: var(--g-hi);
+}
+
+:root.light .uixo-shell .asset-workspace .discovery-controls .prices button.selected {
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+}
+
+/* Category chips */
+:is(:root, :root.light) .uixo-shell .asset-library-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+:is(:root, :root.light) .uixo-shell .component-category-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+
+:is(:root, :root.light) .uixo-shell .component-category-chips button,
+:is(:root, :root.light) .uixo-shell .asset-library-toolbar .asset-refine {
+  height: 34px;
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-tile);
+  color: var(--g-text-2);
+  font: 500 13px/16px var(--g-sans);
+  white-space: nowrap;
+  box-shadow: var(--g-hi);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .uixo-shell .component-category-chips button:hover,
+:is(:root, :root.light) .uixo-shell .asset-library-toolbar .asset-refine:hover {
+  background: var(--g-tile-hover);
+  color: var(--g-text);
+  box-shadow: var(--g-hi);
+}
+
+:is(:root, :root.light) .uixo-shell .component-category-chips button[aria-pressed='true'],
+:is(:root, :root.light) .uixo-shell .asset-library-toolbar .asset-refine[aria-expanded='true'] {
+  background: var(--g-invert-bg);
+  color: var(--g-invert-text);
+  box-shadow: none;
+}
+
+.chip-count {
+  font: 400 11px/1 var(--g-mono);
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+}
+
+.chip-more {
+  position: relative;
+}
+
+:is(:root, :root.light) .uixo-shell .chip-more-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 20;
+  display: grid;
+  gap: 2px;
+  min-width: 200px;
+  padding: 6px;
+  border-radius: 14px;
+  background: var(--g-raised);
+  box-shadow:
+    var(--g-shadow),
+    0 0 0 1px var(--g-line);
+}
+
+:is(:root, :root.light) .uixo-shell .component-category-chips .chip-more-menu button {
+  justify-content: space-between;
+  width: 100%;
+  height: 36px;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .uixo-shell .component-category-chips .chip-more-menu button:hover {
+  background: var(--g-well);
+}
+
+:is(:root, :root.light)
+  .uixo-shell
+  .component-category-chips
+  .chip-more-menu
+  button[aria-pressed='true'] {
+  background: var(--g-well-2);
+  color: var(--g-text);
+}
+
+/* Result row */
+:is(:root, :root.light) .uixo-shell .asset-library-result-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin: 28px 0 20px;
+  min-height: 36px;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-result-count .result-summary > strong {
+  margin-right: 8px;
+  font: 500 14px/20px var(--g-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .uixo-shell .active-filter {
+  height: 30px;
+  gap: 6px;
+  padding: 0 8px 0 12px;
+  border-radius: 999px;
+  background: var(--g-well);
+  color: var(--g-text);
+  font: 500 12.5px/1 var(--g-sans);
+}
+
+:is(:root, :root.light) .uixo-shell .active-filter svg {
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .uixo-shell .active-filter:hover {
+  background: var(--g-well-2);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .uixo-shell .active-filter:hover svg {
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .uixo-shell .result-summary .clear-all {
+  margin-left: 4px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--g-text-3);
+  font: 500 12.5px/1 var(--g-sans);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .uixo-shell .result-summary .clear-all:hover {
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .uixo-shell .result-sort {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+:is(:root, :root.light) .uixo-shell .result-sort > span {
+  font: 400 13px/1 var(--g-sans);
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .uixo-shell .result-sort select {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 36px;
+  padding: 0 34px 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-well);
+  background-image: none;
+  color: var(--g-text);
+  font: 500 13px/1 var(--g-sans);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .uixo-shell .result-sort select option {
+  background: var(--g-raised);
+  color: var(--g-text);
+}
+
+.result-sort-chevron {
+  position: absolute;
+  right: 12px;
+  color: var(--g-text-3);
+  pointer-events: none;
+}
+
+/* Pages */
+:is(:root, :root.light) .uixo-shell .asset-library-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin: 44px 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-pagination-summary {
+  display: block;
+  margin: 0;
+  font: 400 12.5px/16px var(--g-sans);
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-pagination-summary .mono {
+  font: 500 12.5px/16px var(--g-mono);
+  color: var(--g-text-2);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-pagination-controls,
+:is(:root, :root.light) .uixo-shell .asset-library-page-numbers {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-page-numbers > span {
+  min-width: 36px;
+  text-align: center;
+  font: 500 12.5px/1 var(--g-mono);
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library .asset-library-pagination button {
+  min-width: 36px;
+  height: 36px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--g-text-2);
+  font: 500 12.5px/1 var(--g-mono);
+  box-shadow: none;
+}
+
+:is(:root, :root.light)
+  .uixo-shell
+  .asset-library
+  .asset-library-pagination
+  button:hover:not(:disabled) {
+  background: var(--g-surface);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light)
+  .uixo-shell
+  .asset-library
+  .asset-library-pagination
+  button[aria-current='page'] {
+  background: var(--g-invert-bg);
+  color: var(--g-invert-text);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library .asset-library-pagination button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 767px) {
+  :is(:root, :root.light) .uixo-shell .asset-workspace .heading h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls {
+    flex-wrap: wrap;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .search-wrap {
+    flex-basis: 100%;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .prices {
+    width: 100%;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .prices button {
+    flex: 1;
+    justify-content: center;
+    height: 36px;
+    min-height: 36px;
+    text-align: center;
+  }
+
+  /* Chips scroll sideways on a phone rather than wrapping into a wall; Refine stays put. */
+  :is(:root, :root.light) .uixo-shell .asset-library-toolbar {
+    position: relative;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow: visible;
+  }
+
+  :is(:root, :root.light) .uixo-shell .component-category-chips {
+    flex: 1;
+    flex-wrap: nowrap;
+    min-width: 0;
+    margin-left: -16px;
+    padding-left: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    mask-image: linear-gradient(90deg, transparent, #000 16px, #000 calc(100% - 44px), transparent);
+  }
+
+  :is(:root, :root.light) .uixo-shell .component-category-chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  :is(:root, :root.light) .uixo-shell .component-category-chips > * {
+    flex: none;
+  }
+
+  :is(:root, :root.light) .uixo-shell .component-category-chips .chip-more {
+    position: static;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-toolbar .asset-refine {
+    flex: none;
+  }
+
+  /* Count and sort share the first line; filter chips wrap underneath. */
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px 8px;
+    margin: 20px 0 16px;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count .result-summary {
+    display: contents;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count .result-summary > strong {
+    order: 0;
+    margin-right: 0;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count .result-sort {
+    order: 1;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count .active-filter {
+    order: 2;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count .active-filter:first-of-type {
+    margin-left: 0;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count .clear-all {
+    order: 3;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count .result-sort > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-pagination {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
