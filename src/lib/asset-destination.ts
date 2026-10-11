@@ -19,6 +19,14 @@ const PROVIDER_HOMES: Record<string, string> = {
   'simply-buttons': 'https://simply-buttons.vercel.app/',
   animata: 'https://animata.design/',
   'kibo-ui': 'https://www.kibo-ui.com/',
+  'kokonut-ui': 'https://kokonutui.com/',
+  evilcharts: 'https://evilcharts.com/',
+  '8bitcn': 'https://8bitcn.com/',
+  'cult-ui': 'https://cult-ui.com/',
+  neobrutalism: 'https://neobrutalism.dev/',
+  'elevenlabs-ui': 'https://ui.elevenlabs.io/',
+  'prompt-kit': 'https://www.prompt-kit.com/',
+  mapcn: 'https://mapcn.dev/',
 };
 
 function assetSlug(asset: AssetDestinationInput): string {

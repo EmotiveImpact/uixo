@@ -182,8 +182,8 @@ export function CatalogueSidebar(props: AppSidebarProps) {
               onClick={props.onShowAll}
             >
               <Shapes size={15} />
-              <span>All resources</span>
-              <small>{resources.length}</small>
+              <span>{props.allLabel ?? 'All resources'}</span>
+              <small>{(props.catalogueResources ?? resources).length}</small>
             </button>
             {categories.map((item) => (
               <div key={item.name}>
@@ -193,10 +193,20 @@ export function CatalogueSidebar(props: AppSidebarProps) {
                 >
                   <item.icon className="filter-category-icon" />
                   <span>{item.name}</span>
-                  <small>{categoryCount(resources, item)}</small>
+                  <small>
+                    {categoryCount(
+                      props.catalogueResources ?? resources,
+                      item,
+                      props.exactTaxonomy,
+                    )}
+                  </small>
                 </button>
                 {props.openSection === item.name &&
-                  populatedSubs(resources, item).map((sub) => (
+                  populatedSubs(
+                    props.catalogueResources ?? resources,
+                    item,
+                    props.exactTaxonomy,
+                  ).map((sub) => (
                     <button
                       className={`filter-sub ${props.sub === sub ? 'chosen' : ''}`}
                       key={sub}

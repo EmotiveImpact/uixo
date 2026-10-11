@@ -258,7 +258,7 @@ writeFileSync(
 writeFileSync(
   join(dist, 'robots.txt'),
   // /dashboard, /review and /list/* are private and never prerendered; keep crawlers out.
-  `User-agent: *\nAllow: /\nDisallow: /dashboard\nDisallow: /review\nDisallow: /list/\n\nSitemap: ${SITE}/sitemap.xml\n`,
+  `User-agent: *\nAllow: /\nDisallow: /dashboard\nDisallow: /review\nDisallow: /candidates\nDisallow: /list/\n\nSitemap: ${SITE}/sitemap.xml\n`,
 );
 
 console.log(`prerendered ${pages.length} pages + sitemap.xml + robots.txt`);

@@ -17,6 +17,8 @@ export type Candidate = {
   needs_review?: boolean;
   image_status?: string;
   source?: string;
+  /** Source posts the scout harvested from, when the file recorded them. */
+  harvest_posts?: string[];
   addedOrder?: number;
 };
 
@@ -69,10 +71,27 @@ const PRICING: Record<string, Pricing> = {
   'Paid,Free': 'Freemium',
 };
 
+/**
+ * Scout notes sometimes say "Open source" for a free listing, which is still Free, and
+ * sometimes use the site's own "Freemium", which is Free plus Paid.
+ */
+function normaliseAccessToken(token: string): ('Free' | 'Paid')[] | null {
+  const value = token.trim().toLowerCase();
+  if (value === 'free' || value === 'open source' || value === 'opensource') return ['Free'];
+  if (value === 'paid') return ['Paid'];
+  if (value === 'freemium') return ['Free', 'Paid'];
+  return null;
+}
+
 /** "Free + Paid" in the scout's vocabulary is what the site calls Freemium. */
 export function accessToPricing(access: string[] | undefined): Pricing | null {
   if (!Array.isArray(access) || access.length === 0) return null;
-  return PRICING[[...access].sort().join(',')] ?? null;
+  const tokens = access.map(normaliseAccessToken);
+  // One unrecognised value makes the whole row unknown rather than quietly dropping it.
+  if (tokens.some((token) => token === null)) return null;
+  const known = [...new Set(tokens.flat() as ('Free' | 'Paid')[])].sort();
+  if (!known.length) return null;
+  return PRICING[known.join(',')] ?? null;
 }
 
 function subcategoriesFor(category: string): string[] | null {
@@ -195,4 +214,81 @@ export function toResourceRows(
   return approved
     .map((candidate) => toResource(candidate, ++next, checkedOn))
     .filter((row): row is Resource => row !== null);
+}
+
+/**
+ * A staged candidate shaped like a directory listing so the public preview can reuse
+ * browse filters and cards. This is display-only — it does not write resources.json.
+ */
+export type CandidateListing = Resource & {
+  source?: string;
+  sourceHref: string | null;
+  imageStatus?: string;
+};
+
+/** First recorded source post, or a handle we can turn into an X profile. */
+export function candidateSourceHref(candidate: Candidate): string | null {
+  const post = candidate.harvest_posts?.find((entry) => /^https?:\/\//i.test(entry));
+  if (post) return post;
+
+  const fromSource = candidate.source?.match(/https?:\/\/[^\s)]+/)?.[0];
+  if (fromSource) return fromSource.replace(/[.,;]+$/, '');
+
+  const handle = candidate.source?.trim();
+  if (handle && /^[A-Za-z0-9_]{1,30}$/.test(handle)) return `https://x.com/${handle}`;
+  return null;
+}
+
+/** Scout sources are sometimes a full post URL. Show the poster's handle or the site instead. */
+export function candidateSourceLabel(source: string | undefined): string | null {
+  const value = source?.trim();
+  if (!value) return null;
+  if (!/^https?:\/\//i.test(value)) return value;
+  try {
+    const url = new URL(value);
+    const host = url.hostname.replace(/^www\./, '');
+    const handle = url.pathname.split('/').filter(Boolean)[0];
+    if ((host === 'x.com' || host === 'twitter.com') && handle) return `@${handle}`;
+    return host;
+  } catch {
+    return value;
+  }
+}
+
+/**
+ * Every scout row, including ones already live. The public preview is a scan of the
+ * staged file, not the curator queue — `importCandidates` still drops duplicates for /review.
+ */
+export function toCandidateListings(
+  file: CandidateFile,
+  checkedOn: string = file.updated ?? '1970-01-01',
+): CandidateListing[] {
+  return (file.items ?? []).flatMap((item, index) => {
+    if (!item?.id || !item.url) return [];
+    // Rows the review inbox would flag for access are left out rather than shown as Free.
+    const pricing = accessToPricing(item.access);
+    if (!pricing) return [];
+    return [
+      {
+        id: item.id,
+        name: item.name,
+        description: (item.why ?? '').trim(),
+        category: item.category,
+        subcategory: item.subcategory,
+        tags: item.tags ?? [],
+        pricing,
+        creator: item.creator?.trim() || item.name,
+        formats: item.formats ?? [],
+        aliases: [],
+        addedOrder: item.addedOrder ?? index + 1,
+        // Featured would otherwise hide the whole preview: these are not editor picks.
+        featured: true,
+        url: item.url,
+        lastChecked: checkedOn,
+        source: item.source,
+        sourceHref: candidateSourceHref(item),
+        imageStatus: item.image_status,
+      },
+    ];
+  });
 }

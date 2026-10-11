@@ -10,6 +10,12 @@ export type FilterState = {
   format: string;
   browse: BrowseOrder;
   search: string;
+  /**
+   * When true, category/sub match the listing's own fields only.
+   * Live /browse also matches tags; the candidates preview does not, so
+   * Components is the Components bucket from the scout file.
+   */
+  exactTaxonomy?: boolean;
 };
 
 /** Categories and subcategories also match against a resource's tags, not just its own fields. */
@@ -47,8 +53,18 @@ function matchesSearch(resource: Resource, terms: string[]): boolean {
 
 function matches(resource: Resource, state: FilterState, terms: string[]): boolean {
   if (state.listIds && !state.listIds.includes(resource.id)) return false;
-  if (state.category && !matchesCategory(resource, state.category)) return false;
-  if (state.sub && !matchesSub(resource, state.sub)) return false;
+  if (state.category) {
+    const inCategory = state.exactTaxonomy
+      ? resource.category === state.category
+      : matchesCategory(resource, state.category);
+    if (!inCategory) return false;
+  }
+  if (state.sub) {
+    const inSub = state.exactTaxonomy
+      ? resource.subcategory === state.sub
+      : matchesSub(resource, state.sub);
+    if (!inSub) return false;
+  }
   if (state.price !== 'All' && resource.pricing !== state.price) return false;
   if (state.format !== ALL_FORMATS && !resource.formats.includes(state.format)) return false;
 
@@ -73,14 +89,26 @@ export function filterResources(resources: Resource[], state: FilterState): Reso
  * Subcategories that would return at least one resource. Empty ones are hidden rather
  * than shown as dead ends — with a small list most of them are empty.
  */
-export function populatedSubs(resources: Resource[], category: Category): string[] {
+export function populatedSubs(
+  resources: Resource[],
+  category: Category,
+  exactTaxonomy = false,
+): string[] {
   return category.sub.filter((sub) =>
-    resources.some(
-      (resource) => matchesCategory(resource, category.name) && matchesSub(resource, sub),
+    resources.some((resource) =>
+      exactTaxonomy
+        ? resource.category === category.name && resource.subcategory === sub
+        : matchesCategory(resource, category.name) && matchesSub(resource, sub),
     ),
   );
 }
 
-export function categoryCount(resources: Resource[], category: Category): number {
-  return resources.filter((resource) => matchesCategory(resource, category.name)).length;
+export function categoryCount(
+  resources: Resource[],
+  category: Category,
+  exactTaxonomy = false,
+): number {
+  return resources.filter((resource) =>
+    exactTaxonomy ? resource.category === category.name : matchesCategory(resource, category.name),
+  ).length;
 }

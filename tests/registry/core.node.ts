@@ -147,6 +147,14 @@ test('search enforces framework and format on the same variant and excludes unkn
     const second = await registry.search({ kind: 'component', limit: 5, offset: 5 });
     assert.equal(first.items.length, 5);
     assert.equal(new Set([...first.items, ...second.items].map((a) => a.id)).size, 10);
+    const pending = new Set(
+      PROVIDERS.filter((provider) => provider.previewsPending).map((provider) => provider.id),
+    );
+    const browse = await registry.search({ kind: 'component', limit: 48 });
+    assert.ok(
+      browse.items.every((asset) => !pending.has(asset.providerId)),
+      'Components awaiting captured previews rank after previewed components',
+    );
   } finally {
     await db.close();
   }
@@ -366,6 +374,55 @@ test('JSON registry parser accepts declared UI components and ignores examples',
     ),
   );
 });
+// Broad October 2026 wave: pinned registry metadata is ingested first; captured previews follow.
+const PREVIEW_PENDING_PROVIDERS = PROVIDERS.filter((provider) => provider.previewsPending).map(
+  (provider) => provider.id,
+);
+const EXPECTED_WAVE_COUNTS = {
+  'kokonut-ui': 46,
+  evilcharts: 27,
+  '8bitcn': 56,
+  'cult-ui': 137,
+  neobrutalism: 111,
+  'elevenlabs-ui': 17,
+  'prompt-kit': 21,
+  mapcn: 1,
+};
+test('reviewed exclusions are skipped before registry record validation', () => {
+  const manifest = JSON.stringify({
+    items: [
+      { name: 'alias', type: 'registry:ui', files: [] },
+      { name: 'card', type: 'registry:ui', files: [{ path: 'ui/card.tsx' }] },
+    ],
+  });
+  assert.throws(() => parseJsonRegistry(manifest));
+  assert.deepEqual(
+    parseJsonRegistry(manifest, ['alias']).map((item) => item.name),
+    ['card'],
+  );
+});
+test('broad registry wave pins every record to its upstream commit and licence', async () => {
+  const assets = await capturedAssets();
+  const counts = Object.fromEntries(
+    PREVIEW_PENDING_PROVIDERS.map((id) => [
+      id,
+      assets.filter((asset) => asset.providerId === id).length,
+    ]),
+  );
+  assert.deepEqual(counts, EXPECTED_WAVE_COUNTS);
+  for (const asset of assets.filter((entry) =>
+    PREVIEW_PENDING_PROVIDERS.includes(entry.providerId),
+  )) {
+    assert.match(asset.variants[0].sourceRef ?? '', /^[a-f0-9]{40}$/);
+    assert.ok(asset.sourceUrl.includes(`/blob/${asset.variants[0].sourceRef}/`));
+    assert.equal(asset.licence.expression, 'MIT');
+    assert.equal(asset.preview, null);
+    assert.equal(resolveAsset(asset).status, 'ready');
+  }
+  assert.ok(
+    !assets.some((asset) => asset.id.startsWith('cult-ui/') && asset.slug.endsWith('-demo')),
+  );
+});
 test('captured React registries retain pinned source, licence and acquisition evidence', async () => {
   const assets = await capturedAssets();
   const components = assets.filter((asset) => asset.kind === 'component');
@@ -382,6 +439,7 @@ test('captured React registries retain pinned source, licence and acquisition ev
         ) &&
           asset.preview?.kind === 'embed') ||
         asset.providerId === 'simply-buttons' ||
+        (PREVIEW_PENDING_PROVIDERS.includes(asset.providerId) && asset.preview === null) ||
         ['switch', 'table', 'tabs', 'textarea', 'toggle', 'toggle-group', 'tooltip'].includes(
           asset.slug,
         ),

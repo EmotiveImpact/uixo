@@ -80,6 +80,8 @@ export type Provider = {
   /** Manifest entries that are not backed by a file at the same pinned source revision. */
   excludedComponents?: string[];
   css?: string;
+  /** Pinned metadata is published before official demo captures exist; cards show no preview. */
+  previewsPending?: boolean;
   approved: boolean;
   rationale: string;
   selectedAt: string | null;

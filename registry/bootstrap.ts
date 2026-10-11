@@ -107,9 +107,7 @@ export async function capturedAssets(): Promise<Asset[]> {
         new URL(`../data/registry/snapshots/${provider.id}.json`, import.meta.url),
         'utf8',
       );
-      for (const item of parseJsonRegistry(manifest).filter(
-        (entry) => !provider.excludedComponents?.includes(entry.name),
-      ))
+      for (const item of parseJsonRegistry(manifest, provider.excludedComponents))
         assets.push(jsonRegistryComponentAsset(item, provider, licence, ref, observedAt));
     }
   }
