@@ -1984,3 +1984,37 @@
     min-height: 36px;
   }
 }
+
+/* ------------------------------------------------------- Removed, undo */
+
+/* Just unsaved on the Saved page: the card stays, dimmed, with Undo over its stage. */
+.g-card.is-removed > :not(.g-removed) {
+  opacity: 0.35;
+  transition: opacity 0.2s var(--g-ease);
+}
+
+.g-removed {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  z-index: 4;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font: 500 14px/20px var(--g-sans);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .g-removed button {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-invert-bg);
+  color: var(--g-invert-text);
+  font: 500 14px/1 var(--g-sans);
+  cursor: pointer;
+}

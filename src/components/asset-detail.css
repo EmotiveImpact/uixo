@@ -1032,6 +1032,28 @@
   grid-column: 1 / -1;
 }
 
+/* What Save just did, beside the button, with Undo after a removal. */
+.ad-save-notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  margin: 10px 4px 0;
+  font: 400 13px/20px var(--g-sans);
+  color: var(--g-text-2);
+}
+
+:is(:root, :root.light) .ad .ad-save-notice button {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-well);
+  color: var(--g-text);
+  font: 500 13px/1 var(--g-sans);
+  cursor: pointer;
+}
+
 .ad-props {
   margin-top: 34px;
 }

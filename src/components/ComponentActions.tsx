@@ -130,7 +130,7 @@ export function CardSaveButton({
       type="button"
       className="g-save"
       aria-pressed={saved}
-      aria-label={saved ? `Unsave ${name}` : `Save ${name}`}
+      aria-label={saved ? `Remove ${name} from saved` : `Save ${name}`}
       title={saved ? 'Saved' : 'Save'}
       onClick={onToggle}
     >

@@ -282,13 +282,17 @@ function pickRelated(id: string, items: AssetRecord[]): AssetRecord[] {
   return picked;
 }
 
-type RelatedSaves = { isSaved: (id: string) => boolean; toggle: (id: string) => void };
+type RelatedSaves = {
+  isSaved: (id: string) => boolean;
+  toggle: (id: string, name: string) => void;
+};
 
 export function AssetDetail({
   id,
   nameOf,
   saved,
   toggleSave,
+  saveNotice,
   query,
   navigate,
   related: relatedSaves,
@@ -296,7 +300,9 @@ export function AssetDetail({
   id: string;
   nameOf: (id: string) => string;
   saved: boolean;
-  toggleSave: () => void;
+  toggleSave: (name?: string) => void;
+  /** Shown beside Save: what saving did, and Undo after a removal. */
+  saveNotice?: { text: string; onUndo?: () => void } | null;
   query: AssetQuery;
   navigate?: (changes: Partial<AssetQuery>, reset?: boolean) => void;
   related?: RelatedSaves;
@@ -869,7 +875,7 @@ export function AssetDetail({
                 )}
 
                 <div className="ad-actions">
-                  <button type="button" aria-pressed={saved} onClick={toggleSave}>
+                  <button type="button" aria-pressed={saved} onClick={() => toggleSave(asset.name)}>
                     {saved ? (
                       <Check size={16} aria-hidden="true" />
                     ) : (
@@ -884,6 +890,16 @@ export function AssetDetail({
                     </a>
                   )}
                 </div>
+                {saveNotice && (
+                  <p className="ad-save-notice">
+                    {saveNotice.text}
+                    {saveNotice.onUndo && (
+                      <button type="button" onClick={saveNotice.onUndo}>
+                        Undo
+                      </button>
+                    )}
+                  </p>
+                )}
               </div>
 
               {customisable && (
@@ -1037,7 +1053,7 @@ export function AssetDetail({
                     providerName={nameOf(item.providerId)}
                     categoryLabel={categoryLabel(item)}
                     saved={relatedSaves.isSaved(item.id)}
-                    onToggleSave={() => relatedSaves.toggle(item.id)}
+                    onToggleSave={() => relatedSaves.toggle(item.id, item.name)}
                   />
                 ))}
               </div>

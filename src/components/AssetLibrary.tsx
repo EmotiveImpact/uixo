@@ -40,6 +40,9 @@ type Props = {
 };
 
 const ASSET_PAGE_SIZE = 24;
+/** How long an unsaved card waits, dimmed, for Undo before it leaves the Saved grid. */
+const UNDO_FOR = 6000;
+type SaveNotice = { id: string; text: string; undo?: boolean };
 /** Categories shown as chips; the rest sit under More. */
 const VISIBLE_CATEGORIES = 7;
 const formatCount = (value: number) => value.toLocaleString('en-GB');
@@ -149,11 +152,18 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
-  const [notice, setNotice] = useState('');
+  const [notice, setNotice] = useState<SaveNotice | null>(null);
+  // An unsaved card stays in place, dimmed, for UNDO_FOR so it can be put back.
+  const [removed, setRemoved] = useState<{ id: string; name: string } | null>(null);
+  const removedTimer = useRef(0);
+  useEffect(() => () => window.clearTimeout(removedTimer.current), []);
   const [refineOpen, setRefineOpen] = useState(false);
   const { saved, save, accountBacked } = assetSaves;
   const { q, kind, category, provider, framework, format, commercial, price, sort, offset, view } =
     query;
+  // The Saved view asks for these ids. A card in its undo window still counts, so removing
+  // it does not reload the grid under the reader; the key is sorted so Undo is a no-op.
+  const savedKey = [...new Set(removed ? [...saved, removed.id] : saved)].sort().join(',');
   useEffect(() => {
     const abort = new AbortController();
     void registryRequest<{ items: ProviderRecord[] }>('providers', { signal: abort.signal })
@@ -172,7 +182,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
     const timer = window.setTimeout(() => {
       setLoading(true);
       setError('');
-      if (view === 'saved' && saved.length === 0) {
+      if (view === 'saved' && !savedKey) {
         setResult({ items: [], total: 0, nextOffset: null });
         setLoading(false);
         return;
@@ -190,7 +200,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
         offset: String(offset),
         limit: String(ASSET_PAGE_SIZE),
       };
-      if (view === 'saved') parameters.saved = saved.join(',');
+      if (view === 'saved') parameters.saved = savedKey;
       void registryRequest<unknown>('search', { query: parameters, signal: abort.signal })
         .then(catalogueResult)
         .then((value) => {
@@ -222,7 +232,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
     sort,
     offset,
     view,
-    saved,
+    savedKey,
     retry,
   ]);
   const nameOf = (id: string) => providers.find((p) => p.id === id)?.name ?? id;
@@ -230,21 +240,48 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
     facet: 'kinds' | 'providers' | 'frameworks' | 'formats' | 'prices' | 'categories',
     id: string,
   ) => inventory?.[facet].find((entry) => entry.id === id)?.count ?? 0;
-  function toggleSave(id: string) {
+  function toggleSave(id: string, name = 'This component') {
     if (!saved.includes(id) && saved.length >= 200) {
-      setNotice('This browser list holds 200 assets. Remove one before saving another.');
+      setNotice({
+        id,
+        text: 'This browser list holds 200 assets. Remove one before saving another.',
+      });
       return;
     }
-    const next = saved.includes(id) ? saved.filter((entry) => entry !== id) : [...saved, id];
-    const persisted = save(next);
-    setNotice(
-      persisted
+    window.clearTimeout(removedTimer.current);
+    if (saved.includes(id)) {
+      const persisted = save(saved.filter((entry) => entry !== id));
+      setRemoved({ id, name });
+      setNotice({
+        id,
+        text: persisted
+          ? `Removed ${name} from saved.`
+          : 'Browser storage is unavailable. Your changes will last for this tab only.',
+        undo: true,
+      });
+      removedTimer.current = window.setTimeout(() => {
+        setRemoved(null);
+        setNotice((current) => (current?.id === id && current.undo ? null : current));
+      }, UNDO_FOR);
+      return;
+    }
+    const persisted = save([...saved, id]);
+    setRemoved((current) => (current?.id === id ? null : current));
+    setNotice({
+      id,
+      text: persisted
         ? accountBacked
-          ? 'Saved in this browser and syncing to your account.'
-          : 'Saved in this browser. Sign in to use it on another device.'
+          ? 'Saved. It syncs to your account.'
+          : 'Saved in this browser. Sign in to keep it on every device.'
         : 'Browser storage is unavailable. Your changes will last for this tab only.',
-    );
-    if (view === 'saved') navigate({ offset: 0 });
+    });
+  }
+  function undoRemove() {
+    if (!removed) return;
+    window.clearTimeout(removedTimer.current);
+    save([...saved.filter((entry) => entry !== removed.id), removed.id]);
+    setNotice({ id: removed.id, text: `${removed.name} is back in saved.` });
+    setRemoved(null);
   }
   const activeFilters = [
     q && { key: 'q', label: `“${q}”` },
@@ -296,11 +333,16 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
           query={query}
           navigate={navigate}
           saved={saved.includes(query.id)}
-          toggleSave={() => toggleSave(query.id)}
+          toggleSave={(name) => toggleSave(query.id, name)}
+          saveNotice={
+            notice?.id === query.id
+              ? { text: notice.text, onUndo: notice.undo && removed ? undoRemove : undefined }
+              : null
+          }
           related={{ isSaved: (id) => saved.includes(id), toggle: toggleSave }}
         />
-        <p className="asset-library-muted" role="status">
-          {notice}
+        <p className="sr-only" role="status">
+          {notice?.text ?? ''}
         </p>
       </section>
     );
@@ -576,7 +618,10 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                         asset.kind
                   }
                   saved={saved.includes(asset.id)}
-                  onToggleSave={() => toggleSave(asset.id)}
+                  onToggleSave={() => toggleSave(asset.id, asset.name)}
+                  onUndoRemove={
+                    view === 'saved' && removed?.id === asset.id ? undoRemove : undefined
+                  }
                 />
               ))}
             </div>
@@ -637,8 +682,9 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
           )}
         </>
       )}
-      <p className="asset-library-muted" role="status">
-        {notice}
+      {/* Announced only: the visible confirmation sits on the card or beside Save. */}
+      <p className="sr-only" role="status">
+        {notice?.text ?? ''}
       </p>
     </section>
   );

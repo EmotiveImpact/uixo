@@ -129,7 +129,7 @@ with sync_playwright() as p:
                     expect(page.locator('.component-category-chips').get_by_role('button', name=re.compile(r'^Forms( [0-9,]+)?$'))).to_have_attribute('aria-pressed', 'true')
                     save = first_card.get_by_role('button', name=f"Save {selected['name']}", exact=True)
                     save.click()
-                    expect(first_card.get_by_role('button', name=f"Unsave {selected['name']}", exact=True)).to_have_attribute('aria-pressed', 'true')
+                    expect(first_card.get_by_role('button', name=f"Remove {selected['name']} from saved", exact=True)).to_have_attribute('aria-pressed', 'true')
                     visit(page, '/browse/assets?view=saved')
                     expect(page.locator('.asset-library-card')).to_have_count(1)
                     expect(page.locator('.asset-library-card-link')).to_have_attribute('href', re.compile('id=' + re.escape(quote(selected['id'], safe=''))))

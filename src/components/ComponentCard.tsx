@@ -73,6 +73,8 @@ type ComponentCardProps = {
   categoryLabel: string;
   saved: boolean;
   onToggleSave?: () => void;
+  /** Just removed from saved: the card stays, dimmed, offering this Undo. */
+  onUndoRemove?: () => void;
   /** Extra classes on the card and its name link, kept for older selectors and tests. */
   className?: string;
   linkClassName?: string;
@@ -93,6 +95,7 @@ export function ComponentCard({
   categoryLabel,
   saved,
   onToggleSave,
+  onUndoRemove,
   className = '',
   linkClassName = '',
   linkLabel,
@@ -101,7 +104,10 @@ export function ComponentCard({
   const hue = stageHue(asset.id);
   const price = licenceLabel(asset);
   return (
-    <article className={`g-card ${className}`} style={{ '--h': hue } as CSSProperties}>
+    <article
+      className={`g-card ${onUndoRemove ? 'is-removed' : ''} ${className}`}
+      style={{ '--h': hue } as CSSProperties}
+    >
       <TintedStage hue={hue}>
         <AssetPreview asset={asset} stage />
         {onToggleSave && <CardSaveButton name={asset.name} saved={saved} onToggle={onToggleSave} />}
@@ -143,6 +149,14 @@ export function ComponentCard({
         </div>
         <InstallLine asset={asset} />
       </div>
+      {onUndoRemove && (
+        <div className="g-removed">
+          <span>Removed from saved.</span>
+          <button type="button" onClick={onUndoRemove}>
+            Undo
+          </button>
+        </div>
+      )}
     </article>
   );
 }
