@@ -881,8 +881,13 @@
   padding: 0 10px;
   border-radius: 999px;
   background: var(--g-accent);
-  color: #fff;
+  /* Dark ink on the dark theme's light violet passes 4.5:1; the light theme's deep violet keeps white. */
+  color: #0e0e10;
   font: 600 12px/1 var(--g-sans);
+}
+
+:root.light .hm-tag-new {
+  color: #fff;
 }
 
 .hm-hero h1 {

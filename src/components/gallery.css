@@ -27,7 +27,7 @@
   --g-hi: inset 0 1px 0 rgb(255 255 255 / 0.065);
   --g-text: #ededef;
   --g-text-2: #a3a3ab;
-  --g-text-3: #8e8e96;
+  --g-text-3: #9a9aa2;
   --g-line: rgb(255 255 255 / 0.075);
   --g-accent: #8b7dff;
   --g-glow: linear-gradient(90deg, #6d5dfc, #3b82f6 45%, #c084fc);
@@ -67,10 +67,10 @@
   --g-hi: 0 0 0 1px rgb(0 0 0 / 0.045), 0 1px 2px rgb(0 0 0 / 0.04);
   --g-text: #0a0a0a;
   --g-text-2: #52525b;
-  --g-text-3: #6b6b73;
+  --g-text-3: #5e5e66;
   --g-line: rgb(0 0 0 / 0.08);
   --g-accent: #5b4cf0;
-  --g-success: #16a34a;
+  --g-success: #166534;
   --g-invert-bg: #0a0a0a;
   --g-invert-text: #ffffff;
   --g-glass: rgb(255 255 255 / 0.62);
