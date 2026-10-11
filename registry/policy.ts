@@ -1,5 +1,6 @@
 import { KIBO_REVIEWED_COMPONENTS } from '../shared/reviewed-previews.ts';
 import { formatCommand, installCommand } from '../shared/install-command.ts';
+import { licenceLabel } from '../shared/licence-label.ts';
 import { timingSafeEqual } from 'node:crypto';
 import { type Asset, type Variant, RegistryError, record, strings, text } from './domain.ts';
 
@@ -25,6 +26,7 @@ export function resolveAsset(asset: Asset, variantId?: string) {
     kind: acquisition.kind,
     sourceUrl: asset.sourceUrl,
     licence: {
+      label: licenceLabel(asset),
       expression: asset.licence.expression,
       sourceUrl: asset.licence.sourceUrl,
       commercial: asset.licence.commercial,

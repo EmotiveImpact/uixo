@@ -5,6 +5,7 @@ import { sqliteDatabase, migrate } from '../../registry/database.ts';
 import { Registry } from '../../registry/service.ts';
 import { seedCaptured } from '../../registry/bootstrap.ts';
 import { PROVIDERS } from '../../registry/providers.ts';
+import { licenceLabel } from '../../shared/licence-label.ts';
 import { KIBO_REVIEWED_COMPONENTS } from '../../shared/reviewed-previews.ts';
 
 type Item = Awaited<ReturnType<Registry['search']>>['items'][number];
@@ -83,6 +84,7 @@ test('L-7: the no-query order leads with picks, ready previews, install commands
   );
   const first = await registry.search({ kind: 'component', limit: 24 });
   assert.ok(first.items.every((item) => install(item) === 1));
+  assert.ok(first.items.every((item) => item.licenceLabel === 'Free'));
 });
 
 test('L-7: name sort is case-insensitive and newest still pages through everything', async () => {
@@ -104,4 +106,31 @@ test('L-7: query ranking still puts name matches first', async () => {
   const result = await registry.search({ q: 'shimmer', limit: 5 });
   assert.ok(result.items[0].name.toLowerCase().includes('shimmer'));
   assert.equal(result.items[0].ranking.score, 10);
+});
+
+test('L-1: every search result carries the shared licence label', async () => {
+  const registry = await seeded();
+  const items = await all(registry, { kind: 'component' });
+  for (const item of items) assert.equal(item.licenceLabel, licenceLabel(item));
+  const unknown = items.filter((item) => item.licence.commercial === 'unknown');
+  assert.ok(unknown.length > 100);
+  assert.ok(
+    unknown.every((item) => item.price === 'free' && item.licenceLabel === 'Licence unknown'),
+  );
+  assert.ok(
+    items
+      .filter((item) => item.licence.commercial === 'allowed')
+      .every((item) => item.licenceLabel === 'Free'),
+  );
+});
+
+test('L-1: the licence label says Free only when commercial use is allowed', () => {
+  const label = (price: string, commercial: string, expression = 'MIT') =>
+    licenceLabel({ price, licence: { commercial, expression } });
+  assert.equal(label('free', 'allowed'), 'Free');
+  assert.equal(label('free', 'unknown', 'No standard licence declared'), 'Licence unknown');
+  assert.equal(label('free', 'restricted', 'CC BY-NC 4.0'), 'CC BY-NC 4.0');
+  assert.equal(label('free', 'restricted', ''), 'Licence unknown');
+  assert.equal(label('unknown', 'allowed'), 'MIT');
+  assert.equal(label('paid', 'unknown'), 'Paid');
 });

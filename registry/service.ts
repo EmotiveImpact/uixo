@@ -1,6 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { KIBO_REVIEWED_COMPONENTS } from '../shared/reviewed-previews.ts';
+import { licenceLabel } from '../shared/licence-label.ts';
 import { COMPONENT_CATEGORIES } from '../shared/component-categories.ts';
 import type { Database, Statement } from './database.ts';
 import {
@@ -349,6 +350,8 @@ export class Registry {
       return {
         ...a,
         licence: { ...a.licence, text: '' },
+        /** "Free" only when commercial use is allowed, else "Licence unknown" or the licence (L-1). */
+        licenceLabel: licenceLabel(a),
         evidence: a.evidence.slice(0, 2),
         revision: Number(row.revision),
         ranking: { method: 'weighted-keyword', score: Number(row.score), matchedTerms: terms },

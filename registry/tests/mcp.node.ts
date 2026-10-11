@@ -35,6 +35,35 @@ test('real MCP client discovers and calls every UIXO tool through the official H
     assert.ok(items.length > 0);
     const id = items.find((item) => item.id === 'shadcn/sidebar')?.id;
     assert.equal(id, 'shadcn/sidebar');
+    // L-1: one licence label, the site's rule, beside the raw licence fields.
+    assert.ok((items as { licenceLabel?: string }[]).every((item) => item.licenceLabel === 'Free'));
+    const unknown = await client.callTool({
+      name: 'search_assets',
+      arguments: { provider: 'simply-buttons', limit: 3 },
+    });
+    const buttons = unknown.structuredContent?.items as {
+      licenceLabel: string;
+      price: string;
+      licence: { commercial: string };
+    }[];
+    assert.ok(buttons.length > 0);
+    for (const item of buttons) {
+      assert.equal(item.price, 'free');
+      assert.equal(item.licence.commercial, 'unknown');
+      assert.equal(item.licenceLabel, 'Licence unknown');
+    }
+    const inspected = await client.callTool({ name: 'inspect_asset', arguments: { id } });
+    assert.equal(
+      (inspected.structuredContent?.asset as { licenceLabel: string }).licenceLabel,
+      'Free',
+    );
+    const resolved = await client.callTool({ name: 'resolve_asset', arguments: { id } });
+    assert.equal((resolved.structuredContent?.licence as { label: string }).label, 'Free');
+    // L-5: the MCP recipe carries the same shell text the site shows.
+    assert.equal(
+      resolved.structuredContent?.commandText,
+      'npx shadcn add https://ui.shadcn.com/r/styles/new-york-v4/sidebar.json',
+    );
     for (const name of ['inspect_asset', 'get_preview', 'resolve_asset', 'acquire_asset']) {
       const result = await client.callTool({ name, arguments: { id } });
       assert.notEqual(result.isError, true);
