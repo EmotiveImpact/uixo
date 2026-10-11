@@ -1,3 +1,5 @@
+import { abbreviateCommand, formatCommand, installCommand } from '../../shared/install-command';
+import type { InstallAcquisition } from '../../shared/install-command';
 import type { Acquisition } from './asset-library';
 
 export const PACKAGE_MANAGERS = ['npm', 'pnpm', 'bun', 'yarn'] as const;
@@ -47,36 +49,33 @@ export function forPackageManager(command: string, manager: PackageManager): str
   return command;
 }
 
-/** Quote each argument only when the shell would otherwise split or expand it. */
+/** The exact shell text of a resolved command, from the shared builder's formatter. */
 export function commandText(result: Acquisition | undefined | null): string {
-  if (!result?.command) return '';
-  return [result.command.executable, ...result.command.arguments]
-    .map((part) =>
-      /^[a-zA-Z0-9@/.:_=-]+$/.test(part) ? part : `'${part.replaceAll("'", "'\\''")}'`,
-    )
-    .join(' ');
+  return formatCommand(result?.command);
 }
 
 type InstallableAsset = {
-  variants: { acquisition?: { kind: string; url?: string; packageName?: string } | null }[];
+  variants: { acquisition?: InstallAcquisition | null }[];
 };
 
 /**
- * A short, readable stand-in for an install command, built from the listing alone so a
- * card can show it without a request. The real command still comes from `resolve`.
+ * The full install command for a listing, built by the same shared builder as the registry's
+ * `resolve`, so it is the identical string the detail page shows and the card copies.
  * Empty when the asset has no install route.
  */
+export function installCommandText(
+  asset: InstallableAsset,
+  manager: PackageManager = 'npm',
+): string {
+  const text = formatCommand(installCommand(asset.variants[0]?.acquisition));
+  return text ? forPackageManager(text, manager) : '';
+}
+
+/**
+ * The card's install line: a shortened form of `installCommandText`, built from the listing
+ * alone so a card can show it without a request. Only a registry URL's origin and folders are
+ * elided; flags such as `--ignore-scripts` are never dropped.
+ */
 export function installPreview(asset: InstallableAsset, manager: PackageManager = 'npm'): string {
-  const acquisition = asset.variants[0]?.acquisition;
-  if (acquisition?.kind === 'registry' && acquisition.url) {
-    const name = acquisition.url
-      .split(/[?#]/)[0]
-      .split('/')
-      .pop()
-      ?.replace(/\.json$/, '');
-    return name ? forPackageManager(`npx shadcn add …/${name}`, manager) : '';
-  }
-  if (acquisition?.kind === 'package' && acquisition.packageName)
-    return forPackageManager(`npm install ${acquisition.packageName}`, manager);
-  return '';
+  return abbreviateCommand(installCommandText(asset, manager));
 }

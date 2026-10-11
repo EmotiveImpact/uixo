@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { STARTER_COLLECTIONS } from '../shared/starter-collections.ts';
+import { licenceLabel } from '../shared/licence-label.ts';
 import type { Asset } from './domain.ts';
 import type { PublicCollectionItem } from '../shared/intelligence.ts';
 import type {
@@ -81,6 +82,7 @@ async function targets(registry: Registry, collections: CollectionInput[]) {
                   providerName: String(row.provider_name),
                   frameworks: [...new Set(asset.variants.map((variant) => variant.framework))],
                   licenceExpression: asset.licence.expression,
+                  licenceLabel: licenceLabel(asset),
                   asset: {
                     id: asset.id,
                     providerId: asset.providerId,
