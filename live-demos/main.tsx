@@ -3,6 +3,7 @@ import { Tooltip } from 'radix-ui';
 import React, { Component, Suspense, lazy, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import manifest from './manifest.json';
+import { reportContentSize } from '../shared/preview-stage';
 import './styles.css';
 const files = import.meta.glob(['./vendor/**/*.tsx', './vendor/**/*.jsx', './examples/*.tsx']);
 const params = new URLSearchParams(location.search),
@@ -15,6 +16,10 @@ function setTheme(theme) {
   window.dispatchEvent(new Event('uixo-theme'));
 }
 setTheme(params.get('theme') === 'light' ? 'light' : 'dark');
+// Card stages paint their own tinted field behind the demo. With stage=clear the page
+// stays transparent and reports its content box so the card can frame it.
+const clearStage = params.get('stage') === 'clear';
+if (clearStage) document.documentElement.dataset.stage = 'clear';
 window.addEventListener('message', (event) => {
   if (event.source === parent && event.data?.type === 'uixo-preview-theme')
     setTheme(event.data.theme);
@@ -54,6 +59,7 @@ function Ready() {
   useEffect(() => {
     notify('ready');
     document.documentElement.dataset.previewReady = 'true';
+    if (clearStage) return reportContentSize(id, () => document.querySelector('.demo-stage'));
   }, []);
   return null;
 }

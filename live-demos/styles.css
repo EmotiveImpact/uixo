@@ -27,6 +27,30 @@ body {
 .demo-stage > * {
   max-width: 100%;
 }
+/* stage=clear: the host card paints a tinted field behind the demo. */
+html[data-stage='clear'],
+html[data-stage='clear'] body,
+html[data-stage='clear'] #root {
+  background: transparent;
+}
+html[data-stage='clear'] .demo-stage {
+  padding: 20px;
+}
+/* Full-bleed demos frame themselves in the page colour with a border. On a lit stage
+   that frame drops away so the demo sits on the tint. */
+html[data-stage='clear'] .demo-stage > .bg-background:first-child {
+  background: transparent;
+  border-color: transparent;
+}
+/* Edge fades blend a demo into the page colour, which would draw dark bars on a tint. */
+html[data-stage='clear'] .demo-stage .pointer-events-none.absolute[class*='from-background'],
+html[data-stage='clear'] .demo-stage .absolute.inset-0[class*='dark:from-black']:empty {
+  display: none;
+}
+html[data-stage='clear'],
+html[data-stage='clear'] body {
+  scrollbar-width: none;
+}
 .dark {
   --background: oklch(0.145 0 0);
 }
