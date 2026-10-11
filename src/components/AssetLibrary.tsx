@@ -264,7 +264,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
     framework && { key: 'framework', label: framework },
     format && { key: 'format', label: format.toUpperCase() },
     price && { key: 'price', label: price === 'free' ? 'Free' : price === 'paid' ? 'Paid' : price },
-    commercial && { key: 'commercial', label: 'Commercial use' },
+    commercial && { key: 'commercial', label: 'Commercial use allowed' },
   ].filter(Boolean) as { key: keyof AssetQuery; label: string }[];
   const filter = (key: keyof AssetQuery, value: string | boolean) =>
     navigate({ [key]: value, ...(key === 'kind' ? { category: '' } : {}), offset: 0, id: '' });
@@ -466,7 +466,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                   checked={commercial}
                   onChange={(e) => filter('commercial', e.target.checked)}
                 />{' '}
-                Commercial-use evidence{inventory ? ` (${inventory.commercialUse})` : ''}
+                Commercial use allowed{inventory ? ` (${inventory.commercialUse})` : ''}
               </label>
               <button onClick={() => navigate({ view }, true)}>Reset filters</button>
             </div>

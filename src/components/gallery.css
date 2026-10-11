@@ -743,6 +743,19 @@
   color: var(--g-text);
 }
 
+/* No commercial licence on record: meta text, not a price, with an info mark. */
+:is(:root, :root.light) .g-price.is-unsettled {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font: 400 12.5px/20px var(--g-sans);
+  color: var(--g-text-2);
+}
+
+.g-price.is-unsettled svg {
+  flex: none;
+}
+
 .g-r2 {
   margin-top: 6px;
   display: flex;

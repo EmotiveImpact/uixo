@@ -1,6 +1,8 @@
 import type { CSSProperties, MouseEvent, ReactNode } from 'react';
+import { Info } from 'lucide-react';
 import type { AssetRecord } from '../lib/asset-library';
 import { isWarmHue, providerMark, stageHue } from '../lib/stage-hue';
+import { licenceLabel } from '../lib/licence-label';
 import { AssetPreview } from './AssetPreview';
 import { CardSaveButton, InstallLine } from './ComponentActions';
 
@@ -49,6 +51,17 @@ export function TintedStage({
   );
 }
 
+/** "Free" in the card's price slot, or a quieter "Licence unknown" with an info mark. */
+export function PriceLabel({ label }: { label: ReturnType<typeof licenceLabel> }) {
+  if (label.settled) return <span className="g-price">{label.text}</span>;
+  return (
+    <span className="g-price is-unsettled" title={label.detail}>
+      <Info size={13} aria-hidden="true" />
+      {label.text}
+    </span>
+  );
+}
+
 const modified = (event: MouseEvent) =>
   event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0;
 
@@ -86,7 +99,7 @@ export function ComponentCard({
   heading: Heading = 'h3',
 }: ComponentCardProps) {
   const hue = stageHue(asset.id);
-  const price = asset.price === 'paid' ? 'Paid' : asset.price === 'free' ? 'Free' : asset.price;
+  const price = licenceLabel(asset);
   return (
     <article className={`g-card ${className}`} style={{ '--h': hue } as CSSProperties}>
       <TintedStage hue={hue}>
@@ -116,7 +129,7 @@ export function ComponentCard({
               {asset.name}
             </a>
           </Heading>
-          <span className="g-price">{price}</span>
+          <PriceLabel label={price} />
         </div>
         <div className="g-r2">
           <ProviderMarkSquare id={asset.providerId} name={providerName} />

@@ -339,6 +339,10 @@ export function AssetWorkspace() {
                   onPriceChange={(price) =>
                     navigate({ price: price === 'All' ? '' : price.toLowerCase(), offset: 0 })
                   }
+                  commercial={{
+                    value: query.commercial,
+                    onChange: (commercial) => navigate({ commercial, offset: 0 }),
+                  }}
                 />
               }
             />

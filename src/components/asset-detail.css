@@ -824,6 +824,17 @@
   color: var(--g-text-3);
 }
 
+:is(:root, :root.light) .ad-byline .g-price {
+  font: inherit;
+  color: inherit;
+}
+
+.ad-licence-note {
+  margin: 8px 0 0;
+  font: 400 13.5px/20px var(--g-sans);
+  color: var(--g-text-2);
+}
+
 .ad-desc {
   margin: 16px 0 0;
   color: var(--g-text-2);

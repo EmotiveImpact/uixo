@@ -16,7 +16,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CSSProperties, KeyboardEvent as ReactKeyboardEvent, MouseEvent } from 'react';
 import { AssetProvenance } from './AssetProvenance';
 import { AssetPreview } from './AssetPreview';
-import { ComponentCard, ProviderMarkSquare } from './ComponentCard';
+import { ComponentCard, PriceLabel, ProviderMarkSquare } from './ComponentCard';
 import { InstallCommand } from './InstallCommand';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { commandText } from '../lib/package-manager';
@@ -30,6 +30,7 @@ import {
 import { assetDestinationUrl } from '../lib/asset-destination';
 import { frameworkLabel, installChecklist } from '../lib/install-checklist';
 import { highlightLine } from '../lib/highlight-code';
+import { licenceLabel } from '../lib/licence-label';
 import { isWarmHue, stableHash, stageHue } from '../lib/stage-hue';
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
 import { customisableDemo } from '../../shared/demo-props';
@@ -57,10 +58,6 @@ function categoryLabel(asset: AssetRecord) {
   if (asset.kind === 'icon-pack') return 'Icon packs';
   if (asset.kind === 'font') return 'Fonts';
   return COMPONENT_CATEGORIES.find((entry) => entry.id === asset.category)?.label ?? 'Components';
-}
-
-function priceLabel(price: string) {
-  return price === 'free' ? 'Free' : price === 'paid' ? 'Paid' : price;
 }
 
 function variantLabel(variant: AssetRecord['variants'][number]) {
@@ -467,6 +464,7 @@ export function AssetDetail({
     navigate(changes, true);
   };
   const category = asset ? categoryLabel(asset) : '';
+  const licence = asset ? licenceLabel(asset) : null;
   const categoryQuery: Partial<AssetQuery> | null =
     asset?.kind === 'component' && asset.category
       ? { kind: 'component', category: asset.category }
@@ -789,16 +787,21 @@ export function AssetDetail({
                   <span className="ad-sep" aria-hidden="true">
                     ·
                   </span>
-                  <span>{priceLabel(asset.price)}</span>
-                  <span className="ad-sep" aria-hidden="true">
-                    ·
-                  </span>
-                  <span>
-                    {/^[\w.+-]+$/.test(asset.licence.expression)
-                      ? `${asset.licence.expression} licence`
-                      : asset.licence.expression}
-                  </span>
+                  {licence && <PriceLabel label={licence} />}
+                  {licence?.settled && (
+                    <>
+                      <span className="ad-sep" aria-hidden="true">
+                        ·
+                      </span>
+                      <span>
+                        {/^[\w.+-]+$/.test(asset.licence.expression)
+                          ? `${asset.licence.expression} licence`
+                          : asset.licence.expression}
+                      </span>
+                    </>
+                  )}
                 </p>
+                {licence?.detail && <p className="ad-licence-note">{licence.detail}</p>}
                 <p className="ad-desc">{asset.description}</p>
               </div>
 

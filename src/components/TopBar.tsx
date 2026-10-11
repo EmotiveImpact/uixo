@@ -1,5 +1,5 @@
 import { ToggleGroup } from 'radix-ui';
-import { ArrowLeft, Search } from 'lucide-react';
+import { ArrowLeft, Check, Search } from 'lucide-react';
 import type { RefObject } from 'react';
 import { useAnimatedSidebar } from './motion/animated-sidebar';
 import { DiscoveryHeader } from './discovery/DiscoveryHeader';
@@ -36,6 +36,8 @@ type DiscoveryControlsProps = {
   showDiscovery?: boolean;
   /** Overrides the search placeholder, e.g. "Search buttons". */
   placeholder?: string;
+  /** Components filter on licence, not price: every component is free to view. */
+  commercial?: { value: boolean; onChange: (value: boolean) => void };
 };
 
 export function TopBar({
@@ -110,6 +112,7 @@ export function DiscoveryControls({
   collectionIndex = false,
   showDiscovery = true,
   placeholder,
+  commercial,
 }: DiscoveryControlsProps) {
   return (
     <>
@@ -145,7 +148,20 @@ export function DiscoveryControls({
               <kbd>/</kbd>
             </div>
           )}
-          {!collectionIndex && showDiscovery && (
+          {commercial && (
+            <div className="segments commercial-filter">
+              <button
+                type="button"
+                className={commercial.value ? 'selected' : ''}
+                aria-pressed={commercial.value}
+                onClick={() => commercial.onChange(!commercial.value)}
+              >
+                {commercial.value && <Check size={14} aria-hidden="true" />}
+                Commercial use allowed
+              </button>
+            </div>
+          )}
+          {!collectionIndex && showDiscovery && !commercial && (
             <ToggleGroup.Root
               className="segments prices"
               type="single"
