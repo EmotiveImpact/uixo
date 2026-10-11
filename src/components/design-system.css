@@ -2250,3 +2250,8 @@ kbd {
     margin-top: 48px;
   }
 }
+
+/* Older phone rules hide every span in this row; the count and chips must stay. */
+.uixo-shell .asset-library-result-count .result-summary > span {
+  display: inline;
+}
