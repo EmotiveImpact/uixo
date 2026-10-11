@@ -28,7 +28,7 @@ export function useRegistryData<T>(
             setState({
               key,
               data: null,
-              error: e instanceof Error ? e.message : 'Registry request failed.',
+              error: e instanceof Error ? e.message : 'Catalogue request failed.',
             });
         });
     };

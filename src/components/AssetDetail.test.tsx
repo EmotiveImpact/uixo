@@ -200,3 +200,45 @@ it('offers Customise only for curated demos, and the code follows the chosen pro
     'shimmerColor="#c4b5fd"',
   );
 });
+
+it('turns a failed load into a way forward, with the technical reason behind Details', async () => {
+  let calls = 0;
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(async () => {
+      calls += 1;
+      return {
+        ok: false,
+        status: 500,
+        headers: new Headers({ 'content-type': 'text/plain' }),
+        json: async () => ({}),
+      };
+    }),
+  );
+  render(
+    <AssetDetail
+      id="magic-ui/shimmer-button"
+      nameOf={() => 'Magic UI'}
+      query={EMPTY_ASSET_QUERY}
+      saved={false}
+      toggleSave={() => {}}
+    />,
+  );
+  expect(
+    await screen.findByRole('heading', { level: 1, name: 'We could not load this component.' }),
+  ).toBeTruthy();
+  expect(screen.getByText('Your link is fine. Try again in a moment.')).toBeTruthy();
+  expect(screen.getByRole('link', { name: /View on Magic UI/ }).getAttribute('href')).toMatch(
+    /^https:\/\/magicui\.design\//,
+  );
+  expect(screen.getByRole('link', { name: 'Browse components' })).toBeTruthy();
+  // The developer sentence is kept, but only behind the disclosure.
+  const details = screen.getByText('Details').closest('details')!;
+  expect(details.open).toBe(false);
+  expect(within(details).getByText(/returned 500 without JSON/)).toBeTruthy();
+  const visible = document.body.textContent!.replace(details.textContent!, '');
+  expect(visible).not.toMatch(/registry|500|JSON/i);
+  const before = calls;
+  fireEvent.click(screen.getByRole('button', { name: 'Try again' }));
+  await waitFor(() => expect(calls).toBeGreaterThan(before));
+});

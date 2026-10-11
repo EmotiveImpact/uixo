@@ -10,6 +10,7 @@ import {
   X,
 } from 'lucide-react';
 import {
+  EMPTY_ASSET_QUERY,
   assetHref,
   catalogueResult,
   inventoryResult,
@@ -17,6 +18,7 @@ import {
   safeAssetUrl,
 } from '../lib/asset-library';
 import { AssetDetail } from './AssetDetail';
+import { LoadError } from './LoadError';
 import { ComponentCard } from './ComponentCard';
 import type {
   AssetQuery,
@@ -197,7 +199,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
         .catch((e: unknown) => {
           if (!abort.signal.aborted) {
             setResult(null);
-            setError(e instanceof Error ? e.message : 'The registry API is unavailable.');
+            setError(e instanceof Error ? e.message : 'The catalogue API is unavailable.');
           }
         })
         .finally(() => {
@@ -517,15 +519,18 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
             </label>
           </div>
           {error ? (
-            <section className="asset-library-empty" role="alert">
-              <h2>We could not load the assets.</h2>
-              <p>{error}</p>
-              <p>The website can load even when its registry API has not started correctly.</p>
-              <button onClick={() => setRetry((value) => value + 1)}>Try again</button>
-              <a href="/api/registry?action=status" target="_blank" rel="noopener noreferrer">
-                Check registry status <ArrowUpRight size={14} />
-              </a>
-            </section>
+            <LoadError
+              subject="components"
+              details={error}
+              onRetry={() => setRetry((value) => value + 1)}
+              browseHref={assetHref({ ...EMPTY_ASSET_QUERY, kind: 'component' })}
+              onBrowse={(event) => {
+                if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                event.preventDefault();
+                if (view === 'assets' && !kind && !category && !q) setRetry((value) => value + 1);
+                else navigate({ kind: 'component' }, true);
+              }}
+            />
           ) : loading ? (
             <div className="asset-library-grid" aria-busy="true">
               {Array.from({ length: 8 }, (_, index) => (

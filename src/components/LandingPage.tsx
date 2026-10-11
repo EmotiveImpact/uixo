@@ -303,10 +303,15 @@ export function LandingPage({
   useDocumentTitle(null);
   const [shelf, setShelf] = useState<Shelf>('featured');
   const searchRef = useRef<HTMLInputElement>(null);
-  const { data: catalogue } = useRegistryData<Catalogue>('search', {
+  const {
+    data: catalogue,
+    error: catalogueError,
+    reload: reloadCatalogue,
+  } = useRegistryData<Catalogue>('search', {
     kind: 'component',
     limit: '1',
   });
+  const [attempt, setAttempt] = useState(0);
   const { data: providerList } = useRegistryData<{ items: ProviderRecord[] }>('providers');
   const { data: latest } = useRegistryData<Catalogue>('search', {
     kind: 'component',
@@ -387,8 +392,18 @@ export function LandingPage({
               <ArrowRight size={14} aria-hidden="true" />
             </a>
           )}
+          {/* The count fills a reserved slot, so the heading never reflows or changes its claim. */}
           <h1 id="home-title">
-            {catalogue ? <b className="hm-num">{total}</b> : 'Hundreds of'} components
+            {catalogueError ? (
+              'Components'
+            ) : (
+              <>
+                <b className={`hm-num ${catalogue ? '' : 'is-pending'}`}>
+                  {catalogue ? total : '1,000'}
+                </b>{' '}
+                components
+              </>
+            )}
             <br className="hm-br" /> to try, copy and ship.
           </h1>
           <p className="hm-lede">
@@ -445,17 +460,33 @@ export function LandingPage({
         <ShelfSwitch shelf={shelf} onChange={setShelf} />
 
         <div className="hm-wrap">
-          <section
-            className="hm-grid"
-            id="shelf-panel"
-            role="tabpanel"
-            aria-labelledby={`shelf-tab-${shelf}`}
-            key={shelf}
-          >
-            {current.ids.map((id) => (
-              <ShelfComponent key={id} id={id} links={links} />
-            ))}
-          </section>
+          {catalogueError && (
+            <p className="hm-load-error" role="status">
+              We could not load these components. Your link is fine, so try again in a moment.
+              <button
+                type="button"
+                onClick={() => {
+                  setAttempt((value) => value + 1);
+                  reloadCatalogue();
+                }}
+              >
+                Try again
+              </button>
+            </p>
+          )}
+          {!catalogueError && (
+            <section
+              className="hm-grid"
+              id="shelf-panel"
+              role="tabpanel"
+              aria-labelledby={`shelf-tab-${shelf}`}
+              key={`${shelf}-${attempt}`}
+            >
+              {current.ids.map((id) => (
+                <ShelfComponent key={id} id={id} links={links} />
+              ))}
+            </section>
+          )}
           <div className="hm-more">
             <a
               className="hm-btn-quiet"
@@ -465,7 +496,9 @@ export function LandingPage({
               }
             >
               {shelf === 'featured'
-                ? `Browse all ${total} components`
+                ? total
+                  ? `Browse all ${total} components`
+                  : 'Browse all components'
                 : `Browse all ${current.label.toLowerCase()}`}
               <ArrowRight size={16} aria-hidden="true" />
             </a>

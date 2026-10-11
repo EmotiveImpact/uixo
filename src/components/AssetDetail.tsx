@@ -18,6 +18,7 @@ import { AssetProvenance } from './AssetProvenance';
 import { AssetPreview } from './AssetPreview';
 import { ComponentCard, PriceLabel, ProviderMarkSquare } from './ComponentCard';
 import { InstallCommand } from './InstallCommand';
+import { LoadError } from './LoadError';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { commandText } from '../lib/package-manager';
 import {
@@ -302,6 +303,7 @@ export function AssetDetail({
 }) {
   const [asset, setAsset] = useState<AssetRecord | null>(null);
   const [error, setError] = useState('');
+  const [attempt, setAttempt] = useState(0);
   const [variant, setVariant] = useState('');
   const [notice, setNotice] = useState('');
   const [framework, setFramework] = useState(query.framework || 'react');
@@ -351,7 +353,7 @@ export function AssetDetail({
           setError(cause instanceof Error ? cause.message : 'Unable to load this asset.');
       });
     return () => abort.abort();
-  }, [id, query.framework, query.format]);
+  }, [id, query.framework, query.format, attempt]);
 
   useEffect(() => {
     if (!variant) return;
@@ -536,9 +538,18 @@ export function AssetDetail({
       </div>
 
       {error && (
-        <p className="ad-message" role="alert">
-          {error}
-        </p>
+        <LoadError
+          subject="component"
+          headingLevel="h1"
+          assetId={id}
+          details={error}
+          onRetry={() => {
+            setError('');
+            setAttempt((value) => value + 1);
+          }}
+          browseHref={assetHref({ ...EMPTY_ASSET_QUERY, kind: 'component' })}
+          onBrowse={(event) => go(event, { kind: 'component' })}
+        />
       )}
       {!asset && !error && (
         <div className="ad-split" aria-busy="true">

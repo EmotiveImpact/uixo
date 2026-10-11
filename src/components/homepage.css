@@ -23,6 +23,39 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Holds the count's width until it arrives, so the heading does not reflow. */
+.hm-num.is-pending {
+  visibility: hidden;
+}
+
+/* The catalogue did not answer: one quiet line where the shelf would be. */
+.hm-load-error {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 16px;
+  margin: 8px auto 24px;
+  font: 400 14px/22px var(--g-sans);
+  color: var(--g-text-2);
+  text-align: center;
+}
+
+:is(:root, :root.light) .hm-load-error button {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-well);
+  color: var(--g-text);
+  font: 500 14px/1 var(--g-sans);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .hm-load-error button:hover {
+  background: var(--g-well-2);
+}
+
 /* ------------------------------------------------------------------- Hero */
 
 .home .discovery-header.home-header {

@@ -1800,3 +1800,100 @@
     align-items: flex-start;
   }
 }
+
+/* ------------------------------------------------------------ Load error */
+
+/* One error for list, detail and Home: a heading, one sentence, then the way forward. */
+:is(:root, :root.light) .load-error {
+  max-width: 640px;
+  margin: 32px 0;
+  padding: 32px;
+  border-radius: 18px;
+  background: var(--g-tile);
+  box-shadow: var(--g-hi);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .load-error .load-error-title {
+  margin: 0;
+  font: 600 22px/28px var(--g-sans);
+  letter-spacing: -0.01em;
+  color: var(--g-text);
+}
+
+.load-error-body {
+  margin: 8px 0 0;
+  font: 400 15px/24px var(--g-sans);
+  color: var(--g-text-2);
+}
+
+.load-error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin-top: 22px;
+}
+
+:is(:root, :root.light) .load-error-actions :is(.load-error-retry, .load-error-provider) {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  font: 500 14px/1 var(--g-sans);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.14s var(--g-ease);
+}
+
+:is(:root, :root.light) .load-error-actions .load-error-retry {
+  background: var(--g-invert-bg);
+  color: var(--g-invert-text);
+}
+
+:is(:root, :root.light) .load-error-actions .load-error-provider {
+  background: var(--g-well);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .load-error-actions .load-error-provider:hover {
+  background: var(--g-well-2);
+}
+
+:is(:root, :root.light) .load-error-actions .load-error-browse {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--g-text-2);
+  font: 500 14px/1 var(--g-sans);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.load-error-details {
+  margin-top: 20px;
+  font: 400 13px/20px var(--g-sans);
+  color: var(--g-text-3);
+}
+
+.load-error-details summary {
+  min-height: 24px;
+  cursor: pointer;
+  color: var(--g-text-2);
+}
+
+.load-error-details p {
+  margin: 8px 0 0;
+  font-family: var(--g-mono);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  :is(:root, :root.light) .load-error {
+    padding: 24px 20px;
+  }
+}

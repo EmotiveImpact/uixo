@@ -199,7 +199,7 @@ export function catalogueResult(value: unknown): Catalogue {
     (result.nextOffset !== null && !Number.isSafeInteger(result.nextOffset))
   ) {
     throw new Error(
-      'The registry returned an invalid catalogue. This is a service problem, not an empty library.',
+      'The catalogue API returned an invalid list. This is a service problem, not an empty library.',
     );
   }
   for (const item of result.items) {
@@ -210,7 +210,7 @@ export function catalogueResult(value: unknown): Catalogue {
       !Array.isArray(item.variants) ||
       !item.licence
     )
-      throw new Error('An asset record is incomplete. Please report this registry response.');
+      throw new Error('A component record is incomplete. Please report this catalogue response.');
   }
   return result as Catalogue;
 }
@@ -235,7 +235,7 @@ export function inventoryResult(value: unknown): CatalogueInventory {
         ),
     )
   )
-    throw new Error('The registry returned invalid inventory metadata.');
+    throw new Error('The catalogue API returned invalid inventory metadata.');
   return result as CatalogueInventory;
 }
 export async function registryRequest<T>(
@@ -262,17 +262,17 @@ export async function registryRequest<T>(
   const isJson = response.headers.get('content-type')?.includes('application/json');
   if (!isJson)
     throw new Error(
-      `The registry API returned ${response.status} without JSON. Check that the API is running and that the deployment routes /api/registry to its function.`,
+      `The catalogue API returned ${response.status} without JSON. Check that the API is running and that the deployment routes /api/registry to its function.`,
     );
   let result: T & { error?: { code?: string; message?: string } };
   try {
     result = await response.json();
   } catch {
-    throw new Error('The registry returned invalid JSON. Check the API runtime.');
+    throw new Error('The catalogue API returned invalid JSON. Check the API runtime.');
   }
   if (!result || typeof result !== 'object')
-    throw new Error('The registry returned an invalid response.');
+    throw new Error('The catalogue API returned an invalid response.');
   if (!response.ok || result.error)
-    throw new Error(result.error?.message ?? `Registry request failed (${response.status}).`);
+    throw new Error(result.error?.message ?? `Catalogue request failed (${response.status}).`);
   return result;
 }
