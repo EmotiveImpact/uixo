@@ -6,17 +6,41 @@
     "lucide": "https://github.com/lucide-icons/lucide/tree/main/icons",
     "heroicons": "https://github.com/tailwindlabs/heroicons/tree/master/optimized/24/outline",
     "magic-ui": "https://github.com/magicuidesign/magicui/blob/52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1/registry.json",
-    "motion-primitives": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/public/c/registry.json"
+    "motion-primitives": "https://github.com/ibelick/motion-primitives/blob/40f59b61e567712aa8329c7dc8c2ced763054c34/public/c/registry.json",
+    "kokonut-ui": "https://github.com/kokonut-labs/kokonutui/blob/83eec6d982d400a18438001a8efdbac1f159dd43/registry.json",
+    "evilcharts": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/registry.json",
+    "8bitcn": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/registry.json",
+    "cult-ui": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry.json",
+    "neobrutalism": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/registry.json",
+    "elevenlabs-ui": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry.json",
+    "prompt-kit": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/public/c/registry.json",
+    "mapcn": "https://github.com/AnmolSaini16/mapcn/blob/d160bd767bc6388618720c6038a4dd9948c97362/registry.json"
   },
   "refs": {
     "magic-ui": "52bc69354621e5cd7c9bc84a0e42b42f2d0c07b1",
     "motion-primitives": "40f59b61e567712aa8329c7dc8c2ced763054c34",
-    "shadcn": "2b3e6d4f8d9161fe5c19340dc383aade392012dd"
+    "shadcn": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
+    "kokonut-ui": "83eec6d982d400a18438001a8efdbac1f159dd43",
+    "evilcharts": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "8bitcn": "9aedd7165837143803b95cdb2ab111923cf63efe",
+    "cult-ui": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "neobrutalism": "3306a802724874a85f93079702b2795370a279d4",
+    "elevenlabs-ui": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "prompt-kit": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "mapcn": "d160bd767bc6388618720c6038a4dd9948c97362"
   },
   "capturedAtByProvider": {
     "magic-ui": "2026-09-14T00:00:00.000Z",
     "motion-primitives": "2026-09-14T00:00:00.000Z",
-    "shadcn": "2026-09-14T00:00:00.000Z"
+    "shadcn": "2026-09-14T00:00:00.000Z",
+    "kokonut-ui": "2026-10-07T00:00:00.000Z",
+    "evilcharts": "2026-10-07T00:00:00.000Z",
+    "8bitcn": "2026-10-07T00:00:00.000Z",
+    "cult-ui": "2026-10-07T00:00:00.000Z",
+    "neobrutalism": "2026-10-07T00:00:00.000Z",
+    "elevenlabs-ui": "2026-10-07T00:00:00.000Z",
+    "prompt-kit": "2026-10-07T00:00:00.000Z",
+    "mapcn": "2026-10-07T00:00:00.000Z"
   },
   "components": [
     [

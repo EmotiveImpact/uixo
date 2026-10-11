@@ -17,6 +17,7 @@ import { NotFound } from './components/NotFound';
 import { ReviewInbox } from './components/ReviewInbox';
 import { AppSidebar } from './components/AppSidebar';
 import { DiscoveryToolbar } from './components/DiscoveryToolbar';
+import { CandidateGrid } from './components/CandidateGrid';
 import { EmptyState } from './components/EmptyState';
 import { PageHeading } from './components/PageHeading';
 import { QuickView } from './components/QuickView';
@@ -34,6 +35,8 @@ import { useSearchHotkey } from './hooks/useSearchHotkey';
 import { useTheme } from './hooks/useTheme';
 import { filterResources } from './lib/filters';
 import { navigateInApp } from './lib/navigation';
+import type { CandidateListing } from './lib/candidates';
+import { useCandidateCatalogue } from './hooks/useCandidateCatalogue';
 import { EMPTY_ROUTE, routeToHref } from './lib/url';
 import { APP_SIDEBAR_SIZING } from './lib/layout';
 import { collections, resources } from './data';
@@ -105,24 +108,35 @@ export function App() {
     if (route.listId && !activeList) navigate({ listId: null });
   }, [route.listId, activeList, navigate]);
 
+  const candidateCatalogue = useCandidateCatalogue(route.candidates);
+  const candidateListings = candidateCatalogue?.listings ?? null;
+  const catalogue = useMemo(
+    () => (route.candidates ? (candidateListings ?? []) : resources),
+    [route.candidates, candidateListings],
+  );
   const shown = useMemo(
     () =>
-      filterResources(resources, {
-        listIds: activeCollection
-          ? activeCollection.resourceIds
-          : activeList
-            ? activeList.resourceIds
-            : null,
+      filterResources(catalogue, {
+        listIds: route.candidates
+          ? null
+          : activeCollection
+            ? activeCollection.resourceIds
+            : activeList
+              ? activeList.resourceIds
+              : null,
         category: route.category,
         sub: route.sub,
         price: route.price,
         format: route.format,
         browse: route.browse,
         search: route.search,
+        exactTaxonomy: route.candidates,
       }),
     [
+      catalogue,
       activeList,
       activeCollection,
+      route.candidates,
       route.category,
       route.sub,
       route.price,
@@ -135,11 +149,18 @@ export function App() {
   const clearFilters = () =>
     navigate({ search: '', category: null, sub: null, price: 'All', format: ALL_FORMATS });
 
-  const reset = () => navigate({ ...EMPTY_ROUTE });
+  const stayOnCandidates = route.candidates
+    ? {
+        candidates: true as const,
+        browse: (route.browse === 'Featured' ? 'Featured' : 'Recent') as BrowseOrder,
+      }
+    : {};
+
+  const reset = () => navigate({ ...EMPTY_ROUTE, ...stayOnCandidates });
 
   const showAll = () => {
     setOpenSection(null);
-    navigate({ ...EMPTY_ROUTE, browse: route.browse });
+    navigate({ ...EMPTY_ROUTE, browse: route.browse, ...stayOnCandidates });
   };
 
   const chooseList = (id: string) => {
@@ -171,7 +192,13 @@ export function App() {
             ? 'Collections'
             : activeCollection
               ? activeCollection.name
-              : route.sub || route.category || (activeList ? activeList.name : 'All resources');
+              : route.sub ||
+                route.category ||
+                (activeList
+                  ? activeList.name
+                  : route.candidates
+                    ? 'Staged candidates'
+                    : 'All resources');
 
   const subtitle = route.review
     ? 'Staged candidates. Nothing reaches the site until you approve it.'
@@ -185,9 +212,13 @@ export function App() {
             ? 'Curated sets with a point of view.'
             : activeCollection
               ? activeCollection.tagline
-              : activeList
-                ? 'The good ones, kept close.'
-                : 'Good tools. Great interfaces.';
+              : route.candidates
+                ? candidateListings
+                  ? `${candidateListings.length} staged scout finds. Production listings are unchanged.`
+                  : 'Loading staged scout finds.'
+                : activeList
+                  ? 'The good ones, kept close.'
+                  : 'Good tools. Great interfaces.';
 
   useDocumentTitle(
     route.landing ? null : openResource ? openResource.name : route.dashboard ? 'Dashboard' : title,
@@ -196,6 +227,10 @@ export function App() {
   // The grid and its toolbar only make sense on browsing routes.
   const showsGrid =
     !route.dashboard && !route.admin && !route.review && !route.notFound && !route.collectionsIndex;
+  const showsLiveGrid = showsGrid && !route.candidates;
+  // Staged candidates load on demand, so there is nothing to count until they arrive.
+  const showsCandidateGrid = showsGrid && route.candidates && candidateListings !== null;
+  const showsCount = showsLiveGrid || showsCandidateGrid;
 
   const hasFilters =
     Boolean(route.search || route.category) ||
@@ -307,13 +342,20 @@ export function App() {
             openSection={openSection}
             lists={lists}
             onShowAll={showAll}
-            homeHref={routeToHref(EMPTY_ROUTE)}
+            homeHref={routeToHref(
+              route.candidates
+                ? { ...EMPTY_ROUTE, candidates: true, browse: 'Recent' }
+                : EMPTY_ROUTE,
+            )}
             onChooseList={chooseList}
             onDeleteList={remove}
             onChooseCategory={chooseCategory}
             onChooseSub={chooseSub}
             onSubmit={() => setModal('submit')}
             savedAssetCount={assetSaves.saved.length}
+            catalogueResources={route.candidates ? (candidateListings ?? []) : undefined}
+            allLabel={route.candidates ? 'All candidates' : undefined}
+            exactTaxonomy={route.candidates}
           />
         )}
 
@@ -322,6 +364,12 @@ export function App() {
         </a>
 
         <AnimatedSidebarInset className="site-main" id="main" tabIndex={-1}>
+          {route.candidates && (
+            <p className="candidate-banner" role="status">
+              Staged candidates, not live listings
+            </p>
+          )}
+
           <PageHeading
             title={title}
             subtitle={subtitle}
@@ -352,6 +400,7 @@ export function App() {
               onFormatChange={(format) => navigate({ format })}
               density={density}
               onDensityChange={setDensity}
+              formatOptions={route.candidates ? (candidateCatalogue?.formats ?? []) : undefined}
             />
           )}
 
@@ -368,7 +417,11 @@ export function App() {
 
           {/* Announce result counts so filtering is not silent to a screen reader. */}
           <p className="sr-only" role="status" aria-live="polite">
-            {showsGrid ? `${shown.length} website${shown.length === 1 ? '' : 's'} shown` : ''}
+            {showsCount
+              ? `${shown.length} ${
+                  route.candidates ? 'candidate' : 'website'
+                }${shown.length === 1 ? '' : 's'} shown`
+              : ''}
           </p>
 
           {route.notFound && <NotFound onReset={reset} />}
@@ -417,7 +470,7 @@ export function App() {
               </section>
             ))}
 
-          {showsGrid && (
+          {showsLiveGrid && (
             <>
               <ResourceGrid
                 density={density}
@@ -437,7 +490,20 @@ export function App() {
             </>
           )}
 
-          <SiteFooter />
+          {showsCandidateGrid && (
+            <>
+              <CandidateGrid
+                density={density}
+                listings={shown as CandidateListing[]}
+                onSelectCategory={chooseCategory}
+                onSelectFormat={(format) => navigate({ format })}
+              />
+
+              {!shown.length && <EmptyState emptyList={false} onReset={reset} />}
+            </>
+          )}
+
+          <SiteFooter count={showsCount ? shown.length : null} />
         </AnimatedSidebarInset>
       </div>
 

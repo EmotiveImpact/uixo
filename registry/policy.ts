@@ -73,6 +73,14 @@ export function resolveAsset(asset: Asset, variantId?: string) {
       'magic-ui': { origin: 'https://magicui.design', path: '/r/' },
       'motion-primitives': { origin: 'https://motion-primitives.com', path: '/c/' },
       uiable: { origin: 'https://uiable.com', path: '/r/' },
+      'kokonut-ui': { origin: 'https://kokonutui.com', path: '/r/' },
+      evilcharts: { origin: 'https://evilcharts.com', path: '/r/' },
+      '8bitcn': { origin: 'https://8bitcn.com', path: '/r/' },
+      'cult-ui': { origin: 'https://cult-ui.com', path: '/r/' },
+      neobrutalism: { origin: 'https://neobrutalism.dev', path: '/r/' },
+      'elevenlabs-ui': { origin: 'https://ui.elevenlabs.io', path: '/r/' },
+      'prompt-kit': { origin: 'https://prompt-kit.com', path: '/c/' },
+      mapcn: { origin: 'https://mapcn.dev', path: '/r/' },
     };
     if (
       asset.providerId === 'kibo-ui' &&

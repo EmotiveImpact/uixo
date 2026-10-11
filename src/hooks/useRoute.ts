@@ -25,6 +25,7 @@ const NAVIGATION_KEYS: (keyof RouteState)[] = [
   'collectionsIndex',
   'dashboard',
   'review',
+  'candidates',
   'admin',
   'notFound',
   'landing',
