@@ -87,12 +87,13 @@ with sync_playwright() as p:
                         assert geometry['scrollWidth'] <= width + 1, (view, width, geometry)
                         header = page.locator('.discovery-header').bounding_box()
                         assert header and abs(header['x']) < 1 and abs(header['width'] - width) < 1, header
-                        wordmark = page.locator('.discovery-wordmark').evaluate('el => ({weight: getComputedStyle(el).fontWeight, spacing: getComputedStyle(el).letterSpacing, font: getComputedStyle(el).fontFamily})')
-                        assert wordmark['weight'] == '600' and wordmark['spacing'] == '5.76px', wordmark
+                        wordmark = page.locator('.discovery-wordmark').evaluate('el => ({weight: getComputedStyle(el).fontWeight, spacing: getComputedStyle(el).letterSpacing, size: getComputedStyle(el).fontSize, font: getComputedStyle(el).fontFamily})')
+                        # The spaced wordmark tracks at 0.3em at every size.
+                        assert wordmark['weight'] == '600' and abs(float(wordmark['spacing'][:-2]) - 0.3 * float(wordmark['size'][:-2])) < 0.05, wordmark
                         assert 'Figtree' in wordmark['font'], wordmark
                         if view == 'components':
-                            card_style = page.locator('.asset-library-card').first.evaluate('el => ({border: getComputedStyle(el).borderTopWidth, radius: getComputedStyle(el).borderRadius, padding: getComputedStyle(el.querySelector(".asset-library-card-body")).padding})')
-                            assert card_style == {'border': '0px', 'radius': '18px', 'padding': '14px 8px 8px'}, card_style
+                            card_style = page.locator('.asset-library-card').first.evaluate('el => ({border: getComputedStyle(el).borderTopWidth, radius: getComputedStyle(el).borderRadius, padding: getComputedStyle(el.querySelector(".g-meta")).padding})')
+                            assert card_style == {'border': '0px', 'radius': '18px', 'padding': '14px 8px 6px'}, card_style
                             first = page.locator('.asset-library-card').first.bounding_box()
                             assert first and first['y'] < (520 if width == 390 else 460), first
                             assert page.locator('.discovery-featured').count() == 0
@@ -133,13 +134,17 @@ with sync_playwright() as p:
                         expect(page.get_by_role('button', name='Open navigation', exact=True)).to_be_focused()
                     visit(page, '/')
                     if width == 390:
-                        # The homepage has no sidebar; its header keeps the site links inline instead.
+                        # The homepage has no sidebar; on a phone its header menu holds the site links.
+                        page.locator('.discovery-header').get_by_role('button', name='Open menu', exact=True).click()
+                        expect(page.locator('#discovery-mobile-navigation').get_by_role('link', name='Collections', exact=True)).to_be_visible()
+                        page.locator('.discovery-header').get_by_role('button', name='Close menu', exact=True).click()
+                    else:
                         expect(page.locator('.discovery-header').get_by_role('link', name='Collections', exact=True)).to_be_visible()
                     page.keyboard.press('Control+k')
                     search = page.get_by_role('searchbox', name='Search components', exact=True)
                     expect(search).to_be_focused()
                     search.fill('button')
-                    page.locator('.hero-search').get_by_role('button').click()
+                    page.locator('.hm-search').get_by_role('button', name='Search', exact=True).click()
                     expect(page).to_have_url(re.compile('/browse/assets\\?q=button'))
                     wait_for_card(page)
                     assert not errors, errors

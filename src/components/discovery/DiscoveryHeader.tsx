@@ -21,6 +21,8 @@ type Props = {
   onToggleTheme: () => void;
   account?: ReactNode;
   onSearch?: () => void;
+  /** What the search pill finds here, e.g. "Search components". */
+  searchLabel?: string;
   sidebar?: {
     expanded: boolean;
     toggle: () => void;
@@ -60,6 +62,20 @@ const primaryLinks: (Destination & { badge?: string })[] = [
   },
 ];
 
+/** The violet tile with four white parts that sits beside the UIXO wordmark. */
+export function Logomark() {
+  return (
+    <span className="g-logomark" aria-hidden="true">
+      <svg viewBox="0 0 16 16">
+        <rect x="1" y="1" width="6" height="6" rx="1.8" fill="#fff" />
+        <circle cx="12" cy="4" r="3" fill="#fff" fillOpacity=".6" />
+        <rect x="1" y="9" width="6" height="6" rx="1.8" fill="#fff" fillOpacity=".6" />
+        <rect x="9" y="9" width="6" height="6" rx="3" fill="#fff" />
+      </svg>
+    </span>
+  );
+}
+
 /** One full-width header, above the catalogue sidebar rather than inside it. */
 export function DiscoveryHeader({
   active,
@@ -68,6 +84,7 @@ export function DiscoveryHeader({
   onToggleTheme,
   account,
   onSearch,
+  searchLabel = 'Search components',
   sidebar,
   sidebarTriggerRef,
   adminAction,
@@ -135,12 +152,13 @@ export function DiscoveryHeader({
     <header className={`discovery-header ${compactNavigation ? 'home-header' : ''}`}>
       <div className="discovery-header-inner">
         <a
-          className="brand discovery-wordmark"
+          className="brand discovery-brand"
           aria-label="UIXO home"
           href="/"
           onClick={(e) => navigate(e, '/')}
         >
-          UIXO
+          <Logomark />
+          <span className="discovery-wordmark">UIXO</span>
         </a>
         <nav className="discovery-navigation" aria-label="Main navigation">
           <button
@@ -169,12 +187,18 @@ export function DiscoveryHeader({
         <div className="discovery-header-actions">
           <button
             className="header-search"
-            onClick={onSearch ?? (() => navigateInApp('/browse/assets'))}
-            aria-label="Search UIXO"
+            onClick={
+              onSearch ??
+              (() =>
+                window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true })))
+            }
+            aria-label={searchLabel}
+            aria-keyshortcuts="Meta+K Control+K"
+            title={`${searchLabel} (⌘K)`}
           >
-            <Search size={15} />
-            <span>Search UIXO</span>
-            <kbd>⌘ K</kbd>
+            <Search size={16} aria-hidden="true" />
+            <span>{searchLabel}</span>
+            <kbd aria-hidden="true">⌘K</kbd>
           </button>
           <a
             className="header-icon header-saved"
@@ -182,14 +206,14 @@ export function DiscoveryHeader({
             aria-label="Saved assets"
             onClick={(e) => navigate(e, '/browse/assets?view=saved')}
           >
-            <Bookmark size={17} />
+            <Bookmark size={18} />
           </a>
           <button
             className="header-icon"
             onClick={onToggleTheme}
             aria-label={`Switch to ${light ? 'dark' : 'light'} theme`}
           >
-            {light ? <Moon size={17} /> : <Sun size={17} />}
+            {light ? <Moon size={18} /> : <Sun size={18} />}
           </button>
           {adminAction}
           {account}

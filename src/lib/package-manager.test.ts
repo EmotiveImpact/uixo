@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { commandText, forPackageManager, hasPackageManagerVariants } from './package-manager';
+import {
+  commandText,
+  forPackageManager,
+  hasPackageManagerVariants,
+  installPreview,
+} from './package-manager';
 
 describe('package manager commands', () => {
   const add = 'npx shadcn@latest add https://magicui.design/r/aurora-text.json';
@@ -36,5 +41,31 @@ describe('package manager commands', () => {
       }),
     ).toBe("npx shadcn add 'it'\\''s here'");
     expect(commandText(null)).toBe('');
+  });
+});
+
+describe('install preview on cards', () => {
+  const registry = {
+    variants: [
+      { acquisition: { kind: 'registry', url: 'https://magicui.design/r/shimmer-button.json' } },
+    ],
+  };
+
+  it('shortens a registry command to its component name', () => {
+    expect(installPreview(registry)).toBe('npx shadcn add …/shimmer-button');
+    expect(installPreview(registry, 'pnpm')).toBe('pnpm dlx shadcn add …/shimmer-button');
+  });
+
+  it('shows the package for a package install', () => {
+    expect(
+      installPreview({
+        variants: [{ acquisition: { kind: 'package', packageName: 'flowbite-react' } }],
+      }),
+    ).toBe('npm install flowbite-react');
+  });
+
+  it('is empty when there is no install route', () => {
+    expect(installPreview({ variants: [{ acquisition: { kind: 'external' } }] })).toBe('');
+    expect(installPreview({ variants: [] })).toBe('');
   });
 });

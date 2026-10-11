@@ -62,6 +62,7 @@ export function TopBar({
       onSearch={() =>
         window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))
       }
+      searchLabel={catalogue === 'assets' ? 'Search components' : 'Search UIXO'}
       adminAction={
         adminMode && adminAction ? (
           <a

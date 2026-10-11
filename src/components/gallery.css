@@ -1,0 +1,1026 @@
+/*
+ * UIXO gallery workbench (direction A+B v2): the final layer for tokens, the header,
+ * component cards and the footer. Ported from design-language/mockups/direction-ab2.html.
+ *
+ * Token changes against DESIGN-LANGUAGE.md, as the approved mockup set them:
+ * - Background #0e0e10, a touch deeper so lit stages and tiles read as raised.
+ * - Tiles are a 180deg gradient with a 1px top inner highlight; light theme uses white
+ *   tiles with a hairline shadow.
+ * - Every preview sits on a tinted stage: hsl(var(--h)) from 17% to 7.5% lightness with a
+ *   soft spotlight from the top and a floor glow. Light theme uses a pastel field.
+ * - One soft glow in the card's own hue on hover is the only drop shadow on chrome.
+ *
+ * Old layers style the same class names with high specificity, so selectors here are
+ * prefixed with :is(:root, :root.light) where they must win.
+ */
+
+:root {
+  --background: #0e0e10;
+  --foreground: #ededef;
+  --g-bg: #0e0e10;
+  --g-surface: #18181b;
+  --g-raised: #222226;
+  --g-well: #232327;
+  --g-well-2: #2c2c31;
+  --g-tile: linear-gradient(180deg, #1c1c20, #17171a);
+  --g-tile-hover: linear-gradient(180deg, #212126, #1a1a1e);
+  --g-hi: inset 0 1px 0 rgb(255 255 255 / 0.065);
+  --g-text: #ededef;
+  --g-text-2: #a3a3ab;
+  --g-text-3: #8e8e96;
+  --g-line: rgb(255 255 255 / 0.075);
+  --g-accent: #8b7dff;
+  --g-glow: linear-gradient(90deg, #6d5dfc, #3b82f6 45%, #c084fc);
+  --g-success: #4ade80;
+  --g-invert-bg: #ededef;
+  --g-invert-text: #0a0a0a;
+  --g-glass: rgb(12 12 14 / 0.42);
+  --g-glass-hover: rgb(12 12 14 / 0.7);
+  --g-glass-text: rgb(255 255 255 / 0.9);
+  --g-wp: #18181c;
+  --g-wp-2: #232328;
+  --g-wp-line: rgb(255 255 255 / 0.07);
+  --g-shadow: 0 12px 40px rgb(0 0 0 / 0.35);
+  --g-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --g-sans: 'Figtree', 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --g-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --g-glyph-ink: #0e0e10;
+  --h: 268;
+  --spot: 0.42;
+  --t1: 17%;
+  --t2: 7.5%;
+  --sat: 62%;
+  --hov: 0.5;
+  --ds-font: var(--g-sans);
+}
+
+:root.light {
+  --background: #f4f4f5;
+  --foreground: #0a0a0a;
+  --g-bg: #f4f4f5;
+  --g-surface: #ffffff;
+  --g-raised: #ffffff;
+  --g-well: #ececef;
+  --g-well-2: #e2e2e6;
+  --g-tile: linear-gradient(180deg, #ffffff, #fcfcfd);
+  --g-tile-hover: linear-gradient(180deg, #ffffff, #ffffff);
+  --g-hi: 0 0 0 1px rgb(0 0 0 / 0.045), 0 1px 2px rgb(0 0 0 / 0.04);
+  --g-text: #0a0a0a;
+  --g-text-2: #52525b;
+  --g-text-3: #6b6b73;
+  --g-line: rgb(0 0 0 / 0.08);
+  --g-accent: #5b4cf0;
+  --g-success: #16a34a;
+  --g-invert-bg: #0a0a0a;
+  --g-invert-text: #ffffff;
+  --g-glass: rgb(255 255 255 / 0.62);
+  --g-glass-hover: #ffffff;
+  --g-glass-text: #27272a;
+  --g-wp: #ffffff;
+  --g-wp-2: #f4f4f6;
+  --g-wp-line: rgb(0 0 0 / 0.07);
+  --g-shadow: 0 12px 40px rgb(0 0 0 / 0.16);
+  --g-glyph-ink: #f3f3f5;
+  --hov: 0.32;
+}
+
+:is(:root, :root.light) body {
+  background: var(--g-bg);
+  color: var(--g-text);
+}
+
+/* ------------------------------------------------------------------ Header */
+
+:is(:root, :root.light) .discovery-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  height: auto;
+  background: color-mix(in srgb, var(--g-bg) 84%, transparent);
+  backdrop-filter: saturate(1.5) blur(16px);
+  -webkit-backdrop-filter: saturate(1.5) blur(16px);
+  border: 0;
+  box-shadow: inset 0 -1px 0 var(--g-line);
+}
+
+:is(:root, :root.light) .discovery-header.home-header {
+  position: relative;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .discovery-header .discovery-header-inner {
+  width: 100%;
+  max-width: none;
+  height: 76px;
+  min-height: 76px;
+  margin: 0;
+  padding: 0 44px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+:is(:root, :root.light) .discovery-header .discovery-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  flex: none;
+  color: var(--g-text);
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.g-logomark {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(140deg, #a99dff, #6d5dfc 55%, #4f46e5);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.35),
+    0 4px 14px -4px rgb(109 93 252 / 0.7);
+}
+
+.g-logomark svg {
+  width: 16px;
+  height: 16px;
+}
+
+:is(:root, :root.light) .discovery-header .discovery-wordmark {
+  font: 600 17px/1 var(--g-sans);
+  letter-spacing: 0.3em;
+  margin-right: -0.3em;
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .discovery-header .discovery-navigation {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+}
+
+:is(:root, :root.light) .discovery-header .discovery-navigation > a,
+:is(:root, :root.light) .discovery-header .discovery-browse-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--g-text-2);
+  font: 400 14px/1 var(--g-sans);
+  box-shadow: none;
+  transition: color 0.14s var(--g-ease);
+}
+
+:is(:root, :root.light) .discovery-header .discovery-navigation > a:hover,
+:is(:root, :root.light) .discovery-header .discovery-navigation > a[aria-current='page'],
+:is(:root, :root.light) .discovery-header .discovery-browse-trigger:hover,
+:is(:root, :root.light) .discovery-header .discovery-browse-trigger[aria-expanded='true'],
+:is(:root, :root.light) .discovery-header .discovery-browse-trigger[data-active] {
+  color: var(--g-text);
+  background: transparent;
+}
+
+:is(:root, :root.light) .discovery-header .nav-badge {
+  font: 500 10.5px/1 var(--g-mono);
+  padding: 4px 6px;
+  border-radius: 999px;
+  background: var(--g-well);
+  color: var(--g-text-2);
+  box-shadow: none;
+  letter-spacing: 0;
+}
+
+:is(:root, :root.light) .discovery-header .discovery-header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+:is(:root, :root.light) .discovery-header .header-search {
+  height: 40px;
+  width: 264px;
+  max-width: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 6px;
+  padding: 0 6px 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-well);
+  color: var(--g-text-3);
+  font: 400 14px/1 var(--g-sans);
+  box-shadow: none;
+  transition:
+    background 0.14s var(--g-ease),
+    color 0.14s var(--g-ease);
+}
+
+:is(:root, :root.light) .discovery-header.home-header .header-search {
+  background: rgb(255 255 255 / 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+:root.light .discovery-header.home-header .header-search {
+  background: rgb(0 0 0 / 0.05);
+}
+
+:is(:root, :root.light) .discovery-header .header-search:hover {
+  background: var(--g-well-2);
+  color: var(--g-text-2);
+}
+
+:is(:root, :root.light) .discovery-header .header-search span {
+  flex: 1;
+  text-align: left;
+  display: block;
+}
+
+:is(:root, :root.light) .discovery-header .header-search kbd,
+.g-kbd {
+  display: inline-block;
+  font: 500 11px/1 var(--g-mono);
+  color: var(--g-text-3);
+  padding: 5px 7px;
+  border: 0;
+  border-radius: 7px;
+  background: var(--g-bg);
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .discovery-header .header-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--g-text-2);
+  box-shadow: none;
+  transition:
+    background 0.14s var(--g-ease),
+    color 0.14s var(--g-ease);
+}
+
+:is(:root, :root.light) .discovery-header .header-icon:hover {
+  background: var(--g-well);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .discovery-header :is(.header-signin, .signin-button) {
+  height: 40px;
+  margin-left: 6px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-invert-bg);
+  color: var(--g-invert-text);
+  font: 500 13px/16px var(--g-sans);
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .discovery-header :is(.header-signin, .signin-button):hover {
+  opacity: 0.88;
+}
+
+:is(:root, :root.light) .discovery-header :focus-visible,
+.g-card :focus-visible,
+.home :focus-visible,
+.site-footer :focus-visible {
+  outline: 2px solid var(--g-accent);
+  outline-offset: 2px;
+}
+
+/* The menu trigger only exists for phones. */
+:is(:root, :root.light) .discovery-header .discovery-menu-trigger {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  :is(:root, :root.light) .discovery-header .header-search {
+    width: 200px;
+  }
+}
+
+@media (max-width: 900px) {
+  :is(:root, :root.light) .discovery-header .discovery-header-inner {
+    height: 64px;
+    min-height: 64px;
+    padding: 0 10px 0 16px;
+    gap: 0;
+  }
+
+  :is(:root, :root.light) .discovery-header .discovery-navigation {
+    display: none;
+  }
+
+  :is(:root, :root.light) .discovery-header .g-logomark {
+    width: 24px;
+    height: 24px;
+  }
+
+  :is(:root, :root.light) .discovery-header .discovery-wordmark {
+    font-size: 15px;
+  }
+
+  :is(:root, :root.light) .discovery-header .discovery-header-actions {
+    gap: 0;
+  }
+
+  /* The search pill collapses to an icon. */
+  :is(:root, :root.light) .discovery-header .header-search,
+  :is(:root, :root.light) .discovery-header.home-header .header-search {
+    width: 40px;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    background: transparent;
+    color: var(--g-text-2);
+    backdrop-filter: none;
+  }
+
+  :is(:root, :root.light) .discovery-header .header-search span,
+  :is(:root, :root.light) .discovery-header .header-search kbd,
+  :is(:root, :root.light) .discovery-header .header-saved {
+    display: none;
+  }
+
+  :is(:root, :root.light) .discovery-header .discovery-menu-trigger {
+    display: inline-grid;
+  }
+
+  :is(:root, :root.light) .discovery-header :is(.header-signin, .signin-button) {
+    height: 36px;
+    margin: 0 2px;
+    padding: 0 14px;
+  }
+}
+
+:is(:root, :root.light) .discovery-mobile-menu {
+  background: var(--g-bg);
+  box-shadow: inset 0 -1px 0 var(--g-line);
+}
+
+/* ------------------------------------------------------------------ Stage */
+
+.g-tint {
+  --t1: 17%;
+  --t2: 7.5%;
+  --sat: 62%;
+  --spot: 0.42;
+  background:
+    radial-gradient(62% 56% at 50% -4%, hsl(var(--h) 95% 72% / var(--spot)), transparent 72%),
+    radial-gradient(90% 60% at 50% 118%, hsl(var(--h) 85% 52% / 0.26), transparent 70%),
+    linear-gradient(
+      180deg,
+      hsl(var(--h) var(--sat) var(--t1)),
+      hsl(var(--h) calc(var(--sat) + 8%) var(--t2))
+    );
+}
+
+.g-tint.is-warm {
+  --t1: 27%;
+  --t2: 11%;
+  --sat: 82%;
+  --spot: 0.5;
+}
+
+:root.light .g-tint {
+  background:
+    radial-gradient(62% 56% at 50% -4%, rgb(255 255 255 / 0.9), transparent 72%),
+    radial-gradient(90% 60% at 50% 118%, hsl(var(--h) 90% 72% / 0.32), transparent 70%),
+    linear-gradient(180deg, hsl(var(--h) 80% 93%), hsl(var(--h) 62% 84%));
+}
+
+/* ------------------------------------------------------------------- Cards */
+
+:is(:root, :root.light) .g-card {
+  position: relative;
+  display: block;
+  min-width: 0;
+  margin: 0;
+  padding: 8px;
+  border: 0;
+  border-radius: 18px;
+  background: var(--g-tile);
+  box-shadow: var(--g-hi);
+  color: var(--g-text);
+  transform: none;
+  overflow: visible;
+  transition: box-shadow 0.3s var(--g-ease);
+}
+
+:is(:root, :root.light) .g-card:hover {
+  background: var(--g-tile-hover);
+  transform: none;
+  box-shadow:
+    var(--g-hi),
+    0 30px 70px -30px hsl(var(--h) 90% 60% / var(--hov)),
+    0 10px 30px -18px hsl(var(--h) 90% 55% / var(--hov));
+}
+
+:is(:root, :root.light) .g-card .g-stage {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.g-card .g-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(55% 45% at 50% 0%, hsl(var(--h) 100% 82% / 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s var(--g-ease);
+}
+
+.g-card:hover .g-stage::after {
+  opacity: 1;
+}
+
+/* The preview fills the stage; live frames are transparent so the tint shows. */
+:is(:root, :root.light) .g-stage .g-preview {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  aspect-ratio: auto;
+  overflow: hidden;
+}
+
+:is(:root, :root.light) .g-stage .g-preview .asset-live-viewport {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  aspect-ratio: auto;
+  overflow: hidden;
+}
+
+:is(:root, :root.light) .g-stage .g-preview .asset-live-viewport iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  transform-origin: 0 0;
+  transition: transform 0.4s var(--g-ease);
+}
+
+/* Opaque pages (provider embeds) sit on the stage as an inset window. */
+:is(:root, :root.light) .g-stage .g-preview .asset-live-viewport.is-framed {
+  inset: 46px 30px -14px;
+  overflow: visible;
+  border-radius: 10px;
+  background: #0b0b0b;
+  box-shadow:
+    0 30px 60px -20px rgb(0 0 0 / 0.7),
+    0 0 0 1px rgb(255 255 255 / 0.08);
+}
+
+:root.light .g-stage .g-preview .asset-live-viewport.is-framed {
+  background: #fff;
+  box-shadow:
+    0 30px 60px -24px rgb(20 20 50 / 0.35),
+    0 0 0 1px rgb(0 0 0 / 0.06);
+}
+
+/* Screenshots sit inset, with rounded corners and a real shadow, never edge to edge. */
+:is(:root, :root.light) .g-stage .g-preview > img.g-shot,
+:is(:root, :root.light) .g-stage .g-preview .asset-preview-fallback-image {
+  position: absolute;
+  inset: 22px 22px auto;
+  width: calc(100% - 44px);
+  height: calc(100% - 44px);
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 10px;
+  background: var(--g-surface);
+  box-shadow:
+    0 30px 60px -20px rgb(0 0 0 / 0.7),
+    0 0 0 1px rgb(255 255 255 / 0.08);
+  transition: transform 0.42s var(--g-ease);
+}
+
+:root.light .g-stage .g-preview > img.g-shot,
+:root.light .g-stage .g-preview .asset-preview-fallback-image {
+  box-shadow:
+    0 30px 60px -24px rgb(20 20 50 / 0.35),
+    0 0 0 1px rgb(0 0 0 / 0.06);
+}
+
+.g-card:hover .g-stage .g-preview > img.g-shot {
+  transform: translateY(-3px);
+}
+
+:is(:root, :root.light) .g-stage .asset-capture-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+:is(:root, :root.light) .g-stage .asset-live-loading,
+:is(:root, :root.light) .g-stage .asset-live-fallback,
+.g-pending-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  padding: 0;
+  background: none;
+  color: rgb(255 255 255 / 0.62);
+  font: 500 11px/1 var(--g-mono);
+  white-space: nowrap;
+}
+
+:root.light .g-stage .asset-live-loading,
+:root.light .g-stage .asset-live-fallback,
+:root.light .g-pending-label {
+  color: rgb(0 0 0 / 0.55);
+}
+
+:is(:root, :root.light) .g-stage .asset-live-fallback {
+  font: 500 13px/1 var(--g-sans);
+  color: var(--g-glass-text);
+  text-decoration: none;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: var(--g-glass);
+  backdrop-filter: blur(10px);
+}
+
+:is(:root, :root.light) .g-stage .asset-library-no-preview {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--g-glass-text);
+  font: 500 13px/1.3 var(--g-sans);
+  text-align: center;
+}
+
+:is(:root, :root.light) .g-stage .asset-library-no-preview strong {
+  font: 600 15px/1.3 var(--g-sans);
+}
+
+:is(:root, :root.light) .g-stage .asset-library-no-preview a {
+  color: var(--g-glass-text);
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--g-glass);
+  text-decoration: none;
+}
+
+/* The small Live tag, top left. */
+:is(:root, :root.light) .g-stage .g-live {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 9px 0 8px;
+  border-radius: 999px;
+  background: var(--g-glass);
+  color: var(--g-glass-text);
+  font: 500 11px/1 var(--g-mono);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+
+:is(:root, :root.light) .g-stage .g-preview .asset-live-viewport.is-framed iframe {
+  border-radius: 10px;
+}
+
+/* An embedded page sits as a window below the tag row; its tag stays on the stage. */
+:is(:root, :root.light) .g-stage .is-framed .g-live {
+  top: -34px;
+  left: -18px;
+}
+
+.g-stage .g-live[data-kind='capture'] {
+  padding: 0 9px;
+}
+
+.g-stage .g-live i {
+  width: 6px;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--g-success);
+  box-shadow: 0 0 0 3px rgb(74 222 128 / 0.2);
+}
+
+/* Save: a glass icon button on the stage's top right, always visible. */
+:is(:root, :root.light) .g-save {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-glass);
+  color: var(--g-glass-text);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: none;
+  opacity: 0.85;
+  cursor: pointer;
+  transition:
+    opacity 0.14s var(--g-ease),
+    background 0.14s var(--g-ease);
+}
+
+.g-card:hover .g-save,
+.g-save:focus-visible,
+.g-save[aria-pressed='true'] {
+  opacity: 1;
+}
+
+:is(:root, :root.light) .g-save:hover {
+  background: var(--g-glass-hover);
+}
+
+/* Chrome: name and price, provider and category, a quiet command. */
+:is(:root, :root.light) .g-card .g-meta {
+  margin: 0;
+  padding: 14px 8px 6px;
+  cursor: pointer;
+  background: none;
+  box-shadow: none;
+}
+
+.g-r1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  min-width: 0;
+}
+
+:is(:root, :root.light) .g-r1 :is(h2, h3) {
+  min-width: 0;
+  margin: 0;
+  font: 600 15px/20px var(--g-sans);
+  letter-spacing: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+:is(:root, :root.light) .g-card .g-name {
+  color: var(--g-text);
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+:is(:root, :root.light) .g-card .g-name:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--g-text-3);
+  text-underline-offset: 3px;
+}
+
+:is(:root, :root.light) .g-price {
+  flex: none;
+  font: 600 13.5px/20px var(--g-sans);
+  letter-spacing: 0;
+  color: var(--g-text);
+}
+
+.g-r2 {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  font: 400 12.5px/18px var(--g-sans);
+  color: var(--g-text-2);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.g-r2 > span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.g-r2 .g-sep {
+  color: var(--g-text-3);
+}
+
+.g-mark {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 5px;
+  color: #fff;
+  font: 700 9.5px/1 var(--g-sans);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.12),
+    inset 0 1px 0 rgb(255 255 255 / 0.2);
+}
+
+.g-mark.is-pair {
+  font-size: 8.5px;
+  letter-spacing: -0.02em;
+}
+
+.g-mark.is-lg {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+.g-mark svg {
+  width: 12px;
+  height: 12px;
+  color: #fff;
+}
+
+:is(:root, :root.light) .g-cmd,
+:is(:root, :root.light) .g-visit {
+  position: relative;
+  margin-top: 12px;
+  width: 100%;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  box-shadow: none;
+  text-align: left;
+  text-decoration: none;
+  font: 400 11.5px/16px var(--g-mono);
+  color: var(--g-text-3);
+  cursor: pointer;
+  transition: color 0.14s var(--g-ease);
+}
+
+.g-cmd code {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.g-cmd svg {
+  flex: none;
+  opacity: 0.75;
+}
+
+.g-cmd-prompt {
+  opacity: 0.6;
+}
+
+:is(:root, :root.light) .g-card:hover .g-cmd,
+:is(:root, :root.light) .g-cmd:hover,
+:is(:root, :root.light) .g-cmd:focus-visible {
+  color: var(--g-text-2);
+}
+
+:is(:root, :root.light) .g-cmd:hover,
+:is(:root, :root.light) .g-cmd:focus-visible {
+  color: var(--g-text);
+}
+
+.g-cmd:hover svg {
+  opacity: 1;
+}
+
+:is(:root, :root.light) .g-cmd[data-state='copied'] {
+  color: var(--g-success);
+}
+
+.g-cmd[data-state='copying'] {
+  cursor: progress;
+}
+
+:is(:root, :root.light) .g-visit {
+  font: 400 12px/16px var(--g-sans);
+}
+
+:is(:root, :root.light) .g-card:hover .g-visit,
+:is(:root, :root.light) .g-visit:hover {
+  color: var(--g-text);
+}
+
+/* Loading cards keep the final shape so nothing jumps. */
+.g-card-pending .g-stage {
+  opacity: 0.55;
+}
+
+.g-skeleton {
+  display: block;
+  height: 12px;
+  width: 62%;
+  margin: 4px 0 10px;
+  border-radius: 6px;
+  background: var(--g-well);
+}
+
+.g-skeleton.is-short {
+  width: 40%;
+}
+
+/* ------------------------------------------------------ Components grid */
+
+:is(:root, :root.light) .uixo-shell .asset-library-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 18px;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-skeleton {
+  aspect-ratio: auto;
+  height: auto;
+  min-height: 0;
+  padding: 8px 8px 74px;
+  border-radius: 18px;
+  background: var(--g-tile);
+  box-shadow: var(--g-hi);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-skeleton::before {
+  content: '';
+  display: block;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  background: var(--g-well);
+}
+
+@media (max-width: 1100px) {
+  :is(:root, :root.light) .uixo-shell .asset-library-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  :is(:root, :root.light) .uixo-shell .asset-library-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ------------------------------------------------------------------ Footer */
+
+:is(:root, :root.light) .site-footer.site-footer-map {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 32px;
+  max-width: none;
+  margin: 120px 0 0;
+  padding: 56px max(44px, calc((100% - 1352px) / 2)) 40px;
+  border: 0;
+  border-top: 1px solid var(--g-line);
+  background: transparent;
+  color: var(--g-text-2);
+  box-shadow: none;
+}
+
+.site-footer-map .footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--g-text);
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+:is(:root, :root.light) .site-footer-map .footer-logo strong {
+  font: 600 17px/1 var(--g-sans);
+  letter-spacing: 0.3em;
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .site-footer-map .footer-brand p {
+  max-width: 320px;
+  margin: 16px 0 0;
+  color: var(--g-text-2);
+  font: 400 14px/22px var(--g-sans);
+}
+
+:is(:root, :root.light) .site-footer-map .footer-column {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+:is(:root, :root.light) .site-footer-map .footer-column h2 {
+  margin: 0 0 4px;
+  font: 500 11px/14px var(--g-mono);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .site-footer-map .footer-column a {
+  width: fit-content;
+  color: var(--g-text-2);
+  font: 400 14px/20px var(--g-sans);
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+:is(:root, :root.light) .site-footer-map .footer-column a:hover {
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .site-footer-map .footer-extra {
+  grid-column: 1 / -1;
+}
+
+:is(:root, :root.light) .site-footer-map .footer-meta {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--g-line);
+  color: var(--g-text-3);
+  font: 400 13px/18px var(--g-sans);
+}
+
+.site-footer-map .footer-meta-end {
+  display: inline-flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  :is(:root, :root.light) .site-footer.site-footer-map {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 72px;
+    padding: 40px 16px 32px;
+  }
+
+  :is(:root, :root.light) .site-footer-map .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-card,
+  .g-card .g-stage::after,
+  .g-stage .g-preview .asset-live-viewport iframe,
+  .g-shot {
+    transition: none;
+  }
+}
+
+/* The stage stays live: the name link never stretches over the demo or the save button. */
+:is(:root, :root.light) .g-card .g-name::after {
+  content: none;
+}

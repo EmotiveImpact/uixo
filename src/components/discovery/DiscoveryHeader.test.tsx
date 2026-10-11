@@ -8,12 +8,32 @@ afterEach(() => {
 });
 
 describe('Discovery header', () => {
-  it('restores the original plain spaced wordmark without a replacement symbol', () => {
+  it('pairs the spaced wordmark with a decorative violet logomark', () => {
     render(<DiscoveryHeader active="discover" light={false} onToggleTheme={vi.fn()} />);
     const wordmark = screen.getByRole('link', { name: 'UIXO home' });
     expect(wordmark.textContent?.trim()).toBe('UIXO');
     expect(wordmark.classList.contains('brand')).toBe(true);
-    expect(wordmark.querySelector('svg, .wordmark-dot')).toBeNull();
+    expect(wordmark.querySelector('.discovery-wordmark')?.textContent).toBe('UIXO');
+    const mark = wordmark.querySelector('.g-logomark');
+    expect(mark?.getAttribute('aria-hidden')).toBe('true');
+    expect(wordmark.querySelector('.wordmark-dot')).toBeNull();
+  });
+
+  it('opens search from the header pill with the ⌘K hint', () => {
+    const onSearch = vi.fn();
+    render(
+      <DiscoveryHeader
+        active="discover"
+        light={false}
+        onToggleTheme={vi.fn()}
+        onSearch={onSearch}
+      />,
+    );
+    const pill = screen.getByRole('button', { name: 'Search components' });
+    expect(pill.getAttribute('aria-keyshortcuts')).toContain('Meta+K');
+    expect(pill.querySelector('kbd')?.textContent).toBe('⌘K');
+    pill.click();
+    expect(onSearch).toHaveBeenCalledOnce();
   });
 
   it('keeps the top level to Browse, Collections and For developers', () => {

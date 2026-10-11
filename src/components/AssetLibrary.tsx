@@ -9,8 +9,7 @@ import {
   safeAssetUrl,
 } from '../lib/asset-library';
 import { AssetDetail } from './AssetDetail';
-import { AssetPreview } from './AssetPreview';
-import { ComponentActions } from './ComponentActions';
+import { ComponentCard } from './ComponentCard';
 import type {
   AssetQuery,
   Catalogue,
@@ -436,47 +435,25 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
           ) : (
             <div className={`asset-library-grid asset-density-${density}`}>
               {result.items.map((asset) => (
-                <article className="asset-library-card" key={asset.id}>
-                  <AssetPreview asset={asset} />
-                  <div className="asset-library-card-body">
-                    <div className="asset-card-heading">
-                      <h2>
-                        <a
-                          className="asset-library-card-link"
-                          href={assetHref({ ...query, id: asset.id })}
-                          onClick={(event) => {
-                            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
-                              return;
-                            event.preventDefault();
-                            navigate({ id: asset.id });
-                          }}
-                          aria-label={`Inspect ${asset.name} from ${nameOf(asset.providerId)}`}
-                        >
-                          {asset.name}
-                        </a>
-                      </h2>
-                      <span className="card-price">{asset.price === 'paid' ? 'Paid' : 'Free'}</span>
-                    </div>
-                    <small>
-                      {nameOf(asset.providerId)} ·{' '}
-                      {asset.kind === 'icon-pack'
-                        ? 'Icon pack'
-                        : COMPONENT_CATEGORIES.find((entry) => entry.id === asset.category)
-                            ?.label || asset.kind}
-                    </small>
-
-                    <div className="asset-library-tags">
-                      <span>{asset.variants[0]?.framework}</span>
-                      <span>{asset.variants[0]?.format.toUpperCase()}</span>
-                      <span>{asset.licence.expression}</span>
-                    </div>
-                    <ComponentActions
-                      asset={asset}
-                      saved={saved.includes(asset.id)}
-                      onToggleSave={() => toggleSave(asset.id)}
-                    />
-                  </div>
-                </article>
+                <ComponentCard
+                  key={asset.id}
+                  asset={asset}
+                  className="asset-library-card"
+                  linkClassName="asset-library-card-link"
+                  linkLabel={`Inspect ${asset.name} from ${nameOf(asset.providerId)}`}
+                  heading="h2"
+                  href={assetHref({ ...query, id: asset.id })}
+                  onOpen={() => navigate({ id: asset.id })}
+                  providerName={nameOf(asset.providerId)}
+                  categoryLabel={
+                    asset.kind === 'icon-pack'
+                      ? 'Icon pack'
+                      : COMPONENT_CATEGORIES.find((entry) => entry.id === asset.category)?.label ||
+                        asset.kind
+                  }
+                  saved={saved.includes(asset.id)}
+                  onToggleSave={() => toggleSave(asset.id)}
+                />
               ))}
             </div>
           )}

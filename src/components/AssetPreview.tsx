@@ -5,13 +5,14 @@ import { assetHref, readAssetQuery, safeAssetUrl } from '../lib/asset-library';
 import { assetDestinationUrl } from '../lib/asset-destination';
 import { navigateInApp } from '../lib/navigation';
 import demos from '../../live-demos/manifest.json';
+import { stageFit } from '../../shared/preview-stage';
+import type { PreviewContentBox, PreviewSizeMessage } from '../../shared/preview-stage';
 
 type PreviewStatus = 'loading' | 'ready' | 'error';
 
 const DEFAULT_PREVIEW_WIDTH = 480;
 const UIABLE_PREVIEW_WIDTH = 280;
 const UIABLE_PREVIEW_INSET = 12;
-
 function officialEmbedUrl(asset: CollectionAssetPreview): string | undefined {
   if (asset.preview?.kind !== 'embed') return undefined;
   const url = safeAssetUrl(asset.preview.url);
@@ -60,12 +61,18 @@ function LivePreview({
   src,
   external = false,
   fallbackImageUrl,
+  stage = false,
+  framed = false,
 }: {
   asset: CollectionAssetPreview;
   detail: boolean;
   src: string;
   external?: boolean;
   fallbackImageUrl?: string;
+  /** A card stage: the frame is transparent and reports its content size. */
+  stage?: boolean;
+  /** An opaque page on a card stage: drawn as an inset window. */
+  framed?: boolean;
 }) {
   const viewport = useRef<HTMLDivElement>(null);
   const frame = useRef<HTMLIFrameElement>(null);
@@ -73,6 +80,7 @@ function LivePreview({
   const [size, setSize] = useState({ width: 480, height: 330 });
   const [status, setStatus] = useState<PreviewStatus>('loading');
   const [fallbackFailed, setFallbackFailed] = useState(false);
+  const [contentBox, setContentBox] = useState<PreviewContentBox | null>(null);
   const [theme, setTheme] = useState(() =>
     document.documentElement.classList.contains('light') ? 'light' : 'dark',
   );
@@ -121,9 +129,24 @@ function LivePreview({
         setStatus(event.data.status);
       }
     };
+    const measure = (event: MessageEvent<PreviewSizeMessage>) => {
+      if (
+        !stage ||
+        event.source !== frame.current?.contentWindow ||
+        event.data?.type !== 'uixo-preview-size' ||
+        event.data.id !== asset.id
+      )
+        return;
+      const box = event.data.box;
+      if ([box.x, box.y, box.width, box.height].every(Number.isFinite)) setContentBox(box);
+    };
+    window.addEventListener('message', measure);
     window.addEventListener('message', receive);
-    return () => window.removeEventListener('message', receive);
-  }, [asset.id, external]);
+    return () => {
+      window.removeEventListener('message', receive);
+      window.removeEventListener('message', measure);
+    };
+  }, [asset.id, external, stage]);
 
   useEffect(() => {
     if (!visible || status !== 'loading') return;
@@ -137,7 +160,12 @@ function LivePreview({
   const uiableCard = asset.providerId === 'uiable' && !detail;
   const previewWidth = uiableCard ? UIABLE_PREVIEW_WIDTH : DEFAULT_PREVIEW_WIDTH;
   const previewInset = uiableCard ? UIABLE_PREVIEW_INSET : 0;
-  const scale = detail ? 1 : Math.max(size.width - previewInset * 2, 1) / previewWidth;
+  const baseScale = detail ? 1 : Math.max(size.width - previewInset * 2, 1) / previewWidth;
+  const fit =
+    stage && !detail && !external
+      ? stageFit(size, contentBox, baseScale)
+      : { scale: baseScale, x: 0, y: 0 };
+  const scale = fit.scale;
   const showFallbackImage = status === 'error' && fallbackImageUrl && !fallbackFailed;
 
   return (
@@ -145,9 +173,10 @@ function LivePreview({
       ref={viewport}
       data-preview-state={status}
       data-preview-provider={asset.providerId}
+      data-stage-fit={stage && !detail ? (scale > baseScale ? 'zoomed' : 'canvas') : undefined}
       className={`asset-live-viewport ${detail ? 'is-detail' : ''} ${
         showFallbackImage ? 'has-captured-fallback' : ''
-      }`}
+      } ${framed ? 'is-framed' : ''}`}
     >
       {visible && (
         <iframe
@@ -162,11 +191,13 @@ function LivePreview({
             ...(detail
               ? {}
               : {
-                  width: previewWidth,
+                  width: uiableCard || scale === baseScale ? previewWidth : size.width / scale,
                   height: Math.max(size.height - previewInset * 2, 1) / scale,
                   transform: uiableCard
                     ? `translate(${previewInset}px, ${previewInset}px) scale(${scale})`
-                    : `scale(${scale})`,
+                    : fit.x || fit.y
+                      ? `translate(${fit.x}px, ${fit.y}px) scale(${scale})`
+                      : `scale(${scale})`,
                 }),
           }}
           onLoad={() => {
@@ -225,15 +256,24 @@ function LivePreview({
           Open provider page ↗
         </a>
       )}
-      <small className="actual-preview-label">
-        {status === 'ready'
-          ? 'Live · Try it'
-          : showFallbackImage
-            ? 'Screenshot · Live unavailable'
-            : status === 'error'
-              ? 'Preview unavailable'
-              : 'Loading preview'}
-      </small>
+      {stage ? (
+        (status === 'ready' || showFallbackImage) && (
+          <small className="g-live" data-kind={status === 'ready' ? 'live' : 'capture'}>
+            {status === 'ready' && <i aria-hidden="true" />}
+            {status === 'ready' ? 'Live' : 'Screenshot'}
+          </small>
+        )
+      ) : (
+        <small className="actual-preview-label">
+          {status === 'ready'
+            ? 'Live · Try it'
+            : showFallbackImage
+              ? 'Screenshot · Live unavailable'
+              : status === 'error'
+                ? 'Preview unavailable'
+                : 'Loading preview'}
+        </small>
+      )}
     </div>
   );
 }
@@ -241,9 +281,12 @@ function LivePreview({
 export function AssetPreview({
   asset,
   detail = false,
+  stage = false,
 }: {
   asset: CollectionAssetPreview;
   detail?: boolean;
+  /** Draw on a card's tinted stage: transparent demos, inset windows and screenshots. */
+  stage?: boolean;
 }) {
   const [failedUrl, setFailedUrl] = useState('');
   const live = asset.kind === 'component' && Object.hasOwn(demos, asset.id);
@@ -252,14 +295,16 @@ export function AssetPreview({
   const imageUrl = asset.preview?.kind === 'image' ? safeAssetUrl(asset.preview.url) : undefined;
   const showImage = imageUrl && failedUrl !== imageUrl;
   const livePreview = live || Boolean(reviewed) || Boolean(embedUrl);
+  const theme = document.documentElement.classList.contains('light') ? 'light' : 'dark';
+  const clear = stage ? '&stage=clear' : '';
 
   return (
     <div
-      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${
-        livePreview ? 'is-live-component' : ''
-      } ${asset.kind === 'icon-pack' ? 'is-icon-pack' : ''} ${
-        !livePreview && showImage && asset.kind === 'component' ? 'is-component-capture' : ''
-      }`}
+      className={`${stage ? 'g-preview' : 'asset-library-preview'} ${
+        asset.kind === 'icon' ? 'is-icon' : ''
+      } ${livePreview ? 'is-live-component' : ''} ${
+        asset.kind === 'icon-pack' ? 'is-icon-pack' : ''
+      } ${!livePreview && showImage && asset.kind === 'component' ? 'is-component-capture' : ''}`}
     >
       {asset.kind === 'icon-pack' ? (
         <div className="asset-library-no-preview">
@@ -274,9 +319,8 @@ export function AssetPreview({
           key={asset.id}
           asset={asset}
           detail={detail}
-          src={`/live-demos/index.html?id=${encodeURIComponent(asset.id)}&theme=${
-            document.documentElement.classList.contains('light') ? 'light' : 'dark'
-          }`}
+          stage={stage}
+          src={`/live-demos/index.html?id=${encodeURIComponent(asset.id)}&theme=${theme}${clear}`}
           fallbackImageUrl={imageUrl}
         />
       ) : reviewed ? (
@@ -284,7 +328,8 @@ export function AssetPreview({
           key={asset.id}
           asset={asset}
           detail={detail}
-          src={`${reviewed}&theme=${document.documentElement.classList.contains('light') ? 'light' : 'dark'}`}
+          stage={stage}
+          src={`${reviewed}&theme=${theme}${clear}`}
           fallbackImageUrl={imageUrl}
         />
       ) : embedUrl ? (
@@ -294,10 +339,13 @@ export function AssetPreview({
           detail={detail}
           src={embedUrl}
           external
+          stage={stage}
+          framed={stage}
           fallbackImageUrl={imageUrl}
         />
       ) : showImage ? (
         <img
+          className={stage ? 'g-shot' : undefined}
           src={imageUrl}
           loading="lazy"
           alt={
@@ -315,15 +363,22 @@ export function AssetPreview({
           </a>
         </div>
       )}
-      {!livePreview && (
-        <small>
-          {asset.kind === 'icon-pack'
-            ? 'Icon pack · Official source'
-            : showImage
-              ? 'Screenshot'
-              : 'Source only'}
-        </small>
-      )}
+      {!livePreview &&
+        (stage ? (
+          showImage && (
+            <small className="g-live" data-kind="capture">
+              Screenshot
+            </small>
+          )
+        ) : (
+          <small>
+            {asset.kind === 'icon-pack'
+              ? 'Icon pack · Official source'
+              : showImage
+                ? 'Screenshot'
+                : 'Source only'}
+          </small>
+        ))}
     </div>
   );
 }

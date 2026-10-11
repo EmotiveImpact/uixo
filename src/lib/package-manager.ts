@@ -56,3 +56,27 @@ export function commandText(result: Acquisition | undefined | null): string {
     )
     .join(' ');
 }
+
+type InstallableAsset = {
+  variants: { acquisition?: { kind: string; url?: string; packageName?: string } | null }[];
+};
+
+/**
+ * A short, readable stand-in for an install command, built from the listing alone so a
+ * card can show it without a request. The real command still comes from `resolve`.
+ * Empty when the asset has no install route.
+ */
+export function installPreview(asset: InstallableAsset, manager: PackageManager = 'npm'): string {
+  const acquisition = asset.variants[0]?.acquisition;
+  if (acquisition?.kind === 'registry' && acquisition.url) {
+    const name = acquisition.url
+      .split(/[?#]/)[0]
+      .split('/')
+      .pop()
+      ?.replace(/\.json$/, '');
+    return name ? forPackageManager(`npx shadcn add …/${name}`, manager) : '';
+  }
+  if (acquisition?.kind === 'package' && acquisition.packageName)
+    return forPackageManager(`npm install ${acquisition.packageName}`, manager);
+  return '';
+}

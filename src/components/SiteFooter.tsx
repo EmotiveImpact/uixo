@@ -2,6 +2,7 @@ import type { MouseEvent, ReactNode } from 'react';
 import { Copyright } from './Copyright';
 import { MadeIn } from './MadeIn';
 import { navigateInApp } from '../lib/navigation';
+import { Logomark } from './discovery/DiscoveryHeader';
 
 type SiteFooterProps = { count?: number | null; assets?: boolean; children?: ReactNode };
 
@@ -12,7 +13,7 @@ const COLUMNS = [
       ['Components', '/browse/assets?kind=component'],
       ['Icon packs', '/browse/assets?kind=icon-pack'],
       ['Fonts', '/browse/assets?kind=font'],
-      ['All resources', '/browse'],
+      ['Websites and libraries', '/browse'],
     ],
   },
   {
@@ -20,7 +21,7 @@ const COLUMNS = [
     links: [
       ['Collections', '/collections'],
       ['New this week', '/browse?browse=Recent'],
-      ['Saved components', '/browse/assets?view=saved'],
+      ['Saved', '/browse/assets?view=saved'],
     ],
   },
   {
@@ -45,8 +46,14 @@ export function SiteFooter({ children }: SiteFooterProps) {
   return (
     <footer className="site-footer site-footer-map">
       <div className="footer-brand">
-        <strong>UIXO</strong>
-        <p>Hand-picked components and resources, with the original source one click away.</p>
+        <a className="footer-logo" href="/" onClick={follow} aria-label="UIXO home">
+          <Logomark />
+          <strong>UIXO</strong>
+        </a>
+        <p>
+          A gallery of live components and the sites worth a new tab. Find it, try it, take it into
+          your build.
+        </p>
       </div>
       {COLUMNS.map((column) => (
         <nav className="footer-column" aria-label={column.title} key={column.title}>
@@ -61,8 +68,10 @@ export function SiteFooter({ children }: SiteFooterProps) {
       {children && <div className="footer-extra">{children}</div>}
       <div className="footer-group footer-meta">
         <span>Creators keep the credit. UIXO keeps the index.</span>
-        <MadeIn />
-        <Copyright />
+        <span className="footer-meta-end">
+          <MadeIn />
+          <Copyright />
+        </span>
       </div>
     </footer>
   );
