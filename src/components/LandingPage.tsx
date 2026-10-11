@@ -21,6 +21,7 @@ import { coverOrder } from '../lib/collection-covers';
 import { CATEGORY_HUES } from '../lib/stage-hue';
 import { useRegistryData } from '../hooks/useRegistryData';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
+import { useSearchHotkey } from '../hooks/useSearchHotkey';
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
 import { inventoryResult, safeAssetUrl } from '../lib/asset-library';
 import type { AssetRecord, Catalogue, ProviderRecord } from '../lib/asset-library';
@@ -303,6 +304,8 @@ export function LandingPage({
   useDocumentTitle(null);
   const [shelf, setShelf] = useState<Shelf>('featured');
   const searchRef = useRef<HTMLInputElement>(null);
+  // "/" focuses the search on this page; ⌘K opens the shared palette over it.
+  useSearchHotkey(searchRef, true);
   const {
     data: catalogue,
     error: catalogueError,
@@ -366,7 +369,6 @@ export function LandingPage({
         compactNavigation
         light={light}
         onToggleTheme={onToggleTheme}
-        onSearch={() => searchRef.current?.focus()}
         onSignIn={authAvailable && !signedIn ? onSignIn : undefined}
         account={
           authAvailable && !signedIn ? (
@@ -424,13 +426,13 @@ export function LandingPage({
               id="hero-component-search"
               type="search"
               aria-label="Search components"
-              aria-keyshortcuts="Meta+K Control+K"
+              aria-keyshortcuts="/"
               maxLength={300}
               placeholder="Search buttons, text effects, calendars…"
               value={q}
               onChange={(e) => setQ(e.target.value)}
             />
-            <kbd aria-hidden="true">⌘K</kbd>
+            <kbd aria-hidden="true">/</kbd>
             <button type="submit" aria-label="Search">
               <ArrowRight size={18} aria-hidden="true" />
             </button>

@@ -6,7 +6,7 @@ import json
 import os
 import re
 import time
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
 
@@ -147,7 +147,18 @@ with sync_playwright() as p:
                         page.locator('.discovery-header').get_by_role('button', name='Close menu', exact=True).click()
                     else:
                         expect(page.locator('.discovery-header').get_by_role('link', name='Collections', exact=True)).to_be_visible()
+                    # One palette for the whole site: the shortcut opens it over the page and never navigates.
                     page.keyboard.press('Control+k')
+                    palette = page.get_by_role('dialog', name='Search UIXO', exact=True)
+                    expect(palette).to_be_visible()
+                    expect(palette.get_by_role('combobox', name='Search UIXO', exact=True)).to_be_focused()
+                    palette.get_by_role('combobox', name='Search UIXO', exact=True).fill('button')
+                    expect(palette.get_by_role('group', name='Components', exact=True).get_by_role('option').first).to_be_visible()
+                    page.keyboard.press('Escape')
+                    expect(palette).to_be_hidden()
+                    assert urlparse(page.url).path == '/', page.url
+                    # The hero search keeps its own "/" shortcut.
+                    page.keyboard.press('/')
                     search = page.get_by_role('searchbox', name='Search components', exact=True)
                     expect(search).to_be_focused()
                     search.fill('button')

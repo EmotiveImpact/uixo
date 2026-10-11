@@ -13,6 +13,7 @@ import {
 import { categories, resources } from '../../data';
 import { navigateInApp } from '../../lib/navigation';
 import { slugify } from '../../lib/url';
+import { openSearchPalette } from '../../lib/search-palette';
 
 type Props = {
   active: 'discover' | 'resources' | 'components' | 'collections';
@@ -86,7 +87,7 @@ export function DiscoveryHeader({
   onToggleTheme,
   account,
   onSearch,
-  searchLabel = 'Search components',
+  searchLabel = 'Search UIXO',
   sidebar,
   sidebarTriggerRef,
   adminAction,
@@ -190,11 +191,7 @@ export function DiscoveryHeader({
         <div className="discovery-header-actions">
           <button
             className="header-search"
-            onClick={
-              onSearch ??
-              (() =>
-                window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true })))
-            }
+            onClick={onSearch ?? openSearchPalette}
             aria-label={searchLabel}
             aria-keyshortcuts="Meta+K Control+K"
             title={`${searchLabel} (⌘K)`}

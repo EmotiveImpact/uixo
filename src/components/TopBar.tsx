@@ -4,6 +4,7 @@ import type { RefObject } from 'react';
 import { useAnimatedSidebar } from './motion/animated-sidebar';
 import { DiscoveryHeader } from './discovery/DiscoveryHeader';
 import { PRICE_FILTERS } from '../types';
+import { openSearchPalette } from '../lib/search-palette';
 import type { ReactNode } from 'react';
 import type { ModalName, PriceFilter } from '../types';
 
@@ -74,10 +75,8 @@ export function TopBar({
       }
       sidebarTriggerRef={sidebar.triggerRef}
       onSignIn={onSignIn}
-      onSearch={() =>
-        window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))
-      }
-      searchLabel={catalogue === 'assets' ? 'Search components' : 'Search UIXO'}
+      onSearch={openSearchPalette}
+      searchLabel="Search UIXO"
       adminAction={
         adminMode && adminAction ? (
           <a

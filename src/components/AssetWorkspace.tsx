@@ -97,22 +97,6 @@ export function AssetWorkspace() {
     });
     setMobileOpen(false);
   }, []);
-  useEffect(() => {
-    const focusSearch = (event: KeyboardEvent) => {
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k' && !modal) {
-        event.preventDefault();
-        // A component page has no search field: go to the list and focus its search.
-        if (query.id) {
-          navigate({ id: '' });
-          window.requestAnimationFrame(() =>
-            window.requestAnimationFrame(() => searchRef.current?.focus()),
-          );
-        } else searchRef.current?.focus();
-      }
-    };
-    window.addEventListener('keydown', focusSearch);
-    return () => window.removeEventListener('keydown', focusSearch);
-  }, [modal, query.id, navigate]);
   const go = (changes: Parameters<typeof routeToHref>[0]) => navigateInApp(routeToHref(changes));
   const followInApp = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;

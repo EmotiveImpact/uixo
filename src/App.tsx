@@ -10,7 +10,6 @@ import { AdminDashboard } from './components/AdminDashboard';
 import { AdminSidebar } from './components/AdminSidebar';
 import { AppDialog } from './components/AppDialog';
 import { CollectionsIndex } from './components/CollectionsIndex';
-import { CommandPalette } from './components/CommandPalette';
 import { Dashboard } from './components/Dashboard';
 import { LandingPage } from './components/LandingPage';
 import { NotFound } from './components/NotFound';
@@ -73,32 +72,11 @@ export function App() {
   const [sidebarOpen, setSidebarOpen] = useSidebarPreference();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [modal, setModal] = useState<ModalName | null>(null);
-  const [paletteOpen, setPaletteOpen] = useState(false);
   const { density, setDensity } = useDensity();
 
   const dialogRef = useDialog(modal !== null);
   const searchRef = useRef<HTMLInputElement>(null);
-  useSearchHotkey(searchRef, !modal && !mobileOpen && !route.resourceId && !paletteOpen);
-
-  // Cmd/Ctrl-K opens the palette from anywhere, including inside a text field.
-  useEffect(() => {
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key.toLowerCase() === 'k' && (event.metaKey || event.ctrlKey)) {
-        if (route.landing) {
-          const input = document.getElementById('hero-component-search');
-          if (input instanceof HTMLInputElement && !modal) {
-            event.preventDefault();
-            input.focus();
-          }
-          return;
-        }
-        event.preventDefault();
-        setPaletteOpen((current) => !current);
-      }
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [route.landing, modal]);
+  useSearchHotkey(searchRef, !modal && !mobileOpen && !route.resourceId);
 
   // Saving a website says so, rather than only re-announcing the result count.
   const [saveAnnouncement, setSaveAnnouncement] = useState('');
@@ -536,14 +514,6 @@ export function App() {
         onToggleIn={toggleIn}
         onCreateList={create}
         onSelectCategory={chooseCategory}
-      />
-
-      <CommandPalette
-        open={paletteOpen}
-        onClose={() => setPaletteOpen(false)}
-        onOpenResource={(resourceId) => navigate({ resourceId })}
-        onOpenCategory={chooseCategory}
-        onOpenCollection={(collectionSlug) => navigate({ ...EMPTY_ROUTE, collectionSlug })}
       />
 
       <AppDialog

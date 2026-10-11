@@ -29,7 +29,7 @@ describe('Discovery header', () => {
         onSearch={onSearch}
       />,
     );
-    const pill = screen.getByRole('button', { name: 'Search components' });
+    const pill = screen.getByRole('button', { name: 'Search UIXO' });
     expect(pill.getAttribute('aria-keyshortcuts')).toContain('Meta+K');
     expect(pill.querySelector('kbd')?.textContent).toBe('⌘K');
     pill.click();

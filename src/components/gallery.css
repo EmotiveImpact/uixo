@@ -2085,3 +2085,80 @@
   text-underline-offset: 3px;
   cursor: pointer;
 }
+
+/* ---------------------------------------------------------------- Palette */
+
+:is(:root, :root.light) .palette {
+  border: 0;
+  border-radius: 18px;
+  background: var(--g-surface);
+  box-shadow:
+    var(--g-hi),
+    0 24px 60px rgb(0 0 0 / 0.45);
+}
+
+:is(:root, :root.light) .palette-input {
+  border-bottom: 1px solid var(--g-line);
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .palette-input input {
+  min-height: 52px;
+  color: var(--g-text);
+  font: 400 15px/1 var(--g-sans);
+}
+
+:is(:root, :root.light) .palette-input kbd {
+  padding: 5px 7px;
+  border-radius: 7px;
+  background: var(--g-well);
+  color: var(--g-text-3);
+  font: 500 11px/1 var(--g-mono);
+}
+
+:is(:root, :root.light) .palette-results {
+  padding: 6px 8px 10px;
+}
+
+.palette-results ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.palette-group {
+  margin: 10px 12px 4px;
+  font: 500 11px/16px var(--g-mono);
+  letter-spacing: 0.02em;
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .palette-results button {
+  min-height: 44px;
+  color: var(--g-text-2);
+  font: 400 14px/20px var(--g-sans);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .palette-results button.active {
+  background: var(--g-well);
+  color: var(--g-text);
+}
+
+.palette-status {
+  margin: 0;
+  padding: 18px 12px;
+  font: 400 13px/20px var(--g-sans);
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .palette-empty {
+  padding: 14px 0 4px;
+  text-align: left;
+}
+
+.palette-empty > p {
+  margin: 0 12px 8px;
+  font: 400 14px/20px var(--g-sans);
+  color: var(--g-text);
+}
