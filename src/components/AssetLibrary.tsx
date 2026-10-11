@@ -371,15 +371,20 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
             <section className="asset-library-empty">
               <h2>
                 {view === 'saved'
-                  ? 'No saved assets match this view.'
-                  : 'No published assets match these filters.'}
+                  ? 'Nothing saved here yet.'
+                  : query.q
+                    ? `Nothing matches “${query.q}”.`
+                    : 'Nothing matches these filters.'}
               </h2>
               <p>
-                Website listings and individual assets are different catalogues. Fonts and templates
-                are not populated in the initial source snapshot.
+                {view === 'saved'
+                  ? 'Use the bookmark on any component to keep it here for later.'
+                  : 'Try a broader word or remove a filter. Fonts and templates are still being added.'}
               </p>
-              <button onClick={() => navigate({}, true)}>Show all indexed assets</button>
-              <a href="/browse">Browse the full website directory</a>
+              <button onClick={() => navigate({}, true)}>
+                {view === 'saved' ? 'Browse components' : 'Clear search and filters'}
+              </button>
+              <a href="/browse">Browse websites and libraries instead</a>
             </section>
           ) : (
             <div className={`asset-library-grid asset-density-${density}`}>

@@ -4,6 +4,7 @@ import { NotFound } from './NotFound';
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
 import { SiteFooter } from './SiteFooter';
 import { useSidebarPreference } from '../hooks/useSidebarPreference';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatedSidebarInset, AnimatedSidebarProvider } from './motion/animated-sidebar';
 import { AppSidebar } from './AppSidebar';
@@ -132,7 +133,7 @@ export function AssetWorkspace() {
   const title =
     titles[query.view] ||
     (query.view === 'sources'
-      ? 'UI libraries'
+      ? 'Component sources'
       : query.view === 'saved'
         ? 'Saved assets'
         : COMPONENT_CATEGORIES.find((entry) => entry.id === query.category)?.label ||
@@ -143,6 +144,7 @@ export function AssetWorkspace() {
               : query.kind === 'component'
                 ? 'Components'
                 : 'Components & assets'));
+  useDocumentTitle(query.view === 'sources' ? 'Component sources' : title);
   const hasFilters = Boolean(
     query.q ||
     query.kind ||
@@ -187,7 +189,7 @@ export function AssetWorkspace() {
       />
       <div className="catalogue-body">
         <AppSidebar
-          publicMode={!privateWorkspace && !utility}
+          publicMode={!privateWorkspace && !['review', 'scout', 'jobs'].includes(query.view)}
           assetQuery={query}
           onNavigateAssets={navigate}
           category={null}
@@ -315,37 +317,12 @@ export function AssetWorkspace() {
               }
             />
           )}
-          <SiteFooter count={null} assets>
-            <nav aria-label="Asset workspace links">
-              <a href="/browse/assets?view=collections">Asset collections</a>
-              {isCurator && (
-                <>
-                  <a href="/browse/assets?view=health">Registry health</a>
-                  <a href="/browse/assets?view=operations">Operations board</a>
-                  <a href="/browse/assets?view=collection-editor">Collection editorial</a>
-                </>
-              )}
-              <a
-                href="/browse/assets?view=guide"
-                onClick={(event) => {
-                  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-                  event.preventDefault();
-                  navigate({ view: 'guide' }, true);
-                }}
-              >
-                How to use UIXO
-              </a>
-              <a
-                href="/browse/assets?view=connect"
-                onClick={(event) => {
-                  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-                  event.preventDefault();
-                  navigate({ view: 'connect' }, true);
-                }}
-              >
-                Connect your AI agent
-              </a>
-              {isCurator && (
+          <SiteFooter>
+            {isCurator && (
+              <nav aria-label="Curator links">
+                <a href="/browse/assets?view=health">Registry health</a>
+                <a href="/browse/assets?view=operations">Operations board</a>
+                <a href="/browse/assets?view=collection-editor">Collection editorial</a>
                 <a
                   href="/admin"
                   onClick={(event) => {
@@ -356,8 +333,8 @@ export function AssetWorkspace() {
                 >
                   Admin workspace
                 </a>
-              )}
-            </nav>
+              </nav>
+            )}
           </SiteFooter>
         </AnimatedSidebarInset>
       </div>

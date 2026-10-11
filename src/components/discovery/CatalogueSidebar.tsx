@@ -1,5 +1,4 @@
 import {
-  ArrowUpRight,
   BellRing,
   Blocks,
   Bookmark,
@@ -62,7 +61,11 @@ function AssetFilters(props: AppSidebarProps) {
       <div className="filter-section">
         <h2>Browse</h2>
         <button
-          className={!props.assetKind && !props.assetCategory ? 'chosen' : ''}
+          className={
+            !props.assetKind && !props.assetCategory && (props.assetView ?? 'assets') === 'assets'
+              ? 'chosen'
+              : ''
+          }
           onClick={() => props.onChooseAssetView?.('assets')}
           aria-label="All assets"
         >
@@ -212,6 +215,7 @@ export function CatalogueSidebar(props: AppSidebarProps) {
         <div className="filter-section filter-explore">
           <h2>Your workspace</h2>
           <button
+            className={props.onSavedAssets ? 'chosen' : ''}
             onClick={() =>
               props.onShowSavedAssets
                 ? props.onShowSavedAssets()
@@ -224,13 +228,18 @@ export function CatalogueSidebar(props: AppSidebarProps) {
           </button>
           <button
             aria-label="Favourite websites"
+            className={props.listId === DEFAULT_LIST_ID ? 'chosen' : ''}
             onClick={() => props.onChooseList(DEFAULT_LIST_ID)}
           >
             <Bookmark size={15} />
             <span>Saved resources</span>
+            <small>
+              {props.lists.find((list) => list.id === DEFAULT_LIST_ID)?.resourceIds.length || ''}
+            </small>
           </button>
           <button
             aria-label="Asset collections"
+            className={props.assetView === 'collections' ? 'chosen' : ''}
             onClick={() =>
               props.onChooseAssetView
                 ? props.onChooseAssetView('collections')
@@ -241,7 +250,8 @@ export function CatalogueSidebar(props: AppSidebarProps) {
             <span>Collections</span>
           </button>
           <button
-            aria-label="Sources"
+            aria-label="Component sources"
+            className={props.assetView === 'sources' ? 'chosen' : ''}
             onClick={() =>
               props.onChooseAssetView
                 ? props.onChooseAssetView('sources')
@@ -249,16 +259,19 @@ export function CatalogueSidebar(props: AppSidebarProps) {
             }
           >
             <Blocks size={15} />
-            <span>UI libraries</span>
-            <ArrowUpRight size={12} />
+            <span>Component sources</span>
           </button>
           <button
             aria-label="Connect your AI agent"
-            onClick={() => navigateInApp('/browse/assets?view=connect')}
+            className={props.assetView === 'connect' ? 'chosen' : ''}
+            onClick={() =>
+              props.onChooseAssetView
+                ? props.onChooseAssetView('connect')
+                : navigateInApp('/browse/assets?view=connect')
+            }
           >
             <Terminal size={15} />
             <span>For developers</span>
-            <ArrowUpRight size={12} />
           </button>
         </div>
         {props.lists.some((list) => list.id !== DEFAULT_LIST_ID) && (

@@ -9,6 +9,7 @@ import { collections, resources, thumbnailPosition } from '../data';
 import { navigateInApp } from '../lib/navigation';
 import { newThreshold } from '../lib/freshness';
 import { useRegistryData } from '../hooks/useRegistryData';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import type { AssetRecord, Catalogue, ProviderRecord } from '../lib/asset-library';
 
 const NEW_FROM = newThreshold(resources);
@@ -55,7 +56,7 @@ const FEATURED_COMPONENTS = [
 const SHELVES = [
   { id: 'featured', label: 'Featured' },
   { id: 'buttons', label: 'Buttons' },
-  { id: 'text', label: 'Text effects' },
+  { id: 'text', label: 'Text' },
   { id: 'backgrounds', label: 'Backgrounds' },
 ] as const;
 type Shelf = (typeof SHELVES)[number]['id'];
@@ -135,6 +136,7 @@ export function LandingPage({
   onSignIn,
 }: LandingPageProps) {
   const [q, setQ] = useState('');
+  useDocumentTitle(null);
   const [shelf, setShelf] = useState<Shelf>('featured');
   const searchRef = useRef<HTMLInputElement>(null);
   const { data: catalogue } = useRegistryData<Catalogue>('search', {
@@ -368,7 +370,7 @@ export function LandingPage({
             ))}
           </div>
         </section>
-        <SiteFooter count={null} />
+        <SiteFooter />
       </main>
     </div>
   );

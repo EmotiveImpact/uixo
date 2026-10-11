@@ -1,4 +1,5 @@
 import { useSidebarPreference } from './hooks/useSidebarPreference';
+import { useDocumentTitle } from './hooks/useDocumentTitle';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   AnimatedSidebarInset,
@@ -161,7 +162,9 @@ export function App() {
     : route.admin
       ? 'Admin workspace'
       : route.dashboard
-        ? `Hello, ${user?.name.split(' ')[0] ?? 'there'}`
+        ? user
+          ? `Hello, ${user.name.split(' ')[0]}`
+          : 'Your dashboard'
         : route.notFound
           ? 'Not found'
           : route.collectionsIndex
@@ -185,6 +188,10 @@ export function App() {
               : activeList
                 ? 'The good ones, kept close.'
                 : 'Good tools. Great interfaces.';
+
+  useDocumentTitle(
+    route.landing ? null : openResource ? openResource.name : route.dashboard ? 'Dashboard' : title,
+  );
 
   // The grid and its toolbar only make sense on browsing routes.
   const showsGrid =
@@ -285,7 +292,7 @@ export function App() {
           />
         ) : (
           <AppSidebar
-            publicMode={showsGrid || route.collectionsIndex}
+            publicMode={!route.review}
             category={route.category}
             sub={route.sub}
             listId={route.listId}
@@ -396,8 +403,8 @@ export function App() {
               />
             ) : (
               <section className="empty">
-                <h2>Sign in to see your dashboard.</h2>
-                <p>Your lists, submissions and review queue live here.</p>
+                <h2>Sign in to see your saved work.</h2>
+                <p>Your lists and submissions follow you to every device once you sign in.</p>
                 <button onClick={() => setModal('signin')}>Sign in</button>
               </section>
             ))}
@@ -422,7 +429,7 @@ export function App() {
             </>
           )}
 
-          <SiteFooter count={showsGrid ? shown.length : null} />
+          <SiteFooter />
         </AnimatedSidebarInset>
       </div>
 

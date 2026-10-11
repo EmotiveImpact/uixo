@@ -201,19 +201,22 @@ export function DiscoveryHeader({
               aria-expanded={sidebar.expanded}
               onClick={sidebar.toggle}
             >
-              <PanelLeft size={18} />
+              <PanelLeft className="sidebar-trigger-desktop" size={18} />
+              <Menu className="sidebar-trigger-phone" size={19} />
             </button>
           )}
-          <button
-            ref={menuTrigger}
-            className="header-icon discovery-menu-trigger"
-            aria-controls="discovery-mobile-navigation"
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            {menuOpen ? <X size={19} /> : <Menu size={19} />}
-          </button>
+          {!sidebar && (
+            <button
+              ref={menuTrigger}
+              className="header-icon discovery-menu-trigger"
+              aria-controls="discovery-mobile-navigation"
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              {menuOpen ? <X size={19} /> : <Menu size={19} />}
+            </button>
+          )}
         </div>
       </div>
       {browseOpen && (
