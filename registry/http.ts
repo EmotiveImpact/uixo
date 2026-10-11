@@ -1,3 +1,4 @@
+import { licenceLabel } from '../shared/licence-label.ts';
 import { coverage } from './intelligence.ts';
 import { sourceDirectory, publicSourceHealth } from './source-directory.ts';
 import { intelligenceReadiness } from './readiness.ts';
@@ -248,9 +249,10 @@ export function createRegistryHandler(
         const input: Record<string, unknown> = Object.fromEntries(url.searchParams);
         if (input.saved) input.saved = String(input.saved).split(',');
         result = await registry.search(input);
-      } else if (action === 'asset')
-        result = await registry.inspect(identifier(url.searchParams.get('id')));
-      else if (action === 'providers') result = { items: await registry.providers() };
+      } else if (action === 'asset') {
+        const asset = await registry.inspect(identifier(url.searchParams.get('id')));
+        result = { ...asset, licenceLabel: licenceLabel(asset) };
+      } else if (action === 'providers') result = { items: await registry.providers() };
       else if (action === 'inventory') result = await registry.inventory();
       else if (action === 'status') {
         const stats = await registry.stats();
