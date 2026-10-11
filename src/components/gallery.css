@@ -618,6 +618,34 @@
   border-radius: 999px;
   background: var(--g-glass);
   text-decoration: none;
+  pointer-events: auto;
+}
+
+/* Until the demo says it is ready: the stage at its final size, a quiet shape, no words. */
+.asset-live-skeleton {
+  position: absolute;
+  inset: 30% 24%;
+  z-index: 1;
+  border-radius: 14px;
+  background: rgb(255 255 255 / 0.07);
+  pointer-events: none;
+  animation: g-skeleton-pulse 1.6s ease-in-out infinite;
+}
+
+:root.light .asset-live-skeleton {
+  background: rgb(0 0 0 / 0.06);
+}
+
+@keyframes g-skeleton-pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .asset-live-skeleton {
+    animation: none;
+  }
 }
 
 /* The small Live tag, top left. */

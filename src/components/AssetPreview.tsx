@@ -9,7 +9,14 @@ import { stageFit } from '../../shared/preview-stage';
 import type { PreviewContentBox, PreviewSizeMessage } from '../../shared/preview-stage';
 import type { DemoPropValues, DemoPropsMessage } from '../../shared/demo-props';
 
-type PreviewStatus = 'loading' | 'ready' | 'error';
+/**
+ * loading: nothing confirmed yet, the stage shows a skeleton.
+ * ready: the demo said so itself with a `uixo-preview-status` message. Only this is "Live".
+ * embedded: a provider page that cannot send the message has loaded. It is a preview,
+ * not a confirmed live demo, so it is never labelled "Live".
+ * error: the demo failed or never answered.
+ */
+type PreviewStatus = 'loading' | 'ready' | 'embedded' | 'error';
 
 const DEFAULT_PREVIEW_WIDTH = 480;
 const UIABLE_PREVIEW_WIDTH = 280;
@@ -56,6 +63,18 @@ function officialEmbedUrl(asset: CollectionAssetPreview): string | undefined {
     return url;
 
   return undefined;
+}
+
+/** The designed failure state: what happened, and where to see the component instead. */
+function PreviewUnavailable({ asset }: { asset: CollectionAssetPreview }) {
+  return (
+    <div className="asset-library-no-preview">
+      <strong>Preview unavailable</strong>
+      <a href={assetDestinationUrl(asset)} target="_blank" rel="noopener noreferrer">
+        Open provider page ↗
+      </a>
+    </div>
+  );
 }
 
 function LivePreview({
@@ -228,7 +247,7 @@ function LivePreview({
           referrerPolicy="no-referrer"
           style={{
             colorScheme: theme,
-            visibility: status === 'ready' ? 'visible' : 'hidden',
+            visibility: status === 'ready' || status === 'embedded' ? 'visible' : 'hidden',
             ...(!sized
               ? {}
               : {
@@ -245,17 +264,15 @@ function LivePreview({
                 }),
           }}
           onLoad={() => {
-            setStatus('ready');
-            if (!external)
+            // A load event also fires for error pages and before the demo paints, so a
+            // frame of ours stays "loading" until its own ready message arrives.
+            if (external) setStatus((current) => (current === 'loading' ? 'embedded' : current));
+            else
               frame.current?.contentWindow?.postMessage({ type: 'uixo-preview-theme', theme }, '*');
           }}
         />
       )}
-      {visible && status === 'loading' && (
-        <span className="asset-live-loading" role="status">
-          Loading live demo…
-        </span>
-      )}
+      {status === 'loading' && <span className="asset-live-skeleton" aria-hidden="true" />}
       {showFallbackImage &&
         (detail ? (
           <img
@@ -291,33 +308,28 @@ function LivePreview({
           </a>
         ))}
       {status === 'error' && (!fallbackImageUrl || fallbackFailed) && (
-        <a
-          className="asset-live-fallback"
-          href={assetDestinationUrl(asset)}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Open provider page ↗
-        </a>
+        <PreviewUnavailable asset={asset} />
       )}
-      {stage ? (
-        (status === 'ready' || showFallbackImage) && (
-          <small className="g-live" data-kind={status === 'ready' ? 'live' : 'capture'}>
-            {status === 'ready' && <i aria-hidden="true" />}
-            {status === 'ready' ? 'Live' : 'Screenshot'}
-          </small>
-        )
-      ) : (
-        <small className="actual-preview-label">
-          {status === 'ready'
-            ? 'Live · Try it'
-            : showFallbackImage
-              ? 'Screenshot · Live unavailable'
-              : status === 'error'
-                ? 'Preview unavailable'
-                : 'Loading preview'}
-        </small>
-      )}
+      {stage
+        ? (status === 'ready' || status === 'embedded' || showFallbackImage) && (
+            <small
+              className="g-live"
+              data-kind={status === 'ready' ? 'live' : status === 'embedded' ? 'embed' : 'capture'}
+            >
+              {status === 'ready' && <i aria-hidden="true" />}
+              {status === 'ready' ? 'Live' : status === 'embedded' ? 'Preview' : 'Screenshot'}
+            </small>
+          )
+        : status !== 'loading' &&
+          !(status === 'error' && !showFallbackImage) && (
+            <small className="actual-preview-label">
+              {status === 'ready'
+                ? 'Live · Try it'
+                : status === 'embedded'
+                  ? 'Preview'
+                  : 'Screenshot · Live unavailable'}
+            </small>
+          )}
     </div>
   );
 }
@@ -416,12 +428,7 @@ export function AssetPreview({
           onError={() => setFailedUrl(imageUrl)}
         />
       ) : (
-        <div className="asset-library-no-preview">
-          <strong>Preview unavailable</strong>
-          <a href={assetDestinationUrl(asset)} target="_blank" rel="noopener noreferrer">
-            Open provider page ↗
-          </a>
-        </div>
+        <PreviewUnavailable asset={asset} />
       )}
       {!livePreview &&
         (stage ? (

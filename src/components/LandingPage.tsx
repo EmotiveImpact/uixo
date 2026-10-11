@@ -158,9 +158,11 @@ function PendingCard({ failed }: { failed: boolean }) {
   return (
     <div className="g-card g-card-pending" aria-busy={!failed}>
       <div className="g-stage g-tint" style={{ '--h': 250 } as CSSProperties}>
-        <span className="g-pending-label">
-          {failed ? 'Preview unavailable' : 'Loading component…'}
-        </span>
+        {failed ? (
+          <span className="g-pending-label">Preview unavailable</span>
+        ) : (
+          <span className="asset-live-skeleton" aria-hidden="true" />
+        )}
       </div>
       <div className="g-meta" aria-hidden="true">
         <span className="g-skeleton" />
