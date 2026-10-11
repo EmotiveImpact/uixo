@@ -1,4 +1,5 @@
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
+import type { SearchCorrection, SearchMatch } from '../../shared/search';
 import { auth } from './auth';
 
 /** Browser-only registry contract. Never import the Node registry runtime into the UI. */
@@ -52,7 +53,19 @@ export type ProviderRecord = {
   assetCount: number;
   adapter?: string;
 };
-export type Catalogue = { items: AssetRecord[]; total: number; nextOffset: number | null };
+export type Catalogue = {
+  items: AssetRecord[];
+  total: number;
+  nextOffset: number | null;
+  /**
+   * Set when nothing matched as typed and the results are for a corrected spelling: show
+   * "Showing results for {correction.query}" and offer the original with `exact=true`.
+   * Absent from older registries. See `shared/search.ts`.
+   */
+  correction?: SearchCorrection | null;
+  /** "any-term" when nothing matched every term and results match some of them. */
+  match?: SearchMatch;
+};
 export type InventoryBucket = { id: string; count: number };
 export type CatalogueInventory = {
   total: number;

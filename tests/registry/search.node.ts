@@ -5,6 +5,8 @@ import { sqliteDatabase, migrate } from '../../registry/database.ts';
 import { Registry } from '../../registry/service.ts';
 import { seedCaptured } from '../../registry/bootstrap.ts';
 import { PROVIDERS } from '../../registry/providers.ts';
+import { parseSearch } from '../../registry/domain.ts';
+import { buildVocabulary, correctWord, editDistance } from '../../registry/spelling.ts';
 import { licenceLabel } from '../../shared/licence-label.ts';
 import { KIBO_REVIEWED_COMPONENTS } from '../../shared/reviewed-previews.ts';
 
@@ -133,4 +135,131 @@ test('L-1: the licence label says Free only when commercial use is allowed', () 
   assert.equal(label('free', 'restricted', ''), 'Licence unknown');
   assert.equal(label('unknown', 'allowed'), 'MIT');
   assert.equal(label('paid', 'unknown'), 'Paid');
+});
+
+test('L-8: the panel queries now return sensible results', async () => {
+  const registry = await seeded();
+  const ids = async (q: string) => (await registry.search({ q, limit: 24 })).items.map((i) => i.id);
+  const accordion = await registry.search({ q: 'accordian' });
+  assert.ok(accordion.items.some((item) => item.id === 'shadcn/accordion'));
+  assert.deepEqual(accordion.correction, {
+    query: 'accordion',
+    original: 'accordian',
+    changes: [{ from: 'accordian', to: 'accordion' }],
+  });
+  assert.ok((await ids('pricing table')).includes('animata/section-pricing'));
+  const modal = await ids('modal');
+  assert.ok(modal.includes('shadcn/dialog') && modal.includes('flowbite-react/modal'));
+  const datepicker = await ids('datepicker');
+  assert.deepEqual(new Set(datepicker), new Set(await ids('date picker')));
+  assert.ok(datepicker.includes('heroui-web/date-picker'));
+  assert.ok(datepicker.includes('flowbite-react/datepicker'));
+  const hero = await registry.search({ q: 'add a shimmer button to my hero' });
+  assert.equal(hero.match, 'any-term');
+  assert.equal(hero.correction, null);
+  assert.equal(hero.items[0].id, 'magic-ui/shimmer-button');
+  assert.deepEqual(hero.items[0].ranking.matchedTerms, ['shimmer', 'button']);
+});
+
+test('L-8: synonyms and singulars widen a term without dropping exact matches', async () => {
+  const registry = await seeded();
+  const ids = async (q: string) => (await registry.search({ q, limit: 48 })).items.map((i) => i.id);
+  assert.ok((await ids('toggle')).includes('shadcn/switch'));
+  assert.ok((await ids('switch')).includes('shadcn/toggle'));
+  assert.ok((await ids('navbar')).includes('shadcn/navigation-menu'));
+  assert.ok((await ids('dialogs')).includes('shadcn/dialog'));
+  const parsed = parseSearch({ q: 'date picker for my modals' });
+  assert.deepEqual(parsed.terms, ['date picker', 'modals']);
+  assert.deepEqual(parsed.groups[0].any, [['datepicker'], ['date', 'picker'], ['date-picker']]);
+  assert.deepEqual(parsed.groups[1].any, [['modal'], ['dialog']]);
+  assert.deepEqual(parseSearch({ q: 'cards' }).groups, [{ term: 'cards', any: [['card']] }]);
+  assert.deepEqual(parseSearch({ q: 'glass' }).groups, [{ term: 'glass', any: [['glass']] }]);
+});
+
+test('L-8: spelling correction only fills an empty result and can be turned off', async () => {
+  const registry = await seeded();
+  const exact = await registry.search({ q: 'accordian', exact: 'true' });
+  assert.equal(exact.total, 0);
+  assert.equal(exact.correction, null);
+  // Known words that a filter excludes are not "corrected" into something else.
+  const filtered = await registry.search({ q: 'accordion', provider: 'magic-ui' });
+  assert.equal(filtered.total, 0);
+  assert.equal(filtered.correction, null);
+  const phrase = await registry.search({ q: 'pricng tabel' });
+  assert.equal(phrase.correction?.query, 'pricing table');
+  assert.ok(phrase.items.some((item) => item.id === 'animata/section-pricing'));
+  const typo = await registry.search({ q: 'shimer buton' });
+  assert.equal(typo.correction?.query, 'shimmer button');
+  assert.equal(typo.items[0].id, 'magic-ui/shimmer-button');
+  // Nothing close: still empty, with no correction offered.
+  const none = await registry.search({ q: 'react radar whichdoesnotexist' });
+  assert.equal(none.total, 0);
+  assert.equal(none.correction, null);
+  assert.equal((await registry.search({ q: 'accordion' })).correction, null);
+});
+
+test('L-8: the any-term fallback needs three terms and never weakens a hard filter', async () => {
+  const registry = await seeded();
+  assert.equal((await registry.search({ q: 'shimmer button' })).match, 'all-terms');
+  assert.equal((await registry.search({ q: 'shimmer accordion' })).total, 0);
+  const scoped = await registry.search({
+    q: 'add a shimmer button to my hero',
+    provider: 'magic-ui',
+    commercial: true,
+    limit: 48,
+  });
+  assert.equal(scoped.match, 'any-term');
+  assert.ok(scoped.total > 0);
+  assert.ok(
+    scoped.items.every(
+      (item) => item.providerId === 'magic-ui' && item.licence.commercial === 'allowed',
+    ),
+  );
+  for (let i = 1; i < scoped.items.length; i++)
+    assert.ok(scoped.items[i - 1].ranking.score >= scoped.items[i].ranking.score);
+  assert.ok(scoped.items.every((item) => item.ranking.matchedTerms.length > 0));
+  const page = await registry.search({ q: 'add a shimmer button to my hero', limit: 5, offset: 5 });
+  assert.equal(page.match, 'any-term');
+  assert.equal(page.total, (await registry.search({ q: 'add a shimmer button to my hero' })).total);
+});
+
+test('L-8: forgiving search stays fast on the in-memory registry', async () => {
+  const registry = await seeded();
+  const queries = [
+    'accordian',
+    'pricing table',
+    'modal',
+    'datepicker',
+    'add a shimmer button to my hero',
+  ];
+  for (const q of queries) await registry.search({ q });
+  const times: number[] = [];
+  for (let round = 0; round < 5; round++)
+    for (const q of queries) {
+      const start = performance.now();
+      await registry.search({ q });
+      times.push(performance.now() - start);
+    }
+  times.sort((a, b) => a - b);
+  const median = times[Math.floor(times.length / 2)];
+  const slowest = times[times.length - 1];
+  assert.ok(median < 50, `median ${median}ms`);
+  assert.ok(slowest < 100, `slowest ${slowest}ms`);
+});
+
+test('L-8: edit distance counts a swap as one edit and corrections prefer the first letter', () => {
+  assert.equal(editDistance('accordian', 'accordion'), 1);
+  assert.equal(editDistance('tabel', 'table'), 1);
+  assert.equal(editDistance('datepiker', 'datepicker'), 1);
+  assert.equal(editDistance('modal', 'dialog', 2), 3);
+  const vocabulary = buildVocabulary([
+    { name: 'Label', searchText: 'label' },
+    { name: 'Label Group', searchText: 'label group' },
+    { name: 'Table', searchText: 'table' },
+  ]);
+  assert.equal(correctWord('tabel', vocabulary), 'table');
+  assert.equal(correctWord('table', vocabulary), null);
+  assert.equal(correctWord('tbl', vocabulary), null);
+  assert.equal(correctWord('zzzzzz', vocabulary), null);
+  assert.equal(correctWord('buttns', buildVocabulary([])), 'buttons');
 });

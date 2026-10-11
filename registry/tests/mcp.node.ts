@@ -59,6 +59,27 @@ test('real MCP client discovers and calls every UIXO tool through the official H
     );
     const resolved = await client.callTool({ name: 'resolve_asset', arguments: { id } });
     assert.equal((resolved.structuredContent?.licence as { label: string }).label, 'Free');
+    // L-8: forgiving search through search_assets.
+    const find = async (q: string) =>
+      (await client.callTool({ name: 'search_assets', arguments: { q } })).structuredContent as {
+        items: { id: string }[];
+        correction: { query: string } | null;
+        match: string;
+      };
+    const typo = await find('accordian');
+    assert.equal(typo.correction?.query, 'accordion');
+    assert.ok(typo.items.some((item) => item.id === 'shadcn/accordion'));
+    assert.ok((await find('pricing table')).items.some((i) => i.id === 'animata/section-pricing'));
+    assert.ok((await find('modal')).items.some((item) => item.id === 'shadcn/dialog'));
+    assert.ok((await find('datepicker')).items.some((i) => i.id === 'heroui-web/date-picker'));
+    const sentence = await find('add a shimmer button to my hero');
+    assert.equal(sentence.match, 'any-term');
+    assert.equal(sentence.items[0].id, 'magic-ui/shimmer-button');
+    const exact = await client.callTool({
+      name: 'search_assets',
+      arguments: { q: 'accordian', exact: true },
+    });
+    assert.equal(exact.structuredContent?.total, 0);
     // L-5: the MCP recipe carries the same shell text the site shows.
     assert.equal(
       resolved.structuredContent?.commandText,
