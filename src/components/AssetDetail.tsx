@@ -552,13 +552,26 @@ export function AssetDetail({
         />
       )}
       {!asset && !error && (
-        <div className="ad-split" aria-busy="true">
+        // The same blocks, in the same order and at the same heights as the loaded page,
+        // so nothing below them moves when the data arrives.
+        <div className="ad-split is-pending" aria-busy="true">
           <div className="ad-stagecol">
-            <div className="ad-stage is-pending" />
+            <div className="ad-toolbar" aria-hidden="true" />
+            <div className="ad-stage is-pending" aria-hidden="true" />
           </div>
           <div className="ad-aside">
-            <p className="ad-message" role="status">
-              Loading component…
+            <div className="ad-head is-pending" aria-hidden="true">
+              <span className="g-skeleton is-kicker" />
+              <span className="g-skeleton is-title" />
+              <span className="g-skeleton is-short" />
+              <span className="g-skeleton" />
+            </div>
+            <div className="ad-buy is-pending" aria-hidden="true">
+              <span className="g-skeleton is-install" />
+              <span className="g-skeleton is-actions" />
+            </div>
+            <p className="sr-only" role="status">
+              Loading component
             </p>
           </div>
         </div>

@@ -114,6 +114,49 @@
   min-width: 0;
 }
 
+/* Before the data arrives: the loaded page's blocks at their loaded heights. */
+.ad-split.is-pending {
+  min-height: 100vh;
+}
+
+.ad-split.is-pending .ad-toolbar {
+  height: 38px;
+}
+
+.ad-head.is-pending {
+  min-height: 172px;
+}
+
+.ad-head.is-pending .g-skeleton.is-kicker {
+  width: 22%;
+  height: 10px;
+  margin: 4px 0 16px;
+}
+
+.ad-head.is-pending .g-skeleton.is-title {
+  width: 80%;
+  height: 40px;
+  margin-bottom: 16px;
+}
+
+.ad-buy.is-pending {
+  min-height: 203px;
+  padding-top: 24px;
+}
+
+.ad-buy.is-pending .g-skeleton.is-install {
+  width: 100%;
+  height: 56px;
+  border-radius: 16px;
+}
+
+.ad-buy.is-pending .g-skeleton.is-actions {
+  width: 100%;
+  height: 44px;
+  margin-top: 12px;
+  border-radius: 999px;
+}
+
 /* ---------------------------------------------------------------- Toolbar */
 
 .ad-toolbar {
@@ -922,7 +965,9 @@
 }
 
 .ad .install-command-pending {
-  margin-top: 24px;
+  /* The install block's own height, so Save and the rest stay put when it arrives. */
+  min-height: 147px;
+  margin: 24px 0 6px;
   color: var(--g-text-3);
   font-size: 13px;
 }
