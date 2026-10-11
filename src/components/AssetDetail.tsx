@@ -29,7 +29,7 @@ import {
   safeAssetUrl,
 } from '../lib/asset-library';
 import { assetDestinationUrl } from '../lib/asset-destination';
-import { frameworkLabel, installChecklist } from '../lib/install-checklist';
+import { frameworkLabel, installChecklist, installPrerequisite } from '../lib/install-checklist';
 import { highlightLine } from '../lib/highlight-code';
 import { licenceLabel } from '../lib/licence-label';
 import { isWarmHue, stableHash, stageHue } from '../lib/stage-hue';
@@ -474,6 +474,7 @@ export function AssetDetail({
         ? { kind: asset.kind }
         : null;
   const checklist = asset ? installChecklist(asset, selected, result, providerName) : [];
+  const prerequisite = installPrerequisite(selected, result);
   const code =
     customisable && values ? customisable.code(values) : source?.id === id ? source.text : '';
   const fileName = customisable?.fileName ?? liveEntry?.file.split('/').pop() ?? '';
@@ -781,7 +782,12 @@ export function AssetDetail({
               )}
 
               {checklist.length > 0 && (
-                <section className="ad-before" aria-labelledby="ad-before-title">
+                <section
+                  className="ad-before"
+                  id="ad-before"
+                  tabIndex={-1}
+                  aria-labelledby="ad-before-title"
+                >
                   <h2 id="ad-before-title">Before you install</h2>
                   <ul>
                     {checklist.map((item) => (
@@ -831,7 +837,29 @@ export function AssetDetail({
 
               <div className="ad-buy">
                 {command ? (
-                  <InstallCommand command={command} />
+                  <>
+                    <InstallCommand command={command} />
+                    {prerequisite && (
+                      <p className="ad-prereq">
+                        {prerequisite.map((part, index) =>
+                          typeof part === 'string' ? part : <code key={index}>{part.code}</code>,
+                        )}{' '}
+                        {checklist.length > 0 && (
+                          <a
+                            href="#ad-before"
+                            onClick={(event) => {
+                              event.preventDefault();
+                              const list = document.getElementById('ad-before');
+                              list?.scrollIntoView({ block: 'start' });
+                              list?.focus({ preventScroll: true });
+                            }}
+                          >
+                            See everything it needs
+                          </a>
+                        )}
+                      </p>
+                    )}
+                  </>
                 ) : (
                   !current && (
                     <p className="install-command-pending" role="status">

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { installChecklist } from './install-checklist';
+import { installChecklist, installPrerequisite } from './install-checklist';
 import type { AssetRecord } from './asset-library';
 
 const text = (items: ReturnType<typeof installChecklist>) =>
@@ -72,5 +72,46 @@ describe('before you install', () => {
       'Expects `react` in your project.',
       'Built for React.',
     ]);
+  });
+});
+
+describe('the line under the install command', () => {
+  const text = (parts: ReturnType<typeof installPrerequisite>) =>
+    parts?.map((part) => (typeof part === 'string' ? part : `\`${part.code}\``)).join('');
+  const result = (args: string[]) => ({
+    status: 'ready',
+    message: '',
+    url: '',
+    executed: false,
+    command: { executable: 'npx', arguments: args },
+  });
+
+  it('names the shadcn prerequisite and says UIXO has not run the command', () => {
+    expect(text(installPrerequisite(undefined, result(['shadcn', 'add', 'x'])))).toBe(
+      'Needs shadcn set up (`components.json`). UIXO has not run this command.',
+    );
+  });
+
+  it('names peers for a package install', () => {
+    expect(
+      text(
+        installPrerequisite(
+          {
+            id: 'v',
+            framework: 'react',
+            format: 'tsx',
+            css: null,
+            dependencies: [],
+            peerDependencies: { react: '^19' },
+            acquisition: { kind: 'package', packageName: 'flowbite-react' },
+          },
+          result(['install', 'flowbite-react']),
+        ),
+      ),
+    ).toBe('Needs `react` in your project. UIXO has not run this command.');
+  });
+
+  it('says nothing when there is no command', () => {
+    expect(installPrerequisite(undefined, undefined)).toBeNull();
   });
 });

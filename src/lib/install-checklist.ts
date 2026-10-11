@@ -100,3 +100,24 @@ export function installChecklist(
     });
   return items;
 }
+
+/**
+ * The one line under the install command: the main thing the project needs, and that UIXO
+ * has not run the command. Built from the same data as the full checklist. Null when there
+ * is no command to warn about.
+ */
+export function installPrerequisite(
+  variant: Variant | undefined,
+  result: Acquisition | undefined,
+): ChecklistPart[] | null {
+  const command = result?.command;
+  if (!command) return null;
+  const notRun = ' UIXO has not run this command.';
+  if (command.arguments[0] === 'shadcn')
+    return ['Needs shadcn set up (', { code: 'components.json' }, ').', notRun];
+  const peers = Object.keys(variant?.peerDependencies ?? {});
+  if (peers.length) return ['Needs ', ...list(peers), ' in your project.', notRun];
+  const packageName = variant?.acquisition?.packageName;
+  if (packageName) return ['Adds ', { code: packageName }, ' from npm.', notRun];
+  return [notRun.trim()];
+}

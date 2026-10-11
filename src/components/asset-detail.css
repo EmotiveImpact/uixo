@@ -964,6 +964,29 @@
   text-overflow: clip;
 }
 
+/* What the project needs, and that UIXO has not run it: plain meta text, no warning. */
+.ad-prereq {
+  margin: 10px 4px 0;
+  font: 400 13px/20px var(--g-sans);
+  color: var(--g-text-2);
+}
+
+.ad-prereq code {
+  font: 400 12px/1 var(--g-mono);
+  color: var(--g-text);
+}
+
+.ad-prereq a {
+  color: var(--g-text);
+  text-decoration: underline;
+  text-decoration-color: var(--g-text-3);
+  text-underline-offset: 3px;
+}
+
+.ad-before:focus {
+  outline: none;
+}
+
 .ad .install-command-pending {
   /* The install block's own height, so Save and the rest stay put when it arrives. */
   min-height: 147px;

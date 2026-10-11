@@ -192,7 +192,17 @@ it('offers Customise only for curated demos, and the code follows the chosen pro
   expect(duration.getAttribute('aria-valuetext')).toMatch(/^[0-9.]+ seconds?$/);
   expect(screen.getByRole('slider', { name: 'borderRadius, pixels' })).toBeTruthy();
   expect(screen.getByRole('table')).toBeTruthy();
-  await screen.findByText(/components\.json/);
+  expect((await screen.findAllByText(/components\.json/)).length).toBe(2);
+  // One line under the install block says what the project needs and that UIXO has not run it.
+  const prerequisite = document.querySelector('.ad-prereq')!;
+  expect(prerequisite.textContent).toContain(
+    'Needs shadcn set up (components.json). UIXO has not run this command.',
+  );
+  expect(
+    within(prerequisite as HTMLElement)
+      .getByRole('link')
+      .getAttribute('href'),
+  ).toBe('#ad-before');
   fireEvent.click(screen.getByRole('button', { name: 'shimmerColor #c4b5fd' }));
   fireEvent.click(screen.getByRole('tab', { name: 'Code' }));
   expect(screen.getByRole('tab', { name: 'Code' }).getAttribute('aria-selected')).toBe('true');
