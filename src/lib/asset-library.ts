@@ -77,6 +77,8 @@ export type Acquisition = {
   message: string;
   url: string;
   command: { executable: string; arguments: string[] } | null;
+  /** The same command as shell text, from the shared builder in `shared/install-command.ts`. */
+  commandText?: string | null;
   executed: boolean;
 };
 export const ASSET_PATH = '/browse/assets';

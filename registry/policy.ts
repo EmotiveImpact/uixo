@@ -1,4 +1,5 @@
 import { KIBO_REVIEWED_COMPONENTS } from '../shared/reviewed-previews.ts';
+import { formatCommand, installCommand } from '../shared/install-command.ts';
 import { timingSafeEqual } from 'node:crypto';
 import { type Asset, type Variant, RegistryError, record, strings, text } from './domain.ts';
 
@@ -35,6 +36,7 @@ export function resolveAsset(asset: Asset, variantId?: string) {
     executed: false,
     mirrored: false,
     sourceRef: variant.sourceRef,
+    commandText: null as string | null,
   };
   if (external)
     return {
@@ -106,7 +108,6 @@ export function resolveAsset(asset: Asset, variantId?: string) {
       !/^\/(lucide-icons\/lucide|tailwindlabs\/heroicons)\//.test(url.pathname))
   )
     throw new RegistryError('UNTRUSTED_SOURCE', 'Direct source is not approved.', 403);
-  let command: { executable: string; arguments: string[] } | null = null;
   if (acquisition.kind === 'package') {
     if (!acquisition.packageName || !packageName.test(acquisition.packageName))
       throw new RegistryError('UNTRUSTED_PACKAGE', 'Package identifier is invalid.', 403);
@@ -118,18 +119,16 @@ export function resolveAsset(asset: Asset, variantId?: string) {
     };
     if (allowed[asset.providerId] !== acquisition.packageName)
       throw new RegistryError('UNTRUSTED_PACKAGE', 'Package does not match this provider.', 403);
-    command = {
-      executable: 'npm',
-      arguments: ['install', '--ignore-scripts', '--', acquisition.packageName],
-    };
   }
-  if (acquisition.kind === 'registry')
-    command = { executable: 'npx', arguments: ['shadcn', 'add', acquisition.url] };
+  // The shared builder is the only place an install string is made (card, detail, MCP).
+  const command = installCommand(acquisition);
   return {
     ...base,
     status: 'ready',
     url: acquisition.url,
     command,
+    /** The exact shell text the card and detail page show and copy for npm. */
+    commandText: formatCommand(command) || null,
     message: command
       ? 'Review this instruction before running it. UIXO has not executed it; the upstream package or registry may have changed.'
       : 'Retrieve from the original source and retain its complete copyright and licence notices.',
