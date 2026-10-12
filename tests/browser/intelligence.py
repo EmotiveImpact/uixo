@@ -106,7 +106,7 @@ with sync_playwright() as p:
 
         page.set_viewport_size({'width': 1440, 'height': 1100})
         page.goto(WEB + '/browse/assets', wait_until='domcontentloaded')
-        page.get_by_role('button', name='Sources', exact=True).click()
+        page.get_by_role('button', name='Component sources', exact=True).click()
         heading('Understand the source, not just the count.')
         page.get_by_role('searchbox', name='Find a source').fill('shadcn')
         expect(page.locator('.dv2-source-card')).to_have_count(2)

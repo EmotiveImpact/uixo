@@ -1,17 +1,41 @@
 import { randomUUID } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
+import { KIBO_REVIEWED_COMPONENTS } from '../shared/reviewed-previews.ts';
+import { licenceLabel } from '../shared/licence-label.ts';
 import { COMPONENT_CATEGORIES } from '../shared/component-categories.ts';
 import type { Database, Statement } from './database.ts';
 import {
   type Asset,
   type Provider,
   type Search,
+  type TermGroup,
   RegistryError,
   fingerprint,
   identifier,
   parseScout,
   parseSearch,
+  termGroups,
   validateAsset,
 } from './domain.ts';
+import { type Vocabulary, buildVocabulary, correctWord } from './spelling.ts';
+import type { SearchCorrection, SearchMatch } from '../shared/search.ts';
+
+let readyIds: Promise<string[]> | undefined;
+/**
+ * Components whose preview is ready from data alone, with no client handshake: a pinned live
+ * demo (live-demos/manifest.json) or a reviewed, source-pinned Kibo preview. Captured images
+ * count as ready in SQL; third-party embeds rank below them because only the browser can
+ * tell whether they loaded.
+ */
+function previewReadyIds(): Promise<string[]> {
+  return (readyIds ??= readFile(new URL('../live-demos/manifest.json', import.meta.url), 'utf8')
+    .then((text) => Object.keys(JSON.parse(text) as Record<string, unknown>))
+    .catch(() => [] as string[])
+    .then((live) => [
+      ...live,
+      ...Object.keys(KIBO_REVIEWED_COMPONENTS).map((slug) => `kibo-ui/${slug}`),
+    ]));
+}
 
 export class Registry {
   db: Database;
@@ -283,37 +307,36 @@ export class Registry {
       editorialPick: rows[0].editorial_pick === 1,
     };
   }
+  /**
+   * Catalogue search. Hard filters (provider, kind, category, framework, format, price,
+   * commercial use) are never weakened. Terms match with synonyms and singulars; when nothing
+   * matches every term, a spelling correction and then, for three or more terms, a scored
+   * any-term match are tried (L-8). See `shared/search.ts` for `correction` and `match`.
+   */
   async search(input: unknown) {
     const search = parseSearch(input);
-    const { where, args } = this.searchWhere(search);
-    const count = await this.db.query(
-      `SELECT COUNT(*) AS count FROM uixo_v2_assets a JOIN uixo_v2_providers p ON p.id=a.provider_id JOIN uixo_v2_licences l ON l.id=a.licence_id WHERE ${where}`,
-      args,
-    );
-    const terms = search.terms;
-    const score =
-      terms
-        .map((term) => {
-          args.push(`%${term}%`);
-          return `CASE WHEN LOWER(a.name) LIKE $${args.length} THEN 10 ELSE 1 END`;
-        })
-        .join(' + ') || '0';
-    args.push(search.limit, search.offset);
-    const rows = await this.db.query(
-      `SELECT a.payload,a.revision,(${score}) AS score FROM uixo_v2_assets a JOIN uixo_v2_providers p ON p.id=a.provider_id JOIN uixo_v2_licences l ON l.id=a.licence_id WHERE ${where} ORDER BY score DESC,CASE WHEN p.payload LIKE '%"previewsPending":true%' THEN 1 ELSE 0 END,CASE WHEN a.kind='component' THEN 0 ELSE 1 END,a.name ASC,a.id ASC LIMIT $${args.length - 1} OFFSET $${args.length}`,
-      args,
-    );
-    const items = rows.map((row) => {
-      const a = JSON.parse(String(row.payload)) as Asset;
-      return {
-        ...a,
-        licence: { ...a.licence, text: '' },
-        evidence: a.evidence.slice(0, 2),
-        revision: Number(row.revision),
-        ranking: { method: 'weighted-keyword', score: Number(row.score), matchedTerms: terms },
-      };
-    });
-    const total = Number(count[0].count);
+    let groups = search.groups;
+    let page = await this.searchPage(search, groups, groups.length);
+    let match: SearchMatch = 'all-terms';
+    let correction: SearchCorrection | null = null;
+    if (!page.total && groups.length) {
+      const corrected = search.exact ? null : await this.correctSpelling(search);
+      if (corrected) {
+        groups = corrected.groups;
+        page = await this.searchPage(search, groups, groups.length);
+      }
+      if (!page.total && groups.length >= 3)
+        for (const least of [Math.ceil(groups.length / 2), 1]) {
+          page = await this.searchPage(search, groups, least);
+          if (page.total) {
+            match = 'any-term';
+            break;
+          }
+        }
+      if (corrected && page.total)
+        correction = { query: corrected.query, original: search.q, changes: corrected.changes };
+    }
+    const { items, total } = page;
     return {
       items,
       total,
@@ -327,17 +350,94 @@ export class Registry {
         commercial: search.commercial,
       },
       searchMode: 'weighted-keyword',
+      /** Set when the results are for a corrected spelling; see `shared/search.ts`. */
+      correction,
+      /** "any-term" when nothing matched every term and results match some of them. */
+      match,
     };
   }
-  private searchWhere(search: Search) {
-    const clauses = ['p.approved=1'];
-    // Retain old icon detail/saved links without flooding catalogue discovery.
-    if (!search.saved.length) clauses.push("a.kind<>'icon'");
+  /** One page of results where at least `least` of the term groups match. */
+  private async searchPage(search: Search, groups: TermGroup[], least: number) {
     const args: (string | number | null)[] = [];
     const bind = (value: string | number) => {
       args.push(value);
       return `$${args.length}`;
     };
+    const matches = (column: string, group: TermGroup) =>
+      `(${group.any.map((words) => `(${words.map((word) => `${column} LIKE ${bind(`%${word}%`)}`).join(' AND ')})`).join(' OR ')})`;
+    const where = () => {
+      const clauses = this.searchFilters(search, bind);
+      if (groups.length && least >= groups.length)
+        groups.forEach((group) => clauses.push(matches('a.search_text', group)));
+      else if (groups.length)
+        clauses.push(
+          `(${groups.map((group) => `CASE WHEN ${matches('a.search_text', group)} THEN 1 ELSE 0 END`).join(' + ')}) >= ${bind(least)}`,
+        );
+      return clauses.join(' AND ');
+    };
+    const from =
+      'FROM uixo_v2_assets a JOIN uixo_v2_providers p ON p.id=a.provider_id JOIN uixo_v2_licences l ON l.id=a.licence_id';
+    const count = await this.db.query(`SELECT COUNT(*) AS count ${from} WHERE ${where()}`, args);
+    const total = Number(count[0].count);
+    if (!total) return { items: [], total };
+    args.length = 0;
+    const filter = where();
+    // A name match is worth 10, a match anywhere else 1, and a missed term 0.
+    const score =
+      groups
+        .map(
+          (group) =>
+            `CASE WHEN ${matches('LOWER(a.name)', group)} THEN 10 WHEN ${matches('a.search_text', group)} THEN 1 ELSE 0 END`,
+        )
+        .join(' + ') || '0';
+    // Libraries whose live previews are still pending sink below ready ones.
+    const pending = `CASE WHEN p.payload LIKE '%"previewsPending":true%' THEN 1 ELSE 0 END`;
+    const componentsFirst = `CASE WHEN a.kind='component' THEN 0 ELSE 1 END`;
+    let relevant = `score DESC,a.editorial_pick DESC,${pending},${componentsFirst},a.name ASC,a.id ASC`;
+    if (!groups.length) {
+      // No query: "Recommended" leads with what people can take (L-7). Editorial pick, then a
+      // preview that is ready from data alone, then an install command, then commercial use
+      // allowed, then the name compared case-insensitively.
+      const ready = (await previewReadyIds()).map(bind);
+      const preview = `CASE WHEN ${pending}=1 THEN 0${ready.length ? ` WHEN a.id IN (${ready.join(',')}) THEN 2` : ''} WHEN a.payload LIKE '%"preview":{"kind":"image"%' THEN 2 WHEN a.payload LIKE '%"preview":{"kind":"embed"%' THEN 1 ELSE 0 END`;
+      const install = `CASE WHEN EXISTS(SELECT 1 FROM uixo_v2_variants iv WHERE iv.asset_id=a.id AND iv.acquisition IN ('registry','package')) THEN 1 ELSE 0 END`;
+      const commercial = `CASE WHEN l.commercial='allowed' THEN 1 ELSE 0 END`;
+      relevant = `a.editorial_pick DESC,${preview} DESC,${install} DESC,${commercial} DESC,${componentsFirst},LOWER(a.name) ASC,a.id ASC`;
+    }
+    const order = {
+      relevant,
+      newest: `a.updated_at DESC,${pending},score DESC,LOWER(a.name) ASC,a.id ASC`,
+      name: `LOWER(a.name) ASC,a.id ASC`,
+    }[search.sort];
+    const rows = await this.db.query(
+      `SELECT a.payload,a.revision,a.search_text,(${score}) AS score ${from} WHERE ${filter} ORDER BY ${order} LIMIT ${bind(search.limit)} OFFSET ${bind(search.offset)}`,
+      args,
+    );
+    const items = rows.map((row) => {
+      const a = JSON.parse(String(row.payload)) as Asset;
+      const text = String(row.search_text);
+      return {
+        ...a,
+        licence: { ...a.licence, text: '' },
+        /** "Free" only when commercial use is allowed, else "Licence unknown" or the licence (L-1). */
+        licenceLabel: licenceLabel(a),
+        evidence: a.evidence.slice(0, 2),
+        revision: Number(row.revision),
+        ranking: {
+          method: 'weighted-keyword',
+          score: Number(row.score),
+          matchedTerms: groups
+            .filter((group) => group.any.some((words) => words.every((w) => text.includes(w))))
+            .map((group) => group.term),
+        },
+      };
+    });
+    return { items, total };
+  }
+  private searchFilters(search: Search, bind: (value: string | number) => string) {
+    const clauses = ['p.approved=1'];
+    // Retain old icon detail/saved links without flooding catalogue discovery.
+    if (!search.saved.length) clauses.push("a.kind<>'icon'");
     if (search.provider) clauses.push(`a.provider_id=${bind(search.provider)}`);
     if (search.kind) clauses.push(`a.kind=${bind(search.kind)}`);
     if (search.category) {
@@ -353,8 +453,47 @@ export class Registry {
       clauses.push(`EXISTS(SELECT 1 FROM uixo_v2_variants v WHERE ${variant.join(' AND ')})`);
     }
     if (search.saved.length) clauses.push(`a.id IN (${search.saved.map(bind).join(',')})`);
-    search.terms.forEach((term) => clauses.push(`a.search_text LIKE ${bind(`%${term}%`)}`));
-    return { where: clauses.join(' AND '), args };
+    return clauses;
+  }
+  private vocabulary?: { key: string; value: Vocabulary };
+  /** Names, categories and search text of the published catalogue, rebuilt when it changes. */
+  private async searchVocabulary(): Promise<Vocabulary> {
+    const published =
+      "FROM uixo_v2_assets a JOIN uixo_v2_providers p ON p.id=a.provider_id WHERE p.approved=1 AND a.kind<>'icon'";
+    const [state] = await this.db.query(
+      `SELECT COUNT(*) AS count, MAX(a.updated_at) AS updated ${published}`,
+    );
+    const key = `${state.count}:${state.updated}`;
+    if (this.vocabulary?.key !== key) {
+      const rows = await this.db.query(`SELECT a.name,a.search_text ${published}`);
+      this.vocabulary = {
+        key,
+        value: buildVocabulary(
+          rows.map((row) => ({ name: String(row.name), searchText: String(row.search_text) })),
+        ),
+      };
+    }
+    return this.vocabulary.value;
+  }
+  /** Correct words that appear nowhere in the catalogue; null when no word changes. */
+  private async correctSpelling(search: Search) {
+    const vocabulary = await this.searchVocabulary();
+    const changes: { from: string; to: string }[] = [];
+    const words = search.groups.flatMap((group) => {
+      const single = group.any.length === 1 && group.any[0].length === 1;
+      const to = single ? correctWord(group.term, vocabulary) : null;
+      if (to) changes.push({ from: group.term, to });
+      return (to ?? group.term).split(' ');
+    });
+    if (!changes.length) return null;
+    // Regroup so corrected words can form a synonym phrase ("pricng tabel" → "pricing table").
+    const groups = termGroups(words);
+    // Corrected words are plain lower-case letters, so they are safe inside a pattern.
+    const query = changes.reduce(
+      (text, change) => text.replace(new RegExp(`\\b${change.from}\\b`, 'g'), change.to),
+      search.q,
+    );
+    return { groups, changes, query };
   }
   async scout(input: unknown) {
     const items = parseScout(input),

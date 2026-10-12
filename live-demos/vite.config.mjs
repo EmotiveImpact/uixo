@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwind from '@tailwindcss/vite';
+import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = path.dirname(fileURLToPath(import.meta.url));
@@ -39,6 +40,22 @@ export default defineConfig({
                 skipSelf: true,
               },
             );
+        }
+      },
+    },
+    {
+      // The detail page's Code tab shows each demo's pinned source as plain text, served
+      // from UIXO's origin next to the demos. Never evaluated, only displayed.
+      name: 'demo-sources',
+      generateBundle() {
+        const manifest = JSON.parse(fs.readFileSync(path.join(root, 'manifest.json'), 'utf8'));
+        for (const [id, entry] of Object.entries(manifest)) {
+          if (!/^[a-z0-9-]+\/[a-z0-9-]+$/.test(id)) continue;
+          this.emitFile({
+            type: 'asset',
+            fileName: `sources/${id}.txt`,
+            source: fs.readFileSync(path.join(root, entry.file), 'utf8'),
+          });
         }
       },
     },

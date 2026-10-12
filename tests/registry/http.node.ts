@@ -192,3 +192,29 @@ test('public HTTP rate limit is applied before identity verification', async () 
     await f.close();
   }
 });
+
+test('HTTP search forgives typos, synonyms and sentences and reports the correction (L-8)', async () => {
+  const f = await setup();
+  try {
+    await seedCaptured(f.registry);
+    const search = async (q: string, extra = '') =>
+      (await f.api(`search&q=${encodeURIComponent(q)}${extra}`)).data;
+    const has = (result: { items: { id: string }[] }, id: string) =>
+      result.items.some((item) => item.id === id);
+    const typo = await search('accordian');
+    assert.equal(typo.correction.query, 'accordion');
+    assert.equal(typo.match, 'all-terms');
+    assert.ok(has(typo, 'shadcn/accordion'));
+    assert.equal((await search('accordian', '&exact=true')).total, 0);
+    assert.ok(has(await search('pricing table'), 'animata/section-pricing'));
+    assert.ok(has(await search('modal'), 'shadcn/dialog'));
+    assert.ok(has(await search('datepicker'), 'heroui-web/date-picker'));
+    const sentence = await search('add a shimmer button to my hero');
+    assert.equal(sentence.match, 'any-term');
+    assert.equal(sentence.correction, null);
+    assert.equal(sentence.items[0].id, 'magic-ui/shimmer-button');
+    assert.equal(sentence.items[0].licenceLabel, 'Free');
+  } finally {
+    await f.close();
+  }
+});

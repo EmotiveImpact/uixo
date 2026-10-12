@@ -1,9 +1,10 @@
 import { ToggleGroup } from 'radix-ui';
-import { ArrowLeft, Search } from 'lucide-react';
+import { ArrowLeft, Check, Search } from 'lucide-react';
 import type { RefObject } from 'react';
 import { useAnimatedSidebar } from './motion/animated-sidebar';
 import { DiscoveryHeader } from './discovery/DiscoveryHeader';
 import { PRICE_FILTERS } from '../types';
+import { openSearchPalette } from '../lib/search-palette';
 import type { ReactNode } from 'react';
 import type { ModalName, PriceFilter } from '../types';
 
@@ -14,6 +15,10 @@ type TopBarProps = {
   account: ReactNode;
   catalogue?: 'websites' | 'assets' | 'collections';
   adminMode?: boolean;
+  /** A page without the catalogue sidebar: phones get the header menu instead. */
+  sidebarless?: boolean;
+  /** Signed out: phones offer Sign in from their menu. */
+  onSignIn?: () => void;
   adminAction?: {
     label: 'Admin' | 'Exit admin';
     href: string;
@@ -30,6 +35,10 @@ type DiscoveryControlsProps = {
   catalogue?: 'websites' | 'assets' | 'collections';
   collectionIndex?: boolean;
   showDiscovery?: boolean;
+  /** Overrides the search placeholder, e.g. "Search buttons". */
+  placeholder?: string;
+  /** Components filter on licence, not price: every component is free to view. */
+  commercial?: { value: boolean; onChange: (value: boolean) => void };
 };
 
 export function TopBar({
@@ -39,6 +48,8 @@ export function TopBar({
   account,
   catalogue = 'websites',
   adminMode = false,
+  sidebarless = false,
+  onSignIn,
   adminAction,
 }: TopBarProps) {
   const sidebar = useAnimatedSidebar();
@@ -54,14 +65,18 @@ export function TopBar({
       light={light}
       onToggleTheme={onToggleTheme}
       account={account}
-      sidebar={{
-        expanded: sidebar.isMobile ? sidebar.openMobile : sidebar.open,
-        toggle: sidebar.toggleSidebar,
-      }}
-      sidebarTriggerRef={sidebar.triggerRef}
-      onSearch={() =>
-        window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))
+      sidebar={
+        sidebarless
+          ? undefined
+          : {
+              expanded: sidebar.isMobile ? sidebar.openMobile : sidebar.open,
+              toggle: sidebar.toggleSidebar,
+            }
       }
+      sidebarTriggerRef={sidebar.triggerRef}
+      onSignIn={onSignIn}
+      onSearch={openSearchPalette}
+      searchLabel="Search UIXO"
       adminAction={
         adminMode && adminAction ? (
           <a
@@ -95,6 +110,8 @@ export function DiscoveryControls({
   catalogue = 'websites',
   collectionIndex = false,
   showDiscovery = true,
+  placeholder,
+  commercial,
 }: DiscoveryControlsProps) {
   return (
     <>
@@ -119,17 +136,31 @@ export function DiscoveryControls({
                         : 'Search websites'
                 }
                 placeholder={
-                  collectionIndex
+                  placeholder ??
+                  (collectionIndex
                     ? 'Search collections…'
                     : assetSearch
                       ? 'Search components and icon packs…'
-                      : 'Search by name, tag or use case…'
+                      : 'Search by name, tag or use case…')
                 }
               />
               <kbd>/</kbd>
             </div>
           )}
-          {!collectionIndex && showDiscovery && (
+          {commercial && (
+            <div className="segments prices commercial-filter">
+              <button
+                type="button"
+                className={commercial.value ? 'selected' : ''}
+                aria-pressed={commercial.value}
+                onClick={() => commercial.onChange(!commercial.value)}
+              >
+                {commercial.value && <Check size={14} aria-hidden="true" />}
+                Commercial use allowed
+              </button>
+            </div>
+          )}
+          {!collectionIndex && showDiscovery && !commercial && (
             <ToggleGroup.Root
               className="segments prices"
               type="single"

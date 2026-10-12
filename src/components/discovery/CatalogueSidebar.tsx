@@ -1,27 +1,19 @@
 import {
-  ArrowUpRight,
-  BellRing,
   Blocks,
   Bookmark,
   ChevronDown,
-  Image,
-  LayoutGrid,
+  Globe,
+  House,
   Layers,
-  MousePointerClick,
-  Navigation as NavigationIcon,
-  PanelsTopLeft,
-  Play,
   Plus,
   Shapes,
-  Sparkles,
-  Table2,
   Terminal,
-  TextCursorInput,
   Trash2,
   Type,
   X,
 } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import type { CSSProperties } from 'react';
+import { CATEGORY_HUES } from '../../lib/stage-hue';
 import type { AppSidebarProps } from '../AppSidebar';
 import {
   AnimatedSidebar,
@@ -36,40 +28,30 @@ import { categoryCount, populatedSubs } from '../../lib/filters';
 import { navigateInApp } from '../../lib/navigation';
 import { DEFAULT_LIST_ID } from '../../types';
 
-const COMPONENT_CATEGORY_ICONS = {
-  buttons: MousePointerClick,
-  forms: TextCursorInput,
-  navigation: NavigationIcon,
-  layout: LayoutGrid,
-  overlays: PanelsTopLeft,
-  'data-display': Table2,
-  feedback: BellRing,
-  text: Type,
-  backgrounds: Image,
-  media: Play,
-  motion: Sparkles,
-  other: Shapes,
-} satisfies Record<(typeof COMPONENT_CATEGORIES)[number]['id'], LucideIcon>;
-
 function AssetFilters(props: AppSidebarProps) {
   const { data } = useRegistryData<CatalogueInventory>('inventory');
   const query = props.assetQuery;
   const count = (facet: 'kinds' | 'categories' | 'frameworks', id: string) =>
     data?.[facet]?.find((item) => item.id === id)?.count;
+  const number = (value: number | undefined) => value?.toLocaleString('en-GB');
   const showComponentCategories = !props.assetKind || props.assetKind === 'component';
+  const view = props.assetView ?? 'assets';
   return (
     <>
       <div className="filter-section">
         <h2>Browse</h2>
-        <button
-          className={!props.assetKind && !props.assetCategory ? 'chosen' : ''}
-          onClick={() => props.onChooseAssetView?.('assets')}
-          aria-label="All assets"
+        <a
+          className="filter-link"
+          href="/"
+          onClick={(event) => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            navigateInApp('/');
+          }}
         >
-          <Blocks size={15} />
-          <span>All assets</span>
-          <small>{data?.total}</small>
-        </button>
+          <House size={15} />
+          <span>Home</span>
+        </a>
         {[
           { id: 'component', label: 'Components', icon: Blocks },
           { id: 'icon-pack', label: 'Icon packs', icon: Shapes },
@@ -77,31 +59,54 @@ function AssetFilters(props: AppSidebarProps) {
         ].map(({ id, label, icon: Icon }) => (
           <button
             key={id}
-            className={props.assetKind === id && !props.assetCategory ? 'chosen' : ''}
+            className={
+              view === 'assets' &&
+              !props.assetCategory &&
+              (props.assetKind === id || (id === 'component' && !props.assetKind))
+                ? 'chosen'
+                : ''
+            }
             onClick={() => props.onChooseAssetKind?.(id)}
           >
             <Icon size={15} />
             <span>{label}</span>
-            <small>{count('kinds', id)}</small>
+            <small>{number(count('kinds', id))}</small>
           </button>
         ))}
-        {showComponentCategories &&
-          COMPONENT_CATEGORIES.map((item) => {
-            const Icon = COMPONENT_CATEGORY_ICONS[item.id];
-            return (
-              <button
-                key={item.id}
-                className={props.assetCategory === item.id ? 'chosen' : ''}
-                onClick={() => props.onChooseAssetCategory?.(item.id)}
-              >
-                <Icon className="filter-category-icon" aria-hidden="true" />
-                <span>{item.label}</span>
-                <small>{count('categories', item.id)}</small>
-              </button>
-            );
-          })}
+        <a
+          className="filter-link"
+          href="/browse"
+          onClick={(event) => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            navigateInApp('/browse');
+          }}
+        >
+          <Globe size={15} />
+          <span>Websites and libraries</span>
+        </a>
       </div>
-      <details className="filter-section" open>
+      {showComponentCategories && (
+        <div className="filter-section">
+          <h2>Categories</h2>
+          {COMPONENT_CATEGORIES.map((item) => (
+            <button
+              key={item.id}
+              className={props.assetCategory === item.id ? 'chosen' : ''}
+              onClick={() => props.onChooseAssetCategory?.(item.id)}
+            >
+              <span
+                className="filter-dot"
+                style={{ '--h': CATEGORY_HUES[item.id] ?? 250 } as CSSProperties}
+                aria-hidden="true"
+              />
+              <span>{item.label}</span>
+              <small>{number(count('categories', item.id))}</small>
+            </button>
+          ))}
+        </div>
+      )}
+      <details className="filter-section filter-facets">
         <summary>
           Framework <ChevronDown size={12} />
         </summary>
@@ -127,11 +132,11 @@ function AssetFilters(props: AppSidebarProps) {
                     ? 'HTML / CSS'
                     : id.charAt(0).toUpperCase() + id.slice(1)}
               </span>
-              <small>{count('frameworks', id)}</small>
+              <small>{number(count('frameworks', id))}</small>
             </button>
           ))}
       </details>
-      <details className="filter-section" open>
+      <details className="filter-section filter-facets">
         <summary>
           Source <ChevronDown size={12} />
         </summary>
@@ -149,7 +154,7 @@ function AssetFilters(props: AppSidebarProps) {
           >
             <span className="filter-check" />
             <span>{provider.name}</span>
-            <small>{provider.assetCount}</small>
+            <small>{number(provider.assetCount)}</small>
           </button>
         ))}
       </details>
@@ -220,8 +225,9 @@ export function CatalogueSidebar(props: AppSidebarProps) {
           </div>
         )}
         <div className="filter-section filter-explore">
-          <h2>Your workspace</h2>
+          <h2>Your library</h2>
           <button
+            className={props.onSavedAssets ? 'chosen' : ''}
             onClick={() =>
               props.onShowSavedAssets
                 ? props.onShowSavedAssets()
@@ -229,18 +235,16 @@ export function CatalogueSidebar(props: AppSidebarProps) {
             }
           >
             <Bookmark size={15} />
-            <span>Saved assets</span>
-            <small>{props.savedAssetCount || ''}</small>
-          </button>
-          <button
-            aria-label="Favourite websites"
-            onClick={() => props.onChooseList(DEFAULT_LIST_ID)}
-          >
-            <Bookmark size={15} />
-            <span>Saved resources</span>
+            <span>Saved</span>
+            <small>
+              {(props.savedAssetCount ?? 0) +
+                (props.lists.find((list) => list.id === DEFAULT_LIST_ID)?.resourceIds.length ??
+                  0) || ''}
+            </small>
           </button>
           <button
             aria-label="Asset collections"
+            className={props.assetView === 'collections' ? 'chosen' : ''}
             onClick={() =>
               props.onChooseAssetView
                 ? props.onChooseAssetView('collections')
@@ -250,8 +254,24 @@ export function CatalogueSidebar(props: AppSidebarProps) {
             <Layers size={15} />
             <span>Collections</span>
           </button>
+        </div>
+        <div className="filter-section filter-explore">
+          <h2>For developers</h2>
           <button
-            aria-label="Sources"
+            aria-label="Connect your AI agent"
+            className={props.assetView === 'connect' ? 'chosen' : ''}
+            onClick={() =>
+              props.onChooseAssetView
+                ? props.onChooseAssetView('connect')
+                : navigateInApp('/browse/assets?view=connect')
+            }
+          >
+            <Terminal size={15} />
+            <span>Connect your AI agent</span>
+          </button>
+          <button
+            aria-label="Component sources"
+            className={props.assetView === 'sources' ? 'chosen' : ''}
             onClick={() =>
               props.onChooseAssetView
                 ? props.onChooseAssetView('sources')
@@ -259,16 +279,7 @@ export function CatalogueSidebar(props: AppSidebarProps) {
             }
           >
             <Blocks size={15} />
-            <span>UI libraries</span>
-            <ArrowUpRight size={12} />
-          </button>
-          <button
-            aria-label="Connect your AI agent"
-            onClick={() => navigateInApp('/browse/assets?view=connect')}
-          >
-            <Terminal size={15} />
-            <span>For developers</span>
-            <ArrowUpRight size={12} />
+            <span>Component sources</span>
           </button>
         </div>
         {props.lists.some((list) => list.id !== DEFAULT_LIST_ID) && (
@@ -297,9 +308,16 @@ export function CatalogueSidebar(props: AppSidebarProps) {
               ))}
           </div>
         )}
-        <button className="filter-submit" onClick={props.onSubmit}>
-          <Plus size={15} /> Submit a resource
-        </button>
+        <div className="filter-foot">
+          <button className="filter-submit" onClick={props.onSubmit}>
+            <Plus size={15} /> Submit a resource
+          </button>
+          {props.onSignIn && (
+            <button className="filter-signin" onClick={props.onSignIn}>
+              Sign in
+            </button>
+          )}
+        </div>
       </AnimatedSidebarContent>
     </AnimatedSidebar>
   );

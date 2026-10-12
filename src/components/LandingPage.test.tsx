@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { LandingPage } from './LandingPage';
 
@@ -10,7 +10,7 @@ afterEach(() => {
 });
 
 describe('LandingPage catalogue navigation', () => {
-  it('exposes the same three catalogue destinations as the application shell', () => {
+  it('uses the same Browse, Collections and For developers navigation as the application shell', () => {
     const onBrowse = vi.fn();
     const onAssets = vi.fn();
     const onCollections = vi.fn();
@@ -37,15 +37,13 @@ describe('LandingPage catalogue navigation', () => {
     );
 
     const navigation = screen.getByRole('navigation', { name: 'Main navigation' });
-    const resources = navigation.querySelector('a[href="/browse"]');
-    const components = navigation.querySelector('a[href="/browse/assets"]');
-    const collections = navigation.querySelector('a[href="/collections"]');
+    expect(within(navigation).getByRole('button', { name: 'Browse' })).toBeTruthy();
+    expect(navigation.querySelector('a[href="/collections"]')?.textContent).toBe('Collections');
 
-    expect(resources?.textContent).toBe('Websites');
-    expect(components?.textContent).toBe('Assets');
-    expect(collections?.textContent).toBe('Collections');
-
-    fireEvent.click(components!);
+    fireEvent.click(within(navigation).getByRole('button', { name: 'Browse' }));
+    const menu = screen.getByRole('region', { name: 'Browse UIXO' });
+    expect(menu.querySelector('a[href="/browse"]')).toBeTruthy();
+    fireEvent.click(within(menu).getByRole('link', { name: 'Components' }));
     expect(window.location.pathname).toBe('/browse/assets');
   });
 });

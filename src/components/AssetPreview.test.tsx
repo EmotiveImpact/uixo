@@ -68,7 +68,9 @@ describe('AssetPreview', () => {
     render(<AssetPreview asset={asset({})} />);
     const frame = screen.getByTitle('Live Alert demo') as HTMLIFrameElement;
     expect(frame.style.visibility).toBe('hidden');
-    expect(screen.getByRole('status').textContent).toContain('Loading live demo');
+    // Loading is a wordless skeleton at the stage's final size.
+    expect(document.querySelector('.asset-live-skeleton')).toBeTruthy();
+    expect(screen.queryByText(/Loading/)).toBeNull();
     act(() => vi.advanceTimersByTime(20000));
     expect(screen.getByAltText('Alert captured component preview')).toBeTruthy();
     expect(frame.style.visibility).toBe('hidden');
@@ -88,14 +90,135 @@ describe('AssetPreview', () => {
   it('prefers a reviewed live component over its static capture', () => {
     const { container } = render(<AssetPreview asset={asset({})} />);
 
-    const frame = screen.getByTitle('Live Alert demo');
+    const frame = screen.getByTitle('Live Alert demo') as HTMLIFrameElement;
     expect(frame.getAttribute('sandbox')).toBe('allow-scripts');
-    expect(screen.getByText('Loading preview')).toBeTruthy();
     expect(screen.queryByText('Live · Try it')).toBeNull();
-    fireEvent.load(frame);
+    act(() => {
+      window.dispatchEvent(
+        new MessageEvent('message', {
+          source: frame.contentWindow,
+          data: { type: 'uixo-preview-status', id: 'shadcn/alert', status: 'ready' },
+        }),
+      );
+    });
     expect(screen.getByText('Live · Try it')).toBeTruthy();
     expect(container.querySelector('img')).toBeNull();
     expect(container.querySelector('.is-live-component')).toBeTruthy();
+  });
+
+  it('says Live only after the demo sends its own ready message, never on the load event', () => {
+    render(<AssetPreview asset={asset({})} stage />);
+    const frame = screen.getByTitle('Live Alert demo') as HTMLIFrameElement;
+    fireEvent.load(frame);
+    const viewport = frame.closest('[data-preview-state]')!;
+    expect(viewport.getAttribute('data-preview-state')).toBe('loading');
+    expect(screen.queryByText('Live')).toBeNull();
+    expect(frame.style.visibility).toBe('hidden');
+    act(() => {
+      window.dispatchEvent(
+        new MessageEvent('message', {
+          source: frame.contentWindow,
+          data: { type: 'uixo-preview-status', id: 'shadcn/alert', status: 'ready' },
+        }),
+      );
+    });
+    expect(viewport.getAttribute('data-preview-state')).toBe('ready');
+    expect(screen.getByText('Live')).toBeTruthy();
+    expect(document.querySelector('.asset-live-skeleton')).toBeNull();
+  });
+
+  it('says a card preview is unavailable after 8 seconds, and still recovers on ready', () => {
+    vi.useFakeTimers();
+    render(<AssetPreview asset={asset({ preview: undefined })} stage />);
+    const frame = screen.getByTitle('Live Alert demo') as HTMLIFrameElement;
+    act(() => vi.advanceTimersByTime(7900));
+    expect(screen.queryByText('Preview unavailable')).toBeNull();
+    act(() => vi.advanceTimersByTime(200));
+    expect(screen.getByText('Preview unavailable')).toBeTruthy();
+    expect(screen.getByText('The demo did not load.')).toBeTruthy();
+    act(() => {
+      window.dispatchEvent(
+        new MessageEvent('message', {
+          source: frame.contentWindow,
+          data: { type: 'uixo-preview-status', id: 'shadcn/alert', status: 'ready' },
+        }),
+      );
+    });
+    expect(screen.queryByText('Preview unavailable')).toBeNull();
+    expect(screen.getByText('Live')).toBeTruthy();
+  });
+
+  it('makes a ready card demo one Try stop that Enter goes into and Escape leaves', () => {
+    render(<AssetPreview asset={asset({})} stage />);
+    const frame = screen.getByTitle('Live Alert demo') as HTMLIFrameElement;
+    // The frame never takes a Tab stop of its own on a card.
+    expect(frame.tabIndex).toBe(-1);
+    expect(screen.queryByRole('group', { name: 'Try Alert' })).toBeNull();
+    act(() => {
+      window.dispatchEvent(
+        new MessageEvent('message', {
+          source: frame.contentWindow,
+          data: { type: 'uixo-preview-status', id: 'shadcn/alert', status: 'ready' },
+        }),
+      );
+    });
+    const stop = screen.getByRole('group', { name: 'Try Alert' });
+    expect(stop.tabIndex).toBe(0);
+    const post = vi.spyOn(frame.contentWindow!, 'postMessage');
+    stop.focus();
+    fireEvent.keyDown(stop, { key: 'Enter' });
+    expect(document.activeElement).toBe(frame);
+    expect(post).toHaveBeenCalledWith({ type: 'uixo-preview-enter', id: 'shadcn/alert' }, '*');
+    act(() => {
+      window.dispatchEvent(
+        new MessageEvent('message', {
+          source: frame.contentWindow,
+          data: { type: 'uixo-preview-leave', id: 'shadcn/alert' },
+        }),
+      );
+    });
+    expect(document.activeElement).toBe(stop);
+  });
+
+  it('shows the designed failure state when the demo reports an error', () => {
+    render(<AssetPreview asset={asset({ preview: null })} stage />);
+    const frame = screen.getByTitle('Live Alert demo') as HTMLIFrameElement;
+    act(() => {
+      window.dispatchEvent(
+        new MessageEvent('message', {
+          source: frame.contentWindow,
+          data: { type: 'uixo-preview-status', id: 'shadcn/alert', status: 'error' },
+        }),
+      );
+    });
+    expect(screen.getByText('Preview unavailable')).toBeTruthy();
+    expect(screen.getByRole('link', { name: /Open provider page ↗/ })).toBeTruthy();
+    expect(screen.queryByText('Live')).toBeNull();
+  });
+
+  it('labels a loaded provider embed Preview, not Live, since it cannot confirm it is ready', () => {
+    render(
+      <AssetPreview
+        stage
+        asset={asset({
+          id: 'flowbite-react/accordion',
+          providerId: 'flowbite-react',
+          slug: 'accordion',
+          name: 'Accordion',
+          preview: {
+            kind: 'embed',
+            url: 'https://flowbite-react.com/examples/components.Accordion',
+            label: 'Official Flowbite demo',
+          },
+        })}
+      />,
+    );
+    const frame = screen.getByTitle('Live Accordion demo') as HTMLIFrameElement;
+    expect(screen.queryByText('Preview')).toBeNull();
+    fireEvent.load(frame);
+    expect(screen.getByText('Preview')).toBeTruthy();
+    expect(screen.queryByText('Live')).toBeNull();
+    expect(frame.style.visibility).toBe('visible');
   });
 
   it('runs original provider components instead of screenshots', () => {

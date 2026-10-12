@@ -1,4 +1,5 @@
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
+import type { SearchCorrection, SearchMatch } from '../../shared/search';
 import { auth } from './auth';
 
 /** Browser-only registry contract. Never import the Node registry runtime into the UI. */
@@ -9,6 +10,7 @@ export type AssetRecord = {
   name: string;
   description: string;
   kind: string;
+  category?: string;
   price: string;
   tags: string[];
   sourceUrl: string;
@@ -29,6 +31,7 @@ export type AssetRecord = {
     sourceUrl: string;
     note: string;
     text?: string;
+    attribution?: boolean;
   };
   variants: {
     id: string;
@@ -39,6 +42,7 @@ export type AssetRecord = {
     registryDependencies?: string[];
     peerDependencies?: Record<string, string>;
     sourceRef?: string | null;
+    acquisition?: { kind: string; url?: string; packageName?: string } | null;
   }[];
 };
 export type ProviderRecord = {
@@ -49,7 +53,19 @@ export type ProviderRecord = {
   assetCount: number;
   adapter?: string;
 };
-export type Catalogue = { items: AssetRecord[]; total: number; nextOffset: number | null };
+export type Catalogue = {
+  items: AssetRecord[];
+  total: number;
+  nextOffset: number | null;
+  /**
+   * Set when nothing matched as typed and the results are for a corrected spelling: show
+   * "Showing results for {correction.query}" and offer the original with `exact=true`.
+   * Absent from older registries. See `shared/search.ts`.
+   */
+  correction?: SearchCorrection | null;
+  /** "any-term" when nothing matched every term and results match some of them. */
+  match?: SearchMatch;
+};
 export type InventoryBucket = { id: string; count: number };
 export type CatalogueInventory = {
   total: number;
@@ -74,6 +90,8 @@ export type Acquisition = {
   message: string;
   url: string;
   command: { executable: string; arguments: string[] } | null;
+  /** The same command as shell text, from the shared builder in `shared/install-command.ts`. */
+  commandText?: string | null;
   executed: boolean;
 };
 export const ASSET_PATH = '/browse/assets';
@@ -86,7 +104,10 @@ export type AssetQuery = {
   framework: string;
   format: string;
   commercial: boolean;
+  /** Search exactly as typed, without the spelling correction. */
+  exact: boolean;
   price: string;
+  sort: '' | 'newest' | 'name';
   offset: number;
   view:
     | 'assets'
@@ -104,6 +125,8 @@ export type AssetQuery = {
   id: string;
   collection: string;
   candidate: string;
+  /** The Saved page's tab: components (default) or websites. */
+  tab: '' | 'websites';
 };
 export const EMPTY_ASSET_QUERY: AssetQuery = {
   q: '',
@@ -113,12 +136,15 @@ export const EMPTY_ASSET_QUERY: AssetQuery = {
   framework: '',
   format: '',
   commercial: false,
+  exact: false,
   price: '',
+  sort: '',
   offset: 0,
   view: 'assets',
   id: '',
   collection: '',
   candidate: '',
+  tab: '',
 };
 const valid = (value: string | null, options: string[]) =>
   value && options.includes(value) ? value : '';
@@ -139,7 +165,9 @@ export function readAssetQuery(search: string): AssetQuery {
     framework: valid(p.get('framework'), ['react', 'vue', 'html', 'agnostic']),
     format: valid(p.get('format'), ['tsx', 'jsx', 'svg', 'css', 'woff2']),
     commercial: p.get('commercial') === 'true',
+    exact: p.get('exact') === 'true',
     price: valid(p.get('price'), ['free', 'paid', 'unknown']),
+    sort: valid(p.get('sort'), ['newest', 'name']) as AssetQuery['sort'],
     offset: Number.isSafeInteger(offset) && offset >= 0 && offset <= 100000 ? offset : 0,
     view: (valid(p.get('view'), [
       'assets',
@@ -159,6 +187,7 @@ export function readAssetQuery(search: string): AssetQuery {
       ? p.get('collection')!
       : '',
     candidate: /^[a-f0-9-]{36}$/.test(p.get('candidate') ?? '') ? p.get('candidate')! : '',
+    tab: p.get('tab') === 'websites' ? 'websites' : '',
     id:
       /^[a-z0-9][a-z0-9._/-]{0,179}$/.test(p.get('id') ?? '') && !p.get('id')!.includes('..')
         ? p.get('id')!
@@ -193,7 +222,7 @@ export function catalogueResult(value: unknown): Catalogue {
     (result.nextOffset !== null && !Number.isSafeInteger(result.nextOffset))
   ) {
     throw new Error(
-      'The registry returned an invalid catalogue. This is a service problem, not an empty library.',
+      'The catalogue API returned an invalid list. This is a service problem, not an empty library.',
     );
   }
   for (const item of result.items) {
@@ -204,7 +233,7 @@ export function catalogueResult(value: unknown): Catalogue {
       !Array.isArray(item.variants) ||
       !item.licence
     )
-      throw new Error('An asset record is incomplete. Please report this registry response.');
+      throw new Error('A component record is incomplete. Please report this catalogue response.');
   }
   return result as Catalogue;
 }
@@ -229,7 +258,7 @@ export function inventoryResult(value: unknown): CatalogueInventory {
         ),
     )
   )
-    throw new Error('The registry returned invalid inventory metadata.');
+    throw new Error('The catalogue API returned invalid inventory metadata.');
   return result as CatalogueInventory;
 }
 export async function registryRequest<T>(
@@ -256,17 +285,17 @@ export async function registryRequest<T>(
   const isJson = response.headers.get('content-type')?.includes('application/json');
   if (!isJson)
     throw new Error(
-      `The registry API returned ${response.status} without JSON. Check that the API is running and that the deployment routes /api/registry to its function.`,
+      `The catalogue API returned ${response.status} without JSON. Check that the API is running and that the deployment routes /api/registry to its function.`,
     );
   let result: T & { error?: { code?: string; message?: string } };
   try {
     result = await response.json();
   } catch {
-    throw new Error('The registry returned invalid JSON. Check the API runtime.');
+    throw new Error('The catalogue API returned invalid JSON. Check the API runtime.');
   }
   if (!result || typeof result !== 'object')
-    throw new Error('The registry returned an invalid response.');
+    throw new Error('The catalogue API returned an invalid response.');
   if (!response.ok || result.error)
-    throw new Error(result.error?.message ?? `Registry request failed (${response.status}).`);
+    throw new Error(result.error?.message ?? `Catalogue request failed (${response.status}).`);
   return result;
 }

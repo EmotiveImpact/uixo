@@ -2,6 +2,7 @@ import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { AnimatedSidebarProvider } from './motion/animated-sidebar';
 import { AppSidebar } from './AppSidebar';
+import { CATEGORY_HUES } from '../lib/stage-hue';
 
 beforeEach(() => {
   vi.stubGlobal(
@@ -116,11 +117,16 @@ describe('AppSidebar catalogue context', () => {
     expect(screen.queryByRole('button', { name: 'Buttons' })).toBeNull();
   });
 
-  it('uses meaningful icons for component categories in the public asset sidebar', () => {
+  it('marks each component category with the hue of its card stage', () => {
     renderSidebar(true, false, true, 'component');
 
     const overlays = screen.getByRole('button', { name: 'Overlays' });
-    expect(overlays.querySelector('svg.filter-category-icon')).toBeTruthy();
-    expect(overlays.querySelector('.filter-dot')).toBeNull();
+    const dot = overlays.querySelector<HTMLElement>('.filter-dot');
+    expect(dot?.getAttribute('aria-hidden')).toBe('true');
+    expect(dot?.style.getPropertyValue('--h')).toBe(String(CATEGORY_HUES.overlays));
+    const forms = screen.getByRole('button', { name: 'Forms' });
+    expect(forms.querySelector<HTMLElement>('.filter-dot')?.style.getPropertyValue('--h')).toBe(
+      String(CATEGORY_HUES.forms),
+    );
   });
 });
