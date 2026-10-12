@@ -30,6 +30,9 @@
   --g-text-3: #9a9aa2;
   --g-line: rgb(255 255 255 / 0.075);
   --g-accent: #8b7dff;
+  /* Fields carry a 3:1 edge; the violet marks what is chosen where the fill alone would not. */
+  --g-field-edge: #7a7a84;
+  --g-chosen: var(--g-accent);
   --g-glow: linear-gradient(90deg, #6d5dfc, #3b82f6 45%, #c084fc);
   --g-success: #4ade80;
   --g-invert-bg: #ededef;
@@ -70,6 +73,8 @@
   --g-text-3: #5e5e66;
   --g-line: rgb(0 0 0 / 0.08);
   --g-accent: #5b4cf0;
+  --g-field-edge: #76767f;
+  --g-chosen: var(--g-accent);
   --g-success: #166534;
   --g-invert-bg: #0a0a0a;
   --g-invert-text: #ffffff;
@@ -237,7 +242,7 @@
   background: var(--g-well);
   color: var(--g-text-3);
   font: 400 14px/1 var(--g-sans);
-  box-shadow: none;
+  box-shadow: inset 0 0 0 1px var(--g-field-edge);
   transition:
     background 0.14s var(--g-ease),
     color 0.14s var(--g-ease);
@@ -296,20 +301,22 @@
   color: var(--g-text);
 }
 
+/* Sign in is a quiet text button, so the page's one strong control stays the search. */
 :is(:root, :root.light) .discovery-header :is(.header-signin, .signin-button) {
   height: 40px;
-  margin-left: 6px;
-  padding: 0 18px;
+  margin-left: 2px;
+  padding: 0 14px;
   border: 0;
   border-radius: 999px;
-  background: var(--g-invert-bg);
-  color: var(--g-invert-text);
-  font: 500 13px/16px var(--g-sans);
+  background: transparent;
+  color: var(--g-text);
+  font: 500 14px/16px var(--g-sans);
   box-shadow: none;
+  transition: background 0.14s var(--g-ease);
 }
 
 :is(:root, :root.light) .discovery-header :is(.header-signin, .signin-button):hover {
-  opacity: 0.88;
+  background: var(--g-well);
 }
 
 :is(:root, :root.light) .discovery-header :focus-visible,
@@ -366,6 +373,7 @@
     background: transparent;
     color: var(--g-text-2);
     backdrop-filter: none;
+    box-shadow: none;
   }
 
   :is(:root, :root.light) .discovery-header .header-search span,
@@ -428,7 +436,7 @@
   display: block;
   min-width: 0;
   margin: 0;
-  padding: 8px;
+  padding: 6px;
   border: 0;
   border-radius: 18px;
   background: var(--g-tile);
@@ -690,6 +698,63 @@
   box-shadow: 0 0 0 3px rgb(74 222 128 / 0.2);
 }
 
+/* Try: the stage is one keyboard stop. Focus shows how to go in, and how to come back out. */
+:is(:root, :root.light) .g-stage .asset-live-viewport.is-try:focus-visible {
+  outline: 2px solid var(--g-accent);
+  outline-offset: -2px;
+  border-radius: 12px;
+}
+
+.g-try {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  z-index: 4;
+  transform: translateX(-50%);
+  display: none;
+  align-items: center;
+  gap: 8px;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--g-glass);
+  color: var(--g-glass-text);
+  font: 500 12px/1 var(--g-sans);
+  white-space: nowrap;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.g-try kbd {
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 6px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px currentColor;
+  background: transparent;
+  color: inherit;
+  font: 500 11px/1 var(--g-mono);
+}
+
+.asset-live-viewport.is-try:focus-visible .g-try,
+.asset-live-viewport.is-inside .g-try {
+  display: inline-flex;
+}
+
+/* A framed provider page sits lower on the stage; its cue sits on the window. */
+:is(:root, :root.light) .g-stage .is-framed .g-try {
+  bottom: 26px;
+}
+
+:is(:root, :root.light) .g-stage .asset-library-no-preview-reason {
+  max-width: 260px;
+  font: 400 13px/18px var(--g-sans);
+  color: var(--g-glass-text);
+  opacity: 0.8;
+}
+
 /* Save: a glass icon button on the stage's top right, always visible. The button is a
    44px target; the 34px glass disc is drawn inside it. */
 :is(:root, :root.light) .g-save {
@@ -908,9 +973,36 @@
   text-overflow: ellipsis;
 }
 
+/* The verb at the end of the row: always visible, so the row reads as something to take. */
+.g-cmd-verb {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font: 500 12px/16px var(--g-sans);
+  color: var(--g-text-2);
+}
+
 .g-cmd svg {
   flex: none;
-  opacity: 0.75;
+}
+
+.g-cmd:is(:hover, :focus-visible) .g-cmd-verb {
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .g-cmd[data-state='copied'] .g-cmd-verb {
+  color: inherit;
+}
+
+/* No command to copy: a plain link to the source, in the sans face and with no prompt. */
+:is(:root, :root.light) .g-cmd.is-open {
+  font: 500 13px/16px var(--g-sans);
+  color: var(--g-text-2);
+}
+
+:is(:root, :root.light) .g-cmd.is-open:is(:hover, :focus-visible) {
+  color: var(--g-text);
 }
 
 .g-cmd-prompt {
@@ -928,10 +1020,6 @@
   color: var(--g-text);
 }
 
-.g-cmd:hover svg {
-  opacity: 1;
-}
-
 /* Pressed: a faint band behind the row and the text gives a little. */
 :is(:root, :root.light) .g-cmd:active,
 :is(:root, :root.light) .g-visit:active {
@@ -942,7 +1030,8 @@
   transform: translateY(0.5px);
 }
 
-:is(:root, :root.light) .g-cmd[data-state='copied'] {
+/* Copied wins over hover, so the confirmation shows under the pointer that clicked. */
+:is(:root, :root.light) .g-card .g-cmd[data-state='copied'] {
   color: var(--g-success);
 }
 
@@ -1272,10 +1361,26 @@
   .discovery-sidebar
   .filter-section
   button:is(.chosen, [aria-pressed='true']) {
+  position: relative;
   background: var(--g-well);
   color: var(--g-text);
   font-weight: 500;
   box-shadow: var(--g-hi);
+}
+
+/* The chosen row's fill is close to the page, so a violet bar marks it as well. */
+:is(:root, :root.light)
+  .discovery-sidebar
+  .filter-section
+  button:is(.chosen, [aria-pressed='true'])::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--g-chosen);
 }
 
 :is(:root, :root.light) .discovery-sidebar .filter-section button.chosen > svg {
@@ -1400,7 +1505,7 @@
   border-radius: 999px;
   background: var(--g-well);
   color: var(--g-text-3);
-  box-shadow: none;
+  box-shadow: inset 0 0 0 1px var(--g-field-edge);
 }
 
 :is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .search-wrap:focus-within {
@@ -1570,6 +1675,7 @@
   button[aria-pressed='true'] {
   background: var(--g-well-2);
   color: var(--g-text);
+  box-shadow: inset 3px 0 0 var(--g-chosen);
 }
 
 /* Result row */

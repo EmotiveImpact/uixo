@@ -1,4 +1,4 @@
-import { ArrowUpRight, Bookmark, Check, Copy, Globe } from 'lucide-react';
+import { ArrowUpRight, Bookmark, Check, Globe } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { registryRequest, safeAssetUrl } from '../lib/asset-library';
 import type { Acquisition, AssetRecord } from '../lib/asset-library';
@@ -13,9 +13,9 @@ import {
 const COPIED_FOR = 1600;
 
 /**
- * Row three of a card: a quiet mono install line that copies the real command, which
- * comes from the registry's `resolve` request. Components without an install route
- * link to their code instead.
+ * Row three of a card: the install command in quiet mono, ending in a visible "Copy".
+ * The copied text is the real command from the registry's `resolve` request. Components
+ * without an install route say "Open code" and link to their source instead.
  */
 export function InstallLine({ asset }: { asset: AssetRecord }) {
   const [state, setState] = useState<'idle' | 'copying' | 'copied' | 'failed'>('idle');
@@ -31,22 +31,19 @@ export function InstallLine({ asset }: { asset: AssetRecord }) {
     if (!href) return null;
     const label =
       asset.kind === 'component'
-        ? 'View code'
+        ? 'Open code'
         : asset.kind === 'icon-pack'
           ? 'Browse icon pack'
           : 'Open the original';
     return (
       <a
-        className="g-cmd"
+        className="g-cmd is-open"
         href={href}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`${label} for ${asset.name} (opens in a new tab)`}
       >
-        <code>
-          {asset.kind === 'component' && <span className="g-cmd-prompt">&lt;/&gt; </span>}
-          {label} ↗
-        </code>
+        <span className="g-cmd-text">{label} ↗</span>
       </a>
     );
   }
@@ -91,9 +88,7 @@ export function InstallLine({ asset }: { asset: AssetRecord }) {
         title={`Copy: ${preview}`}
       >
         <code>
-          {state === 'copied' ? (
-            'Copied'
-          ) : state === 'failed' ? (
+          {state === 'failed' ? (
             'Could not copy, open the component for its source'
           ) : (
             <>
@@ -102,10 +97,16 @@ export function InstallLine({ asset }: { asset: AssetRecord }) {
             </>
           )}
         </code>
-        {state === 'copied' ? (
-          <Check size={14} aria-hidden="true" />
-        ) : (
-          <Copy size={14} aria-hidden="true" />
+        {state !== 'failed' && (
+          <span className="g-cmd-verb" aria-hidden="true">
+            {state === 'copied' ? (
+              <>
+                Copied <Check size={14} />
+              </>
+            ) : (
+              'Copy'
+            )}
+          </span>
         )}
       </button>
       <span className="sr-only" aria-live="polite">

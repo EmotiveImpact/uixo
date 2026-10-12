@@ -1,0 +1,146 @@
+[
+  {
+    "id": "magic-ui/shimmer-button",
+    "name": "Shimmer Button",
+    "provider": "Magic UI",
+    "file": "magic-ui--shimmer-button"
+  },
+  {
+    "id": "magic-ui/word-rotate",
+    "name": "Word Rotate",
+    "provider": "Magic UI",
+    "file": "magic-ui--word-rotate"
+  },
+  {
+    "id": "magic-ui/dock",
+    "name": "Dock",
+    "provider": "Magic UI",
+    "file": "magic-ui--dock"
+  },
+  {
+    "id": "motion-primitives/text-effect",
+    "name": "Text Effect",
+    "provider": "Motion Primitives",
+    "file": "motion-primitives--text-effect"
+  },
+  {
+    "id": "shadcn/switch",
+    "name": "Switch",
+    "provider": "shadcn/ui",
+    "file": "shadcn--switch"
+  },
+  {
+    "id": "magic-ui/aurora-text",
+    "name": "Aurora Text",
+    "provider": "Magic UI",
+    "file": "magic-ui--aurora-text"
+  },
+  {
+    "id": "shadcn/input-otp",
+    "name": "Input Otp",
+    "provider": "shadcn/ui",
+    "file": "shadcn--input-otp"
+  },
+  {
+    "id": "magic-ui/animated-subscribe-button",
+    "name": "Animated Subscribe Button",
+    "provider": "Magic UI",
+    "file": "magic-ui--animated-subscribe-button"
+  },
+  {
+    "id": "shadcn/slider",
+    "name": "Slider",
+    "provider": "shadcn/ui",
+    "file": "shadcn--slider"
+  },
+  {
+    "id": "magic-ui/number-ticker",
+    "name": "Number Ticker",
+    "provider": "Magic UI",
+    "file": "magic-ui--number-ticker"
+  },
+  {
+    "id": "shadcn/button",
+    "name": "Button",
+    "provider": "shadcn/ui",
+    "file": "shadcn--button"
+  },
+  {
+    "id": "motion-primitives/text-shimmer",
+    "name": "Text Shimmer",
+    "provider": "Motion Primitives",
+    "file": "motion-primitives--text-shimmer"
+  },
+  {
+    "id": "magic-ui/rainbow-button",
+    "name": "Rainbow Button",
+    "provider": "Magic UI",
+    "file": "magic-ui--rainbow-button"
+  },
+  {
+    "id": "magic-ui/hyper-text",
+    "name": "Hyper Text",
+    "provider": "Magic UI",
+    "file": "magic-ui--hyper-text"
+  },
+  {
+    "id": "magic-ui/pulsating-button",
+    "name": "Pulsating Button",
+    "provider": "Magic UI",
+    "file": "magic-ui--pulsating-button"
+  },
+  {
+    "id": "shadcn/progress",
+    "name": "Progress",
+    "provider": "shadcn/ui",
+    "file": "shadcn--progress"
+  },
+  {
+    "id": "motion-primitives/sliding-number",
+    "name": "Sliding Number",
+    "provider": "Motion Primitives",
+    "file": "motion-primitives--sliding-number"
+  },
+  {
+    "id": "shadcn/badge",
+    "name": "Badge",
+    "provider": "shadcn/ui",
+    "file": "shadcn--badge"
+  },
+  {
+    "id": "magic-ui/interactive-hover-button",
+    "name": "Interactive Hover Button",
+    "provider": "Magic UI",
+    "file": "magic-ui--interactive-hover-button"
+  },
+  {
+    "id": "shadcn/toggle-group",
+    "name": "Toggle Group",
+    "provider": "shadcn/ui",
+    "file": "shadcn--toggle-group"
+  },
+  {
+    "id": "magic-ui/typing-animation",
+    "name": "Typing Animation",
+    "provider": "Magic UI",
+    "file": "magic-ui--typing-animation"
+  },
+  {
+    "id": "motion-primitives/text-scramble",
+    "name": "Text Scramble",
+    "provider": "Motion Primitives",
+    "file": "motion-primitives--text-scramble"
+  },
+  {
+    "id": "motion-primitives/text-roll",
+    "name": "Text Roll",
+    "provider": "Motion Primitives",
+    "file": "motion-primitives--text-roll"
+  },
+  {
+    "id": "magic-ui/ripple",
+    "name": "Ripple",
+    "provider": "Magic UI",
+    "file": "magic-ui--ripple"
+  }
+]

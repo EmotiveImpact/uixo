@@ -3,7 +3,7 @@ import { Tooltip } from 'radix-ui';
 import React, { Component, Suspense, lazy, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import manifest from './manifest.json';
-import { reportContentSize } from '../shared/preview-stage';
+import { handleStageFocus, reportContentSize } from '../shared/preview-stage';
 import { customisableDemo, sanitiseDemoProps } from '../shared/demo-props';
 import './styles.css';
 const files = import.meta.glob(['./vendor/**/*.tsx', './vendor/**/*.jsx', './examples/*.tsx']);
@@ -21,6 +21,7 @@ setTheme(params.get('theme') === 'light' ? 'light' : 'dark');
 // stays transparent and reports its content box so the card can frame it.
 const clearStage = params.get('stage') === 'clear';
 if (clearStage) document.documentElement.dataset.stage = 'clear';
+if (clearStage) handleStageFocus(id);
 // Lets the harness style a demo's stage without touching the provider's source.
 document.documentElement.dataset.demo = id;
 window.addEventListener('message', (event) => {

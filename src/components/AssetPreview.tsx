@@ -1,5 +1,6 @@
 import { reviewedPreviewPath } from '../../shared/reviewed-previews';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
+import type { FocusEvent, KeyboardEvent } from 'react';
 import type { CollectionAssetPreview } from '../../shared/intelligence';
 import { assetHref, readAssetQuery, safeAssetUrl } from '../lib/asset-library';
 import { assetDestinationUrl } from '../lib/asset-destination';
@@ -65,11 +66,16 @@ function officialEmbedUrl(asset: CollectionAssetPreview): string | undefined {
   return undefined;
 }
 
+/** A card waits this long for a demo before saying it is unavailable; the detail page waits longer. */
+const CARD_PREVIEW_WAIT = 8000;
+const DETAIL_PREVIEW_WAIT = 20000;
+
 /** The designed failure state: what happened, and where to see the component instead. */
-function PreviewUnavailable({ asset }: { asset: CollectionAssetPreview }) {
+function PreviewUnavailable({ asset, reason }: { asset: CollectionAssetPreview; reason?: string }) {
   return (
     <div className="asset-library-no-preview">
       <strong>Preview unavailable</strong>
+      {reason && <span className="asset-library-no-preview-reason">{reason}</span>}
       <a href={assetDestinationUrl(asset)} target="_blank" rel="noopener noreferrer">
         Open provider page ↗
       </a>
@@ -117,6 +123,10 @@ function LivePreview({
   );
   const theme = themeOverride ?? pageTheme;
   const propsRef = useRef(demoProps);
+  // A card's frame is one "Try" stop: Enter goes into the demo, Escape comes back out.
+  const card = stage && !detail;
+  const [entered, setEntered] = useState(false);
+  const hintId = useId();
 
   useEffect(() => {
     const element = viewport.current;
@@ -195,22 +205,37 @@ function LivePreview({
       const box = event.data.box;
       if ([box.x, box.y, box.width, box.height].every(Number.isFinite)) setContentBox(box);
     };
+    const leave = (event: MessageEvent) => {
+      if (
+        !card ||
+        event.source !== frame.current?.contentWindow ||
+        event.data?.type !== 'uixo-preview-leave' ||
+        event.data.id !== asset.id
+      )
+        return;
+      viewport.current?.focus();
+    };
     window.addEventListener('message', measure);
     window.addEventListener('message', receive);
     window.addEventListener('message', propsReady);
+    window.addEventListener('message', leave);
     return () => {
       window.removeEventListener('message', receive);
       window.removeEventListener('message', measure);
       window.removeEventListener('message', propsReady);
+      window.removeEventListener('message', leave);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [asset.id, external, stage]);
+  }, [asset.id, external, stage, card]);
 
   useEffect(() => {
     if (!visible || status !== 'loading') return;
-    const timeout = window.setTimeout(() => setStatus('error'), 20000);
+    const timeout = window.setTimeout(
+      () => setStatus('error'),
+      detail ? DETAIL_PREVIEW_WAIT : CARD_PREVIEW_WAIT,
+    );
     return () => window.clearTimeout(timeout);
-  }, [visible, status]);
+  }, [visible, status, detail]);
 
   // UIAble demos are complete responsive pages whose examples sit flush against
   // the page's leading edge. Give those pages a compact viewport and a small
@@ -227,6 +252,13 @@ function LivePreview({
   // A detail stage sizes its frame like a card does; the plain detail fills its box.
   const sized = !detail || stage;
   const showFallbackImage = status === 'error' && fallbackImageUrl && !fallbackFailed;
+  const tryable = card && (status === 'ready' || status === 'embedded');
+  const enter = () => {
+    frame.current?.focus();
+    if (!external)
+      frame.current?.contentWindow?.postMessage({ type: 'uixo-preview-enter', id: asset.id }, '*');
+    setEntered(true);
+  };
 
   return (
     <div
@@ -236,7 +268,24 @@ function LivePreview({
       data-stage-fit={stage ? (scale > baseScale ? 'zoomed' : 'canvas') : undefined}
       className={`asset-live-viewport ${detail ? 'is-detail' : ''} ${
         showFallbackImage ? 'has-captured-fallback' : ''
-      } ${framed ? 'is-framed' : ''}`}
+      } ${framed ? 'is-framed' : ''} ${tryable ? 'is-try' : ''} ${entered ? 'is-inside' : ''}`}
+      {...(tryable
+        ? {
+            tabIndex: 0,
+            role: 'group',
+            'aria-label': `Try ${asset.name}`,
+            'aria-describedby': hintId,
+            onKeyDown: (event: KeyboardEvent<HTMLDivElement>) => {
+              if (event.target !== event.currentTarget) return;
+              if (event.key !== 'Enter' && event.key !== ' ') return;
+              event.preventDefault();
+              enter();
+            },
+            onBlur: (event: FocusEvent<HTMLDivElement>) => {
+              if (event.target === frame.current) setEntered(false);
+            },
+          }
+        : {})}
     >
       {visible && (
         <iframe
@@ -244,6 +293,7 @@ function LivePreview({
           title={`Live ${asset.name} demo`}
           src={src}
           sandbox={external ? 'allow-scripts allow-same-origin' : 'allow-scripts'}
+          tabIndex={card ? -1 : undefined}
           referrerPolicy="no-referrer"
           style={{
             colorScheme: theme,
@@ -308,7 +358,27 @@ function LivePreview({
           </a>
         ))}
       {status === 'error' && (!fallbackImageUrl || fallbackFailed) && (
-        <PreviewUnavailable asset={asset} />
+        <PreviewUnavailable asset={asset} reason="The demo did not load." />
+      )}
+      {tryable && (
+        <>
+          <span className="g-try" aria-hidden="true">
+            {entered && !external ? (
+              <>
+                <kbd>Esc</kbd> to leave
+              </>
+            ) : (
+              <>
+                Try it <kbd>Enter</kbd>
+              </>
+            )}
+          </span>
+          <span id={hintId} className="sr-only">
+            {external
+              ? 'Press Enter to use the demo, and Tab to move on.'
+              : 'Press Enter to use the demo, and Escape to leave it.'}
+          </span>
+        </>
       )}
       {stage
         ? (status === 'ready' || status === 'embedded' || showFallbackImage) && (

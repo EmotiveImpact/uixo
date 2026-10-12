@@ -64,3 +64,10 @@ it('labels a commercially licensed component Free', () => {
   expect(screen.getByText('Free')).toBeTruthy();
   expect(screen.queryByText('Licence unknown')).toBeNull();
 });
+
+it('links a component with no install command to its code, without a prompt glyph', () => {
+  card('allowed');
+  const link = screen.getByRole('link', { name: /Open code for ART\+TECH download CTA/ });
+  expect(link.textContent).toBe('Open code ↗');
+  expect(link.getAttribute('href')).toBe('https://github.com/example/simply-buttons');
+});

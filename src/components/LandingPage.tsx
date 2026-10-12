@@ -321,6 +321,11 @@ export function LandingPage({
     sort: 'newest',
     limit: '1',
   });
+  const { data: commercial } = useRegistryData<Catalogue>('search', {
+    kind: 'component',
+    commercial: 'true',
+    limit: '1',
+  });
   const { data: rawInventory } = useRegistryData<unknown>('inventory');
   let categoryCounts: Record<string, number> = {};
   try {
@@ -350,12 +355,7 @@ export function LandingPage({
   };
   const go = (event: MouseEvent<HTMLAnchorElement>, href: string) =>
     follow(event, () => navigateInApp(href));
-  const popular: [string, string][] = [
-    ['Buttons', `${hrefs.assets}?category=buttons&kind=component`],
-    ['Text effects', `${hrefs.assets}?category=text&kind=component`],
-    ['Backgrounds', `${hrefs.assets}?category=backgrounds&kind=component`],
-    ['Calendars', `${hrefs.assets}?q=calendar`],
-  ];
+  const connectHref = `${hrefs.assets}?view=connect`;
   const current = SHELVES.find((item) => item.id === shelf) ?? SHELVES[0];
   const shelfHref =
     shelf === 'featured'
@@ -380,7 +380,7 @@ export function LandingPage({
       />
       <main>
         <section className="hm-hero" aria-labelledby="home-title">
-          <HeroWall />
+          <HeroWall href={links.href} onOpen={go} />
           {newest && (
             <a
               className="hm-newpill"
@@ -409,8 +409,8 @@ export function LandingPage({
             <br className="hm-br" /> to try, copy and ship.
           </h1>
           <p className="hm-lede">
-            Hundreds run live right here on the page, with the install command or the source one
-            click away.
+            Try each one live, copy its exact install, and see up front whether you can use it in
+            paid work.
           </p>
           <form
             className="hm-search"
@@ -437,24 +437,19 @@ export function LandingPage({
               <ArrowRight size={18} aria-hidden="true" />
             </button>
           </form>
-          <nav className="hm-popular" aria-label="Popular searches">
-            <span>Popular</span>
-            {popular.map(([label, href]) => (
-              <a key={label} href={href} onClick={(event) => go(event, href)}>
-                {label}
-              </a>
-            ))}
-          </nav>
-          {libraries > 0 && categories.length > 0 && (
+          {libraries > 0 && (
             <p className="hm-trust">
-              <span>
-                <i className="hm-pulse" aria-hidden="true" />
-                {libraries} libraries
-              </span>
+              <span>{libraries} libraries</span>
+              {commercial && (
+                <>
+                  <i className="hm-dot" aria-hidden="true" />
+                  <span>{commercial.total.toLocaleString('en-GB')} cleared for commercial use</span>
+                </>
+              )}
               <i className="hm-dot" aria-hidden="true" />
-              <span>{categories.length} categories</span>
-              <i className="hm-dot" aria-hidden="true" />
-              <span>An MCP server for your AI agent</span>
+              <a href={connectHref} onClick={(event) => go(event, connectHref)}>
+                Works with Claude Code, Cursor, VS Code and Windsurf
+              </a>
             </p>
           )}
         </section>

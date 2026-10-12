@@ -127,6 +127,59 @@ describe('AssetPreview', () => {
     expect(document.querySelector('.asset-live-skeleton')).toBeNull();
   });
 
+  it('says a card preview is unavailable after 8 seconds, and still recovers on ready', () => {
+    vi.useFakeTimers();
+    render(<AssetPreview asset={asset({ preview: undefined })} stage />);
+    const frame = screen.getByTitle('Live Alert demo') as HTMLIFrameElement;
+    act(() => vi.advanceTimersByTime(7900));
+    expect(screen.queryByText('Preview unavailable')).toBeNull();
+    act(() => vi.advanceTimersByTime(200));
+    expect(screen.getByText('Preview unavailable')).toBeTruthy();
+    expect(screen.getByText('The demo did not load.')).toBeTruthy();
+    act(() => {
+      window.dispatchEvent(
+        new MessageEvent('message', {
+          source: frame.contentWindow,
+          data: { type: 'uixo-preview-status', id: 'shadcn/alert', status: 'ready' },
+        }),
+      );
+    });
+    expect(screen.queryByText('Preview unavailable')).toBeNull();
+    expect(screen.getByText('Live')).toBeTruthy();
+  });
+
+  it('makes a ready card demo one Try stop that Enter goes into and Escape leaves', () => {
+    render(<AssetPreview asset={asset({})} stage />);
+    const frame = screen.getByTitle('Live Alert demo') as HTMLIFrameElement;
+    // The frame never takes a Tab stop of its own on a card.
+    expect(frame.tabIndex).toBe(-1);
+    expect(screen.queryByRole('group', { name: 'Try Alert' })).toBeNull();
+    act(() => {
+      window.dispatchEvent(
+        new MessageEvent('message', {
+          source: frame.contentWindow,
+          data: { type: 'uixo-preview-status', id: 'shadcn/alert', status: 'ready' },
+        }),
+      );
+    });
+    const stop = screen.getByRole('group', { name: 'Try Alert' });
+    expect(stop.tabIndex).toBe(0);
+    const post = vi.spyOn(frame.contentWindow!, 'postMessage');
+    stop.focus();
+    fireEvent.keyDown(stop, { key: 'Enter' });
+    expect(document.activeElement).toBe(frame);
+    expect(post).toHaveBeenCalledWith({ type: 'uixo-preview-enter', id: 'shadcn/alert' }, '*');
+    act(() => {
+      window.dispatchEvent(
+        new MessageEvent('message', {
+          source: frame.contentWindow,
+          data: { type: 'uixo-preview-leave', id: 'shadcn/alert' },
+        }),
+      );
+    });
+    expect(document.activeElement).toBe(stop);
+  });
+
   it('shows the designed failure state when the demo reports an error', () => {
     render(<AssetPreview asset={asset({ preview: null })} stage />);
     const frame = screen.getByTitle('Live Alert demo') as HTMLIFrameElement;

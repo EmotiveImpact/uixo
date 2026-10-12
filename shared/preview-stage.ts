@@ -157,6 +157,38 @@ export function reportContentSize(id: string, root: () => Element | null): () =>
   };
 }
 
+/** A card stage asks its demo to take focus, or the demo tells the card it was left. */
+export type PreviewFocusMessage =
+  { type: 'uixo-preview-enter'; id: string } | { type: 'uixo-preview-leave'; id: string };
+
+const TABBABLE =
+  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]), [contenteditable="true"]';
+
+/**
+ * On a card stage the frame is one "Try" stop. Enter on the card sends `uixo-preview-enter`
+ * and the demo focuses its first control; Escape inside the demo, when the demo does not
+ * use it itself, sends `uixo-preview-leave` so the card takes focus back.
+ */
+export function handleStageFocus(id: string): () => void {
+  const receive = (event: MessageEvent) => {
+    if (event.source !== parent || event.data?.type !== 'uixo-preview-enter') return;
+    const first = document.querySelector<HTMLElement>(TABBABLE);
+    if (first) first.focus();
+    else document.body.focus();
+  };
+  const keydown = (event: KeyboardEvent) => {
+    if (event.key !== 'Escape' || event.defaultPrevented) return;
+    const message: PreviewFocusMessage = { type: 'uixo-preview-leave', id };
+    parent.postMessage(message, '*');
+  };
+  window.addEventListener('message', receive);
+  window.addEventListener('keydown', keydown);
+  return () => {
+    window.removeEventListener('message', receive);
+    window.removeEventListener('keydown', keydown);
+  };
+}
+
 /** On a card stage, small components grow to fill about this share of the stage. */
 export const STAGE_FILL_WIDTH = 0.62;
 const STAGE_FILL_HEIGHT = 0.72;
