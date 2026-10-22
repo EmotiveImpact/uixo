@@ -138,7 +138,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: intelligence-browser-${{ github.run_id }}
-          path: |
-            test-results/intelligence
-            test-results/redesign
+          path: test-results/intelligence
           retention-days: 7
