@@ -1,4 +1,5 @@
 import { useSidebarPreference } from './hooks/useSidebarPreference';
+import { useDocumentTitle } from './hooks/useDocumentTitle';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   AnimatedSidebarInset,
@@ -9,7 +10,6 @@ import { AdminDashboard } from './components/AdminDashboard';
 import { AdminSidebar } from './components/AdminSidebar';
 import { AppDialog } from './components/AppDialog';
 import { CollectionsIndex } from './components/CollectionsIndex';
-import { CommandPalette } from './components/CommandPalette';
 import { Dashboard } from './components/Dashboard';
 import { LandingPage } from './components/LandingPage';
 import { NotFound } from './components/NotFound';
@@ -33,13 +33,14 @@ import { useRoute } from './hooks/useRoute';
 import { useSearchHotkey } from './hooks/useSearchHotkey';
 import { useTheme } from './hooks/useTheme';
 import { filterResources } from './lib/filters';
-import { navigateInApp } from './lib/navigation';
+import { isSavedAnywhere } from './lib/lists';
+import { navigateInApp, replaceInApp, SAVED_WEBSITES_HREF } from './lib/navigation';
 import type { CandidateListing } from './lib/candidates';
 import { useCandidateCatalogue } from './hooks/useCandidateCatalogue';
 import { EMPTY_ROUTE, routeToHref } from './lib/url';
 import { APP_SIDEBAR_SIZING } from './lib/layout';
 import { collections, resources } from './data';
-import { ALL_FORMATS } from './types';
+import { ALL_FORMATS, DEFAULT_LIST_ID } from './types';
 import type { BrowseOrder, ModalName, PriceFilter } from './types';
 
 export function App() {
@@ -71,32 +72,20 @@ export function App() {
   const [sidebarOpen, setSidebarOpen] = useSidebarPreference();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [modal, setModal] = useState<ModalName | null>(null);
-  const [paletteOpen, setPaletteOpen] = useState(false);
   const { density, setDensity } = useDensity();
 
   const dialogRef = useDialog(modal !== null);
   const searchRef = useRef<HTMLInputElement>(null);
-  useSearchHotkey(searchRef, !modal && !mobileOpen && !route.resourceId && !paletteOpen);
+  useSearchHotkey(searchRef, !modal && !mobileOpen && !route.resourceId);
 
-  // Cmd/Ctrl-K opens the palette from anywhere, including inside a text field.
-  useEffect(() => {
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key.toLowerCase() === 'k' && (event.metaKey || event.ctrlKey)) {
-        if (route.landing) {
-          const input = document.getElementById('hero-component-search');
-          if (input instanceof HTMLInputElement && !modal) {
-            event.preventDefault();
-            input.focus();
-          }
-          return;
-        }
-        event.preventDefault();
-        setPaletteOpen((current) => !current);
-      }
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [route.landing, modal]);
+  // Saving a website says so, rather than only re-announcing the result count.
+  const [saveAnnouncement, setSaveAnnouncement] = useState('');
+  const toggleWebsite = (resourceId: string) => {
+    const name = resources.find((entry) => entry.id === resourceId)?.name ?? 'This website';
+    const wasSaved = isSavedAnywhere(lists, resourceId);
+    toggleSaved(resourceId);
+    setSaveAnnouncement(wasSaved ? `Removed ${name} from saved.` : `Saved ${name}.`);
+  };
 
   const activeList = lists.find((entry) => entry.id === route.listId) ?? null;
   const activeCollection = collections.find((entry) => entry.slug === route.collectionSlug) ?? null;
@@ -106,6 +95,11 @@ export function App() {
   useEffect(() => {
     if (route.listId && !activeList) navigate({ listId: null });
   }, [route.listId, activeList, navigate]);
+
+  // Saved websites live on the one Saved page now; the old favourites list redirects there.
+  useEffect(() => {
+    if (route.listId === DEFAULT_LIST_ID) replaceInApp(SAVED_WEBSITES_HREF);
+  }, [route.listId]);
 
   const candidateCatalogue = useCandidateCatalogue(route.candidates);
   const candidateListings = candidateCatalogue?.listings ?? null;
@@ -182,7 +176,9 @@ export function App() {
     : route.admin
       ? 'Admin workspace'
       : route.dashboard
-        ? `Hello, ${user?.name.split(' ')[0] ?? 'there'}`
+        ? user
+          ? `Hello, ${user.name.split(' ')[0]}`
+          : 'Your dashboard'
         : route.notFound
           ? 'Not found'
           : route.collectionsIndex
@@ -195,7 +191,7 @@ export function App() {
                   ? activeList.name
                   : route.candidates
                     ? 'Staged candidates'
-                    : 'All websites');
+                    : 'All resources');
 
   const subtitle = route.review
     ? 'Staged candidates. Nothing reaches the site until you approve it.'
@@ -216,6 +212,10 @@ export function App() {
                 : activeList
                   ? 'The good ones, kept close.'
                   : 'Good tools. Great interfaces.';
+
+  useDocumentTitle(
+    route.landing ? null : openResource ? openResource.name : route.dashboard ? 'Dashboard' : title,
+  );
 
   // The grid and its toolbar only make sense on browsing routes.
   const showsGrid =
@@ -253,6 +253,14 @@ export function App() {
           onOpenResource={(resourceId) => navigate({ ...EMPTY_ROUTE, resourceId })}
           onSignIn={() => setModal('signin')}
           onAbout={() => setModal('about')}
+          savedAssets={assetSaves.saved}
+          onToggleAssetSave={(id) =>
+            assetSaves.save(
+              assetSaves.saved.includes(id)
+                ? assetSaves.saved.filter((entry) => entry !== id)
+                : [...assetSaves.saved, id].slice(-200),
+            )
+          }
         />
         <AppDialog
           dialogRef={dialogRef}
@@ -283,6 +291,7 @@ export function App() {
         onToggleTheme={toggleTheme}
         onOpenModal={setModal}
         adminMode={adminMode}
+        onSignIn={authAvailable && settled && !user ? () => setModal('signin') : undefined}
         adminAction={
           isCurator
             ? adminMode
@@ -320,7 +329,7 @@ export function App() {
           />
         ) : (
           <AppSidebar
-            publicMode={showsGrid || route.collectionsIndex}
+            publicMode={!route.review}
             category={route.category}
             sub={route.sub}
             listId={route.listId}
@@ -337,6 +346,7 @@ export function App() {
             onChooseCategory={chooseCategory}
             onChooseSub={chooseSub}
             onSubmit={() => setModal('submit')}
+            onSignIn={authAvailable && settled && !user ? () => setModal('signin') : undefined}
             savedAssetCount={assetSaves.saved.length}
             catalogueResources={route.candidates ? (candidateListings ?? []) : undefined}
             allLabel={route.candidates ? 'All candidates' : undefined}
@@ -363,13 +373,13 @@ export function App() {
           />
 
           <SaveSyncNotice
-            label="Website favourites"
+            label="Saved websites"
             status={listSyncStatus}
             error={listSyncError}
             onRetry={retryListSync}
           />
           <SaveSyncNotice
-            label="Asset favourites"
+            label="Saved components"
             status={assetSaves.syncStatus}
             error={assetSaves.syncError}
             onRetry={assetSaves.retrySync}
@@ -399,6 +409,10 @@ export function App() {
             price={route.price}
             onPriceChange={(price: PriceFilter) => navigate({ price })}
           />
+
+          <p className="sr-only" role="status">
+            {saveAnnouncement}
+          </p>
 
           {/* Announce result counts so filtering is not silent to a screen reader. */}
           <p className="sr-only" role="status" aria-live="polite">
@@ -449,8 +463,8 @@ export function App() {
               />
             ) : (
               <section className="empty">
-                <h2>Sign in to see your dashboard.</h2>
-                <p>Your lists, submissions and review queue live here.</p>
+                <h2>Sign in to see your saved work.</h2>
+                <p>Your lists and submissions follow you to every device once you sign in.</p>
                 <button onClick={() => setModal('signin')}>Sign in</button>
               </section>
             ))}
@@ -462,9 +476,8 @@ export function App() {
                 resources={shown}
                 lists={lists}
                 onOpen={(resourceId) => navigate({ resourceId })}
-                onToggleSaved={toggleSaved}
+                onToggleSaved={toggleWebsite}
                 onSelectCategory={chooseCategory}
-                onSelectFormat={(format) => navigate({ format })}
               />
 
               {!shown.length && (
@@ -501,14 +514,6 @@ export function App() {
         onToggleIn={toggleIn}
         onCreateList={create}
         onSelectCategory={chooseCategory}
-      />
-
-      <CommandPalette
-        open={paletteOpen}
-        onClose={() => setPaletteOpen(false)}
-        onOpenResource={(resourceId) => navigate({ resourceId })}
-        onOpenCategory={chooseCategory}
-        onOpenCollection={(collectionSlug) => navigate({ ...EMPTY_ROUTE, collectionSlug })}
       />
 
       <AppDialog

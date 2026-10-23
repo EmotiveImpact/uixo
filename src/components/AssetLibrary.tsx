@@ -1,7 +1,16 @@
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
-import { useEffect, useState, type ReactNode } from 'react';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark, SlidersHorizontal, X } from 'lucide-react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import {
+  ArrowRight,
+  ArrowUpRight,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  SlidersHorizontal,
+  X,
+} from 'lucide-react';
+import {
+  EMPTY_ASSET_QUERY,
   assetHref,
   catalogueResult,
   inventoryResult,
@@ -9,13 +18,13 @@ import {
   safeAssetUrl,
 } from '../lib/asset-library';
 import { AssetDetail } from './AssetDetail';
-import { AssetPreview } from './AssetPreview';
+import { LoadError } from './LoadError';
+import { ComponentCard } from './ComponentCard';
 import type {
   AssetQuery,
   Catalogue,
   CatalogueInventory,
   ProviderRecord,
-  RegistryStatus,
 } from '../lib/asset-library';
 
 type Props = {
@@ -28,9 +37,90 @@ type Props = {
     save: (assetIds: string[]) => boolean;
     accountBacked: boolean;
   };
+  /** On Saved: websites saved on the other tab, so an empty components tab can point there. */
+  savedWebsites?: { count: number; show: () => void };
 };
 
 const ASSET_PAGE_SIZE = 24;
+/** How long an unsaved card waits, dimmed, for Undo before it leaves the Saved grid. */
+const UNDO_FOR = 6000;
+type SaveNotice = { id: string; text: string; undo?: boolean };
+/** Categories shown as chips; the rest sit under More. */
+const VISIBLE_CATEGORIES = 7;
+const formatCount = (value: number) => value.toLocaleString('en-GB');
+
+/** The categories that do not fit the chip row, in a small menu that closes on choice. */
+function MoreCategories({
+  current,
+  count,
+  onChoose,
+}: {
+  current: string;
+  count: (id: string) => number | undefined;
+  onChoose: (id: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const wrap = useRef<HTMLDivElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+  const rest = COMPONENT_CATEGORIES.slice(VISIBLE_CATEGORIES);
+  const chosen = rest.find((entry) => entry.id === current);
+  useEffect(() => {
+    if (!open) return;
+    const dismiss = (event: PointerEvent) => {
+      if (!wrap.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const escape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      setOpen(false);
+      trigger.current?.focus();
+    };
+    document.addEventListener('pointerdown', dismiss);
+    document.addEventListener('keydown', escape);
+    return () => {
+      document.removeEventListener('pointerdown', dismiss);
+      document.removeEventListener('keydown', escape);
+    };
+  }, [open]);
+  return (
+    <div className="chip-more" ref={wrap}>
+      <button
+        ref={trigger}
+        aria-pressed={Boolean(chosen)}
+        aria-expanded={open}
+        aria-controls="more-categories"
+        onClick={() => setOpen((value) => !value)}
+      >
+        {chosen?.label ?? 'More'}
+        <ChevronDown size={14} aria-hidden="true" />
+      </button>
+      {open && (
+        <div
+          className="chip-more-menu"
+          id="more-categories"
+          role="group"
+          aria-label="More categories"
+        >
+          {rest.map((entry) => {
+            const value = count(entry.id);
+            return (
+              <button
+                key={entry.id}
+                aria-pressed={entry.id === current}
+                onClick={() => {
+                  setOpen(false);
+                  onChoose(entry.id);
+                }}
+              >
+                {entry.label}
+                {value !== undefined && <span className="chip-count">{formatCount(value)}</span>}
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
 const KIND_OPTIONS = [
   { id: 'component', label: 'Components' },
   { id: 'icon-pack', label: 'Icon packs' },
@@ -57,28 +147,49 @@ function paginationItems(currentPage: number, totalPages: number): Array<number 
   return items;
 }
 
-export function AssetLibrary({ query, navigate, density, discovery, assetSaves }: Props) {
+export function AssetLibrary({
+  query,
+  navigate,
+  density,
+  discovery,
+  assetSaves,
+  savedWebsites,
+}: Props) {
   const [providers, setProviders] = useState<ProviderRecord[]>([]);
-  const [status, setStatus] = useState<RegistryStatus | null>(null);
   const [inventory, setInventory] = useState<CatalogueInventory | null>(null);
   const [result, setResult] = useState<Catalogue | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
-  const [notice, setNotice] = useState('');
+  const [notice, setNotice] = useState<SaveNotice | null>(null);
+  // An unsaved card stays in place, dimmed, for UNDO_FOR so it can be put back.
+  const [removed, setRemoved] = useState<{ id: string; name: string } | null>(null);
+  const removedTimer = useRef(0);
+  useEffect(() => () => window.clearTimeout(removedTimer.current), []);
   const [refineOpen, setRefineOpen] = useState(false);
   const { saved, save, accountBacked } = assetSaves;
-  const { q, kind, category, provider, framework, format, commercial, price, offset, view } = query;
+  const {
+    q,
+    kind,
+    category,
+    provider,
+    framework,
+    format,
+    commercial,
+    exact,
+    price,
+    sort,
+    offset,
+    view,
+  } = query;
+  // The Saved view asks for these ids. A card in its undo window still counts, so removing
+  // it does not reload the grid under the reader; the key is sorted so Undo is a no-op.
+  const savedKey = [...new Set(removed ? [...saved, removed.id] : saved)].sort().join(',');
   useEffect(() => {
     const abort = new AbortController();
     void registryRequest<{ items: ProviderRecord[] }>('providers', { signal: abort.signal })
       .then((value) => {
         if (Array.isArray(value.items)) setProviders(value.items);
-      })
-      .catch(() => {});
-    void registryRequest<RegistryStatus>('status', { signal: abort.signal })
-      .then((value) => {
-        if (value.stats && typeof value.readOnly === 'boolean') setStatus(value);
       })
       .catch(() => {});
     void registryRequest<unknown>('inventory', { signal: abort.signal })
@@ -92,7 +203,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
     const timer = window.setTimeout(() => {
       setLoading(true);
       setError('');
-      if (view === 'saved' && saved.length === 0) {
+      if (view === 'saved' && !savedKey) {
         setResult({ items: [], total: 0, nextOffset: null });
         setLoading(false);
         return;
@@ -105,11 +216,13 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
         framework,
         format,
         commercial: String(commercial),
+        ...(exact ? { exact: 'true' } : {}),
         price,
+        sort: sort || 'relevant',
         offset: String(offset),
         limit: String(ASSET_PAGE_SIZE),
       };
-      if (view === 'saved') parameters.saved = saved.join(',');
+      if (view === 'saved') parameters.saved = savedKey;
       void registryRequest<unknown>('search', { query: parameters, signal: abort.signal })
         .then(catalogueResult)
         .then((value) => {
@@ -118,7 +231,7 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
         .catch((e: unknown) => {
           if (!abort.signal.aborted) {
             setResult(null);
-            setError(e instanceof Error ? e.message : 'The registry API is unavailable.');
+            setError(e instanceof Error ? e.message : 'The catalogue API is unavailable.');
           }
         })
         .finally(() => {
@@ -137,10 +250,12 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
     framework,
     format,
     commercial,
+    exact,
     price,
+    sort,
     offset,
     view,
-    saved,
+    savedKey,
     retry,
   ]);
   const nameOf = (id: string) => providers.find((p) => p.id === id)?.name ?? id;
@@ -148,22 +263,71 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
     facet: 'kinds' | 'providers' | 'frameworks' | 'formats' | 'prices' | 'categories',
     id: string,
   ) => inventory?.[facet].find((entry) => entry.id === id)?.count ?? 0;
-  function toggleSave(id: string) {
+  function toggleSave(id: string, name = 'This component') {
     if (!saved.includes(id) && saved.length >= 200) {
-      setNotice('This browser list holds 200 assets. Remove one before saving another.');
+      setNotice({
+        id,
+        text: 'This browser list holds 200 assets. Remove one before saving another.',
+      });
       return;
     }
-    const next = saved.includes(id) ? saved.filter((entry) => entry !== id) : [...saved, id];
-    const persisted = save(next);
-    setNotice(
-      persisted
+    window.clearTimeout(removedTimer.current);
+    if (saved.includes(id)) {
+      const persisted = save(saved.filter((entry) => entry !== id));
+      setRemoved({ id, name });
+      setNotice({
+        id,
+        text: persisted
+          ? `Removed ${name} from saved.`
+          : 'Browser storage is unavailable. Your changes will last for this tab only.',
+        undo: true,
+      });
+      removedTimer.current = window.setTimeout(() => {
+        setRemoved(null);
+        setNotice((current) => (current?.id === id && current.undo ? null : current));
+      }, UNDO_FOR);
+      return;
+    }
+    const persisted = save([...saved, id]);
+    setRemoved((current) => (current?.id === id ? null : current));
+    setNotice({
+      id,
+      text: persisted
         ? accountBacked
-          ? 'Saved in this browser and syncing to your account.'
-          : 'Saved in this browser. Sign in to use it on another device.'
+          ? 'Saved. It syncs to your account.'
+          : 'Saved in this browser. Sign in to keep it on every device.'
         : 'Browser storage is unavailable. Your changes will last for this tab only.',
-    );
-    if (view === 'saved') navigate({ offset: 0 });
+    });
   }
+  function undoRemove() {
+    if (!removed) return;
+    window.clearTimeout(removedTimer.current);
+    save([...saved.filter((entry) => entry !== removed.id), removed.id]);
+    setNotice({ id: removed.id, text: `${removed.name} is back in saved.` });
+    setRemoved(null);
+  }
+  const activeFilters = [
+    q && { key: 'q', label: `“${q}”` },
+    kind && {
+      key: 'kind',
+      label:
+        {
+          component: 'Components',
+          'icon-pack': 'Icon packs',
+          font: 'Fonts',
+          template: 'Templates',
+        }[kind] ?? kind,
+    },
+    category && {
+      key: 'category',
+      label: COMPONENT_CATEGORIES.find((entry) => entry.id === category)?.label ?? category,
+    },
+    provider && { key: 'provider', label: nameOf(provider) },
+    framework && { key: 'framework', label: framework },
+    format && { key: 'format', label: format.toUpperCase() },
+    price && { key: 'price', label: price === 'free' ? 'Free' : price === 'paid' ? 'Paid' : price },
+    commercial && { key: 'commercial', label: 'Commercial use allowed' },
+  ].filter(Boolean) as { key: keyof AssetQuery; label: string }[];
   const filter = (key: keyof AssetQuery, value: string | boolean) =>
     navigate({ [key]: value, ...(key === 'kind' ? { category: '' } : {}), offset: 0, id: '' });
   const refinementCount = [kind, category, provider, framework, format, commercial].filter(
@@ -182,10 +346,40 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
       });
     });
   };
+  if (query.id)
+    return (
+      <section className="asset-library is-detail" aria-label="Asset library">
+        <AssetDetail
+          key={query.id}
+          id={query.id}
+          nameOf={nameOf}
+          query={query}
+          navigate={navigate}
+          saved={saved.includes(query.id)}
+          toggleSave={(name) => toggleSave(query.id, name)}
+          saveNotice={
+            notice?.id === query.id
+              ? { text: notice.text, onUndo: notice.undo && removed ? undoRemove : undefined }
+              : null
+          }
+          related={{ isSaved: (id) => saved.includes(id), toggle: toggleSave }}
+        />
+        <p className="sr-only" role="status">
+          {notice?.text ?? ''}
+        </p>
+      </section>
+    );
+  // Nothing saved yet: no filters over an empty page, only the way to fill it.
+  const bareSaved = view === 'saved' && !savedKey;
   return (
-    <section className="asset-library" aria-label="Asset library">
-      {discovery}
-      <div className="asset-library-toolbar">
+    <section
+      className="asset-library"
+      {...(view === 'saved'
+        ? { role: 'tabpanel', id: 'saved-panel', 'aria-labelledby': 'saved-tab-components' }
+        : { 'aria-label': 'Asset library' })}
+    >
+      {!bareSaved && discovery}
+      <div className="asset-library-toolbar" hidden={bareSaved}>
         {(!kind || kind === 'component') && (
           <div className="component-category-chips" role="group" aria-label="Component categories">
             <button
@@ -193,8 +387,9 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
               onClick={() => navigate({ kind: '', category: '', offset: 0, id: '' })}
             >
               All
+              {inventory && <span className="chip-count">{formatCount(inventory.total)}</span>}
             </button>
-            {COMPONENT_CATEGORIES.slice(0, 7).map((entry) => (
+            {COMPONENT_CATEGORIES.slice(0, VISIBLE_CATEGORIES).map((entry) => (
               <button
                 key={entry.id}
                 aria-pressed={category === entry.id}
@@ -203,8 +398,18 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                 }
               >
                 {entry.label}
+                {inventory && (
+                  <span className="chip-count">
+                    {formatCount(inventoryCount('categories', entry.id))}
+                  </span>
+                )}
               </button>
             ))}
+            <MoreCategories
+              current={category}
+              count={(id) => (inventory ? inventoryCount('categories', id) : undefined)}
+              onChoose={(id) => navigate({ kind: 'component', category: id, offset: 0, id: '' })}
+            />
           </div>
         )}
         {view !== 'sources' && (
@@ -335,32 +540,77 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                   checked={commercial}
                   onChange={(e) => filter('commercial', e.target.checked)}
                 />{' '}
-                Commercial-use evidence{inventory ? ` (${inventory.commercialUse})` : ''}
+                Commercial use allowed{inventory ? ` (${inventory.commercialUse})` : ''}
               </label>
               <button onClick={() => navigate({ view }, true)}>Reset filters</button>
             </div>
           )}
-          <div className="asset-library-result-count" role="status" aria-live="polite">
-            {loading
-              ? 'Searching the registry…'
-              : error
-                ? 'Registry unavailable, not an empty result'
-                : `${result?.total ?? 0} ${result?.total === 1 ? 'asset' : 'assets'} found`}
-            <span>
-              {status?.readOnly ? 'Preview catalogue' : 'Source-linked'} · {providers.length}{' '}
-              sources
-            </span>
+          <div className="asset-library-result-count" hidden={bareSaved}>
+            <div className="result-summary">
+              <strong role="status" aria-live="polite">
+                {loading
+                  ? 'Searching…'
+                  : error
+                    ? 'Catalogue unavailable'
+                    : `${(result?.total ?? 0).toLocaleString('en-GB')} ${
+                        result?.total === 1 ? 'result' : 'results'
+                      }`}
+              </strong>
+              {activeFilters.map((chip) => (
+                <button
+                  key={chip.key}
+                  className="active-filter"
+                  onClick={() =>
+                    navigate({ [chip.key]: chip.key === 'commercial' ? false : '', offset: 0 })
+                  }
+                  aria-label={`Remove filter ${chip.label}`}
+                >
+                  {chip.label}
+                  <X size={13} />
+                </button>
+              ))}
+              {activeFilters.length > 0 && (
+                <button className="clear-all" onClick={() => navigate({ view }, true)}>
+                  Clear all
+                </button>
+              )}
+            </div>
+            <label className="result-sort">
+              <span>Sort</span>
+              <ChevronDown className="result-sort-chevron" size={14} aria-hidden="true" />
+              <select
+                value={sort}
+                onChange={(e) =>
+                  navigate({ sort: e.target.value as AssetQuery['sort'], offset: 0 })
+                }
+              >
+                <option value="">{q ? 'Best match' : 'Recommended'}</option>
+                <option value="newest">Recently updated</option>
+                <option value="name">A to Z</option>
+              </select>
+            </label>
           </div>
+          {!loading && !error && result?.correction && (
+            <p className="search-correction">
+              Showing results for <strong>{result.correction.query}</strong>.{' '}
+              <button onClick={() => navigate({ exact: true, offset: 0 })}>
+                Search for “{q}” instead
+              </button>
+            </p>
+          )}
           {error ? (
-            <section className="asset-library-empty" role="alert">
-              <h2>We could not load the assets.</h2>
-              <p>{error}</p>
-              <p>The website can load even when its registry API has not started correctly.</p>
-              <button onClick={() => setRetry((value) => value + 1)}>Try again</button>
-              <a href="/api/registry?action=status" target="_blank" rel="noopener noreferrer">
-                Check registry status <ArrowUpRight size={14} />
-              </a>
-            </section>
+            <LoadError
+              subject="components"
+              details={error}
+              onRetry={() => setRetry((value) => value + 1)}
+              browseHref={assetHref({ ...EMPTY_ASSET_QUERY, kind: 'component' })}
+              onBrowse={(event) => {
+                if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                event.preventDefault();
+                if (view === 'assets' && !kind && !category && !q) setRetry((value) => value + 1);
+                else navigate({ kind: 'component' }, true);
+              }}
+            />
           ) : loading ? (
             <div className="asset-library-grid" aria-busy="true">
               {Array.from({ length: 8 }, (_, index) => (
@@ -371,85 +621,82 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
             <section className="asset-library-empty">
               <h2>
                 {view === 'saved'
-                  ? 'No saved assets match this view.'
-                  : 'No published assets match these filters.'}
+                  ? savedKey
+                    ? 'No saved component matches these filters.'
+                    : 'No saved components yet.'
+                  : query.q
+                    ? `Nothing matches “${query.q}”.`
+                    : 'Nothing matches these filters.'}
               </h2>
               <p>
-                Website listings and individual assets are different catalogues. Fonts and templates
-                are not populated in the initial source snapshot.
+                {view === 'saved'
+                  ? 'Use the bookmark on any component to keep it here.'
+                  : 'Try a broader word or remove a filter. Fonts and templates are still being added.'}
               </p>
-              <button onClick={() => navigate({}, true)}>Show all indexed assets</button>
-              <a href="/browse">Browse the full website directory</a>
+              {view === 'saved' && savedWebsites && (
+                <p>
+                  You have {savedWebsites.count} saved{' '}
+                  {savedWebsites.count === 1 ? 'website' : 'websites'}.{' '}
+                  <button
+                    type="button"
+                    className="asset-library-inline"
+                    onClick={savedWebsites.show}
+                  >
+                    Show saved websites
+                  </button>
+                </p>
+              )}
+              <button onClick={() => navigate({}, true)}>
+                {view === 'saved' ? 'Browse components' : 'Clear search and filters'}
+              </button>
+              {view !== 'saved' && <a href="/browse">Browse websites and libraries instead</a>}
             </section>
           ) : (
             <div className={`asset-library-grid asset-density-${density}`}>
               {result.items.map((asset) => (
-                <article className="asset-library-card" key={asset.id}>
-                  <AssetPreview asset={asset} />
-                  <div className="asset-library-card-body">
-                    <div className="asset-card-heading">
-                      <h2>
-                        <a
-                          className="asset-library-card-link"
-                          href={assetHref({ ...query, id: asset.id })}
-                          onClick={(event) => {
-                            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
-                              return;
-                            event.preventDefault();
-                            navigate({ id: asset.id });
-                          }}
-                          aria-label={`Inspect ${asset.name} from ${nameOf(asset.providerId)}`}
-                        >
-                          {asset.name}
-                        </a>
-                      </h2>
-                      <button
-                        className="asset-library-save"
-                        aria-label={
-                          saved.includes(asset.id) ? `Unsave ${asset.name}` : `Save ${asset.name}`
-                        }
-                        aria-pressed={saved.includes(asset.id)}
-                        onClick={() => toggleSave(asset.id)}
-                      >
-                        <Bookmark
-                          size={16}
-                          fill={saved.includes(asset.id) ? 'currentColor' : 'none'}
-                        />
-                      </button>
-                    </div>
-                    <small>
-                      {nameOf(asset.providerId)} ·{' '}
-                      {asset.kind === 'icon-pack' ? 'Icon pack' : asset.kind}
-                    </small>
-
-                    <div className="asset-library-tags">
-                      <span>{asset.variants[0]?.framework}</span>
-                      <span>{asset.variants[0]?.format.toUpperCase()}</span>
-                      <span>{asset.licence.expression}</span>
-                    </div>
-                  </div>
-                </article>
+                <ComponentCard
+                  key={asset.id}
+                  asset={asset}
+                  className="asset-library-card"
+                  linkClassName="asset-library-card-link"
+                  linkLabel={`Inspect ${asset.name} from ${nameOf(asset.providerId)}`}
+                  heading="h2"
+                  href={assetHref({ ...query, id: asset.id })}
+                  onOpen={() => navigate({ id: asset.id })}
+                  providerName={nameOf(asset.providerId)}
+                  categoryLabel={
+                    asset.kind === 'icon-pack'
+                      ? 'Icon pack'
+                      : COMPONENT_CATEGORIES.find((entry) => entry.id === asset.category)?.label ||
+                        asset.kind
+                  }
+                  saved={saved.includes(asset.id)}
+                  onToggleSave={() => toggleSave(asset.id, asset.name)}
+                  onUndoRemove={
+                    view === 'saved' && removed?.id === asset.id ? undoRemove : undefined
+                  }
+                />
               ))}
             </div>
           )}
           {!loading && !error && result && (offset > 0 || result.nextOffset !== null) && (
             <nav className="asset-library-pagination" aria-label="Asset pages">
-              <div className="asset-library-pagination-summary">
-                <strong>
-                  Page {currentPage} of {totalPages}
-                </strong>
-                <span>
-                  Showing {firstResult}–{lastResult} of {result.total} assets
+              <p className="asset-library-pagination-summary">
+                Showing {firstResult} to {lastResult} of{' '}
+                <span className="mono">{result.total.toLocaleString('en-GB')}</span>
+                <span className="sr-only">
+                  , page {currentPage} of {totalPages}
                 </span>
-              </div>
+              </p>
               <div className="asset-library-pagination-controls">
                 <button
                   className="asset-library-page-direction"
                   disabled={currentPage === 1}
                   onClick={() => changePage(currentPage - 1)}
                   aria-label="Go to previous asset page"
+                  title="Previous page"
                 >
-                  <ArrowLeft size={15} /> Previous
+                  <ChevronLeft size={15} />
                 </button>
                 <div
                   className="asset-library-page-numbers"
@@ -479,28 +726,19 @@ export function AssetLibrary({ query, navigate, density, discovery, assetSaves }
                   disabled={currentPage === totalPages}
                   onClick={() => changePage(currentPage + 1)}
                   aria-label="Go to next asset page"
+                  title="Next page"
                 >
-                  Next <ArrowRight size={15} />
+                  <ChevronRight size={15} />
                 </button>
               </div>
             </nav>
           )}
         </>
       )}
-      <p className="asset-library-muted" role="status">
-        {notice}
+      {/* Announced only: the visible confirmation sits on the card or beside Save. */}
+      <p className="sr-only" role="status">
+        {notice?.text ?? ''}
       </p>
-      {query.id && (
-        <AssetDetail
-          key={query.id}
-          id={query.id}
-          nameOf={nameOf}
-          query={query}
-          saved={saved.includes(query.id)}
-          toggleSave={() => toggleSave(query.id)}
-          close={() => navigate({ id: '' })}
-        />
-      )}
     </section>
   );
 }

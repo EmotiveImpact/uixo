@@ -1,17 +1,29 @@
 import { reviewedPreviewPath } from '../../shared/reviewed-previews';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
+import type { FocusEvent, KeyboardEvent } from 'react';
 import type { CollectionAssetPreview } from '../../shared/intelligence';
 import { assetHref, readAssetQuery, safeAssetUrl } from '../lib/asset-library';
 import { assetDestinationUrl } from '../lib/asset-destination';
 import { navigateInApp } from '../lib/navigation';
 import demos from '../../live-demos/manifest.json';
+import { stageFit } from '../../shared/preview-stage';
+import type { PreviewContentBox, PreviewSizeMessage } from '../../shared/preview-stage';
+import type { DemoPropValues, DemoPropsMessage } from '../../shared/demo-props';
 
-type PreviewStatus = 'loading' | 'ready' | 'error';
+/**
+ * loading: nothing confirmed yet, the stage shows a skeleton.
+ * ready: the demo said so itself with a `uixo-preview-status` message. Only this is "Live".
+ * embedded: a provider page that cannot send the message has loaded. It is a preview,
+ * not a confirmed live demo, so it is never labelled "Live".
+ * error: the demo failed or never answered.
+ */
+type PreviewStatus = 'loading' | 'ready' | 'embedded' | 'error';
 
 const DEFAULT_PREVIEW_WIDTH = 480;
 const UIABLE_PREVIEW_WIDTH = 280;
 const UIABLE_PREVIEW_INSET = 12;
-
+/** The detail stage is larger than a card, so small components may grow a little more. */
+const DETAIL_STAGE_FIT = { maxScale: 2.8, fillWidth: 0.4, fillHeight: 0.5 };
 function officialEmbedUrl(asset: CollectionAssetPreview): string | undefined {
   if (asset.preview?.kind !== 'embed') return undefined;
   const url = safeAssetUrl(asset.preview.url);
@@ -54,18 +66,50 @@ function officialEmbedUrl(asset: CollectionAssetPreview): string | undefined {
   return undefined;
 }
 
+/** A card waits this long for a demo before saying it is unavailable; the detail page waits longer. */
+const CARD_PREVIEW_WAIT = 8000;
+const DETAIL_PREVIEW_WAIT = 20000;
+
+/** The designed failure state: what happened, and where to see the component instead. */
+function PreviewUnavailable({ asset, reason }: { asset: CollectionAssetPreview; reason?: string }) {
+  return (
+    <div className="asset-library-no-preview">
+      <strong>Preview unavailable</strong>
+      {reason && <span className="asset-library-no-preview-reason">{reason}</span>}
+      <a href={assetDestinationUrl(asset)} target="_blank" rel="noopener noreferrer">
+        Open provider page ↗
+      </a>
+    </div>
+  );
+}
+
 function LivePreview({
   asset,
   detail,
   src,
   external = false,
   fallbackImageUrl,
+  stage = false,
+  framed = false,
+  zoom = true,
+  theme: themeOverride,
+  demoProps,
 }: {
   asset: CollectionAssetPreview;
   detail: boolean;
   src: string;
   external?: boolean;
   fallbackImageUrl?: string;
+  /** A card stage: the frame is transparent and reports its content size. */
+  stage?: boolean;
+  /** An opaque page on a card stage: drawn as an inset window. */
+  framed?: boolean;
+  /** On a stage, frame small content larger. Off for the detail page's phone width. */
+  zoom?: boolean;
+  /** Render the demo in this theme instead of the page's. */
+  theme?: 'light' | 'dark';
+  /** Props for a customisable demo, sent to the frame whenever they change. */
+  demoProps?: DemoPropValues;
 }) {
   const viewport = useRef<HTMLDivElement>(null);
   const frame = useRef<HTMLIFrameElement>(null);
@@ -73,9 +117,16 @@ function LivePreview({
   const [size, setSize] = useState({ width: 480, height: 330 });
   const [status, setStatus] = useState<PreviewStatus>('loading');
   const [fallbackFailed, setFallbackFailed] = useState(false);
-  const [theme, setTheme] = useState(() =>
+  const [contentBox, setContentBox] = useState<PreviewContentBox | null>(null);
+  const [pageTheme, setTheme] = useState(() =>
     document.documentElement.classList.contains('light') ? 'light' : 'dark',
   );
+  const theme = themeOverride ?? pageTheme;
+  const propsRef = useRef(demoProps);
+  // A card's frame is one "Try" stop: Enter goes into the demo, Escape comes back out.
+  const card = stage && !detail;
+  const [entered, setEntered] = useState(false);
+  const hintId = useId();
 
   useEffect(() => {
     const element = viewport.current;
@@ -108,6 +159,19 @@ function LivePreview({
     frame.current?.contentWindow?.postMessage({ type: 'uixo-preview-theme', theme }, '*');
   }, [theme]);
 
+  // The sandboxed frame has an opaque origin, so messages go to '*'; they carry only
+  // checked prop values, and the frame checks them again.
+  const sendProps = (values: DemoPropValues | undefined) => {
+    if (!values) return;
+    const message: DemoPropsMessage = { type: 'uixo-preview-props', id: asset.id, values };
+    frame.current?.contentWindow?.postMessage(message, '*');
+  };
+  useEffect(() => {
+    propsRef.current = demoProps;
+    sendProps(demoProps);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [demoProps]);
+
   useEffect(() => {
     if (external) return;
     const receive = (event: MessageEvent) => {
@@ -121,15 +185,57 @@ function LivePreview({
         setStatus(event.data.status);
       }
     };
+    const propsReady = (event: MessageEvent) => {
+      if (
+        event.source !== frame.current?.contentWindow ||
+        event.data?.type !== 'uixo-preview-props-ready' ||
+        event.data.id !== asset.id
+      )
+        return;
+      sendProps(propsRef.current);
+    };
+    const measure = (event: MessageEvent<PreviewSizeMessage>) => {
+      if (
+        !stage ||
+        event.source !== frame.current?.contentWindow ||
+        event.data?.type !== 'uixo-preview-size' ||
+        event.data.id !== asset.id
+      )
+        return;
+      const box = event.data.box;
+      if ([box.x, box.y, box.width, box.height].every(Number.isFinite)) setContentBox(box);
+    };
+    const leave = (event: MessageEvent) => {
+      if (
+        !card ||
+        event.source !== frame.current?.contentWindow ||
+        event.data?.type !== 'uixo-preview-leave' ||
+        event.data.id !== asset.id
+      )
+        return;
+      viewport.current?.focus();
+    };
+    window.addEventListener('message', measure);
     window.addEventListener('message', receive);
-    return () => window.removeEventListener('message', receive);
-  }, [asset.id, external]);
+    window.addEventListener('message', propsReady);
+    window.addEventListener('message', leave);
+    return () => {
+      window.removeEventListener('message', receive);
+      window.removeEventListener('message', measure);
+      window.removeEventListener('message', propsReady);
+      window.removeEventListener('message', leave);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [asset.id, external, stage, card]);
 
   useEffect(() => {
     if (!visible || status !== 'loading') return;
-    const timeout = window.setTimeout(() => setStatus('error'), 20000);
+    const timeout = window.setTimeout(
+      () => setStatus('error'),
+      detail ? DETAIL_PREVIEW_WAIT : CARD_PREVIEW_WAIT,
+    );
     return () => window.clearTimeout(timeout);
-  }, [visible, status]);
+  }, [visible, status, detail]);
 
   // UIAble demos are complete responsive pages whose examples sit flush against
   // the page's leading edge. Give those pages a compact viewport and a small
@@ -137,17 +243,49 @@ function LivePreview({
   const uiableCard = asset.providerId === 'uiable' && !detail;
   const previewWidth = uiableCard ? UIABLE_PREVIEW_WIDTH : DEFAULT_PREVIEW_WIDTH;
   const previewInset = uiableCard ? UIABLE_PREVIEW_INSET : 0;
-  const scale = detail ? 1 : Math.max(size.width - previewInset * 2, 1) / previewWidth;
+  const baseScale = detail ? 1 : Math.max(size.width - previewInset * 2, 1) / previewWidth;
+  const fit =
+    stage && zoom && !external
+      ? stageFit(size, contentBox, baseScale, detail ? DETAIL_STAGE_FIT : undefined)
+      : { scale: baseScale, x: 0, y: 0 };
+  const scale = fit.scale;
+  // A detail stage sizes its frame like a card does; the plain detail fills its box.
+  const sized = !detail || stage;
   const showFallbackImage = status === 'error' && fallbackImageUrl && !fallbackFailed;
+  const tryable = card && (status === 'ready' || status === 'embedded');
+  const enter = () => {
+    frame.current?.focus();
+    if (!external)
+      frame.current?.contentWindow?.postMessage({ type: 'uixo-preview-enter', id: asset.id }, '*');
+    setEntered(true);
+  };
 
   return (
     <div
       ref={viewport}
       data-preview-state={status}
       data-preview-provider={asset.providerId}
+      data-stage-fit={stage ? (scale > baseScale ? 'zoomed' : 'canvas') : undefined}
       className={`asset-live-viewport ${detail ? 'is-detail' : ''} ${
         showFallbackImage ? 'has-captured-fallback' : ''
-      }`}
+      } ${framed ? 'is-framed' : ''} ${tryable ? 'is-try' : ''} ${entered ? 'is-inside' : ''}`}
+      {...(tryable
+        ? {
+            tabIndex: 0,
+            role: 'group',
+            'aria-label': `Try ${asset.name}`,
+            'aria-describedby': hintId,
+            onKeyDown: (event: KeyboardEvent<HTMLDivElement>) => {
+              if (event.target !== event.currentTarget) return;
+              if (event.key !== 'Enter' && event.key !== ' ') return;
+              event.preventDefault();
+              enter();
+            },
+            onBlur: (event: FocusEvent<HTMLDivElement>) => {
+              if (event.target === frame.current) setEntered(false);
+            },
+          }
+        : {})}
     >
       {visible && (
         <iframe
@@ -155,32 +293,36 @@ function LivePreview({
           title={`Live ${asset.name} demo`}
           src={src}
           sandbox={external ? 'allow-scripts allow-same-origin' : 'allow-scripts'}
+          tabIndex={card ? -1 : undefined}
           referrerPolicy="no-referrer"
           style={{
             colorScheme: theme,
-            visibility: status === 'ready' ? 'visible' : 'hidden',
-            ...(detail
+            visibility: status === 'ready' || status === 'embedded' ? 'visible' : 'hidden',
+            ...(!sized
               ? {}
               : {
-                  width: previewWidth,
+                  width:
+                    uiableCard || (!detail && scale === baseScale)
+                      ? previewWidth
+                      : size.width / scale,
                   height: Math.max(size.height - previewInset * 2, 1) / scale,
                   transform: uiableCard
                     ? `translate(${previewInset}px, ${previewInset}px) scale(${scale})`
-                    : `scale(${scale})`,
+                    : fit.x || fit.y
+                      ? `translate(${fit.x}px, ${fit.y}px) scale(${scale})`
+                      : `scale(${scale})`,
                 }),
           }}
           onLoad={() => {
-            setStatus('ready');
-            if (!external)
+            // A load event also fires for error pages and before the demo paints, so a
+            // frame of ours stays "loading" until its own ready message arrives.
+            if (external) setStatus((current) => (current === 'loading' ? 'embedded' : current));
+            else
               frame.current?.contentWindow?.postMessage({ type: 'uixo-preview-theme', theme }, '*');
           }}
         />
       )}
-      {visible && status === 'loading' && (
-        <span className="asset-live-loading" role="status">
-          Loading live demo…
-        </span>
-      )}
+      {status === 'loading' && <span className="asset-live-skeleton" aria-hidden="true" />}
       {showFallbackImage &&
         (detail ? (
           <img
@@ -216,24 +358,48 @@ function LivePreview({
           </a>
         ))}
       {status === 'error' && (!fallbackImageUrl || fallbackFailed) && (
-        <a
-          className="asset-live-fallback"
-          href={assetDestinationUrl(asset)}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Open provider page ↗
-        </a>
+        <PreviewUnavailable asset={asset} reason="The demo did not load." />
       )}
-      <small className="actual-preview-label">
-        {status === 'ready'
-          ? 'Live · Try it'
-          : showFallbackImage
-            ? 'Screenshot · Live unavailable'
-            : status === 'error'
-              ? 'Preview unavailable'
-              : 'Loading preview'}
-      </small>
+      {tryable && (
+        <>
+          <span className="g-try" aria-hidden="true">
+            {entered && !external ? (
+              <>
+                <kbd>Esc</kbd> to leave
+              </>
+            ) : (
+              <>
+                Try it <kbd>Enter</kbd>
+              </>
+            )}
+          </span>
+          <span id={hintId} className="sr-only">
+            {external
+              ? 'Press Enter to use the demo, and Tab to move on.'
+              : 'Press Enter to use the demo, and Escape to leave it.'}
+          </span>
+        </>
+      )}
+      {stage
+        ? (status === 'ready' || status === 'embedded' || showFallbackImage) && (
+            <small
+              className="g-live"
+              data-kind={status === 'ready' ? 'live' : status === 'embedded' ? 'embed' : 'capture'}
+            >
+              {status === 'ready' && <i aria-hidden="true" />}
+              {status === 'ready' ? 'Live' : status === 'embedded' ? 'Preview' : 'Screenshot'}
+            </small>
+          )
+        : status !== 'loading' &&
+          !(status === 'error' && !showFallbackImage) && (
+            <small className="actual-preview-label">
+              {status === 'ready'
+                ? 'Live · Try it'
+                : status === 'embedded'
+                  ? 'Preview'
+                  : 'Screenshot · Live unavailable'}
+            </small>
+          )}
     </div>
   );
 }
@@ -241,9 +407,21 @@ function LivePreview({
 export function AssetPreview({
   asset,
   detail = false,
+  stage = false,
+  zoom = true,
+  theme: themeOverride,
+  demoProps,
 }: {
   asset: CollectionAssetPreview;
   detail?: boolean;
+  /** Draw on a card's tinted stage: transparent demos, inset windows and screenshots. */
+  stage?: boolean;
+  /** On a stage, frame small content larger. */
+  zoom?: boolean;
+  /** Render live demos in this theme instead of the page's. */
+  theme?: 'light' | 'dark';
+  /** Live props for a customisable demo (see shared/demo-props.ts). */
+  demoProps?: DemoPropValues;
 }) {
   const [failedUrl, setFailedUrl] = useState('');
   const live = asset.kind === 'component' && Object.hasOwn(demos, asset.id);
@@ -252,14 +430,18 @@ export function AssetPreview({
   const imageUrl = asset.preview?.kind === 'image' ? safeAssetUrl(asset.preview.url) : undefined;
   const showImage = imageUrl && failedUrl !== imageUrl;
   const livePreview = live || Boolean(reviewed) || Boolean(embedUrl);
+  // The frame loads in the page theme; a stage background that needs another theme is
+  // sent as a message, so switching it never reloads the demo.
+  const theme = document.documentElement.classList.contains('light') ? 'light' : 'dark';
+  const clear = (stage ? '&stage=clear' : '') + (demoProps ? '&props=live' : '');
 
   return (
     <div
-      className={`asset-library-preview ${asset.kind === 'icon' ? 'is-icon' : ''} ${
-        livePreview ? 'is-live-component' : ''
-      } ${asset.kind === 'icon-pack' ? 'is-icon-pack' : ''} ${
-        !livePreview && showImage && asset.kind === 'component' ? 'is-component-capture' : ''
-      }`}
+      className={`${stage ? 'g-preview' : 'asset-library-preview'} ${
+        asset.kind === 'icon' ? 'is-icon' : ''
+      } ${livePreview ? 'is-live-component' : ''} ${
+        asset.kind === 'icon-pack' ? 'is-icon-pack' : ''
+      } ${!livePreview && showImage && asset.kind === 'component' ? 'is-component-capture' : ''}`}
     >
       {asset.kind === 'icon-pack' ? (
         <div className="asset-library-no-preview">
@@ -274,9 +456,11 @@ export function AssetPreview({
           key={asset.id}
           asset={asset}
           detail={detail}
-          src={`/live-demos/index.html?id=${encodeURIComponent(asset.id)}&theme=${
-            document.documentElement.classList.contains('light') ? 'light' : 'dark'
-          }`}
+          stage={stage}
+          zoom={zoom}
+          theme={themeOverride}
+          demoProps={demoProps}
+          src={`/live-demos/index.html?id=${encodeURIComponent(asset.id)}&theme=${theme}${clear}`}
           fallbackImageUrl={imageUrl}
         />
       ) : reviewed ? (
@@ -284,7 +468,10 @@ export function AssetPreview({
           key={asset.id}
           asset={asset}
           detail={detail}
-          src={`${reviewed}&theme=${document.documentElement.classList.contains('light') ? 'light' : 'dark'}`}
+          stage={stage}
+          zoom={zoom}
+          theme={themeOverride}
+          src={`${reviewed}&theme=${theme}${clear}`}
           fallbackImageUrl={imageUrl}
         />
       ) : embedUrl ? (
@@ -294,10 +481,13 @@ export function AssetPreview({
           detail={detail}
           src={embedUrl}
           external
+          stage={stage}
+          framed={stage}
           fallbackImageUrl={imageUrl}
         />
       ) : showImage ? (
         <img
+          className={stage ? 'g-shot' : undefined}
           src={imageUrl}
           loading="lazy"
           alt={
@@ -308,22 +498,24 @@ export function AssetPreview({
           onError={() => setFailedUrl(imageUrl)}
         />
       ) : (
-        <div className="asset-library-no-preview">
-          <strong>Preview unavailable</strong>
-          <a href={assetDestinationUrl(asset)} target="_blank" rel="noopener noreferrer">
-            Open provider page ↗
-          </a>
-        </div>
+        <PreviewUnavailable asset={asset} />
       )}
-      {!livePreview && (
-        <small>
-          {asset.kind === 'icon-pack'
-            ? 'Icon pack · Official source'
-            : showImage
-              ? 'Screenshot'
-              : 'Source only'}
-        </small>
-      )}
+      {!livePreview &&
+        (stage ? (
+          showImage && (
+            <small className="g-live" data-kind="capture">
+              Screenshot
+            </small>
+          )
+        ) : (
+          <small>
+            {asset.kind === 'icon-pack'
+              ? 'Icon pack · Official source'
+              : showImage
+                ? 'Screenshot'
+                : 'Source only'}
+          </small>
+        ))}
     </div>
   );
 }

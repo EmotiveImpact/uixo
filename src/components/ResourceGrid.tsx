@@ -11,7 +11,6 @@ type ResourceGridProps = {
   onOpen: (id: string) => void;
   onToggleSaved: (id: string) => void;
   onSelectCategory: (category: string) => void;
-  onSelectFormat: (format: string) => void;
 };
 
 export function ResourceGrid({
@@ -21,7 +20,6 @@ export function ResourceGrid({
   onOpen,
   onToggleSaved,
   onSelectCategory,
-  onSelectFormat,
 }: ResourceGridProps) {
   return (
     <section className={`website-grid density-${density}`} aria-label="Websites">
@@ -34,7 +32,6 @@ export function ResourceGrid({
           onOpen={onOpen}
           onToggleSaved={onToggleSaved}
           onSelectCategory={onSelectCategory}
-          onSelectFormat={onSelectFormat}
         />
       ))}
     </section>

@@ -4,6 +4,7 @@ import { McpServer } from '@modelcontextprotocol/server';
 import * as z from 'zod/v4';
 import type { Registry } from './service.ts';
 import { RegistryError } from './domain.ts';
+import { licenceLabel } from '../shared/licence-label.ts';
 import { checkCompatibility, resolveAsset } from './policy.ts';
 
 const id = z
@@ -49,7 +50,7 @@ export function createRegistryMcp(registry: Registry) {
     'search_assets',
     {
       description:
-        'Find published assets from selected providers. Hard framework, format, price and commercial-use constraints are never weakened. Ranking is weighted keyword matching, not embeddings. Indexed is not an editorial endorsement.',
+        'Find published assets from selected providers. Hard framework, format, price and commercial-use constraints are never weakened. Ranking is weighted keyword matching, not embeddings, with a small synonym list (modal finds dialog). When nothing matches every term, a misspelt word is corrected to the closest asset or category name (the response then has correction.query, the corrected query) and, for three or more terms, assets matching some terms are returned best first (match is "any-term"). Indexed is not an editorial endorsement. Each item carries licenceLabel: "Free" only when commercial use is allowed, otherwise "Licence unknown" or the declared licence; read licence.commercial before suggesting an asset for paid work.',
       annotations,
       inputSchema: z.object({
         q: z.string().max(300).optional(),
@@ -63,6 +64,10 @@ export function createRegistryMcp(registry: Registry) {
         format: z.enum(['tsx', 'jsx', 'svg', 'css', 'woff2']).optional(),
         price: z.enum(['free', 'paid', 'unknown']).optional(),
         commercial: z.boolean().optional(),
+        exact: z
+          .boolean()
+          .optional()
+          .describe('Search the words exactly as typed, with no spelling correction'),
         limit: z.number().int().min(1).max(24).default(12),
         offset: z.number().int().min(0).max(100000).default(0),
       }),
@@ -77,7 +82,11 @@ export function createRegistryMcp(registry: Registry) {
       annotations,
       inputSchema: z.object({ id }),
     },
-    ({ id }) => guarded(async () => ({ asset: await registry.inspect(id) })),
+    ({ id }) =>
+      guarded(async () => {
+        const asset = await registry.inspect(id);
+        return { asset: { ...asset, licenceLabel: licenceLabel(asset) } };
+      }),
   );
   server.registerTool(
     'get_preview',

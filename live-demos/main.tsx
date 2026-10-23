@@ -1,8 +1,10 @@
 import './adapters/preview-storage';
 import { Tooltip } from 'radix-ui';
-import React, { Component, Suspense, lazy, useEffect } from 'react';
+import React, { Component, Suspense, lazy, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import manifest from './manifest.json';
+import { handleStageFocus, reportContentSize } from '../shared/preview-stage';
+import { customisableDemo, sanitiseDemoProps } from '../shared/demo-props';
 import './styles.css';
 const files = import.meta.glob(['./vendor/**/*.tsx', './vendor/**/*.jsx', './examples/*.tsx']);
 const params = new URLSearchParams(location.search),
@@ -15,6 +17,13 @@ function setTheme(theme) {
   window.dispatchEvent(new Event('uixo-theme'));
 }
 setTheme(params.get('theme') === 'light' ? 'light' : 'dark');
+// Card stages paint their own tinted field behind the demo. With stage=clear the page
+// stays transparent and reports its content box so the card can frame it.
+const clearStage = params.get('stage') === 'clear';
+if (clearStage) document.documentElement.dataset.stage = 'clear';
+if (clearStage) handleStageFocus(id);
+// Lets the harness style a demo's stage without touching the provider's source.
+document.documentElement.dataset.demo = id;
 window.addEventListener('message', (event) => {
   if (event.source === parent && event.data?.type === 'uixo-preview-theme')
     setTheme(event.data.theme);
@@ -54,11 +63,42 @@ function Ready() {
   useEffect(() => {
     notify('ready');
     document.documentElement.dataset.previewReady = 'true';
+    if (clearStage) return reportContentSize(id, () => document.querySelector('.demo-stage'));
   }, []);
   return null;
 }
-const Demo =
-  entry && files[entry.file]
+// props=live: a curated demo renders through its UIXO wrapper and takes props from the
+// detail page. Only messages from the parent frame count, and every value is checked
+// against the demo's controls before it reaches the component.
+const customisable = params.get('props') === 'live' ? customisableDemo(id) : undefined;
+function Customised({ Wrapper }) {
+  const [values, setValues] = useState(() => sanitiseDemoProps(id, {}));
+  useEffect(() => {
+    const receive = (event) => {
+      if (event.source !== parent || event.data?.type !== 'uixo-preview-props') return;
+      if (event.data.id !== id) return;
+      const checked = sanitiseDemoProps(id, event.data.values);
+      if (checked) setValues(checked);
+    };
+    window.addEventListener('message', receive);
+    parent.postMessage({ type: 'uixo-preview-props-ready', id }, '*');
+    return () => window.removeEventListener('message', receive);
+  }, []);
+  // New props can change the content's size: ask for a fresh measurement.
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => window.dispatchEvent(new Event('resize')));
+    return () => cancelAnimationFrame(frame);
+  }, [values]);
+  return <Wrapper values={values} />;
+}
+const Demo = customisable
+  ? lazy(() =>
+      files['./examples/customisable.tsx']().then((module) => {
+        const Wrapper = module[customisable.export];
+        return { default: () => <Customised Wrapper={Wrapper} /> };
+      }),
+    )
+  : entry && files[entry.file]
     ? lazy(() => files[entry.file]().then((module) => ({ default: module[entry.export] })))
     : null;
 createRoot(document.getElementById('root')).render(
