@@ -4,7 +4,14 @@ import tailwind from '@tailwindcss/vite';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import styledJsx from 'styled-jsx/babel.js';
 const root = path.dirname(fileURLToPath(import.meta.url));
+// Next.js compiles `<style jsx>` blocks with styled-jsx. A few provider demos use them,
+// so those vendored files (and only those) get the same compiler here.
+const usesStyledJsx = (id) =>
+  id.startsWith(path.join(root, 'vendor')) &&
+  /\.[jt]sx$/.test(id) &&
+  fs.readFileSync(id, 'utf8').includes('<style jsx');
 export default defineConfig({
   root,
   // Vite uses import.meta.url for lazy preloads with a relative base. A provider
@@ -59,7 +66,9 @@ export default defineConfig({
         }
       },
     },
-    react(),
+    react({
+      babel: (id) => (usesStyledJsx(id.split('?')[0]) ? { plugins: [styledJsx] } : {}),
+    }),
     tailwind(),
   ],
   resolve: {

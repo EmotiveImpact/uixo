@@ -1696,5 +1696,107 @@
     "export": "ToolBasic",
     "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
     "sourceUrl": "https://www.prompt-kit.com/docs/tool"
+  },
+  "elevenlabs-ui/audio-player": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/audio-player-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/audio-player"
+  },
+  "elevenlabs-ui/bar-visualizer": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/bar-visualizer-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/bar-visualizer"
+  },
+  "elevenlabs-ui/conversation": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/conversation-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/conversation"
+  },
+  "elevenlabs-ui/conversation-bar": {
+    "file": "./examples/elevenlabs-ui/conversation-bar.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/conversation-bar"
+  },
+  "elevenlabs-ui/live-waveform": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/live-waveform-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/live-waveform"
+  },
+  "elevenlabs-ui/matrix": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/matrix-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/matrix"
+  },
+  "elevenlabs-ui/message": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/message-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/message"
+  },
+  "elevenlabs-ui/mic-selector": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/mic-selector-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/mic-selector"
+  },
+  "elevenlabs-ui/orb": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/orb-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/orb"
+  },
+  "elevenlabs-ui/response": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/response-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/response"
+  },
+  "elevenlabs-ui/scrub-bar": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/scrub-bar-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/scrub-bar"
+  },
+  "elevenlabs-ui/shimmering-text": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/shimmering-text-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/shimmering-text"
+  },
+  "elevenlabs-ui/speech-input": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/speech-input-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/speech-input"
+  },
+  "elevenlabs-ui/transcript-viewer": {
+    "file": "./examples/elevenlabs-ui/transcript-viewer.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/transcript-viewer"
+  },
+  "elevenlabs-ui/voice-button": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/voice-button-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/voice-button"
+  },
+  "elevenlabs-ui/voice-picker": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/voice-picker-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/voice-picker"
+  },
+  "elevenlabs-ui/waveform": {
+    "file": "./vendor/elevenlabs-ui/registry/elevenlabs-ui/examples/waveform-demo.tsx",
+    "export": "default",
+    "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
+    "sourceUrl": "https://ui.elevenlabs.io/docs/components/waveform"
   }
 }
