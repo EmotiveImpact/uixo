@@ -3093,5 +3093,505 @@
     "path": "prompt-kit/components/ui/hover-card.tsx",
     "sha256": "6ab9be94af94b57c745b30357e808062baeb7a4722360d4eeb5f8d17aa3f9d3d",
     "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/ui/hover-card.tsx"
+  },
+  {
+    "path": "8bitcn/license.md",
+    "sha256": "1f7c401e999345dc159be2023cb7587d72e044f3e736b378dff8828a7060c31e",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/license.md"
+  },
+  {
+    "path": "8bitcn/app/retro-globals.css",
+    "sha256": "a92e652910af7e790ad5486cd34e8952c3615c661718425e6d609db1e5457b2c",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/app/retro-globals.css"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/accordion.tsx",
+    "sha256": "5683a5f960962a510d1b0af7f2fa7535fa4aa3feb68fccb5714dce280c01a0dd",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/accordion.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/alert.tsx",
+    "sha256": "5e554d53bd0780284891ef9600618341c2ce9581adafd1ece0377afc007910ae",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/alert.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/alert-dialog.tsx",
+    "sha256": "ec9d09d7e9860505e34dcc7f61f23864283ad3d82bfd1583efed5a56c4f144f5",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/alert-dialog.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/avatar.tsx",
+    "sha256": "55c41bc98b42b8923834a90a8efcfec520462d0b821339f5e8e14df831bdc10b",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/avatar.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/badge.tsx",
+    "sha256": "9daccc748e9f398ef52696f88890ea4b4430b8798cb6cf62907240f5c3fa880e",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/badge.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/breadcrumb.tsx",
+    "sha256": "2ab4c8d4f1f7db1ff6c20abd6557186e494b1becf746c49644d80b1c53e52621",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/breadcrumb.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/button.tsx",
+    "sha256": "6a1e6ec841b43c6b1d745c6b5171e8186f5e3eadd864cc8cc60a7c68cd6cd233",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/button.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/button-group.tsx",
+    "sha256": "1ec25638bd171c861d2eaa21b37ab361f8850bd127642ca43c46a2b28f352535",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/button-group.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/calendar.tsx",
+    "sha256": "371a023f2622bc76084ffed08b3355f1118613f98736f5ba00ff0ab5d114a52b",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/calendar.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/card.tsx",
+    "sha256": "ed2f6391e2d6289fbb831195b68a2e5c8b84aa88c42872f5949922b041a7a86f",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/card.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/carousel.tsx",
+    "sha256": "3ddf76ab0b3fb46cb88bc48caa11e7eb42d72d0ea5caf04df46757a1090a648d",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/carousel.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/checkbox.tsx",
+    "sha256": "532ad9bd310277050adcb497a60de7ed7c9c4eabefb63599ed8540401e2d9347",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/checkbox.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/collapsible.tsx",
+    "sha256": "a412c402b368f6b577a0db83acb843b3863da0d225087e786f73ff491196a0e0",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/collapsible.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/command.tsx",
+    "sha256": "5a89f0d1b48ece17fb7b2adf31eadf78d4b6476f994b7b26299569bdbacb2d80",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/command.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/context-menu.tsx",
+    "sha256": "7c52b58bea20acbf5e652a1a88a874aee535aee18927ef92040c32a2b9f838a8",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/context-menu.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/dialog.tsx",
+    "sha256": "e7e6a6eb2b25377707c93665779ce7911f0324532f259eaee2901b688128f664",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/dialog.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/drawer.tsx",
+    "sha256": "a0f603660af0bfd22b25bbfda231c60b46475ded7cb4a707a904351ea80bbf6a",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/drawer.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/dropdown-menu.tsx",
+    "sha256": "1ef1933f3ec2cee1e9e37ffc0f68e24f19b2081282169c40f8dd364614b7dbf2",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/dropdown-menu.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/empty.tsx",
+    "sha256": "1454016b4884dc4f8db8c967d51d4876a1ca80adccb95006fd2f931b33799620",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/empty.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/enemy-health-display.tsx",
+    "sha256": "eb09e8818b3689ff05aedf8a289d304f19a026ad2cab99b944bbda3b169052dd",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/enemy-health-display.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/health-bar.tsx",
+    "sha256": "25f8a639bb54122e36b84565b73ef1f262275cddd5924077e300d23232a307cd",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/health-bar.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/hover-card.tsx",
+    "sha256": "4890529044346a9ca98ae0e76cc27d0e06479f7f9c65ae5c99765b7b5ab93095",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/hover-card.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/input.tsx",
+    "sha256": "22a3f9ea0b8091bbd8eba15be35ff5be7159167d15b8b235cfd5755230bc8e9d",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/input.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/input-otp.tsx",
+    "sha256": "419d16397c953d594cb44dd7fb06e5b87ba41ac0b71ef24e67961239efa1d49d",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/input-otp.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/item.tsx",
+    "sha256": "e76407785b868ca589f9061722f77b0ef88ec45f49b8729a8168f80ff314aeb3",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/item.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/kbd.tsx",
+    "sha256": "83ee3b82669c38a712cf18360fc606889954780d8be48624844ca6d8fc796f8d",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/kbd.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/label.tsx",
+    "sha256": "0ff22c6b05967530e8b002b10c5b97edcd0524c0a8c316750ed79c4082e2d184",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/label.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/mana-bar.tsx",
+    "sha256": "d0af0c1e51e6b35d17e28b35e3ee08befff9d7354f9f9c74d610ff254f586261",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/mana-bar.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/menubar.tsx",
+    "sha256": "31e8abc0c267981dd94d3e14466715c238ac850aed98eb325b76a7e209243582",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/menubar.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/navigation-menu.tsx",
+    "sha256": "9d26170da0b03b0f9487e8b8063ee7da20ec8b90e2b0d82c5fef1d8212b4d3bc",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/navigation-menu.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/pagination.tsx",
+    "sha256": "4807123957d7a8be20c0df78bb8e84d2422a8864034400050efaee15bd734731",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/pagination.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/popover.tsx",
+    "sha256": "43cb98cc5b16e1ea29ae70033e64991f02336877338b7df05befdd2a686965b2",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/popover.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/progress.tsx",
+    "sha256": "17228ed1ef1e7582907392d885a8e610a716dd2777aef356060ed43ca93f1bf9",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/progress.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/radio-group.tsx",
+    "sha256": "1f1e30bd347debdcf9b43f431c3d791db0bbb404890e7cf76ae4b3558a23b0eb",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/radio-group.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/resizable.tsx",
+    "sha256": "861cc8eb2b2e8ab3df218c42b64dd966dea9fc7c4ef60f046e9089c0d0c4d6d1",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/resizable.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/scroll-area.tsx",
+    "sha256": "61edce42ff957900979c7e58de9d57919ea96b1ba9e7245204e3e7548d8130b1",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/scroll-area.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/select.tsx",
+    "sha256": "78745d196f74e8df03c850d78fbd4a3f07091051b670f305ce7d491e44536870",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/select.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/separator.tsx",
+    "sha256": "43b56bade6518740d0fc5e1e7534b9382b3c937b7ee380ea8f560a5118cea3cd",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/separator.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/sheet.tsx",
+    "sha256": "8d650c7b0fcfae242bd10f653fe2edb5e8a1275446b09c87897ff58535773dcd",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/sheet.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/skeleton.tsx",
+    "sha256": "e278b1e38972227a9be330905f15350aa834abea8ee911d2e3a2215c17a9c875",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/skeleton.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/slider.tsx",
+    "sha256": "f88591b1804bb508faad2bd862bb20683491a60a5b606eadebadcd2c8dff0b47",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/slider.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/spinner.tsx",
+    "sha256": "c4ceb74e252bc30d1f9dd43d3ba7b3d514da478904850a275ed4001294dad5e4",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/spinner.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/switch.tsx",
+    "sha256": "5c91c12522a22af5915828e0f4b4c20d638815d7354e3c34e873363082c91cad",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/switch.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/table.tsx",
+    "sha256": "a067a30b56bdaa919762295678bbeae7e8fec325dc6a2e7a4a86eda1686862a3",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/table.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/tabs.tsx",
+    "sha256": "59856df23e6f1941935a5f30c8855c7db67f8c448145cd989bad992cf305f4df",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/tabs.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/textarea.tsx",
+    "sha256": "76cf9df8bfcf4b4bf26cb47980b9c4395bf578c1ccccbb415c9a7cf675d213f7",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/textarea.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/toast.tsx",
+    "sha256": "a84152822130af220d01fcedbb6c151891ea939eeb0b8abe81331dbf2d1f48ef",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/toast.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/toggle.tsx",
+    "sha256": "78f5760f3c3a32c9aeaef03214ac292d3ef98194e004aee0aec3d3f49aa73128",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/toggle.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/toggle-group.tsx",
+    "sha256": "75f8c74cc0fca5862298eaef5f21eed7daa4ec047287a896ff43e42aded1864b",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/toggle-group.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/tooltip.tsx",
+    "sha256": "9757c86919891b30c464693bffa4a2fec1c6ed05ed17c36835c5985ddf73be5b",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/tooltip.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/xp-bar.tsx",
+    "sha256": "496dec0b8b4bc60716e79ec096ac6512de0c1c8d4771aac529f747a9f33b0608",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/xp-bar.tsx"
+  },
+  {
+    "path": "8bitcn/components/examples/calendar.tsx",
+    "sha256": "eabdba6c4913bfe5da9f84789a4d45570bcfd754072969409b2739bbc66d124a",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/examples/calendar.tsx"
+  },
+  {
+    "path": "8bitcn/components/examples/combobox.tsx",
+    "sha256": "d99a168a8975991a6d769913a5396eeddbe6e9d8749c7d252193e4401e8ecb6e",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/examples/combobox.tsx"
+  },
+  {
+    "path": "8bitcn/components/examples/command.tsx",
+    "sha256": "6755cdd2f2ea41c9ee09c2bf3fc62f7bd4e69989492643d393b801254580a937",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/examples/command.tsx"
+  },
+  {
+    "path": "8bitcn/components/examples/date-picker.tsx",
+    "sha256": "eec785af5a5c0212b303528a48636fdf9889e9c7d91f0c0bbbe732c5cf73f63f",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/examples/date-picker.tsx"
+  },
+  {
+    "path": "8bitcn/components/examples/drawer.tsx",
+    "sha256": "ea27fb42d5a0e44867bf904d04b7912270b5020158218e091e4ebc4fc5554679",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/examples/drawer.tsx"
+  },
+  {
+    "path": "8bitcn/components/examples/navigation-menu.tsx",
+    "sha256": "29407a111383d9a2a6535d995c864d19f8a452b38c5a55ae6020d3f629e31b1d",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/examples/navigation-menu.tsx"
+  },
+  {
+    "path": "8bitcn/components/examples/toast.tsx",
+    "sha256": "78ff887fc853144092062771850f2c67b6eba72aa0d7f357c73c28f08e0a3cd6",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/examples/toast.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/retro-mode-switcher.tsx",
+    "sha256": "586e00f62c7de1e7e5c31c32f7a8d8fbe6d02f4f9b3384f98f0ad763423a9739",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/retro-mode-switcher.tsx"
+  },
+  {
+    "path": "8bitcn/components/select-theme-dropdown.tsx",
+    "sha256": "014fb109fc3985a5b7a656bafb97213958492c5442371dc7abe2bd5670a90b10",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/select-theme-dropdown.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/sonner.tsx",
+    "sha256": "a62cd60f6c42c13acefef2b049be3a00d343f6dc9047a018131fbb5321e3272d",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/sonner.tsx"
+  },
+  {
+    "path": "8bitcn/lib/utils.ts",
+    "sha256": "e812ce0932906a02e39f9f0c91e64021312ef5da9c5c21627043eeb281de5762",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/lib/utils.ts"
+  },
+  {
+    "path": "8bitcn/components/ui/accordion.tsx",
+    "sha256": "5c150ca970db5db0f7b32f6deef60b64b2abd424df4017964b4f665728b36753",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/accordion.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/8bit/styles/retro.css",
+    "sha256": "0e96902b74184e53ac5fbb806b8ef077bdd781357b3e47e83628a8c66842c010",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/8bit/styles/retro.css"
+  },
+  {
+    "path": "8bitcn/components/ui/alert.tsx",
+    "sha256": "fd7570679b9826d0fff27778c1835d12ea6e7e29670d131a313b79d2ee41cd79",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/alert.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/alert-dialog.tsx",
+    "sha256": "ecc341a4bbac4f3b38a72db4dfcd9c0e10d80d0ef2b3cb31cf6c42da553159ff",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/alert-dialog.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/badge.tsx",
+    "sha256": "dbe30aac8780ebd5729e92c554dce67e3bfcdcb698337637fc8e8391f344ab81",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/badge.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/breadcrumb.tsx",
+    "sha256": "823c767857c68c3985ea41825975250cd8e16e1df9c896f682cbaa472060e36b",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/breadcrumb.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/button.tsx",
+    "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/button.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/button-group.tsx",
+    "sha256": "784c89d8ee683e1bc972ae69e6ea8225a7f63abe22aa1b5fc3423ae8a2a399c0",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/button-group.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/calendar.tsx",
+    "sha256": "8d862c99b3be23cf22b6025b9f3d7505bd004ec03237f5a4e68b83c408ed86d7",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/calendar.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/card.tsx",
+    "sha256": "c668073c0c19480477ef205a0d2ca621dd81a35daf0b397e05a3a197ec1b521c",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/card.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/checkbox.tsx",
+    "sha256": "553f674588def6b1b7067a46548d2365428fbd0a72286e472a0f015aeedb2320",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/checkbox.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/command.tsx",
+    "sha256": "dece1cd186b998e518cfd49f0986d8ae01d3b9af74275dcd9f57d410113b014c",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/command.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/dialog.tsx",
+    "sha256": "eb9dfff90cde1fae6854f5ae57e66c9313b4e9792c3d47806b11c480ecb3d4e8",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/dialog.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/drawer.tsx",
+    "sha256": "4ea04334e8193e3c09e07931ca50d86b160efa79365716d09eaad6e2d64aba82",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/drawer.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/dropdown-menu.tsx",
+    "sha256": "5e84c03da3aefb471af57860ac78d7dc994bc9e70067cc0084582c0718466bd1",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/dropdown-menu.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/hover-card.tsx",
+    "sha256": "97104f9dda0faf2e4f8e5277649f2115dc6216f007bb73be5827772a74f869d9",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/hover-card.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/input.tsx",
+    "sha256": "50b2f9bc2a6c8685fd6763538adc05f2d0cc0d8c5827729bd0109acdd3e5f494",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/input.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/input-otp.tsx",
+    "sha256": "dada17002c3c021fc156585f262fa383213aaf679386b91d36235747b06e73df",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/input-otp.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/label.tsx",
+    "sha256": "9ec42c8a57e82311118b794318409ee02b2cebfa49ba6cce8457cff6448cd471",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/label.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/navigation-menu.tsx",
+    "sha256": "3a48fd3b5c6d3c4f7ab1bbb6da23154019ecba8be4f8c5c97d7039359bff8fe2",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/navigation-menu.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/pagination.tsx",
+    "sha256": "af4fbdd73d438509753223c352637916b05f9ae2ada363952e43a2ce0a2c208e",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/pagination.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/popover.tsx",
+    "sha256": "1429b5e5fae94be8dfff4d3f238a8f7a85d6b667c11f5889290d1b4f730c49c6",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/popover.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/radio-group.tsx",
+    "sha256": "61bd1cd741d9fcafc19514dbe07a1d69e71dc4ccd81cd9cb7fc253946ed02068",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/radio-group.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/select.tsx",
+    "sha256": "edf3699317d0cc24cbcccd87407e7189c6e8f4305d034776dfec9e20ee89a241",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/select.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/sheet.tsx",
+    "sha256": "eee485cf867819a7b0a2982e9243dbcddb49d5105a9efe1e96992a3017fa82bf",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/sheet.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/skeleton.tsx",
+    "sha256": "1f75b999a5ad2f65e8fb807faa2b3fccef9eb333996fb4c9030575dac7393091",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/skeleton.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/table.tsx",
+    "sha256": "8bcd9b063430d108f131890b42c2eabe73e478b418019f531b83ef3f10d719af",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/table.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/tabs.tsx",
+    "sha256": "8894df7dd5a5a6ef137daceea9d450eb1c6da4f7779bc0619b5ef0f19969edf0",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/tabs.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/textarea.tsx",
+    "sha256": "1b9370df43a8f4828e747858b748a63aaccda4c51e325b351d39fa579ad3fe47",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/textarea.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/toggle.tsx",
+    "sha256": "59032063097461115095ff12ff139655657804a3547a2c7b48dcbaccb1d75b2b",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/toggle.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/toggle-group.tsx",
+    "sha256": "ff134bcc2850726af6495bbce241d99619c7dcf0132dcecf8734578720142bad",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/toggle-group.tsx"
+  },
+  {
+    "path": "8bitcn/components/ui/tooltip.tsx",
+    "sha256": "989a17bd314f69722b7dbe7a6f3d116e409a4adadfad60ef24cf7f12b32d3867",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/tooltip.tsx"
+  },
+  {
+    "path": "8bitcn/lib/themes.ts",
+    "sha256": "cb19d5b72e88362279c26c70a33f3af11366b91a79e8305d4f9077f37506bac6",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/lib/themes.ts"
+  },
+  {
+    "path": "8bitcn/lib/site.ts",
+    "sha256": "54abb26328a981ff8c38091e97e2ed314af779d8ed7279f5300035f730608096",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/lib/site.ts"
+  },
+  {
+    "path": "8bitcn/components/ui/separator.tsx",
+    "sha256": "e9dddbd8dbbc0eccd683306481b0f0bbc8e2b60ea97817416ebb9fe7fbbbdca8",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/ui/separator.tsx"
+  },
+  {
+    "path": "8bitcn/components/profile-card.tsx",
+    "sha256": "11ef961349378e75f564915072239d7a4cd9865b3c8d3c4f268f007489db0ba5",
+    "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/profile-card.tsx"
   }
 ]
