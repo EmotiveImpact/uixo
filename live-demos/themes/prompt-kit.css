@@ -8,6 +8,7 @@
   --font-geist-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 html[data-provider='prompt-kit'],
-html[data-provider='prompt-kit'] body {
+html[data-provider='prompt-kit'] body,
+html[data-provider='prompt-kit'] #root {
   font-family: var(--font-inter);
 }

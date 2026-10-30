@@ -11,10 +11,17 @@ assert(
   entries.some((entry) => entry.endsWith('.js')),
   'Missing preview JavaScript',
 );
-assert(
-  entries.some((entry) => entry.endsWith('.css')),
-  'Missing preview stylesheet',
-);
+// Each library's stylesheet loads lazily with its demo (see live-demos/main.tsx), so the
+// HTML links none. Every theme must still have been emitted.
+const assets = fs.readdirSync(path.join(root, 'live-demos/assets'));
+for (const theme of [
+  'styles',
+  ...fs.readdirSync('live-demos/themes').map((file) => file.replace(/\.css$/, '')),
+])
+  assert(
+    assets.some((asset) => asset.startsWith(`${theme}-`) && asset.endsWith('.css')),
+    `Missing preview stylesheet: ${theme}`,
+  );
 for (const documentPath of ['/live-demos', '/live-demos/', '/live-demos/index.html']) {
   for (const entry of entries) {
     const url = new URL(entry, `https://uixo.example${documentPath}?id=shadcn/accordion`);
