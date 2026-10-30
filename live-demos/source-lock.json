@@ -3093,5 +3093,1040 @@
     "path": "prompt-kit/components/ui/hover-card.tsx",
     "sha256": "6ab9be94af94b57c745b30357e808062baeb7a4722360d4eeb5f8d17aa3f9d3d",
     "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/ui/hover-card.tsx"
+  },
+  {
+    "path": "neobrutalism/LICENSE",
+    "sha256": "a77140948a68fafb5e0077a287502104203b7ccb11255b311101ec8fe85fa250",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/LICENSE"
+  },
+  {
+    "path": "neobrutalism/styling/globals.css",
+    "sha256": "034316058af6d20e5dd3d63f0cdf2f916db13484155536c359fa71cca0c9607d",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/styling/globals.css"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s1.tsx",
+    "sha256": "1ba665caf38bce5e1a46042d1ba2b7bce4971bdca45fc1cfd69d6c4e9de8d4d1",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s1.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s10.tsx",
+    "sha256": "45507e37a38ae23132827b0b477624f604ab5ff909b406443c79529324cb027c",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s10.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s11.tsx",
+    "sha256": "f95f37463ef7fc8edeeb4fe3fd58764b1a54a725acd294b88d270b042aaa241c",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s11.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s12.tsx",
+    "sha256": "9faa36f73a4d5b999b079e87f406fc956d3d5d8553e33db0a8c0d64aa6c99482",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s12.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s13.tsx",
+    "sha256": "81275fd7debd8945ae727637c615b0854af7b63a8eba161e47aacf129bb3b105",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s13.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s14.tsx",
+    "sha256": "b8fb0861f88b623f5e8f6d56b418a68b39b929bbe2c563c73825ffd6a836502a",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s14.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s15.tsx",
+    "sha256": "0236b43e7fa3c922898db6a05e5cee4f4f164d7197107460d016686354632e11",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s15.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s16.tsx",
+    "sha256": "1fdb5d96cbd149b32a93ffc4472454ea98048ab45b18644aacf0c2dc9c8d1d48",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s16.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s17.tsx",
+    "sha256": "ac14be46c0afb7beb1d66c0aa3c36c46418d51b8bfc7913ea8547683054bf38f",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s17.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s18.tsx",
+    "sha256": "546c09f2e7b4d876faaedbd08859827dd1ee344a45c1ea7a9c17936287971ff3",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s18.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s19.tsx",
+    "sha256": "f34ad32257fb36efe46e891c6d3e17833e5396e2dbf3b456ccd64d87e16a44a9",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s19.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s2.tsx",
+    "sha256": "f90475e29b8d07d8726a8be5f387c9e8d3e95090a596fec688ac5fbb49459c98",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s2.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s20.tsx",
+    "sha256": "39317bc878d5140ff4c8bceec61f2957e435ba88a0d02bae581dec875d1a7e65",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s20.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s21.tsx",
+    "sha256": "282aa8b35b4104a9842a2e60129e8ec23a5063b41252af0d19ed26ccf98efb8b",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s21.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s22.tsx",
+    "sha256": "3e2e9355bc4d8d481826cf0a17aa3fffd2acb965dfa2b0ddd58db782c04f3f5d",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s22.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s23.tsx",
+    "sha256": "0224f39008dd2145cb2d3c0ec3368f4816d3acae1acc894007a28d9ada108ff2",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s23.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s24.tsx",
+    "sha256": "e29ba1ddc49569ada9662bf66e2f66f35e1895f3237c42860b43f74634732b96",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s24.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s25.tsx",
+    "sha256": "15bfc31daa47668a74c5488a524b2b54ff619494b6d518c0189b7d712bb3f8b8",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s25.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s26.tsx",
+    "sha256": "4adb97e8f83f49e41bcf25453f794eece35fefc6d886da40936f7785253fbb09",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s26.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s27.tsx",
+    "sha256": "9ee1860184068b3ab3b65dd71c8a71008dc428a7b0e06f02de68f4200987a2da",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s27.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s28.tsx",
+    "sha256": "17743538f78ad13f80a3c31c71084510f55f0726a501266f6888179fc57732de",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s28.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s29.tsx",
+    "sha256": "b48fc1a0e3dc938f9cb049ca420c915cfe12a4a15398a82789a35e5abacb529a",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s29.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s3.tsx",
+    "sha256": "63e9d02e8e7796941baa9ef025c0dc6c9db91587008cb800ca963781c32d17df",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s3.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s30.tsx",
+    "sha256": "0930dfcf1c4e44ef644f2b001b13b0ce6f6b5f1dad1a8b6326e33821090501a4",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s30.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s31.tsx",
+    "sha256": "5b632c4fbbdf41e062df34778be61e508bf4294a8dafccfa0d653bf60aaf364b",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s31.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s32.tsx",
+    "sha256": "3c389d1956c0664c72f1329c3231a1061e43d3fa8965eda5960d4b4efef344d7",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s32.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s33.tsx",
+    "sha256": "c0b2d0e5c9ebbc2fe1e6fed54fa76ffd05246c793f8dbb6b5c163f534af662e4",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s33.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s34.tsx",
+    "sha256": "59b888486ea9b5dc7d2846b5f1580feff7d661fb32a1b3d136960f4b332dc48c",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s34.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s35.tsx",
+    "sha256": "d8d3273e8b179b0dbcbf679b6c087ac963a24a0b6df2c582a83fc8a6c8a09040",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s35.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s36.tsx",
+    "sha256": "2808eeba8e3fb954febf0da3c58f8004f85e5418ec2f1ca3e109bddbf8fc259e",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s36.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s37.tsx",
+    "sha256": "58005bd0948ee8ba7559e28c9afd7dd3bc024e0a47b8a6555892b0e8cffd9e9d",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s37.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s38.tsx",
+    "sha256": "de5c42942100eff47881ab0d35d735e523c4552c7cb9afbd00eb8c5be331d395",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s38.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s39.tsx",
+    "sha256": "2335167cd3924bb4a6acb17523bc25cf41aa0b99d601069d1f3b52ebfb1e8063",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s39.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s4.tsx",
+    "sha256": "d6cbf6965637a1401eb739f37980c47844950a3b2390be2df916bfcf20ffe2a2",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s4.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s40.tsx",
+    "sha256": "22241732224322651ee6c6bc51a620cd10301ff205c25174c8342e9e718c6951",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s40.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s5.tsx",
+    "sha256": "50c4c4a00008f35473ca717b22b67d1af87cae12a5896d4a43c9809a8ac97b11",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s5.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s6.tsx",
+    "sha256": "f68388ac9ef77ba07a46b6d52a69b8caee7b9816c73b2354645ae4cbb81983ca",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s6.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s7.tsx",
+    "sha256": "7e180e9efd4bfd57503778bbfbb71eaa06f97d454679d7fadd42469f24bcbce9",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s7.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s8.tsx",
+    "sha256": "aa636278548f03295ca157d2c2a71ded77b82106aaa19dcc1bb377339ea9341e",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s8.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/stars/s9.tsx",
+    "sha256": "04610b16715adb3bff43045786db9b28e201e79e81cfbe3ab73babd3cc6adb9a",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/stars/s9.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/accordion/index.tsx",
+    "sha256": "8d308086080e3bfecbecbcf2d761d073adf3bf085dc968f17bfd0bb0b8c812ed",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/accordion/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/alert-dialog/index.tsx",
+    "sha256": "03a0309fbc151e93a7bbecb1c1b7bf6669ca51223f9ec0c5911ac8feca03e3c5",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/alert-dialog/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/alert/index.tsx",
+    "sha256": "d9b4cb6b67bf2ef0dc45afb5a9e19ae2fd5d3c688aa1a0c2d6383fef2f147f65",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/alert/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/attachment/index.tsx",
+    "sha256": "7c89bb162aca8ae6bb45bf01f6daa0585fc1b80739005c0b199f5efefcbe61c4",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/attachment/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/avatar/index.tsx",
+    "sha256": "b00eeb53e964788a84ca0ac8c1d5b2f917b4dde29859c5e2081e424554d6745e",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/avatar/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/badge/index.tsx",
+    "sha256": "0294cba24596fe3e5c3762f5fd20dc9f7084717441a49b8af7e5853eac620c9e",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/badge/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/breadcrumb/index.tsx",
+    "sha256": "74b925c7574da804ef49d55847b478bb72085e4c5fc0f5c696dbc3cc3ce79212",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/breadcrumb/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/bubble/index.tsx",
+    "sha256": "f087a77a3843a6719524a9c7ca5e7224d7d8dd786e760fc1a1ebce9ad172534d",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/bubble/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/button-group/index.tsx",
+    "sha256": "128ed9e0dcd27051f55bbebec31df3243454df39fc72d2a970b8f6e46b29fc3d",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/button-group/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/button/index.tsx",
+    "sha256": "3881ca6ec500b4968ac58aef705e12d553e7051245650a9e3632e612e902d7d5",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/button/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/calendar/index.tsx",
+    "sha256": "efd226fbc1c9d328cfa0a9b24f7209604189bff9ce4b2227c442513e4cc954df",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/calendar/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/card/index.tsx",
+    "sha256": "ee3a09415320351a79a6f0e3609d36d8dc939c6d5874290de2d449afe9780f08",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/card/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/carousel/index.tsx",
+    "sha256": "1220e4e3842604b1b747b190f44493a212a55ee7ed056e206f6102ca5d9f58af",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/carousel/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/chart/chart-area-stacked.tsx",
+    "sha256": "bd1f9aa94cdccd7d10cd408e65f1b236d080161b3d6958655cae94e0682b0205",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/chart/chart-area-stacked.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/checkbox/index.tsx",
+    "sha256": "17ee7693dafc2e746cd94313763f3011a5c8e3fd8f2bcfe42a55f0644b9ff76b",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/checkbox/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/collapsible/index.tsx",
+    "sha256": "aa6466a29cd856b72b31692d731173d842cf338ac917e9d4cb95e83be0cf43e4",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/collapsible/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/command/index.tsx",
+    "sha256": "a58eb56dc20483b144119bfb62124e74defa36124f33310684aae0ce84a0a3ce",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/command/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/context-menu/index.tsx",
+    "sha256": "5c8d8fc4d0c19ff2c911f24982fdbee05d79a3fd734ceb368f0f233eeda00464",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/context-menu/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/dialog/index.tsx",
+    "sha256": "c86691936b61a14bcea85aaec3aa47fae53dbdd61b8ead510eabbea988377771",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/dialog/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/direction.tsx",
+    "sha256": "03f77d77ba47d29dce6f3dda331830446eba6f9b279a2cb16ceb8be68d25163c",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/direction.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/drawer/index.tsx",
+    "sha256": "66e400e2045d4515f29aa292b3821c3e5aa216b3a23631f859ead3758a765202",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/drawer/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/dropdown-menu/index.tsx",
+    "sha256": "e796735b40a1ae4fec3a1a1903f24ac87343ff27681efc5e1df6f6c7a02e9187",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/dropdown-menu/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/empty/index.tsx",
+    "sha256": "09f25a803cbe6494fb90570c7f7d74663443a342ab4d3786ccad2b6122d380e4",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/empty/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/field/index.tsx",
+    "sha256": "67057a184216ca621d5d3098318b2f6a3c637f7a8cf174e5afcabb59260309a3",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/field/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/form/index.tsx",
+    "sha256": "771c64ef5fa6e510a1ea244359f56651d535329d002082561a9d1ee88cb488d1",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/form/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/hover-card/index.tsx",
+    "sha256": "61bc0cf55bdd59e7b95f72cf4ec446dc73c01576def7461c46e113b08c5ecde2",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/hover-card/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/image-card.tsx",
+    "sha256": "cf1f7af8f07324f28e5118fffdbcb88c45e5c6c4291a4841cbac1587eacf0cd7",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/image-card.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/input-group/index.tsx",
+    "sha256": "81955978bff89454143b7c173bf2bbad1f8343ca063951cdb9bd68537d66cf63",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/input-group/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/input-otp/index.tsx",
+    "sha256": "2cf26293af98c41b4f76e07c0d529efc2f4ca98d65943cdfd4404e4c9dd02fbb",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/input-otp/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/input/index.tsx",
+    "sha256": "7d6c14174b5de4f8571b14939047d5274ca9bcca5662ae6712b5fc3ff33119cf",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/input/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/item/index.tsx",
+    "sha256": "4c16d0e902dc4da398159afdfc9516ea3a9d9cb3c38564dad2b5fe0686a25a1d",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/item/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/kbd/index.tsx",
+    "sha256": "59308236f807a1d5388792dba17ca8ca1524002c876b5eec750f20d49e69288b",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/kbd/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/label/index.tsx",
+    "sha256": "875d3bef675fb6fb09ee986cc48e5e12e559dfd315b4368ea66c2bbc7838cba0",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/label/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/marker/index.tsx",
+    "sha256": "445fcebd4700efd6fba369133494c0df256b76d29fe764f7710ef4f60696d9a0",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/marker/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/marquee.tsx",
+    "sha256": "429cbe076f265a747cb2ba362f9ac6717e87e548eb5d42720abf68b3703f36f7",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/marquee.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/menubar/index.tsx",
+    "sha256": "ec8bd365266286614a214a1a7b247a877a800a9ffd0e95a8936f02113559e90f",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/menubar/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/message-scroller/index.tsx",
+    "sha256": "f83ece2c716218d7180d995bddff44dd446327b3fb0198b4522e955ccb166591",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/message-scroller/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/message/index.tsx",
+    "sha256": "944dd4c171260a6db29b275faf92b96ff2b81d3290a21ec3426ae3e776b4738f",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/message/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/native-select/index.tsx",
+    "sha256": "f2937d6343ce86a9495359db67a3015301ee456b64ceded3fea2ef1f58fee939",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/native-select/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/navigation-menu.tsx",
+    "sha256": "4c29ca26d8152e30aa5112dbefcf7d6ecf19db3c719dfdca176f959a07cad508",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/navigation-menu.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/pagination/index.tsx",
+    "sha256": "b6a39069bbfcf32459cf64a0011b73bb894da52090b4db7fe288fa1ece7db307",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/pagination/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/popover/index.tsx",
+    "sha256": "86602da0499053d0ef95792aac6d4fe6a226fe0258e15197903cdda5a5527b45",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/popover/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/progress/index.tsx",
+    "sha256": "6d10a6c7cfaf4936fc9b1c488acd57bd83c3dc92d70fe614186e1fa54df8282f",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/progress/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/questionnaire/index.tsx",
+    "sha256": "27e5b5e7840573ae81e9368b3d10b0ad303a863d85d43d2b243697a44f0f6130",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/questionnaire/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/radio-group/index.tsx",
+    "sha256": "95dea63ba2e229d6e9e577a14a6895c13ae8ed6b0d6c7722cdcbc6a423cb9d94",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/radio-group/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/resizable.tsx",
+    "sha256": "053656450ef2385d567e1fe3c4f62291fc65f4165cdd5c26fe4b43556be98c4e",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/resizable.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/scroll-area/index.tsx",
+    "sha256": "1da52971be4e66c6d86d8dba69c1fb1ee3796b2a7fefd64432f8ca580507afa8",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/scroll-area/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/select/index.tsx",
+    "sha256": "04a3b7d20c81a7efd15c785a575753624e2aef94f0df643054138a081cb163c6",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/select/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/sheet/index.tsx",
+    "sha256": "f98efe42ba5000a6ac92e538008e727f93ef053875f9c161383d9bff38aac47b",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/sheet/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/sidebar/page.tsx",
+    "sha256": "c978945f9038256b66b7dc7899afe52ea9e35f434f2b7e2142e9c65c9b7cd65f",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/sidebar/page.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/skeleton/index.tsx",
+    "sha256": "de3fee3d1e4341ad855ccc21b5ff09f208930d60f1c2e5d83e67b809b94172b6",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/skeleton/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/slider/index.tsx",
+    "sha256": "7bccb486a2e6fb3e0522a4cfff23ae17044987448e5a74027f9c44896ae926d7",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/slider/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/spinner/index.tsx",
+    "sha256": "d2ecc75512985c95a7e1ad28e3dc922e98eab8e4ceed77b01466e7bf5e2415b3",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/spinner/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/switch/index.tsx",
+    "sha256": "8ee3adf286e5e24ded5c991ab71feb3e468896f0ff4de5416cc46aa662c049c1",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/switch/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/table/index.tsx",
+    "sha256": "25439d347fd62aecdc0b7859fc0c423060676729fce28de920e1ce890d9436ae",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/table/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/tabs/index.tsx",
+    "sha256": "45ccb4bbaca8224feede5db4fce506d4e834bf12618b5d5257784567b328516a",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/tabs/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/textarea/index.tsx",
+    "sha256": "f46fcc66b0fe1edfd2c2c747d88c772e38d61404d90602b52b6577a58a51dfc2",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/textarea/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/toast/index.tsx",
+    "sha256": "f24d72a181f3015747e2c2362c68b144a25c16b2fa2deed80b5497dd03179d1a",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/toast/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/toggle-group/index.tsx",
+    "sha256": "b693542dfcd47e1879f3b2f833fb764f639bd006fc02c5920936dfd7f090bad8",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/toggle-group/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/toggle/index.tsx",
+    "sha256": "b78f10c42379691a9da397faecc1641aa51ef3ed9917f9cabf2e315f059f42c5",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/toggle/index.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/tooltip/index.tsx",
+    "sha256": "61395ec288e8b5a42cb0c38c7769793562dff50aa5c2f2cd4076571286a4ffa0",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/tooltip/index.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s1.tsx",
+    "sha256": "7dd0c1dfd5b5f0d58663f3d5eee80a55e4d4f2eedb4fd0902a2ab7164fb24328",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s1.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s10.tsx",
+    "sha256": "85ec1f17d3380347479a9f17b66fcc6fa07c8628c79a8d6dd5d84725c9d857e1",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s10.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s11.tsx",
+    "sha256": "fe0a494f11a5375abb33d06309441293c89d3c1441a41e75b539bf2d9b6e767d",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s11.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s12.tsx",
+    "sha256": "a7fc1b1d7581ed6f509dfd1436f68876069ae81eedaa2f4904b93341ed805ce4",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s12.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s13.tsx",
+    "sha256": "66cb7192b7e4c5aeb035ac8a09d0fff994663d17d6f560d751030160b0b4726d",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s13.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s14.tsx",
+    "sha256": "994d07ae16f547d8bf16a292e1956c9e2ab441105852cdac90cca6f5645c8e6f",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s14.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s15.tsx",
+    "sha256": "0ec6d4d1ca32b503ff3c9032d8cac3a62e7f009ca0652091e91132b5a7545ee0",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s15.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s16.tsx",
+    "sha256": "31bcba5301dd3b1e8e2f3fb6e882fb1b168b427bd7fabf86810b0dd3975929ca",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s16.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s17.tsx",
+    "sha256": "fbd29f64fe3909cc1b438f3bd01a86b14d52560aca0e3b8905b56b0a13f0cb79",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s17.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s18.tsx",
+    "sha256": "82031d7a14ead1df5591de734be2c7ebdf7273ad209c5d65829890938c3a2bc4",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s18.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s19.tsx",
+    "sha256": "8d9162efef34b032200d2c1e1becffe84abe28a43219c1255bcaa94180442150",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s19.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s2.tsx",
+    "sha256": "f406c955cdc69575943b1b45833d629e84148a3fb4c03dcbc4c6dbdc038d2c10",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s2.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s20.tsx",
+    "sha256": "ae9ff8f250abac0f05b925a8d14944ae3e72fe5d354ce578328222cf7f982948",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s20.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s21.tsx",
+    "sha256": "5aac0a6afd2852a7323e0690c7dede6b511863ed36e6772d6cbcf647bd224b6d",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s21.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s22.tsx",
+    "sha256": "d65685571782eda597878020d638cdcdb1484d93eefdf6d75de90a020de1daba",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s22.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s23.tsx",
+    "sha256": "778b596808e032300e8a0a5c0fb55e3b5c869de525e3e1217caa8358b75bb416",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s23.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s24.tsx",
+    "sha256": "58b64416607df6bdb3d539989089e9b1df7bd178208d4d72e92ba8d6bb6c6a12",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s24.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s25.tsx",
+    "sha256": "650a5c260ce4142456c8429b60aab4477cd75fb3b60bafeae4634df3909c346a",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s25.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s26.tsx",
+    "sha256": "4db27d68f36b4b0757ceac6a1a1caf8f49137f8bf6a43e988fdbfe2e3da95a86",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s26.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s27.tsx",
+    "sha256": "fd09c17f3939b86099f8f860057ad064cd000ca311759347a4a0df0c9c39408d",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s27.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s28.tsx",
+    "sha256": "a7dada07d5ffbd0b7565566bd9e25b6b6f47fa75a99f94b1fdf1e2a727e0e25f",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s28.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s29.tsx",
+    "sha256": "3b078076c5cffdd0510e3e8e1acdf9b00bac74d269bd14f2255dc7721f4d4623",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s29.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s3.tsx",
+    "sha256": "f126187544ba44cf93f0cfc978fd63f30120c3fc93d036dbf64b44568312307c",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s3.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s30.tsx",
+    "sha256": "bfd20511e5da733c64512f3c4234848b76b5ff41464e88edbb73f306e00b73a4",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s30.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s31.tsx",
+    "sha256": "af34b7af21d4d02ac3d3fb48dc02382ac85702507524266e53dc4e90e9a308c8",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s31.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s32.tsx",
+    "sha256": "734b9fa0851e50d542e9a12a67c2470e22b1a573bc4483c94a7bb6f1d6e1b7fb",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s32.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s33.tsx",
+    "sha256": "5b8d8aa54ce7955d77296873655e3891782a0129d9a2cc879eca873a92fc889a",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s33.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s34.tsx",
+    "sha256": "f9381a504ab56ffb843196d09ed3364930857ee56139262ad237dc2db33cef57",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s34.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s35.tsx",
+    "sha256": "c36d61afd0426f8ce24103314981e97289c5198a6bcd80b3390ae15b6725ff09",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s35.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s36.tsx",
+    "sha256": "22c1a54fb40f73f5c8b624f406abcc85dff1436de93955764079a844633e2493",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s36.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s37.tsx",
+    "sha256": "da7a9d493096fa1241e86aa22d947de4b8fb970b5fcefde946a498a4e99f819a",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s37.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s38.tsx",
+    "sha256": "6127728bb42afb5218efdf516cad4de96701d04adde7386f6c51a55cbe64e85b",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s38.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s39.tsx",
+    "sha256": "647e4e728af893e558ddef6fb4e2892a82cf8208e00c9b50d2ecf808e49893c0",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s39.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s4.tsx",
+    "sha256": "2db450ae7d3f70bdae613ca9d41a108ed3dab0d07e1e656f127664ed46f0700a",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s4.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s40.tsx",
+    "sha256": "a0306e89b93b94201beaa8ecd478fb22efb274393ef7df7d9b9e5fc3436f26c0",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s40.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s5.tsx",
+    "sha256": "326e17e11209e7fa5155bcdc744215cb4d8b3abf7291c4925b79c3051dcd7a8e",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s5.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s6.tsx",
+    "sha256": "198ad80f533cb441308befafae357d8081e60a96375d36c4d1bba12167646a28",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s6.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s7.tsx",
+    "sha256": "12f1e1740f732636903508584d1ae9e2198fe9d6cec84772f148c699ec06dcb5",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s7.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s8.tsx",
+    "sha256": "8a11334f3f7c9fdbb99a09294be878c52f461f0133a89d5ffcd3cf4ad9e4de65",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s8.tsx"
+  },
+  {
+    "path": "neobrutalism/components/stars/s9.tsx",
+    "sha256": "71b468ce5b42455a9ae7058d62bc6e0879b36ed502fc7ca1bb86c15187a09f42",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/stars/s9.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/accordion.tsx",
+    "sha256": "d30e6d3aab34e6176101cdc665106a65602c490f64b846ca781cf0be043f0615",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/accordion.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/alert-dialog.tsx",
+    "sha256": "4ab2005e68963032dcabbaeae2eb9849e5debdc52a0d05ca11dd4ea9ddb55b42",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/alert-dialog.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/button.tsx",
+    "sha256": "d1bf412ba924f553d73cd8d96ec56af7798b8fcf2db660f36b2ee3b8048a270b",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/button.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/alert.tsx",
+    "sha256": "d8a2c5df33767faae002cbd5aaba1caac7401dbc1706115b81d61926e66d1011",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/alert.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/attachment.tsx",
+    "sha256": "0fbf417c7e22ff684dd388f257db51f8c38f0361b84a0fef575e26b590cd6a46",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/attachment.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/avatar.tsx",
+    "sha256": "a7fd78e3640786e3bb2515b7a311bd69e4a9a82af0b6ac66ab91a9da507b0a7b",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/avatar.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/badge.tsx",
+    "sha256": "d7e123443e2c912c882190dd41356cde8cca552a64b6e3962eb35b0413a8bcee",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/badge.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/breadcrumb.tsx",
+    "sha256": "3bde508f01ee2414e8407de9986b3ee391196288675c668372a7dd5ad16cba3c",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/breadcrumb.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/dropdown-menu.tsx",
+    "sha256": "1bfcb92019b00d702910c3e18af0c6d1874f4b3c8116e46cbe9070da1ec86a6e",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/dropdown-menu.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/bubble.tsx",
+    "sha256": "67b820024ccd12e23edf9acd18c2d27e71f225f2a952e6a4f1f1c1bda4dc19e2",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/bubble.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/button-group.tsx",
+    "sha256": "e53b3c39d07ea9d2adf0e5f4b22c1122bfee4157128a9ecdf4b0282ff3ab1226",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/button-group.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/calendar.tsx",
+    "sha256": "4de3018de898bb6c0e32857f135cc91e06f4472f37dfe7682a3a4fdbcb6b62d1",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/calendar.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/card.tsx",
+    "sha256": "f5ae5120516706facb9ee97a4ab1e3af446b9df1cdb32a30e332fd75f9c7d2b8",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/card.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/input.tsx",
+    "sha256": "cc801c472d4680dcce91b707aae161c903c97612dd61ef7eaca2cb1d19b5a59f",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/input.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/label.tsx",
+    "sha256": "61e96f4e2c9ee52ceb8c82427fd1414b3b0a4d574db2c60ff332a36844ba500e",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/label.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/carousel.tsx",
+    "sha256": "81c1d9cc7844b7f957aa201820a27ef02cd766ba8e4c255faadba664fccd77a6",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/carousel.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/chart.tsx",
+    "sha256": "5ea92428ca6364c57dfc6d0d24e5c3be8af9267fdf03e090d87f0414cbfb200e",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/chart.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/checkbox.tsx",
+    "sha256": "2b864431334ef4bcc47742deb03d5b8d0b8710d3c8d17cf5174ea73ad9cc0259",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/checkbox.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/collapsible.tsx",
+    "sha256": "5029ff3840fbe2ae716bd9319aa29920b5f9567f78f1a876304a2cd5dfe52022",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/collapsible.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/command.tsx",
+    "sha256": "832f42438c3050d53f8181c090cc96e7aaaa4f20f2a195b9e90ac559712ec8c8",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/command.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/context-menu.tsx",
+    "sha256": "f94615a68a08bb80b6535d24a3e306a6c041e568c4e0076c121c3f9b00431e42",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/context-menu.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/dialog.tsx",
+    "sha256": "55b8d864421b953cbde4fec68266d6591340147c7244b4dc1b8a37daf6b5f37f",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/dialog.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/direction.tsx",
+    "sha256": "661ff5b9c0dc26edde1226bfedc0ab50976d84f8bae42ca83a38dc3b478fd4d4",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/direction.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/popover.tsx",
+    "sha256": "5d9c250af3922ab468137badda9f7418d5313640153c68e9b81c170d4682f20f",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/popover.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/drawer.tsx",
+    "sha256": "5d1a18e4c544ecb75db746fdf082118a76262c471b2e1313d2d8abb3f56b5299",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/drawer.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/empty.tsx",
+    "sha256": "c5c4c69d04cfaf62c06749d146974e59f21523db804b24f2ee28d084827c1c16",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/empty.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/field.tsx",
+    "sha256": "633b39696aac48faeda3e102fa29001295858757ab2c3d7bdb12f13ace03e001",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/field.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/textarea.tsx",
+    "sha256": "6734f7c84352fb50bbdf1ececcfb3f8f8e21cdcc16b3f463e8a5d1808e3720c9",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/textarea.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/form.tsx",
+    "sha256": "8bb9c5a8e5174df02f20776b247b15c144d0d663bc136964b3c0953e55351397",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/form.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/hover-card.tsx",
+    "sha256": "ea5eb56d8309fcdb32e0023763c1eaa91b20ef80c451084e65297b1db5bb76dd",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/hover-card.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/image-card.tsx",
+    "sha256": "c2e0890127ac0485839f8e3bda91ab0edc09927b72c6fd5ba3cde3cdcfff2098",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/image-card.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/input-group.tsx",
+    "sha256": "b0c4c66feee68e6b8bf9b68dbeb031d8750b16dfea6e35721ea1274049f622e2",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/input-group.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/kbd.tsx",
+    "sha256": "0dcb3126d5c9e77e00ba64acc6dee4234bdddb6970a45861b6961f8941648d78",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/kbd.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/input-otp.tsx",
+    "sha256": "01849c656221b6055d1a1660486004b53ff8e0bfc43d2caef60a761fafb8d74e",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/input-otp.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/item.tsx",
+    "sha256": "ddc23f01026bf1c31fa820d1b1ece99c52812d1cbf02a87424393029ce80e6bc",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/item.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/marker.tsx",
+    "sha256": "964e20e04a7da30fbe22baac85ef8dcc0ea3dc0460ff3c3248da8482ded653a2",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/marker.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/marquee.tsx",
+    "sha256": "4eeca8859d12d80a9b3fe55639e5dde8bc9ac3f1c068202dc67922e416370150",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/marquee.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/menubar.tsx",
+    "sha256": "6ae52736bab605b8ec119a74f60550b18a14d609deb0ed77392bec68542091b5",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/menubar.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/message.tsx",
+    "sha256": "7c18b727d9277b6328b340ec58a7803f1b1124637696fde3b3faf771513771cf",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/message.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/message-scroller.tsx",
+    "sha256": "1f2ce153c135e860013c95226cbe30ae78391780de8d3a7bbb6f8283c170aaa8",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/message-scroller.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/native-select.tsx",
+    "sha256": "cf77cd94db48a43c75af68246d3b9d4d35126759ba14c3cc7240067d520069f9",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/native-select.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/navigation-menu.tsx",
+    "sha256": "f9fc24ad9bdad6582b683f763e2b1e614b54d9b685cd5576bbbfc74fbf64bc46",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/navigation-menu.tsx"
+  },
+  {
+    "path": "neobrutalism/lib/utils.ts",
+    "sha256": "71838ff9e15a54355d41ded61441184298c7efd0b5f13b8246e2734ae1d2de95",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/lib/utils.ts"
+  },
+  {
+    "path": "neobrutalism/components/ui/pagination.tsx",
+    "sha256": "3a7843f2674b63e9fcf763f1f60335b36e684726485473b1f6a163978ec5bc75",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/pagination.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/progress.tsx",
+    "sha256": "a4209e9e87cebd26157365f5f0299306a5cec8d6a35a323519812f426ef94f48",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/progress.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/questionnaire.tsx",
+    "sha256": "cdfda0dcd7ec7e1c0484e3802e3883214b3d21765b811c43b91c7aa2cb53c898",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/questionnaire.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/radio-group.tsx",
+    "sha256": "85e6e1cba2c09b21b8673d1c99b913995246b93ed933d9e6fd697de44f44e2c2",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/radio-group.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/resizable.tsx",
+    "sha256": "497c84db1677ec8e0736e608c3db51f72eb7521e412546064e4e1bba00236112",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/resizable.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/scroll-area.tsx",
+    "sha256": "a3f87e94f4c0e4d5c3c6789d4594a9df1777312b0a8362d93959e2699ebbe461",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/scroll-area.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/select.tsx",
+    "sha256": "c2bec4f74f61b63461ff28bae656eae9b1b89cb4cdec5b20caf29fb4e772e60d",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/select.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/sheet.tsx",
+    "sha256": "7a75071a06bba2707c39c9ac1cce08d34c18f0e712c64fb681f04e6b8205f74f",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/sheet.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/sidebar.tsx",
+    "sha256": "a29fff7fb887b63fc455d4d3b2aeb55ee6b52a4c97dbe7534ae9c48fe46bdc08",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/sidebar.tsx"
+  },
+  {
+    "path": "neobrutalism/examples/ui/sidebar/sidebar.tsx",
+    "sha256": "2003f470e74033d4ec13eff3974a7b74d2f04f152019ebc37bb5cb4ca4ab7430",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/examples/ui/sidebar/sidebar.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/skeleton.tsx",
+    "sha256": "e29b4cadd841c9e52cceb6cdc748145b0b57e1e602c154ab59d883ceb3396bcc",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/skeleton.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/slider.tsx",
+    "sha256": "cfe48edfdb155a1c7ce158bfb1d0431f25659909976f166065dc901b6892f2fa",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/slider.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/spinner.tsx",
+    "sha256": "fc026890551b65d20518759d1c6650e4dc4b8748b6c3e6985e442c4ff003a025",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/spinner.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/switch.tsx",
+    "sha256": "0dfb86b48c593c95e36ac5f40ad95a0c716f7249b2cc864b02bbd56ad43b5031",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/switch.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/table.tsx",
+    "sha256": "6b2ada868738ecf27f6004bf17cf822b98b5389d71e5269ac2794561ded489ef",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/table.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/tabs.tsx",
+    "sha256": "18d6cb752813fb212e71903bd5d2be42f3df128af35602dea3ebdfd87de10486",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/tabs.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/toast.tsx",
+    "sha256": "ca7b12aae76761100e7493623de4af1b6ab5ab1eee25cd24ace8e0c354560942",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/toast.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/toggle-group.tsx",
+    "sha256": "bfce4a9ae80f01cb4083d26d9de8a57d91b63fac0a902fd3363f25c90d971d88",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/toggle-group.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/toggle.tsx",
+    "sha256": "a3b108a08f4d9127b4862216f7d188a0df8866fb9edae759c27f8855aa44e705",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/toggle.tsx"
+  },
+  {
+    "path": "neobrutalism/components/ui/tooltip.tsx",
+    "sha256": "608cf8fff32b8252ad8bed278a922a2cc7be27bc1b494b16b2ed73e9c2736866",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/components/ui/tooltip.tsx"
+  },
+  {
+    "path": "neobrutalism/hooks/use-mobile.ts",
+    "sha256": "ad0936f84f1df79d3697bfbff9c18f8ad58431c1cbaf2359c6a853b0fcc9f28b",
+    "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/hooks/use-mobile.ts"
   }
 ]
