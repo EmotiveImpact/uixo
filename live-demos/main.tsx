@@ -40,6 +40,7 @@ const origins = {
   shadcn: 'https://ui.shadcn.com',
   'motion-primitives': 'https://motion-primitives.com',
   'prompt-kit': 'https://www.prompt-kit.com',
+  'kokonut-ui': 'https://kokonutui.com',
 };
 const base = document.createElement('base');
 base.href = origins[provider] + '/';
