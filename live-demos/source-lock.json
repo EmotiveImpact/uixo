@@ -3093,5 +3093,315 @@
     "path": "prompt-kit/components/ui/hover-card.tsx",
     "sha256": "6ab9be94af94b57c745b30357e808062baeb7a4722360d4eeb5f8d17aa3f9d3d",
     "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/ui/hover-card.tsx"
+  },
+  {
+    "path": "evilcharts/LICENSE",
+    "sha256": "7b6baf25f6caa0de061a2c99a47205d6651cdefc6e636910bc51bb3853ed056e",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/LICENSE"
+  },
+  {
+    "path": "mapcn/LICENSE",
+    "sha256": "73020a10c41b48b72fbcc0f8bc38fbc24ff13df874a3142ab48094162490bb29",
+    "sourceUrl": "https://github.com/AnmolSaini16/mapcn/blob/d160bd767bc6388618720c6038a4dd9948c97362/LICENSE"
+  },
+  {
+    "path": "evilcharts/app/globals.css",
+    "sha256": "238ff732d59c22ad46e2c4a08c85b492e3350ef4275f27719304b9fa56fa6a4d",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/app/globals.css"
+  },
+  {
+    "path": "evilcharts/registry/examples/echarts/ex-echarts-area-chart.tsx",
+    "sha256": "a31606845391b286c14a94720b64731e7146438fe78456e3e07b2e8f5a4f8e35",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/echarts/ex-echarts-area-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/echarts/ex-echarts-bar-chart.tsx",
+    "sha256": "52e2895c588e21eb30e01936450d3d02b09a0bfcc0d11c7d0419660126d5f9e5",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/echarts/ex-echarts-bar-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/echarts/ex-echarts-composed-chart.tsx",
+    "sha256": "85eb311c7be2d33114ea276f36b20f2757085e0f191af31e3ef91c988faae568",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/echarts/ex-echarts-composed-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/echarts/ex-echarts-line-chart.tsx",
+    "sha256": "7eff2995b22e9f45805344d6fddd5e173df7cf8c24870a8622f50858a0228829",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/echarts/ex-echarts-line-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/echarts/ex-echarts-pie-chart.tsx",
+    "sha256": "8937f764d37ce9c1c184182a8c34050e2640424d5ea1dabef3a2cf111e4e9c6f",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/echarts/ex-echarts-pie-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/echarts/ex-echarts-radar-chart.tsx",
+    "sha256": "3a8ffad2bd8a87cd1c11dd6f3c904d5e790db0d41d16698bbcac67ae697688cc",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/echarts/ex-echarts-radar-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/echarts/ex-echarts-radial-chart.tsx",
+    "sha256": "4f8d4574402b8a8a518ab4067f7158bda8febcb0a9d92e3575a2e8171812abfb",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/echarts/ex-echarts-radial-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/echarts/ex-echarts-sankey-chart.tsx",
+    "sha256": "288eee88eaa22561a2f6a40c486abebd5053ae39de027df799fd6b13fa15f512",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/echarts/ex-echarts-sankey-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/echarts/ex-brush-echarts-area-chart.tsx",
+    "sha256": "b08fb411304cd0bac965e2c25b82e677e47b707464b554eba6ad850a95e33ee4",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/echarts/ex-brush-echarts-area-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/echarts/ex-chart-config-default-echarts-bar-chart.tsx",
+    "sha256": "e4aa69cf07c0a0975ae2d1a17afeba91ce35329bac6dd06a25f56cde0197c3c9",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/echarts/ex-chart-config-default-echarts-bar-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/echarts/ex-dot-default-echarts-line-chart.tsx",
+    "sha256": "c3fad614d71906cc185c513955661de87f16016c66721e028fb35b0b5a471401",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/echarts/ex-dot-default-echarts-line-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/echarts/ex-legend-square-echarts-line-chart.tsx",
+    "sha256": "5df0193ec819d6d103cc3aa730ff89b740b392716b8a1e64f8f15efaf158c54a",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/echarts/ex-legend-square-echarts-line-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/echarts/ex-tooltip-default-echarts-bar-chart.tsx",
+    "sha256": "e249d644b73fa799fc4ef71cbc02c76390adbcb03e274a0fc705f0cd49a63469",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/echarts/ex-tooltip-default-echarts-bar-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/recharts/ex-area-chart.tsx",
+    "sha256": "77cbad1281da6f09cbebfe74881bc5b1a299657c797738834422291af6e02914",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/recharts/ex-area-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/recharts/ex-bar-chart.tsx",
+    "sha256": "a44d0d6ec0179b3e12ac22e288f718fa65ebd7df6ec0686fe6e7cc9034b0de48",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/recharts/ex-bar-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/recharts/ex-composed-chart.tsx",
+    "sha256": "f9630d6e9b3760b0a9573d52415371d4cd6791acbd75ee082e0168bf1c03d059",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/recharts/ex-composed-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/recharts/ex-line-chart.tsx",
+    "sha256": "3d954380a83bfbcf041e0b0de627e0a0686e7a410f727d6228d86c475727701b",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/recharts/ex-line-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/recharts/ex-pie-chart.tsx",
+    "sha256": "3f74b33b28e5cbacd59ee4fe0be126c80c343933a58eb3eb74b48908b29f47bc",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/recharts/ex-pie-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/recharts/ex-radar-chart.tsx",
+    "sha256": "008948d6acae45a829d2e5525ce7c496e950b9232f5d2414e8af030418b9767d",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/recharts/ex-radar-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/recharts/ex-radial-chart.tsx",
+    "sha256": "48260556f64c09fd975bbece296c028ea1ef7c85273ad4402e34a0b3bc824e13",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/recharts/ex-radial-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/recharts/ex-sankey-chart.tsx",
+    "sha256": "232d6098019ef1edab08f5766b9345797e13a39b1f9d96495775892dfafac0f1",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/recharts/ex-sankey-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/recharts/ex-bg-dots-line-chart.tsx",
+    "sha256": "8905907fa1bde6cf27eab10bf62967bb362dab1558a20b2295559348334123ed",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/recharts/ex-bg-dots-line-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/recharts/ex-brush-area-chart.tsx",
+    "sha256": "444f88631b84f5fc84b42eac9c680463a552e33c311a5261883c4ea0ef9f4cb1",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/recharts/ex-brush-area-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/recharts/ex-chart-config-default-bar-chart.tsx",
+    "sha256": "793c36a873261b2e4781567ee7e73591109b1ee5e1d23a406c9ad8cfdc429cd2",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/recharts/ex-chart-config-default-bar-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/recharts/ex-dot-default-line-chart.tsx",
+    "sha256": "600272dbb5d17ab8e55820b820a3d73e294ef5fa1810aed5ba8f74c06d097e7a",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/recharts/ex-dot-default-line-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/recharts/ex-legend-square-line-chart.tsx",
+    "sha256": "df1e645eae314ba2923cb01f28b1864a1e78a7cee8f1e5a6128773957d2340ab",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/recharts/ex-legend-square-line-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/examples/recharts/ex-tooltip-default-bar-chart.tsx",
+    "sha256": "b9ddd154d5927052067bf23fb44b55c3a9ac50a1bb9ff5a812b3c8008c8339be",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/examples/recharts/ex-tooltip-default-bar-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/echarts-area-chart.tsx",
+    "sha256": "74acc0d36517f67184b40e7dd5a504f88a34452dcfc09593362d1ab346561acb",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/echarts-area-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/echarts-bar-chart.tsx",
+    "sha256": "96184173d52ed4e1c3aea84a735c355a6e144d11587bff0fb1391a81a1f25ef2",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/echarts-bar-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/echarts-composed-chart.tsx",
+    "sha256": "bf8dda2245b618828851e60bd4de5595086f2c0de6c67245d86c7400e62c4401",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/echarts-composed-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/echarts-line-chart.tsx",
+    "sha256": "f61630059e09912cb6fa33e4a86e83dd9849c72e3bff885bc788a0a1b87b771b",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/echarts-line-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/echarts-pie-chart.tsx",
+    "sha256": "dfb481cff6d7387d113be9e124b15646152b2a1b697536b71f1369986652b871",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/echarts-pie-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/echarts-radar-chart.tsx",
+    "sha256": "6051029c8ef3654ed66df329495929fc8c8ad83158a71635350fb20880680246",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/echarts-radar-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/echarts-radial-chart.tsx",
+    "sha256": "e19d6bd3db28480a591a9b5ab6c01986f5b637a353c88b7895155c8084b50d13",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/echarts-radial-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/echarts-sankey-chart.tsx",
+    "sha256": "1b77887e558eade0fec43c884393c6ba319f617593b06c8dbec66b77e715f5ff",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/echarts-sankey-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/recharts-area-chart.tsx",
+    "sha256": "298384a5104af8006aa27fd4014a5b48587f2775f7ff87d20110be73a7a07b00",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/recharts-area-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/ui/recharts-chart.tsx",
+    "sha256": "4cd9b99678ae2ee7fa588e2c980fa9c3ce4003110acdde6cdd7db1d96db67d3b",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/ui/recharts-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/recharts-bar-chart.tsx",
+    "sha256": "660b0a63d43cfb14aaeabd7f1c6dc4ad6f30df387c2b6aca9497d5c417b14c53",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/recharts-bar-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/recharts-composed-chart.tsx",
+    "sha256": "a33dc68ab96eaa2ab2d72925a47f0ee936b579e56c1427a6a30e4bf9d1ba4cc4",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/recharts-composed-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/recharts-line-chart.tsx",
+    "sha256": "3ca0c71d6ea928f8f3ff4f43810e444bbd72b521a4cd67d4cae27ef66f86794a",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/recharts-line-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/recharts-pie-chart.tsx",
+    "sha256": "12d68c0c60874f4b59a30d26f19c9f97f291e4a98df5a6b0f759bd4335b20497",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/recharts-pie-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/recharts-radar-chart.tsx",
+    "sha256": "fd30c1b5186ad2c1f6fd3e35b0e6a5a6c510c640861b406af1a6d3c9e89897c4",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/recharts-radar-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/recharts-radial-chart.tsx",
+    "sha256": "1445226e0365c4b4747da16e17cd86e9d7bdf96bf1a90cfa9a95cd9b8e6e6d63",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/recharts-radial-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/charts/recharts-sankey-chart.tsx",
+    "sha256": "33dfe779d9be15df575b8c995217040897f9c021b28c9366ffbc87a8b566ac58",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/charts/recharts-sankey-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/ui/recharts-background.tsx",
+    "sha256": "eb71bf98cc051f1638a91f1a50fc0b27b36d48502b8db5da420bf34b14b689cd",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/ui/recharts-background.tsx"
+  },
+  {
+    "path": "evilcharts/registry/ui/echarts-chart.tsx",
+    "sha256": "c0cfe2bcb6dd9c3ed8f2e29d372a073c9cd324811a8d4bcb4e12bf43707e12f3",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/ui/echarts-chart.tsx"
+  },
+  {
+    "path": "evilcharts/registry/ui/echarts-tooltip.tsx",
+    "sha256": "336fbe5d39ee652a00d9bcf215b4e0559606041df9472dda9281bec0f425c886",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/ui/echarts-tooltip.tsx"
+  },
+  {
+    "path": "evilcharts/registry/ui/echarts-brush.tsx",
+    "sha256": "8ab742558334a63adadb09d19ff9cd039f22de4303d61f0ec93ebcbc0dd917a2",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/ui/echarts-brush.tsx"
+  },
+  {
+    "path": "evilcharts/registry/ui/echarts-dot.tsx",
+    "sha256": "27258e7e3072ca8163e266e42b3073a5cadf382d415bc2410cb09f4b3fbc3cdd",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/ui/echarts-dot.tsx"
+  },
+  {
+    "path": "evilcharts/registry/ui/echarts-legend.tsx",
+    "sha256": "2f649c97b1c81ad36294eb281629b01c947a2033e278fe0ee1f62eaa656738e4",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/ui/echarts-legend.tsx"
+  },
+  {
+    "path": "evilcharts/registry/ui/recharts-tooltip.tsx",
+    "sha256": "49f0deedb6637b0ffcf1afd978311a3afb66cb966325a881fb8b324e15d8d09c",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/ui/recharts-tooltip.tsx"
+  },
+  {
+    "path": "evilcharts/registry/ui/recharts-brush.tsx",
+    "sha256": "b7299eb13167fcb2b7786efcd630cf9273eb0e9c5660a34c2e919461a3d7ceb9",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/ui/recharts-brush.tsx"
+  },
+  {
+    "path": "evilcharts/registry/ui/recharts-legend.tsx",
+    "sha256": "d1eb325e11315c5640efe6b70543bbc370654e9d2e5101774603bd2b1dcb3ef8",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/ui/recharts-legend.tsx"
+  },
+  {
+    "path": "evilcharts/registry/ui/recharts-dot.tsx",
+    "sha256": "94b12dc6ee83299561da38fe8fc4d0de66f05fedb2a81aebbab097f903781f5b",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/registry/ui/recharts-dot.tsx"
+  },
+  {
+    "path": "evilcharts/lib/utils.ts",
+    "sha256": "11de8ad6438c5e573758f6d3ad2d7692cd1ab5b08e9d5ec8e904257cbaefca1a",
+    "sourceUrl": "https://github.com/legions-developer/evilcharts/blob/ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c/src/lib/utils.ts"
+  },
+  {
+    "path": "mapcn/styles/globals.css",
+    "sha256": "fbfeb2c89a36685b7d95f100588f665b298644957250b5299c0a6cae64b2183c",
+    "sourceUrl": "https://github.com/AnmolSaini16/mapcn/blob/d160bd767bc6388618720c6038a4dd9948c97362/src/styles/globals.css"
+  },
+  {
+    "path": "mapcn/app/(main)/docs/_components/examples/basic-map-example.tsx",
+    "sha256": "82f1190414467cb176e23a0604734eac2fe473fa88770986b9447fae08cf2c34",
+    "sourceUrl": "https://github.com/AnmolSaini16/mapcn/blob/d160bd767bc6388618720c6038a4dd9948c97362/src/app/(main)/docs/_components/examples/basic-map-example.tsx"
+  },
+  {
+    "path": "mapcn/registry/map.tsx",
+    "sha256": "cce137f8a2a3816a3f7e77a789ed4b92db5bf15b40528a4df8904c477fe9b921",
+    "sourceUrl": "https://github.com/AnmolSaini16/mapcn/blob/d160bd767bc6388618720c6038a4dd9948c97362/src/registry/map.tsx"
+  },
+  {
+    "path": "mapcn/lib/utils.ts",
+    "sha256": "2cb5cf83bf3ccfffc8c34992acad41a42f68253c11aaf4d6f4317e1d336ccd2c",
+    "sourceUrl": "https://github.com/AnmolSaini16/mapcn/blob/d160bd767bc6388618720c6038a4dd9948c97362/src/lib/utils.ts"
   }
 ]

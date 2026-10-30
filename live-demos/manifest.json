@@ -1696,5 +1696,173 @@
     "export": "ToolBasic",
     "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
     "sourceUrl": "https://www.prompt-kit.com/docs/tool"
+  },
+  "evilcharts/echarts-area-chart": {
+    "file": "./vendor/evilcharts/registry/examples/echarts/ex-echarts-area-chart.tsx",
+    "export": "EChartsExampleAreaChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/echarts/area-chart/static"
+  },
+  "evilcharts/echarts-bar-chart": {
+    "file": "./vendor/evilcharts/registry/examples/echarts/ex-echarts-bar-chart.tsx",
+    "export": "EChartsExampleBarChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/echarts/bar-chart/static"
+  },
+  "evilcharts/echarts-brush": {
+    "file": "./vendor/evilcharts/registry/examples/echarts/ex-brush-echarts-area-chart.tsx",
+    "export": "EChartsExampleBrushAreaChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/echarts/ui/brush"
+  },
+  "evilcharts/echarts-chart": {
+    "file": "./vendor/evilcharts/registry/examples/echarts/ex-chart-config-default-echarts-bar-chart.tsx",
+    "export": "EChartsExampleBarChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/chart-config"
+  },
+  "evilcharts/echarts-composed-chart": {
+    "file": "./vendor/evilcharts/registry/examples/echarts/ex-echarts-composed-chart.tsx",
+    "export": "EChartsExampleComposedChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/echarts/composed-chart/static"
+  },
+  "evilcharts/echarts-dot": {
+    "file": "./vendor/evilcharts/registry/examples/echarts/ex-dot-default-echarts-line-chart.tsx",
+    "export": "EChartsDotDefaultLineChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/echarts/ui/dots"
+  },
+  "evilcharts/echarts-legend": {
+    "file": "./vendor/evilcharts/registry/examples/echarts/ex-legend-square-echarts-line-chart.tsx",
+    "export": "EChartsLegendSquareLineChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/echarts/ui/legend"
+  },
+  "evilcharts/echarts-line-chart": {
+    "file": "./vendor/evilcharts/registry/examples/echarts/ex-echarts-line-chart.tsx",
+    "export": "EChartsExampleLineChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/echarts/line-chart/static"
+  },
+  "evilcharts/echarts-pie-chart": {
+    "file": "./vendor/evilcharts/registry/examples/echarts/ex-echarts-pie-chart.tsx",
+    "export": "EChartsExamplePieChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/echarts/pie-chart/static"
+  },
+  "evilcharts/echarts-radar-chart": {
+    "file": "./vendor/evilcharts/registry/examples/echarts/ex-echarts-radar-chart.tsx",
+    "export": "EChartsExampleRadarChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/echarts/radar-chart/static"
+  },
+  "evilcharts/echarts-radial-chart": {
+    "file": "./vendor/evilcharts/registry/examples/echarts/ex-echarts-radial-chart.tsx",
+    "export": "EChartsExampleRadialChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/echarts/radial-chart/static"
+  },
+  "evilcharts/echarts-sankey-chart": {
+    "file": "./vendor/evilcharts/registry/examples/echarts/ex-echarts-sankey-chart.tsx",
+    "export": "EChartsExampleSankeyChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/echarts/sankey-chart/static"
+  },
+  "evilcharts/echarts-tooltip": {
+    "file": "./vendor/evilcharts/registry/examples/echarts/ex-tooltip-default-echarts-bar-chart.tsx",
+    "export": "EChartsExampleBarChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/echarts/ui/tooltip"
+  },
+  "evilcharts/recharts-area-chart": {
+    "file": "./vendor/evilcharts/registry/examples/recharts/ex-area-chart.tsx",
+    "export": "EvilExampleAreaChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/recharts/area-chart/static"
+  },
+  "evilcharts/recharts-background": {
+    "file": "./vendor/evilcharts/registry/examples/recharts/ex-bg-dots-line-chart.tsx",
+    "export": "EvilExampleLineChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/recharts/ui/background"
+  },
+  "evilcharts/recharts-bar-chart": {
+    "file": "./vendor/evilcharts/registry/examples/recharts/ex-bar-chart.tsx",
+    "export": "EvilExampleBarChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/recharts/bar-chart/static"
+  },
+  "evilcharts/recharts-brush": {
+    "file": "./vendor/evilcharts/registry/examples/recharts/ex-brush-area-chart.tsx",
+    "export": "EvilExampleBrushAreaChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/recharts/ui/brush"
+  },
+  "evilcharts/recharts-chart": {
+    "file": "./vendor/evilcharts/registry/examples/recharts/ex-chart-config-default-bar-chart.tsx",
+    "export": "EvilExampleChartConfigDefaultBarChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/chart-config"
+  },
+  "evilcharts/recharts-composed-chart": {
+    "file": "./vendor/evilcharts/registry/examples/recharts/ex-composed-chart.tsx",
+    "export": "EvilExampleComposedChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/recharts/composed-chart/static"
+  },
+  "evilcharts/recharts-dot": {
+    "file": "./vendor/evilcharts/registry/examples/recharts/ex-dot-default-line-chart.tsx",
+    "export": "DotDefaultLineChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/recharts/ui/dots"
+  },
+  "evilcharts/recharts-legend": {
+    "file": "./vendor/evilcharts/registry/examples/recharts/ex-legend-square-line-chart.tsx",
+    "export": "EvilExampleLegendSquareLineChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/recharts/ui/legend"
+  },
+  "evilcharts/recharts-line-chart": {
+    "file": "./vendor/evilcharts/registry/examples/recharts/ex-line-chart.tsx",
+    "export": "EvilExampleLineChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/recharts/line-chart/static"
+  },
+  "evilcharts/recharts-pie-chart": {
+    "file": "./vendor/evilcharts/registry/examples/recharts/ex-pie-chart.tsx",
+    "export": "EvilExamplePieChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/recharts/pie-chart/static"
+  },
+  "evilcharts/recharts-radar-chart": {
+    "file": "./vendor/evilcharts/registry/examples/recharts/ex-radar-chart.tsx",
+    "export": "EvilExampleRadarChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/recharts/radar-chart/static"
+  },
+  "evilcharts/recharts-radial-chart": {
+    "file": "./vendor/evilcharts/registry/examples/recharts/ex-radial-chart.tsx",
+    "export": "EvilExampleRadialChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/recharts/radial-chart/static"
+  },
+  "evilcharts/recharts-sankey-chart": {
+    "file": "./vendor/evilcharts/registry/examples/recharts/ex-sankey-chart.tsx",
+    "export": "EvilExampleSankeyChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/recharts/sankey-chart/static"
+  },
+  "evilcharts/recharts-tooltip": {
+    "file": "./vendor/evilcharts/registry/examples/recharts/ex-tooltip-default-bar-chart.tsx",
+    "export": "EvilExampleTooltipDefaultBarChart",
+    "ref": "ecbd6a5db7b25f9a7e070c02b2ef728c378eeb5c",
+    "sourceUrl": "https://evilcharts.com/docs/recharts/ui/tooltip"
+  },
+  "mapcn/map": {
+    "file": "./vendor/mapcn/app/(main)/docs/_components/examples/basic-map-example.tsx",
+    "export": "BasicMapExample",
+    "ref": "d160bd767bc6388618720c6038a4dd9948c97362",
+    "sourceUrl": "https://mapcn.dev/docs/basic-map"
   }
 }
