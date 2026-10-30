@@ -76,3 +76,10 @@ html[data-demo='neobrutalism/table'] .demo-stage > :first-child {
 html[data-demo='neobrutalism/chart'] .demo-stage > :first-child {
   zoom: 0.95;
 }
+/* Hard black borders and shadows are this library's whole look, and they vanish on a dark
+   tinted card. So its demos keep the provider's own page colour behind them, as on its site,
+   instead of the clear stage. */
+html[data-provider='neobrutalism'][data-stage='clear'],
+html[data-provider='neobrutalism'][data-stage='clear'] body {
+  background: var(--background);
+}
