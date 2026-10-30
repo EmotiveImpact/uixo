@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { sqliteDatabase, migrate } from '../../registry/database.ts';
 import { Registry } from '../../registry/service.ts';
 import {
@@ -151,9 +152,16 @@ test('search enforces framework and format on the same variant and excludes unkn
       PROVIDERS.filter((provider) => provider.previewsPending).map((provider) => provider.id),
     );
     const browse = await registry.search({ kind: 'component', limit: 48 });
+    const live = new Set(
+      Object.keys(
+        JSON.parse(
+          await readFile(new URL('../../live-demos/manifest.json', import.meta.url), 'utf8'),
+        ),
+      ),
+    );
     assert.ok(
-      browse.items.every((asset) => !pending.has(asset.providerId)),
-      'Components awaiting captured previews rank after previewed components',
+      browse.items.every((asset) => !pending.has(asset.providerId) || live.has(asset.id)),
+      'Components awaiting previews rank after previewed components',
     );
   } finally {
     await db.close();

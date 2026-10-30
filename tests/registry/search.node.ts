@@ -47,7 +47,7 @@ test('L-7: the no-query order leads with picks, ready previews, install commands
   ]);
   const pending = new Set(PROVIDERS.filter((p) => p.previewsPending).map((p) => p.id));
   const preview = (item: Item) =>
-    pending.has(item.providerId)
+    pending.has(item.providerId) && !ready.has(item.id)
       ? 0
       : ready.has(item.id) || item.preview?.kind === 'image'
         ? 2

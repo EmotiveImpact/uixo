@@ -390,16 +390,17 @@ export class Registry {
             `CASE WHEN ${matches('LOWER(a.name)', group)} THEN 10 WHEN ${matches('a.search_text', group)} THEN 1 ELSE 0 END`,
         )
         .join(' + ') || '0';
-    // Libraries whose live previews are still pending sink below ready ones.
-    const pending = `CASE WHEN p.payload LIKE '%"previewsPending":true%' THEN 1 ELSE 0 END`;
+    // Components from libraries whose previews are still pending sink below ready ones,
+    // unless that component's own live demo is already in place.
+    const ready = (await previewReadyIds()).map(bind).join(',');
+    const pending = `CASE WHEN p.payload LIKE '%"previewsPending":true%'${ready ? ` AND a.id NOT IN (${ready})` : ''} THEN 1 ELSE 0 END`;
     const componentsFirst = `CASE WHEN a.kind='component' THEN 0 ELSE 1 END`;
     let relevant = `score DESC,a.editorial_pick DESC,${pending},${componentsFirst},a.name ASC,a.id ASC`;
     if (!groups.length) {
       // No query: "Recommended" leads with what people can take (L-7). Editorial pick, then a
       // preview that is ready from data alone, then an install command, then commercial use
       // allowed, then the name compared case-insensitively.
-      const ready = (await previewReadyIds()).map(bind);
-      const preview = `CASE WHEN ${pending}=1 THEN 0${ready.length ? ` WHEN a.id IN (${ready.join(',')}) THEN 2` : ''} WHEN a.payload LIKE '%"preview":{"kind":"image"%' THEN 2 WHEN a.payload LIKE '%"preview":{"kind":"embed"%' THEN 1 ELSE 0 END`;
+      const preview = `CASE WHEN ${pending}=1 THEN 0${ready ? ` WHEN a.id IN (${ready}) THEN 2` : ''} WHEN a.payload LIKE '%"preview":{"kind":"image"%' THEN 2 WHEN a.payload LIKE '%"preview":{"kind":"embed"%' THEN 1 ELSE 0 END`;
       const install = `CASE WHEN EXISTS(SELECT 1 FROM uixo_v2_variants iv WHERE iv.asset_id=a.id AND iv.acquisition IN ('registry','package')) THEN 1 ELSE 0 END`;
       const commercial = `CASE WHEN l.commercial='allowed' THEN 1 ELSE 0 END`;
       relevant = `a.editorial_pick DESC,${preview} DESC,${install} DESC,${commercial} DESC,${componentsFirst},LOWER(a.name) ASC,a.id ASC`;
