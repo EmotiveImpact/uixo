@@ -27,7 +27,11 @@ const browser = await chromium.launch(
 );
 
 async function check(id, theme) {
-  const page = await browser.newPage({ viewport: VIEW });
+  // A demo that names a wider viewport in the manifest is opened at that width, as its card does.
+  const width = manifest[id].viewport ?? VIEW.width;
+  const page = await browser.newPage({
+    viewport: { width, height: Math.round((width * VIEW.height) / VIEW.width) },
+  });
   const errors = [];
   page.on('pageerror', (error) => errors.push(String(error.message).slice(0, 300)));
   page.on('console', (message) => {
@@ -103,7 +107,7 @@ for (let sheet = 0; sheet * PER_SHEET < ids.length; sheet++) {
   );
   const page = await browser.newPage({ viewport: { width: 1060, height: 600 } });
   await page.setContent(
-    `<style>body{margin:0;padding:12px;font:13px system-ui;background:#888}section{display:grid;grid-template-columns:repeat(2,480px);gap:8px 12px;margin-bottom:14px}h2{grid-column:1/-1;margin:0;font-size:14px}figure{margin:0;position:relative;outline:3px solid transparent}figure.dark{background:#0d0d10}figure.light{background:#f6f6f8}figure.bad{outline-color:#e11}img{display:block;width:480px;height:360px}figcaption{position:absolute;left:6px;bottom:4px;color:#999;font-size:11px}</style>${rows.join('')}`,
+    `<style>body{margin:0;padding:12px;font:13px system-ui;background:#888}section{display:grid;grid-template-columns:repeat(2,480px);gap:8px 12px;margin-bottom:14px}h2{grid-column:1/-1;margin:0;font-size:14px}figure{margin:0;position:relative;outline:3px solid transparent}figure.dark{background:#0d0d10}figure.light{background:#f6f6f8}figure.bad{outline-color:#e11}img{display:block;width:480px;height:360px;object-fit:contain}figcaption{position:absolute;left:6px;bottom:4px;color:#999;font-size:11px}</style>${rows.join('')}`,
   );
   await page.screenshot({ path: path.join(out, `sheet-${sheet + 1}.png`), fullPage: true });
   await page.close();

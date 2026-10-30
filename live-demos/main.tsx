@@ -77,7 +77,11 @@ function Ready() {
   useEffect(() => {
     notify('ready');
     document.documentElement.dataset.previewReady = 'true';
-    if (clearStage) return reportContentSize(id, () => document.querySelector('.demo-stage'));
+    if (!clearStage) return;
+    // Mark a demo whose content is far taller than the card, before the first measurement.
+    const stage = document.querySelector('.demo-stage');
+    if (stage && stage.scrollHeight > innerHeight + 80) document.documentElement.dataset.tall = '';
+    return reportContentSize(id, () => document.querySelector('.demo-stage'));
   }, []);
   return null;
 }

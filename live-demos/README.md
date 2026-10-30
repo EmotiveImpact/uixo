@@ -43,7 +43,11 @@ interaction checks. Test actual clicks/typing and dark/light themes, not just a 
    for the library's demos, so its tokens and keyframes never meet another library's.
    The first four libraries share `styles.css`.
 3. Add one manifest entry per component, pointing at the demo the provider's own docs
-   page leads with, and the provider's origin to `origins` in `main.tsx`.
+   page leads with, and the provider's origin to `origins` in `main.tsx`. A demo laid out
+   for a desktop page can add `"viewport": <width>`: its card opens it at that width
+   (height in proportion) and shows it smaller, so it keeps its desktop layout. Prefer
+   that to CSS `zoom`, which keeps the phone layout and can upset demos that measure
+   themselves.
 4. Check every demo in both themes:
    `node scripts/check-live-demos.mjs http://127.0.0.1:4176 <out> <provider>/` against
    `npx vite --config live-demos/vite.config.mjs`. Look at the contact sheets it writes,

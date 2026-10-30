@@ -12,6 +12,10 @@ export type PreviewContentBox = {
   /** The demo's viewport when it was measured. */
   viewportWidth: number;
   viewportHeight: number;
+  /** The page paints its own colour, so moving the frame would show an edge. */
+  opaque?: boolean;
+  /** Height of the demo's own layout (its wrappers included), when shorter than the page. */
+  layoutHeight?: number;
 };
 
 export type PreviewSizeMessage = {
@@ -101,9 +105,19 @@ export function measureContent(root: Element): PreviewContentBox | null {
     const element = node as Element;
     const style = getComputedStyle(element);
     if (style.display === 'none' || style.visibility === 'hidden') continue;
+    // Invisible form controls (a Radix checkbox's native input) paint nothing.
+    if (style.opacity === '0' && element.childElementCount === 0) continue;
     if (painted(element, style)) add(element.getBoundingClientRect(), element.parentElement);
   }
   if (!Number.isFinite(left)) return null;
+  const opaque = !TRANSPARENT.has(getComputedStyle(document.body).backgroundColor);
+  // A fixed-height wrapper does not shrink with the frame, so the host must not zoom in
+  // so far that the frame becomes shorter than it.
+  const layoutHeight = Math.max(
+    0,
+    ...Array.from(root.children, (child) => child.getBoundingClientRect().height),
+  );
+  const fixedLayout = layoutHeight > 0 && layoutHeight < 0.9 * (vh - STAGE_PADDING * 2);
   return {
     x: left,
     y: top,
@@ -111,6 +125,8 @@ export function measureContent(root: Element): PreviewContentBox | null {
     height: bottom - top,
     viewportWidth: vw,
     viewportHeight: vh,
+    ...(opaque ? { opaque } : {}),
+    ...(fixedLayout ? { layoutHeight } : {}),
   };
 }
 
@@ -122,11 +138,20 @@ export function measureContent(root: Element): PreviewContentBox | null {
 export function reportContentSize(id: string, root: () => Element | null): () => void {
   let union: PreviewContentBox | null = null;
   let frame = 0;
+  // A fixed-height layout is judged in the first frame the demo gets. Once the host zooms
+  // in, the frame is shorter and the same layout no longer looks fixed, so it is kept.
+  let first: { width: number; height: number } | null = null;
+  let layoutHeight: number | undefined;
   const send = () => {
     const element = root();
     if (!element) return;
-    const box = measureContent(element);
-    if (!box) return;
+    const measured = measureContent(element);
+    if (!measured) return;
+    first ??= { width: measured.viewportWidth, height: measured.viewportHeight };
+    if (measured.viewportWidth === first.width && measured.viewportHeight === first.height)
+      layoutHeight = Math.max(layoutHeight ?? 0, measured.layoutHeight ?? 0) || undefined;
+    const box = { ...measured, layoutHeight };
+    if (!layoutHeight) delete box.layoutHeight;
     if (
       union &&
       union.viewportWidth === box.viewportWidth &&
@@ -189,6 +214,9 @@ export function handleStageFocus(id: string): () => void {
   };
 }
 
+/** The harness pads a clear stage by this much on each side (stage.css). */
+const STAGE_PADDING = 20;
+
 /** On a card stage, small components grow to fill about this share of the stage. */
 export const STAGE_FILL_WIDTH = 0.62;
 const STAGE_FILL_HEIGHT = 0.72;
@@ -211,14 +239,28 @@ export function stageFit(
     ((limits.fillHeight ?? STAGE_FILL_HEIGHT) * stage.height) / box.height,
     limits.maxScale ?? STAGE_MAX_SCALE,
   );
-  if (fit <= base) return { scale: base, x: 0, y: 0 };
+  // Zooming in shrinks the frame; it must stay tall enough for the demo's own layout.
+  const room = box.layoutHeight ? stage.height / (box.layoutHeight + STAGE_PADDING * 2) : Infinity;
+  const scale = Math.max(Math.min(fit, room), base);
+  if (box.opaque) return { scale, x: 0, y: 0 };
   const limitX = stage.width * 0.2;
   const limitY = stage.height * 0.2;
   const dx = box.x + box.width / 2 - box.viewportWidth / 2;
   const dy = box.y + box.height / 2 - box.viewportHeight / 2;
-  return {
-    scale: fit,
-    x: Math.max(-limitX, Math.min(limitX, -dx * fit)),
-    y: Math.max(-limitY, Math.min(limitY, -dy * fit)),
+  let x = Math.max(-limitX, Math.min(limitX, -dx * scale));
+  let y = Math.max(-limitY, Math.min(limitY, -dy * scale));
+  // The frame keeps the demo's layout centred, so content sits where it did relative to
+  // the middle. Content that stays near the edge (a search bar at the top of its page, a
+  // button at the foot of its demo) moves past the usual limit when that is what keeps
+  // all of it on the stage.
+  const inside = (offset: number, start: number, size: number, view: number, room: number) => {
+    const from = (start - view / 2) * scale + room / 2;
+    if (size * scale > room) return offset;
+    return Math.max(-from, Math.min(room - from - size * scale, offset));
   };
+  x = inside(x, box.x, box.width, box.viewportWidth, stage.width);
+  y = inside(y, box.y, box.height, box.viewportHeight, stage.height);
+  if (Math.abs(x) < 1) x = 0;
+  if (Math.abs(y) < 1) y = 0;
+  return { scale, x, y };
 }

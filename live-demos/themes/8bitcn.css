@@ -39,6 +39,3 @@ html[data-demo='8bitcn/carousel'] .demo-stage > * {
   max-width: 20rem;
   zoom: 0.8;
 }
-html[data-demo='8bitcn/navigation-menu'] .demo-stage > * {
-  zoom: 0.64;
-}

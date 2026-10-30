@@ -26,29 +26,14 @@ html[data-provider='kokonut-ui'] #root {
   -moz-osx-font-smoothing: grayscale;
 }
 /* Demos taller or wider than a card are shown whole, smaller, rather than cut off. */
-html[data-demo='kokonut-ui/avatar-picker'] .demo-stage > * {
-  zoom: 0.58;
-}
-html[data-demo='kokonut-ui/bento-grid'] .demo-stage > * {
-  zoom: 0.22;
-}
 html[data-demo='kokonut-ui/card-stack'] .demo-stage > * {
   zoom: 0.7;
-}
-html[data-demo='kokonut-ui/carousel-cards'] .demo-stage > * {
-  zoom: 0.45;
 }
 html[data-demo='kokonut-ui/currency-transfer'] .demo-stage > * {
   zoom: 0.78;
 }
 html[data-demo='kokonut-ui/mouse-effect-card'] .demo-stage > * {
   zoom: 0.8;
-}
-html[data-demo='kokonut-ui/spotlight-cards'] .demo-stage > * {
-  zoom: 0.45;
-}
-html[data-demo='kokonut-ui/toolbar'] .demo-stage > * {
-  zoom: 0.7;
 }
 html[data-demo='kokonut-ui/tweet-card'] .demo-stage > * {
   zoom: 0.88;

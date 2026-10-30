@@ -1911,7 +1911,8 @@
     "file": "./vendor/kokonut-ui/components/kokonutui/avatar-picker.tsx",
     "export": "default",
     "ref": "83eec6d982d400a18438001a8efdbac1f159dd43",
-    "sourceUrl": "https://kokonutui.com/docs/inputs/avatar-picker"
+    "sourceUrl": "https://kokonutui.com/docs/inputs/avatar-picker",
+    "viewport": 800
   },
   "kokonut-ui/background-paths": {
     "file": "./vendor/kokonut-ui/components/kokonutui/background-paths.tsx",
@@ -1929,7 +1930,8 @@
     "file": "./vendor/kokonut-ui/components/kokonutui/bento-grid.tsx",
     "export": "default",
     "ref": "83eec6d982d400a18438001a8efdbac1f159dd43",
-    "sourceUrl": "https://kokonutui.com/docs/cards/bento-grid"
+    "sourceUrl": "https://kokonutui.com/docs/cards/bento-grid",
+    "viewport": 1200
   },
   "kokonut-ui/card-flip": {
     "file": "./vendor/kokonut-ui/components/kokonutui/card-flip.tsx",
@@ -1941,7 +1943,8 @@
     "file": "./vendor/kokonut-ui/components/kokonutui/carousel-cards.tsx",
     "export": "default",
     "ref": "83eec6d982d400a18438001a8efdbac1f159dd43",
-    "sourceUrl": "https://kokonutui.com/docs/cards/carousel-cards"
+    "sourceUrl": "https://kokonutui.com/docs/cards/carousel-cards",
+    "viewport": 960
   },
   "kokonut-ui/command-button": {
     "file": "./vendor/kokonut-ui/components/kokonutui/command-button.tsx",
@@ -2091,7 +2094,8 @@
     "file": "./vendor/kokonut-ui/components/kokonutui/spotlight-cards.tsx",
     "export": "default",
     "ref": "83eec6d982d400a18438001a8efdbac1f159dd43",
-    "sourceUrl": "https://kokonutui.com/docs/cards/spotlight-cards"
+    "sourceUrl": "https://kokonutui.com/docs/cards/spotlight-cards",
+    "viewport": 960
   },
   "kokonut-ui/card-stack": {
     "file": "./vendor/kokonut-ui/components/kokonutui/card-stack.tsx",
@@ -2121,7 +2125,8 @@
     "file": "./vendor/kokonut-ui/components/kokonutui/toolbar.tsx",
     "export": "default",
     "ref": "83eec6d982d400a18438001a8efdbac1f159dd43",
-    "sourceUrl": "https://kokonutui.com/docs/navigation/toolbar"
+    "sourceUrl": "https://kokonutui.com/docs/navigation/toolbar",
+    "viewport": 640
   },
   "kokonut-ui/type-writer": {
     "file": "./vendor/kokonut-ui/components/kokonutui/type-writer.tsx",
@@ -2331,7 +2336,8 @@
     "file": "./vendor/8bitcn/components/examples/navigation-menu.tsx",
     "export": "default",
     "ref": "9aedd7165837143803b95cdb2ab111923cf63efe",
-    "sourceUrl": "https://www.8bitcn.com/docs/components/navigation-menu"
+    "sourceUrl": "https://www.8bitcn.com/docs/components/navigation-menu",
+    "viewport": 720
   },
   "8bitcn/pagination": {
     "file": "./examples/8bitcn/pagination.tsx",
@@ -3201,7 +3207,8 @@
     "file": "./vendor/neobrutalism/examples/ui/table/index.tsx",
     "export": "default",
     "ref": "3306a802724874a85f93079702b2795370a279d4",
-    "sourceUrl": "https://www.neobrutalism.dev/docs/table"
+    "sourceUrl": "https://www.neobrutalism.dev/docs/table",
+    "viewport": 800
   },
   "neobrutalism/tabs": {
     "file": "./vendor/neobrutalism/examples/ui/tabs/index.tsx",

@@ -31,9 +31,48 @@ describe('stage fit for live demos on cards', () => {
     expect(stageFit(stage, box(236, 176, 8, 8), base).scale).toBe(1.6);
   });
 
-  it('centres off-centre content without moving it more than a fifth of the stage', () => {
-    const fit = stageFit(stage, box(0, 160, 60, 40), base);
+  it('centres off-centre content by up to a fifth of the stage', () => {
+    const fit = stageFit(stage, box(60, 160, 100, 40), base);
     expect(fit.x).toBeGreaterThan(0);
     expect(fit.x).toBeLessThanOrEqual(stage.width * 0.2);
+  });
+
+  it('moves grown content at the very edge further, so none of it is cut off', () => {
+    const fit = stageFit(stage, box(0, 160, 60, 40), base);
+    expect((0 - 240) * fit.scale + stage.width / 2 + fit.x).toBeGreaterThanOrEqual(0);
+  });
+
+  it('moves wide content laid out at the top of its page towards the middle', () => {
+    const fit = stageFit(stage, box(48, 46, 384, 56), base);
+    expect(fit.scale).toBe(base);
+    expect(fit.y).toBeCloseTo(stage.height * 0.2, 5);
+    expect(fit.x).toBe(0);
+  });
+
+  it('never moves standard-canvas content off the stage', () => {
+    const fit = stageFit(stage, box(0, 300, 480, 60), base);
+    expect(fit.y).toBeLessThan(0);
+    expect((300 + 60) * base + fit.y).toBeLessThanOrEqual(stage.height);
+    expect(stageFit(stage, box(0, 0, 480, 360), base)).toEqual({ scale: base, x: 0, y: 0 });
+  });
+
+  it('keeps a demo that paints its own page where it is', () => {
+    const fit = stageFit(stage, { ...box(0, 0, 60, 40), opaque: true }, base);
+    expect(fit.x).toBe(0);
+    expect(fit.y).toBe(0);
+  });
+
+  it('keeps grown content whole when it sits at the foot of its demo', () => {
+    const fit = stageFit(stage, box(190, 222, 98, 38), base);
+    expect(fit.scale).toBeGreaterThan(base);
+    // The frame keeps the layout centred, so positions count from the middle.
+    const top = (222 - 180) * fit.scale + stage.height / 2 + fit.y;
+    expect(top).toBeGreaterThanOrEqual(0);
+    expect(top + 38 * fit.scale).toBeLessThanOrEqual(stage.height);
+  });
+
+  it('never zooms in so far that a fixed-height demo no longer fits its frame', () => {
+    const fit = stageFit(stage, { ...box(190, 222, 98, 38), layoutHeight: 160 }, base);
+    expect(fit.scale).toBeCloseTo(stage.height / 200, 5);
   });
 });

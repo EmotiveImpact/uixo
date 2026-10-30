@@ -70,9 +70,6 @@ html[data-demo='neobrutalism/questionnaire'] .demo-stage > :first-child {
 html[data-demo='neobrutalism/message-scroller'] .demo-stage > :first-child {
   zoom: 0.86;
 }
-html[data-demo='neobrutalism/table'] .demo-stage > :first-child {
-  zoom: 0.6;
-}
 html[data-demo='neobrutalism/chart'] .demo-stage > :first-child {
   zoom: 0.95;
 }

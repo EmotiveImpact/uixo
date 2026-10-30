@@ -241,7 +241,14 @@ function LivePreview({
   // the page's leading edge. Give those pages a compact viewport and a small
   // visual stage so controls remain legible instead of looking wide or clipped.
   const uiableCard = asset.providerId === 'uiable' && !detail;
-  const previewWidth = uiableCard ? UIABLE_PREVIEW_WIDTH : DEFAULT_PREVIEW_WIDTH;
+  // A live demo laid out for a desktop page names the viewport it needs in the manifest,
+  // so the card shows that layout smaller instead of the phone layout.
+  const demoViewport = (demos as Record<string, { viewport?: number }>)[asset.id]?.viewport;
+  const previewWidth = uiableCard
+    ? UIABLE_PREVIEW_WIDTH
+    : external
+      ? DEFAULT_PREVIEW_WIDTH
+      : (demoViewport ?? DEFAULT_PREVIEW_WIDTH);
   const previewInset = uiableCard ? UIABLE_PREVIEW_INSET : 0;
   const baseScale = detail ? 1 : Math.max(size.width - previewInset * 2, 1) / previewWidth;
   const fit =

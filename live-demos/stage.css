@@ -34,6 +34,12 @@ html[data-stage='clear'] #root {
 html[data-stage='clear'] .demo-stage {
   padding: 20px;
 }
+/* A demo much taller than the card (main.tsx marks it) starts at its top edge, below the
+   card's badges, instead of being centred with its heading cut off. */
+html[data-stage='clear'][data-tall] .demo-stage {
+  align-items: flex-start;
+  padding-top: 52px;
+}
 /* Full-bleed demos frame themselves in the page colour with a border. On a lit stage
    that frame drops away so the demo sits on the tint. */
 html[data-stage='clear'] .demo-stage > .bg-background:first-child {
