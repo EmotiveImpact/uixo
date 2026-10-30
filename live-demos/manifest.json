@@ -2578,5 +2578,671 @@
     "export": "default",
     "ref": "23c31bd3088814215a8b5d0bfb56b327cad1a578",
     "sourceUrl": "https://ui.elevenlabs.io/docs/components/waveform"
+  },
+  "neobrutalism/accordion": {
+    "file": "./vendor/neobrutalism/examples/ui/accordion/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/accordion"
+  },
+  "neobrutalism/alert": {
+    "file": "./vendor/neobrutalism/examples/ui/alert/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/alert"
+  },
+  "neobrutalism/alert-dialog": {
+    "file": "./vendor/neobrutalism/examples/ui/alert-dialog/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/alert-dialog"
+  },
+  "neobrutalism/attachment": {
+    "file": "./vendor/neobrutalism/examples/ui/attachment/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/attachment"
+  },
+  "neobrutalism/avatar": {
+    "file": "./vendor/neobrutalism/examples/ui/avatar/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/avatar"
+  },
+  "neobrutalism/badge": {
+    "file": "./vendor/neobrutalism/examples/ui/badge/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/badge"
+  },
+  "neobrutalism/breadcrumb": {
+    "file": "./vendor/neobrutalism/examples/ui/breadcrumb/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/breadcrumb"
+  },
+  "neobrutalism/bubble": {
+    "file": "./vendor/neobrutalism/examples/ui/bubble/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/bubble"
+  },
+  "neobrutalism/button": {
+    "file": "./vendor/neobrutalism/examples/ui/button/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/button"
+  },
+  "neobrutalism/button-group": {
+    "file": "./vendor/neobrutalism/examples/ui/button-group/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/button-group"
+  },
+  "neobrutalism/calendar": {
+    "file": "./vendor/neobrutalism/examples/ui/calendar/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/calendar"
+  },
+  "neobrutalism/card": {
+    "file": "./vendor/neobrutalism/examples/ui/card/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/card"
+  },
+  "neobrutalism/ncard": {
+    "file": "./vendor/neobrutalism/examples/ui/card/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/card"
+  },
+  "neobrutalism/carousel": {
+    "file": "./vendor/neobrutalism/examples/ui/carousel/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/carousel"
+  },
+  "neobrutalism/chart": {
+    "file": "./vendor/neobrutalism/examples/ui/chart/chart-area-stacked.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/chart"
+  },
+  "neobrutalism/checkbox": {
+    "file": "./vendor/neobrutalism/examples/ui/checkbox/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/checkbox"
+  },
+  "neobrutalism/collapsible": {
+    "file": "./vendor/neobrutalism/examples/ui/collapsible/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/collapsible"
+  },
+  "neobrutalism/command": {
+    "file": "./vendor/neobrutalism/examples/ui/command/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/command"
+  },
+  "neobrutalism/context-menu": {
+    "file": "./vendor/neobrutalism/examples/ui/context-menu/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/context-menu"
+  },
+  "neobrutalism/dialog": {
+    "file": "./vendor/neobrutalism/examples/ui/dialog/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/dialog"
+  },
+  "neobrutalism/direction": {
+    "file": "./vendor/neobrutalism/examples/ui/direction.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/direction"
+  },
+  "neobrutalism/drawer": {
+    "file": "./vendor/neobrutalism/examples/ui/drawer/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/drawer"
+  },
+  "neobrutalism/dropdown-menu": {
+    "file": "./vendor/neobrutalism/examples/ui/dropdown-menu/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/dropdown-menu"
+  },
+  "neobrutalism/empty": {
+    "file": "./vendor/neobrutalism/examples/ui/empty/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/empty"
+  },
+  "neobrutalism/field": {
+    "file": "./vendor/neobrutalism/examples/ui/field/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/field"
+  },
+  "neobrutalism/form": {
+    "file": "./vendor/neobrutalism/examples/ui/form/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/form"
+  },
+  "neobrutalism/hover-card": {
+    "file": "./vendor/neobrutalism/examples/ui/hover-card/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/hover-card"
+  },
+  "neobrutalism/image-card": {
+    "file": "./vendor/neobrutalism/examples/ui/image-card.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/image-card"
+  },
+  "neobrutalism/input": {
+    "file": "./vendor/neobrutalism/examples/ui/input/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/input"
+  },
+  "neobrutalism/ninput": {
+    "file": "./vendor/neobrutalism/examples/ui/input/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/input"
+  },
+  "neobrutalism/input-group": {
+    "file": "./vendor/neobrutalism/examples/ui/input-group/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/input-group"
+  },
+  "neobrutalism/input-otp": {
+    "file": "./vendor/neobrutalism/examples/ui/input-otp/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/input-otp"
+  },
+  "neobrutalism/item": {
+    "file": "./vendor/neobrutalism/examples/ui/item/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/item"
+  },
+  "neobrutalism/kbd": {
+    "file": "./vendor/neobrutalism/examples/ui/kbd/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/kbd"
+  },
+  "neobrutalism/label": {
+    "file": "./vendor/neobrutalism/examples/ui/label/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/label"
+  },
+  "neobrutalism/marker": {
+    "file": "./vendor/neobrutalism/examples/ui/marker/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/marker"
+  },
+  "neobrutalism/marquee": {
+    "file": "./vendor/neobrutalism/examples/ui/marquee.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/marquee"
+  },
+  "neobrutalism/menubar": {
+    "file": "./vendor/neobrutalism/examples/ui/menubar/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/menubar"
+  },
+  "neobrutalism/message": {
+    "file": "./vendor/neobrutalism/examples/ui/message/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/message"
+  },
+  "neobrutalism/message-scroller": {
+    "file": "./vendor/neobrutalism/examples/ui/message-scroller/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/message-scroller"
+  },
+  "neobrutalism/native-select": {
+    "file": "./vendor/neobrutalism/examples/ui/native-select/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/native-select"
+  },
+  "neobrutalism/navigation-menu": {
+    "file": "./vendor/neobrutalism/examples/ui/navigation-menu.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/navigation-menu"
+  },
+  "neobrutalism/nbutton": {
+    "file": "./vendor/neobrutalism/examples/ui/button/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/button"
+  },
+  "neobrutalism/ndialog": {
+    "file": "./vendor/neobrutalism/examples/ui/dialog/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/dialog"
+  },
+  "neobrutalism/nlabel": {
+    "file": "./vendor/neobrutalism/examples/ui/label/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/label"
+  },
+  "neobrutalism/ntextarea": {
+    "file": "./vendor/neobrutalism/examples/ui/textarea/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/textarea"
+  },
+  "neobrutalism/ntoggle": {
+    "file": "./vendor/neobrutalism/examples/ui/toggle/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/toggle"
+  },
+  "neobrutalism/pagination": {
+    "file": "./vendor/neobrutalism/examples/ui/pagination/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/pagination"
+  },
+  "neobrutalism/popover": {
+    "file": "./vendor/neobrutalism/examples/ui/popover/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/popover"
+  },
+  "neobrutalism/progress": {
+    "file": "./vendor/neobrutalism/examples/ui/progress/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/progress"
+  },
+  "neobrutalism/questionnaire": {
+    "file": "./vendor/neobrutalism/examples/ui/questionnaire/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/questionnaire"
+  },
+  "neobrutalism/radio-group": {
+    "file": "./vendor/neobrutalism/examples/ui/radio-group/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/radio-group"
+  },
+  "neobrutalism/resizable": {
+    "file": "./vendor/neobrutalism/examples/ui/resizable.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/resizable"
+  },
+  "neobrutalism/scroll-area": {
+    "file": "./vendor/neobrutalism/examples/ui/scroll-area/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/scroll-area"
+  },
+  "neobrutalism/select": {
+    "file": "./vendor/neobrutalism/examples/ui/select/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/select"
+  },
+  "neobrutalism/nsheet": {
+    "file": "./vendor/neobrutalism/examples/ui/sheet/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/sheet"
+  },
+  "neobrutalism/sheet": {
+    "file": "./vendor/neobrutalism/examples/ui/sheet/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/sheet"
+  },
+  "neobrutalism/sidebar": {
+    "file": "./examples/neobrutalism/sidebar.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/sidebar"
+  },
+  "neobrutalism/nskeleton": {
+    "file": "./vendor/neobrutalism/examples/ui/skeleton/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/skeleton"
+  },
+  "neobrutalism/skeleton": {
+    "file": "./vendor/neobrutalism/examples/ui/skeleton/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/skeleton"
+  },
+  "neobrutalism/slider": {
+    "file": "./vendor/neobrutalism/examples/ui/slider/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/slider"
+  },
+  "neobrutalism/spinner": {
+    "file": "./vendor/neobrutalism/examples/ui/spinner/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/spinner"
+  },
+  "neobrutalism/s1": {
+    "file": "./vendor/neobrutalism/examples/stars/s1.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s10": {
+    "file": "./vendor/neobrutalism/examples/stars/s10.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s11": {
+    "file": "./vendor/neobrutalism/examples/stars/s11.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s12": {
+    "file": "./vendor/neobrutalism/examples/stars/s12.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s13": {
+    "file": "./vendor/neobrutalism/examples/stars/s13.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s14": {
+    "file": "./vendor/neobrutalism/examples/stars/s14.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s15": {
+    "file": "./vendor/neobrutalism/examples/stars/s15.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s16": {
+    "file": "./vendor/neobrutalism/examples/stars/s16.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s17": {
+    "file": "./vendor/neobrutalism/examples/stars/s17.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s18": {
+    "file": "./vendor/neobrutalism/examples/stars/s18.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s19": {
+    "file": "./vendor/neobrutalism/examples/stars/s19.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s2": {
+    "file": "./vendor/neobrutalism/examples/stars/s2.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s20": {
+    "file": "./vendor/neobrutalism/examples/stars/s20.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s21": {
+    "file": "./vendor/neobrutalism/examples/stars/s21.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s22": {
+    "file": "./vendor/neobrutalism/examples/stars/s22.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s23": {
+    "file": "./vendor/neobrutalism/examples/stars/s23.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s24": {
+    "file": "./vendor/neobrutalism/examples/stars/s24.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s25": {
+    "file": "./vendor/neobrutalism/examples/stars/s25.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s26": {
+    "file": "./vendor/neobrutalism/examples/stars/s26.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s27": {
+    "file": "./vendor/neobrutalism/examples/stars/s27.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s28": {
+    "file": "./vendor/neobrutalism/examples/stars/s28.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s29": {
+    "file": "./vendor/neobrutalism/examples/stars/s29.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s3": {
+    "file": "./vendor/neobrutalism/examples/stars/s3.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s30": {
+    "file": "./vendor/neobrutalism/examples/stars/s30.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s31": {
+    "file": "./vendor/neobrutalism/examples/stars/s31.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s32": {
+    "file": "./vendor/neobrutalism/examples/stars/s32.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s33": {
+    "file": "./vendor/neobrutalism/examples/stars/s33.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s34": {
+    "file": "./vendor/neobrutalism/examples/stars/s34.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s35": {
+    "file": "./vendor/neobrutalism/examples/stars/s35.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s36": {
+    "file": "./vendor/neobrutalism/examples/stars/s36.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s37": {
+    "file": "./vendor/neobrutalism/examples/stars/s37.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s38": {
+    "file": "./vendor/neobrutalism/examples/stars/s38.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s39": {
+    "file": "./vendor/neobrutalism/examples/stars/s39.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s4": {
+    "file": "./vendor/neobrutalism/examples/stars/s4.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s40": {
+    "file": "./vendor/neobrutalism/examples/stars/s40.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s5": {
+    "file": "./vendor/neobrutalism/examples/stars/s5.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s6": {
+    "file": "./vendor/neobrutalism/examples/stars/s6.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s7": {
+    "file": "./vendor/neobrutalism/examples/stars/s7.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s8": {
+    "file": "./vendor/neobrutalism/examples/stars/s8.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/s9": {
+    "file": "./vendor/neobrutalism/examples/stars/s9.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/stars"
+  },
+  "neobrutalism/switch": {
+    "file": "./vendor/neobrutalism/examples/ui/switch/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/switch"
+  },
+  "neobrutalism/table": {
+    "file": "./vendor/neobrutalism/examples/ui/table/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/table"
+  },
+  "neobrutalism/tabs": {
+    "file": "./vendor/neobrutalism/examples/ui/tabs/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/tabs"
+  },
+  "neobrutalism/textarea": {
+    "file": "./vendor/neobrutalism/examples/ui/textarea/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/textarea"
+  },
+  "neobrutalism/toast": {
+    "file": "./vendor/neobrutalism/examples/ui/toast/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/toast"
+  },
+  "neobrutalism/toggle": {
+    "file": "./vendor/neobrutalism/examples/ui/toggle/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/toggle"
+  },
+  "neobrutalism/toggle-group": {
+    "file": "./vendor/neobrutalism/examples/ui/toggle-group/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/toggle-group"
+  },
+  "neobrutalism/ntooltip": {
+    "file": "./vendor/neobrutalism/examples/ui/tooltip/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/tooltip"
+  },
+  "neobrutalism/tooltip": {
+    "file": "./vendor/neobrutalism/examples/ui/tooltip/index.tsx",
+    "export": "default",
+    "ref": "3306a802724874a85f93079702b2795370a279d4",
+    "sourceUrl": "https://www.neobrutalism.dev/docs/tooltip"
   }
 }

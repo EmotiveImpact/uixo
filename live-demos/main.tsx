@@ -45,6 +45,7 @@ const origins = {
   'kokonut-ui': 'https://kokonutui.com',
   '8bitcn': 'https://www.8bitcn.com',
   'elevenlabs-ui': 'https://ui.elevenlabs.io',
+  neobrutalism: 'https://www.neobrutalism.dev',
 };
 const base = document.createElement('base');
 base.href = origins[provider] + '/';
