@@ -4233,5 +4233,285 @@
     "path": "8bitcn/components/profile-card.tsx",
     "sha256": "11ef961349378e75f564915072239d7a4cd9865b3c8d3c4f268f007489db0ba5",
     "sourceUrl": "https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/components/profile-card.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/LICENSE.md",
+    "sha256": "ad3f66b8568970d067e3bd47b690ad013945a61f972559743946a3a6558dc828",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/LICENSE.md"
+  },
+  {
+    "path": "elevenlabs-ui/styles/globals.css",
+    "sha256": "1a0f254c2ec28ffc9a497d9331407703cce46b16174d77f0f536beecd89108ac",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/styles/globals.css"
+  },
+  {
+    "path": "elevenlabs-ui/public/sounds/transcript-viewer/transcript-viewer-alignment.json",
+    "sha256": "bafc12a88f6fa04397cff135727913e1d7269ad5f1587aa5b2db7d9f4ab2a249",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/public/sounds/transcript-viewer/transcript-viewer-alignment.json"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/audio-player-demo.tsx",
+    "sha256": "e65d3369cd45b8a859615f00b3dded57401399846c508209b1a34269fedf20c7",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/audio-player-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/bar-visualizer-demo.tsx",
+    "sha256": "49e8f64299550fe6b3951aebd8f89f55e106356d614e82d749f58302547b6f02",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/bar-visualizer-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/conversation-bar-demo.tsx",
+    "sha256": "676562704343a34207dc7a1329c5170d0fb9088f68bc1ca4a00e691b2cf9da45",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/conversation-bar-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/conversation-demo.tsx",
+    "sha256": "cae6fae111199a28cf851b0c9d7760eab11f06d243411ac106bd2bc4fad93ae0",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/conversation-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/live-waveform-demo.tsx",
+    "sha256": "e091b31d9b762aa0d11949f0ac65a5c0e2cf7a42ed1664d409a589ef4738ec5d",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/live-waveform-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/matrix-demo.tsx",
+    "sha256": "a3b934eebd060cc185fe7f1d97f2a82da55ac8f6850dc84c0bb6da8ed48df1b9",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/matrix-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/message-demo.tsx",
+    "sha256": "5e6d3c1ec647ea1890e50ec066ddcdc10cd9d0ecba6f8b1a32ce6a228d922aab",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/message-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/mic-selector-demo.tsx",
+    "sha256": "7400d83c529841a3a6f26e7ef1b84bf71fd351edc60d92089b5cdd70fb5329ac",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/mic-selector-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/orb-demo.tsx",
+    "sha256": "5506ef0ae650abdb95abf0923a04bd926f14eb0542658a278405948841eee5ee",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/orb-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/response-demo.tsx",
+    "sha256": "d8dd9d9cb93b43784e60e07b02b9d05c4e2a7d6e63af72f94384a4e52c253e23",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/response-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/scrub-bar-demo.tsx",
+    "sha256": "eafb2b120a4cfaa07d216def0f807ce3e40df6127ef86640415f55d35e43cab5",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/scrub-bar-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/shimmering-text-demo.tsx",
+    "sha256": "8c5e4e86220470a59d00bf31ec620734d15ea5dde406f1625e96aec50b99c11c",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/shimmering-text-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/speech-input-demo.tsx",
+    "sha256": "bf9b68e0b8496b7ccf0732cd3a3d87002274bc66ada407b7668ab1ae99f1f17d",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/speech-input-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/transcript-viewer-demo.tsx",
+    "sha256": "5ec70f4ecd76319716894e1d5182abd0af8733f971d5d6b79492b5185d9b9541",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/transcript-viewer-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/voice-button-demo.tsx",
+    "sha256": "475bb206b2ba5f41baff955ee5091540edb14c08e27a55d14268a4aa994d1a45",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/voice-button-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/voice-picker-demo.tsx",
+    "sha256": "5a84062c2cfa18ef6fd09ae83ae7eb03a458548bcd8d43483270b29d6ceba903",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/voice-picker-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/examples/waveform-demo.tsx",
+    "sha256": "e9d496dc0c95c8c906e321ebe3d3d03d951c40a727bcc249d97154e13e334577",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/examples/waveform-demo.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/styles/themes.css",
+    "sha256": "47ed4b086fccb5766deea59af4e2dc882b25e55f6e6079b73895d3c1173bc13a",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/styles/themes.css"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/lib/utils.ts",
+    "sha256": "7c8c3dfc0cdd370d44932828eb067ef771c8fe7996693221d5d4b90af6d54f2d",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/lib/utils.ts"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/audio-player.tsx",
+    "sha256": "b93aeedf0b5f749d210b64a9d964e84f12bbf875b18d61bcbc3017c6f8966c49",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/audio-player.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/button.tsx",
+    "sha256": "7b260b5eeb59e4756fc3907e54852f06d58e8003ff0e030c1d97cff194d87f00",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/button.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/card.tsx",
+    "sha256": "78cdb63dff3ec7ef074ada630ff20a5d8004768b6cbe24ed134a8bfba12bafbb",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/card.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/scroll-area.tsx",
+    "sha256": "1c5d0b242d0513848f4bfa9b57ba7f438d9b1120617029941bfaa137196ecead",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/scroll-area.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/bar-visualizer.tsx",
+    "sha256": "6244d6f95996385c359dbf12968f5980ecabe5155eaea694a753217b86c3f685",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/bar-visualizer.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/conversation-bar.tsx",
+    "sha256": "c4fdb932330751911ec442185dcf1d1b4d2323eb04048d23079058919c91a28b",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/conversation-bar.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/conversation.tsx",
+    "sha256": "34009c4515b2b3c0cc8454c75c993e40509bf06f9ba5afd11eb1d15005b3d54d",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/conversation.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/message.tsx",
+    "sha256": "bf8a16fb7b9a1a8046caa062f591a41a5d9921622e24575c8a4281d19731fdaf",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/message.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/orb.tsx",
+    "sha256": "16fdb804e37c495806091d34712e689f89c02b4638bb173ab5bef5e5eac52b91",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/orb.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/response.tsx",
+    "sha256": "129a7e7acd1344af1ee0406e555d378c3c2c85b626ac52b350dad0fb3698a09b",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/response.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/live-waveform.tsx",
+    "sha256": "ca011f6594bb105afe56362eef5f9032c008623b507b16320216121951939170",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/live-waveform.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/matrix.tsx",
+    "sha256": "f074f26d5d9060b53c794893993c2ab8b7c13d6de0c1a4135cad069d0ecf0141",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/matrix.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/lib/utils.ts",
+    "sha256": "7f7082a8e4a8137a17d45372a67c6272dbc8eca95451cc2f4645fe866249e3f9",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/lib/utils.ts"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/mic-selector.tsx",
+    "sha256": "ed606c8003fe54f470a7e192570ee8ce529188e5e7caefd573f5c04e0e589538",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/mic-selector.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/separator.tsx",
+    "sha256": "e9dddbd8dbbc0eccd683306481b0f0bbc8e2b60ea97817416ebb9fe7fbbbdca8",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/separator.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/scrub-bar.tsx",
+    "sha256": "aa2f0dbcbf94ef0010efe7ef0bc8a10697b3018aa94630154eb902ce9b161816",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/scrub-bar.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/shimmering-text.tsx",
+    "sha256": "c746b3a1d29d9c666bd01681d512b88aeb4a3ff6f589e4055870580ced4eea5b",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/shimmering-text.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/blocks/realtime-transcriber-01/actions/get-scribe-token.ts",
+    "sha256": "4d940c2ae8fac94b2dc403d59e5a41c8034f5c7df673963946d5255f0a11d624",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/blocks/realtime-transcriber-01/actions/get-scribe-token.ts"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/input.tsx",
+    "sha256": "56b7fd30208addbcc2468cfda4f5bc0a55342211deaab61ee35b1c352b1622f1",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/input.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/speech-input.tsx",
+    "sha256": "98ba18ad3c6258623cbac2ada8caca6676fad153d40300fb0aacbc2575360d95",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/speech-input.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/textarea.tsx",
+    "sha256": "de4e9fb0fd8e8ed10ea2e475ffe202a922ffe77e3f3edb2c517b0781447ad1b4",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/textarea.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/transcript-viewer.tsx",
+    "sha256": "8e9079ada047846a075839a1e7af011260493c97e6b7853c594522c6d31cff38",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/transcript-viewer.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/skeleton.tsx",
+    "sha256": "f2aea81d8baf2b621945382aabac150e3db40f20d19ac1abea7aff805f1dc33c",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/skeleton.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/voice-button.tsx",
+    "sha256": "6e6f366d15235131efe062518bd551dca7158b07727402dc93c78e07e441269e",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/voice-button.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/voice-picker.tsx",
+    "sha256": "a42f5fe785986295885d099194e2ea23658911189f39e43b8c448bf6c4f9ca7d",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/voice-picker.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/waveform.tsx",
+    "sha256": "e5e0c314a66d545f851e012420a9f87474aef8673cbeedae46d021389fd847f8",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/waveform.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/dropdown-menu.tsx",
+    "sha256": "9b346378821ba06f9501e4571fd7678cd8819d6833f833daff72bec699565c06",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/dropdown-menu.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/avatar.tsx",
+    "sha256": "e8672934f1c315f36cdae39380454ba8c2da62aca420dfb827d96693091419c4",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/avatar.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/progress.tsx",
+    "sha256": "e7a89220fb49e18d6613956781cfd5eb38d5da36379e93f5fc90ccec127dc871",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/progress.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/hooks/use-scribe.ts",
+    "sha256": "ba31c13ad70607fc4c9e757fd46b879d98e60aec77010da7af7e3bdaa9ca25fa",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/hooks/use-scribe.ts"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/hooks/use-transcript-viewer.ts",
+    "sha256": "0f867002dabaec3026ccd93e2c4c7091b178d10dc4eb20ad58602d6774b5de6d",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/hooks/use-transcript-viewer.ts"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/command.tsx",
+    "sha256": "e6e6ff24d24a1fce9e9f6ab423152f4803001f00c2a91194058ff3dbd8da848d",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/command.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/popover.tsx",
+    "sha256": "29a217781737bbf5c430859b3de46097a44ada81c4143c2d05543d2167de0ee1",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/popover.tsx"
+  },
+  {
+    "path": "elevenlabs-ui/registry/elevenlabs-ui/ui/dialog.tsx",
+    "sha256": "491a87bfae8f28773624d353bf56b9288d0852413e814d508e0d086dc7b06edb",
+    "sourceUrl": "https://github.com/elevenlabs/ui/blob/23c31bd3088814215a8b5d0bfb56b327cad1a578/apps/www/registry/elevenlabs-ui/ui/dialog.tsx"
   }
 ]

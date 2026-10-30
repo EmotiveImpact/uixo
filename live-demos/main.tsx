@@ -44,6 +44,7 @@ const origins = {
   mapcn: 'https://mapcn.dev',
   'kokonut-ui': 'https://kokonutui.com',
   '8bitcn': 'https://www.8bitcn.com',
+  'elevenlabs-ui': 'https://ui.elevenlabs.io',
 };
 const base = document.createElement('base');
 base.href = origins[provider] + '/';
