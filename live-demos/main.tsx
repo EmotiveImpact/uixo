@@ -42,6 +42,7 @@ const origins = {
   'prompt-kit': 'https://www.prompt-kit.com',
   evilcharts: 'https://evilcharts.com',
   mapcn: 'https://mapcn.dev',
+  'kokonut-ui': 'https://kokonutui.com',
 };
 const base = document.createElement('base');
 base.href = origins[provider] + '/';

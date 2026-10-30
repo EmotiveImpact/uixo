@@ -67,6 +67,7 @@ export default defineConfig({
       'next/link': path.join(root, 'adapters/link.tsx'),
       'next/image': path.join(root, 'adapters/image.tsx'),
       'next-themes': path.join(root, 'adapters/theme.tsx'),
+      'next/font/google': path.join(root, 'adapters/font-google.ts'),
     },
   },
   define: { 'process.env.NODE_ENV': '"production"' },
