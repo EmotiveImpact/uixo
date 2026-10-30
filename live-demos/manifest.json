@@ -1696,5 +1696,827 @@
     "export": "ToolBasic",
     "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
     "sourceUrl": "https://www.prompt-kit.com/docs/tool"
+  },
+  "cult-ui/agent-suggest-card-stack": {
+    "file": "./vendor/cult-ui/registry/default/example/agent-suggest-card-stack-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/agent-suggest-card-stack"
+  },
+  "cult-ui/ai-blob-warp": {
+    "file": "./vendor/cult-ui/registry/default/example/ai-blob-warp-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/ai-blob-warp"
+  },
+  "cult-ui/ai-instructions": {
+    "file": "./vendor/cult-ui/registry/default/example/ai-instructions-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/ai-instructions"
+  },
+  "cult-ui/analytics-chart": {
+    "file": "./vendor/cult-ui/registry/default/example/analytics-chart-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/analytics-chart"
+  },
+  "cult-ui/apple-iphone-17-pro": {
+    "file": "./vendor/cult-ui/registry/default/example/apple-iphone-17-pro-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/apple-iphone-17-pro"
+  },
+  "cult-ui/apple-keyboard": {
+    "file": "./vendor/cult-ui/registry/default/example/apple-keyboard-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/apple-keyboard"
+  },
+  "cult-ui/apple-pro-display-xdr": {
+    "file": "./vendor/cult-ui/registry/default/example/apple-pro-display-xdr-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/apple-pro-display-xdr"
+  },
+  "cult-ui/apple-watch-ultra": {
+    "file": "./vendor/cult-ui/registry/default/example/apple-watch-ultra-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/apple-watch-ultra"
+  },
+  "cult-ui/base-select": {
+    "file": "./examples/cult-ui/base-select.tsx",
+    "export": "BaseSelectExample",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/base-select.tsx"
+  },
+  "cult-ui/base-tooltip": {
+    "file": "./examples/cult-ui/base-tooltip.tsx",
+    "export": "BaseTooltipExample",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/base-tooltip.tsx"
+  },
+  "cult-ui/bg-animate-button": {
+    "file": "./vendor/cult-ui/registry/default/example/bg-animate-button-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/bg-animate-button"
+  },
+  "cult-ui/bg-animated-fractal-dot-grid": {
+    "file": "./vendor/cult-ui/registry/default/example/bg-animated-fractal-dot-grid-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/bg-animated-fractal-grid"
+  },
+  "cult-ui/bg-animated-gradient": {
+    "file": "./examples/cult-ui/bg-animated-gradient.tsx",
+    "export": "BgAnimatedGradientExample",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/bg-animated-gradient.tsx"
+  },
+  "cult-ui/bg-image-texture": {
+    "file": "./vendor/cult-ui/registry/default/example/bg-image-texture-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/bg-image-texture"
+  },
+  "cult-ui/bg-media": {
+    "file": "./vendor/cult-ui/registry/default/example/bg-media-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/bg-media"
+  },
+  "cult-ui/border-beam-button": {
+    "file": "./vendor/cult-ui/registry/default/example/border-beam-button-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/border-beam-button"
+  },
+  "cult-ui/border-beam-card": {
+    "file": "./vendor/cult-ui/registry/default/example/border-beam-card-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/border-beam-card"
+  },
+  "cult-ui/border-beam-input": {
+    "file": "./vendor/cult-ui/registry/default/example/border-beam-input-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/border-beam-input"
+  },
+  "cult-ui/canvas-fractal-grid": {
+    "file": "./examples/cult-ui/canvas-fractal-grid.tsx",
+    "export": "CanvasFractalGridExample",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/canvas-fractal-grid"
+  },
+  "cult-ui/choice-poll": {
+    "file": "./vendor/cult-ui/registry/default/example/choice-poll-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/choice-poll"
+  },
+  "cult-ui/circuit-board": {
+    "file": "./vendor/cult-ui/registry/default/example/circuit-board-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/circuit-board"
+  },
+  "cult-ui/code-block": {
+    "file": "./vendor/cult-ui/registry/default/example/code-block-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/code-block"
+  },
+  "cult-ui/collab-avatar": {
+    "file": "./vendor/cult-ui/registry/default/example/collab-avatar-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/collab-avatar"
+  },
+  "cult-ui/collab-toolbar": {
+    "file": "./vendor/cult-ui/registry/default/example/collab-toolbar-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/collab-toolbar"
+  },
+  "cult-ui/color-picker": {
+    "file": "./vendor/cult-ui/registry/default/example/color-picker-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/color-picker"
+  },
+  "cult-ui/copy-button": {
+    "file": "./vendor/cult-ui/registry/default/example/copy-button-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/copy-button"
+  },
+  "cult-ui/cosmic-button": {
+    "file": "./vendor/cult-ui/registry/default/example/cosmic-button-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/cosmic-button"
+  },
+  "cult-ui/cutout-card": {
+    "file": "./vendor/cult-ui/registry/default/example/cutout-card-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/cutout-card"
+  },
+  "cult-ui/direction-aware-tabs": {
+    "file": "./vendor/cult-ui/registry/default/example/direction-aware-tabs-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/direction-aware-tabs"
+  },
+  "cult-ui/distorted-glass": {
+    "file": "./vendor/cult-ui/registry/default/example/distorted-glass-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/distorted-glass"
+  },
+  "cult-ui/dither-image": {
+    "file": "./vendor/cult-ui/registry/default/example/dither-image-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/dither-image"
+  },
+  "cult-ui/dock": {
+    "file": "./vendor/cult-ui/registry/default/example/dock-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/dock"
+  },
+  "cult-ui/dynamic-island": {
+    "file": "./vendor/cult-ui/registry/default/example/dynamic-island-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/dynamic-island"
+  },
+  "cult-ui/edge-blur": {
+    "file": "./vendor/cult-ui/registry/default/example/edge-blur-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/edge-blur"
+  },
+  "cult-ui/expandable": {
+    "file": "./vendor/cult-ui/registry/default/example/expandable-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/expandable"
+  },
+  "cult-ui/expandable-screen": {
+    "file": "./vendor/cult-ui/registry/default/example/expandable-screen-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/expandable-screen"
+  },
+  "cult-ui/family-button": {
+    "file": "./vendor/cult-ui/registry/default/example/family-button-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/family-button"
+  },
+  "cult-ui/family-drawer": {
+    "file": "./vendor/cult-ui/registry/default/example/family-drawer-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/family-drawer"
+  },
+  "cult-ui/feature-carousel": {
+    "file": "./vendor/cult-ui/registry/default/example/feature-carousel-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/feature-carousel"
+  },
+  "cult-ui/feature-poll": {
+    "file": "./vendor/cult-ui/registry/default/example/feature-poll-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/feature-poll"
+  },
+  "cult-ui/feature-sticky-section": {
+    "file": "./vendor/cult-ui/registry/default/example/feature-sticky-section-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/feature-sticky-section"
+  },
+  "cult-ui/feature-voting": {
+    "file": "./vendor/cult-ui/registry/default/example/feature-voting-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/feature-voting"
+  },
+  "cult-ui/file-icons": {
+    "file": "./vendor/cult-ui/registry/default/example/file-icons-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/file-icons"
+  },
+  "cult-ui/floating-panel": {
+    "file": "./vendor/cult-ui/registry/default/example/floating-panel-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/floating-panel"
+  },
+  "cult-ui/fluid-ai-workloads": {
+    "file": "./vendor/cult-ui/registry/default/example/fluid-ai-workloads-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/fluid-ai-workloads"
+  },
+  "cult-ui/fluted-glass": {
+    "file": "./vendor/cult-ui/registry/default/example/fluted-glass-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/fluted-glass"
+  },
+  "cult-ui/folded-card": {
+    "file": "./vendor/cult-ui/registry/default/example/folded-card-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/folded-card"
+  },
+  "cult-ui/gateway-endpoint-illustration": {
+    "file": "./vendor/cult-ui/registry/default/example/gateway-endpoint-illustration-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/gateway-endpoint-illustration"
+  },
+  "cult-ui/gateway-route-illustration": {
+    "file": "./vendor/cult-ui/registry/default/example/gateway-route-illustration-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/gateway-route-illustration"
+  },
+  "cult-ui/gateway-svg-illustration": {
+    "file": "./vendor/cult-ui/registry/default/example/gateway-svg-illustration-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/gateway-svg-illustration"
+  },
+  "cult-ui/globe": {
+    "file": "./vendor/cult-ui/registry/default/example/globe-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/globe"
+  },
+  "cult-ui/gradient-button-group": {
+    "file": "./vendor/cult-ui/registry/default/example/gradient-button-group-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/gradient-button-group"
+  },
+  "cult-ui/gradient-heading": {
+    "file": "./vendor/cult-ui/registry/default/example/gradient-heading-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/gradient-heading"
+  },
+  "cult-ui/grid-beam": {
+    "file": "./vendor/cult-ui/registry/default/example/grid-beam-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/grid-beam"
+  },
+  "cult-ui/halo-badge": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-badge-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-badge"
+  },
+  "cult-ui/halo-button": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-button-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-button"
+  },
+  "cult-ui/halo-card": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-card-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-card"
+  },
+  "cult-ui/halo-dropzone": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-dropzone-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-dropzone"
+  },
+  "cult-ui/halo-field": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-field-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-field"
+  },
+  "cult-ui/halo-input": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-input-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-input"
+  },
+  "cult-ui/halo-notification": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-notification-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-notification"
+  },
+  "cult-ui/halo-progress": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-progress-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-progress"
+  },
+  "cult-ui/halo-search": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-search-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-search"
+  },
+  "cult-ui/halo-segmented": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-segmented-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-segmented"
+  },
+  "cult-ui/halo-select": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-select-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-select"
+  },
+  "cult-ui/halo-switch": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-switch-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-switch"
+  },
+  "cult-ui/halo-tabs": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-tabs-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-tabs"
+  },
+  "cult-ui/halo-toast": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-toast-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-toast"
+  },
+  "cult-ui/halo-toggle-group": {
+    "file": "./vendor/cult-ui/registry/default/example/halo-toggle-group-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/halo-toggle-group"
+  },
+  "cult-ui/hero-color-panel": {
+    "file": "./vendor/cult-ui/registry/default/example/hero-color-panels-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/hero-color-panels"
+  },
+  "cult-ui/hero-dithering": {
+    "file": "./vendor/cult-ui/registry/default/example/hero-dithering-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/hero-dithering"
+  },
+  "cult-ui/hero-heatmap": {
+    "file": "./vendor/cult-ui/registry/default/example/hero-heatmap-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/hero-heatmap"
+  },
+  "cult-ui/hero-liquid-metal": {
+    "file": "./vendor/cult-ui/registry/default/example/hero-liquid-metal-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/hero-liquid-metal"
+  },
+  "cult-ui/hero-static-radial-gradient": {
+    "file": "./vendor/cult-ui/registry/default/example/hero-static-radial-gradient-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/hero-static-radial-gradient"
+  },
+  "cult-ui/hover-video-player": {
+    "file": "./vendor/cult-ui/registry/default/example/hover-video-player-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/hover-video-player"
+  },
+  "cult-ui/illustration-card-grid": {
+    "file": "./vendor/cult-ui/registry/default/example/illustration-card-grid-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/illustration-card-grid"
+  },
+  "cult-ui/illustration-comment-bubble": {
+    "file": "./vendor/cult-ui/registry/default/example/illustration-comment-bubble-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/illustration-comment-bubble"
+  },
+  "cult-ui/illustration-cursor": {
+    "file": "./vendor/cult-ui/registry/default/example/illustration-cursor-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/illustration-cursor"
+  },
+  "cult-ui/illustration-fluid-rendering": {
+    "file": "./vendor/cult-ui/registry/default/example/illustration-fluid-rendering-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/illustration-fluid-rendering"
+  },
+  "cult-ui/illustration-globe-vercel": {
+    "file": "./vendor/cult-ui/registry/default/example/illustration-globe-vercel-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/illustration-globe-vercel"
+  },
+  "cult-ui/illustration-graph": {
+    "file": "./vendor/cult-ui/registry/default/example/illustration-graph-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/illustration-graph"
+  },
+  "cult-ui/intro-disclosure": {
+    "file": "./vendor/cult-ui/registry/default/example/intro-disclosure-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/intro-disclosure"
+  },
+  "cult-ui/kanban-board": {
+    "file": "./vendor/cult-ui/registry/default/example/kanban-board-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/kanban-board"
+  },
+  "cult-ui/lightboard": {
+    "file": "./vendor/cult-ui/registry/default/example/lightboard-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/lightboard"
+  },
+  "cult-ui/loading-carousel": {
+    "file": "./vendor/cult-ui/registry/default/example/loading-carousel-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/loading-carousel"
+  },
+  "cult-ui/logo-carousel": {
+    "file": "./vendor/cult-ui/registry/default/example/logo-carousel-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/logo-carousel"
+  },
+  "cult-ui/mac-screen": {
+    "file": "./vendor/cult-ui/registry/default/example/mac-screen-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/mac-screen"
+  },
+  "cult-ui/marketing-feature-code": {
+    "file": "./vendor/cult-ui/registry/default/example/marketing-feature-code-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/marketing-feature-code"
+  },
+  "cult-ui/marketing-hero-analytics": {
+    "file": "./vendor/cult-ui/registry/default/example/marketing-hero-analytics-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/marketing-hero-analytics"
+  },
+  "cult-ui/merging-bubbles": {
+    "file": "./vendor/cult-ui/registry/default/example/merging-bubbles-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/merging-bubbles"
+  },
+  "cult-ui/metal-button": {
+    "file": "./vendor/cult-ui/registry/default/example/metal-button-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/metal-button"
+  },
+  "cult-ui/minimal-card": {
+    "file": "./vendor/cult-ui/registry/default/example/minimal-card-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/minimal-card"
+  },
+  "cult-ui/mock-browser-window": {
+    "file": "./vendor/cult-ui/registry/default/example/mock-browser-window-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/mock-browser-window"
+  },
+  "cult-ui/morph-surface": {
+    "file": "./vendor/cult-ui/registry/default/example/morph-surface-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/morph-surface"
+  },
+  "cult-ui/neumorph-button": {
+    "file": "./vendor/cult-ui/registry/default/example/neumorph-button-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/neumorph-button"
+  },
+  "cult-ui/neumorph-eyebrow": {
+    "file": "./vendor/cult-ui/registry/default/example/neumorph-eyebrow-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/neumorph-eyebrow"
+  },
+  "cult-ui/onboarding": {
+    "file": "./vendor/cult-ui/registry/default/example/onboarding-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/onboarding"
+  },
+  "cult-ui/organic-button": {
+    "file": "./vendor/cult-ui/registry/default/example/organic-button-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/organic-button"
+  },
+  "cult-ui/organic-card": {
+    "file": "./vendor/cult-ui/registry/default/example/organic-card-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/organic-card"
+  },
+  "cult-ui/organic-card-small": {
+    "file": "./vendor/cult-ui/registry/default/example/organic-card-small-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/organic-card-small"
+  },
+  "cult-ui/pixel-heading-character": {
+    "file": "./vendor/cult-ui/registry/default/example/pixel-heading-character-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/pixel-heading-character"
+  },
+  "cult-ui/pixel-heading-word": {
+    "file": "./vendor/cult-ui/registry/default/example/pixel-heading-word-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/pixel-heading-word"
+  },
+  "cult-ui/pixel-paragraph-words": {
+    "file": "./vendor/cult-ui/registry/default/example/pixel-paragraph-words-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/pixel-paragraph-words"
+  },
+  "cult-ui/pixel-paragraph-words-inverse": {
+    "file": "./vendor/cult-ui/registry/default/example/pixel-paragraph-words-inverse-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/pixel-paragraph-words-inverse"
+  },
+  "cult-ui/poll-widget": {
+    "file": "./vendor/cult-ui/registry/default/example/poll-widget-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/poll-widget"
+  },
+  "cult-ui/popover": {
+    "file": "./vendor/cult-ui/registry/default/example/popover-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/popover"
+  },
+  "cult-ui/popover-form": {
+    "file": "./vendor/cult-ui/registry/default/example/popover-form-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/popover-form"
+  },
+  "cult-ui/prompt-composer": {
+    "file": "./vendor/cult-ui/registry/default/example/prompt-composer-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/prompt-composer"
+  },
+  "cult-ui/prompt-library": {
+    "file": "./vendor/cult-ui/registry/default/example/prompt-library-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/prompt-library"
+  },
+  "cult-ui/rolling-number": {
+    "file": "./vendor/cult-ui/registry/default/example/rolling-number-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/rolling-number"
+  },
+  "cult-ui/security-checkpoint": {
+    "file": "./vendor/cult-ui/registry/default/example/security-checkpoint-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/security-checkpoint"
+  },
+  "cult-ui/shader-lens-blur": {
+    "file": "./vendor/cult-ui/registry/default/example/shader-lens-blur-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/shader-lens-blur"
+  },
+  "cult-ui/shadow-card": {
+    "file": "./vendor/cult-ui/registry/default/example/shadow-card-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/shadow-card"
+  },
+  "cult-ui/shift-card": {
+    "file": "./vendor/cult-ui/registry/default/example/shift-card-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/shift-card"
+  },
+  "cult-ui/side-panel": {
+    "file": "./vendor/cult-ui/registry/default/example/side-panel-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/side-panel"
+  },
+  "cult-ui/sortable-list": {
+    "file": "./vendor/cult-ui/registry/default/example/sortable-list-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/sortable-list"
+  },
+  "cult-ui/speech-bubble": {
+    "file": "./vendor/cult-ui/registry/default/example/speech-bubble-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/speech-bubble"
+  },
+  "cult-ui/squiggle-arrow": {
+    "file": "./vendor/cult-ui/registry/default/example/squiggle-arrow-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/squiggle-arrow"
+  },
+  "cult-ui/stripe-bg-guides": {
+    "file": "./vendor/cult-ui/registry/default/example/stripe-bg-guides-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/stripe-bg-guides"
+  },
+  "cult-ui/svg-bands": {
+    "file": "./vendor/cult-ui/registry/default/example/svg-bands-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/svg-bands"
+  },
+  "cult-ui/svg-shapes": {
+    "file": "./vendor/cult-ui/registry/default/example/svg-shapes-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/svg-shapes"
+  },
+  "cult-ui/svg-shapes-animated": {
+    "file": "./vendor/cult-ui/registry/default/example/svg-shapes-animated-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/svg-shapes-animated"
+  },
+  "cult-ui/tabs-illustration-vercel": {
+    "file": "./examples/cult-ui/tabs-illustration-vercel.tsx",
+    "export": "TabsIllustrationVercelExample",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/tabs-illustration-vercel"
+  },
+  "cult-ui/terminal-animation": {
+    "file": "./examples/cult-ui/terminal-animation.tsx",
+    "export": "TerminalAnimationExample",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/terminal-animation"
+  },
+  "cult-ui/text-animate": {
+    "file": "./vendor/cult-ui/registry/default/example/text-animate-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/text-animate"
+  },
+  "cult-ui/text-gif": {
+    "file": "./vendor/cult-ui/registry/default/example/text-gif-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/text-gif"
+  },
+  "cult-ui/texture-button": {
+    "file": "./vendor/cult-ui/registry/default/example/texture-button-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/texture-button"
+  },
+  "cult-ui/texture-card": {
+    "file": "./vendor/cult-ui/registry/default/example/texture-card-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/texture-card"
+  },
+  "cult-ui/texture-overlay": {
+    "file": "./vendor/cult-ui/registry/default/example/texture-overlay-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/texture-overlay"
+  },
+  "cult-ui/three-d-carousel": {
+    "file": "./vendor/cult-ui/registry/default/example/three-d-carousel-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/three-d-carousel"
+  },
+  "cult-ui/timer": {
+    "file": "./vendor/cult-ui/registry/default/example/timer-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/timer"
+  },
+  "cult-ui/toolbar-expandable": {
+    "file": "./examples/cult-ui/toolbar-expandable.tsx",
+    "export": "ToolbarExpandableExample",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/toolbar-expandable"
+  },
+  "cult-ui/tweet-grid": {
+    "file": "./vendor/cult-ui/registry/default/example/tweet-grid-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/tweet-grid"
+  },
+  "cult-ui/typewriter": {
+    "file": "./vendor/cult-ui/registry/default/example/typewriter-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/typewriter"
+  },
+  "cult-ui/vote-tally": {
+    "file": "./vendor/cult-ui/registry/default/example/vote-tally-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/vote-tally"
+  },
+  "cult-ui/wizard-expandable": {
+    "file": "./vendor/cult-ui/registry/default/example/wizard-expandable-demo.tsx",
+    "export": "default",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/wizard-expandable"
+  },
+  "cult-ui/youtube-video-player": {
+    "file": "./examples/cult-ui/youtube-video-player.tsx",
+    "export": "YouTubeVideoPlayerExample",
+    "ref": "67a66c6ac1cd240914ba688a907611b3437a7a2b",
+    "sourceUrl": "https://www.cult-ui.com/docs/components/youtube-video-player"
   }
 }
