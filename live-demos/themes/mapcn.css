@@ -1,0 +1,22 @@
+/* mapcn's own globals, unchanged, with the harness around them. */
+@import '../vendor/mapcn/styles/globals.css';
+@import '../stage.css';
+@source '../vendor/mapcn';
+/* The site sets these through next/font; the demo uses the same faces' system fallbacks. */
+:root {
+  --font-sans: Geist, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+html[data-provider='mapcn'],
+html[data-provider='mapcn'] body {
+  font-family: var(--font-sans);
+}
+/* The docs preview gives the map a full-width, 420px-high box. The card is shorter, so the
+   map fills the stage instead of running past its foot (where the attribution sits). */
+html[data-provider='mapcn'] .demo-stage {
+  height: 100vh;
+}
+html[data-provider='mapcn'] .demo-stage > * {
+  width: 100%;
+  height: 100%;
+}
