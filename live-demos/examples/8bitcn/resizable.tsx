@@ -5,7 +5,7 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "../../vendor/8bitcn/components/ui/8bit/resizable";
+} from '../../vendor/8bitcn/components/ui/8bit/resizable';
 
 export default function Demo() {
   return (

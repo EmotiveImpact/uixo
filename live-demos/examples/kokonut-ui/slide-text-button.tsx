@@ -3,7 +3,5 @@
 import SlideTextButton from '../../vendor/kokonut-ui/components/kokonutui/slide-text-button';
 
 export function Demo() {
-  return (
-    <SlideTextButton hoverText="Click to see more" />
-  );
+  return <SlideTextButton hoverText="Click to see more" />;
 }

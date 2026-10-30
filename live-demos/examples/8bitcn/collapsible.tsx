@@ -5,7 +5,7 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "../../vendor/8bitcn/components/ui/8bit/collapsible";
+} from '../../vendor/8bitcn/components/ui/8bit/collapsible';
 
 export default function Demo() {
   return (
@@ -13,8 +13,7 @@ export default function Demo() {
       <Collapsible>
         <CollapsibleTrigger>Can I use this in my project?</CollapsibleTrigger>
         <CollapsibleContent>
-          Yes. Free to use for personal and commercial projects. No attribution
-          required.
+          Yes. Free to use for personal and commercial projects. No attribution required.
         </CollapsibleContent>
       </Collapsible>
     </>

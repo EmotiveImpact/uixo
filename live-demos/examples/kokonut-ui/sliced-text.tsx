@@ -3,7 +3,5 @@
 import SlicedText from '../../vendor/kokonut-ui/components/kokonutui/sliced-text';
 
 export function Demo() {
-  return (
-    <SlicedText className="text-5xl" />
-  );
+  return <SlicedText className="text-5xl" />;
 }

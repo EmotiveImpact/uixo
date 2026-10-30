@@ -9,7 +9,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "../../vendor/8bitcn/components/ui/8bit/pagination";
+} from '../../vendor/8bitcn/components/ui/8bit/pagination';
 
 export default function Demo() {
   return (

@@ -9,15 +9,13 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../vendor/8bitcn/components/ui/8bit/table";
+} from '../../vendor/8bitcn/components/ui/8bit/table';
 
 export default function Demo() {
   return (
     <>
       <Table className="w-60 md:w-auto">
-        <TableCaption className="text-xs md:text-sm">
-          A list of your recent invoices.
-        </TableCaption>
+        <TableCaption className="text-xs md:text-sm">A list of your recent invoices.</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">Invoice</TableHead>

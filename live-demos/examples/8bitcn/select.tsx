@@ -7,7 +7,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../vendor/8bitcn/components/ui/8bit/select";
+} from '../../vendor/8bitcn/components/ui/8bit/select';
 
 export default function Demo() {
   return (

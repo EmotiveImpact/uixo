@@ -3,7 +3,5 @@
 import SwooshText from '../../vendor/kokonut-ui/components/kokonutui/swoosh-text';
 
 export function Demo() {
-  return (
-    <SwooshText text="Hover" className="text-6xl" />
-  );
+  return <SwooshText text="Hover" className="text-6xl" />;
 }

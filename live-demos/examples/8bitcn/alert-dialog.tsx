@@ -11,8 +11,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "../../vendor/8bitcn/components/ui/8bit/alert-dialog";
-import { Button } from "../../vendor/8bitcn/components/ui/8bit/button";
+} from '../../vendor/8bitcn/components/ui/8bit/alert-dialog';
+import { Button } from '../../vendor/8bitcn/components/ui/8bit/button';
 
 export default function Demo() {
   return (
@@ -25,8 +25,8 @@ export default function Demo() {
           <AlertDialogHeader>
             <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
             <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete
-              your account and remove your data from our servers.
+              This action cannot be undone. This will permanently delete your account and remove
+              your data from our servers.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

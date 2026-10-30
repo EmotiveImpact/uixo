@@ -3,7 +3,5 @@
 import MatrixText from '../../vendor/kokonut-ui/components/kokonutui/matrix-text';
 
 export function Demo() {
-  return (
-    <MatrixText text="Hello World!" className="min-h-[200px]" />
-  );
+  return <MatrixText text="Hello World!" className="min-h-[200px]" />;
 }

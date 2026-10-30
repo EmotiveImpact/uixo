@@ -11,7 +11,8 @@ export default function Demo() {
   const [activeTheme, setActiveTheme] = useState<Theme>(Theme.Default);
   useEffect(() => {
     for (const el of [document.body, document.documentElement]) {
-      for (const name of [...el.classList]) if (name.startsWith('theme-')) el.classList.remove(name);
+      for (const name of [...el.classList])
+        if (name.startsWith('theme-')) el.classList.remove(name);
       el.classList.add(`theme-${activeTheme}`);
     }
   }, [activeTheme]);

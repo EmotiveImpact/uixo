@@ -3,7 +3,5 @@
 import GlitchText from '../../vendor/kokonut-ui/components/kokonutui/glitch-text';
 
 export function Demo() {
-  return (
-    <GlitchText size="2xl" />
-  );
+  return <GlitchText size="2xl" />;
 }

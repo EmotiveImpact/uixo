@@ -32,8 +32,7 @@
 }
 @font-face {
   font-family: 'Geist Pixel Triangle';
-  src: url('../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Triangle.woff2')
-    format('woff2');
+  src: url('../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Triangle.woff2') format('woff2');
   font-weight: 500;
   font-display: swap;
 }

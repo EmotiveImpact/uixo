@@ -9,7 +9,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "../../vendor/8bitcn/components/ui/8bit/breadcrumb";
+} from '../../vendor/8bitcn/components/ui/8bit/breadcrumb';
 
 export default function Demo() {
   return (

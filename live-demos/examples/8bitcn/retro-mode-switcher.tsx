@@ -4,18 +4,18 @@
 // The switcher shows its moon on html.light and its sun on html.dark, the two classes the
 // site's next-themes ThemeProvider (attribute="class") puts on <html>. The harness only sets
 // "dark", so this file adds "light" whenever the frame is not dark, as next-themes would.
-import { useEffect } from "react";
-import { RetroModeSwitcher } from "../../vendor/8bitcn/components/ui/retro-mode-switcher";
+import { useEffect } from 'react';
+import { RetroModeSwitcher } from '../../vendor/8bitcn/components/ui/retro-mode-switcher';
 
 function useLightClass() {
   useEffect(() => {
     const root = document.documentElement;
-    const sync = () => root.classList.toggle("light", !root.classList.contains("dark"));
+    const sync = () => root.classList.toggle('light', !root.classList.contains('dark'));
     sync();
-    window.addEventListener("uixo-theme", sync);
+    window.addEventListener('uixo-theme', sync);
     return () => {
-      window.removeEventListener("uixo-theme", sync);
-      root.classList.remove("light");
+      window.removeEventListener('uixo-theme', sync);
+      root.classList.remove('light');
     };
   }, []);
 }

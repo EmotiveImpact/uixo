@@ -10,8 +10,7 @@ import TranscriptViewerDemo from '../../vendor/elevenlabs-ui/registry/elevenlabs
 const ALIGNMENT_PATH = '/sounds/transcript-viewer/transcript-viewer-alignment.json';
 const networkFetch = window.fetch.bind(window);
 window.fetch = (input, init) => {
-  const href =
-    typeof input === 'string' ? input : input instanceof URL ? input.href : input.url;
+  const href = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url;
   if (new URL(href, document.baseURI).pathname === ALIGNMENT_PATH)
     return Promise.resolve(
       new Response(JSON.stringify(alignment), {

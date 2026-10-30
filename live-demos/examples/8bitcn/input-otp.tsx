@@ -6,7 +6,7 @@ import {
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "../../vendor/8bitcn/components/ui/8bit/input-otp";
+} from '../../vendor/8bitcn/components/ui/8bit/input-otp';
 
 export default function Demo() {
   return (

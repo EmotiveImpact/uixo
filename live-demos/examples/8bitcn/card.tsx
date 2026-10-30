@@ -1,7 +1,7 @@
 // The demo 8bitcn's docs page leads with, copied from
 // https://github.com/TheOrcDev/8bitcn-ui/blob/9aedd7165837143803b95cdb2ab111923cf63efe/content/docs/components/card.mdx
 // (its first ComponentPreview). Only the "@/" import paths point at the vendored files.
-import { Button } from "../../vendor/8bitcn/components/ui/8bit/button";
+import { Button } from '../../vendor/8bitcn/components/ui/8bit/button';
 import {
   Card,
   CardContent,
@@ -9,16 +9,16 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../../vendor/8bitcn/components/ui/8bit/card";
-import { Input } from "../../vendor/8bitcn/components/ui/8bit/input";
-import { Label } from "../../vendor/8bitcn/components/ui/8bit/label";
+} from '../../vendor/8bitcn/components/ui/8bit/card';
+import { Input } from '../../vendor/8bitcn/components/ui/8bit/input';
+import { Label } from '../../vendor/8bitcn/components/ui/8bit/label';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../vendor/8bitcn/components/ui/8bit/select";
+} from '../../vendor/8bitcn/components/ui/8bit/select';
 
 export default function Demo() {
   return (

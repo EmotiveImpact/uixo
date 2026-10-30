@@ -15,7 +15,7 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from "../../vendor/8bitcn/components/ui/8bit/menubar";
+} from '../../vendor/8bitcn/components/ui/8bit/menubar';
 
 export default function Demo() {
   return (

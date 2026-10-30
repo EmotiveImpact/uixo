@@ -4,7 +4,5 @@ import './process-env';
 import V0Button from '../../vendor/kokonut-ui/components/kokonutui/v0-button';
 
 export function Demo() {
-  return (
-    <V0Button size="xl" />
-  );
+  return <V0Button size="xl" />;
 }

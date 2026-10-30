@@ -7,8 +7,8 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "../../vendor/8bitcn/components/ui/8bit/carousel";
-import { Card, CardContent } from "../../vendor/8bitcn/components/ui/8bit/card";
+} from '../../vendor/8bitcn/components/ui/8bit/carousel';
+import { Card, CardContent } from '../../vendor/8bitcn/components/ui/8bit/card';
 
 export default function Demo() {
   return (
