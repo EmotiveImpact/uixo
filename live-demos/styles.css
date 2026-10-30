@@ -1,56 +1,12 @@
+/* The first four libraries share magic-ui's shadcn theme. Libraries added later each load
+   their own theme from themes/<provider>.css instead (see main.tsx). */
 @import './vendor/magic-ui/upstream.css';
-@source './vendor';
+@import './stage.css';
+@source './vendor/magic-ui';
+@source './vendor/shadcn';
+@source './vendor/motion-primitives';
+@source './vendor/simply-buttons';
 @source './examples';
-html,
-body,
-#root {
-  margin: 0;
-  min-height: 100%;
-  width: 100%;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, sans-serif;
-}
-body {
-  overflow: auto;
-}
-.demo-stage {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
-  box-sizing: border-box;
-  width: 100%;
-  isolation: isolate;
-}
-.demo-stage > * {
-  max-width: 100%;
-}
-/* stage=clear: the host card paints a tinted field behind the demo. */
-html[data-stage='clear'],
-html[data-stage='clear'] body,
-html[data-stage='clear'] #root {
-  background: transparent;
-}
-html[data-stage='clear'] .demo-stage {
-  padding: 20px;
-}
-/* Full-bleed demos frame themselves in the page colour with a border. On a lit stage
-   that frame drops away so the demo sits on the tint. */
-html[data-stage='clear'] .demo-stage > .bg-background:first-child {
-  background: transparent;
-  border-color: transparent;
-}
-/* Edge fades blend a demo into the page colour, which would draw dark bars on a tint. */
-html[data-stage='clear'] .demo-stage .pointer-events-none.absolute[class*='from-background'],
-html[data-stage='clear'] .demo-stage .absolute.inset-0[class*='dark:from-black']:empty {
-  display: none;
-}
-html[data-stage='clear'],
-html[data-stage='clear'] body {
-  scrollbar-width: none;
-}
 /* Text Effect's demo is a bare paragraph at body size, so on a stage it read as a caption.
    Give the words display size and a measure; the effect itself is unchanged. */
 html[data-demo='motion-primitives/text-effect'] .demo-stage > p {
@@ -65,12 +21,4 @@ html[data-demo='motion-primitives/text-effect'] .demo-stage > p {
 }
 .dark {
   --background: oklch(0.145 0 0);
-}
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
 }

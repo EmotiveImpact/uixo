@@ -5,11 +5,16 @@ import { createRoot } from 'react-dom/client';
 import manifest from './manifest.json';
 import { handleStageFocus, reportContentSize } from '../shared/preview-stage';
 import { customisableDemo, sanitiseDemoProps } from '../shared/demo-props';
-import './styles.css';
-const files = import.meta.glob(['./vendor/**/*.tsx', './vendor/**/*.jsx', './examples/*.tsx']);
+const files = import.meta.glob(['./vendor/**/*.tsx', './vendor/**/*.jsx', './examples/**/*.tsx']);
+const themes = import.meta.glob('./themes/*.css');
 const params = new URLSearchParams(location.search),
   id = params.get('id') || '',
-  entry = manifest[id];
+  entry = manifest[id],
+  provider = id.split('/')[0];
+// Each library added after the first four brings its own Tailwind build and theme, so its
+// tokens and keyframes never meet another library's. The first four share styles.css.
+const style = (themes[`./themes/${provider}.css`] ?? (() => import('./styles.css')))();
+const withStyle = (load) => Promise.all([load(), style]).then(([module]) => module);
 function setTheme(theme) {
   document.documentElement.classList.toggle('dark', theme === 'dark');
   document.documentElement.style.colorScheme = theme;
@@ -24,6 +29,7 @@ if (clearStage) document.documentElement.dataset.stage = 'clear';
 if (clearStage) handleStageFocus(id);
 // Lets the harness style a demo's stage without touching the provider's source.
 document.documentElement.dataset.demo = id;
+document.documentElement.dataset.provider = provider;
 window.addEventListener('message', (event) => {
   if (event.source === parent && event.data?.type === 'uixo-preview-theme')
     setTheme(event.data.theme);
@@ -33,9 +39,10 @@ const origins = {
   'magic-ui': 'https://magicui.design',
   shadcn: 'https://ui.shadcn.com',
   'motion-primitives': 'https://motion-primitives.com',
+  'prompt-kit': 'https://www.prompt-kit.com',
 };
 const base = document.createElement('base');
-base.href = origins[id.split('/')[0]] + '/';
+base.href = origins[provider] + '/';
 // These button demos are self-contained. Keep lazy CSS on UIXO's origin;
 // a provider <base> would redirect Vite's stylesheet preloads to the gallery.
 if (!id.startsWith('simply-buttons/')) document.head.append(base);
@@ -93,13 +100,13 @@ function Customised({ Wrapper }) {
 }
 const Demo = customisable
   ? lazy(() =>
-      files['./examples/customisable.tsx']().then((module) => {
+      withStyle(files['./examples/customisable.tsx']).then((module) => {
         const Wrapper = module[customisable.export];
         return { default: () => <Customised Wrapper={Wrapper} /> };
       }),
     )
   : entry && files[entry.file]
-    ? lazy(() => files[entry.file]().then((module) => ({ default: module[entry.export] })))
+    ? lazy(() => withStyle(files[entry.file]).then((module) => ({ default: module[entry.export] })))
     : null;
 createRoot(document.getElementById('root')).render(
   <Boundary>

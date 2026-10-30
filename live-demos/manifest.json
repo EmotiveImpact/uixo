@@ -1570,5 +1570,131 @@
     "export": "GrigolettiFramerButtonPreview",
     "ref": "d76ed2a67cc2fc7fbfa14d62d0704668d20e415d",
     "sourceUrl": "https://simply-buttons.vercel.app/?q=Verified%20expert%20badge#grigoletti-framer"
+  },
+  "prompt-kit/chain-of-thought": {
+    "file": "./vendor/prompt-kit/app/docs/chain-of-thought/chain-of-thought-basic.tsx",
+    "export": "ChainOfThoughtBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/chain-of-thought"
+  },
+  "prompt-kit/chat-container": {
+    "file": "./vendor/prompt-kit/app/docs/chat-container/chat-with-custom-scroll.tsx",
+    "export": "ChatWithCustomScroll",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/chat-container"
+  },
+  "prompt-kit/code-block": {
+    "file": "./vendor/prompt-kit/app/docs/code-block/code-block-basic.tsx",
+    "export": "CodeBlockBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/code-block"
+  },
+  "prompt-kit/feedback-bar": {
+    "file": "./vendor/prompt-kit/app/docs/feedback-bar/feedback-bar-basic.tsx",
+    "export": "FeedbackBarBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/feedback-bar"
+  },
+  "prompt-kit/file-upload": {
+    "file": "./vendor/prompt-kit/app/docs/file-upload/custom-file-upload.tsx",
+    "export": "CustomFileUpload",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/file-upload"
+  },
+  "prompt-kit/image": {
+    "file": "./vendor/prompt-kit/app/docs/image/image-basic.tsx",
+    "export": "default",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/image"
+  },
+  "prompt-kit/jsx-preview": {
+    "file": "./vendor/prompt-kit/app/docs/jsx-preview/jsx-preview-basic.tsx",
+    "export": "JSXPreviewBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/jsx-preview"
+  },
+  "prompt-kit/loader": {
+    "file": "./vendor/prompt-kit/app/docs/loader/loader-basic.tsx",
+    "export": "LoaderBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/loader"
+  },
+  "prompt-kit/markdown": {
+    "file": "./vendor/prompt-kit/app/docs/markdown/markdown-basic.tsx",
+    "export": "MarkdownBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/markdown"
+  },
+  "prompt-kit/message": {
+    "file": "./vendor/prompt-kit/app/docs/message/message-basic.tsx",
+    "export": "MessageBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/message"
+  },
+  "prompt-kit/prompt-input": {
+    "file": "./vendor/prompt-kit/app/docs/prompt-input/prompt-input-basic.tsx",
+    "export": "PromptInputBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/prompt-input"
+  },
+  "prompt-kit/prompt-suggestion": {
+    "file": "./vendor/prompt-kit/app/docs/prompt-suggestion/prompt-suggestion-basic.tsx",
+    "export": "PromptSuggestionBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/prompt-suggestion"
+  },
+  "prompt-kit/reasoning": {
+    "file": "./vendor/prompt-kit/app/docs/reasoning/reasoning-basic.tsx",
+    "export": "ReasoningBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/reasoning"
+  },
+  "prompt-kit/response-stream": {
+    "file": "./vendor/prompt-kit/app/docs/response-stream/response-stream-typewriter.tsx",
+    "export": "ResponseStreamTypewriter",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/response-stream"
+  },
+  "prompt-kit/scroll-button": {
+    "file": "./vendor/prompt-kit/app/docs/scroll-button/scroll-button-basic.tsx",
+    "export": "ScrollButtonBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/scroll-button"
+  },
+  "prompt-kit/source": {
+    "file": "./vendor/prompt-kit/app/docs/source/source-basic.tsx",
+    "export": "SourceBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/source"
+  },
+  "prompt-kit/steps": {
+    "file": "./vendor/prompt-kit/app/docs/steps/steps-basic.tsx",
+    "export": "StepsBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/steps"
+  },
+  "prompt-kit/system-message": {
+    "file": "./vendor/prompt-kit/app/docs/system-message/system-message-basic.tsx",
+    "export": "SystemMessageBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/system-message"
+  },
+  "prompt-kit/text-shimmer": {
+    "file": "./vendor/prompt-kit/app/docs/text-shimmer/text-shimmer-basic.tsx",
+    "export": "TextShimmerBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/text-shimmer"
+  },
+  "prompt-kit/thinking-bar": {
+    "file": "./vendor/prompt-kit/app/docs/thinking-bar/thinking-bar-interactive.tsx",
+    "export": "ThinkingBarInteractive",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/thinking-bar"
+  },
+  "prompt-kit/tool": {
+    "file": "./vendor/prompt-kit/app/docs/tool/tool-basic.tsx",
+    "export": "ToolBasic",
+    "ref": "5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a",
+    "sourceUrl": "https://www.prompt-kit.com/docs/tool"
   }
 }

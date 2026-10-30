@@ -31,3 +31,20 @@ A runtime failure offers the original provider link; it never falls back to an i
 
 Verification: `node scripts/verify-live-demos.mjs`, the main preview tests, and browser
 interaction checks. Test actual clicks/typing and dark/light themes, not just a build.
+
+## Adding a library
+
+1. `node scripts/vendor-provider.mjs <provider> <owner/repo> <commit> [--strip <prefix>] <licence> <globals.css> <demo files>...`
+   copies the files unchanged from the pinned commit, follows their `@/` and relative
+   imports, records every file in `source-lock.json`, and prints the npm packages the
+   files import. Add those to `package.json` with `npm install --ignore-scripts`.
+2. Give the library its own theme in `themes/<provider>.css`: its own globals, then
+   `../stage.css`, then `@source '../vendor/<provider>'`. The harness loads only that file
+   for the library's demos, so its tokens and keyframes never meet another library's.
+   The first four libraries share `styles.css`.
+3. Add one manifest entry per component, pointing at the demo the provider's own docs
+   page leads with, and the provider's origin to `origins` in `main.tsx`.
+4. Check every demo in both themes:
+   `node scripts/check-live-demos.mjs http://127.0.0.1:4176 <out> <provider>/` against
+   `npx vite --config live-demos/vite.config.mjs`. Look at the contact sheets it writes,
+   not only the report.

@@ -2838,5 +2838,260 @@
     "path": "simply-buttons/README.md",
     "sha256": "6472a209e0d13a967c364dbccedb233d65c05b6b93a0d495e60d3d70692dc8fe",
     "sourceUrl": "https://github.com/bits933/simply-buttons/blob/d76ed2a67cc2fc7fbfa14d62d0704668d20e415d/README.md"
+  },
+  {
+    "path": "prompt-kit/LICENCE.md",
+    "sha256": "0d87bada1c666f37016cce9215369bc422be009611f4cca57c2c2f4d659b4fa9",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/LICENCE.md"
+  },
+  {
+    "path": "prompt-kit/app/globals.css",
+    "sha256": "60c390d90cd5e67acf7d6dc4dc33be48e6dc1ae7b7d724b4ffb0b331bfb41c36",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/globals.css"
+  },
+  {
+    "path": "prompt-kit/app/docs/chain-of-thought/chain-of-thought-basic.tsx",
+    "sha256": "5984a365c8d541950791cc81fb12f78b3b6b9dcc8ec49fbc1ef48929a31e74e8",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/chain-of-thought/chain-of-thought-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/chat-container/chat-with-custom-scroll.tsx",
+    "sha256": "5485f43ead6f4dea93160e12f7d58fab2b4e1a7cfbd5a857d9ddd1ae66156f2f",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/chat-container/chat-with-custom-scroll.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/code-block/code-block-basic.tsx",
+    "sha256": "9e3769026c4c69a64b9e4925332eb7e0e9c56e3808e0416b14ee1dae22763bd3",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/code-block/code-block-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/feedback-bar/feedback-bar-basic.tsx",
+    "sha256": "19e818415e025661161d815b20b6945b8e6dc094064e5de3fa58be7200bea1e3",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/feedback-bar/feedback-bar-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/file-upload/custom-file-upload.tsx",
+    "sha256": "3797235afd3cffed738c026d6530f5e6b3020c4fa4bdf25b1b5fd851f0483e51",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/file-upload/custom-file-upload.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/image/image-basic.tsx",
+    "sha256": "6eefe115a793d4194b7a33cde32625a88630c762f0c9e25ca1ef2c8d944f0b19",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/image/image-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/jsx-preview/jsx-preview-basic.tsx",
+    "sha256": "39438abdc23b60c88da7f9d3655155e3e3f3a1971337fc7800d76451dcac6e49",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/jsx-preview/jsx-preview-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/loader/loader-basic.tsx",
+    "sha256": "1b4338a19ea50e9a5955a169a3569b7580d3d8ffddbd75500b2a1661cfd25be9",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/loader/loader-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/markdown/markdown-basic.tsx",
+    "sha256": "b5874bf3c3e39dc534c5e8ca7b72d07b096a007c1270d1027042d9a23ebde975",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/markdown/markdown-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/message/message-basic.tsx",
+    "sha256": "5577faeb7d4baa57633ec0161ae1a3c0f0b6de19d037bdda13a1626c3a748d15",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/message/message-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/prompt-input/prompt-input-basic.tsx",
+    "sha256": "ece02c361fa3eb6280c71b37210d14658aa8a96e7c70b7fc887902c97949301e",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/prompt-input/prompt-input-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/prompt-suggestion/prompt-suggestion-basic.tsx",
+    "sha256": "7f3f48a4d62a9ccf52c0e2fa1a0740a1c8cb413bcf59ea5a49ff0df4e96e81b0",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/prompt-suggestion/prompt-suggestion-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/reasoning/reasoning-basic.tsx",
+    "sha256": "20e92c65c92024c7f22f0f168691713ef7312a10a4a31727f3431527f4454389",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/reasoning/reasoning-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/response-stream/response-stream-typewriter.tsx",
+    "sha256": "b0b6d1ea7ef8d92a7560684c5fddbb8f132f15761b11c7d8dadd1fd057d7ce2b",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/response-stream/response-stream-typewriter.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/scroll-button/scroll-button-basic.tsx",
+    "sha256": "6b335864ecfcf5a8e8b66aacec528912352d8136c6d1016f257b2d38c08a6a9f",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/scroll-button/scroll-button-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/source/source-basic.tsx",
+    "sha256": "1a00e7e00d87ebdb3aa9d5c61370d4c663a9f6eb71c35bc6d8edcd312ef3af84",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/source/source-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/steps/steps-basic.tsx",
+    "sha256": "1e261037d4953e1ce3da3483afae1221352825cae4ebc90c2e5ac6e72a6d3271",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/steps/steps-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/system-message/system-message-basic.tsx",
+    "sha256": "fc5e564c69040c35cbcadf6674483c48248a8f0512b9be6972f9519e3d604251",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/system-message/system-message-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/text-shimmer/text-shimmer-basic.tsx",
+    "sha256": "cd5084c71bda6b19d27fe5d4f40d26524a2828ec62c9d26c38b55865cc5f28ce",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/text-shimmer/text-shimmer-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/thinking-bar/thinking-bar-interactive.tsx",
+    "sha256": "fd2a17fbcfae966307cf406acc32b92baac95da1792e1cc28ce69fbac44204bd",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/thinking-bar/thinking-bar-interactive.tsx"
+  },
+  {
+    "path": "prompt-kit/app/docs/tool/tool-basic.tsx",
+    "sha256": "355a03c87e7bfb6cf50bd5b915014b80596d83b86699d074745d5aa5765e4240",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/app/docs/tool/tool-basic.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/chain-of-thought.tsx",
+    "sha256": "00de5a672e090464d935a4a3c0b3356af1445642193695772c78841e424b4c55",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/chain-of-thought.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/chat-container.tsx",
+    "sha256": "e951bd50948af7e893ccb76fbc107f778223e5dbf7039e23140219972cc26c05",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/chat-container.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/markdown.tsx",
+    "sha256": "206bb12c710577b9efdc01dabbaa98b21361cbc832afb3800d271b758328346a",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/markdown.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/message.tsx",
+    "sha256": "03da1f577430b768095d48dc76376f13c9eabb9a00a03a5118ddec0eef3d3ad6",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/message.tsx"
+  },
+  {
+    "path": "prompt-kit/components/ui/button.tsx",
+    "sha256": "0c49afdab956384f780f8f63ba05d830ac103b0a2d4d842f9ff7d0db5312d758",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/ui/button.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/code-block.tsx",
+    "sha256": "feb4f3d81697c0c6d91c3da2e0e3a3d1ac97b2d95b10d9989df30fa2a465a593",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/code-block.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/feedback-bar.tsx",
+    "sha256": "3051c9c711884ad00c059e370f98140ffaef85415068ee19de542f3662f6c95d",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/feedback-bar.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/file-upload.tsx",
+    "sha256": "0cb2d04499b395fa95ecf3ee5af3bf817bb9b8d10b6801f6dafb91aa4c3b6035",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/file-upload.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/prompt-input.tsx",
+    "sha256": "ab41a75fe8705a49b5c5871e185bf150219ecd969abb4ffce3d2680086417c5c",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/prompt-input.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/image.tsx",
+    "sha256": "1654973127ba3844c64825e6a1cab56692a0436b1bffc0de7c40036fef79e1b0",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/image.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/jsx-preview.tsx",
+    "sha256": "3551d17ef624a5b1255dcb8d2464c909b04cc96fa4bfe716c7dfce13976a6780",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/jsx-preview.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/loader.tsx",
+    "sha256": "0530a0c46899884c95ebf11cea6ba503fa7818a28e74818f26007740a53b9fb5",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/loader.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/prompt-suggestion.tsx",
+    "sha256": "041c7e51c64d8c5a346313ba9f0fbfc30e585128117b5989e07d212083a8dfe0",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/prompt-suggestion.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/reasoning.tsx",
+    "sha256": "1d32f33c7dd9acc556f55564a0c167c583350ad127b6ed89bb8d81ffa6c597c8",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/reasoning.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/response-stream.tsx",
+    "sha256": "3ca7b34863db79abf285f134c7703971f9ba2d391a6c71648cc45ff893337f87",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/response-stream.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/scroll-button.tsx",
+    "sha256": "904706281d2d367aaa16bc8ee87e14427aafc68734ce98083e0149b5617f3cd0",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/scroll-button.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/source.tsx",
+    "sha256": "84a4805801cd8a81aed4a6c26abc5b672307da305b95363cdbb9c5a4eb19b25d",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/source.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/steps.tsx",
+    "sha256": "f85a2508b85da96d5144470a8e538cd464f664353b2011b90cfb29218349b72b",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/steps.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/system-message.tsx",
+    "sha256": "95918da0ed9aaf9e596ff90610f6585aa0993f233343d0c30fe53d2e23466e04",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/system-message.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/text-shimmer.tsx",
+    "sha256": "2c7a899c88dc1c8a016543cf19dd72c45db69ad95c6c0e45a43662d1a7e67490",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/text-shimmer.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/thinking-bar.tsx",
+    "sha256": "6f7a985a85807e3b8ed67f102771671c2084835f9f0ed57ab0a6cdf58dbc3745",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/thinking-bar.tsx"
+  },
+  {
+    "path": "prompt-kit/components/prompt-kit/tool.tsx",
+    "sha256": "35e9884cb904a5e8aaba8b20048a7c2768c8a56b2a688d36cf4048235feed75d",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/prompt-kit/tool.tsx"
+  },
+  {
+    "path": "prompt-kit/components/ui/collapsible.tsx",
+    "sha256": "c2c74dc3e99482d00a57de673b56920860c2ff4b330373d783843f505dc11dae",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/ui/collapsible.tsx"
+  },
+  {
+    "path": "prompt-kit/lib/utils.ts",
+    "sha256": "3de1060e2a4ca2e29f9aa9e3fe87ff50341df05cd89437f8ce37f6dad9a658f6",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/lib/utils.ts"
+  },
+  {
+    "path": "prompt-kit/components/ui/avatar.tsx",
+    "sha256": "e8672934f1c315f36cdae39380454ba8c2da62aca420dfb827d96693091419c4",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/ui/avatar.tsx"
+  },
+  {
+    "path": "prompt-kit/components/ui/tooltip.tsx",
+    "sha256": "6d3c47599cdbfeda38463644d8d6ce07b027a8325d451a29c07069843c1d60b3",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/ui/tooltip.tsx"
+  },
+  {
+    "path": "prompt-kit/components/ui/textarea.tsx",
+    "sha256": "3dc799d304fbf4125b705e9b24b7e3954113708698c3d310bc80cae29183d3ff",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/ui/textarea.tsx"
+  },
+  {
+    "path": "prompt-kit/components/ui/hover-card.tsx",
+    "sha256": "6ab9be94af94b57c745b30357e808062baeb7a4722360d4eeb5f8d17aa3f9d3d",
+    "sourceUrl": "https://github.com/ibelick/prompt-kit/blob/5a9496635cc0e1bf7679fe2a9e35d9b36b99c08a/components/ui/hover-card.tsx"
   }
 ]
