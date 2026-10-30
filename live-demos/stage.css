@@ -38,7 +38,8 @@ html[data-stage='clear'] .demo-stage {
    card's badges, instead of being centred with its heading cut off. */
 html[data-stage='clear'][data-tall] .demo-stage {
   align-items: flex-start;
-  padding-top: 52px;
+  /* The badges cover the same share of any card, so the gap is a share of its width. */
+  padding-top: 11vw;
 }
 /* Full-bleed demos frame themselves in the page colour with a border. On a lit stage
    that frame drops away so the demo sits on the tint. */

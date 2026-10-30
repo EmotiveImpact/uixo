@@ -75,4 +75,8 @@ describe('stage fit for live demos on cards', () => {
     const fit = stageFit(stage, { ...box(190, 222, 98, 38), layoutHeight: 160 }, base);
     expect(fit.scale).toBeCloseTo(stage.height / 200, 5);
   });
+
+  it('leaves content that runs off the frame where the demo put it', () => {
+    expect(stageFit(stage, box(20, 52, 440, 308), base).y).toBe(0);
+  });
 });

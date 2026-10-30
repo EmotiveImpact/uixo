@@ -260,6 +260,13 @@ export function stageFit(
   };
   x = inside(x, box.x, box.width, box.viewportWidth, stage.width);
   y = inside(y, box.y, box.height, box.viewportHeight, stage.height);
+  // Content that fills the frame and is cut off at its edge carries on past it, so its
+  // middle is unknown and it stays where the demo put it (a tall demo starts below the
+  // badges).
+  const runsOff = (start: number, size: number, view: number) =>
+    size >= view * 0.8 && (start <= 1 || start + size >= view - 1);
+  if (runsOff(box.x, box.width, box.viewportWidth)) x = 0;
+  if (runsOff(box.y, box.height, box.viewportHeight)) y = 0;
   if (Math.abs(x) < 1) x = 0;
   if (Math.abs(y) < 1) y = 0;
   return { scale, x, y };
