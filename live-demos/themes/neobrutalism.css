@@ -1,0 +1,82 @@
+/* neobrutalism's own globals, unchanged, with the harness around them. */
+@import '../vendor/neobrutalism/styling/globals.css';
+@import '../stage.css';
+/* The site loads DM Sans through next/font at the weights its tokens use. */
+@import '@fontsource/dm-sans/400.css';
+@import '@fontsource/dm-sans/500.css';
+@import '@fontsource/dm-sans/700.css';
+@source '../vendor/neobrutalism';
+@source '../examples/neobrutalism';
+:root {
+  --font-dm-sans: 'DM Sans';
+}
+html[data-provider='neobrutalism'],
+html[data-provider='neobrutalism'] body,
+html[data-provider='neobrutalism'] #root {
+  font-family: var(--base-font-family);
+  font-weight: var(--base-font-weight);
+}
+/* The pinned release is light only. For the dark card this restores the provider's own
+   dark tokens from the commit before it removed dark mode (c009094^, src/styling/globals.css
+   and the blue palette in src/data/colors.ts). */
+html.dark {
+  --background: oklch(29.23% 0.0626 270.49);
+  --secondary-background: oklch(23.93% 0 0);
+  --foreground: oklch(92.49% 0 0);
+  --main-foreground: oklch(0% 0 0);
+  --main: oklch(67.47% 0.1726 259.49);
+  --border: oklch(0% 0 0);
+  --ring: oklch(100% 0 0);
+  --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
+  --chart-1: #5294ff;
+  --chart-2: #ff6669;
+  --chart-3: #e0b700;
+  --chart-4: #04c86d;
+  --chart-5: #7a83ff;
+  --chart-active-dot: #fff;
+}
+/* The stars page shows each star in a 200px box; the example fills its box. */
+html[data-provider='neobrutalism'] .demo-stage > svg.w-full.h-full {
+  width: 200px;
+  height: 200px;
+}
+/* Here bg-background is the components' own surface colour, not a page frame: keep it
+   on the clear stage. */
+html[data-provider='neobrutalism'][data-stage='clear'] .demo-stage > .bg-background:first-child {
+  background: revert-layer;
+  border-color: revert-layer;
+}
+/* Docs demos sized for a wide page column: drawn smaller so the whole demo fits a card,
+   at the width their own max-w class gives them (the stage's max-width: 100% would
+   otherwise stretch them once zoomed). */
+html[data-demo='neobrutalism/card'] .demo-stage > :first-child,
+html[data-demo='neobrutalism/ncard'] .demo-stage > :first-child,
+html[data-demo='neobrutalism/field'] .demo-stage > :first-child,
+html[data-demo='neobrutalism/tabs'] .demo-stage > :first-child,
+html[data-demo='neobrutalism/message-scroller'] .demo-stage > :first-child {
+  max-width: revert-layer;
+}
+html[data-demo='neobrutalism/card'] .demo-stage > :first-child,
+html[data-demo='neobrutalism/ncard'] .demo-stage > :first-child,
+html[data-demo='neobrutalism/field'] .demo-stage > :first-child {
+  zoom: 0.73;
+}
+html[data-demo='neobrutalism/tabs'] .demo-stage > :first-child {
+  zoom: 0.75;
+}
+html[data-demo='neobrutalism/questionnaire'] .demo-stage > :first-child {
+  zoom: 0.78;
+}
+html[data-demo='neobrutalism/message-scroller'] .demo-stage > :first-child {
+  zoom: 0.86;
+}
+html[data-demo='neobrutalism/chart'] .demo-stage > :first-child {
+  zoom: 0.95;
+}
+/* Hard black borders and shadows are this library's whole look, and they vanish on a dark
+   tinted card. So its demos keep the provider's own page colour behind them, as on its site,
+   instead of the clear stage. */
+html[data-provider='neobrutalism'][data-stage='clear'],
+html[data-provider='neobrutalism'][data-stage='clear'] body {
+  background: var(--background);
+}

@@ -431,30 +431,6 @@
 .asset-library-dialog::backdrop {
   background: rgb(0 0 0 / 0.78);
 }
-.asset-library-detail {
-  position: relative;
-  padding: 30px;
-}
-.asset-library-detail h2 {
-  font-size: 28px;
-  font-weight: 500;
-  margin: 0 40px 7px 0;
-}
-.asset-library-detail > p {
-  line-height: 1.7;
-  font-size: 13px;
-}
-.asset-library-detail .asset-library-preview {
-  border-radius: 12px;
-  aspect-ratio: 2;
-  margin: 22px 0;
-}
-.asset-library .asset-library-close {
-  position: absolute;
-  right: 16px;
-  top: 16px;
-  padding: 7px;
-}
 .asset-library-facts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -497,24 +473,6 @@
   align-items: center;
   gap: 5px;
   margin: 12px;
-}
-.asset-library-detail pre {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  max-height: 300px;
-  overflow: auto;
-  padding: 14px;
-  border-radius: 8px;
-  background: var(--muted);
-  font-size: 11px;
-  line-height: 1.7;
-}
-.asset-library-detail details {
-  font-size: 12px;
-  margin-top: 20px;
-}
-.asset-library-detail summary {
-  cursor: pointer;
 }
 @media (min-width: 1550px) {
   .asset-library-grid {
@@ -571,9 +529,6 @@
   }
   .asset-library-toolbar nav {
     flex-basis: 100%;
-  }
-  .asset-library-detail {
-    padding: 22px;
   }
   .asset-library-facts {
     grid-template-columns: 1fr;
@@ -695,37 +650,6 @@
   width: 90px;
   height: 90px;
 }
-.asset-library-close {
-  position: absolute;
-  z-index: 3;
-  right: 16px;
-  top: 16px;
-  padding: 8px;
-  border: 0;
-  border-radius: 9px;
-  background: var(--background);
-  color: var(--foreground);
-  cursor: pointer;
-}
-.asset-library-detail {
-  padding: 30px 36px;
-}
-.asset-detail-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-.asset-detail-top h2 {
-  font-size: 36px;
-  letter-spacing: -1px;
-  margin: 8px 0;
-}
-.asset-eyebrow {
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--muted-foreground);
-}
 .asset-detail-columns {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -813,8 +737,7 @@
 .asset-utility h2 {
   font-size: 22px;
 }
-.asset-utility button,
-.asset-library-dialog button:not(.asset-library-close) {
+.asset-utility button {
   padding: 10px 14px;
   background: var(--muted);
   color: var(--foreground);
@@ -850,7 +773,6 @@
   font-size: 12px;
   overflow-wrap: anywhere;
 }
-.asset-library-detail button:focus-visible,
 .asset-utility button:focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 3px;
@@ -868,15 +790,6 @@
   .asset-detail-columns {
     grid-template-columns: 1fr;
     gap: 10px;
-  }
-  .asset-library-detail {
-    padding: 24px;
-  }
-  .asset-detail-top {
-    align-items: flex-start;
-  }
-  .asset-detail-top h2 {
-    font-size: 28px;
   }
   .asset-search {
     padding-left: 14px;
@@ -1151,99 +1064,6 @@
 }
 
 /* The asset details keep the catalogue visible and use disclosure for deeper evidence. */
-.asset-library-dialog.asset-detail-drawer {
-  position: fixed;
-  inset: 0 0 0 auto;
-  width: min(440px, 100vw);
-  max-width: 100vw;
-  height: 100dvh;
-  max-height: none;
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-  background: #09090b;
-  overflow: hidden;
-}
-.light .asset-library-dialog.asset-detail-drawer {
-  background: var(--background);
-}
-.asset-library-dialog.asset-detail-drawer::backdrop {
-  background: rgb(0 0 0 / 0.46);
-}
-.asset-detail-scroll {
-  height: 100%;
-  overflow: auto;
-}
-.asset-detail-drawer .asset-library-close {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  padding: 0;
-  background: rgb(9 9 11 / 0.9);
-}
-.light .asset-detail-drawer .asset-library-close {
-  background: var(--background);
-}
-.asset-detail-drawer .asset-library-preview {
-  width: 100%;
-  height: 280px;
-  min-height: 280px;
-  border-radius: 0;
-  background: #f0f0ed;
-}
-.asset-detail-drawer .asset-library-preview.is-component-capture {
-  padding: 0;
-  background: #0c0c0e;
-}
-.light .asset-detail-drawer .asset-library-preview.is-component-capture {
-  background: #fff;
-}
-.asset-detail-drawer .asset-library-preview.is-icon img {
-  width: 78px;
-  height: 78px;
-  filter: none;
-}
-.asset-detail-drawer .asset-library-detail {
-  padding: 26px 26px 42px;
-}
-.asset-detail-drawer .asset-library-detail h2 {
-  margin: 8px 0 10px;
-  font-size: 25px;
-  line-height: 1.1;
-  letter-spacing: -0.7px;
-}
-.asset-detail-description {
-  margin: 0;
-  color: var(--muted-foreground);
-  font-size: 12px;
-  line-height: 1.7;
-}
-.asset-detail-primary-actions {
-  display: flex;
-  gap: 8px;
-  margin: 20px 0 24px;
-}
-.asset-detail-primary-actions a,
-.asset-detail-primary-actions button {
-  min-height: 38px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  padding: 0 13px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 12px;
-}
-.asset-detail-primary-actions .asset-library-primary {
-  flex: 1;
-  background: var(--foreground);
-  color: var(--background);
-}
 .asset-drawer-facts {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1260,12 +1080,6 @@
 .asset-drawer-facts dd {
   text-align: left;
   text-transform: capitalize;
-}
-.asset-variant-field {
-  margin-bottom: 20px;
-}
-.asset-variant-field select {
-  width: 100%;
 }
 .asset-drawer-section {
   margin: 0;
@@ -1284,28 +1098,6 @@
 .asset-drawer-section p {
   color: var(--muted-foreground);
   line-height: 1.7;
-}
-.asset-command {
-  position: relative;
-}
-.asset-command pre {
-  padding-right: 48px;
-}
-.asset-command button {
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  width: 30px;
-  height: 30px;
-  display: grid;
-  place-items: center;
-  padding: 0;
-}
-.asset-drawer-notice,
-.asset-detail-message {
-  padding: 24px;
-  color: var(--muted-foreground);
-  font-size: 12px;
 }
 
 @media (max-width: 760px) {
@@ -1374,11 +1166,6 @@
 .asset-live-viewport.is-detail iframe {
   width: 100%;
   height: 100%;
-}
-.asset-detail-drawer .is-live-component {
-  height: auto;
-  min-height: 480px;
-  aspect-ratio: auto;
 }
 .asset-library-preview.is-live-component > small {
   pointer-events: none;

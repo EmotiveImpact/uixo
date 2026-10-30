@@ -24,3 +24,11 @@ body,
 .demo-stage > * {
   max-width: 100%;
 }
+
+/* stage=clear: the host card paints a tinted field behind the demo. */
+html[data-stage='clear'],
+html[data-stage='clear'] body,
+html[data-stage='clear'] #root {
+  background: transparent;
+  scrollbar-width: none;
+}

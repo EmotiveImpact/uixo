@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..500&family=Inter:wght@400;450;500;550;600&display=swap');
 @import 'tailwindcss' source('./');
 @custom-variant dark (&:where(.dark, .dark *));
 @theme inline {
@@ -264,7 +264,7 @@ h1 {
   border-top: 1px solid var(--border);
   margin-top: 38px;
   padding-top: 18px;
-  color: #6c6c76;
+  color: var(--g-text-3);
   font-size: 10px;
 }
 .empty {
@@ -1255,7 +1255,7 @@ kbd {
   font-size: 10.5px;
   text-transform: uppercase;
   letter-spacing: 0.9px;
-  color: #6c6c76;
+  color: var(--g-text-3);
 }
 .quickview-facts dd {
   margin: 5px 0 0;
@@ -1270,7 +1270,7 @@ kbd {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.9px;
-  color: #6c6c76;
+  color: var(--g-text-3);
   font-weight: 500;
   margin: 0 0 12px;
 }
@@ -1338,7 +1338,7 @@ kbd {
   margin-top: 26px;
   border-top: 1px solid var(--border);
   padding-top: 18px;
-  color: #6c6c76;
+  color: var(--g-text-3);
   font-size: 11.5px;
 }
 .quickview-footer .reported {
@@ -1548,7 +1548,7 @@ kbd {
 .collection-count {
   margin: 12px 0 0;
   font-size: 11px;
-  color: #6c6c76;
+  color: var(--g-text-3);
 }
 
 /* ---- Dashboard ---- */
@@ -1615,7 +1615,7 @@ kbd {
 .panel-note {
   margin-top: 14px;
   font-size: 11.5px;
-  color: #6c6c76;
+  color: var(--g-text-3);
 }
 .panel-note code {
   font-size: 11px;
@@ -1846,7 +1846,7 @@ kbd {
 }
 .palette-hint {
   font-size: 11px;
-  color: #6c6c76;
+  color: var(--g-text-3);
 }
 .palette-empty {
   padding: 20px 12px;
@@ -1991,7 +1991,7 @@ kbd {
   font-size: 10.5px;
   letter-spacing: 2.4px;
   text-transform: uppercase;
-  color: #6c6c76;
+  color: var(--g-text-3);
   margin: 0 0 22px;
 }
 .landing-hero h1 {
@@ -2028,7 +2028,7 @@ kbd {
   gap: 20px;
   margin: 0;
   font-size: 11.5px;
-  color: #6c6c76;
+  color: var(--g-text-3);
 }
 .landing-facts b {
   font-weight: 500;
@@ -2055,7 +2055,7 @@ kbd {
   font-size: 10.5px;
   letter-spacing: 2.2px;
   text-transform: uppercase;
-  color: #6c6c76;
+  color: var(--g-text-3);
   margin: 0 0 13px;
 }
 .pick-dot {
@@ -2108,7 +2108,7 @@ kbd {
 .pick-who > span {
   display: block;
   font-size: 11px;
-  color: #6c6c76;
+  color: var(--g-text-3);
   margin-top: 2px;
 }
 
@@ -2266,7 +2266,7 @@ kbd {
   margin-top: 60px;
   padding: 34px 0;
   border-top: 1px solid var(--border);
-  color: #6c6c76;
+  color: var(--g-text-3);
   font-size: 11px;
 }
 
@@ -2544,7 +2544,7 @@ kbd {
 .inbox-audit {
   margin-left: auto;
   font-size: 11px;
-  color: #6c6c76;
+  color: var(--g-text-3);
 }
 @media (max-width: 767px) {
   .inbox-actions {
@@ -2583,7 +2583,7 @@ kbd {
   gap: 12px;
   margin: 18px 0 0;
   font-size: 11px;
-  color: #6c6c76;
+  color: var(--g-text-3);
 }
 .auth-divider::before,
 .auth-divider::after {

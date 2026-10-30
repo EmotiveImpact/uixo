@@ -1,40 +1,24 @@
+/* The first four libraries share magic-ui's shadcn theme. Libraries added later each load
+   their own theme from themes/<provider>.css instead (see main.tsx). */
 @import './vendor/magic-ui/upstream.css';
-@source './vendor';
+@import './stage.css';
+@source './vendor/magic-ui';
+@source './vendor/shadcn';
+@source './vendor/motion-primitives';
+@source './vendor/simply-buttons';
 @source './examples';
-html,
-body,
-#root {
+/* Text Effect's demo is a bare paragraph at body size, so on a stage it read as a caption.
+   Give the words display size and a measure; the effect itself is unchanged. */
+html[data-demo='motion-primitives/text-effect'] .demo-stage > p {
+  max-width: 13em;
   margin: 0;
-  min-height: 100%;
-  width: 100%;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, sans-serif;
-}
-body {
-  overflow: auto;
-}
-.demo-stage {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
-  box-sizing: border-box;
-  width: 100%;
-  isolation: isolate;
-}
-.demo-stage > * {
-  max-width: 100%;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-wrap: balance;
 }
 .dark {
   --background: oklch(0.145 0 0);
-}
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
 }

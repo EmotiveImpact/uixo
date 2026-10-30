@@ -1,5 +1,10 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { isAssetWorkspacePath, navigateInApp } from './navigation';
+import {
+  isAssetWorkspacePath,
+  navigateInApp,
+  redirectLegacySaves,
+  SAVED_WEBSITES_HREF,
+} from './navigation';
 
 describe('in-app workspace navigation', () => {
   beforeEach(() => window.history.replaceState(null, '', '/browse'));
@@ -30,5 +35,16 @@ describe('in-app workspace navigation', () => {
 
     expect(onPopState).not.toHaveBeenCalled();
     window.removeEventListener('popstate', onPopState);
+  });
+});
+
+describe('the old favourites list', () => {
+  it('redirects to the Saved page websites tab without adding a history entry', () => {
+    window.history.replaceState(null, '', '/list/favourites');
+    const length = window.history.length;
+    expect(redirectLegacySaves()).toBe(true);
+    expect(window.location.pathname + window.location.search).toBe(SAVED_WEBSITES_HREF);
+    expect(window.history.length).toBe(length);
+    expect(redirectLegacySaves()).toBe(false);
   });
 });

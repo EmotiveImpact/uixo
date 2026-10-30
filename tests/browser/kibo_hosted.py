@@ -110,14 +110,15 @@ with sync_playwright() as p:
                     expect(frame.locator('html')).to_have_attribute('data-theme', theme)
                     expect(frame.locator('.demo-stage > *').first).to_be_visible()
                     card.get_by_role('link', name=f"Inspect {item['name']} from Kibo UI", exact=True).click()
-                    dialog = page.get_by_role('dialog', name=item['name'], exact=True)
-                    expect(dialog).to_be_visible()
+                    # A component opens as its own page; `dialog` names that page.
+                    dialog = page.locator('article.ad')
+                    expect(dialog.get_by_role('heading', level=1)).to_have_text(item['name'])
                     detail_frame = dialog.frame_locator('iframe')
                     expect(dialog.locator('iframe')).to_have_css('visibility', 'visible', timeout=20000)
                     expect(detail_frame.locator('html')).to_have_attribute('data-source-ref', SNAPSHOT['ref'])
                     expect(detail_frame.locator('html')).to_have_attribute('data-theme', theme)
                     expect(dialog.locator(f'code[title="{SNAPSHOT["ref"]}"]')).to_have_count(1)
-                    expect(dialog.locator('.asset-command pre')).to_contain_text(item['registryUrl'], timeout=10000)
+                    expect(dialog.locator('.install-command-line code')).to_contain_text(item['registryUrl'], timeout=10000)
                     expect(dialog.locator('[role=alert]')).to_have_count(0)
                     if slug == 'combobox':
                         detail_frame.get_by_role('button', name='Select framework...', exact=True).click()
@@ -137,7 +138,8 @@ with sync_playwright() as p:
                     page.wait_for_timeout(350)
                     page.screenshot(path=str(OUTPUT / f'{slug}-{width}-{theme}.png'))
                     results.append({'slug': slug, 'width': width, 'theme': theme, 'card': 'real component', 'detail': 'real component', 'sourceRef': SNAPSHOT['ref'], 'installGuidance': 'upstream URL', 'passed': True})
-                    dialog.get_by_role('button', name='Close asset details').click()
+                    page.go_back()
+                    expect(page.locator('.asset-library-card').first).to_be_visible()
                 other = 'dark' if theme == 'light' else 'light'
                 page.get_by_role('button', name=f'Switch to {other} theme', exact=True).click()
                 expect(page.locator('html')).to_have_class(re.compile(r'\b' + other + r'\b'))

@@ -1,0 +1,2560 @@
+/*
+ * UIXO gallery workbench (direction A+B v2): the final layer for tokens, the header,
+ * component cards and the footer. Ported from design-language/mockups/direction-ab2.html.
+ *
+ * Token changes against DESIGN-LANGUAGE.md, as the approved mockup set them:
+ * - Background #0e0e10, a touch deeper so lit stages and tiles read as raised.
+ * - Tiles are a 180deg gradient with a 1px top inner highlight; light theme uses white
+ *   tiles with a hairline shadow.
+ * - Every preview sits on a tinted stage: hsl(var(--h)) from 17% to 7.5% lightness with a
+ *   soft spotlight from the top and a floor glow. Light theme uses a pastel field.
+ * - One soft glow in the card's own hue on hover is the only drop shadow on chrome.
+ *
+ * Old layers style the same class names with high specificity, so selectors here are
+ * prefixed with :is(:root, :root.light) where they must win.
+ */
+
+:root {
+  --background: #0e0e10;
+  --foreground: #ededef;
+  --g-bg: #0e0e10;
+  --g-surface: #18181b;
+  --g-raised: #222226;
+  --g-well: #232327;
+  --g-well-2: #2c2c31;
+  --g-tile: linear-gradient(180deg, #1c1c20, #17171a);
+  --g-tile-hover: linear-gradient(180deg, #212126, #1a1a1e);
+  --g-hi: inset 0 1px 0 rgb(255 255 255 / 0.065);
+  --g-text: #ededef;
+  --g-text-2: #a3a3ab;
+  --g-text-3: #9a9aa2;
+  --g-line: rgb(255 255 255 / 0.075);
+  --g-accent: #8b7dff;
+  /* Fields carry a 3:1 edge; the violet marks what is chosen where the fill alone would not. */
+  --g-field-edge: #7a7a84;
+  --g-chosen: var(--g-accent);
+  --g-glow: linear-gradient(90deg, #6d5dfc, #3b82f6 45%, #c084fc);
+  --g-success: #4ade80;
+  --g-invert-bg: #ededef;
+  --g-invert-text: #0a0a0a;
+  --g-glass: rgb(12 12 14 / 0.42);
+  --g-glass-hover: rgb(12 12 14 / 0.7);
+  --g-glass-text: rgb(255 255 255 / 0.9);
+  --g-wp: #18181c;
+  --g-wp-2: #232328;
+  --g-wp-line: rgb(255 255 255 / 0.07);
+  --g-shadow: 0 12px 40px rgb(0 0 0 / 0.35);
+  --g-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --g-sans: 'Figtree', 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --g-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --g-glyph-ink: #0e0e10;
+  --h: 268;
+  --spot: 0.42;
+  --t1: 17%;
+  --t2: 7.5%;
+  --sat: 62%;
+  --hov: 0.5;
+  --ds-font: var(--g-sans);
+}
+
+:root.light {
+  --background: #f4f4f5;
+  --foreground: #0a0a0a;
+  --g-bg: #f4f4f5;
+  --g-surface: #ffffff;
+  --g-raised: #ffffff;
+  --g-well: #ececef;
+  --g-well-2: #e2e2e6;
+  --g-tile: linear-gradient(180deg, #ffffff, #fcfcfd);
+  --g-tile-hover: linear-gradient(180deg, #ffffff, #ffffff);
+  --g-hi: 0 0 0 1px rgb(0 0 0 / 0.045), 0 1px 2px rgb(0 0 0 / 0.04);
+  --g-text: #0a0a0a;
+  --g-text-2: #52525b;
+  --g-text-3: #5e5e66;
+  --g-line: rgb(0 0 0 / 0.08);
+  --g-accent: #5b4cf0;
+  --g-field-edge: #76767f;
+  --g-chosen: var(--g-accent);
+  --g-success: #166534;
+  --g-invert-bg: #0a0a0a;
+  --g-invert-text: #ffffff;
+  --g-glass: rgb(255 255 255 / 0.62);
+  --g-glass-hover: #ffffff;
+  --g-glass-text: #27272a;
+  --g-wp: #ffffff;
+  --g-wp-2: #f4f4f6;
+  --g-wp-line: rgb(0 0 0 / 0.07);
+  --g-shadow: 0 12px 40px rgb(0 0 0 / 0.16);
+  --g-glyph-ink: #f3f3f5;
+  --hov: 0.32;
+}
+
+:is(:root, :root.light) body {
+  background: var(--g-bg);
+  color: var(--g-text);
+}
+
+/* ------------------------------------------------------------------ Header */
+
+:is(:root, :root.light) .discovery-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  height: auto;
+  background: color-mix(in srgb, var(--g-bg) 84%, transparent);
+  backdrop-filter: saturate(1.5) blur(16px);
+  -webkit-backdrop-filter: saturate(1.5) blur(16px);
+  border: 0;
+  box-shadow: inset 0 -1px 0 var(--g-line);
+}
+
+:is(:root, :root.light) .discovery-header.home-header {
+  position: relative;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .discovery-header .discovery-header-inner {
+  width: 100%;
+  max-width: none;
+  height: 76px;
+  min-height: 76px;
+  margin: 0;
+  padding: 0 44px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+:is(:root, :root.light) .discovery-header .discovery-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  flex: none;
+  color: var(--g-text);
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.g-logomark {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(140deg, #a99dff, #6d5dfc 55%, #4f46e5);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.35),
+    0 4px 14px -4px rgb(109 93 252 / 0.7);
+}
+
+.g-logomark svg {
+  width: 16px;
+  height: 16px;
+}
+
+:is(:root, :root.light) .discovery-header .discovery-wordmark {
+  font: 600 17px/1 var(--g-sans);
+  letter-spacing: 0.3em;
+  margin-right: -0.3em;
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .discovery-header .discovery-navigation {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+}
+
+:is(:root, :root.light) .discovery-header .discovery-navigation > a,
+:is(:root, :root.light) .discovery-header .discovery-browse-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--g-text-2);
+  font: 400 14px/1 var(--g-sans);
+  box-shadow: none;
+  transition: color 0.14s var(--g-ease);
+}
+
+:is(:root, :root.light) .discovery-header .discovery-navigation > a:hover,
+:is(:root, :root.light) .discovery-header .discovery-navigation > a[aria-current='page'],
+:is(:root, :root.light) .discovery-header .discovery-browse-trigger:hover,
+:is(:root, :root.light) .discovery-header .discovery-browse-trigger[aria-expanded='true'],
+:is(:root, :root.light) .discovery-header .discovery-browse-trigger[data-active] {
+  color: var(--g-text);
+  background: transparent;
+}
+
+:is(:root, :root.light) .discovery-header .discovery-navigation > a {
+  position: relative;
+}
+
+/* The active page's mark sits on the header's bottom edge, under the word, not through it.
+   The 40px link is centred in the 76px header, so its edge is 18px below the link. */
+:is(:root, :root.light) .discovery-header .discovery-navigation > a[aria-current='page']::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -18px;
+  height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: currentColor;
+}
+
+:is(:root, :root.light) .discovery-header .nav-badge {
+  font: 500 10.5px/1 var(--g-mono);
+  padding: 4px 6px;
+  border-radius: 999px;
+  background: var(--g-well);
+  color: var(--g-text-2);
+  box-shadow: none;
+  letter-spacing: 0;
+}
+
+:is(:root, :root.light) .discovery-header .discovery-header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+:is(:root, :root.light) .discovery-header .header-search {
+  height: 40px;
+  width: 264px;
+  max-width: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 6px;
+  padding: 0 6px 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-well);
+  color: var(--g-text-3);
+  font: 400 14px/1 var(--g-sans);
+  box-shadow: inset 0 0 0 1px var(--g-field-edge);
+  transition:
+    background 0.14s var(--g-ease),
+    color 0.14s var(--g-ease);
+}
+
+:is(:root, :root.light) .discovery-header.home-header .header-search {
+  background: rgb(255 255 255 / 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+:root.light .discovery-header.home-header .header-search {
+  background: rgb(0 0 0 / 0.05);
+}
+
+:is(:root, :root.light) .discovery-header .header-search:hover {
+  background: var(--g-well-2);
+  color: var(--g-text-2);
+}
+
+:is(:root, :root.light) .discovery-header .header-search span {
+  flex: 1;
+  text-align: left;
+  display: block;
+}
+
+:is(:root, :root.light) .discovery-header .header-search kbd,
+.g-kbd {
+  display: inline-block;
+  font: 500 11px/1 var(--g-mono);
+  color: var(--g-text-3);
+  padding: 5px 7px;
+  border: 0;
+  border-radius: 7px;
+  background: var(--g-bg);
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .discovery-header .header-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--g-text-2);
+  box-shadow: none;
+  transition:
+    background 0.14s var(--g-ease),
+    color 0.14s var(--g-ease);
+}
+
+:is(:root, :root.light) .discovery-header .header-icon:hover {
+  background: var(--g-well);
+  color: var(--g-text);
+}
+
+/* Sign in is a quiet text button, so the page's one strong control stays the search. */
+:is(:root, :root.light) .discovery-header :is(.header-signin, .signin-button) {
+  height: 40px;
+  margin-left: 2px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--g-text);
+  font: 500 14px/16px var(--g-sans);
+  box-shadow: none;
+  transition: background 0.14s var(--g-ease);
+}
+
+:is(:root, :root.light) .discovery-header :is(.header-signin, .signin-button):hover {
+  background: var(--g-well);
+}
+
+:is(:root, :root.light) .discovery-header :focus-visible,
+.g-card :focus-visible,
+.home :focus-visible,
+.site-footer :focus-visible {
+  outline: 2px solid var(--g-accent);
+  outline-offset: 2px;
+}
+
+/* The menu trigger only exists for phones. */
+:is(:root, :root.light) .discovery-header .discovery-menu-trigger {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  :is(:root, :root.light) .discovery-header .header-search {
+    width: 200px;
+  }
+}
+
+@media (max-width: 900px) {
+  :is(:root, :root.light) .discovery-header .discovery-header-inner {
+    height: 64px;
+    min-height: 64px;
+    padding: 0 10px 0 16px;
+    gap: 0;
+  }
+
+  :is(:root, :root.light) .discovery-header .discovery-navigation {
+    display: none;
+  }
+
+  :is(:root, :root.light) .discovery-header .g-logomark {
+    width: 24px;
+    height: 24px;
+  }
+
+  :is(:root, :root.light) .discovery-header .discovery-wordmark {
+    font-size: 15px;
+  }
+
+  :is(:root, :root.light) .discovery-header .discovery-header-actions {
+    gap: 0;
+  }
+
+  /* The search pill collapses to an icon. */
+  :is(:root, :root.light) .discovery-header .header-search,
+  :is(:root, :root.light) .discovery-header.home-header .header-search {
+    width: 40px;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    background: transparent;
+    color: var(--g-text-2);
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  :is(:root, :root.light) .discovery-header .header-search span,
+  :is(:root, :root.light) .discovery-header .header-search kbd,
+  :is(:root, :root.light) .discovery-header .header-saved {
+    display: none;
+  }
+
+  :is(:root, :root.light) .discovery-header .discovery-menu-trigger {
+    display: inline-grid;
+  }
+
+  :is(:root, :root.light) .discovery-header :is(.header-signin, .signin-button) {
+    height: 36px;
+    margin: 0 2px;
+    padding: 0 14px;
+  }
+}
+
+:is(:root, :root.light) .discovery-mobile-menu {
+  background: var(--g-bg);
+  box-shadow: inset 0 -1px 0 var(--g-line);
+}
+
+/* ------------------------------------------------------------------ Stage */
+
+.g-tint {
+  --t1: 17%;
+  --t2: 7.5%;
+  --sat: 62%;
+  --spot: 0.42;
+  background:
+    radial-gradient(62% 56% at 50% -4%, hsl(var(--h) 95% 72% / var(--spot)), transparent 72%),
+    radial-gradient(90% 60% at 50% 118%, hsl(var(--h) 85% 52% / 0.26), transparent 70%),
+    linear-gradient(
+      180deg,
+      hsl(var(--h) var(--sat) var(--t1)),
+      hsl(var(--h) calc(var(--sat) + 8%) var(--t2))
+    );
+}
+
+.g-tint.is-warm {
+  --t1: 27%;
+  --t2: 11%;
+  --sat: 82%;
+  --spot: 0.5;
+}
+
+:root.light .g-tint {
+  background:
+    radial-gradient(62% 56% at 50% -4%, rgb(255 255 255 / 0.9), transparent 72%),
+    radial-gradient(90% 60% at 50% 118%, hsl(var(--h) 90% 72% / 0.32), transparent 70%),
+    linear-gradient(180deg, hsl(var(--h) 80% 93%), hsl(var(--h) 62% 84%));
+}
+
+/* ------------------------------------------------------------------- Cards */
+
+:is(:root, :root.light) .g-card {
+  position: relative;
+  display: block;
+  min-width: 0;
+  margin: 0;
+  padding: 6px;
+  border: 0;
+  border-radius: 18px;
+  background: var(--g-tile);
+  box-shadow: var(--g-hi);
+  color: var(--g-text);
+  transform: none;
+  overflow: visible;
+  transition: box-shadow 0.3s var(--g-ease);
+}
+
+:is(:root, :root.light) .g-card:hover {
+  background: var(--g-tile-hover);
+  transform: none;
+  box-shadow:
+    var(--g-hi),
+    0 30px 70px -30px hsl(var(--h) 90% 60% / var(--hov)),
+    0 10px 30px -18px hsl(var(--h) 90% 55% / var(--hov));
+}
+
+:is(:root, :root.light) .g-card .g-stage {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.g-card .g-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(55% 45% at 50% 0%, hsl(var(--h) 100% 82% / 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s var(--g-ease);
+}
+
+.g-card:hover .g-stage::after {
+  opacity: 1;
+}
+
+/* The preview fills the stage; live frames are transparent so the tint shows. */
+:is(:root, :root.light) .g-stage .g-preview {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  aspect-ratio: auto;
+  overflow: hidden;
+}
+
+:is(:root, :root.light) .g-stage .g-preview .asset-live-viewport {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  aspect-ratio: auto;
+  overflow: hidden;
+}
+
+:is(:root, :root.light) .g-stage .g-preview .asset-live-viewport iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  transform-origin: 0 0;
+  transition: transform 0.4s var(--g-ease);
+}
+
+/* Opaque pages (provider embeds) sit on the stage as an inset window. */
+:is(:root, :root.light) .g-stage .g-preview .asset-live-viewport.is-framed {
+  inset: 46px 30px -14px;
+  overflow: visible;
+  border-radius: 10px;
+  background: #0b0b0b;
+  box-shadow:
+    0 30px 60px -20px rgb(0 0 0 / 0.7),
+    0 0 0 1px rgb(255 255 255 / 0.08);
+}
+
+:root.light .g-stage .g-preview .asset-live-viewport.is-framed {
+  background: #fff;
+  box-shadow:
+    0 30px 60px -24px rgb(20 20 50 / 0.35),
+    0 0 0 1px rgb(0 0 0 / 0.06);
+}
+
+/* Screenshots sit inset, with rounded corners and a real shadow, never edge to edge. */
+:is(:root, :root.light) .g-stage .g-preview > img.g-shot,
+:is(:root, :root.light) .g-stage .g-preview .asset-preview-fallback-image {
+  position: absolute;
+  inset: 22px 22px auto;
+  width: calc(100% - 44px);
+  height: calc(100% - 44px);
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 10px;
+  background: var(--g-surface);
+  box-shadow:
+    0 30px 60px -20px rgb(0 0 0 / 0.7),
+    0 0 0 1px rgb(255 255 255 / 0.08);
+  transition: transform 0.42s var(--g-ease);
+}
+
+:root.light .g-stage .g-preview > img.g-shot,
+:root.light .g-stage .g-preview .asset-preview-fallback-image {
+  box-shadow:
+    0 30px 60px -24px rgb(20 20 50 / 0.35),
+    0 0 0 1px rgb(0 0 0 / 0.06);
+}
+
+.g-card:hover .g-stage .g-preview > img.g-shot {
+  transform: translateY(-3px);
+}
+
+:is(:root, :root.light) .g-stage .asset-capture-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+:is(:root, :root.light) .g-stage .asset-live-loading,
+:is(:root, :root.light) .g-stage .asset-live-fallback,
+.g-pending-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  padding: 0;
+  background: none;
+  color: rgb(255 255 255 / 0.62);
+  font: 500 11px/1 var(--g-mono);
+  white-space: nowrap;
+}
+
+:root.light .g-stage .asset-live-loading,
+:root.light .g-stage .asset-live-fallback,
+:root.light .g-pending-label {
+  color: rgb(0 0 0 / 0.55);
+}
+
+:is(:root, :root.light) .g-stage .asset-live-fallback {
+  font: 500 13px/1 var(--g-sans);
+  color: var(--g-glass-text);
+  text-decoration: none;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: var(--g-glass);
+  backdrop-filter: blur(10px);
+}
+
+:is(:root, :root.light) .g-stage .asset-library-no-preview {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--g-glass-text);
+  font: 500 13px/1.3 var(--g-sans);
+  text-align: center;
+}
+
+:is(:root, :root.light) .g-stage .asset-library-no-preview strong {
+  font: 600 15px/1.3 var(--g-sans);
+}
+
+:is(:root, :root.light) .g-stage .asset-library-no-preview a {
+  color: var(--g-glass-text);
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--g-glass);
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+/* Until the demo says it is ready: the stage at its final size, a quiet shape, no words. */
+.asset-live-skeleton {
+  position: absolute;
+  inset: 30% 24%;
+  z-index: 1;
+  border-radius: 14px;
+  background: rgb(255 255 255 / 0.07);
+  pointer-events: none;
+  animation: g-skeleton-pulse 1.6s ease-in-out infinite;
+}
+
+:root.light .asset-live-skeleton {
+  background: rgb(0 0 0 / 0.06);
+}
+
+@keyframes g-skeleton-pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .asset-live-skeleton {
+    animation: none;
+  }
+}
+
+/* The small Live tag, top left. */
+:is(:root, :root.light) .g-stage .g-live {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 9px 0 8px;
+  border-radius: 999px;
+  background: var(--g-glass);
+  color: var(--g-glass-text);
+  font: 500 11px/1 var(--g-mono);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+
+:is(:root, :root.light) .g-stage .g-preview .asset-live-viewport.is-framed iframe {
+  border-radius: 10px;
+}
+
+/* An embedded page sits as a window below the tag row; its tag stays on the stage. */
+:is(:root, :root.light) .g-stage .is-framed .g-live {
+  top: -34px;
+  left: -18px;
+}
+
+.g-stage .g-live[data-kind='capture'] {
+  padding: 0 9px;
+}
+
+.g-stage .g-live i {
+  width: 6px;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--g-success);
+  box-shadow: 0 0 0 3px rgb(74 222 128 / 0.2);
+}
+
+/* Try: the stage is one keyboard stop. Focus shows how to go in, and how to come back out. */
+:is(:root, :root.light) .g-stage .asset-live-viewport.is-try:focus-visible {
+  outline: 2px solid var(--g-accent);
+  outline-offset: -2px;
+  border-radius: 12px;
+}
+
+.g-try {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  z-index: 4;
+  transform: translateX(-50%);
+  display: none;
+  align-items: center;
+  gap: 8px;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--g-glass);
+  color: var(--g-glass-text);
+  font: 500 12px/1 var(--g-sans);
+  white-space: nowrap;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.g-try kbd {
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 6px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px currentColor;
+  background: transparent;
+  color: inherit;
+  font: 500 11px/1 var(--g-mono);
+}
+
+.asset-live-viewport.is-try:focus-visible .g-try,
+.asset-live-viewport.is-inside .g-try {
+  display: inline-flex;
+}
+
+/* A framed provider page sits lower on the stage; its cue sits on the window. */
+:is(:root, :root.light) .g-stage .is-framed .g-try {
+  bottom: 26px;
+}
+
+:is(:root, :root.light) .g-stage .asset-library-no-preview-reason {
+  max-width: 260px;
+  font: 400 13px/18px var(--g-sans);
+  color: var(--g-glass-text);
+  opacity: 0.8;
+}
+
+/* Save: a glass icon button on the stage's top right, always visible. The button is a
+   44px target; the 34px glass disc is drawn inside it. */
+:is(:root, :root.light) .g-save {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--g-glass-text);
+  box-shadow: none;
+  opacity: 0.85;
+  cursor: pointer;
+  transition: opacity 0.14s var(--g-ease);
+}
+
+.g-save::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  z-index: -1;
+  border-radius: 999px;
+  background: var(--g-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    background 0.14s var(--g-ease),
+    transform 0.1s var(--g-ease);
+}
+
+.g-card:hover .g-save,
+.g-save:focus-visible,
+.g-save[aria-pressed='true'] {
+  opacity: 1;
+}
+
+.g-save:hover::before {
+  background: var(--g-glass-hover);
+}
+
+/* Pressed: the disc gives a little, so a tap is felt before the state changes. */
+.g-save:active::before {
+  transform: scale(0.9);
+  background: var(--g-glass-hover);
+}
+
+/* Chrome: name and price, provider and category, a quiet command. */
+:is(:root, :root.light) .g-card .g-meta {
+  position: relative;
+  margin: 0;
+  padding: 14px 8px 6px;
+  cursor: pointer;
+  background: none;
+  box-shadow: none;
+}
+
+.g-r1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  min-width: 0;
+}
+
+:is(:root, :root.light) .g-r1 :is(h2, h3) {
+  min-width: 0;
+  margin: 0;
+  font: 600 15px/20px var(--g-sans);
+  letter-spacing: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+:is(:root, :root.light) .g-card .g-name {
+  color: var(--g-text);
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* The name's target covers the name, price, provider and category rows (and the padding
+   above them), never the save button or the install row. */
+.g-head {
+  position: relative;
+}
+
+:is(:root, :root.light) .g-card .g-head .g-name::after {
+  content: '';
+  position: absolute;
+  inset: -14px -8px 0;
+}
+
+:is(:root, :root.light) .g-card .g-name:active {
+  opacity: 0.7;
+}
+
+:is(:root, :root.light) .g-card .g-name:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--g-text-3);
+  text-underline-offset: 3px;
+}
+
+:is(:root, :root.light) .g-price {
+  flex: none;
+  font: 600 13.5px/20px var(--g-sans);
+  letter-spacing: 0;
+  color: var(--g-text);
+}
+
+/* No commercial licence on record: meta text, not a price, with an info mark. */
+:is(:root, :root.light) .g-price.is-unsettled {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font: 400 12.5px/20px var(--g-sans);
+  color: var(--g-text-2);
+}
+
+.g-price.is-unsettled svg {
+  flex: none;
+}
+
+.g-r2 {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  font: 400 12.5px/18px var(--g-sans);
+  color: var(--g-text-2);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.g-r2 > span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.g-r2 .g-sep {
+  color: var(--g-text-3);
+}
+
+.g-mark {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 5px;
+  color: #fff;
+  font: 700 9.5px/1 var(--g-sans);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.12),
+    inset 0 1px 0 rgb(255 255 255 / 0.2);
+}
+
+.g-mark.is-pair {
+  font-size: 8.5px;
+  letter-spacing: -0.02em;
+}
+
+.g-mark.is-lg {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+.g-mark svg {
+  width: 12px;
+  height: 12px;
+  color: #fff;
+}
+
+/* The quiet line keeps its look; its target is the card's full width and 44px tall. The
+   text sits where the 22px row put it, and the extra height reaches into the padding. */
+:is(:root, :root.light) .g-cmd,
+:is(:root, :root.light) .g-visit {
+  position: relative;
+  z-index: 1;
+  margin: 1px -8px -6px;
+  width: calc(100% + 16px);
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  box-shadow: none;
+  text-align: left;
+  text-decoration: none;
+  font: 400 11.5px/16px var(--g-mono);
+  color: var(--g-text-3);
+  cursor: pointer;
+  transition: color 0.14s var(--g-ease);
+}
+
+.g-cmd code {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* The verb at the end of the row: always visible, so the row reads as something to take. */
+.g-cmd-verb {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font: 500 12px/16px var(--g-sans);
+  color: var(--g-text-2);
+}
+
+.g-cmd svg {
+  flex: none;
+}
+
+.g-cmd:is(:hover, :focus-visible) .g-cmd-verb {
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .g-cmd[data-state='copied'] .g-cmd-verb {
+  color: inherit;
+}
+
+/* No command to copy: a plain link to the source, in the sans face and with no prompt. */
+:is(:root, :root.light) .g-cmd.is-open {
+  font: 500 13px/16px var(--g-sans);
+  color: var(--g-text-2);
+}
+
+:is(:root, :root.light) .g-cmd.is-open:is(:hover, :focus-visible) {
+  color: var(--g-text);
+}
+
+.g-cmd-prompt {
+  opacity: 0.6;
+}
+
+:is(:root, :root.light) .g-card:hover .g-cmd,
+:is(:root, :root.light) .g-cmd:hover,
+:is(:root, :root.light) .g-cmd:focus-visible {
+  color: var(--g-text-2);
+}
+
+:is(:root, :root.light) .g-cmd:hover,
+:is(:root, :root.light) .g-cmd:focus-visible {
+  color: var(--g-text);
+}
+
+/* Pressed: a faint band behind the row and the text gives a little. */
+:is(:root, :root.light) .g-cmd:active,
+:is(:root, :root.light) .g-visit:active {
+  background: var(--g-well);
+}
+
+.g-cmd:active code {
+  transform: translateY(0.5px);
+}
+
+/* Copied wins over hover, so the confirmation shows under the pointer that clicked. */
+:is(:root, :root.light) .g-card .g-cmd[data-state='copied'] {
+  color: var(--g-success);
+}
+
+.g-cmd[data-state='copying'] {
+  cursor: progress;
+}
+
+:is(:root, :root.light) .g-visit {
+  font: 400 12px/16px var(--g-sans);
+}
+
+:is(:root, :root.light) .g-card:hover .g-visit,
+:is(:root, :root.light) .g-visit:hover {
+  color: var(--g-text);
+}
+
+/* Loading cards keep the final shape so nothing jumps. */
+.g-card-pending .g-stage {
+  opacity: 0.55;
+}
+
+.g-skeleton {
+  display: block;
+  height: 12px;
+  width: 62%;
+  margin: 4px 0 10px;
+  border-radius: 6px;
+  background: var(--g-well);
+}
+
+.g-skeleton.is-short {
+  width: 40%;
+}
+
+/* ------------------------------------------------------ Components grid */
+
+:is(:root, :root.light) .uixo-shell .asset-library-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 18px;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-skeleton {
+  aspect-ratio: auto;
+  height: auto;
+  min-height: 0;
+  padding: 8px 8px 74px;
+  border-radius: 18px;
+  background: var(--g-tile);
+  box-shadow: var(--g-hi);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-skeleton::before {
+  content: '';
+  display: block;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  background: var(--g-well);
+}
+
+@media (max-width: 1100px) {
+  :is(:root, :root.light) .uixo-shell .asset-library-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  :is(:root, :root.light) .uixo-shell .asset-library-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ------------------------------------------------------------------ Footer */
+
+:is(:root, :root.light) .site-footer.site-footer-map {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 32px;
+  max-width: none;
+  margin: 120px 0 0;
+  padding: 56px max(44px, calc((100% - 1352px) / 2)) 40px;
+  border: 0;
+  border-top: 1px solid var(--g-line);
+  background: transparent;
+  color: var(--g-text-2);
+  box-shadow: none;
+}
+
+.site-footer-map .footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--g-text);
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+:is(:root, :root.light) .site-footer-map .footer-logo strong {
+  font: 600 17px/1 var(--g-sans);
+  letter-spacing: 0.3em;
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .site-footer-map .footer-brand p {
+  max-width: 320px;
+  margin: 16px 0 0;
+  color: var(--g-text-2);
+  font: 400 14px/22px var(--g-sans);
+}
+
+:is(:root, :root.light) .site-footer-map .footer-column {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+:is(:root, :root.light) .site-footer-map .footer-column h2 {
+  margin: 0 0 4px;
+  font: 500 11px/14px var(--g-mono);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .site-footer-map .footer-column a {
+  width: fit-content;
+  color: var(--g-text-2);
+  font: 400 14px/20px var(--g-sans);
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+:is(:root, :root.light) .site-footer-map .footer-column a:hover {
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .site-footer-map .footer-extra {
+  grid-column: 1 / -1;
+}
+
+:is(:root, :root.light) .site-footer-map .footer-meta {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--g-line);
+  color: var(--g-text-3);
+  font: 400 13px/18px var(--g-sans);
+}
+
+.site-footer-map .footer-meta-end {
+  display: inline-flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  :is(:root, :root.light) .site-footer.site-footer-map {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 72px;
+    padding: 40px 16px 32px;
+  }
+
+  :is(:root, :root.light) .site-footer-map .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-card,
+  .g-card .g-stage::after,
+  .g-stage .g-preview .asset-live-viewport iframe,
+  .g-shot {
+    transition: none;
+  }
+}
+
+/* The stage stays live: the name link never stretches over the demo or the save button
+   (inside .g-head it stretches over the name rows only, above). */
+:is(:root, :root.light) .g-card .g-name::after {
+  content: none;
+}
+
+/* ------------------------------------------------------------ Phone menu */
+
+@media (max-width: 900px) {
+  :is(:root, :root.light) .discovery-header .discovery-mobile-menu {
+    display: grid;
+    padding: 6px 16px 18px;
+    border-top: 0;
+  }
+
+  :is(:root, :root.light) .discovery-mobile-menu a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 46px;
+    color: var(--g-text-2);
+    font: 400 15px/20px var(--g-sans);
+    text-decoration: none;
+    border-bottom: 1px solid var(--g-line);
+  }
+
+  :is(:root, :root.light) .discovery-mobile-menu a[aria-current] {
+    color: var(--g-text);
+  }
+
+  :is(:root, :root.light) .discovery-mobile-menu a svg {
+    color: var(--g-text-3);
+  }
+
+  :is(:root, :root.light) .discovery-mobile-menu .discovery-mobile-signin {
+    height: 44px;
+    margin-top: 14px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--g-invert-bg);
+    color: var(--g-invert-text);
+    font: 500 14px/1 var(--g-sans);
+    cursor: pointer;
+  }
+}
+
+/* Phones keep Sign in in their menu or drawer, as the mockup does; the header stays light. */
+@media (max-width: 767px) {
+  :is(:root, :root.light) .discovery-header :is(.header-signin, .signin-button) {
+    display: none;
+  }
+}
+
+.filter-signin {
+  display: none;
+}
+
+:is(:root, :root.light) [data-mobile='true'] .filter-signin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 44px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-invert-bg);
+  color: var(--g-invert-text);
+  font: 500 14px/1 var(--g-sans);
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------ Components page chrome */
+/* Sidebar, heading, search, price switch, chips, result row, sort and pages, as in
+   the approved mockup's Components frame. */
+
+:is(:root, :root.light) .uixo-shell .discovery-sidebar > div {
+  border-right: 1px solid var(--g-line);
+  background: var(--g-bg);
+}
+
+:is(:root, :root.light) .uixo-shell .discovery-sidebar [data-slot='sidebar-content'] {
+  padding: 28px 12px 28px;
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section {
+  margin: 0 0 24px;
+  padding: 0;
+  border: 0;
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section h2,
+:is(:root, :root.light) .discovery-sidebar .filter-section summary {
+  margin: 0 0 8px;
+  padding: 0 12px;
+  font: 500 11px/14px var(--g-mono);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section summary svg {
+  transition: transform 0.14s var(--g-ease);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section[open] summary svg {
+  transform: rotate(180deg);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section :is(button, .filter-link) {
+  height: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin: 0;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--g-text-2);
+  font: 400 14px/18px var(--g-sans);
+  text-align: left;
+  text-decoration: none;
+  box-shadow: none;
+  transition:
+    background 0.14s var(--g-ease),
+    color 0.14s var(--g-ease);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section :is(button, .filter-link) > svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section :is(button, .filter-link):hover {
+  background: var(--g-surface);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light)
+  .discovery-sidebar
+  .filter-section
+  button:is(.chosen, [aria-pressed='true']) {
+  position: relative;
+  background: var(--g-well);
+  color: var(--g-text);
+  font-weight: 500;
+  box-shadow: var(--g-hi);
+}
+
+/* The chosen row's fill is close to the page, so a violet bar marks it as well. */
+:is(:root, :root.light)
+  .discovery-sidebar
+  .filter-section
+  button:is(.chosen, [aria-pressed='true'])::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--g-chosen);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section button.chosen > svg {
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-section button small {
+  margin-left: auto;
+  font: 400 11.5px/1 var(--g-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light)
+  .discovery-sidebar
+  .filter-section
+  button
+  > span:not(.filter-dot, .filter-check) {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filter-dot {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  margin: 0 3px;
+  border-radius: 3px;
+  background: hsl(var(--h) 70% 62%);
+  opacity: 0.75;
+}
+
+:root.light .filter-dot {
+  background: hsl(var(--h) 65% 52%);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-check {
+  width: 14px;
+  height: 14px;
+  margin: 0 1px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px var(--g-line);
+  background: var(--g-well);
+}
+
+:is(:root, :root.light) .discovery-sidebar button[aria-pressed='true'] .filter-check {
+  background: var(--g-accent);
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-foot {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--g-line);
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-submit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--g-text-2);
+  font: 400 13.5px/1 var(--g-sans);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .discovery-sidebar .filter-submit:hover {
+  background: var(--g-surface);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) [data-mobile='true'] .filter-signin {
+  flex: none;
+}
+
+/* Heading */
+:is(:root, :root.light) .uixo-shell .asset-workspace .heading {
+  margin: 6px 0 28px;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .heading h1 {
+  font: 600 44px/48px var(--g-sans);
+  letter-spacing: -0.025em;
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .heading p {
+  margin-top: 10px;
+  max-width: 64ch;
+  font: 400 15px/24px var(--g-sans);
+  color: var(--g-text-2);
+}
+
+/* Search and the price switch */
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .search-wrap {
+  flex: 1;
+  height: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-well);
+  color: var(--g-text-3);
+  box-shadow: inset 0 0 0 1px var(--g-field-edge);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .search-wrap:focus-within {
+  box-shadow: 0 0 0 2px var(--g-accent);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .search-wrap input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  color: var(--g-text);
+  font: 400 15px/1 var(--g-sans);
+}
+
+:is(:root, :root.light)
+  .uixo-shell
+  .asset-workspace
+  .discovery-controls
+  .search-wrap
+  input::placeholder {
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .search-wrap kbd {
+  min-width: 0;
+  padding: 5px 7px;
+  border-radius: 7px;
+  background: var(--g-bg);
+  color: var(--g-text-3);
+  font: 500 11px/1 var(--g-mono);
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .prices {
+  height: auto;
+  display: inline-flex;
+  gap: 2px;
+  padding: 4px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-well);
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .prices button {
+  height: 40px;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--g-text-2);
+  font: 500 13px/16px var(--g-sans);
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .prices button:hover {
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .prices button.selected {
+  background: var(--g-bg);
+  color: var(--g-text);
+  box-shadow: var(--g-hi);
+}
+
+:root.light .uixo-shell .asset-workspace .discovery-controls .prices button.selected {
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+}
+
+/* Category chips */
+:is(:root, :root.light) .uixo-shell .asset-library-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+:is(:root, :root.light) .uixo-shell .component-category-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+
+:is(:root, :root.light) .uixo-shell .component-category-chips button,
+:is(:root, :root.light) .uixo-shell .asset-library-toolbar .asset-refine {
+  height: 34px;
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-tile);
+  color: var(--g-text-2);
+  font: 500 13px/16px var(--g-sans);
+  white-space: nowrap;
+  box-shadow: var(--g-hi);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .uixo-shell .component-category-chips button:hover,
+:is(:root, :root.light) .uixo-shell .asset-library-toolbar .asset-refine:hover {
+  background: var(--g-tile-hover);
+  color: var(--g-text);
+  box-shadow: var(--g-hi);
+}
+
+:is(:root, :root.light) .uixo-shell .component-category-chips button[aria-pressed='true'],
+:is(:root, :root.light) .uixo-shell .asset-library-toolbar .asset-refine[aria-expanded='true'] {
+  background: var(--g-invert-bg);
+  color: var(--g-invert-text);
+  box-shadow: none;
+}
+
+.chip-count {
+  font: 400 11px/1 var(--g-mono);
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+}
+
+.chip-more {
+  position: relative;
+}
+
+:is(:root, :root.light) .uixo-shell .chip-more-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 20;
+  display: grid;
+  gap: 2px;
+  min-width: 200px;
+  padding: 6px;
+  border-radius: 14px;
+  background: var(--g-raised);
+  box-shadow:
+    var(--g-shadow),
+    0 0 0 1px var(--g-line);
+}
+
+:is(:root, :root.light) .uixo-shell .component-category-chips .chip-more-menu button {
+  justify-content: space-between;
+  width: 100%;
+  height: 36px;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: none;
+}
+
+:is(:root, :root.light) .uixo-shell .component-category-chips .chip-more-menu button:hover {
+  background: var(--g-well);
+}
+
+:is(:root, :root.light)
+  .uixo-shell
+  .component-category-chips
+  .chip-more-menu
+  button[aria-pressed='true'] {
+  background: var(--g-well-2);
+  color: var(--g-text);
+  box-shadow: inset 3px 0 0 var(--g-chosen);
+}
+
+/* Result row */
+:is(:root, :root.light) .uixo-shell .asset-library-result-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin: 28px 0 20px;
+  min-height: 36px;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-result-count .result-summary > strong {
+  margin-right: 8px;
+  font: 500 14px/20px var(--g-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .uixo-shell .active-filter {
+  height: 30px;
+  gap: 6px;
+  padding: 0 8px 0 12px;
+  border-radius: 999px;
+  background: var(--g-well);
+  color: var(--g-text);
+  font: 500 12.5px/1 var(--g-sans);
+}
+
+:is(:root, :root.light) .uixo-shell .active-filter svg {
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .uixo-shell .active-filter:hover {
+  background: var(--g-well-2);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .uixo-shell .active-filter:hover svg {
+  color: var(--g-text);
+}
+
+/* Clear all: a 44px pill, quieter than the filter chips it clears. */
+:is(:root, :root.light) .uixo-shell .result-summary .clear-all {
+  height: 44px;
+  margin-left: 4px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--g-line);
+  color: var(--g-text-2);
+  font: 500 12.5px/1 var(--g-sans);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .uixo-shell .result-summary .clear-all:hover {
+  background: var(--g-well);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .uixo-shell .result-summary .clear-all:active {
+  background: var(--g-well-2);
+}
+
+/* Spelling correction under the result row: what was searched, and a way back to the typed word. */
+:is(:root, :root.light) .uixo-shell .search-correction {
+  margin: -8px 0 20px;
+  color: var(--g-text-2);
+  font: 400 14px/1.5 var(--g-sans);
+}
+
+:is(:root, :root.light) .uixo-shell .search-correction strong {
+  color: var(--g-text);
+  font-weight: 600;
+}
+
+:is(:root, :root.light) .uixo-shell .search-correction button {
+  min-height: 44px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: var(--g-text);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .uixo-shell .result-sort {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+:is(:root, :root.light) .uixo-shell .result-sort > span {
+  font: 400 13px/1 var(--g-sans);
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .uixo-shell .result-sort select {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 36px;
+  padding: 0 34px 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-well);
+  background-image: none;
+  color: var(--g-text);
+  font: 500 13px/1 var(--g-sans);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .uixo-shell .result-sort select option {
+  background: var(--g-raised);
+  color: var(--g-text);
+}
+
+.result-sort-chevron {
+  position: absolute;
+  right: 12px;
+  color: var(--g-text-3);
+  pointer-events: none;
+}
+
+/* Pages */
+:is(:root, :root.light) .uixo-shell .asset-library-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin: 44px 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-pagination-summary {
+  display: block;
+  margin: 0;
+  font: 400 12.5px/16px var(--g-sans);
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-pagination-summary .mono {
+  font: 500 12.5px/16px var(--g-mono);
+  color: var(--g-text-2);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-pagination-controls,
+:is(:root, :root.light) .uixo-shell .asset-library-page-numbers {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library-page-numbers > span {
+  min-width: 36px;
+  text-align: center;
+  font: 500 12.5px/1 var(--g-mono);
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library .asset-library-pagination button {
+  min-width: 36px;
+  height: 36px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--g-text-2);
+  font: 500 12.5px/1 var(--g-mono);
+  box-shadow: none;
+}
+
+:is(:root, :root.light)
+  .uixo-shell
+  .asset-library
+  .asset-library-pagination
+  button:hover:not(:disabled) {
+  background: var(--g-surface);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light)
+  .uixo-shell
+  .asset-library
+  .asset-library-pagination
+  button[aria-current='page'] {
+  background: var(--g-invert-bg);
+  color: var(--g-invert-text);
+}
+
+:is(:root, :root.light) .uixo-shell .asset-library .asset-library-pagination button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 767px) {
+  :is(:root, :root.light) .uixo-shell .asset-workspace .heading h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls {
+    flex-wrap: wrap;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .search-wrap {
+    flex-basis: 100%;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .prices {
+    width: 100%;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .prices button {
+    flex: 1;
+    justify-content: center;
+    height: 36px;
+    min-height: 36px;
+    text-align: center;
+  }
+
+  /* Chips scroll sideways on a phone rather than wrapping into a wall; Refine stays put. */
+  :is(:root, :root.light) .uixo-shell .asset-library-toolbar {
+    position: relative;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow: visible;
+  }
+
+  :is(:root, :root.light) .uixo-shell .component-category-chips {
+    flex: 1;
+    flex-wrap: nowrap;
+    min-width: 0;
+    margin-left: -16px;
+    padding-left: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    mask-image: linear-gradient(90deg, transparent, #000 16px, #000 calc(100% - 44px), transparent);
+  }
+
+  :is(:root, :root.light) .uixo-shell .component-category-chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  :is(:root, :root.light) .uixo-shell .component-category-chips > * {
+    flex: none;
+  }
+
+  :is(:root, :root.light) .uixo-shell .component-category-chips .chip-more {
+    position: static;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-toolbar .asset-refine {
+    flex: none;
+  }
+
+  /* Count and sort share the first line; filter chips wrap underneath. */
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px 8px;
+    margin: 20px 0 16px;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count .result-summary {
+    display: contents;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count .result-summary > strong {
+    order: 0;
+    margin-right: 0;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count .result-sort {
+    order: 1;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count .active-filter {
+    order: 2;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count .active-filter:first-of-type {
+    margin-left: 0;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count .clear-all {
+    order: 3;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-result-count .result-sort > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library-pagination {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ------------------------------------------------------------ Load error */
+
+/* One error for list, detail and Home: a heading, one sentence, then the way forward. */
+:is(:root, :root.light) .load-error {
+  max-width: 640px;
+  margin: 32px 0;
+  padding: 32px;
+  border-radius: 18px;
+  background: var(--g-tile);
+  box-shadow: var(--g-hi);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .load-error .load-error-title {
+  margin: 0;
+  font: 600 22px/28px var(--g-sans);
+  letter-spacing: -0.01em;
+  color: var(--g-text);
+}
+
+.load-error-body {
+  margin: 8px 0 0;
+  font: 400 15px/24px var(--g-sans);
+  color: var(--g-text-2);
+}
+
+.load-error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin-top: 22px;
+}
+
+:is(:root, :root.light) .load-error-actions :is(.load-error-retry, .load-error-provider) {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  font: 500 14px/1 var(--g-sans);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.14s var(--g-ease);
+}
+
+:is(:root, :root.light) .load-error-actions .load-error-retry {
+  background: var(--g-invert-bg);
+  color: var(--g-invert-text);
+}
+
+:is(:root, :root.light) .load-error-actions .load-error-provider {
+  background: var(--g-well);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .load-error-actions .load-error-provider:hover {
+  background: var(--g-well-2);
+}
+
+:is(:root, :root.light) .load-error-actions .load-error-browse {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--g-text-2);
+  font: 500 14px/1 var(--g-sans);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.load-error-details {
+  margin-top: 20px;
+  font: 400 13px/20px var(--g-sans);
+  color: var(--g-text-3);
+}
+
+.load-error-details summary {
+  min-height: 24px;
+  cursor: pointer;
+  color: var(--g-text-2);
+}
+
+.load-error-details p {
+  margin: 8px 0 0;
+  font-family: var(--g-mono);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  :is(:root, :root.light) .load-error {
+    padding: 24px 20px;
+  }
+}
+
+/* ------------------------------------------------------ Phone targets */
+
+/* On a phone every primary control is a 44px target; nothing is under 24px. */
+@media (max-width: 767px) {
+  :is(:root, :root.light) .discovery-header .header-icon,
+  :is(:root, :root.light) .discovery-header .header-search {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .search-wrap input {
+    align-self: stretch;
+  }
+
+  :is(:root, :root.light) .uixo-shell .result-sort select {
+    height: 44px;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-library .asset-library-pagination button {
+    min-width: 44px;
+    height: 44px;
+  }
+
+  :is(:root, :root.light) .uixo-shell .asset-workspace .discovery-controls .prices button {
+    height: 36px;
+    min-height: 36px;
+  }
+}
+
+/* ------------------------------------------------------- Removed, undo */
+
+/* Just unsaved on the Saved page: the card stays, dimmed, with Undo over its stage. */
+.g-card.is-removed > :not(.g-removed) {
+  opacity: 0.35;
+  transition: opacity 0.2s var(--g-ease);
+}
+
+.g-removed {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  z-index: 4;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font: 500 14px/20px var(--g-sans);
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .g-removed button {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-invert-bg);
+  color: var(--g-invert-text);
+  font: 500 14px/1 var(--g-sans);
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------- Saved page */
+
+:is(:root, :root.light) .uixo-shell .asset-library-toolbar[hidden],
+:is(:root, :root.light) .uixo-shell .asset-library-result-count[hidden] {
+  display: none;
+}
+
+/* Components and Websites, each with its count, as one segmented switch. */
+:is(:root, :root.light) .saved-tabs {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  align-self: flex-start;
+  gap: 2px;
+  margin: 0 0 24px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--g-well);
+}
+
+:is(:root, :root.light) .saved-tabs [role='tab'] {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--g-text-2);
+  font: 500 14px/1 var(--g-sans);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .saved-tabs [role='tab']:hover {
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .saved-tabs [role='tab'][aria-selected='true'] {
+  background: var(--g-bg);
+  color: var(--g-text);
+  box-shadow: var(--g-hi);
+}
+
+:root.light .saved-tabs [role='tab'][aria-selected='true'] {
+  background: #fff;
+}
+
+.saved-tab-count {
+  font: 500 12px/1 var(--g-mono);
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .asset-library-empty .asset-library-inline {
+  display: inline;
+  min-height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--g-text);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------- Palette */
+
+:is(:root, :root.light) .palette {
+  border: 0;
+  border-radius: 18px;
+  background: var(--g-surface);
+  box-shadow:
+    var(--g-hi),
+    0 24px 60px rgb(0 0 0 / 0.45);
+}
+
+:is(:root, :root.light) .palette-input {
+  border-bottom: 1px solid var(--g-line);
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .palette-input input {
+  min-height: 52px;
+  color: var(--g-text);
+  font: 400 15px/1 var(--g-sans);
+}
+
+:is(:root, :root.light) .palette-input kbd {
+  padding: 5px 7px;
+  border-radius: 7px;
+  background: var(--g-well);
+  color: var(--g-text-3);
+  font: 500 11px/1 var(--g-mono);
+}
+
+:is(:root, :root.light) .palette-results {
+  padding: 6px 8px 10px;
+}
+
+.palette-results ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.palette-group {
+  margin: 10px 12px 4px;
+  font: 500 11px/16px var(--g-mono);
+  letter-spacing: 0.02em;
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .palette-results button {
+  min-height: 44px;
+  color: var(--g-text-2);
+  font: 400 14px/20px var(--g-sans);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .palette-results button.active {
+  background: var(--g-well);
+  color: var(--g-text);
+}
+
+.palette-status {
+  margin: 0;
+  padding: 18px 12px;
+  font: 400 13px/20px var(--g-sans);
+  color: var(--g-text-3);
+}
+
+:is(:root, :root.light) .palette-empty {
+  padding: 14px 0 4px;
+  text-align: left;
+}
+
+.palette-empty > p {
+  margin: 0 12px 8px;
+  font: 400 14px/20px var(--g-sans);
+  color: var(--g-text);
+}
+
+/* ---------------------------------------------------------- Connect page (L-10) */
+
+.cx {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  gap: 40px;
+  max-width: 760px;
+  font: 400 15px/24px var(--g-sans);
+  color: var(--g-text-2);
+}
+
+.cx-step,
+.cx-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  gap: 16px;
+}
+
+.cx-extra {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+:is(:root, :root.light) .cx .cx-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font: 600 20px/28px var(--g-sans);
+  letter-spacing: -0.01em;
+  color: var(--g-text);
+}
+
+.cx-num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--g-well);
+  color: var(--g-text);
+  font: 600 13px/1 var(--g-sans);
+}
+
+.cx-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--g-well);
+}
+
+:is(:root, :root.light) .cx .cx-tabs button {
+  min-height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--g-text-2);
+  font: 500 14px/1 var(--g-sans);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .cx .cx-tabs button:hover {
+  color: var(--g-text);
+}
+
+:is(:root, :root.light) .cx .cx-tabs button[aria-selected='true'] {
+  background: var(--g-invert-bg);
+  color: var(--g-invert-text);
+}
+
+.cx-panel {
+  gap: 10px;
+}
+
+.cx-how {
+  margin: 0;
+  color: var(--g-text-2);
+}
+
+.cx-block {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 14px 14px 18px;
+  border-radius: 16px;
+  background: var(--g-tile);
+  box-shadow: var(--g-hi);
+}
+
+:is(:root, :root.light) .cx .cx-block pre {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 7px 0;
+  max-height: none;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: none;
+  border-radius: 0;
+  color: var(--g-text);
+  font: 400 13px/21px var(--g-mono);
+}
+
+:is(:root, :root.light) .cx .cx-copy {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  min-width: 44px;
+  padding: 0 14px 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-invert-bg);
+  color: var(--g-invert-text);
+  font: 500 13px/1 var(--g-sans);
+  cursor: pointer;
+}
+
+:is(:root, :root.light) .cx .cx-copy[data-state='copied'] {
+  background: var(--g-success);
+  color: #062e16;
+}
+
+.cx-prompts {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cx-prompts li {
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: var(--g-well);
+  color: var(--g-text);
+}
+
+.cx-prompts q {
+  quotes: '“' '”';
+}
+
+.cx-note {
+  margin: 0;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--g-text-3);
+}
+
+.cx-more {
+  border-top: 1px solid var(--g-line);
+}
+
+.cx-more:last-child {
+  border-bottom: 1px solid var(--g-line);
+}
+
+.cx-more summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  list-style: none;
+  cursor: pointer;
+  color: var(--g-text);
+  font: 600 16px/24px var(--g-sans);
+}
+
+.cx-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.cx-more summary svg {
+  color: var(--g-text-3);
+  transition: transform 0.18s var(--g-ease);
+}
+
+.cx-more[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.cx-tools {
+  display: grid;
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.cx-tools li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  padding: 10px 0;
+  border-top: 1px solid var(--g-line);
+}
+
+.cx-tools li:first-child {
+  border-top: 0;
+}
+
+.cx-tools span {
+  color: var(--g-text);
+}
+
+.cx-tools code {
+  font: 400 12px/24px var(--g-mono);
+  color: var(--g-text-3);
+}
+
+.cx-own {
+  display: grid;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+:is(:root, :root.light) .cx .cx-own h3 {
+  margin: 8px 0 0;
+  font: 600 14px/20px var(--g-sans);
+  color: var(--g-text);
+}
+
+.cx-own p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .cx {
+    gap: 32px;
+  }
+  .cx-block {
+    padding: 12px 12px 12px 14px;
+  }
+  :is(:root, :root.light) .cx .cx-block pre {
+    font-size: 12px;
+    line-height: 19px;
+  }
+  :is(:root, :root.light) .cx .cx-copy {
+    height: 44px;
+  }
+  .cx-tabs {
+    gap: 2px;
+  }
+  :is(:root, :root.light) .cx .cx-tabs button {
+    min-height: 44px;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cx-more summary svg {
+    transition: none;
+  }
+}

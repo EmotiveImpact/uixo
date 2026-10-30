@@ -11,7 +11,6 @@ import { registryRequest, safeAssetUrl } from '../lib/asset-library';
 import { assetDestinationUrl } from '../lib/asset-destination';
 import { AssetPreview } from './AssetPreview';
 import { CollectionGrid } from './DiscoveryCollections';
-import { AssetDetail } from './AssetDetail';
 import { RegistryLink, RegistryState, type IntelligenceProps } from './RegistryPrimitives';
 import { useRegistryData } from '../hooks/useRegistryData';
 
@@ -166,21 +165,6 @@ function PublicCollectionDetail({ query, navigate, assetSaves }: IntelligencePro
           </>
         )}
       </RegistryState>
-      {query.id && (
-        <AssetDetail
-          key={query.id}
-          id={query.id}
-          query={query}
-          nameOf={(id) => id}
-          saved={assetSaves.saved.includes(query.id)}
-          toggleSave={() => {
-            if (assetSaves.saved.includes(query.id))
-              assetSaves.save(assetSaves.saved.filter((id) => id !== query.id));
-            else save([query.id]);
-          }}
-          close={() => navigate({ id: '' })}
-        />
-      )}
     </>
   );
 }

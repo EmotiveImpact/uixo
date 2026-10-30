@@ -1,9 +1,18 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwind from '@tailwindcss/vite';
+import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import styledJsx from 'styled-jsx/babel.js';
 const root = path.dirname(fileURLToPath(import.meta.url));
+const LEGACY_LIBRARIES = ['magic-ui', 'shadcn', 'motion-primitives', 'simply-buttons'];
+// Next.js compiles `<style jsx>` blocks with styled-jsx. A few provider demos use them,
+// so those vendored files (and only those) get the same compiler here.
+const usesStyledJsx = (id) =>
+  id.startsWith(path.join(root, 'vendor')) &&
+  /\.[jt]sx$/.test(id) &&
+  fs.readFileSync(id, 'utf8').includes('<style jsx');
 export default defineConfig({
   root,
   // Vite uses import.meta.url for lazy preloads with a relative base. A provider
@@ -19,6 +28,26 @@ export default defineConfig({
   },
   publicDir: false,
   plugins: [
+    {
+      // Tailwind scans the whole harness for class names, so every theme would carry every
+      // library's utilities (about 800 kB each). Each theme is told to skip the other
+      // libraries' folders; styles.css serves the first four together.
+      name: 'one-library-per-theme',
+      enforce: 'pre',
+      transform(code, id) {
+        const file = id.split('?')[0];
+        const theme = file.match(/live-demos\/themes\/([a-z0-9-]+)\.css$/)?.[1];
+        const legacy = file === path.join(root, 'styles.css');
+        if (!theme && !legacy) return;
+        const own = legacy ? LEGACY_LIBRARIES : [theme];
+        const skip = fs
+          .readdirSync(path.join(root, 'vendor'))
+          .filter((library) => !own.includes(library))
+          .flatMap((library) => [`../vendor/${library}`, `../examples/${library}`])
+          .map((folder) => `@source not '${legacy ? folder.slice(1) : folder}';`);
+        return `${code}\n${skip.join('\n')}\n`;
+      },
+    },
     {
       name: 'original-provider-aliases',
       enforce: 'pre',
@@ -40,16 +69,40 @@ export default defineConfig({
               },
             );
         }
+        // cult-ui's globe uses cobe 2 (globe.update); magic-ui's uses cobe 0.6. Each
+        // gets the major version its own source was written for.
+        if (source === 'cobe' && importer?.includes('/vendor/cult-ui/'))
+          return this.resolve('cobe-v2', importer, { skipSelf: true });
       },
     },
-    react(),
+    {
+      // The detail page's Code tab shows each demo's pinned source as plain text, served
+      // from UIXO's origin next to the demos. Never evaluated, only displayed.
+      name: 'demo-sources',
+      generateBundle() {
+        const manifest = JSON.parse(fs.readFileSync(path.join(root, 'manifest.json'), 'utf8'));
+        for (const [id, entry] of Object.entries(manifest)) {
+          if (!/^[a-z0-9-]+\/[a-z0-9-]+$/.test(id)) continue;
+          this.emitFile({
+            type: 'asset',
+            fileName: `sources/${id}.txt`,
+            source: fs.readFileSync(path.join(root, entry.file), 'utf8'),
+          });
+        }
+      },
+    },
+    react({
+      babel: (id) => (usesStyledJsx(id.split('?')[0]) ? { plugins: [styledJsx] } : {}),
+    }),
     tailwind(),
   ],
   resolve: {
     alias: {
       'next/link': path.join(root, 'adapters/link.tsx'),
       'next/image': path.join(root, 'adapters/image.tsx'),
+      'next/navigation': path.join(root, 'adapters/navigation.tsx'),
       'next-themes': path.join(root, 'adapters/theme.tsx'),
+      'next/font/google': path.join(root, 'adapters/font-google.ts'),
     },
   },
   define: { 'process.env.NODE_ENV': '"production"' },

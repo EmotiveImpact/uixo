@@ -1,0 +1,66 @@
+/* The harness around every demo, whichever library's theme it loads. */
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, sans-serif;
+}
+body {
+  overflow: auto;
+}
+.demo-stage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  box-sizing: border-box;
+  width: 100%;
+  isolation: isolate;
+}
+.demo-stage > * {
+  max-width: 100%;
+}
+/* stage=clear: the host card paints a tinted field behind the demo. */
+html[data-stage='clear'],
+html[data-stage='clear'] body,
+html[data-stage='clear'] #root {
+  background: transparent;
+}
+html[data-stage='clear'] .demo-stage {
+  padding: 20px;
+}
+/* A demo much taller than the card (main.tsx marks it) starts at its top edge, below the
+   card's badges, instead of being centred with its heading cut off. */
+html[data-stage='clear'][data-tall] .demo-stage {
+  align-items: flex-start;
+  /* The badges cover the same share of any card, so the gap is a share of its width. */
+  padding-top: 11vw;
+}
+/* Full-bleed demos frame themselves in the page colour with a border. On a lit stage
+   that frame drops away so the demo sits on the tint. */
+html[data-stage='clear'] .demo-stage > .bg-background:first-child {
+  background: transparent;
+  border-color: transparent;
+}
+/* Edge fades blend a demo into the page colour, which would draw dark bars on a tint. */
+html[data-stage='clear'] .demo-stage .pointer-events-none.absolute[class*='from-background'],
+html[data-stage='clear'] .demo-stage .absolute.inset-0[class*='dark:from-black']:empty {
+  display: none;
+}
+html[data-stage='clear'],
+html[data-stage='clear'] body {
+  scrollbar-width: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -79,6 +79,8 @@ export type PublicCollectionItem = CollectionItem & {
   providerName?: string;
   frameworks?: string[];
   licenceExpression?: string;
+  /** The shared price-and-licence label from `shared/licence-label.ts` (L-1). */
+  licenceLabel?: string;
   asset?: CollectionAssetPreview;
 };
 export type PublicCollection = Omit<CollectionInput, 'items'> & {

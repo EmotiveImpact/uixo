@@ -1,13 +1,20 @@
 import './adapters/preview-storage';
 import { Tooltip } from 'radix-ui';
-import React, { Component, Suspense, lazy, useEffect } from 'react';
+import React, { Component, Suspense, lazy, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import manifest from './manifest.json';
-import './styles.css';
-const files = import.meta.glob(['./vendor/**/*.tsx', './vendor/**/*.jsx', './examples/*.tsx']);
+import { handleStageFocus, reportContentSize } from '../shared/preview-stage';
+import { customisableDemo, sanitiseDemoProps } from '../shared/demo-props';
+const files = import.meta.glob(['./vendor/**/*.tsx', './vendor/**/*.jsx', './examples/**/*.tsx']);
+const themes = import.meta.glob('./themes/*.css');
 const params = new URLSearchParams(location.search),
   id = params.get('id') || '',
-  entry = manifest[id];
+  entry = manifest[id],
+  provider = id.split('/')[0];
+// Each library added after the first four brings its own Tailwind build and theme, so its
+// tokens and keyframes never meet another library's. The first four share styles.css.
+const style = (themes[`./themes/${provider}.css`] ?? (() => import('./styles.css')))();
+const withStyle = (load) => Promise.all([load(), style]).then(([module]) => module);
 function setTheme(theme) {
   document.documentElement.classList.toggle('dark', theme === 'dark');
   document.documentElement.style.colorScheme = theme;
@@ -15,6 +22,14 @@ function setTheme(theme) {
   window.dispatchEvent(new Event('uixo-theme'));
 }
 setTheme(params.get('theme') === 'light' ? 'light' : 'dark');
+// Card stages paint their own tinted field behind the demo. With stage=clear the page
+// stays transparent and reports its content box so the card can frame it.
+const clearStage = params.get('stage') === 'clear';
+if (clearStage) document.documentElement.dataset.stage = 'clear';
+if (clearStage) handleStageFocus(id);
+// Lets the harness style a demo's stage without touching the provider's source.
+document.documentElement.dataset.demo = id;
+document.documentElement.dataset.provider = provider;
 window.addEventListener('message', (event) => {
   if (event.source === parent && event.data?.type === 'uixo-preview-theme')
     setTheme(event.data.theme);
@@ -24,9 +39,17 @@ const origins = {
   'magic-ui': 'https://magicui.design',
   shadcn: 'https://ui.shadcn.com',
   'motion-primitives': 'https://motion-primitives.com',
+  'prompt-kit': 'https://www.prompt-kit.com',
+  evilcharts: 'https://evilcharts.com',
+  mapcn: 'https://mapcn.dev',
+  'kokonut-ui': 'https://kokonutui.com',
+  '8bitcn': 'https://www.8bitcn.com',
+  'elevenlabs-ui': 'https://ui.elevenlabs.io',
+  neobrutalism: 'https://www.neobrutalism.dev',
+  'cult-ui': 'https://www.cult-ui.com',
 };
 const base = document.createElement('base');
-base.href = origins[id.split('/')[0]] + '/';
+base.href = origins[provider] + '/';
 // These button demos are self-contained. Keep lazy CSS on UIXO's origin;
 // a provider <base> would redirect Vite's stylesheet preloads to the gallery.
 if (!id.startsWith('simply-buttons/')) document.head.append(base);
@@ -54,12 +77,47 @@ function Ready() {
   useEffect(() => {
     notify('ready');
     document.documentElement.dataset.previewReady = 'true';
+    if (!clearStage) return;
+    // Mark a demo whose content is far taller than the card, before the first measurement.
+    const stage = document.querySelector('.demo-stage');
+    if (stage && stage.scrollHeight > innerHeight + 80) document.documentElement.dataset.tall = '';
+    return reportContentSize(id, () => document.querySelector('.demo-stage'));
   }, []);
   return null;
 }
-const Demo =
-  entry && files[entry.file]
-    ? lazy(() => files[entry.file]().then((module) => ({ default: module[entry.export] })))
+// props=live: a curated demo renders through its UIXO wrapper and takes props from the
+// detail page. Only messages from the parent frame count, and every value is checked
+// against the demo's controls before it reaches the component.
+const customisable = params.get('props') === 'live' ? customisableDemo(id) : undefined;
+function Customised({ Wrapper }) {
+  const [values, setValues] = useState(() => sanitiseDemoProps(id, {}));
+  useEffect(() => {
+    const receive = (event) => {
+      if (event.source !== parent || event.data?.type !== 'uixo-preview-props') return;
+      if (event.data.id !== id) return;
+      const checked = sanitiseDemoProps(id, event.data.values);
+      if (checked) setValues(checked);
+    };
+    window.addEventListener('message', receive);
+    parent.postMessage({ type: 'uixo-preview-props-ready', id }, '*');
+    return () => window.removeEventListener('message', receive);
+  }, []);
+  // New props can change the content's size: ask for a fresh measurement.
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => window.dispatchEvent(new Event('resize')));
+    return () => cancelAnimationFrame(frame);
+  }, [values]);
+  return <Wrapper values={values} />;
+}
+const Demo = customisable
+  ? lazy(() =>
+      withStyle(files['./examples/customisable.tsx']).then((module) => {
+        const Wrapper = module[customisable.export];
+        return { default: () => <Customised Wrapper={Wrapper} /> };
+      }),
+    )
+  : entry && files[entry.file]
+    ? lazy(() => withStyle(files[entry.file]).then((module) => ({ default: module[entry.export] })))
     : null;
 createRoot(document.getElementById('root')).render(
   <Boundary>

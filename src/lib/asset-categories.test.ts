@@ -23,4 +23,13 @@ describe('component category routes', () => {
     expect(componentCategory('table')).toBe('data-display');
     expect(componentCategory('tooltip')).toBe('overlays');
   });
+  it('files names the first rules miss without moving any they already placed', () => {
+    expect(componentCategory('prompt-input')).toBe('forms');
+    expect(componentCategory('chain-of-thought')).toBe('ai');
+    expect(componentCategory('date-picker')).toBe('forms');
+    expect(componentCategory('widget-study-timer')).toBe('data-display');
+    expect(componentCategory('s12')).toBe('media');
+    expect(componentCategory('kbd')).toBe('text');
+    expect(componentCategory('zzz-unknown')).toBe('other');
+  });
 });

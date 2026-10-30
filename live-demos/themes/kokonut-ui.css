@@ -1,0 +1,43 @@
+/* Kokonut UI's own globals, unchanged, with the harness around them. */
+@import '../vendor/kokonut-ui/app/globals.css';
+@import '../stage.css';
+/* The site loads these through next/font/google; the same faces come from npm here. */
+@import '@fontsource/geist/400.css';
+@import '@fontsource/geist/500.css';
+@import '@fontsource/geist/600.css';
+@import '@fontsource/geist/700.css';
+@import '@fontsource/pacifico/400.css';
+@source '../vendor/kokonut-ui';
+@source '../examples/kokonut-ui';
+/* The docs page is painted with fumadocs' neutral colours and set in Geist. The site
+   leaves --background and --foreground unset (a few components rely on that), so the
+   stage takes fumadocs' own tokens instead of defining them. */
+html[data-provider='kokonut-ui']:not([data-stage='clear']),
+html[data-provider='kokonut-ui']:not([data-stage='clear']) body,
+html[data-provider='kokonut-ui']:not([data-stage='clear']) #root {
+  background: var(--color-fd-background);
+}
+html[data-provider='kokonut-ui'],
+html[data-provider='kokonut-ui'] body,
+html[data-provider='kokonut-ui'] #root {
+  color: var(--color-fd-foreground);
+  font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Demos taller or wider than a card are shown whole, smaller, rather than cut off. */
+html[data-demo='kokonut-ui/card-stack'] .demo-stage > * {
+  zoom: 0.7;
+}
+html[data-demo='kokonut-ui/currency-transfer'] .demo-stage > * {
+  zoom: 0.78;
+}
+html[data-demo='kokonut-ui/mouse-effect-card'] .demo-stage > * {
+  zoom: 0.8;
+}
+html[data-demo='kokonut-ui/tweet-card'] .demo-stage > * {
+  zoom: 0.88;
+}
+/* Smooth Tab builds its wave colours at run time (fill-${colour}), which a scan of the
+   source cannot see. These are the four its tabs use. */
+@source inline('{fill,stroke}-{blue,purple,emerald,amber}-500');

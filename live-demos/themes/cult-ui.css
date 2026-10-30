@@ -1,0 +1,70 @@
+/* cult-ui's own globals, unchanged, with the harness around them. */
+@import '../vendor/cult-ui/styles/globals.css';
+@import '../stage.css';
+@source '../vendor/cult-ui';
+@source '../examples/cult-ui';
+/* The site loads Geist, Geist Mono and the five Geist Pixel faces through next/font
+   (the `geist` package). Here the same faces come from npm: Geist and Geist Mono from
+   Fontsource, the pixel faces from the provider's own `geist` package. */
+@import '@fontsource/geist-sans/400.css';
+@import '@fontsource/geist-sans/500.css';
+@import '@fontsource/geist-sans/600.css';
+@import '@fontsource/geist-sans/700.css';
+@import '@fontsource/geist-mono/400.css';
+@import '@fontsource/geist-mono/500.css';
+@font-face {
+  font-family: 'Geist Pixel Square';
+  src: url('../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Square.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Pixel Grid';
+  src: url('../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Grid.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Pixel Circle';
+  src: url('../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Circle.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Pixel Triangle';
+  src: url('../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Triangle.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Pixel Line';
+  src: url('../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Line.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+:root {
+  --font-geist-sans: 'Geist Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-geist-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-geist-pixel-square: 'Geist Pixel Square', 'Geist Mono', ui-monospace, monospace;
+  --font-geist-pixel-grid: 'Geist Pixel Grid', 'Geist Mono', ui-monospace, monospace;
+  --font-geist-pixel-circle: 'Geist Pixel Circle', 'Geist Mono', ui-monospace, monospace;
+  --font-geist-pixel-triangle: 'Geist Pixel Triangle', 'Geist Mono', ui-monospace, monospace;
+  --font-geist-pixel-line: 'Geist Pixel Line', 'Geist Mono', ui-monospace, monospace;
+}
+html[data-provider='cult-ui'],
+html[data-provider='cult-ui'] body,
+html[data-provider='cult-ui'] #root {
+  font-family: var(--font-geist-sans);
+}
+/* Dock places itself at left: 75% of a wide docs preview and is shifted back by its width
+   (its translate and transform classes both apply -50%). In a card that pushes it off the
+   left edge, so centre it in the stage instead. */
+html[data-demo='cult-ui/dock'] .demo-stage .left-3\/4 {
+  left: 50%;
+  translate: none;
+}
+/* Morph Surface's docs demo centres each bar in a 300px-tall section, which puts the first
+   bar half below the card. Shorter sections bring it fully into view. */
+html[data-demo='cult-ui/morph-surface'] .demo-stage .min-h-\[300px\] {
+  min-height: 140px;
+}

@@ -6,7 +6,7 @@ import json
 import os
 import re
 import time
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
 
@@ -66,8 +66,11 @@ with sync_playwright() as p:
                     for view, route in [('home', '/'), ('components', '/browse/assets'), ('resources', '/browse'), ('detail', '/browse/assets?id=shadcn%2Fbutton')]:
                         visit(page, route)
                         if view == 'home':
-                            expect(page.locator('.home-component')).to_have_count(3)
-                            expect(page.locator('.home-component .asset-live-viewport[data-preview-state="ready"]').first).to_be_visible(timeout=20000)
+                            live = page.locator('.component-tile .asset-live-viewport').first
+                            expect(live).to_be_attached(timeout=15000)
+                            live.scroll_into_view_if_needed()
+                            expect(page.locator('.component-tile .asset-live-viewport[data-preview-state="ready"]').first).to_be_visible(timeout=20000)
+                            page.evaluate('window.scrollTo(0, 0)')
                             assert page.locator('[data-slot="sidebar"]').count() == 0
                         elif view == 'components':
                             wait_for_card(page)
@@ -75,8 +78,10 @@ with sync_playwright() as p:
                         elif view == 'resources':
                             expect(page.locator('.website-grid article').first).to_be_visible()
                         else:
-                            expect(page.get_by_role('dialog')).to_be_visible()
-                            expect(page.get_by_role('dialog').locator('.asset-live-viewport')).to_have_attribute('data-preview-state', 'ready', timeout=20000)
+                            # A component opens as its own page: stage on the left, facts on the right.
+                            expect(page.get_by_role('heading', level=1)).to_have_text('Button')
+                            expect(page.locator('.ad-sin .asset-live-viewport')).to_have_attribute('data-preview-state', 'ready', timeout=20000)
+                            assert page.locator('[data-slot="sidebar"]').count() == 0
                         expect(page.locator('html')).to_have_class(theme)
                         page.wait_for_timeout(300)
                         page.screenshot(path=str(OUT / f'{view}-{theme}-{width}.png'), full_page=False)
@@ -84,39 +89,47 @@ with sync_playwright() as p:
                         assert geometry['scrollWidth'] <= width + 1, (view, width, geometry)
                         header = page.locator('.discovery-header').bounding_box()
                         assert header and abs(header['x']) < 1 and abs(header['width'] - width) < 1, header
-                        wordmark = page.locator('.discovery-wordmark').evaluate('el => ({weight: getComputedStyle(el).fontWeight, spacing: getComputedStyle(el).letterSpacing, font: getComputedStyle(el).fontFamily})')
-                        assert wordmark['weight'] == '500' and wordmark['spacing'] == '5px', wordmark
-                        assert 'Inter' in wordmark['font'], wordmark
+                        wordmark = page.locator('.discovery-wordmark').evaluate('el => ({weight: getComputedStyle(el).fontWeight, spacing: getComputedStyle(el).letterSpacing, size: getComputedStyle(el).fontSize, font: getComputedStyle(el).fontFamily})')
+                        # The spaced wordmark tracks at 0.3em at every size.
+                        assert wordmark['weight'] == '600' and abs(float(wordmark['spacing'][:-2]) - 0.3 * float(wordmark['size'][:-2])) < 0.05, wordmark
+                        assert 'Figtree' in wordmark['font'], wordmark
                         if view == 'components':
-                            card_style = page.locator('.asset-library-card').first.evaluate('el => ({border: getComputedStyle(el).borderTopWidth, radius: getComputedStyle(el).borderRadius, padding: getComputedStyle(el.querySelector(".asset-library-card-body")).padding})')
-                            assert card_style == {'border': '0px', 'radius': '16px', 'padding': '14px'}, card_style
+                            card_style = page.locator('.asset-library-card').first.evaluate('el => ({border: getComputedStyle(el).borderTopWidth, radius: getComputedStyle(el).borderRadius, padding: getComputedStyle(el.querySelector(".g-meta")).padding})')
+                            assert card_style == {'border': '0px', 'radius': '18px', 'padding': '14px 8px 6px'}, card_style
                             first = page.locator('.asset-library-card').first.bounding_box()
-                            assert first and first['y'] < (500 if width == 390 else 410), first
+                            assert first and first['y'] < (520 if width == 390 else 460), first
                             assert page.locator('.discovery-featured').count() == 0
                             if width == 1440:
                                 cols = page.locator('.asset-library-grid').evaluate('el => getComputedStyle(el).gridTemplateColumns.split(" ").length')
-                                assert cols == 4, cols
+                                assert cols == 3, cols
                                 sidebar = page.locator('.discovery-sidebar').bounding_box()
                                 assert sidebar and sidebar['y'] >= header['height'], sidebar
                         if view == 'detail':
-                            box = page.get_by_role('dialog').bounding_box()
-                            assert box and box['width'] >= width * .9, box
+                            stage = page.locator('.ad-stage').bounding_box()
+                            aside = page.locator('.ad-head').bounding_box()
+                            assert stage and aside, (stage, aside)
+                            if width == 1440:
+                                assert stage['width'] > 760 and aside['x'] > stage['x'] + stage['width'], (stage, aside)
+                            else:
+                                assert stage['width'] >= width - 34 and aside['y'] < stage['y'], (stage, aside)
                         results.append({'view': view, 'theme': theme, 'width': width, 'headerWidth': header['width'], 'overflow': False})
                     visit(page, '/browse/assets')
                     wait_for_card(page)
                     with page.expect_response(lambda response: '/api/registry?' in response.url and 'action=search' in response.url and 'category=forms' in response.url) as filtered:
-                        page.locator('.component-category-chips').get_by_role('button', name='Forms', exact=True).click()
+                        page.locator('.component-category-chips').get_by_role('button', name=re.compile(r'^Forms( [0-9,]+)?$')).click()
                     assert filtered.value.status == 200
                     payload = filtered.value.json()
                     assert payload['items'] and payload['total'] > 0
                     selected = payload['items'][0]
                     expect(page).to_have_url(re.compile('category=forms'))
-                    expect(page.locator('.asset-library-result-count')).to_contain_text(f"{payload['total']} assets found")
+                    expect(page.locator('.asset-library-result-count')).to_contain_text(f"{payload['total']:,} result")
+                    expect(page.locator('.active-filter', has_text='Forms')).to_be_visible()
                     first_card = page.locator('.asset-library-card').first
                     expect(first_card.locator('.asset-library-card-link')).to_have_attribute('href', re.compile('id=' + re.escape(quote(selected['id'], safe=''))))
-                    expect(page.locator('.component-category-chips').get_by_role('button', name='Forms', exact=True)).to_have_attribute('aria-pressed', 'true')
-                    first_card.locator('.asset-library-save').click()
-                    expect(first_card.locator('.asset-library-save')).to_have_attribute('aria-pressed', 'true')
+                    expect(page.locator('.component-category-chips').get_by_role('button', name=re.compile(r'^Forms( [0-9,]+)?$'))).to_have_attribute('aria-pressed', 'true')
+                    save = first_card.get_by_role('button', name=f"Save {selected['name']}", exact=True)
+                    save.click()
+                    expect(first_card.get_by_role('button', name=f"Remove {selected['name']} from saved", exact=True)).to_have_attribute('aria-pressed', 'true')
                     visit(page, '/browse/assets?view=saved')
                     expect(page.locator('.asset-library-card')).to_have_count(1)
                     expect(page.locator('.asset-library-card-link')).to_have_attribute('href', re.compile('id=' + re.escape(quote(selected['id'], safe=''))))
@@ -126,18 +139,30 @@ with sync_playwright() as p:
                         page.keyboard.press('Escape')
                         expect(page.locator('[data-mobile="true"]')).to_be_hidden()
                         expect(page.get_by_role('button', name='Open navigation', exact=True)).to_be_focused()
-                        page.get_by_role('button', name='Open menu', exact=True).click()
-                        menu = page.get_by_role('navigation', name='Mobile navigation')
-                        menu.get_by_role('link', name='Components', exact=True).focus()
-                        page.keyboard.press('Escape')
-                        expect(menu).to_have_count(0)
-                        expect(page.get_by_role('button', name='Open menu', exact=True)).to_be_focused()
                     visit(page, '/')
+                    if width == 390:
+                        # The homepage has no sidebar; on a phone its header menu holds the site links.
+                        page.locator('.discovery-header').get_by_role('button', name='Open menu', exact=True).click()
+                        expect(page.locator('#discovery-mobile-navigation').get_by_role('link', name='Collections', exact=True)).to_be_visible()
+                        page.locator('.discovery-header').get_by_role('button', name='Close menu', exact=True).click()
+                    else:
+                        expect(page.locator('.discovery-header').get_by_role('link', name='Collections', exact=True)).to_be_visible()
+                    # One palette for the whole site: the shortcut opens it over the page and never navigates.
                     page.keyboard.press('Control+k')
+                    palette = page.get_by_role('dialog', name='Search UIXO', exact=True)
+                    expect(palette).to_be_visible()
+                    expect(palette.get_by_role('combobox', name='Search UIXO', exact=True)).to_be_focused()
+                    palette.get_by_role('combobox', name='Search UIXO', exact=True).fill('button')
+                    expect(palette.get_by_role('group', name='Components', exact=True).get_by_role('option').first).to_be_visible()
+                    page.keyboard.press('Escape')
+                    expect(palette).to_be_hidden()
+                    assert urlparse(page.url).path == '/', page.url
+                    # The hero search keeps its own "/" shortcut.
+                    page.keyboard.press('/')
                     search = page.get_by_role('searchbox', name='Search components', exact=True)
                     expect(search).to_be_focused()
                     search.fill('button')
-                    page.locator('.hero-search').get_by_role('button').click()
+                    page.locator('.hm-search').get_by_role('button', name='Search', exact=True).click()
                     expect(page).to_have_url(re.compile('/browse/assets\\?q=button'))
                     wait_for_card(page)
                     assert not errors, errors

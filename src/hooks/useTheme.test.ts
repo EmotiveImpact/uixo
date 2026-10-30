@@ -22,24 +22,24 @@ describe('useTheme', () => {
     vi.unstubAllGlobals();
   });
 
-  it('defaults to dark when the system has no light preference', () => {
+  it('defaults to dark when nothing is stored', () => {
     mockPrefersLight(false);
     const { result } = renderHook(() => useTheme());
     expect(result.current.light).toBe(false);
     expect(document.documentElement.classList.contains('dark')).toBe(true);
   });
 
-  it('follows a system light preference when nothing is stored', () => {
+  it('stays dark by default even when the system prefers light', () => {
     mockPrefersLight(true);
-    const { result } = renderHook(() => useTheme());
-    expect(result.current.light).toBe(true);
-  });
-
-  it('prefers a stored choice over the system preference', () => {
-    mockPrefersLight(true);
-    localStorage.setItem(THEME_KEY, JSON.stringify('dark'));
     const { result } = renderHook(() => useTheme());
     expect(result.current.light).toBe(false);
+  });
+
+  it('keeps a stored light choice', () => {
+    mockPrefersLight(false);
+    localStorage.setItem(THEME_KEY, JSON.stringify('light'));
+    const { result } = renderHook(() => useTheme());
+    expect(result.current.light).toBe(true);
   });
 
   it('persists the choice and mirrors it onto <html>', () => {

@@ -1,0 +1,47 @@
+/* ElevenLabs UI's own globals, unchanged, with the harness around them. */
+@import '../vendor/elevenlabs-ui/styles/globals.css';
+@import '../stage.css';
+@import '@fontsource/geist/400.css';
+@import '@fontsource/geist/500.css';
+@import '@fontsource/geist/600.css';
+@import '@fontsource/geist-mono/400.css';
+@source '../vendor/elevenlabs-ui';
+@source '../examples/elevenlabs-ui';
+/* The provider's globals point this @source at its own node_modules; here it lives in ours. */
+@source '../node_modules/streamdown/dist/*.js';
+/* The site sets these through next/font (Geist and Geist Mono); the same faces come from
+   @fontsource here. */
+:root {
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+html[data-provider='elevenlabs-ui'],
+html[data-provider='elevenlabs-ui'] body,
+html[data-provider='elevenlabs-ui'] #root {
+  font-family: var(--font-sans);
+}
+/* Fitting the docs demos to a card. The docs preview is a wide, 450px-tall box; a card is
+   about 480 by 360. These change only the demo's outer box, never the component. */
+/* Its 600px minimum height centres the grid below a card's fold. */
+html[data-demo='elevenlabs-ui/matrix'] .demo-stage > div {
+  min-height: 0;
+  padding: 0;
+}
+/* A 400px card and a scrolling markdown pane: fill the card's height instead. */
+html[data-demo='elevenlabs-ui/conversation'] .demo-stage > *,
+html[data-demo='elevenlabs-ui/response'] .demo-stage > * {
+  height: calc(100vh - 40px);
+}
+/* The assistant's bubble is the secondary colour, which on the light tint all but vanishes.
+   The docs show it on the page colour inside a bordered preview, so give it that panel, and
+   keep its 400px cap within a card. */
+html[data-demo='elevenlabs-ui/message'] .demo-stage > div {
+  max-height: calc(100vh - 40px);
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+/* At card width the state buttons wrap to a second row; lay it out a little wider. */
+html[data-demo='elevenlabs-ui/bar-visualizer'] .demo-stage > * {
+  zoom: 0.85;
+}

@@ -98,8 +98,88 @@ export type Search = {
   limit: number;
   offset: number;
   saved: string[];
+  /** The searched words and phrases, one per group (kept for ranking output). */
   terms: string[];
+  /** What each term may match: synonyms, the singular and, for phrases, the joined form. */
+  groups: TermGroup[];
+  /** True turns off the spelling correction ("Search for accordian instead"). */
+  exact: boolean;
+  sort: 'relevant' | 'newest' | 'name';
 };
+/**
+ * One searched word or phrase. It matches an asset when any one alternative matches, and an
+ * alternative matches when every word in it appears in the asset's search text.
+ */
+export type TermGroup = { term: string; any: string[][] };
+
+/**
+ * Equivalent words and phrases (L-8). Keep it small and obvious: each group should be what a
+ * developer means by any of its entries. A query word or phrase found here matches any entry.
+ */
+export const SEARCH_SYNONYMS: readonly (readonly string[])[] = [
+  ['modal', 'dialog'],
+  ['datepicker', 'date picker', 'date-picker'],
+  ['toggle', 'switch'],
+  ['navbar', 'nav bar', 'navigation'],
+  ['dropdown', 'drop down', 'drop-down'],
+  ['toast', 'notification', 'snackbar', 'sonner'],
+  ['spinner', 'loader'],
+  ['popover', 'popup', 'pop up', 'pop-up'],
+  ['sidebar', 'side bar', 'sidenav', 'side nav'],
+  ['drawer', 'sheet'],
+  ['carousel', 'slideshow'],
+  ['combobox', 'autocomplete', 'typeahead'],
+  ['textfield', 'text field', 'textbox', 'text input'],
+  ['checkbox', 'check box'],
+  ['tooltip', 'tool tip'],
+  ['datagrid', 'data grid', 'data table'],
+  ['command palette', 'command menu', 'cmdk'],
+  ['pricing table', 'pricing section', 'pricing'],
+  ['otp', 'one time password', 'input otp'],
+  ['dark mode', 'theme switcher', 'theme toggle'],
+  ['marquee', 'ticker'],
+  ['typewriter', 'typing'],
+];
+const SYNONYM_WORDS = new Map<string, readonly string[]>();
+const SYNONYM_PHRASES: { words: string[]; group: readonly string[] }[] = [];
+for (const group of SEARCH_SYNONYMS)
+  for (const entry of group) {
+    const words = entry.split(' ');
+    if (words.length === 1) SYNONYM_WORDS.set(entry, group);
+    else SYNONYM_PHRASES.push({ words, group });
+  }
+SYNONYM_PHRASES.sort((a, b) => b.words.length - a.words.length);
+
+/** "cards" also finds "card"; a substring match on the singular still finds the plural. */
+export function singular(word: string): string {
+  return word.length >= 4 && word.endsWith('s') && !/(ss|us|is)$/.test(word)
+    ? word.slice(0, -1)
+    : word;
+}
+/** Group searched words into terms: phrases from the synonym list first, then single words. */
+export function termGroups(words: string[]): TermGroup[] {
+  const groups: TermGroup[] = [];
+  const of = (term: string, group: readonly string[]) => ({
+    term,
+    any: group.map((entry) => entry.split(' ')),
+  });
+  for (let i = 0; i < words.length;) {
+    const phrase = SYNONYM_PHRASES.find((entry) =>
+      entry.words.every((word, k) => words[i + k] === word),
+    );
+    if (phrase) {
+      groups.push(of(phrase.words.join(' '), phrase.group));
+      i += phrase.words.length;
+      continue;
+    }
+    const word = words[i++];
+    const group = SYNONYM_WORDS.get(word) ?? SYNONYM_WORDS.get(singular(word));
+    groups.push(group ? of(word, group) : { term: word, any: [[singular(word)]] });
+  }
+  return groups.filter(
+    (group, index) => groups.findIndex((other) => other.term === group.term) === index,
+  );
+}
 export class RegistryError extends Error {
   code: string;
   status: number;
@@ -210,11 +290,11 @@ export function parseSearch(input: unknown): Search {
   if (!format && /\bsvg\b/.test(q)) format = 'svg';
   if (!price && /\bfree\b/.test(q)) price = 'free';
   const stop = new Set(
-    'a an the find me for with and or to of that suitable works work good great best premium please component components assets asset react vue svg free commercially commercial use usable'.split(
+    'a an the find me for with and or to of that suitable works work good great best premium please component components assets asset react vue svg free commercially commercial use usable add my our your i we need want looking some something in on into is it this can you show give get make build create using like'.split(
       ' ',
     ),
   );
-  const terms = [
+  const words = [
     ...new Set(
       q
         .replace(/[^a-z0-9\s-]/g, ' ')
@@ -226,6 +306,7 @@ export function parseSearch(input: unknown): Search {
     .map(
       (term) => ({ icons: 'icon', monochrome: 'outline', navigation: 'navigation' })[term] ?? term,
     );
+  const groups = termGroups(words);
   return {
     q,
     provider: raw.provider ? identifier(raw.provider) : '',
@@ -244,7 +325,10 @@ export function parseSearch(input: unknown): Search {
     limit: integer(raw.limit, 24, 1, 48),
     offset: integer(raw.offset, 0, 0, 100000),
     saved: raw.saved ? strings(raw.saved, 200).map(identifier) : [],
-    terms,
+    terms: groups.map((group) => group.term),
+    groups,
+    exact: raw.exact === true || raw.exact === 'true',
+    sort: choice(raw.sort, ['relevant', 'newest', 'name'], 'relevant') as Search['sort'],
   };
 }
 export function validateAsset(input: unknown): Asset {

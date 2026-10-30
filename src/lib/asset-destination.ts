@@ -10,24 +10,41 @@ type AssetDestinationInput = {
   preview: { kind: 'image' | 'embed'; url?: string; label: string } | null;
 };
 
-const PROVIDER_HOMES: Record<string, string> = {
-  shadcn: 'https://ui.shadcn.com/',
-  lucide: 'https://lucide.dev/',
-  heroicons: 'https://heroicons.com/',
-  'magic-ui': 'https://magicui.design/',
-  'motion-primitives': 'https://motion-primitives.com/',
-  'simply-buttons': 'https://simply-buttons.vercel.app/',
-  animata: 'https://animata.design/',
-  'kibo-ui': 'https://www.kibo-ui.com/',
-  'kokonut-ui': 'https://kokonutui.com/',
-  evilcharts: 'https://evilcharts.com/',
-  '8bitcn': 'https://8bitcn.com/',
-  'cult-ui': 'https://cult-ui.com/',
-  neobrutalism: 'https://neobrutalism.dev/',
-  'elevenlabs-ui': 'https://ui.elevenlabs.io/',
-  'prompt-kit': 'https://www.prompt-kit.com/',
-  mapcn: 'https://mapcn.dev/',
+/** Provider names and home pages, so a page can still point somewhere when the catalogue is down. */
+const PROVIDERS: Record<string, { name: string; url: string }> = {
+  shadcn: { name: 'shadcn/ui', url: 'https://ui.shadcn.com/' },
+  lucide: { name: 'Lucide', url: 'https://lucide.dev/' },
+  heroicons: { name: 'Heroicons', url: 'https://heroicons.com/' },
+  'magic-ui': { name: 'Magic UI', url: 'https://magicui.design/' },
+  'motion-primitives': { name: 'Motion Primitives', url: 'https://motion-primitives.com/' },
+  'simply-buttons': { name: 'Simply Buttons', url: 'https://simply-buttons.vercel.app/' },
+  animata: { name: 'Animata', url: 'https://animata.design/' },
+  'kibo-ui': { name: 'Kibo UI', url: 'https://www.kibo-ui.com/' },
+  'kokonut-ui': { name: 'Kokonut UI', url: 'https://kokonutui.com/' },
+  evilcharts: { name: 'EvilCharts', url: 'https://evilcharts.com/' },
+  '8bitcn': { name: '8bitcn/ui', url: 'https://8bitcn.com/' },
+  'cult-ui': { name: 'Cult UI', url: 'https://cult-ui.com/' },
+  neobrutalism: { name: 'Neobrutalism Components', url: 'https://neobrutalism.dev/' },
+  'elevenlabs-ui': { name: 'ElevenLabs UI', url: 'https://ui.elevenlabs.io/' },
+  'prompt-kit': { name: 'prompt-kit', url: 'https://www.prompt-kit.com/' },
+  mapcn: { name: 'mapcn', url: 'https://mapcn.dev/' },
+  'flowbite-react': { name: 'Flowbite React', url: 'https://flowbite-react.com/' },
+  'heroui-web': { name: 'HeroUI Web', url: 'https://www.heroui.com/' },
 };
+const PROVIDER_HOMES: Record<string, string> = Object.fromEntries(
+  Object.entries(PROVIDERS).map(([id, provider]) => [id, provider.url]),
+);
+
+/**
+ * The provider behind an asset id such as "magic-ui/shimmer-button", from the id alone:
+ * its demo's own page when we know it, otherwise the provider's home page.
+ */
+export function providerPageFromId(id: string): { name: string; url: string } | null {
+  const provider = PROVIDERS[id.split('/')[0]];
+  if (!provider) return null;
+  const demo = demos[id as keyof typeof demos] as { sourceUrl?: string } | undefined;
+  return { name: provider.name, url: safeAssetUrl(demo?.sourceUrl) ?? provider.url };
+}
 
 function assetSlug(asset: AssetDestinationInput): string {
   return asset.id.slice(asset.providerId.length + 1);

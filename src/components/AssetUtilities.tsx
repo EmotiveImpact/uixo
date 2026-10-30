@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { auth } from '../lib/auth';
+import { ConnectAgent } from './ConnectAgent';
 import { assetHref, EMPTY_ASSET_QUERY, registryRequest, safeAssetUrl } from '../lib/asset-library';
 import type { AssetQuery, AssetRecord, ProviderRecord } from '../lib/asset-library';
 type Row = {
@@ -81,14 +82,6 @@ export function AssetUtilities({ view }: { view: AssetQuery['view'] }) {
       setBusy(false);
     }
   }
-  async function copy(value: string) {
-    try {
-      await navigator.clipboard.writeText(value);
-      setNotice('Copied.');
-    } catch {
-      setNotice('Select and copy the text below.');
-    }
-  }
   if (view === 'guide')
     return (
       <section className="asset-utility">
@@ -116,49 +109,8 @@ export function AssetUtilities({ view }: { view: AssetQuery['view'] }) {
     );
   if (view === 'connect')
     return (
-      <section className="asset-utility">
-        <div className="asset-detail-columns">
-          <section>
-            <h2>Bring UIXO into your workflow.</h2>
-            <p>
-              Your agent can search the same catalogue and inspect its source, licence and
-              installation guidance.
-            </p>
-            <label>Remote MCP endpoint</label>
-            <pre>{window.location.origin}/api/mcp</pre>
-            <button onClick={() => void copy(window.location.origin + '/api/mcp')}>
-              Copy endpoint
-            </button>
-            <h3>Local connection</h3>
-            <p>From the UIXO repository with dependencies installed:</p>
-            <pre>npm run registry:mcp</pre>
-            <p>
-              Protected Vercel previews require deployment access. Use an accessible deployment
-              endpoint for your coding client. Acquisition tools return instructions; they do not
-              install code.
-            </p>
-          </section>
-          <section>
-            <h2>Tools for your agent</h2>
-            {[
-              ['search_assets', 'Find assets by intent, framework and licence.'],
-              ['inspect_asset', 'Read variants, dependencies and provenance.'],
-              ['get_preview', 'Get available source previews.'],
-              ['check_compatibility', 'Compare declared project requirements.'],
-              ['resolve_asset', 'Find an authorised source.'],
-              ['acquire_asset', 'Get installation guidance for your approval.'],
-              ['get_source_health', 'Inspect stored source evidence and coverage.'],
-              ['list_asset_collections', 'Find published editorial selections.'],
-              ['inspect_asset_collection', 'Read a typed selection and its curator notes.'],
-            ].map(([name, description]) => (
-              <div className="asset-evidence" key={name}>
-                <code>{name}</code>
-                <p>{description}</p>
-              </div>
-            ))}
-          </section>
-        </div>
-        <p role="status">{notice}</p>
+      <section className="asset-utility asset-utility-connect">
+        <ConnectAgent />
       </section>
     );
   return (

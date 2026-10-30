@@ -1,5 +1,5 @@
 import { afterEach, beforeAll, expect, it, vi } from 'vitest';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { AssetDetail } from './AssetDetail';
 import { EMPTY_ASSET_QUERY, readAssetQuery, assetHref } from '../lib/asset-library';
 beforeAll(() => {
@@ -87,7 +87,6 @@ it('restores licence evidence, saving, automatic acquisition and compatibility i
     <AssetDetail
       id={asset.id}
       nameOf={() => 'Lucide'}
-      close={() => {}}
       query={{ ...EMPTY_ASSET_QUERY, framework: 'react' }}
       saved={false}
       toggleSave={toggleSave}
@@ -101,9 +100,11 @@ it('restores licence evidence, saving, automatic acquisition and compatibility i
   );
   expect(screen.getByText('Redistribution')).toBeTruthy();
   expect(screen.getByText('Upstream SVG ↗')).toBeTruthy();
-  fireEvent.click(screen.getByText('Save asset'));
+  fireEvent.click(screen.getByRole('button', { name: 'Save' }));
   expect(toggleSave).toHaveBeenCalledOnce();
-  fireEvent.change(screen.getByLabelText('Choose a variant'), { target: { value: 'svg' } });
+  const variants = screen.getByRole('group', { name: 'Choose a variant' });
+  expect(within(variants).getAllByRole('button')).toHaveLength(2);
+  fireEvent.click(within(variants).getByRole('button', { name: /Framework agnostic · SVG/ }));
   await screen.findByText('npm install svg');
   fireEvent.click(screen.getByText('Check compatibility'));
   await screen.findByText('Dependencies to add: lucide-react');
@@ -112,4 +113,142 @@ it('restores licence evidence, saving, automatic acquisition and compatibility i
       true,
     ),
   );
+});
+
+it('offers Customise only for curated demos, and the code follows the chosen props', async () => {
+  class Observer {
+    observe() {}
+    disconnect() {}
+  }
+  vi.stubGlobal('ResizeObserver', Observer);
+  vi.stubGlobal('IntersectionObserver', Observer);
+  const shimmer = {
+    id: 'magic-ui/shimmer-button',
+    providerId: 'magic-ui',
+    slug: 'shimmer-button',
+    name: 'Shimmer Button',
+    kind: 'component',
+    category: 'buttons',
+    price: 'free',
+    tags: [],
+    description: 'A button with a shimmering light.',
+    sourceUrl: 'https://github.com/magicuidesign/magicui',
+    verifiedAt: '2026-09-14',
+    preview: null,
+    licence: {
+      expression: 'MIT',
+      commercial: 'allowed',
+      redistribution: 'allowed',
+      note: '',
+      sourceUrl: 'https://github.com/magicuidesign/magicui/LICENSE.md',
+    },
+    variants: [
+      {
+        id: 'react',
+        framework: 'react',
+        format: 'tsx',
+        css: 'tailwind',
+        dependencies: [],
+        acquisition: { kind: 'registry', url: 'https://magicui.design/r/shimmer-button.json' },
+      },
+    ],
+  };
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(async (url: string) => {
+      const action = new URL(url, 'https://uixo.test').searchParams.get('action');
+      return {
+        ok: true,
+        headers: new Headers({ 'content-type': 'application/json' }),
+        json: async () =>
+          action === 'asset'
+            ? shimmer
+            : {
+                status: 'ready',
+                message: '',
+                url: shimmer.sourceUrl,
+                command: {
+                  executable: 'npx',
+                  arguments: ['shadcn', 'add', 'https://magicui.design/r/shimmer-button.json'],
+                },
+                executed: false,
+              },
+      };
+    }),
+  );
+  render(
+    <AssetDetail
+      id={shimmer.id}
+      nameOf={() => 'Magic UI'}
+      query={EMPTY_ASSET_QUERY}
+      saved={false}
+      toggleSave={() => {}}
+    />,
+  );
+  expect(await screen.findByRole('heading', { name: 'Customise' })).toBeTruthy();
+  expect(screen.queryByRole('group', { name: 'Choose a variant' })).toBeNull();
+  // Sliders say what they change and in which unit.
+  const duration = screen.getByRole('slider', { name: 'shimmerDuration, seconds' });
+  expect(duration.getAttribute('aria-valuetext')).toMatch(/^[0-9.]+ seconds?$/);
+  expect(screen.getByRole('slider', { name: 'borderRadius, pixels' })).toBeTruthy();
+  expect(screen.getByRole('table')).toBeTruthy();
+  expect((await screen.findAllByText(/components\.json/)).length).toBe(2);
+  // One line under the install block says what the project needs and that UIXO has not run it.
+  const prerequisite = document.querySelector('.ad-prereq')!;
+  expect(prerequisite.textContent).toContain(
+    'Needs shadcn set up (components.json). UIXO has not run this command.',
+  );
+  expect(
+    within(prerequisite as HTMLElement)
+      .getByRole('link')
+      .getAttribute('href'),
+  ).toBe('#ad-before');
+  fireEvent.click(screen.getByRole('button', { name: 'shimmerColor #c4b5fd' }));
+  fireEvent.click(screen.getByRole('tab', { name: 'Code' }));
+  expect(screen.getByRole('tab', { name: 'Code' }).getAttribute('aria-selected')).toBe('true');
+  expect(screen.getByLabelText('Source of shimmer-button-demo.tsx').textContent).toContain(
+    'shimmerColor="#c4b5fd"',
+  );
+});
+
+it('turns a failed load into a way forward, with the technical reason behind Details', async () => {
+  let calls = 0;
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(async () => {
+      calls += 1;
+      return {
+        ok: false,
+        status: 500,
+        headers: new Headers({ 'content-type': 'text/plain' }),
+        json: async () => ({}),
+      };
+    }),
+  );
+  render(
+    <AssetDetail
+      id="magic-ui/shimmer-button"
+      nameOf={() => 'Magic UI'}
+      query={EMPTY_ASSET_QUERY}
+      saved={false}
+      toggleSave={() => {}}
+    />,
+  );
+  expect(
+    await screen.findByRole('heading', { level: 1, name: 'We could not load this component.' }),
+  ).toBeTruthy();
+  expect(screen.getByText('Your link is fine. Try again in a moment.')).toBeTruthy();
+  expect(screen.getByRole('link', { name: /View on Magic UI/ }).getAttribute('href')).toMatch(
+    /^https:\/\/magicui\.design\//,
+  );
+  expect(screen.getByRole('link', { name: 'Browse components' })).toBeTruthy();
+  // The developer sentence is kept, but only behind the disclosure.
+  const details = screen.getByText('Details').closest('details')!;
+  expect(details.open).toBe(false);
+  expect(within(details).getByText(/returned 500 without JSON/)).toBeTruthy();
+  const visible = document.body.textContent!.replace(details.textContent!, '');
+  expect(visible).not.toMatch(/registry|500|JSON/i);
+  const before = calls;
+  fireEvent.click(screen.getByRole('button', { name: 'Try again' }));
+  await waitFor(() => expect(calls).toBeGreaterThan(before));
 });

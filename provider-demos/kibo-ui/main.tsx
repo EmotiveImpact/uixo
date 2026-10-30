@@ -1,6 +1,7 @@
 import React, { Component, Suspense, lazy, useEffect, type ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { KIBO_PREVIEW_REF, KIBO_REVIEWED_COMPONENTS } from '../../shared/reviewed-previews';
+import { handleStageFocus, reportContentSize } from '../../shared/preview-stage';
 import './styles.css';
 
 const examples = import.meta.glob('./vendor/apps/docs/examples/*.tsx');
@@ -24,6 +25,10 @@ function setTheme(theme: unknown) {
   document.documentElement.dataset.theme = theme;
 }
 setTheme(params.get('theme') === 'light' ? 'light' : 'dark');
+// Card stages paint a tinted field behind the demo; stage=clear keeps this page transparent.
+const clearStage = params.get('stage') === 'clear';
+if (clearStage) document.documentElement.dataset.stage = 'clear';
+if (clearStage) handleStageFocus(id);
 window.addEventListener('message', (event) => {
   if (event.source === parent && event.data?.type === 'uixo-preview-theme')
     setTheme(event.data.theme);
@@ -53,7 +58,13 @@ function Ready() {
       document.documentElement.dataset.previewReady = 'true';
       notify('ready');
     });
-    return () => cancelAnimationFrame(timer);
+    const stopReporting = clearStage
+      ? reportContentSize(id, () => document.querySelector('.demo-stage'))
+      : undefined;
+    return () => {
+      cancelAnimationFrame(timer);
+      stopReporting?.();
+    };
   }, []);
   return null;
 }

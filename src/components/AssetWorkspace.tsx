@@ -4,6 +4,7 @@ import { NotFound } from './NotFound';
 import { COMPONENT_CATEGORIES } from '../../shared/component-categories';
 import { SiteFooter } from './SiteFooter';
 import { useSidebarPreference } from '../hooks/useSidebarPreference';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatedSidebarInset, AnimatedSidebarProvider } from './motion/animated-sidebar';
 import { AppSidebar } from './AppSidebar';
@@ -13,6 +14,10 @@ import { AppDialog } from './AppDialog';
 import { PageHeading } from './PageHeading';
 import { AssetUtilities } from './AssetUtilities';
 import { AssetLibrary } from './AssetLibrary';
+import { ResourceGrid } from './ResourceGrid';
+import { SavedTabs } from './SavedTabs';
+import { resources } from '../data';
+import { DEFAULT_LIST_ID } from '../types';
 import { SaveSyncNotice } from './SaveSyncNotice';
 import { useAuth } from '../hooks/useAuth';
 import { useAssetSaves } from '../hooks/useAssetSaves';
@@ -57,6 +62,7 @@ export function AssetWorkspace() {
   } = useAuth();
   const {
     lists,
+    toggleSaved: toggleSavedWebsite,
     remove,
     syncStatus: listSyncStatus,
     syncError: listSyncError,
@@ -78,21 +84,6 @@ export function AssetWorkspace() {
     window.addEventListener('popstate', read);
     return () => window.removeEventListener('popstate', read);
   }, []);
-  useEffect(() => {
-    const focusSearch = (event: KeyboardEvent) => {
-      if (
-        (event.metaKey || event.ctrlKey) &&
-        event.key.toLowerCase() === 'k' &&
-        !modal &&
-        !query.id
-      ) {
-        event.preventDefault();
-        searchRef.current?.focus();
-      }
-    };
-    window.addEventListener('keydown', focusSearch);
-    return () => window.removeEventListener('keydown', focusSearch);
-  }, [modal, query.id]);
   const navigate = useCallback((changes: Partial<AssetQuery>, reset = false) => {
     setQuery((current) => {
       const next = { ...(reset ? EMPTY_ASSET_QUERY : current), ...changes };
@@ -107,6 +98,16 @@ export function AssetWorkspace() {
     setMobileOpen(false);
   }, []);
   const go = (changes: Parameters<typeof routeToHref>[0]) => navigateInApp(routeToHref(changes));
+  const followInApp = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    navigateInApp(href);
+  };
+  const [websiteNotice, setWebsiteNotice] = useState('');
+  const savedWebsiteIds = lists.find((list) => list.id === DEFAULT_LIST_ID)?.resourceIds ?? [];
+  const savedWebsites = savedWebsiteIds
+    .map((id) => resources.find((resource) => resource.id === id))
+    .filter((resource) => resource !== undefined);
   const openCategory = (category: string, sub: string | null = null) =>
     go({ ...EMPTY_ROUTE, category, sub });
   const intelligence = [
@@ -118,6 +119,9 @@ export function AssetWorkspace() {
   ].includes(query.view);
   const privateWorkspace = ['health', 'operations', 'collection-editor'].includes(query.view);
   const utility = ['connect', 'guide', 'review', 'scout', 'jobs'].includes(query.view);
+  // A component's own page is full width, without the catalogue sidebar, as in the mockup.
+  // Shared links from collections (view=collections&id=…) open the same page.
+  const detailPage = Boolean(query.id) && !privateWorkspace && !utility;
   const titles: Record<string, string> = {
     health: 'Registry health',
     operations: 'Registry operations',
@@ -132,9 +136,9 @@ export function AssetWorkspace() {
   const title =
     titles[query.view] ||
     (query.view === 'sources'
-      ? 'UI libraries'
+      ? 'Component sources'
       : query.view === 'saved'
-        ? 'Saved assets'
+        ? 'Saved'
         : COMPONENT_CATEGORIES.find((entry) => entry.id === query.category)?.label ||
           (query.kind === 'icon-pack'
             ? 'Icon packs'
@@ -143,6 +147,7 @@ export function AssetWorkspace() {
               : query.kind === 'component'
                 ? 'Components'
                 : 'Components & assets'));
+  useDocumentTitle(query.view === 'sources' ? 'Component sources' : title);
   const hasFilters = Boolean(
     query.q ||
     query.kind ||
@@ -164,6 +169,8 @@ export function AssetWorkspace() {
     >
       <TopBar
         catalogue="assets"
+        sidebarless={detailPage}
+        onSignIn={authAvailable && settled && !user ? () => setModal('signin') : undefined}
         light={light}
         onToggleTheme={toggleTheme}
         onOpenModal={setModal}
@@ -186,81 +193,100 @@ export function AssetWorkspace() {
         }
       />
       <div className="catalogue-body">
-        <AppSidebar
-          publicMode={!privateWorkspace && !utility}
-          assetQuery={query}
-          onNavigateAssets={navigate}
-          category={null}
-          sub={null}
-          listId={null}
-          openSection={null}
-          lists={lists}
-          onAssets
-          assetView={query.view}
-          registryCurator={isCurator}
-          onChooseAssetView={(view) => navigate({ view }, true)}
-          onSavedAssets={query.view === 'saved'}
-          onShowSavedAssets={() => navigate({ view: 'saved' }, true)}
-          savedAssetCount={assetSaves.saved.length}
-          assetKind={query.kind}
-          assetCategory={query.category}
-          onChooseAssetCategory={(category) =>
-            navigate({
-              kind: 'component',
-              category,
-              view: query.view === 'saved' ? 'saved' : 'assets',
-              offset: 0,
-              id: '',
-            })
-          }
-          onChooseAssetKind={(kind) =>
-            navigate({
-              kind,
-              category: '',
-              view: query.view === 'saved' ? 'saved' : 'assets',
-              offset: 0,
-              id: '',
-            })
-          }
-          assetProviders={assetProviders}
-          onShowAll={() => go({ ...EMPTY_ROUTE })}
-          homeHref="/browse"
-          onChooseList={(listId) => go({ ...EMPTY_ROUTE, listId })}
-          onDeleteList={remove}
-          onChooseCategory={openCategory}
-          onChooseSub={openCategory}
-          onSubmit={() => setModal('submit')}
-        />
+        {!detailPage && (
+          <AppSidebar
+            publicMode={!privateWorkspace && !['review', 'scout', 'jobs'].includes(query.view)}
+            assetQuery={query}
+            onNavigateAssets={navigate}
+            category={null}
+            sub={null}
+            listId={null}
+            openSection={null}
+            lists={lists}
+            onAssets
+            assetView={query.view}
+            registryCurator={isCurator}
+            onChooseAssetView={(view) => navigate({ view }, true)}
+            onSavedAssets={query.view === 'saved'}
+            onShowSavedAssets={() => navigate({ view: 'saved' }, true)}
+            savedAssetCount={assetSaves.saved.length}
+            assetKind={query.kind}
+            assetCategory={query.category}
+            onChooseAssetCategory={(category) =>
+              navigate({
+                kind: 'component',
+                category,
+                view: query.view === 'saved' ? 'saved' : 'assets',
+                offset: 0,
+                id: '',
+              })
+            }
+            onChooseAssetKind={(kind) =>
+              navigate({
+                kind,
+                category: '',
+                view: query.view === 'saved' ? 'saved' : 'assets',
+                offset: 0,
+                id: '',
+              })
+            }
+            assetProviders={assetProviders}
+            onShowAll={() => go({ ...EMPTY_ROUTE })}
+            homeHref="/browse"
+            onChooseList={(listId) => go({ ...EMPTY_ROUTE, listId })}
+            onDeleteList={remove}
+            onChooseCategory={openCategory}
+            onChooseSub={openCategory}
+            onSubmit={() => setModal('submit')}
+            onSignIn={authAvailable && settled && !user ? () => setModal('signin') : undefined}
+          />
+        )}
         <a className="skip-link" href="#main">
           Skip to content
         </a>
-        <AnimatedSidebarInset className="site-main asset-workspace" id="main" tabIndex={-1}>
-          <PageHeading
-            title={title}
-            subtitle={
-              intelligence
-                ? 'Source-backed selections and evidence from the UIXO registry.'
-                : utility
-                  ? 'One library. Your workflow.'
-                  : 'Components, icon packs, and fonts from trusted sources. Preview them, inspect the details, and go straight to the original.'
-            }
-            canClear={hasFilters}
-            onClear={() => navigate({ view: query.view }, true)}
-          />
+        <AnimatedSidebarInset
+          className={`site-main asset-workspace ${detailPage ? 'is-detail-page' : ''}`}
+          id="main"
+          tabIndex={-1}
+        >
+          {!detailPage && (
+            <PageHeading
+              title={title}
+              subtitle={
+                intelligence
+                  ? 'Source-backed selections and evidence from the UIXO registry.'
+                  : query.view === 'connect'
+                    ? 'Add UIXO to your editor, then ask for a component by name.'
+                    : utility
+                      ? 'One library. Your workflow.'
+                      : query.view === 'saved'
+                        ? assetSaves.accountBacked
+                          ? 'What you save is kept in your account, on every device.'
+                          : 'What you save stays in this browser. Sign in to keep it on every device.'
+                        : query.kind === 'icon-pack'
+                          ? 'Complete icon libraries from their makers, with the licence for each.'
+                          : query.kind === 'font'
+                            ? 'Typefaces from trusted sources, with the licence for each.'
+                            : 'Try each one right here, then install it in one line.'
+              }
+              canClear={hasFilters && (intelligence || utility)}
+              onClear={() => navigate({ view: query.view }, true)}
+            />
+          )}
           <RegistryReadiness />
           <SaveSyncNotice
-            label="Asset favourites"
+            label="Saved components"
             status={assetSaves.syncStatus}
             error={assetSaves.syncError}
             onRetry={assetSaves.retrySync}
           />
           <SaveSyncNotice
-            label="Website favourites"
+            label="Saved websites"
             status={listSyncStatus}
             error={listSyncError}
             onRetry={retryListSync}
           />
-          {intelligence ? (
+          {intelligence && !detailPage ? (
             privateWorkspace && !settled ? (
               <p role="status">Checking account…</p>
             ) : privateWorkspace && !isCurator ? (
@@ -282,70 +308,105 @@ export function AssetWorkspace() {
               <AssetUtilities key={query.view} view={query.view} />
             )
           ) : (
-            <AssetLibrary
-              query={query}
-              navigate={navigate}
-              density={density}
-              assetSaves={assetSaves}
-              discovery={
-                <DiscoveryControls
-                  assetSearch
-                  catalogue="assets"
-                  showDiscovery={!utility}
-                  searchRef={searchRef}
-                  search={query.q}
-                  onSearchChange={(q) =>
-                    navigate({
-                      q,
-                      offset: 0,
-                      view: query.view === 'sources' ? 'assets' : query.view,
-                    })
+            <>
+              {query.view === 'saved' && (
+                <SavedTabs
+                  tab={query.tab}
+                  components={assetSaves.saved.length}
+                  websites={savedWebsites.length}
+                  onChoose={(tab) => navigate({ view: 'saved', tab }, true)}
+                />
+              )}
+              {query.view === 'saved' && query.tab === 'websites' ? (
+                <div role="tabpanel" id="saved-panel" aria-labelledby="saved-tab-websites">
+                  {savedWebsites.length ? (
+                    <ResourceGrid
+                      density={density}
+                      resources={savedWebsites}
+                      lists={lists}
+                      onOpen={(resourceId) => go({ ...EMPTY_ROUTE, resourceId })}
+                      onToggleSaved={(id) => {
+                        const resource = savedWebsites.find((entry) => entry.id === id);
+                        toggleSavedWebsite(id);
+                        setWebsiteNotice(resource ? `Removed ${resource.name} from saved.` : '');
+                      }}
+                      onSelectCategory={(category) => openCategory(category)}
+                    />
+                  ) : (
+                    <section className="asset-library-empty">
+                      <h2>No saved websites yet.</h2>
+                      <p>Use the bookmark on any website or library to keep it here.</p>
+                      <a href="/browse" onClick={(event) => followInApp(event, '/browse')}>
+                        Browse websites and libraries
+                      </a>
+                    </section>
+                  )}
+                  <p className="sr-only" role="status">
+                    {websiteNotice}
+                  </p>
+                </div>
+              ) : (
+                <AssetLibrary
+                  query={query}
+                  navigate={navigate}
+                  density={density}
+                  assetSaves={assetSaves}
+                  savedWebsites={
+                    query.view === 'saved' && savedWebsites.length
+                      ? {
+                          count: savedWebsites.length,
+                          show: () => navigate({ view: 'saved', tab: 'websites' }, true),
+                        }
+                      : undefined
                   }
-                  price={
-                    (query.price === 'free'
-                      ? 'Free'
-                      : query.price === 'paid'
-                        ? 'Paid'
-                        : 'All') as PriceFilter
-                  }
-                  onPriceChange={(price) =>
-                    navigate({ price: price === 'All' ? '' : price.toLowerCase(), offset: 0 })
+                  discovery={
+                    <DiscoveryControls
+                      assetSearch
+                      catalogue="assets"
+                      showDiscovery={!utility}
+                      placeholder={
+                        query.category
+                          ? `Search ${(COMPONENT_CATEGORIES.find((entry) => entry.id === query.category)?.label ?? 'components').toLowerCase()}`
+                          : query.kind === 'component'
+                            ? 'Search components'
+                            : undefined
+                      }
+                      searchRef={searchRef}
+                      search={query.q}
+                      onSearchChange={(q) =>
+                        navigate({
+                          q,
+                          exact: false,
+                          offset: 0,
+                          view: query.view === 'sources' ? 'assets' : query.view,
+                        })
+                      }
+                      price={
+                        (query.price === 'free'
+                          ? 'Free'
+                          : query.price === 'paid'
+                            ? 'Paid'
+                            : 'All') as PriceFilter
+                      }
+                      onPriceChange={(price) =>
+                        navigate({ price: price === 'All' ? '' : price.toLowerCase(), offset: 0 })
+                      }
+                      commercial={{
+                        value: query.commercial,
+                        onChange: (commercial) => navigate({ commercial, offset: 0 }),
+                      }}
+                    />
                   }
                 />
-              }
-            />
-          )}
-          <SiteFooter count={null} assets>
-            <nav aria-label="Asset workspace links">
-              <a href="/browse/assets?view=collections">Asset collections</a>
-              {isCurator && (
-                <>
-                  <a href="/browse/assets?view=health">Registry health</a>
-                  <a href="/browse/assets?view=operations">Operations board</a>
-                  <a href="/browse/assets?view=collection-editor">Collection editorial</a>
-                </>
               )}
-              <a
-                href="/browse/assets?view=guide"
-                onClick={(event) => {
-                  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-                  event.preventDefault();
-                  navigate({ view: 'guide' }, true);
-                }}
-              >
-                How to use UIXO
-              </a>
-              <a
-                href="/browse/assets?view=connect"
-                onClick={(event) => {
-                  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-                  event.preventDefault();
-                  navigate({ view: 'connect' }, true);
-                }}
-              >
-                Connect your AI agent
-              </a>
-              {isCurator && (
+            </>
+          )}
+          <SiteFooter>
+            {isCurator && (
+              <nav aria-label="Curator links">
+                <a href="/browse/assets?view=health">Registry health</a>
+                <a href="/browse/assets?view=operations">Operations board</a>
+                <a href="/browse/assets?view=collection-editor">Collection editorial</a>
                 <a
                   href="/admin"
                   onClick={(event) => {
@@ -356,8 +417,8 @@ export function AssetWorkspace() {
                 >
                   Admin workspace
                 </a>
-              )}
-            </nav>
+              </nav>
+            )}
           </SiteFooter>
         </AnimatedSidebarInset>
       </div>

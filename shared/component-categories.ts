@@ -13,6 +13,7 @@ export const COMPONENT_CATEGORIES = [
   { id: 'backgrounds', label: 'Backgrounds' },
   { id: 'media', label: 'Media' },
   { id: 'motion', label: 'Motion' },
+  { id: 'ai', label: 'AI & chat' },
   { id: 'other', label: 'Other' },
 ] as const;
 export function componentCategory(slug: string, providerId = ''): string {
@@ -50,5 +51,56 @@ export function componentCategory(slug: string, providerId = ''): string {
       /cool-mode|blur-fade|animated|morph|transition|spring|magnetic|tilt|in-view|cursor|pointer|trail|orbit|disclosure/,
     ],
   ];
-  return rules.find(([, pattern]) => pattern.test(slug))?.[0] ?? 'other';
+  return (
+    rules.find(([, pattern]) => pattern.test(slug))?.[0] ??
+    LATER_RULES.find(([, pattern]) => pattern.test(slug))?.[0] ??
+    'other'
+  );
 }
+
+/**
+ * A second pass for names the first rules leave in Other, mostly from the libraries added
+ * in October 2026. It runs only after the first rules miss, so it never moves a component
+ * the first rules already placed.
+ */
+const LATER_RULES: [string, RegExp][] = [
+  ['data-display', /^widget-/],
+  ['motion', /list-menu-animation|shape-shifter|hover-interaction/],
+  [
+    'ai',
+    /^ai-|prompt|chain-of-thought|chat|conversation|^message|reasoning|^response|thinking-bar|^tool$|^source$|system-message|feedback-bar|jsx-preview|^markdown$|transcript|voice|^orb$|waveform|visualizer|audio-player|scrub-bar|^matrix$|speech-bubble/,
+  ],
+  [
+    'forms',
+    /autocomplete|color-(area|field|picker|swatch)|combo-box|date-?(field|picker|range)|fieldset|file-upload|floating-label|number-field|search-field|search-bar|time-field|tag-group|list-box|rating|halo-(field|search|segmented|dropzone)|attachment|poll|questionnaire|nlabel|clipboard|apple-keyboard/,
+  ],
+  ['overlays', /dropdown|modal|side-panel|floating-panel|lightbox/],
+  [
+    'navigation',
+    /navbar|footer|mega-menu|smooth-tab|^link$|direction|sibling-focus-nav|speed-dial|flower-menu/,
+  ],
+  [
+    'feedback',
+    /banner|loader|preloader|meter|timer|onboarding|security-checkpoint|health|mana-bar|xp-bar|wizard|currency-transfer/,
+  ],
+  [
+    'text',
+    /blockquote|typography|kbd|heading|type-writer|rolling-number|marker|announcement-ribbon/,
+  ],
+  [
+    'data-display',
+    /^list|timeline|kanban|commit-graph|vote|voting|^widget-|chip|file-icons|^map$|heatmap|^hr$/,
+  ],
+  [
+    'backgrounds',
+    /bg-|fractal|circuit|glass|flow-field|grid-beam|dithering|liquid-metal|radial-gradient|guides|svg-bands|lightboard|bubbles|shape-hero|fibonacci|edge-blur/,
+  ],
+  [
+    'media',
+    /illustration|icon|apple-|mac-screen|dynamic-island|mock-browser|^s\d+$|squiggle|svg-shapes|^bubble$|fluid-ai/,
+  ],
+  [
+    'layout',
+    /expandable|sticky-section|stacked-sections|section-pricing|^hero-|marketing-hero|surface|scroll-shadow|^steps$|fluid/,
+  ],
+];

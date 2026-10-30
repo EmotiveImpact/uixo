@@ -1,0 +1,14 @@
+/* prompt-kit's own globals, unchanged, with the harness around them. */
+@import '../vendor/prompt-kit/app/globals.css';
+@import '../stage.css';
+@source '../vendor/prompt-kit';
+/* The site sets these through next/font; the demo uses the same faces' system fallbacks. */
+:root {
+  --font-inter: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-geist-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+html[data-provider='prompt-kit'],
+html[data-provider='prompt-kit'] body,
+html[data-provider='prompt-kit'] #root {
+  font-family: var(--font-inter);
+}
