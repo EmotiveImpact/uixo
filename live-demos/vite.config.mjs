@@ -48,6 +48,10 @@ export default defineConfig({
               },
             );
         }
+        // cult-ui's globe uses cobe 2 (globe.update); magic-ui's uses cobe 0.6. Each
+        // gets the major version its own source was written for.
+        if (source === 'cobe' && importer?.includes('/vendor/cult-ui/'))
+          return this.resolve('cobe-v2', importer, { skipSelf: true });
       },
     },
     {
@@ -75,6 +79,7 @@ export default defineConfig({
     alias: {
       'next/link': path.join(root, 'adapters/link.tsx'),
       'next/image': path.join(root, 'adapters/image.tsx'),
+      'next/navigation': path.join(root, 'adapters/navigation.tsx'),
       'next-themes': path.join(root, 'adapters/theme.tsx'),
       'next/font/google': path.join(root, 'adapters/font-google.ts'),
     },

@@ -5548,5 +5548,1530 @@
     "path": "neobrutalism/hooks/use-mobile.ts",
     "sha256": "ad0936f84f1df79d3697bfbff9c18f8ad58431c1cbaf2359c6a853b0fcc9f28b",
     "sourceUrl": "https://github.com/ekmas/neobrutalism-components/blob/3306a802724874a85f93079702b2795370a279d4/src/hooks/use-mobile.ts"
+  },
+  {
+    "path": "cult-ui/LICENSE.md",
+    "sha256": "78045e58dfd5f039ad350ad293da2ad9a2c0362b82dadb069b1c10be382ddac7",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/LICENSE.md"
+  },
+  {
+    "path": "cult-ui/registry/default/example/agent-suggest-card-stack-demo.tsx",
+    "sha256": "ad0fa2ce63bd787a7ee0343c7c69f94701c531849aada875e7ed78b62d9a7042",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/agent-suggest-card-stack-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/ai-blob-warp-demo.tsx",
+    "sha256": "b7773614e16e156b2ae4cf1d672aeb39305507ebafd3356a8ccde0f523610823",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/ai-blob-warp-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/ai-instructions-demo.tsx",
+    "sha256": "ad27fecf482041eb01a3cad5cb3bfc6bc1ad157c2f818bc5caf95fcf7e2c253b",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/ai-instructions-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/analytics-chart-demo.tsx",
+    "sha256": "93e7cf2827ca4c876619d161179106e2604b9840d3eff29676a8612d38901ed9",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/analytics-chart-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/apple-iphone-17-pro-demo.tsx",
+    "sha256": "0f082d382cefef9f0bde3aa4533aedb021491fb222a69d2d98549910c9154024",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/apple-iphone-17-pro-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/apple-keyboard-demo.tsx",
+    "sha256": "469eb3037577f6b0e0d162573ebcfaad3b4a8eb42654f589766fa53af4e6249b",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/apple-keyboard-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/apple-pro-display-xdr-demo.tsx",
+    "sha256": "6a1e9bb315360238c4c7f197cca187a52edad7e1f07409bb88242e4c925d284f",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/apple-pro-display-xdr-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/apple-watch-ultra-demo.tsx",
+    "sha256": "5d02df4f1078ab989a7a3dc1365556aadd4b860308d1f507394293d5c1119393",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/apple-watch-ultra-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/bg-animate-button-demo.tsx",
+    "sha256": "a789824a519e276795202cd89ec00ecc3d6de621f6b36d3b7fdc876c13fad03b",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/bg-animate-button-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/bg-animated-fractal-dot-grid-demo.tsx",
+    "sha256": "83915212c446fefad6bc670f701a8cec12b9ef19bf346330e8b9ac921acc4d75",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/bg-animated-fractal-dot-grid-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/bg-image-texture-demo.tsx",
+    "sha256": "da2f50f21ec073e67746382e02dcf3798f965538efab785431f860032cf02c90",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/bg-image-texture-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/bg-media-demo.tsx",
+    "sha256": "752ee6e5046631dceb769f6b496ca41575afe108c498719cc96693affa0485d0",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/bg-media-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/border-beam-button-demo.tsx",
+    "sha256": "0304f10c8d0946079769ff7fa6788c3d1fb92af47e1cea5713544e05dc7e8f4a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/border-beam-button-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/border-beam-card-demo.tsx",
+    "sha256": "cbd3cf5961370a4f2770256ac65b0c05953ba04bbc493c51fe6f60316c773e43",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/border-beam-card-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/border-beam-input-demo.tsx",
+    "sha256": "726f073dce23635c1d007de7ba07869a8da02504b74a9e4a141bffbd7ae90058",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/border-beam-input-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/canvas-fractal-grid-demo.tsx",
+    "sha256": "d6c6cf26f775a340597cc382b858ed42d42f1c410fad12743abea208975b47b8",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/canvas-fractal-grid-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/choice-poll-demo.tsx",
+    "sha256": "119e35b48838cdbe5fe0901bb5bf3c83c8f757d746fbf9977032877f7eeacce8",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/choice-poll-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/circuit-board-demo.tsx",
+    "sha256": "d2b04629e1b0e5bde68ced42fbb69593fcaf6a9dc596ff8b308b4003c07a87f6",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/circuit-board-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/code-block-demo.tsx",
+    "sha256": "9547d2148a82c5f23b2828508f9878838e6041b6a65c53cd9df461ffe334f102",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/code-block-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/collab-avatar-demo.tsx",
+    "sha256": "73d47eadcd1fffe01f57413af09bec7d6121eff38363dd8369deec0cbf171040",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/collab-avatar-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/collab-toolbar-demo.tsx",
+    "sha256": "e3edd725a856501e785b7f7b478a8931b8c4c3de1251dc164d393d5ba4c530ab",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/collab-toolbar-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/color-picker-demo.tsx",
+    "sha256": "3ca3b49d1a21b02884ea005f88688c71cd2927db5c7fe4c2efdaf67866af5098",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/color-picker-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/copy-button-demo.tsx",
+    "sha256": "c71d26519f42d293165ad011ccffa293d7f89392bf60e0e543621b8b74052fe5",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/copy-button-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/cosmic-button-demo.tsx",
+    "sha256": "332ec6fec68759f73733a5c4e59e8459cbea72d3b302dac1ecef75c88b96b99b",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/cosmic-button-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/cutout-card-demo.tsx",
+    "sha256": "50e8de7843cfc542b33be814c14960e54f448acd0c48f6073d518d644bac1876",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/cutout-card-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/direction-aware-tabs-demo.tsx",
+    "sha256": "bdeba77aa8d097f79e922801e97aed9eccd25d2348c54eb58c0c71201bac9fdb",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/direction-aware-tabs-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/distorted-glass-demo.tsx",
+    "sha256": "4b739c63f86dee1d447d8ed949a90b32118366710949ddb94dd97a0a0a811ddf",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/distorted-glass-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/dither-image-demo.tsx",
+    "sha256": "8e9120fc679e849fe537471fcfb2d5f506110bda340526c6ec52433b0943261f",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/dither-image-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/dock-demo.tsx",
+    "sha256": "792f4b424d9725a50f2160d0f3e32fadbdc4fed716436d2a8bc20c7c6596b783",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/dock-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/dynamic-island-demo.tsx",
+    "sha256": "d153837d97336cf905ee4ed119678c3b77d832978ea8bf1c05fe96ffd5e24794",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/dynamic-island-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/edge-blur-demo.tsx",
+    "sha256": "49bee3dc478e2e73985032c2cb289ef8e54466d51c21b58ea323b08bf6b09d9d",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/edge-blur-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/expandable-demo.tsx",
+    "sha256": "d4a1562c3fdae5150ba195420226a69679cd605b69b1a7a7aebd4f5051a3fbf6",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/expandable-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/expandable-screen-demo.tsx",
+    "sha256": "acb97502338ade4c4781979b0458e9e04e9b716f58a368687eccf2b022ee08ad",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/expandable-screen-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/family-button-demo.tsx",
+    "sha256": "a8d35bdb7d854458fd7dd2f5ec5a42501a2a20000dbcb416c2d426bc186439dd",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/family-button-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/family-drawer-demo.tsx",
+    "sha256": "f47db90f7d4cd1dc8e721f79f5723c94196888b47b1721a9edc22a700725b272",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/family-drawer-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/feature-carousel-demo.tsx",
+    "sha256": "5b7d87b481d9bc1377296c1e1d9ba2938cc81d25415f1f67ed673cb53ae8bf48",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/feature-carousel-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/feature-poll-demo.tsx",
+    "sha256": "1ee2830014848a5424123e27ab82008c4d875a2f315732610316dae058cc7b13",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/feature-poll-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/feature-sticky-section-demo.tsx",
+    "sha256": "6e230661d1b30a3d0ec3cad29dbad859a43a016449decbe35a89ffd0c70f09f4",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/feature-sticky-section-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/feature-voting-demo.tsx",
+    "sha256": "92919c22dc0e7f3141502f997d44a1e430c918b58bb0160bfba7fe0d458e82f5",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/feature-voting-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/file-icons-demo.tsx",
+    "sha256": "43dcd10dcd1c399e4959e3f747ed5372cba63411353c6c5ebf2c5b490cf3caa9",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/file-icons-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/floating-panel-demo.tsx",
+    "sha256": "87a534e3b64e477eab8909eef2f529a33918d5f8258ac574c046b46389f0aa3e",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/floating-panel-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/fluid-ai-workloads-demo.tsx",
+    "sha256": "9a3d6909760a0e6fc530b61a1d503b68e0242135cd8a5432dcb78541a79efede",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/fluid-ai-workloads-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/fluted-glass-demo.tsx",
+    "sha256": "7ba6c7ff7427d62d0e0c54d6fbd4d4235258bb5e1b252e1039b3b26cb9dcccf4",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/fluted-glass-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/folded-card-demo.tsx",
+    "sha256": "b5af4827a8ed22b4d3378cd93607a098ad63d2333b4360c2dc298b0d11e4d36a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/folded-card-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/gateway-endpoint-illustration-demo.tsx",
+    "sha256": "17d60a40648455bcca2298b2cb4836712e3caeacd0e978acdd92d79f7ea6d2ae",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/gateway-endpoint-illustration-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/gateway-route-illustration-demo.tsx",
+    "sha256": "f39f8d258a64b5f32796bb882ce078b1b20608dc405187864c94e19b435d4c72",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/gateway-route-illustration-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/gateway-svg-illustration-demo.tsx",
+    "sha256": "c7ca93eb20b8921c9db5abbf720e2d69f9e798eec52eb999b1411f288cf30332",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/gateway-svg-illustration-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/globe-demo.tsx",
+    "sha256": "eadaa82ee2782d4037ff23310c6363b3838ba8f42b32f6cd6657d0511829bb00",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/globe-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/gradient-button-group-demo.tsx",
+    "sha256": "84d19026232f6be1b90d907e65eb0aacb8d3f6399f21541d60b586b4be96eda8",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/gradient-button-group-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/gradient-heading-demo.tsx",
+    "sha256": "33ce40408689d5a2606e4a3800419cbc5109d9f62090b1ad1ec991c2ebe015c7",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/gradient-heading-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/grid-beam-demo.tsx",
+    "sha256": "2140f7f6b1331da14aae5e88d2bcbd47ad3881cd704bad726fde2515452e23ea",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/grid-beam-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-badge-demo.tsx",
+    "sha256": "1dfb0bbaa8a240b6560b751d872b508bceca93571e4bcaf78eff3317c7874545",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-badge-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-button-demo.tsx",
+    "sha256": "e5436ff41a95651790c50deef414c706ba1eefe04828d54bb7470d78ff50a447",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-button-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-card-demo.tsx",
+    "sha256": "4d92eeea8a0f621668d272e77fdbd3f2931c345445c8015e1170ba09e14ac847",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-card-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-dropzone-demo.tsx",
+    "sha256": "10ff19214f8541b927b9e93c911e9f9c93847194786bb835759c63cdae5f32be",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-dropzone-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-field-demo.tsx",
+    "sha256": "9791a8e358c52f949228f784ed6d55a148d90ba36e2a60dede407ac379270409",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-field-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-input-demo.tsx",
+    "sha256": "a795a632c3f40430dc42d8c145b074b89167fc4dc64a444b77363699c88fd318",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-input-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-notification-demo.tsx",
+    "sha256": "b02fea3a43ee5d95df7556f6572c35f487e61705176c9ff0668bfb15575eeeaf",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-notification-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-progress-demo.tsx",
+    "sha256": "3bfb754be895467d5ed26675b47797025e70e2d085c53a458b101a1507cb057c",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-progress-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-search-demo.tsx",
+    "sha256": "f8b031e2465221b9d02df7f0b47e7e8e575faeab9da1e0ddc6f601285777a9b3",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-search-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-segmented-demo.tsx",
+    "sha256": "6ab5b3ca2c0039c47cb6f2cb21a017e95710cc40c55a53826ad2cbcbdbd55666",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-segmented-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-select-demo.tsx",
+    "sha256": "4b517b416be3aadfebbc29145536f3b3bae20657f59b8d9996e56b59a77c8aa3",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-select-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-switch-demo.tsx",
+    "sha256": "7e566930b46e03143d955a0556407a73509ffe287cffcb40a2c7e122f6177914",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-switch-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-tabs-demo.tsx",
+    "sha256": "18262968b137e30b67682008190bbf643b51d43a32141275b153d066a0027428",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-tabs-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-toast-demo.tsx",
+    "sha256": "c89b02a8dd142f61ee29d037585c0fc0a4064ebec9635cd2d8a09eecc7f557e2",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-toast-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/halo-toggle-group-demo.tsx",
+    "sha256": "b35b422384d4462932482a0a39d1efad9ed41bacc4df775a045e58b4145f2003",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/halo-toggle-group-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/hero-color-panels-demo.tsx",
+    "sha256": "01169a3adede96e90509ee0f66cba922989bfa4d530d4c30c9ac3e2c070865b5",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/hero-color-panels-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/hero-dithering-demo.tsx",
+    "sha256": "99c7792c730d165a7d74e751c96a8843079fc92c4286944ae5ed323c5ca1f418",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/hero-dithering-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/hero-heatmap-demo.tsx",
+    "sha256": "8768d51a92cd6299ff478ae5bd595521850947b204bfeb5092471e5e4e82afd9",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/hero-heatmap-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/hero-liquid-metal-demo.tsx",
+    "sha256": "0733590ddb42d57349c9795253ee14230827679c61690bd5cd617b010f8bd526",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/hero-liquid-metal-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/hero-static-radial-gradient-demo.tsx",
+    "sha256": "3c84ac0cb2bb1607923f100acfb16d881450279539f14bf6a5b93931127ea8b4",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/hero-static-radial-gradient-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/hover-video-player-demo.tsx",
+    "sha256": "686e5973a6371487c2f496b2cd0d3f107ad05a7ad046552243ae643b5c71d6c2",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/hover-video-player-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/illustration-card-grid-demo.tsx",
+    "sha256": "e07694ba3ec68e6fa504364595ecd635dee352f980ab426be3c121f233096b5a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/illustration-card-grid-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/illustration-comment-bubble-demo.tsx",
+    "sha256": "eaeae1f3a00fbc2524b88c30db629b45d36660328360a1673ae178bbcc685d4c",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/illustration-comment-bubble-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/illustration-cursor-demo.tsx",
+    "sha256": "743e7449f45c98a37b73326e944fb164073b3fd8696a786e4b7594abfb628d2a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/illustration-cursor-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/illustration-fluid-rendering-demo.tsx",
+    "sha256": "458c75e741ac79a5dc44322f42a3de478c6feeab1df4dba69cc5fcc466bb6bb3",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/illustration-fluid-rendering-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/illustration-globe-vercel-demo.tsx",
+    "sha256": "90c4789bf24ca42a62aa9e24cd99ac3e32a0b122444fe8be27313aa0846ae621",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/illustration-globe-vercel-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/illustration-graph-demo.tsx",
+    "sha256": "bf45832ab03581cc4e5bfaa3917ef11eb092d5adb6f0fa9ded5fc83fdc0a4e46",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/illustration-graph-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/intro-disclosure-demo.tsx",
+    "sha256": "3d0b5873cb1b9ccdf397fd4b2f5b2ee6094dce6fbf1734b0e012f56458907a18",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/intro-disclosure-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/kanban-board-demo.tsx",
+    "sha256": "918b7eeae7d8cd2c2f64b23c13f470d64c7d3dcfe6bc0335c764c0d8add8a3a9",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/kanban-board-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/lightboard-demo.tsx",
+    "sha256": "0263a814d865e134208a7596ffa4267920dfff7939743b505a54fd1b27615b4b",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/lightboard-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/loading-carousel-demo.tsx",
+    "sha256": "5d0c977ec50b039c7b3f43d8becd9c578a7f00de3571384b99f5cf2c2e32daa1",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/loading-carousel-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/logo-carousel-demo.tsx",
+    "sha256": "7d9cd5474e8569216e3f36c19b969854035a5875f240ae68d6bc5b87b2419ea5",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/logo-carousel-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/mac-screen-demo.tsx",
+    "sha256": "08b118ceae296a4de2a9dbd1714d6545edbef26b29133e3a85922b726804a6f5",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/mac-screen-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/marketing-feature-code-demo.tsx",
+    "sha256": "c8d5d5b9bf033ab01468a063218b37308e2a3ad1739ab588b8bc2989caf3a085",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/marketing-feature-code-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/marketing-hero-analytics-demo.tsx",
+    "sha256": "898a5d969fc75ec5643ab2d6f3c79f7bb0fe8eebf93dac80d1cdb686d9f472d6",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/marketing-hero-analytics-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/merging-bubbles-demo.tsx",
+    "sha256": "fbdbfd8a0e30e9fbdeb97b909aecf90f99c21f8c4c28d151ef6bf2f6816e81aa",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/merging-bubbles-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/metal-button-demo.tsx",
+    "sha256": "16423b28592c82e5c11fbf9b5535bc5e9e1f53199e511206f76efb9ad01c275e",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/metal-button-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/minimal-card-demo.tsx",
+    "sha256": "d3365b0a3e56c451420769953602607394bb56109db164e74572a8dae38b7094",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/minimal-card-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/mock-browser-window-demo.tsx",
+    "sha256": "e2fa73ad85474a0042a889f9952b2d848e82347c7dc74b112f46d4769788ac62",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/mock-browser-window-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/morph-surface-demo.tsx",
+    "sha256": "60a992dbd55d0ad724bc81df1c335a03f70702f74bbd0855a210d31c3c8a916a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/morph-surface-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/neumorph-button-demo.tsx",
+    "sha256": "0e7dc2383dba2b15e42d3e70e7403babbc6758a28feb7fb39f394363bcc9eb14",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/neumorph-button-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/neumorph-eyebrow-demo.tsx",
+    "sha256": "f04bc0e8ea07b9a76013efcaa5e6fbf1e5c0b9229273324465c3410fa798c594",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/neumorph-eyebrow-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/onboarding-demo.tsx",
+    "sha256": "d20c9da2649c8ec288f9d48898d23cfbc354e738c675649c9d11e0145e870867",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/onboarding-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/organic-button-demo.tsx",
+    "sha256": "a208d34d041cc5baea4f56d72c59510d9d4d1000765d8a6c3bfd294ae661339f",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/organic-button-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/organic-card-demo.tsx",
+    "sha256": "e8f608b2f69ca7e07db1a662317657ce5ff4d191a66e3f471a7ed27cd6eeac59",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/organic-card-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/organic-card-small-demo.tsx",
+    "sha256": "73c94fd196c70fc29c19b205660b020a8b6c9b0c1c3447804f36f94b093b9ed8",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/organic-card-small-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/pixel-heading-character-demo.tsx",
+    "sha256": "cbf8f6ad04dbf1bc7b9bdaa4dc914f97f558c88254c081771affd9ec53dc130c",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/pixel-heading-character-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/pixel-heading-word-demo.tsx",
+    "sha256": "7a286dc0c81dbbac3904b89ec05895e30956e625f2e3067a922bead6e115c4fb",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/pixel-heading-word-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/pixel-paragraph-words-demo.tsx",
+    "sha256": "e0681186b690f3a1cdcc53b5e7577131ee1eeb28dbc863e510ef7fec4861a431",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/pixel-paragraph-words-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/pixel-paragraph-words-inverse-demo.tsx",
+    "sha256": "829c0ad5a2d8a2122bc36db7ea8ca9d93a412c6dcea43b7457ff92e367c7f647",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/pixel-paragraph-words-inverse-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/poll-widget-demo.tsx",
+    "sha256": "3d94664462fe0a959acaee526f60a85be29284d92691b16632c8e29217058aec",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/poll-widget-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/popover-demo.tsx",
+    "sha256": "0196b69496d5ca2e0a196b9743d88c88dd016650efc077a1675bfdf605e22445",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/popover-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/popover-form-demo.tsx",
+    "sha256": "4665e406972312677838f0593fe7d11990c920f86f5cc85c0769199895e5af39",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/popover-form-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/prompt-composer-demo.tsx",
+    "sha256": "2307992569ee0e541c02ebe7600b6f050a36ff9fd99b06d80cee5145ab71c787",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/prompt-composer-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/prompt-library-demo.tsx",
+    "sha256": "7314e61ea0d7cb1ca3adf79a0bb2693984eeaa06544b240b2a7b43a8cfa6937f",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/prompt-library-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/rolling-number-demo.tsx",
+    "sha256": "434038f34d5c6068040dc90698a0909625e6569b588031b22500991bf988d094",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/rolling-number-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/security-checkpoint-demo.tsx",
+    "sha256": "4def334dd1971b4133290b383a41f9990268d8acbc603201c95b87ee8c5d26f2",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/security-checkpoint-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/shader-lens-blur-demo.tsx",
+    "sha256": "3f2eeff75f652c156b0f33447fa3fcf2914bd974a00962850322dadcdad5b273",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/shader-lens-blur-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/shadow-card-demo.tsx",
+    "sha256": "6c2fa463992ee989ecb978b9ecdcfad2e4df4db41f6706ff582757828d2aaea1",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/shadow-card-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/shift-card-demo.tsx",
+    "sha256": "bf9bff9b783b11dd0000560e23b51ad36623ee2945fa8b596b20ea8c08cfd3e7",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/shift-card-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/side-panel-demo.tsx",
+    "sha256": "4d68ba2005dcac59a2a1fe9e0ef41a8f7c1ac7facc0d9d9d16cbbc301a0f5a79",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/side-panel-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/sortable-list-demo.tsx",
+    "sha256": "b74693274060d0038418f2cfb51b09c0725bdbf3431d6d1aade18a6a67145918",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/sortable-list-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/speech-bubble-demo.tsx",
+    "sha256": "c5f5d2795f9ab3fc15e0484379381d0016c963448949c2184e2ef5cbdcf6dffa",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/speech-bubble-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/squiggle-arrow-demo.tsx",
+    "sha256": "81d688c7ecd871558beb47fb4c69b25d5c936c7f68522119ae1aec6839590647",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/squiggle-arrow-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/stripe-bg-guides-demo.tsx",
+    "sha256": "bf8fd45acdb1da955cb14074622b300a663eb2b76449f336a4a71be1f533189d",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/stripe-bg-guides-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/svg-bands-demo.tsx",
+    "sha256": "19a0c41ee0a4a92639a7b2600eaaa629785d49550cf650d2f270189982593ace",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/svg-bands-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/svg-shapes-animated-demo.tsx",
+    "sha256": "5048b38e9d61df5b0e31f3a7ead356b58d4838ff7d8f883265d662226af28a01",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/svg-shapes-animated-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/svg-shapes-demo.tsx",
+    "sha256": "d025e27c071f9c0ffc3ad9e3b0dc2e0cf26b0dc4eed9859bf1181268b0287a65",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/svg-shapes-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/tabs-illustration-vercel-demo.tsx",
+    "sha256": "c42a84f955a1eb7628cddc8a7acc1fed961ad22f0128c33d783cb1c40f2932b2",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/tabs-illustration-vercel-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/terminal-animation-demo.tsx",
+    "sha256": "cae6d7ae70989e09720618252ec8cd8193ec23ff7c2a59a5ed7a2ff4dc72c6e8",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/terminal-animation-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/text-animate-demo.tsx",
+    "sha256": "334ccca14da78e4f5ea23da4963db61dd8f12654e61fb76bf23ba4df643cb253",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/text-animate-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/text-gif-demo.tsx",
+    "sha256": "33683b2287fdb9434ea61bd2b570183b473ad3dea82a470ef2baa0d0056742ac",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/text-gif-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/texture-button-demo.tsx",
+    "sha256": "3034c7bc17d07b1cf7fb363d411c313288ef49dfa896d46a4fceb8dcab5ba04d",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/texture-button-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/texture-card-demo.tsx",
+    "sha256": "def3954ce17f6cdfb2be1fe72e6439e9383c022be9b80b819a8033d4e521ad49",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/texture-card-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/texture-overlay-demo.tsx",
+    "sha256": "10810cd908d89be8a5354b8ca74c6fbc1f9ab59cad8225fd5eb4ad56b194836f",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/texture-overlay-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/three-d-carousel-demo.tsx",
+    "sha256": "9ae95c05dffa197b44fbc746680afd9554332aa1d6e95fdc2ae72de32eaf874a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/three-d-carousel-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/timer-demo.tsx",
+    "sha256": "8e9a8cde21efcb85621c22be3e8864ccc464417e4cc88fcf0742f7febc90173f",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/timer-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/toolbar-expandable-demo.tsx",
+    "sha256": "c5d5bc4ceff2fe5912d89eb3637770d84d61ded229f908d05e3627883d9f899a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/toolbar-expandable-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/tweet-grid-demo.tsx",
+    "sha256": "e590299ac56edd1714a575353f16a3049fb84b169606e47c7aa3e09a07333e50",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/tweet-grid-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/typewriter-demo.tsx",
+    "sha256": "111e3ec5b584086f134e3966cab4a1a88db07a94a9340c844dc75506ec10d899",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/typewriter-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/vote-tally-demo.tsx",
+    "sha256": "d255ee7d4c680749994a33f68b3116ed5b222682aca93f795f3bbc42583becfe",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/vote-tally-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/wizard-expandable-demo.tsx",
+    "sha256": "80c2ae1588dd2df076e153ca8845da2ff65b1d5976e555a938ffa1b880d41879",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/wizard-expandable-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/youtube-video-player-demo.tsx",
+    "sha256": "417ab3e7421e0e77904f14f6781644b989bf9ecdf991530429be5654c372a2d4",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/youtube-video-player-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/example/bg-animated-gradient-demo.tsx",
+    "sha256": "d624065bee32fcc23c6703a5069531e765905815b3e40c4a9ef6178d6c70d1c8",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/example/bg-animated-gradient-demo.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/base-select.tsx",
+    "sha256": "8c41b34014592e58e6fcd6482f6ab62d12659e66b34c5ae7133f3ce4d0d2f90e",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/base-select.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/base-tooltip.tsx",
+    "sha256": "593ab16b1b1c80c62678bf55862fc322ea60d0ad67b71b1299bce22981645b5c",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/base-tooltip.tsx"
+  },
+  {
+    "path": "cult-ui/styles/globals.css",
+    "sha256": "362f0469fbb763896b3f80fdf0cee2cd32856a176d23ff483a78fead299fd2d9",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/styles/globals.css"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/agent-suggest-card-stack.tsx",
+    "sha256": "1c38030b740de23496b416b2837994a45fa103fee4419cd9436abaa848921a40",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/agent-suggest-card-stack.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/ai-blob-warp.tsx",
+    "sha256": "f0fb2fc4b0c9ec13d3f8b881ed783c0ddfbc8ffb78ea6fe990a248dabe65c72c",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/ai-blob-warp.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/ai-instructions.tsx",
+    "sha256": "50999d8a90d7e3a7c23e644f955a82fa569a6de6d184861b3fe7449d7606fa38",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/ai-instructions.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/analytics-chart.tsx",
+    "sha256": "aced483e21c63f36d493ddf8596e4333537375ec0c5eb9668f88acae2b184add",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/analytics-chart.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/apple-iphone-17-pro.tsx",
+    "sha256": "109b4603be93e89906795f5e77d9a4e3112585a048f25af09cf6d5c098f14819",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/apple-iphone-17-pro.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/apple-keyboard.tsx",
+    "sha256": "0d454e2521d01d9454aa4cbd53b62d375a8d6f277016cfb5813ce1659feb5708",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/apple-keyboard.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/apple-pro-display-xdr.tsx",
+    "sha256": "6784b6142fb784ca685124e6f5764fc7305e8d6f988b3e58b5c5aecc82ac7f80",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/apple-pro-display-xdr.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/apple-watch-ultra.tsx",
+    "sha256": "1fb63623cdc47b14d6eb724cd9c676b10a39fac39b10a29563e99ff70282cea4",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/apple-watch-ultra.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/bg-animate-button.tsx",
+    "sha256": "8dba4420c01c87116e88cd766acb91ca33a824d9eec32ea12358c87c04888c4a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/bg-animate-button.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/accordion.tsx",
+    "sha256": "b61297e6bfe3a5bceaa64c777b34ace5df9e7c1c55dc35d71f1c0a5a6df72050",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/accordion.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/button.tsx",
+    "sha256": "e71b5513052f5b8b2d5b552c0e42c9489687d9717382d3ebfb13b3766957b3cc",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/button.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/card.tsx",
+    "sha256": "3c2453fd8279a56cbead87d1c235f83671b8551d0d4698530aac962a1552ff63",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/card.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/input.tsx",
+    "sha256": "f7b764f14bb6b7259225c20caaeefd112589820d940b73eba8df3549f90a649b",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/input.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/label.tsx",
+    "sha256": "08584ad1f61ec9a2dfb9aab6132555a9aa0df438c150b7057f47b9629e2ce9d9",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/label.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/select.tsx",
+    "sha256": "86f0040d28f6f271875e92c5530efdf2c5841d8bfcf8082cfc37b94c5189b399",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/select.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/slider.tsx",
+    "sha256": "193655c94b6182981ca9300f7ec2fbe86b8c631c39ac1e173bf4e232e24ba01d",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/slider.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/switch.tsx",
+    "sha256": "b425a30ee07595c2bfd857c0006bcfa3551b9d0975dc8e45c1057ac934518ee7",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/switch.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/use-toast.ts",
+    "sha256": "c38868044d75257a4881e7011f25dc5328cf8c8ca450dcd84d4ed88677b822f7",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/use-toast.ts"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/bg-animated-fractal-dot-grid.tsx",
+    "sha256": "a4ce8793b747858bd6d134c6ffcc67cf308a45dfadbc8d777186e15f77c8cc8b",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/bg-animated-fractal-dot-grid.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/bg-image-texture.tsx",
+    "sha256": "6d98c6cb281e5ec2abab44ee16fd6b2770f1b970c3db880b756068860631087e",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/bg-image-texture.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/bg-media.tsx",
+    "sha256": "f29727b7c0b7d83dda99b1f66b04d7d1933a20135f81d69b949c5ade1eccc9e1",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/bg-media.tsx"
+  },
+  {
+    "path": "cult-ui/lib/utils.ts",
+    "sha256": "7cf92ac6e9a70c0c68a993becf674ec7c373653bc5dc3379e366c352e5ee1a41",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/lib/utils.ts"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/border-beam-button.tsx",
+    "sha256": "8ad1421ddc8316f5e398bea13e1af738d7c521a9e64abb0c67cb8e0e341be9bc",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/border-beam-button.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/border-beam-card.tsx",
+    "sha256": "8810daef32c295ab0d7dbcc39baab49e2844a58d84da7f84505263896d0887a6",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/border-beam-card.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/border-beam-input.tsx",
+    "sha256": "fcb1b3e47c464b8c19302f171ecad364244731d679d581762ed7e3d4a4648411",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/border-beam-input.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/tabs.tsx",
+    "sha256": "9c84aa8ddb204b7220348fe05d08332a02fa3bf76134def78c570816fa480f6a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/tabs.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/canvas-fractal-grid.tsx",
+    "sha256": "33b1a319577bb367a137f4c90166328bb6ee5b828dbccf577b021293969994fa",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/canvas-fractal-grid.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/choice-poll.tsx",
+    "sha256": "070403fec259f28bbb01d8d12370bf8c5ed2fdf4dc72880e6f05b8d2d162257a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/choice-poll.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/circuit-board.tsx",
+    "sha256": "b7c7f6b68f408813e75ca5d88487407f098ea1ac97ee2192ac7257b5f59c3450",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/circuit-board.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/code-block.tsx",
+    "sha256": "6d6c66e50de2d975b6be32e30702b367a68f383595353e117016bf988251d281",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/code-block.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/collab-avatar.tsx",
+    "sha256": "550267a88e1980ee5b2bdbf7d18108af7a48eb855e1cbc8f713dcc4a5a00109e",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/collab-avatar.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/collab-toolbar.tsx",
+    "sha256": "fa5095fc644e30d371b66ecda04b9ae4846a6c4004c8175f46ac5c0ce201c9f2",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/collab-toolbar.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/tooltip.tsx",
+    "sha256": "bbca97ebc4ce6eab21442373f538f3918b9053dba4c234992cec02890a3d7242",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/tooltip.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/color-picker.tsx",
+    "sha256": "1507e886ae34ca0eef9bf07c262601ba891738fd803da768b2e0a168d74a2aec",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/color-picker.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/copy-button.tsx",
+    "sha256": "e8b2015121efcb5227bd315d1cb1c9bf99f86db99faa9be092a34255d4d37d30",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/copy-button.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/cosmic-button.tsx",
+    "sha256": "a3b0a8ba0787f97def6a4a97f0a674e663a114aa2dbe6d78c5e9f2769240ce65",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/cosmic-button.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/cutout-card.tsx",
+    "sha256": "abe47e900a9c7548119ecba3f11a7a92e96416d3861c72c2bf59500fa54446ef",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/cutout-card.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/direction-aware-tabs.tsx",
+    "sha256": "e0fd337557453325a9cfcd25c803aa5aa57d137ebccbe12658415c7162c6a260",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/direction-aware-tabs.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/distorted-glass.tsx",
+    "sha256": "f16df915a47d9e46c113b598d908f2579f6fd67cd7438d6fe2c2a27d0eb94e79",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/distorted-glass.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/dither-image.tsx",
+    "sha256": "e3fc0b115301e226ba7f1f50741829396826b723689964d072a11ecb5ebe53a9",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/dither-image.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/dock.tsx",
+    "sha256": "847ae57ac9e44e46f8e9927bc8a7feaf7d778af2d6f63b11853960237494467e",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/dock.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/badge.tsx",
+    "sha256": "07f5870d5369c4b4bc24b9a36487112c9305e08a8078cf7192134e45c9f580aa",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/badge.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/dynamic-island.tsx",
+    "sha256": "689da225bf220b36aeb277223c384aecc328ff2a268a4f13e1d9c17aef3b8e51",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/dynamic-island.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/edge-blur.tsx",
+    "sha256": "fdac17863eb28e2630f47df070ec3f22aa9e6a24a58c3d318b9e2f1a3df79862",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/edge-blur.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/avatar.tsx",
+    "sha256": "3a1e27fe039c4456cf822a5106308107886e9dde0acf58303fa3ab3309b5dfa1",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/avatar.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/expandable.tsx",
+    "sha256": "49470c2fe5badf937c3a9ff523aef703cf9da9853f667a54da437ed0609e59a7",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/expandable.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/textarea.tsx",
+    "sha256": "02a252fb4507866193844ad4c8dc1118a758a6079213289467c77af3173ce0c1",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/textarea.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/expandable-screen.tsx",
+    "sha256": "c62c706eece6f5a7be84071fc82d41e7631a136fecad04067363c92ef0872b6a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/expandable-screen.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/family-button.tsx",
+    "sha256": "63dd75f1441ae8dab0a27e6948746010f33f2776f22052a71621c60659919c03",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/family-button.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/family-drawer.tsx",
+    "sha256": "57d7520e6d643562049e615d8b903600f35f5a7f71a2e262f7d2e76eb34143c5",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/family-drawer.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/feature-carousel.tsx",
+    "sha256": "7112108fc87817ed9227dc3f09b8e6ac2f19986f11ad9542dd7f160288c37bb7",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/feature-carousel.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/feature-poll.tsx",
+    "sha256": "b5c4154381b9ad3caa41b59edc9eafad37802b02a722097a6e0427aa3aa2b0e9",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/feature-poll.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/feature-sticky-section.tsx",
+    "sha256": "de17c1613a2d1a29c79a45c5a9be686e7ccced0e52d4be3bb3b96c48d9a739bb",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/feature-sticky-section.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/feature-voting.tsx",
+    "sha256": "359f8443cdb6ab882e708658674517a7ebe9ea5145a52f9670a4dda5f3119280",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/feature-voting.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/file-icons.tsx",
+    "sha256": "7346ad90d14d351faa8a5df265f5e6821c2c639ca51862e83676425adcecca9f",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/file-icons.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/floating-panel.tsx",
+    "sha256": "009eaa383306d9d0566dc5a22f595f09dd1fe1f09c6f9b32c833c0dc75226533",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/floating-panel.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/fluid-ai-workloads.tsx",
+    "sha256": "9c768ed70bc030f2fbf37d41790cc34d3f588167aa76d92d679f72464781de54",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/fluid-ai-workloads.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/fluted-glass.tsx",
+    "sha256": "f936edd562efe1695b24070d27dc5013d8a2581102b5cc11904e60465c065429",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/fluted-glass.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/folded-card.tsx",
+    "sha256": "edd9e4c57428b9ff7aea0463fa3c51eb001b2b027e000931f1af179a9e0ced89",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/folded-card.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/gateway-endpoint-illustration.tsx",
+    "sha256": "bd54ec25bcc6c1bb8e841c4fae7d3ca63cc5bf022549b4cdcd559ae15dbdf057",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/gateway-endpoint-illustration.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/gateway-route-illustration.tsx",
+    "sha256": "b86b9dd4436280fa7fd210e2642d234639657e0de95303125dc3a74bcf226191",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/gateway-route-illustration.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/gateway-svg-illustration.tsx",
+    "sha256": "b4213e3e26b9e9f01522c45ab07d8dbda4170c8784aa67e5d1d99149155345f9",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/gateway-svg-illustration.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/globe.tsx",
+    "sha256": "dbe7294288eeaf198bc50b1a12c1c0d6462aaeaccd6d3d9f08225a2eb972f818",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/globe.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/gradient-button-group.tsx",
+    "sha256": "c73068d496dd802b1de03124d00453853b90adcdbd70a4d623a41814fc4e3f3e",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/gradient-button-group.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/gradient-heading.tsx",
+    "sha256": "59854e1929eef78748ed00806478c832cd00feb9bf55c7afa1d9283991848e25",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/gradient-heading.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/grid-beam.tsx",
+    "sha256": "7eb557a07a869dd12035c6b8e62ed42046ddf22d750ad2ff14a85186d160daed",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/grid-beam.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-badge.tsx",
+    "sha256": "6c2151105df1f2eeddf0132159e5a17bff2c4c805590ecdd4acba4573a4adbb0",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-badge.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-button.tsx",
+    "sha256": "219a9568613a4c730cc66a59d14d295ffbb1de5d10c1a46f28abb6e438d5e918",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-button.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-card.tsx",
+    "sha256": "a237b203bbcd5868cff3ee4bd44f955fd314adba3bb58ec5b0eef84ef8906059",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-card.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-dropzone.tsx",
+    "sha256": "80352081d422d1fa09a1e29434c5c1051042118d6ae8721e374547834f997b04",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-dropzone.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-field.tsx",
+    "sha256": "ef0234cff8e75ea37ec39863c9e14f35ac3301b790bd54601043e74ade3d1258",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-field.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-input.tsx",
+    "sha256": "4a7a48c35f916285c2f2f03dcae577831b3ed44cd127928c75f11fb82332bf85",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-input.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-notification.tsx",
+    "sha256": "89d200017f77f6fd920a680321e02b494675e54aebcbea8f67ceebd19538d18a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-notification.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-progress.tsx",
+    "sha256": "1ded8f484c68d9986771b2190e86044be629425d78a01b1ae1e32bf7d0e92ef9",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-progress.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-search.tsx",
+    "sha256": "397f06267866567dee2b2b406c50eb3762b4457e4ed12866a5761d0da1bf6a19",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-search.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-segmented.tsx",
+    "sha256": "5b5ae9a17f54c3f0737de398d8cf56bfb41feb45d63c5ac1166a668cad162663",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-segmented.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-select.tsx",
+    "sha256": "6af226e3356f63cd27e9ad4965feec0ba53996cd8e00f2d2e6217019d87e9392",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-select.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-switch.tsx",
+    "sha256": "47c98c595f19ce9d4578f35fd8b8ce36fd1e7c5ada82171b2ebc993e486159d0",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-switch.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-tabs.tsx",
+    "sha256": "c79f19215f9fce4e6089cf5532d577c1bedbc9f1153d9352a285d94237d4bc35",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-tabs.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-toast.tsx",
+    "sha256": "f5e46667438f9d737a1db865fea7ac4b80af346a216b1d996ad9d4be79879335",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-toast.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/halo-toggle-group.tsx",
+    "sha256": "79f7873a7829e3d9e573f6a087fdb79b7eb22addb90d74d14d5bf398b9c557e3",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/halo-toggle-group.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/hero-color-panel.tsx",
+    "sha256": "f23eac62f40237536400a40f5dc7a03064173182d16d4d39284ced7c283e9f72",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/hero-color-panel.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/hero-dithering.tsx",
+    "sha256": "dd2870bbe32e1185a1fd71a5c7e0f3620583cef12337b95b6c9ff0563ea1bc0c",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/hero-dithering.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/hero-heatmap.tsx",
+    "sha256": "8148c490c3e4834c2ff91e6044c09c2099417afa517c69018b08240424853cfd",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/hero-heatmap.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/hero-liquid-metal.tsx",
+    "sha256": "b0989179edf936caf1f40863dfae5d41d21164305ed1260c2a6f99570bd33988",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/hero-liquid-metal.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/hero-static-radial-gradient.tsx",
+    "sha256": "fa267af2b2d91c7bbccd93cddc24252944ac6a9f75b2a3cf5aa5339b6223aee4",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/hero-static-radial-gradient.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/hover-video-player.tsx",
+    "sha256": "c894f47301cf93ad259af91b08cc06c2eaccc06fcc6703ff62a19578dfce8190",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/hover-video-player.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/illustration-card-grid.tsx",
+    "sha256": "7e85562d3485cb0f8eb2180fd495e9697c6c585b90a431c7829d76afbf9924a8",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/illustration-card-grid.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/illustration-comment-bubble.tsx",
+    "sha256": "491d89da74eb1e7348ba85858ccf98561606079422d45daef290f2b7cb30a0a5",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/illustration-comment-bubble.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/illustration-cursor.tsx",
+    "sha256": "14f663fa126de29c511ef4187dba89a4debba95a64c7887c34554f4058015598",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/illustration-cursor.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/illustration-fluid-rendering.tsx",
+    "sha256": "5148ee74fa8dc6d363d7f31b1365972d23df37c99d8da5cf2e52d5fbdf1d5fda",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/illustration-fluid-rendering.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/illustration-globe-vercel.tsx",
+    "sha256": "042285c2fef351782363eefdf409794f657bae3d13c7e0993000ec2fa64af0f7",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/illustration-globe-vercel.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/illustration-graph.tsx",
+    "sha256": "7f66a53014e375bb459468910b58a2b7c0b84830001553cf2c331d0f429bce9b",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/illustration-graph.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/collapsible.tsx",
+    "sha256": "5f0a45d8f6ca72d37ed10bf0a85306158b67d7cbc386319186ce013ead9bc0a6",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/collapsible.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/intro-disclosure.tsx",
+    "sha256": "17da8f63ab151f4a8e35e2cff9ef11443210197632961bfa0599b79484240e21",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/intro-disclosure.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/kanban-board.tsx",
+    "sha256": "f20f840e05f22381a26c9e6c81de522000d282e1dae2a9664b62c2e839652c13",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/kanban-board.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/lightboard.tsx",
+    "sha256": "8e907af4245d45b0e9ba9f70e215b0b7c3af6a144b3f6316f3434e8be36039d5",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/lightboard.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/loading-carousel.tsx",
+    "sha256": "98bb2e4bf4784d92551903ff7a55fcd247e6219b10c3ef650b4617501f56a866",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/loading-carousel.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/logo-carousel.tsx",
+    "sha256": "f8d7b99efaa9a99762e470d5716b3552a79ccd4bfba9d5a6d3e5b7a5cc487a06",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/logo-carousel.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/mac-screen.tsx",
+    "sha256": "9165d4744d7884291f3fc4fafbdcff664aeda4796af95c05e466992180291496",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/mac-screen.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/marketing-feature-code.tsx",
+    "sha256": "5fbf839a4aaefdbf15472bd7da4eff604709af05aa5394edf64d009217ec896f",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/marketing-feature-code.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/marketing-hero-analytics.tsx",
+    "sha256": "28b0bbcab4421c4e26130fc8b378079e146e0af19c8c1aaa356d8c558154c4c7",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/marketing-hero-analytics.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/merging-bubbles.tsx",
+    "sha256": "aaabe1a15d7b1d8f2c5cada4104a5a6b6d530851f9e4a7cbf08c484e15d0c2e6",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/merging-bubbles.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/metal-button.tsx",
+    "sha256": "54a91e7e9404b1762117341fe3b3fece9c91296153130a973d8f3bc44a178c47",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/metal-button.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/minimal-card.tsx",
+    "sha256": "2177425eaf8c254af43ec4541a971cac746ac0eb0b9f2317e01fc09a6cca38ad",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/minimal-card.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/mock-browser-window.tsx",
+    "sha256": "6af8fe736e3b6c480469ee038b03b678ec6c403310916c661a28d8fe6fc49126",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/mock-browser-window.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/morph-surface.tsx",
+    "sha256": "f8ab774c836382307e1a298ff21398718489cbf21d29e77e7344d240dc58ebc9",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/morph-surface.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/neumorph-button.tsx",
+    "sha256": "cdd9ffecb52f32b20aef2fe665aa644099e07778b6c07dff41e7da87c78c2da8",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/neumorph-button.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/neumorph-eyebrow.tsx",
+    "sha256": "a688a0eb8f98e81c1c87e428ff08961309bdd395e373cb70af71a3e1ec642ceb",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/neumorph-eyebrow.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/dialog.tsx",
+    "sha256": "971d5b13a024fc22ef79e3509204e370e7e7782b14ff7e7eda60c5c17fb528cd",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/dialog.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/onboarding.tsx",
+    "sha256": "444e24307b013cb4383d9bcca5d0ecf5c8e0b51383d7d3f5aebf2eec2160c170",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/onboarding.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/organic-button.tsx",
+    "sha256": "21e576d377ad5a2e683b285c9e8cc9bba28349c0886d9abbcb27c073f073cb52",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/organic-button.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/organic-card.tsx",
+    "sha256": "92995d0105e07fa8032f666d7d000e70b83b63d0be912d16ab45b02901968496",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/organic-card.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/organic-card-small.tsx",
+    "sha256": "2b79856a146d31a6d358d4dcd6cf5a00f04c4b5c5a7969073eccf259475dfec4",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/organic-card-small.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/pixel-heading-character.tsx",
+    "sha256": "71979c13104ae9d636d8485779e623b72d68e2d35eece8d804f7b8e8f970638a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/pixel-heading-character.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/pixel-heading-word.tsx",
+    "sha256": "adae4abe0dccbe6b0af73cdc4acec61bfea1a20509a7a542434ec9a690d3b952",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/pixel-heading-word.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/pixel-paragraph-words.tsx",
+    "sha256": "fd3279054bf0364a3da91152698ad70d2f1b2fde5e8d9a20b559c2983d074d8f",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/pixel-paragraph-words.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/pixel-paragraph-words-inverse.tsx",
+    "sha256": "2375f7b5a74f6cbfefa18ac91c9eeb7f96b85f2d7a389160b4f36e1eab0ed782",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/pixel-paragraph-words-inverse.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/poll-widget.tsx",
+    "sha256": "054266cf23079b4ffb09a856430419dbe7e5961cb98c8715ac20aa122baed542",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/poll-widget.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/popover.tsx",
+    "sha256": "ec479560d0ef04af3eccb170d3b86f2bb9663b9edafecde9ea0fb3192077a557",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/popover.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/popover-form.tsx",
+    "sha256": "1f50e32a41444d84ea4cf317a23c68041f592be6a3645b20b8ff66eaa21a33b6",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/popover-form.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/prompt-composer.tsx",
+    "sha256": "6ce0d6e2acab06ce233184c90628c6e7ad536bad4d265449c43db95965f957d2",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/prompt-composer.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/prompt-library.tsx",
+    "sha256": "889169291e722bfa8d8048b6098425d8cf982d79f92a7f88350b306c96a68875",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/prompt-library.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/rolling-number.tsx",
+    "sha256": "baca6e6acf2a71334bd865218a44fe941cf7a786dd9fe95706253f9d7ebab39e",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/rolling-number.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/texture-card.tsx",
+    "sha256": "5a1084d98795fdd84b9802d545835604920f7550cbbb06afa809f3c246f8a33a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/texture-card.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/security-checkpoint.tsx",
+    "sha256": "360907db183d47e4fce50e186bd621f64b09ef9e0d88abac01e1b26926adaa95",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/security-checkpoint.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/popover.tsx",
+    "sha256": "c7acc7cf304dfff6bd858735a7e9b1b830e8c765fc71ede0c13579453fb8840a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/popover.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/separator.tsx",
+    "sha256": "d7136256942b5f3aca05bdc08a6b4fec7076121592fbc104dfbaf65a2f3efa80",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/separator.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/shader-lens-blur.tsx",
+    "sha256": "a81ae00aa54ede35f3b221707f775cfc17733fe4619debd8d294d5b61b9d8956",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/shader-lens-blur.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/shadow-card.tsx",
+    "sha256": "4fb8007dfd260e55d13262033539974471c68bddc3cb29047b03af61802fbe98",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/shadow-card.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/shift-card.tsx",
+    "sha256": "69baa5dd8c6350ff08ca08c5f8e8cd3c90e21b313245786a933aa5860fc4a43b",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/shift-card.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/texture-button.tsx",
+    "sha256": "85d839703231b7bf026cb334ade50abb969153b545ccb39af22fccf5de1ec978",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/texture-button.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/side-panel.tsx",
+    "sha256": "1d5eda0e84a4d16353ca6089d65aa6c339da943698813adf34154fcc96ad5979",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/side-panel.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/sortable-list.tsx",
+    "sha256": "6fd3712c00ba6d721b9481f3786c34a6d1b5eb3cdc8fd3c511bff208a51e55ee",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/sortable-list.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/speech-bubble.tsx",
+    "sha256": "d7aaa5df4aec8a60950fc4a300f2d35a2b1ec62e1f4e026de290c813f2d085c9",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/speech-bubble.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/squiggle-arrow.tsx",
+    "sha256": "61fa142ba6981771c169ec9b9e3224786ca4d1859954c92bce25ec9ee7dd4da4",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/squiggle-arrow.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/stripe-bg-guides.tsx",
+    "sha256": "f80022509cf638ab5c13bfcea942189c0d0acb0859d2744f2daa5323319a8aee",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/stripe-bg-guides.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/svg-bands.tsx",
+    "sha256": "2d6430b1c94e6b7ae8260285d3b46866e2afc4ff9ee13599148a8bac9d808d8d",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/svg-bands.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/svg-shapes-animated.tsx",
+    "sha256": "0c1e8cf69e2031dff544c54fba537eec93f809023a96e0d02e1c6260f1f355c9",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/svg-shapes-animated.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/svg-shapes.tsx",
+    "sha256": "3dde4b9306d861d3ece535be9d27d12c12b18b5e9e63e40a2335adcf58a1c4dc",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/svg-shapes.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/tabs-illustration-vercel.tsx",
+    "sha256": "1c8a114f23be85f9701a9e95078880b8bc4b9e5e8371d0e5c6c53140e1d2531d",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/tabs-illustration-vercel.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/terminal-animation.tsx",
+    "sha256": "d4aceb4fd0771718c06a514bf4a7fdcbb1cd40de0b3d91e0600efe4e77bd51c9",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/terminal-animation.tsx"
+  },
+  {
+    "path": "cult-ui/components/fade-in.tsx",
+    "sha256": "92e1383f239485d4c9208e514242cedf5d67f7f19eebc874ac0ffee2ae95d281",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/fade-in.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/text-animate.tsx",
+    "sha256": "32025e80bd4857cd539399c59e7cb934004b834519640cf4b9795b9f8ab4ca91",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/text-animate.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/text-gif.tsx",
+    "sha256": "9511d1d690f9a89ba0c1bc2828ef66e96f93f2ff6e4578c59b2f93baacba919d",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/text-gif.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/texture-overlay.tsx",
+    "sha256": "7ffa510c52760ff2f43d6e83ef7eca515e35ff8b29371bb83093d2325c473278",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/texture-overlay.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/three-d-carousel.tsx",
+    "sha256": "3f9b720cf86edbec294ad1f31bcbff4c003e8d975dbaec1aa6e78704ddbd4948",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/three-d-carousel.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/timer.tsx",
+    "sha256": "b10dd6f47386dd99303499cbbcf53c8f99a47702dfc76cf2cabb85abd46eca48",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/timer.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/toolbar-expandable.tsx",
+    "sha256": "33077d12a25dff3314e056728a04519a2c0337d82a491714f3fe2b6e1feb4ac6",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/toolbar-expandable.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/tweet-grid.tsx",
+    "sha256": "ae0e9354aa92d43bca0fb20250ad6bb4061bbf02b96242fb4c09484fee6919d2",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/tweet-grid.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/typewriter.tsx",
+    "sha256": "5d50c3c0e3ab4a578029b255f2b46badfc501095bf062d556c9c07caeb49ed6f",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/typewriter.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/vote-tally.tsx",
+    "sha256": "08deaa946fdfd9eff345992fe270ef55649e25710f481953dd7c1130abdd16da",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/vote-tally.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/wizard-expandable.tsx",
+    "sha256": "8a59e757854b2bad1ab00dc0f2d597f9e77d0b7c8590f40f9ac8da8a0946c44d",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/wizard-expandable.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/youtube-video-player.tsx",
+    "sha256": "9e767f1b488227ffa1599e9da76dddca7795f7f72d79a0a08f9769166ea72ce1",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/youtube-video-player.tsx"
+  },
+  {
+    "path": "cult-ui/registry/default/ui/bg-animated-gradient.tsx",
+    "sha256": "760a27ef7214369d764400d1d6b539d4172756ee9a24a058271b2557a22f6a42",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/registry/default/ui/bg-animated-gradient.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/command.tsx",
+    "sha256": "d3e12fafced34d6371455e9d519bf78d38fe31f05386f9f70c6a363e380b8cfa",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/command.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/hover-card.tsx",
+    "sha256": "103bbdc719c77580d4b7ed3087b0599a3903798aed876adc8ff80454c42ec72b",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/hover-card.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/toast.tsx",
+    "sha256": "db0482f8b6f6e3610df27458bc8b96028f854f0a485fb0b615be2274e67b5440",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/toast.tsx"
+  },
+  {
+    "path": "cult-ui/config/site.ts",
+    "sha256": "204248fa4d13b2e06f723b476304df36d80512d918b93ed4d7fa7c1a784f5962",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/config/site.ts"
+  },
+  {
+    "path": "cult-ui/components/ui/input-group.tsx",
+    "sha256": "09e0329c247fc8ffc7c8f371b2f55d04224e1a36fffc4dacf40312a23d2442ad",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/input-group.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/field.tsx",
+    "sha256": "eb12e290ea55d0a03a9bf22cdb7d1a815fe19340cfefdfed74d7074251fc409c",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/field.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/aspect-ratio.tsx",
+    "sha256": "0d8910ffc678a8093210e0e5d92d12d5c1d1da307c7c7e9000ad7f637fa93db5",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/aspect-ratio.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/checkbox.tsx",
+    "sha256": "b2d8f762fe7d717dc3d9e828b6b608ef1f225523a6bc3eb1946821aab9eadbc0",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/checkbox.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/drawer.tsx",
+    "sha256": "2fd76759b4b5663ef7ff38259a36ba10d999060b377911fdfc45a4b48c9eb95a",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/drawer.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/progress.tsx",
+    "sha256": "840a02d3e0a8989b8ecb074ca547eb36e0fc0e38c8d1294b7514e8e61f56489e",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/progress.tsx"
+  },
+  {
+    "path": "cult-ui/components/ui/carousel.tsx",
+    "sha256": "a15ea7a9044a7f0f9712a7d5ed0c1a603c7aeaf708782b972307966a0cc7b004",
+    "sourceUrl": "https://github.com/nolly-studio/cult-ui/blob/67a66c6ac1cd240914ba688a907611b3437a7a2b/apps/www/components/ui/carousel.tsx"
   }
 ]
