@@ -106,7 +106,7 @@ export const PROVIDERS: Provider[] = [
     approved: true,
     selectedAt: '2026-10-07T00:00:00.000Z',
     rationale:
-      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Captured previews are pending.',
+      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Every component runs a live demo from the provider, built from pinned source.',
   },
   {
     id: 'evilcharts',
@@ -123,7 +123,7 @@ export const PROVIDERS: Provider[] = [
     approved: true,
     selectedAt: '2026-10-07T00:00:00.000Z',
     rationale:
-      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Captured previews are pending.',
+      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Every component runs a live demo from the provider, built from pinned source.',
   },
   {
     id: '8bitcn',
@@ -140,7 +140,7 @@ export const PROVIDERS: Provider[] = [
     approved: true,
     selectedAt: '2026-10-07T00:00:00.000Z',
     rationale:
-      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Captured previews are pending.',
+      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Every component runs a live demo from the provider, built from pinned source.',
   },
   {
     id: 'cult-ui',
@@ -331,7 +331,7 @@ export const PROVIDERS: Provider[] = [
     approved: true,
     selectedAt: '2026-10-07T00:00:00.000Z',
     rationale:
-      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Captured previews are pending.',
+      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Every component runs a live demo from the provider, built from pinned source.',
   },
   {
     id: 'neobrutalism',
@@ -348,7 +348,7 @@ export const PROVIDERS: Provider[] = [
     approved: true,
     selectedAt: '2026-10-07T00:00:00.000Z',
     rationale:
-      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Captured previews are pending.',
+      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Every component runs a live demo from the provider, built from pinned source.',
   },
   {
     id: 'elevenlabs-ui',
@@ -366,7 +366,7 @@ export const PROVIDERS: Provider[] = [
     approved: true,
     selectedAt: '2026-10-07T00:00:00.000Z',
     rationale:
-      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Captured previews are pending.',
+      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Every component runs a live demo from the provider, built from pinned source.',
   },
   {
     id: 'prompt-kit',
@@ -383,7 +383,7 @@ export const PROVIDERS: Provider[] = [
     approved: true,
     selectedAt: '2026-10-07T00:00:00.000Z',
     rationale:
-      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Captured previews are pending.',
+      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Every component runs a live demo from the provider, built from pinned source.',
   },
   {
     id: 'mapcn',
@@ -400,7 +400,7 @@ export const PROVIDERS: Provider[] = [
     approved: true,
     selectedAt: '2026-10-07T00:00:00.000Z',
     rationale:
-      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Captured previews are pending.',
+      'Ingested in the broad October 2026 provider wave from the official component registry.json pinned to an immutable commit, with an explicit MIT licence. Every component runs a live demo from the provider, built from pinned source.',
   },
   {
     id: 'simply-buttons',
