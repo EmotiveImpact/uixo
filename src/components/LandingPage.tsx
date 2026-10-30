@@ -130,6 +130,7 @@ const GLYPHS: Record<string, string> = {
     '<rect x="22" y="6" width="68" height="48" rx="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="72" cy="20" r="6" fill="currentColor"/><path d="M24 50 46 28l14 14 8-8 20 18" fill="currentColor" fill-opacity=".55"/>',
   motion:
     '<path d="M14 50C30 50 34 12 56 12s30 30 42 30" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round" opacity=".6"/><circle cx="20" cy="49" r="3" fill="currentColor" fill-opacity=".3"/><circle cx="56" cy="12" r="4" fill="currentColor" fill-opacity=".55"/><circle cx="96" cy="41" r="8" fill="currentColor"/>',
+  ai: '<path d="M22 12h56a8 8 0 0 1 8 8v18a8 8 0 0 1-8 8H44l-12 9v-9h-10a8 8 0 0 1-8-8V20a8 8 0 0 1 8-8Z" fill="currentColor" fill-opacity=".85"/><rect x="26" y="24" width="34" height="4" rx="2" fill="var(--g-glyph-ink)"/><rect x="26" y="32" width="22" height="4" rx="2" fill="var(--g-glyph-ink)" fill-opacity=".5"/><path d="M96 6c1 6 3 8 9 9-6 1-8 3-9 9-1-6-3-8-9-9 6-1 8-3 9-9Z" fill="currentColor"/>',
   other:
     '<g fill="currentColor">' +
     [0, 1, 2]

@@ -120,5 +120,6 @@ export const CATEGORY_HUES: Record<string, number> = {
   backgrounds: 322,
   media: 14,
   motion: 190,
+  ai: 96,
   other: 250,
 };
