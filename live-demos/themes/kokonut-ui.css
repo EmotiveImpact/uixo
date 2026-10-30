@@ -53,3 +53,6 @@ html[data-demo='kokonut-ui/toolbar'] .demo-stage > * {
 html[data-demo='kokonut-ui/tweet-card'] .demo-stage > * {
   zoom: 0.88;
 }
+/* Smooth Tab builds its wave colours at run time (fill-${colour}), which a scan of the
+   source cannot see. These are the four its tabs use. */
+@source inline('{fill,stroke}-{blue,purple,emerald,amber}-500');
