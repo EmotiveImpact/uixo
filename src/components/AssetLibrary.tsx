@@ -102,6 +102,8 @@ function MoreCategories({
         >
           {rest.map((entry) => {
             const value = count(entry.id);
+            // A category with nothing in it is a dead end; it shows only while chosen.
+            if (value === 0 && entry.id !== current) return null;
             return (
               <button
                 key={entry.id}

@@ -6,6 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import styledJsx from 'styled-jsx/babel.js';
 const root = path.dirname(fileURLToPath(import.meta.url));
+const LEGACY_LIBRARIES = ['magic-ui', 'shadcn', 'motion-primitives', 'simply-buttons'];
 // Next.js compiles `<style jsx>` blocks with styled-jsx. A few provider demos use them,
 // so those vendored files (and only those) get the same compiler here.
 const usesStyledJsx = (id) =>
@@ -27,6 +28,26 @@ export default defineConfig({
   },
   publicDir: false,
   plugins: [
+    {
+      // Tailwind scans the whole harness for class names, so every theme would carry every
+      // library's utilities (about 800 kB each). Each theme is told to skip the other
+      // libraries' folders; styles.css serves the first four together.
+      name: 'one-library-per-theme',
+      enforce: 'pre',
+      transform(code, id) {
+        const file = id.split('?')[0];
+        const theme = file.match(/live-demos\/themes\/([a-z0-9-]+)\.css$/)?.[1];
+        const legacy = file === path.join(root, 'styles.css');
+        if (!theme && !legacy) return;
+        const own = legacy ? LEGACY_LIBRARIES : [theme];
+        const skip = fs
+          .readdirSync(path.join(root, 'vendor'))
+          .filter((library) => !own.includes(library))
+          .flatMap((library) => [`../vendor/${library}`, `../examples/${library}`])
+          .map((folder) => `@source not '${legacy ? folder.slice(1) : folder}';`);
+        return `${code}\n${skip.join('\n')}\n`;
+      },
+    },
     {
       name: 'original-provider-aliases',
       enforce: 'pre',

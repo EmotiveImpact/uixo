@@ -89,7 +89,10 @@ function AssetFilters(props: AppSidebarProps) {
       {showComponentCategories && (
         <div className="filter-section">
           <h2>Categories</h2>
-          {COMPONENT_CATEGORIES.map((item) => (
+          {COMPONENT_CATEGORIES.filter(
+            // A category with nothing in it is a dead end; it shows only while chosen.
+            (item) => count('categories', item.id) !== 0 || props.assetCategory === item.id,
+          ).map((item) => (
             <button
               key={item.id}
               className={props.assetCategory === item.id ? 'chosen' : ''}
