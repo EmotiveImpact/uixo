@@ -43,6 +43,7 @@ const origins = {
   evilcharts: 'https://evilcharts.com',
   mapcn: 'https://mapcn.dev',
   'kokonut-ui': 'https://kokonutui.com',
+  '8bitcn': 'https://www.8bitcn.com',
 };
 const base = document.createElement('base');
 base.href = origins[provider] + '/';

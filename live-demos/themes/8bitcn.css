@@ -1,0 +1,44 @@
+/* The .retro class and the pixel face it names. On the site retro.css is in every page's
+   bundle (every page has 8-bit buttons), so components that do not import it themselves,
+   such as Alert, still get the pixel font; the harness loads it with the theme to match.
+   It comes first because it opens with an @import of its own (the face from Google Fonts),
+   which CSS only honours at the top of a sheet. The harness also bundles the same face from
+   @fontsource below, so the demos never depend on that request. */
+@import '../vendor/8bitcn/components/ui/8bit/styles/retro.css';
+/* 8bitcn's own globals, unchanged, with the harness around them. The site's app/globals.css
+   is the same file plus fumadocs' docs-page styles; retro-globals.css is the copy 8bitcn
+   ships to users through its registry, without fumadocs. */
+@import '../vendor/8bitcn/app/retro-globals.css';
+@import '../stage.css';
+@import '@fontsource/press-start-2p';
+@source '../vendor/8bitcn';
+@source '../examples/8bitcn';
+/* The site sets these through next/font (Geist); the demo uses the same faces' system fallbacks. */
+:root {
+  --font-geist-sans: Geist, ui-sans-serif, system-ui, sans-serif;
+  --font-geist-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+html[data-provider='8bitcn'],
+html[data-provider='8bitcn'] body,
+html[data-provider='8bitcn'] #root {
+  font-family: var(--font-geist-sans);
+}
+/* 8bitcn's docs frame each demo in a stage at least 400px tall and as wide as the docs
+   column. The card stage is 480x360, so the few demos taller or wider than that are drawn
+   smaller as a whole; the components themselves are unchanged. */
+html[data-demo='8bitcn/calendar'] .demo-stage > *,
+html[data-demo='8bitcn/command'] .demo-stage > *,
+html[data-demo='8bitcn/tabs'] .demo-stage > * {
+  zoom: 0.86;
+}
+html[data-demo='8bitcn/card'] .demo-stage > * {
+  zoom: 0.8;
+}
+/* The carousel's own max-w-xs, which the stage's max-width: 100% would otherwise widen. */
+html[data-demo='8bitcn/carousel'] .demo-stage > * {
+  max-width: 20rem;
+  zoom: 0.8;
+}
+html[data-demo='8bitcn/navigation-menu'] .demo-stage > * {
+  zoom: 0.64;
+}
